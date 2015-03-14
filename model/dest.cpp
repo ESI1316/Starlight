@@ -7,22 +7,22 @@ Dest::Dest(const Point & p, int e) : pos {p}, edge {e}, light{false}
 
 const Point & Dest::getPosition() const
 {
-    return pos;
+    return this->pos;
 }
 
 int Dest::getEdge() const
 {
-    return edge;
+    return this->edge;
 }
 
 bool Dest::isLightedUp() const
 {
-    return light;
+    return this->light;
 }
 
 void Dest::setLightedUp(const bool q)
 {
-    light = q;
+    this->light = q;
 }
 
 std::ostream & operator<<(std::ostream & out, const Dest & d)

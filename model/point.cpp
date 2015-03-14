@@ -5,28 +5,28 @@ Point::Point(int a, int b) : x {a}, y {b}
 
 int Point::getX() const
 {
-    return x;
+    return this->x;
 }
 
 int Point::getY() const
 {
-    return y;
+    return this->y;
 }
 
 void Point::setX(int a)
 {
-    x = a;
+    this->x = a;
 }
 
 void Point::setY(int a)
 {
-    y = a;
+    this->y = a;
 }
 
 void Point::setLocation(int a, int b)
 {
-    x = a;
-    y = b;
+    this->x = a;
+    this->y = b;
 }
 
 std::ostream & operator<<(std::ostream & out, const Point & p)

@@ -7,12 +7,12 @@ Wall::Wall(const Point & p1, const Point & p2) : start {p1}, end {p2}
 
 const Point & Wall::getStart() const
 {
-    return start;
+    return this->start;
 }
 
 const Point & Wall::getEnd() const
 {
-    return end;
+    return this->end;
 }
 
 std::ostream & operator<<(std::ostream & out, const Wall & w)

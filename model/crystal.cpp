@@ -9,17 +9,17 @@ mod {m}
 
 const Point & Crystal::getCenter() const
 {
-    return center;
+    return this->center;
 }
 
 int Crystal::getModifier() const
 {
-    return mod;
+    return this->mod;
 }
 
 int Crystal::getRadius() const
 {
-    return rad;
+    return this->rad;
 }
 
 std::ostream & operator<<(std::ostream & out, const Crystal & c)

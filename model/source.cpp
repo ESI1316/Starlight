@@ -9,32 +9,32 @@ alpha {a}, edge {e}, wavelength {wl}
 
 const Point & Source::getPosition() const
 {
-    return pos;
+    return this->pos;
 }
 
 int Source::getAngle() const
 {
-    return alpha;
+    return this->alpha;
 }
 
 int Source::getEdge() const
 {
-    return edge;
+    return this->edge;
 }
 
 int Source::getWavelength() const
 {
-    return wavelength;
+    return this->wavelength;
 }
 
 bool Source::isOn() const
 {
-    return on;
+    return this->on;
 }
 
 void Source::setOn(bool q)
 {
-    on = q;
+    this->on = q;
 }
 
 std::ostream & operator<<(std::ostream & out, const Source & s)

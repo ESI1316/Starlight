@@ -14,52 +14,52 @@ walls { {{0, 0}, {0, h}}, {{0, h}, {w, h}},
 
 const Source & Level::getSource() const
 {
-    return s;
+    return this->s;
 }
 
 void Level::setSource(const Source & value)
 {
-    s = value;
+    this->s = value;
 }
 
 const Dest & Level::getDestination() const
 {
-    return d;
+    return this->d;
 }
 
 void Level::setDestination(const Dest & value)
 {
-    d = value;
+    this->d = value;
 }
 
 const vector<Wall> & Level::getWalls() const
 {
-    return walls;
+    return this->walls;
 }
 
 const vector<Mirror> & Level::getMirrors() const
 {
-    return mirrors;
+    return this->mirrors;
 }
 
 const vector<Crystal> & Level::getCrystals() const
 {
-    return crystals;
+    return this->crystals;
 }
 
 const vector<Lens> & Level::getLenses() const
 {
-    return lenses;
+    return this->lenses;
 }
 
 const vector<Ray> & Level::getRays() const
 {
-    return rays;
+    return this->rays;
 }
 
 void Level::setRays(const vector<Ray> & value)
 {
-    rays = value;
+    this->rays = value;
 }
 
 void Level::computeRays()

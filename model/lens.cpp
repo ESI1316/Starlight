@@ -8,27 +8,27 @@ width {w}, height {h}, wlmin {wlmin}, wlmax {wlmax}
 
 const Point & Lens::getPosition() const
 {
-    return pos;
+    return this->pos;
 }
 
 int Lens::getWidth() const
 {
-    return width;
+    return this->width;
 }
 
 int Lens::getHeight() const
 {
-    return height;
+    return this->height;
 }
 
 int Lens::getMinWavelength() const
 {
-    return wlmin;
+    return this->wlmin;
 }
 
 int Lens::getMaxWavelength() const
 {
-    return wlmax;
+    return this->wlmax;
 }
 
 std::ostream & operator<<(std::ostream & out, const Lens & l)

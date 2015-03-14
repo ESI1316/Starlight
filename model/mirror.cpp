@@ -21,32 +21,32 @@ alphaMax {aM}
 
 const Point & Mirror::getPivot() const
 {
-    return pivot;
+    return this->pivot;
 }
 
 int Mirror::getLength() const
 {
-    return length;
+    return this->length;
 }
 
 int Mirror::getXPad() const
 {
-    return xpad;
+    return this->xpad;
 }
 
 double Mirror::getAngle() const
 {
-    return alpha;
+    return this->alpha;
 }
 
 double Mirror::getMinAngle() const
 {
-    return alphaMin;
+    return this->alphaMin;
 }
 
 double Mirror::getMaxAngle() const
 {
-    return alphaMax;
+    return this->alphaMax;
 }
 
 Point Mirror::getMinPivot() const
@@ -62,41 +62,41 @@ Point Mirror::getMaxPivot() const
 bool Mirror::setPivot(const Point & p)
 {
     bool r {checkPivotRange(p)};
-    if (r) pivot = p;
+    if (r) this->pivot = p;
     return r;
 }
 
 bool Mirror::setAngle(double a)
 {
     bool r {checkAngleRange(a)};
-    if (r) alpha = a;
+    if (r) this->alpha = a;
     return r;
 }
 
 bool Mirror::checkAngleRange(double a) const
 {
-    return (alphaMin == 0 && alphaMax == 0) ||
-           (a >= alphaMin && a <= alphaMax);
+    return (this->alphaMin == 0 && this->alphaMax == 0) ||
+           (a >= this->alphaMin && a <= this->alphaMax);
 }
 
 bool Mirror::checkPivotRange(const Point & p) const
 {
-    if (xMin == 0 && xMax == 0 && yMin == 0 && yMax == 0)
+    if (this->xMin == 0 && this->xMax == 0 && this->yMin == 0 && this->yMax == 0)
     {
         return true;
     }
-    else if (xMin == 0 && xMax == 0)
+    else if (this->xMin == 0 && this->xMax == 0)
     {
-        return p.getY() >= yMin && p.getY() <= yMax;
+        return p.getY() >= this->yMin && p.getY() <= this->yMax;
     }
-    else if (yMin == 0 && yMax == 0)
+    else if (this->yMin == 0 && this->yMax == 0)
     {
-        return p.getX() >= xMin && p.getX() <= xMax;
+        return p.getX() >= this->xMin && p.getX() <= this->xMax;
     }
     else
     {
-        return p.getX() >= xMin && p.getX() <= xMax
-               && p.getY() >= yMin && p.getY() <= yMax;
+        return p.getX() >= this->xMin && p.getX() <= this->xMax
+               && p.getY() >= this->yMin && p.getY() <= this->yMax;
     }
 }
 

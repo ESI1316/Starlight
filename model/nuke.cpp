@@ -7,22 +7,22 @@ Nuke::Nuke(const Point & p, int r) : pos {p}, rad {r}
 
 const Point &Nuke::getLocation() const
 {
-    return pos;
+    return this->pos;
 }
 
 int Nuke::getRadius() const
 {
-    return rad;
+    return this->rad;
 }
 
 bool Nuke::isLightedUp() const
 {
-    return light;
+    return this->light;
 }
 
 void Nuke::setLightedUp(bool q)
 {
-    light = q;
+    this->light = q;
 }
 
 std::ostream & operator<<(std::ostream & out, const Nuke & s)
