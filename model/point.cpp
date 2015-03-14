@@ -1,5 +1,8 @@
 #include "point.h"
 
+Point::Point() : Point(0, 0)
+{}
+
 Point::Point(int a, int b) : x {a}, y {b}
 {}
 
@@ -13,20 +16,20 @@ int Point::getY() const
     return this->y;
 }
 
-void Point::setX(int a)
+void Point::setX(int x)
 {
-    this->x = a;
+    this->x = x;
 }
 
-void Point::setY(int a)
+void Point::setY(int y)
 {
-    this->y = a;
+    this->y = y;
 }
 
-void Point::setLocation(int a, int b)
+void Point::setLocation(int x, int y)
 {
-    this->x = a;
-    this->y = b;
+    this->x = x;
+    this->y = y;
 }
 
 std::ostream & operator<<(std::ostream & out, const Point & p)

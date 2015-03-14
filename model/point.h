@@ -16,7 +16,7 @@ class Point
     /**
      * Instancie le point (0,0)
      */
-    Point() = default;
+    Point();
 
     /**
      * Instancie le point de coordonnées spécifiées.
