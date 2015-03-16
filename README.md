@@ -2,9 +2,7 @@
 
 ##Introduction
 > "Starlight est un petit jeu en deux dimensions se jouant sur une carte rectangulaire, 
-comportant une source de lumière, émettant un rayon recti-ligne. Le but du jeu 
-est d'atteindre une cible avec ledit rayon, en évitant les obstacles via  
-notamment des miroirs réfléchissant la lumière."
+comportant une source de lumière, émettant un rayon recti-ligne. Le but du jeuest d'atteindre une cible avec ledit rayon, en évitant les obstacles via notamment des miroirs réfléchissant la lumière."
 
 ##Rules
 Starlight est un puzzle à deux dimensions se jouant sur une carte rec-tangulaire. 
@@ -24,8 +22,8 @@ rayon incident à un mur ne se propage pas, et " s'arrête " donc là où
 il y est incident.
 + Un ensemble de lentilles. Les lentilles sont des objets transparents qui
 ne laissent passer un rayon lumineux que dans un certain intervalle de
-longueur d'onde rm, ns. Si un rayon lumineux possède une longueur
-d'onde ν telle que m ¤ ν ¤ n, il traverse la lentille sans subir aucune
+longueur d'onde [m ,n]. Si un rayon lumineux possède une longueur
+d'onde ν telle que m <= ν <= n, il traverse la lentille sans subir aucune
 modification. Sinon, la lentille stoppe le rayon (elle se comporte comme
 un mur).
 + Un ensemble de cristaux : un cristal est un élément transparent qui
@@ -43,8 +41,14 @@ comme mentionné ci-dessus, si oui ou non un rayon traverse une lentille.
 Elle est modifiée par un cristal.
 
 ##Credits
-Project has been created, and is owned, by R. Absil, M. Bastreghi, J. Beleho, À.
-Rousseau, N. Vansteenkiste et M. Wahid FROM [H.E.B. École Supérieure d'Informatique](http://www.heb.be/esi/)
+Project has been created, and *is owned*, by 
++ R. Absil
++ M. Bastreghi
++ J. Beleho
++ A. Rousseau
++ N. Vansteenkiste
++ M. Wahid 
+@ [H.E.B. École Supérieure d'Informatique](http://www.heb.be/esi/)
 
 ##About
 2G13 C++ Project
