@@ -27,7 +27,7 @@ class Source
      * Instance une nouvelle nource de position, de côté et de
      * longueur d'onde donnée.
      * </p>
-     * La position dénote la coordonée du coin supérieur gauche
+     * La position dénote la coordonnée du coin supérieur gauche
      * du carré modélisant la source.
      * </p>
      * La source est intialement éteinte.
@@ -44,9 +44,9 @@ class Source
     Source(const Point & p, int e, double a, int wl);
 
     /**
-     * Retourne la coordonée du coin supérieur gauche du carré
+     * Retourne la coordonnée du coin supérieur gauche du carré
      * modélisant la destination.
-     * @return la coordonée du coin supérieur gauche du carré
+     * @return la coordonnée du coin supérieur gauche du carré
      * modélisant la destination.
      */
     const Point & getPosition() const;

@@ -4,7 +4,7 @@
 #include <iostream>
 
 /**
- * Cette classe modélise un simple point de coordonées entières,
+ * Cette classe modélise un simple point de coordonnées entières,
  * utilisés pour modéliser les positions des objets dans le jeu.
  */
 class Point

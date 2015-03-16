@@ -9,7 +9,7 @@
  * Cette classe modélise la destination utilisée dans le jeu.
  * </p>
  * Une destination est un objet carré qui, quand traversé par
- * un rayon limuneux, fait remporter la partie au joueur.
+ * un rayon lumineux, fait remporter la partie au joueur.
  */
 class Dest
 {

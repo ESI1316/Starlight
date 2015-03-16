@@ -50,7 +50,7 @@ class Ray
      * Instancie un rayon lumineux de début et de fin donnés, et de
      * longueur d'onde spécifiée.
      * </p>
-     * Si la longueur d'onde spéficiée ne rentre pas dans les valeurs
+     * Si la longueur d'onde spécifiée ne rentre pas dans les valeurs
      * autorisées, elle est automatiquement réglée sur WL_DFT nm.
      * @param p1 le début du rayon lumineux
      * @param p2 la fin du rayon lumineux
@@ -80,14 +80,14 @@ class Ray
     int getWavelength() const;
 
     /**
-     * Change la coordonée du début du rayon.
-     * @param p la nouvelle coordonée du début du rayon.
+     * Change la coordonnée du début du rayon.
+     * @param p la nouvelle coordonnée du début du rayon.
      */
     void setStart(const Point & p);
 
     /**
-     * Change la coordonée de la fin du rayon.
-     * @param p la nouvelle coordonée de la fin du rayon.
+     * Change la coordonnée de la fin du rayon.
+     * @param p la nouvelle coordonnée de la fin du rayon.
      */
     void setEnd(const Point & p);
 

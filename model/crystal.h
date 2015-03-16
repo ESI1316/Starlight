@@ -32,8 +32,8 @@ class Crystal
     Crystal(const Point & p, int r, int m);
 
     /**
-     * Retourne la coordonée du centre du cristal
-     * @return  la coordonée du centre du cristal
+     * Retourne la coordonnée du centre du cristal
+     * @return  la coordonnée du centre du cristal
      */
     const Point & getCenter() const;
 

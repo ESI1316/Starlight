@@ -39,7 +39,7 @@ class Mirror
      * peut se déplacer et pivoter librement.
      * @param p la position (et le point de pivot) du miroir
      * @param len la longueur du miroir
-     * @param x le décallage du pivot par rapport au bord gauche
+     * @param x le décalage du pivot par rapport au bord gauche
      *          du miroir
      * @param a l'angle d'inclinaison du miroir
      */
@@ -62,7 +62,7 @@ class Mirror
      * pivote dans le sens anti-horloger.
      * @param p la position (et le point de pivot) du miroir
      * @param len la longueur du miroir
-     * @param x le décallage du pivot par rapport au bord gauche
+     * @param x le décalage du pivot par rapport au bord gauche
      *          du miroir
      * @param a l'angle d'inclinaison du miroir
      * @param min l'abscisse et l'ordonnée minimum du miroir.
@@ -86,9 +86,9 @@ class Mirror
     int getLength() const;
 
     /**
-     * Retourne le décallage du pivot par rapport au bord gauche
+     * Retourne le décalage du pivot par rapport au bord gauche
      * du miroir.
-     * @return le décallage du pivot par rapport au bord gauche
+     * @return le décalage du pivot par rapport au bord gauche
      * du miroir.
      */
     int getXPad() const;
