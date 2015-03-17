@@ -40,6 +40,16 @@ longueur d'onde. La longueur d'onde d'un rayon permet de déterminer,
 comme mentionné ci-dessus, si oui ou non un rayon traverse une lentille.
 Elle est modifiée par un cristal.
 
+## Build & run
+```bash
+sudo add-apt-repository ppa:ubuntu:toolchain-r/test
+sudo apt-get update
+sudo apt-get install g++-4.9
+cd /usr/bin
+sudo rm g++
+sudo ln-s g++-4.9 g++
+```
+
 ##Credits
 Project has been created, and *is owned*, by 
 + R. Absil
