@@ -9,14 +9,14 @@
  */
 class Point
 {
-    int x;
-    int y;
+    int x {0};
+    int y {0};
 
   public:
     /**
      * Instancie le point (0,0)
      */
-    Point();
+    Point() = default;
 
     /**
      * Instancie le point de coordonnées spécifiées.
