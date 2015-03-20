@@ -32,35 +32,21 @@ PolarPoint::PolarPoint(Point & point)
     int x = point.getX();
     int y = point.getY();
 
-    this->radius = std::sqrt(std::exp2(point.getX()) + std::exp2(point.getY()));
-
-
     if (x > 0)
         if(y >= 0)
-        {
-            newBeta = std::atan(y / (float)x);
-        }
+            newBeta = std::atan(y / (float) x);
         else
-        {
-
-        }
+            newBeta = std::atan(y / (float) x) + (M_2_PI);
     else if (x < 0)
-    {
-
-    }
+        newBeta = std::atan(y / (float) x) + M_PI;
     else
         if(y > 0)
-        {
-
-        }
-        else if(y == 0)
-        {
-
-        }
+            newBeta = M_PI_2;
         else
-        {
+            newBeta = (3 * M_PI) / 2.;
 
-        }
+    this->radius = std::sqrt(std::exp2(x) + std::exp2(x));
+    this->beta = newBeta;
 }
 
 /**
