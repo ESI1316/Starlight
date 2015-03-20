@@ -56,6 +56,8 @@ class Point
      */
     void setLocation(int x, int y);
 
+    int distanceFrom(Point & p);
+
     /**
      * Surcharge l'opérateur de flux de sortie pour afficher un
      * récapitulatif des caractéristiques du point sous-jacent en

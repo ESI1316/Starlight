@@ -47,7 +47,7 @@ sudo apt-get update
 sudo apt-get install g++-4.9
 cd /usr/bin
 sudo rm g++
-sudo ln-s g++-4.9 g++
+sudo ln -s g++-4.9 g++
 ```
 
 **OR**

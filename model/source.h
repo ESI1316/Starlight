@@ -24,7 +24,7 @@ class Source
 
   public:
     /**
-     * Instance une nouvelle nource de position, de côté et de
+     * Instancie une nouvelle source de position, côté et
      * longueur d'onde donnée.
      * </p>
      * La position dénote la coordonnée du coin supérieur gauche
@@ -47,13 +47,13 @@ class Source
      * Retourne la coordonnée du coin supérieur gauche du carré
      * modélisant la destination.
      * @return la coordonnée du coin supérieur gauche du carré
-     * modélisant la destination.
+     * modélisant la source.
      */
     const Point & getPosition() const;
 
     /**
-     * Retourne l'anle du rayon émis.
-     * @return l'anle du rayon émis.
+     * Retourne l'angle du rayon émis.
+     * @return l'angle du rayon émis.
      */
     int getAngle() const;
 
