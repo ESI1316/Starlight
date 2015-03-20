@@ -26,7 +26,7 @@ SOURCES += main.cpp\
     model/ray.cpp \
     model/source.cpp \
     model/wall.cpp \
-    model/polarcoordinate.cpp
+    model/polarPoint.cpp
 
 HEADERS  += mainwindow.hpp \
     model/crystal.h \
@@ -39,6 +39,6 @@ HEADERS  += mainwindow.hpp \
     model/ray.h \
     model/source.h \
     model/wall.h \
-    model/polarcoordinate.hpp
+    model/polarPoint.h
 
 FORMS    += mainwindow.ui

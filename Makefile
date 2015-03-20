@@ -60,7 +60,7 @@ SOURCES       = main.cpp \
 		model/ray.cpp \
 		model/source.cpp \
 		model/wall.cpp \
-		model/polarcoordinate.cpp moc_mainwindow.cpp
+		model/polarPoint.cpp moc_mainwindow.cpp
 OBJECTS       = main.o \
 		mainwindow.o \
 		crystal.o \
@@ -73,7 +73,7 @@ OBJECTS       = main.o \
 		ray.o \
 		source.o \
 		wall.o \
-		polarcoordinate.o \
+		polarPoint.o \
 		moc_mainwindow.o
 DIST          = ../../../Qt/5.4/gcc_64/mkspecs/features/spec_pre.prf \
 		../../../Qt/5.4/gcc_64/mkspecs/common/shell-unix.conf \
@@ -197,7 +197,7 @@ DIST          = ../../../Qt/5.4/gcc_64/mkspecs/features/spec_pre.prf \
 		model/ray.h \
 		model/source.h \
 		model/wall.h \
-		model/polarcoordinate.hpp main.cpp \
+		model/polarPoint.h main.cpp \
 		mainwindow.cpp \
 		model/crystal.cpp \
 		model/dest.cpp \
@@ -209,7 +209,7 @@ DIST          = ../../../Qt/5.4/gcc_64/mkspecs/features/spec_pre.prf \
 		model/ray.cpp \
 		model/source.cpp \
 		model/wall.cpp \
-		model/polarcoordinate.cpp
+		model/polarPoint.cpp
 QMAKE_TARGET  = Starlight
 DESTDIR       = #avoid trailing-slash linebreak
 TARGET        = Starlight
@@ -485,8 +485,8 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
-	$(COPY_FILE) --parents mainwindow.hpp model/crystal.h model/dest.h model/lens.h model/level.h model/mirror.h model/nuke.h model/point.h model/ray.h model/source.h model/wall.h model/polarcoordinate.hpp $(DISTDIR)/
-	$(COPY_FILE) --parents main.cpp mainwindow.cpp model/crystal.cpp model/dest.cpp model/lens.cpp model/level.cpp model/mirror.cpp model/nuke.cpp model/point.cpp model/ray.cpp model/source.cpp model/wall.cpp model/polarcoordinate.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents mainwindow.hpp model/crystal.h model/dest.h model/lens.h model/level.h model/mirror.h model/nuke.h model/point.h model/ray.h model/source.h model/wall.h model/polarPoint.h $(DISTDIR)/
+	$(COPY_FILE) --parents main.cpp mainwindow.cpp model/crystal.cpp model/dest.cpp model/lens.cpp model/level.cpp model/mirror.cpp model/nuke.cpp model/point.cpp model/ray.cpp model/source.cpp model/wall.cpp model/polarPoint.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents mainwindow.ui $(DISTDIR)/
 
 
@@ -948,8 +948,9 @@ wall.o: model/wall.cpp model/wall.h \
 		model/point.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o wall.o model/wall.cpp
 
-polarcoordinate.o: model/polarcoordinate.cpp model/polarcoordinate.hpp
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o polarcoordinate.o model/polarcoordinate.cpp
+polarPoint.o: model/polarPoint.cpp model/polarPoint.h \
+		model/point.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o polarPoint.o model/polarPoint.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp

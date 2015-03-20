@@ -4,25 +4,25 @@
 #include<ostream>
 #include<string>
 
-class PolarCoordinate
+class PolarPoint
 {
     int radius;
     double beta;
 
 public:
-    PolarCoordinate();
-    PolarCoordinate(int, double);
-    PolarCoordinate(Point &);
-    PolarCoordinate(PolarCoordinate &);
-    ~PolarCoordinate();
+    PolarPoint();
+    PolarPoint(int, double);
+    PolarPoint(Point &);
+    PolarPoint(PolarPoint &);
+    ~PolarPoint();
 
     int getRadius() const;
     double getBeta() const;
     Point toCartesian();
-    PolarCoordinate & rotate(double);
+    PolarPoint & rotate(double);
     std::string toString() const;
 
-    friend std::ostream & operator<<(std::ostream &, PolarCoordinate &);
+    friend std::ostream & operator<<(std::ostream &, PolarPoint &);
 };
 
 #endif // POLARCOORDINATE_HPP
