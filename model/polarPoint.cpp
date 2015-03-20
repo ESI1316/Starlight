@@ -25,7 +25,8 @@ PolarPoint::PolarPoint(PolarPoint & polarCoordinate)
 /**
  * @brief PolarPoint::PolarPoint
  */
-PolarPoint::PolarPoint(Point &) : radius{/*todo*/}, beta{/*todo*/}
+PolarPoint::PolarPoint(Point &)
+    : radius{}, beta{}
 {
 }
 
