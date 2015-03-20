@@ -42,7 +42,7 @@ PolarPoint::PolarPoint(Point & point)
         }
         else
         {
-
+            newBeta = std::atan(y / (float)x) + std::p
         }
     else if (x < 0)
     {
