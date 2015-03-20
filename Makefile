@@ -33,7 +33,7 @@ MOVE          = mv -f
 TAR           = tar -cf
 COMPRESS      = gzip -9f
 DISTNAME      = Starlight1.0.0
-DISTDIR = /home/g39631/Documents/C\ Lab/Starlight/.tmp/Starlight1.0.0
+DISTDIR = /home/g39631/Documents/LabC/Starlight/.tmp/Starlight1.0.0
 LINK          = g++
 LFLAGS        = -Wl,-rpath,/home/g39631/Qt/5.4/gcc_64 -Wl,-rpath,/home/g39631/Qt/5.4/gcc_64/lib
 LIBS          = $(SUBLIBS) -L/home/g39631/Qt/5.4/gcc_64/lib -lQt5Widgets -lQt5Gui -lQt5Core -lGL -lpthread 
@@ -59,7 +59,8 @@ SOURCES       = main.cpp \
 		model/point.cpp \
 		model/ray.cpp \
 		model/source.cpp \
-		model/wall.cpp moc_mainwindow.cpp
+		model/wall.cpp \
+		model/polarcoordinate.cpp moc_mainwindow.cpp
 OBJECTS       = main.o \
 		mainwindow.o \
 		crystal.o \
@@ -72,6 +73,7 @@ OBJECTS       = main.o \
 		ray.o \
 		source.o \
 		wall.o \
+		polarcoordinate.o \
 		moc_mainwindow.o
 DIST          = ../../../Qt/5.4/gcc_64/mkspecs/features/spec_pre.prf \
 		../../../Qt/5.4/gcc_64/mkspecs/common/shell-unix.conf \
@@ -194,7 +196,8 @@ DIST          = ../../../Qt/5.4/gcc_64/mkspecs/features/spec_pre.prf \
 		model/point.h \
 		model/ray.h \
 		model/source.h \
-		model/wall.h main.cpp \
+		model/wall.h \
+		model/polarcoordinate.hpp main.cpp \
 		mainwindow.cpp \
 		model/crystal.cpp \
 		model/dest.cpp \
@@ -205,7 +208,8 @@ DIST          = ../../../Qt/5.4/gcc_64/mkspecs/features/spec_pre.prf \
 		model/point.cpp \
 		model/ray.cpp \
 		model/source.cpp \
-		model/wall.cpp
+		model/wall.cpp \
+		model/polarcoordinate.cpp
 QMAKE_TARGET  = Starlight
 DESTDIR       = #avoid trailing-slash linebreak
 TARGET        = Starlight
@@ -481,8 +485,8 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
-	$(COPY_FILE) --parents mainwindow.hpp model/crystal.h model/dest.h model/lens.h model/level.h model/mirror.h model/nuke.h model/point.h model/ray.h model/source.h model/wall.h $(DISTDIR)/
-	$(COPY_FILE) --parents main.cpp mainwindow.cpp model/crystal.cpp model/dest.cpp model/lens.cpp model/level.cpp model/mirror.cpp model/nuke.cpp model/point.cpp model/ray.cpp model/source.cpp model/wall.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents mainwindow.hpp model/crystal.h model/dest.h model/lens.h model/level.h model/mirror.h model/nuke.h model/point.h model/ray.h model/source.h model/wall.h model/polarcoordinate.hpp $(DISTDIR)/
+	$(COPY_FILE) --parents main.cpp mainwindow.cpp model/crystal.cpp model/dest.cpp model/lens.cpp model/level.cpp model/mirror.cpp model/nuke.cpp model/point.cpp model/ray.cpp model/source.cpp model/wall.cpp model/polarcoordinate.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents mainwindow.ui $(DISTDIR)/
 
 
@@ -615,7 +619,7 @@ moc_mainwindow.cpp: ../../../Qt/5.4/gcc_64/include/QtWidgets/QMainWindow \
 		../../../Qt/5.4/gcc_64/include/QtWidgets/qtabwidget.h \
 		../../../Qt/5.4/gcc_64/include/QtGui/qicon.h \
 		mainwindow.hpp
-	/home/g39631/Qt/5.4/gcc_64/bin/moc $(DEFINES) -I/home/g39631/Qt/5.4/gcc_64/mkspecs/linux-g++ -I'/home/g39631/Documents/C Lab/Starlight' -I/home/g39631/Qt/5.4/gcc_64/include -I/home/g39631/Qt/5.4/gcc_64/include/QtWidgets -I/home/g39631/Qt/5.4/gcc_64/include/QtGui -I/home/g39631/Qt/5.4/gcc_64/include/QtCore mainwindow.hpp -o moc_mainwindow.cpp
+	/home/g39631/Qt/5.4/gcc_64/bin/moc $(DEFINES) -I/home/g39631/Qt/5.4/gcc_64/mkspecs/linux-g++ -I/home/g39631/Documents/LabC/Starlight -I/home/g39631/Qt/5.4/gcc_64/include -I/home/g39631/Qt/5.4/gcc_64/include/QtWidgets -I/home/g39631/Qt/5.4/gcc_64/include/QtGui -I/home/g39631/Qt/5.4/gcc_64/include/QtCore mainwindow.hpp -o moc_mainwindow.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
@@ -943,6 +947,9 @@ source.o: model/source.cpp model/source.h \
 wall.o: model/wall.cpp model/wall.h \
 		model/point.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o wall.o model/wall.cpp
+
+polarcoordinate.o: model/polarcoordinate.cpp model/polarcoordinate.hpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o polarcoordinate.o model/polarcoordinate.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp
