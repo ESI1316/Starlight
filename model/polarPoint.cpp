@@ -5,22 +5,27 @@
  * @brief PolarPoint::PolarPoint
  */
 PolarPoint::PolarPoint()
-    : PolarPoint(0, 0.)
-{}
+    : PolarPoint(0., 0.)
+{
+}
 
 /**
  * @brief PolarPoint::PolarPoint
  * @param radius
  * @param beta
  */
-PolarPoint::PolarPoint(int radius, double beta)
+PolarPoint::PolarPoint(double radius, double beta)
     : radius{radius}, beta{beta}
-{}
+{
+}
 
+/**
+ * @brief PolarPoint::PolarPoint
+ * @param polarCoordinate
+ */
 PolarPoint::PolarPoint(PolarPoint & polarCoordinate)
     : PolarPoint(polarCoordinate.radius, polarCoordinate.beta)
 {
-
 }
 /**
  * @brief PolarPoint::PolarPoint
@@ -28,10 +33,10 @@ PolarPoint::PolarPoint(PolarPoint & polarCoordinate)
 PolarPoint::PolarPoint(Point & point)
     : PolarPoint()
 {
-    double newBeta{0.};
     int x = point.getX();
     int y = point.getY();
-
+    /*
+    double newBeta{0.};
     if (x > 0)
         if(y >= 0)
             newBeta = std::atan(y / (float) x);
@@ -45,8 +50,15 @@ PolarPoint::PolarPoint(Point & point)
         else
             newBeta = (3 * M_PI) / 2.;
 
-    this->radius = std::sqrt(std::exp2(x) + std::exp2(x));
+    this->radius = std::sqrt(std::exp2(x) + std::exp2(y));
     this->beta = newBeta;
+    */
+    if (std::acos(y) * ((180 / M_PI) + 180) >= 180)
+        this->beta = (int)(std::acos(x) * (180/M_PI) + 180) % 360;
+    else
+        this->beta = 360 - (std::acos(x) * (180/M_PI) + 180);
+
+    this->radius = std::sqrt(std::exp2(x) + std::exp2(y));
 }
 
 /**
@@ -96,10 +108,17 @@ PolarPoint & PolarPoint::rotate(double alpha)
     return *this;
 }
 
+/**
+ * @brief operator <<
+ * @param out
+ * @param polarCoordinate
+ * @return
+ */
 std::ostream & operator<<(std::ostream & out, PolarPoint & polarCoordinate)
 {
     out << "(radius, beta) = " <<
-           "(" << polarCoordinate.radius << ", " << polarCoordinate.beta << ")";
+           "(" << polarCoordinate.radius <<
+           ", " << polarCoordinate.beta << ")";
 
     return out;
 }

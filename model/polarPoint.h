@@ -6,12 +6,12 @@
 
 class PolarPoint
 {
-    int radius;
+    double radius;
     double beta;
 
 public:
     PolarPoint();
-    PolarPoint(int, double);
+    PolarPoint(double, double);
     PolarPoint(Point &);
     PolarPoint(PolarPoint &);
     ~PolarPoint();

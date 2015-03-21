@@ -1,3 +1,4 @@
 *.o
 *.a
 *.user
+*.pro.user
