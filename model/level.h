@@ -9,6 +9,7 @@
 #include "source.h"
 #include "wall.h"
 #include "point.h"
+#include "nuke.h"
 
 #include <vector>
 
@@ -31,6 +32,7 @@ class Level
     std::vector<Crystal> crystals;
     std::vector<Lens> lenses;
     std::vector<Ray> rays;
+    std::vector<Nuke> nukes;
 
   public:
 
@@ -81,10 +83,22 @@ class Level
     const std::vector<Wall> & getWalls() const;
 
     /**
+     * Permet d'ajouter un mur sur la carte.
+     * @param newWall nouveau mur à ajouter.
+     */
+    void addWall(const Wall & newWall);
+
+    /**
      * Retourne l'ensemble des miroirs de la carte
      * @return l'ensemble des miroirs de la carte
      */
     const std::vector<Mirror> & getMirrors() const;
+
+    /**
+     * Permet d'ajouter un mirroir sur la carte.
+     * @param newMirror nouveau mirroir à ajouter.
+     */
+    void addMirror(const Mirror & newMirror);
 
     /**
      * Retourne l'ensemble des cristaux de la carte
@@ -93,10 +107,22 @@ class Level
     const std::vector<Crystal> & getCrystals() const;
 
     /**
+     * Permet d'ajouter un crystal sur la carte.
+     * @param newCrystal nouveau crystal à ajouter.
+     */
+    void addCrystal(const Crystal & newCrystal);
+
+    /**
      * Retourne l'ensemble des lentilles de la carte
      * @return l'ensemble des lentilles de la carte
      */
     const std::vector<Lens> & getLenses() const;
+
+    /**
+     * Permet d'ajouter une lentille sur la carte.
+     * @param newLens nouvelle lentille à ajouter.
+     */
+    void addLens(const Lens & newLens);
 
     /**
      * Retourne l'ensemble des rayons de la carte
@@ -109,6 +135,18 @@ class Level
      * @param le nouvel ensemble de rayons de la carte
      */
     void setRays(const std::vector<Ray> & v);
+
+    /**
+     * Retourne l'ensemble des bombes de la carte
+     * @return l'ensemble des bombes de la carte
+     */
+    const std::vector<Nuke> & getNukes() const;
+
+    /**
+     * Permet d'ajouter une bombe sur la carte.
+     * @param newNuke nouvelle bombe à ajouter.
+     */
+    void addNuke(const Nuke & newNuke);
 
     /**
      * Calcule les rayons lumineux de la carte.
