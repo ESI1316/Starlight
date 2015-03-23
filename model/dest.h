@@ -60,8 +60,7 @@ class Dest
      * sous-jacente en console.
      * @return le flux dans lequel la destination a été imprimée.
      */
-    friend std::ostream & operator<<(std::ostream & out,
-                                     const Dest & s);
+    //friend std::ostream & operator<<(std::ostream & out, const Dest & s);
 };
 
 #endif // DEST_H

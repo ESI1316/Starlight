@@ -27,7 +27,8 @@ void Dest::setLightedUp(const bool q)
 
 std::ostream & operator<<(std::ostream & out, const Dest & d)
 {
-    out << "Dest --- Position : " << d.pos <<  " , Edge : " << d.edge <<
-        " , lighted up : " << d.light;
+    out << "Dest --- Position : " << d.getPosition()
+        << " , Edge : " << d.getEdge()
+        << " , lighted up : " << d.isLightedUp();
     return out;
 }

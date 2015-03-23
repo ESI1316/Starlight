@@ -33,8 +33,10 @@ int Lens::getMaxWavelength() const
 
 std::ostream & operator<<(std::ostream & out, const Lens & l)
 {
-    out << "Lens -- Position : " << l.pos << " , width : " << l.width
-        << " , height : " << l.height << " , Freq. Min. : " << l.wlmin <<
-        " , Freq. Max. : " << l.wlmax;
+    out << "Lens -- Position : " << l.getPosition()
+        << " , width : " << l.getWidth()
+        << " , height : " << l.getHeight()
+        << " , Freq. Min. : " << l.getMinWavelength()
+        << " , Freq. Max. : " << l.getMaxWavelength();
     return out;
 }

@@ -65,8 +65,7 @@ class Point
      * console.
      * @return le flux dans lequel le point a été imprimé.
      */
-    friend std::ostream & operator<<(std::ostream & out,
-                                     const Point & p);
+    friend std::ostream & operator<<(std::ostream & out, const Point & p);
 };
 
 #endif // POINT_H

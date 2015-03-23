@@ -20,14 +20,15 @@ bool Nuke::isLightedUp() const
     return this->light;
 }
 
-void Nuke::setLightedUp(bool q)
+void Nuke::setLightedUp(bool light)
 {
-    this->light = q;
+    this->light = light;
 }
 
 std::ostream & operator<<(std::ostream & out, const Nuke & s)
 {
-    out << "Nuke --- Position : " << s.pos << " , Radius : " << s.rad <<
-        " On : " << s.light;
+    out << "Nuke --- Position : " << s.getLocation()
+        << " , Radius : " << s.getRadius()
+        << " On : " << s.isLightedUp();
     return out;
 }

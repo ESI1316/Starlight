@@ -55,7 +55,7 @@ class Crystal
      * sous-jacent en console.
      * @return le flux dans lequel le cristal a été imprimé.
      */
-    friend std::ostream & operator<<(std::ostream &, const Crystal &);
+    //friend std::ostream & operator<<(std::ostream &, const Crystal &);
 };
 
 #endif // CRYSTAL_H

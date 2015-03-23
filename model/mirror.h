@@ -189,8 +189,7 @@ class Mirror
      * miroir sous-jacent en console.
      * @return le flux dans lequel le miroir a été imprimé.
      */
-    friend std::ostream & operator<<(std::ostream & out,
-                                     const Mirror & m);
+    friend std::ostream & operator<<(std::ostream & out, const Mirror & m);
 };
 
 #endif // MIRROR_H

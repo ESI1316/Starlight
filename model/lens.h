@@ -82,8 +82,7 @@ class Lens
      * sous-jacente en console.
      * @return le flux dans lequel la lentille a été imprimée.
      */
-    friend std::ostream & operator<<(std::ostream & out,
-                                     const Lens & m);
+    //friend std::ostream & operator<<(std::ostream & out, const Lens & m);
 };
 
 #endif // LENS_H

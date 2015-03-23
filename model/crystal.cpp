@@ -24,7 +24,8 @@ int Crystal::getRadius() const
 
 std::ostream & operator<<(std::ostream & out, const Crystal & c)
 {
-    out << "Crystal --- Center : " << c.center << " , Radius : " << c.rad
-        << " , Modifier : " << c.mod;
+    out << "Crystal --- Center : " << c.getCenter()
+        << " , Radius : " << c.getRadius()
+        << " , Modifier : " << c.getModifier();
     return out;
 }

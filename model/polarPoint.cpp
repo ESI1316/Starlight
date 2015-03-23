@@ -5,7 +5,7 @@
  * @brief PolarPoint::PolarPoint
  */
 PolarPoint::PolarPoint()
-    : PolarPoint(0., 0.)
+    : radius{0.}, beta{0.}
 {
 }
 
@@ -15,8 +15,14 @@ PolarPoint::PolarPoint()
  * @param beta
  */
 PolarPoint::PolarPoint(double radius, double beta)
-    : radius{radius}, beta{beta}
+//: radius{radius}, beta{beta}
+    : PolarPoint()
 {
+    if(radius < 0.)
+        throw new std::string("Le rayon ne peut pas être négatif");
+
+    this->radius = radius;
+    this->beta = beta;
 }
 
 /**
@@ -35,24 +41,7 @@ PolarPoint::PolarPoint(Point & point)
 {
     int x = point.getX();
     int y = point.getY();
-    /*
-    double newBeta{0.};
-    if (x > 0)
-        if(y >= 0)
-            newBeta = std::atan(y / (float) x);
-        else
-            newBeta = std::atan(y / (float) x) + (M_2_PI);
-    else if (x < 0)
-        newBeta = std::atan(y / (float) x) + M_PI;
-    else
-        if(y > 0)
-            newBeta = M_PI_2;
-        else
-            newBeta = (3 * M_PI) / 2.;
 
-    this->radius = std::sqrt(std::exp2(x) + std::exp2(y));
-    this->beta = newBeta;
-    */
     if (std::acos(y) * ((180 / M_PI) + 180) >= 180)
         this->beta = (int)(std::acos(x) * (180/M_PI) + 180) % 360;
     else
@@ -114,11 +103,11 @@ PolarPoint & PolarPoint::rotate(double alpha)
  * @param polarCoordinate
  * @return
  */
-std::ostream & operator<<(std::ostream & out, PolarPoint & polarCoordinate)
+std::ostream & operator<<(std::ostream & out, const PolarPoint & polarCoordinate)
 {
     out << "(radius, beta) = " <<
-           "(" << polarCoordinate.radius <<
-           ", " << polarCoordinate.beta << ")";
+           "(" << polarCoordinate.getRadius() <<
+           ", " << polarCoordinate.getBeta() << ")";
 
     return out;
 }

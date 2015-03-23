@@ -10,8 +10,8 @@ Mirror::Mirror(const Point & p, int len, int x, double a)
 Mirror::Mirror(const Point & p, int len, int x, double a, Point pm,
                Point pM, double am, double aM)
     : pivot {p}, length(len), xpad(x), xMin {pm.getX()}, xMax {pM.getX()},
-yMin {pm.getY()}, yMax {pM.getY()}, alpha {a}, alphaMin {am},
-alphaMax {aM}
+      yMin {pm.getY()}, yMax {pM.getY()}, alpha {a}, alphaMin {am},
+      alphaMax {aM}
 {
     // TODO : valider length, xpad, (alphaMin et alphaMax),
     //                (alpha et [alphaMin, alphaMax]), (xMin et xMax),
@@ -76,7 +76,7 @@ bool Mirror::setAngle(double a)
 bool Mirror::checkAngleRange(double a) const
 {
     return (this->alphaMin == 0 && this->alphaMax == 0) ||
-           (a >= this->alphaMin && a <= this->alphaMax);
+            (a >= this->alphaMin && a <= this->alphaMax);
 }
 
 bool Mirror::checkPivotRange(const Point & p) const
@@ -96,16 +96,21 @@ bool Mirror::checkPivotRange(const Point & p) const
     else
     {
         return p.getX() >= this->xMin && p.getX() <= this->xMax
-               && p.getY() >= this->yMin && p.getY() <= this->yMax;
+                && p.getY() >= this->yMin && p.getY() <= this->yMax;
     }
 }
 
 std::ostream & operator<<(std::ostream & out, const Mirror & m)
 {
-    out << "Mirror --- Pivot : " << m.pivot << " , Length : " << m.length
-        << " , x-pad : " << m.xpad << ", Angle : " << m.alpha <<
-        " , Angle range : [" << m.alphaMin << "," << m.alphaMax << "]" <<
-        "Pivot range : [(" << m.xMin << "," << m.yMin << "),(" << m.xMax <<
-        "," << m.yMax << ")]";
+    out << "Mirror --- Pivot : " << m.pivot
+        << " , Length : " << m.length
+        << " , x-pad : " << m.xpad
+        << ", Angle : " << m.alpha
+        << " , Angle range : [" << m.alphaMin
+        << "," << m.alphaMax << "]"
+        << "Pivot range : [(" << m.xMin
+        << "," << m.yMin
+        << "),(" << m.xMax
+        << "," << m.yMax << ")]";
     return out;
 }
