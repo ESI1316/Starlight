@@ -3,45 +3,62 @@
 #include "../model/point.h"
 #include "../model/polarPoint.h"
 
-SCENARIO("Converting a cartesian point to a polar one ", "PolarPoint")
+TEST_CASE("Construct some polar points", "PolarPoint")
 {
-    GIVEN( "A cartesian point" )
+    PolarPoint p;
+    PolarPoint q{0., 2.2};
+    PolarPoint r{q};
+
+    REQUIRE(p.getAzimut() == 0.);
+    REQUIRE(q.getAzimut() == 2.2);
+    REQUIRE(r.getAzimut() == q.getAzimut());
+
+    SECTION("exotics polar points")
     {
-        Point a(1,1);
+        PolarPoint s{-2, -2};
+        REQUIRE(s.getAzimutAsDegrees() < -114.4000);
+        REQUIRE(s.getAzimutAsDegrees() > -114.7000);
 
-        REQUIRE( a.getX() == 1 );
-        REQUIRE( a.getY() >= 1 );
+        Point ps = s.toCartesian();
+        REQUIRE(ps.getX() == 1);
+        REQUIRE(ps.getY() == 2);
 
-        WHEN(" Converted as a polar point")
-        {
-            PolarPoint pr(a);
-
-            THEN("Attributes are expressed as radius")
-            {
-                REQUIRE( pr.getRadius() >= 1.4141);
-                REQUIRE( pr.getRadius() <= 1.4143);
-                REQUIRE( pr.getAzimut() >= 0.7852);
-                REQUIRE( pr.getAzimut() <= 0.7855);
-            }
-        }
+        PolarPoint t{};
     }
 }
 
-SCENARIO("Converting a polar point to a cartesian one ", "PolarPoint")
+TEST_CASE("Converting a cartesian point to a polar one ", "PolarPoint")
 {
-    GIVEN(" A polar point")
+    Point p(1,1);
+
+    REQUIRE(p.getX() == 1 );
+    REQUIRE(p.getY() == 1 );
+
+    SECTION("Conversion bounds")
     {
-        PolarPoint pp(1.4142, 0.7853);
+        PolarPoint pp(p);
 
-        WHEN(" Converted as a cartesian point")
-        {
-            Point p = pp.toCartesian();
+        REQUIRE(pp.getRadius() >= 1.4141);
+        REQUIRE(pp.getRadius() <= 1.4143);
+        REQUIRE(pp.getAzimut() >= 0.7852);
+        REQUIRE(pp.getAzimut() <= 0.7855);
+    }
+}
 
-            THEN("Attributes are expressed as coordinates")
-            {
-                REQUIRE( p.getX() == 1);
-                REQUIRE( p.getY() == 1);
-            }
-        }
+TEST_CASE("Converting a polar point to a cartesian one ", "PolarPoint")
+{
+    PolarPoint pp(1.4142, 0.7853);
+
+    REQUIRE(pp.getRadius() >= 1.4141);
+    REQUIRE(pp.getRadius() <= 1.4143);
+    REQUIRE(pp.getAzimut() >= 0.7852);
+    REQUIRE(pp.getAzimut() <= 0.7855);
+
+    SECTION("Conversion bounds")
+    {
+        Point p = pp.toCartesian();
+
+        REQUIRE(p.getX() == 1);
+        REQUIRE(p.getY() == 1);
     }
 }

@@ -58,6 +58,14 @@ PolarPoint::~PolarPoint()
 {}
 
 /**
+ * @brief PolarPoint::isCenter
+ */
+bool PolarPoint::isCenter() const
+{
+    return (std::round(this->radius) == 0.);
+}
+
+/**
  * /// TODO : Precision double -> int pour pixels
  * CAST CAST CAST
  * @brief PolarPoint::toCartesian

@@ -62,6 +62,12 @@ public:
     ~PolarPoint();
 
     /**
+     * @brief isCenter
+     * @return
+     */
+    bool isCenter() const;
+
+    /**
      * @brief getRadius Permet d'obtenir la distance séparant le point du centre
      * de rotation.
      * @return Le rayon séparant le point polaire de son centre.
