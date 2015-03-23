@@ -61,7 +61,8 @@ SOURCES       = main.cpp \
 		model/source.cpp \
 		model/wall.cpp \
 		model/polarPoint.cpp \
-		model/levelFactory.cpp moc_mainwindow.cpp
+		model/levelFactory.cpp \
+		test/polarpointtest.cpp moc_mainwindow.cpp
 OBJECTS       = main.o \
 		mainwindow.o \
 		crystal.o \
@@ -76,6 +77,7 @@ OBJECTS       = main.o \
 		wall.o \
 		polarPoint.o \
 		levelFactory.o \
+		polarpointtest.o \
 		moc_mainwindow.o
 DIST          = ../../../Qt/5.4/gcc_64/mkspecs/features/spec_pre.prf \
 		../../../Qt/5.4/gcc_64/mkspecs/common/shell-unix.conf \
@@ -200,7 +202,8 @@ DIST          = ../../../Qt/5.4/gcc_64/mkspecs/features/spec_pre.prf \
 		model/source.h \
 		model/wall.h \
 		model/polarPoint.h \
-		model/levelFactory.h main.cpp \
+		model/levelFactory.h \
+		test/catch.hpp main.cpp \
 		mainwindow.cpp \
 		model/crystal.cpp \
 		model/dest.cpp \
@@ -213,7 +216,8 @@ DIST          = ../../../Qt/5.4/gcc_64/mkspecs/features/spec_pre.prf \
 		model/source.cpp \
 		model/wall.cpp \
 		model/polarPoint.cpp \
-		model/levelFactory.cpp
+		model/levelFactory.cpp \
+		test/polarpointtest.cpp
 QMAKE_TARGET  = Starlight
 DESTDIR       = #avoid trailing-slash linebreak
 TARGET        = Starlight
@@ -489,8 +493,8 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
-	$(COPY_FILE) --parents mainwindow.hpp model/crystal.h model/dest.h model/lens.h model/level.h model/mirror.h model/nuke.h model/point.h model/ray.h model/source.h model/wall.h model/polarPoint.h model/levelFactory.h $(DISTDIR)/
-	$(COPY_FILE) --parents main.cpp mainwindow.cpp model/crystal.cpp model/dest.cpp model/lens.cpp model/level.cpp model/mirror.cpp model/nuke.cpp model/point.cpp model/ray.cpp model/source.cpp model/wall.cpp model/polarPoint.cpp model/levelFactory.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents mainwindow.hpp model/crystal.h model/dest.h model/lens.h model/level.h model/mirror.h model/nuke.h model/point.h model/ray.h model/source.h model/wall.h model/polarPoint.h model/levelFactory.h test/catch.hpp $(DISTDIR)/
+	$(COPY_FILE) --parents main.cpp mainwindow.cpp model/crystal.cpp model/dest.cpp model/lens.cpp model/level.cpp model/mirror.cpp model/nuke.cpp model/point.cpp model/ray.cpp model/source.cpp model/wall.cpp model/polarPoint.cpp model/levelFactory.cpp test/polarpointtest.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents mainwindow.ui $(DISTDIR)/
 
 
@@ -969,6 +973,9 @@ levelFactory.o: model/levelFactory.cpp model/levelFactory.h \
 		model/wall.h \
 		model/nuke.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o levelFactory.o model/levelFactory.cpp
+
+polarpointtest.o: test/polarpointtest.cpp test/catch.hpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o polarpointtest.o test/polarpointtest.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp

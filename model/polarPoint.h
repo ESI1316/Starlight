@@ -9,11 +9,12 @@
  * polaire d'un point (une position dans R²). Celle-ci est basé sur deux argument :
  * <ul>
  * <li>
- * Radius : la distance du point par rapport à l'origine du plan cartésien.
+ * radius : la distance du point par rapport à l'origine du plan cartésien.
  * </li>
  * <li>
- * Beta : le segment de cercle exprimé en radian depuis l'axe horizontal et
- * dans un sens anti-horlogé.
+ * azimut : exprime la mesure, dans le sens trigonométrique, de l’angle entre le point
+ * et la demi-droite d’angle 0°, appelé axe polaire (équivalent à l’axe des
+ * abscisses en coordonnées cartésiennes)
  * </li>
  * </ul>
  */
@@ -26,10 +27,10 @@ private :
      */
     double radius;
     /**
-     * @brief beta le segment de cercle exprimé en radian depuis l'axe
+     * @brief azimut le segment de cercle exprimé en radian depuis l'axe
      * horizontal et dans un sens anti-horlogé.
      */
-    double beta;
+    double azimut;
 
 public:
     /**
@@ -40,7 +41,7 @@ public:
 
     /**
      * @brief PolarPoint Construteur avec paramètres, reçoit un rayon et un
-     * beta passé en argument.
+     * azimut passé en argument.
      */
     PolarPoint(double, double);
 
@@ -71,7 +72,7 @@ public:
      * @brief getBeta Permet d'obtenir l'angle de la coordonnée polaire courante.
      * @return L'amplitude courante du point polaire (en degré ? / radian ?)
      */
-    double getBeta() const;
+    double getAzimut() const;
 
     /**
      * @brief toCartesian Transforme la coordonnée polaire courante en un

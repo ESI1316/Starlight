@@ -17,30 +17,29 @@ PolarPoint::PolarPoint()
  * les coodonnées polaires $ (r,\theta)$ et $ (-r, \pi+\theta)$ représentent
  * alors le même point. Les formules ci-dessus sont encore applicables. "
  * @param radius Le rayon séparant le centre du point voulu. Doit être positif.
- * @param beta La longueur du segment de cercle depuis l'axe horizontal.
- * @throw Si le rayon demandé est négatif.
+ * @param azimut La longueur du segment de cercle depuis l'axe horizontal.
  *
  */
-PolarPoint::PolarPoint(double radius, double beta)
-    : radius{radius}, beta{beta}
+PolarPoint::PolarPoint(double radius, double azimut)
+    : radius{radius}, azimut{azimut}
 {
-    if(radius < 0.)
-        throw new std::string("Le rayon ne peut pas être négatif");
-
-    this->radius = radius;
-    this->beta = beta;
 }
 
 /**
- * @brief PolarPoint::PolarPoint
- * @param polarCoordinate
+ * @brief PolarPoint::PolarPoint Copie d'un point polaire.
+ * @param polarPoint Un autre point polaire.
  */
-PolarPoint::PolarPoint(PolarPoint & polarCoordinate)
-    : PolarPoint{polarCoordinate.radius, polarCoordinate.beta}
+PolarPoint::PolarPoint(PolarPoint & polarPoint)
+    : PolarPoint{polarPoint.radius, polarPoint.azimut}
 {
 }
 /**
- * @brief PolarPoint::PolarPoint
+ * @brief PolarPoint::PolarPoint Construit un point polaire à l'aide d'un
+ * point cartésien.
+ * Azimut sera toujours compris entre 0 et 360 (0 et 2\pi) pour permettre de
+ * représenter un point d'une seule manière possible.
+ * @see <a href="http://fr.wikipedia.org/wiki/Coordonn%C3%A9es_polaires">
+ * wikipedia - Coordonnées polaires </a>
  */
 PolarPoint::PolarPoint(Point & point)
     : PolarPoint()
@@ -49,9 +48,9 @@ PolarPoint::PolarPoint(Point & point)
     int y = point.getY();
 
     if (std::acos(y) * ((180 / M_PI) + 180) >= 180)
-        this->beta = (int)(std::acos(x) * (180/M_PI) + 180) % 360;
+        this->azimut = (std::acos(x) * (180/M_PI) + 180) / 360.;
     else
-        this->beta = 360 - (std::acos(x) * (180/M_PI) + 180);
+        this->azimut = 360. - (std::acos(x) * (180./M_PI) + 180.);
 
     this->radius = std::sqrt(std::exp2(x) + std::exp2(y));
 }
@@ -71,8 +70,8 @@ PolarPoint::~PolarPoint()
 Point PolarPoint::toCartesian()
 {
     return Point(
-                this->radius * std::cos(this->beta),
-                this->radius * std::sin(this->beta)
+                this->radius * std::cos(this->azimut),
+                this->radius * std::sin(this->azimut)
                 );
 }
 
@@ -88,9 +87,9 @@ int PolarPoint::getRadius() const
  * @brief PolarPoint::getBeta
  * @return
  */
-double PolarPoint::getBeta() const
+double PolarPoint::getAzimut() const
 {
-    return this->beta;
+    return this->azimut;
 }
 
 /**
@@ -99,7 +98,7 @@ double PolarPoint::getBeta() const
  */
 PolarPoint & PolarPoint::rotate(double alpha)
 {
-    this->beta += alpha;
+    this->azimut += alpha;
     return *this;
 }
 
@@ -109,11 +108,11 @@ PolarPoint & PolarPoint::rotate(double alpha)
  * @param polarCoordinate
  * @return
  */
-std::ostream & operator<<(std::ostream & out, const PolarPoint & polarCoordinate)
+std::ostream & operator<<(std::ostream & out, const PolarPoint & polarPoint)
 {
-    out << "(radius, beta) = " <<
-           "(" << polarCoordinate.getRadius() <<
-           ", " << polarCoordinate.getBeta() << ")";
+    out << "(radius, azimut) = " <<
+           "(" << polarPoint.getRadius() <<
+           ", " << polarPoint.getAzimut() << ")";
 
     return out;
 }

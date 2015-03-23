@@ -1,4 +1,4 @@
-#include "mainwindow.hpp"
+/*#include "mainwindow.hpp"
 #include <QApplication>
 
 int main(int argc, char *argv[])
@@ -9,3 +9,4 @@ int main(int argc, char *argv[])
 
     return a.exec();
 }
+*/

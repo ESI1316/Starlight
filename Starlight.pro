@@ -27,7 +27,8 @@ SOURCES += main.cpp\
     model/source.cpp \
     model/wall.cpp \
     model/polarPoint.cpp \
-    model/levelFactory.cpp
+    model/levelFactory.cpp \
+    test/polarpointtest.cpp
 
 HEADERS  += mainwindow.hpp \
     model/crystal.h \
@@ -41,6 +42,7 @@ HEADERS  += mainwindow.hpp \
     model/source.h \
     model/wall.h \
     model/polarPoint.h \
-    model/levelFactory.h
+    model/levelFactory.h \
+    test/catch.hpp
 
 FORMS    += mainwindow.ui
