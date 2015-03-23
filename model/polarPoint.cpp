@@ -80,12 +80,21 @@ double PolarPoint::getRadius() const
     return this->radius;
 }
 /**
- * @brief PolarPoint::getBeta
+ * @brief PolarPoint::getAzimut
  * @return
  */
 double PolarPoint::getAzimut() const
 {
     return this->azimut;
+}
+
+/**
+ * @brief PolarPoint::getAzimutAsDegrees
+ * @return
+ */
+double PolarPoint::getAzimutAsDegrees() const
+{
+    return (this->getAzimut() * 180.) / M_PI;
 }
 
 /**

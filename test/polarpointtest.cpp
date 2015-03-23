@@ -3,37 +3,45 @@
 #include "../model/point.h"
 #include "../model/polarPoint.h"
 
-TEST_CASE( "Cartesian to polar", "Approximation des conversions" )
+SCENARIO("Converting a cartesian point to a polar one ", "PolarPoint")
 {
-
-    Point a(1,1);
-
-    SECTION("Rayon")
+    GIVEN( "A cartesian point" )
     {
-        PolarPoint pr(a);
-        REQUIRE( pr.getRadius() >= 1.4141);
-        REQUIRE( pr.getRadius() <= 1.4143);
+        Point a(1,1);
 
-    }
-    SECTION("Angle")
-    {
-        PolarPoint pa(a);
-        REQUIRE( pa.getAzimut() >= 0.7852);
-        REQUIRE( pa.getAzimut() <= 0.7855);
+        REQUIRE( a.getX() == 1 );
+        REQUIRE( a.getY() >= 1 );
+
+        WHEN(" Converted as a polar point")
+        {
+            PolarPoint pr(a);
+
+            THEN("Attributes are expressed as radius")
+            {
+                REQUIRE( pr.getRadius() >= 1.4141);
+                REQUIRE( pr.getRadius() <= 1.4143);
+                REQUIRE( pr.getAzimut() >= 0.7852);
+                REQUIRE( pr.getAzimut() <= 0.7855);
+            }
+        }
     }
 }
 
-
-TEST_CASE("Polar to cartesian", "Approximations des conversions")
+SCENARIO("Converting a polar point to a cartesian one ", "PolarPoint")
 {
-    PolarPoint p(1.4142, 0.7853);
+    GIVEN(" A polar point")
+    {
+        PolarPoint pp(1.4142, 0.7853);
 
-    SECTION("Abcisse")
-    {
-        REQUIRE( p.toCartesian().getX() == 1);
-    }
-    SECTION("Ordonnée")
-    {
-        REQUIRE( p.toCartesian().getY() == 1);
+        WHEN(" Converted as a cartesian point")
+        {
+            Point p = pp.toCartesian();
+
+            THEN("Attributes are expressed as coordinates")
+            {
+                REQUIRE( p.getX() == 1);
+                REQUIRE( p.getY() == 1);
+            }
+        }
     }
 }

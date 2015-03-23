@@ -70,10 +70,16 @@ public:
 
     /**
      * @brief getBeta Permet d'obtenir l'angle de la coordonnée polaire courante.
-     * @return L'amplitude courante du point polaire (en degré ? / radian ?)
+     * @return L'amplitude courante du point polaire en radian.
      */
     double getAzimut() const;
 
+    /**
+     * @brief getAzimutAsDegrees Permet d'obtenir l'angle de la coordonnée
+     * polaire courante exprimée en degrés.
+     * @return
+     */
+    double getAzimutAsDegrees() const;
     /**
      * @brief toCartesian Transforme la coordonnée polaire courante en un
      * point cartésien caractérisé par une position sur un axe x et y.
