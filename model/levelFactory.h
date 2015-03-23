@@ -20,7 +20,7 @@ namespace levelFactory
      *
      * @return une référence vers une nouvelle carte initialisée.
      */
-    Level getLevelFromFile(std::string);
+    Level * getLevelFromFile(std::string);
 }
 
 #endif // LEVELFACTORY

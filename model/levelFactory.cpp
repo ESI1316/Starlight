@@ -1,10 +1,10 @@
 #include "levelFactory.h"
 
-Level levelFactory::getLevelFromFile(std::string mapFilePath)
+Level * levelFactory::getLevelFromFile(std::string mapFilePath)
 {
     std::ifstream mapFile(mapFilePath);
     int i; double d; char c;
-    Level & newLevel = *new Level((mapFile >> i, i), (mapFile >> i, i));
+    Level * newLevel = new Level((mapFile >> i, i), (mapFile >> i, i));
     std::string line;
 
     while (std::getline(mapFile, line))
@@ -13,26 +13,20 @@ Level levelFactory::getLevelFromFile(std::string mapFilePath)
 
         switch((iss >> c, c))
         {
-            case 'S': newLevel.setSource(Source(Point((iss >> i, i), (iss >> i, i)),(iss >> i, i), (iss >> d, d), (iss >> i, i)));
+            case 'S': newLevel->setSource(Source(Point((iss >> i, i), (iss >> i, i)),(iss >> i, i), (iss >> d, d), (iss >> i, i)));
                 break;
-            case 'D': newLevel.setDestination(Dest(Point((iss >> i, i), (iss >> i, i)), (iss >> i, i)) );
+            case 'D': newLevel->setDestination(Dest(Point((iss >> i, i), (iss >> i, i)), (iss >> i, i)) );
                 break;
-            case 'C' : newLevel.addCrystal(Crystal(Point((iss >> i, i), (iss >> i, i)), (iss >> i, i), (iss >> i, i)));
+            case 'C' : newLevel->addCrystal(Crystal(Point((iss >> i, i), (iss >> i, i)), (iss >> i, i), (iss >> i, i)));
                 break;
-            case 'L' : newLevel.addLens
-                       (
-                            Lens(Point((iss >> i, i), (iss >> i, i)), (iss >> i, i), (iss >> i, i), (iss >> i, i),(iss >> i, i))
-                       );
+            case 'L' : newLevel->addLens(Lens(Point((iss >> i, i), (iss >> i, i)), (iss >> i, i), (iss >> i, i), (iss >> i, i),(iss >> i, i)));
                 break;
-            case 'W' : newLevel.addWall(Wall(Point((iss >> i, i), (iss >> i, i)), Point((iss >> i, i), (iss >> i, i))));
+            case 'W' : newLevel->addWall(Wall(Point((iss >> i, i), (iss >> i, i)), Point((iss >> i, i), (iss >> i, i))));
                 break;
-            case 'N' : newLevel.addNuke(Nuke(Point((iss >> i, i), (iss >> i, i)), (iss >> i, i)));
+            case 'N' : newLevel->addNuke(Nuke(Point((iss >> i, i), (iss >> i, i)), (iss >> i, i)));
                 break;
-            case 'M' : newLevel.addMirror
-                       (
-                            Mirror(Point((iss >> i, i), (iss >> i, i)), (iss >> i, i), (iss >> i, i), (iss >> d, d), Point((iss >> i, i),
-                                (iss >> i, i)), Point((iss >> i, i), (iss >> i, i)),  (iss >> d, d),  (iss >> d, d))
-                       );
+            case 'M' : newLevel->addMirror(Mirror(Point((iss >> i, i), (iss >> i, i)), (iss >> i, i), (iss >> i, i), (iss >> d, d),
+                                                 Point((iss >> i, i), (iss >> i, i)), Point((iss >> i, i), (iss >> i, i)), (iss >> d, d),(iss >> d, d)));
                 break;
         }
     }
