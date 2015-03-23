@@ -66,7 +66,7 @@ public:
      * de rotation.
      * @return Le rayon séparant le point polaire de son centre.
      */
-    int getRadius() const;
+    double getRadius() const;
 
     /**
      * @brief getBeta Permet d'obtenir l'angle de la coordonnée polaire courante.

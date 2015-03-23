@@ -47,12 +47,8 @@ PolarPoint::PolarPoint(Point & point)
     int x = point.getX();
     int y = point.getY();
 
-    if (std::acos(y) * ((180 / M_PI) + 180) >= 180)
-        this->azimut = (std::acos(x) * (180/M_PI) + 180) / 360.;
-    else
-        this->azimut = 360. - (std::acos(x) * (180./M_PI) + 180.);
-
-    this->radius = std::sqrt(std::exp2(x) + std::exp2(y));
+    this->radius = std::hypot(x, y);
+    this->azimut = std::atan2(x, y);
 }
 
 /**
@@ -70,8 +66,8 @@ PolarPoint::~PolarPoint()
 Point PolarPoint::toCartesian()
 {
     return Point(
-                this->radius * std::cos(this->azimut),
-                this->radius * std::sin(this->azimut)
+                std::round(this->radius * std::cos(this->azimut)),
+                std::round(this->radius * std::sin(this->azimut))
                 );
 }
 
@@ -79,7 +75,7 @@ Point PolarPoint::toCartesian()
  * @brief PolarPoint::getRadius
  * @return
  */
-int PolarPoint::getRadius() const
+double PolarPoint::getRadius() const
 {
     return this->radius;
 }
