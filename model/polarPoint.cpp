@@ -2,21 +2,27 @@
 #include "polarPoint.h"
 
 /**
- * @brief PolarPoint::PolarPoint
+ * @brief PolarPoint::PolarPoint Création d'un point confondu avec le centre du
+ * cercle de rayon dont il est issue.
  */
 PolarPoint::PolarPoint()
-    : radius{0.}, beta{0.}
+    : PolarPoint{0., 0.}
 {
 }
 
 /**
- * @brief PolarPoint::PolarPoint
- * @param radius
- * @param beta
+ * @brief PolarPoint::PolarPoint Créé un point polaire selon les arguments passés
+ * en paramètre.
+ * "Il est commode d'autoriser des valeurs négatives de $ r$, étant entendu que
+ * les coodonnées polaires $ (r,\theta)$ et $ (-r, \pi+\theta)$ représentent
+ * alors le même point. Les formules ci-dessus sont encore applicables. "
+ * @param radius Le rayon séparant le centre du point voulu. Doit être positif.
+ * @param beta La longueur du segment de cercle depuis l'axe horizontal.
+ * @throw Si le rayon demandé est négatif.
+ *
  */
 PolarPoint::PolarPoint(double radius, double beta)
-//: radius{radius}, beta{beta}
-    : PolarPoint()
+    : radius{radius}, beta{beta}
 {
     if(radius < 0.)
         throw new std::string("Le rayon ne peut pas être négatif");
@@ -30,7 +36,7 @@ PolarPoint::PolarPoint(double radius, double beta)
  * @param polarCoordinate
  */
 PolarPoint::PolarPoint(PolarPoint & polarCoordinate)
-    : PolarPoint(polarCoordinate.radius, polarCoordinate.beta)
+    : PolarPoint{polarCoordinate.radius, polarCoordinate.beta}
 {
 }
 /**
