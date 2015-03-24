@@ -58,6 +58,7 @@ public:
     void computeRay(Ray &);
     Reactable & getComponentAt(const Point);
     void addRay(Ray &);
+
     /**
      * Instancie une carte de largeur et hauteur donnée.
      * </p>

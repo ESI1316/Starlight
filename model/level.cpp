@@ -1,7 +1,7 @@
 #ifdef _WINT32
-    #include <windows.h>
+#include <windows.h>
 #else
-    #include <X11/Xlib.h>
+#include <X11/Xlib.h>
 #endif
 
 #include <string>
@@ -100,5 +100,10 @@ void Level::addNuke(const Nuke & newNuke)
 
 void Level::computeRays()
 {
+    this->computeRay(
+                Ray(this->s.getPosition(),
+                    this->s.getPosition(),
+                    this->s.getWavelength())
+                );
     throw string {"todo !"};
 }
