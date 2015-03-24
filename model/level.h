@@ -13,17 +13,6 @@
 #include "point.h"
 #include "nuke.h"
 #include "reactable.hpp"
-/*
-class Crystal;
-class Dest;
-class Lens;
-class Mirror;
-class Ray;
-class Source;
-class Wall;
-class Point;
-class Nuke;
-*/
 
 enum LevelState
 {
@@ -42,8 +31,8 @@ private :
     const int width;
     const int height;
 
-    Source s {Point(0, 0), -1, 5., 600};
-    Dest d {Point(0, 0), 5};
+    Source source {Point(0, 0), -1, 5., 600};
+    Dest dest {Point(0, 0), 5};
 
     std::vector<Wall> walls;
     std::vector<Mirror> mirrors;
@@ -110,7 +99,7 @@ public:
      * Permet d'ajouter un mur sur la carte.
      * @param newWall nouveau mur à ajouter.
      */
-    void addWall(const Wall & newWall);
+    void addWall(const Wall &);
 
     /**
      * Retourne l'ensemble des miroirs de la carte
@@ -146,7 +135,7 @@ public:
      * Permet d'ajouter une lentille sur la carte.
      * @param newLens nouvelle lentille à ajouter.
      */
-    void addLens(const Lens & newLens);
+    void addLens(const Lens &);
 
     /**
      * Retourne l'ensemble des rayons de la carte

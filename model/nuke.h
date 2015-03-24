@@ -27,7 +27,7 @@ class Nuke
      * @param p la position de la bombe
      * @param r le rayon de la bombe
      */
-    Nuke(const Point & p, int r);
+    Nuke(const Point &, int);
 
     /**
      * Retourne la position de la bombe.
@@ -51,7 +51,7 @@ class Nuke
      * Illumine la bombe ou non.
      * @param q vrai si la bombe est illuminée, faux sinon.
      */
-    void setLightedUp(bool q);
+    void setLightedUp(bool);
 
     /**
      * Surcharge l'opérateur de flux de sortie pour afficher un

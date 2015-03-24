@@ -18,7 +18,7 @@ class Level;
  */
 class Lens
 {
-    Point pos;
+    Point position;
 
     int width;
     int height;
@@ -43,7 +43,7 @@ class Lens
      * @param wlmax la longueur d'onde maximale des rayons
      *              autorisés à franchir la lentille
      */
-    Lens(const Point & p, int w, int h, int wlmin, int wlmax);
+    Lens(const Point &, int, int, int, int);
 
     /**
      * Retourne la position du coin supérieur gauche du

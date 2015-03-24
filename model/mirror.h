@@ -73,8 +73,7 @@ class Mirror
      * @param amin l'angle d'inclinaison minimum du miroir.
      * @param amax l'angle d'inclinaison maximum du miroir.
      */
-    Mirror(const Point &, int, int, double, Point,
-           Point, double, double);
+    Mirror(const Point &, int, int, double, Point, Point, double, double);
 
     /**
      * Retourne la position (et le pivot) du miroir.
@@ -192,7 +191,7 @@ class Mirror
      * miroir sous-jacent en console.
      * @return le flux dans lequel le miroir a été imprimé.
      */
-    friend std::ostream & operator<<(std::ostream & out, const Mirror & m);
+    friend std::ostream & operator<<(std::ostream &, const Mirror &);
 };
 
 #endif // MIRROR_H

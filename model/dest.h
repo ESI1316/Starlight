@@ -14,7 +14,7 @@ class Level;
  */
 class Dest
 {
-    Point pos;
+    Point position;
     int edge;
     bool light;
 
@@ -57,7 +57,7 @@ class Dest
      * @param vrai si la destination doit être illuminée,
      * faux sinon.
      */
-    void setLightedUp(const bool q);
+    void setLightedUp(const bool);
 
     /**
      * Surcharge l'opérateur de flux de sortie pour afficher
