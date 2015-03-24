@@ -5,11 +5,12 @@ const int Ray::WL_MIN;
 const int Ray::WL_MAX;
 const int Ray::WL_DFT;
 
-Ray::Ray(const Point & p1, const Point & p2) : Ray {p1, p2, Ray::WL_DFT}
-{ }
+Ray::Ray(const Point & p1, const Point & p2)
+    : Ray {p1, p2, Ray::WL_DFT}
+{}
 
-Ray::Ray(const Point & p1, const Point & p2, int wl) : start {p1},
-    end {p2}, wavelength {wl}
+Ray::Ray(const Point & p1, const Point & p2, int wl)
+    : start {p1}, end {p2}, wavelength {wl}
 {
     // TODO : valider wavelength, (start et end ?)
 }

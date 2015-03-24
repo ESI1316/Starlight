@@ -1,6 +1,8 @@
 #ifndef LEVEL_H
 #define LEVEL_H
 
+#include <vector>
+
 #include "crystal.h"
 #include "dest.h"
 #include "lens.h"
@@ -11,11 +13,18 @@
 #include "point.h"
 #include "nuke.h"
 
-#include <vector>
+class Crystal;
+class Dest;
+class Lens;
+class Mirror;
+class Ray;
+class Source;
+class Wall;
+class Point;
+class Nuke;
 
 /**
  * Modélise une carte telle qu'utilisée dans le jeu.
- * </p>
  * Une carte est un ensemble de composant tels que des murs,
  * des miroirs, etc.
  */
@@ -24,8 +33,8 @@ class Level
     const int width;
     const int height;
 
-    Source s {{0, 0}, -1, 5, 600};
-    Dest d {{0, 0}, 5};
+    Source s {Point{0, 0}, -1, 5., 600};
+    Dest d {Point{0, 0}, 5};
 
     std::vector<Wall> walls;
     std::vector<Mirror> mirrors;

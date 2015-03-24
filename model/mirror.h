@@ -1,9 +1,11 @@
 #ifndef MIRROR_H
 #define MIRROR_H
 
-#include "point.h"
-
 #include <ostream>
+#include "point.h"
+#include "level.h"
+
+class Level;
 
 /**
  * Cette classe modélise les miroirs utilisés dans le jeu.
@@ -28,6 +30,8 @@ class Mirror
     double alpha;
     double alphaMin {0};
     double alphaMax {0};
+
+    Level * level;
 
   public:
     /**

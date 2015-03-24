@@ -62,7 +62,11 @@ SOURCES       = main.cpp \
 		model/wall.cpp \
 		model/polarPoint.cpp \
 		model/levelFactory.cpp \
-		test/polarpointtest.cpp moc_mainwindow.cpp
+		test/polarpointtest.cpp \
+		model/starlightexception.cpp \
+		test/levelfactorytest.cpp \
+		model/positionable.cpp \
+		model/reactable.cpp moc_mainwindow.cpp
 OBJECTS       = main.o \
 		mainwindow.o \
 		crystal.o \
@@ -78,8 +82,13 @@ OBJECTS       = main.o \
 		polarPoint.o \
 		levelFactory.o \
 		polarpointtest.o \
+		starlightexception.o \
+		levelfactorytest.o \
+		positionable.o \
+		reactable.o \
 		moc_mainwindow.o
-DIST          = ../../../Qt/5.4/gcc_64/mkspecs/features/spec_pre.prf \
+DIST          = ressources/level.lvl \
+		../../../Qt/5.4/gcc_64/mkspecs/features/spec_pre.prf \
 		../../../Qt/5.4/gcc_64/mkspecs/common/shell-unix.conf \
 		../../../Qt/5.4/gcc_64/mkspecs/common/unix.conf \
 		../../../Qt/5.4/gcc_64/mkspecs/common/linux.conf \
@@ -203,7 +212,10 @@ DIST          = ../../../Qt/5.4/gcc_64/mkspecs/features/spec_pre.prf \
 		model/wall.h \
 		model/polarPoint.h \
 		model/levelFactory.h \
-		test/catch.hpp main.cpp \
+		test/catch.hpp \
+		model/starlightexception.hpp \
+		model/positionable.hpp \
+		model/reactable.hpp main.cpp \
 		mainwindow.cpp \
 		model/crystal.cpp \
 		model/dest.cpp \
@@ -217,7 +229,11 @@ DIST          = ../../../Qt/5.4/gcc_64/mkspecs/features/spec_pre.prf \
 		model/wall.cpp \
 		model/polarPoint.cpp \
 		model/levelFactory.cpp \
-		test/polarpointtest.cpp
+		test/polarpointtest.cpp \
+		model/starlightexception.cpp \
+		test/levelfactorytest.cpp \
+		model/positionable.cpp \
+		model/reactable.cpp
 QMAKE_TARGET  = Starlight
 DESTDIR       = #avoid trailing-slash linebreak
 TARGET        = Starlight
@@ -493,8 +509,8 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
-	$(COPY_FILE) --parents mainwindow.hpp model/crystal.h model/dest.h model/lens.h model/level.h model/mirror.h model/nuke.h model/point.h model/ray.h model/source.h model/wall.h model/polarPoint.h model/levelFactory.h test/catch.hpp $(DISTDIR)/
-	$(COPY_FILE) --parents main.cpp mainwindow.cpp model/crystal.cpp model/dest.cpp model/lens.cpp model/level.cpp model/mirror.cpp model/nuke.cpp model/point.cpp model/ray.cpp model/source.cpp model/wall.cpp model/polarPoint.cpp model/levelFactory.cpp test/polarpointtest.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents mainwindow.hpp model/crystal.h model/dest.h model/lens.h model/level.h model/mirror.h model/nuke.h model/point.h model/ray.h model/source.h model/wall.h model/polarPoint.h model/levelFactory.h test/catch.hpp model/starlightexception.hpp model/positionable.hpp model/reactable.hpp $(DISTDIR)/
+	$(COPY_FILE) --parents main.cpp mainwindow.cpp model/crystal.cpp model/dest.cpp model/lens.cpp model/level.cpp model/mirror.cpp model/nuke.cpp model/point.cpp model/ray.cpp model/source.cpp model/wall.cpp model/polarPoint.cpp model/levelFactory.cpp test/polarpointtest.cpp model/starlightexception.cpp test/levelfactorytest.cpp model/positionable.cpp model/reactable.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents mainwindow.ui $(DISTDIR)/
 
 
@@ -647,119 +663,7 @@ compiler_clean: compiler_moc_header_clean compiler_uic_clean
 
 ####### Compile
 
-main.o: main.cpp mainwindow.hpp \
-		../../../Qt/5.4/gcc_64/include/QtWidgets/QMainWindow \
-		../../../Qt/5.4/gcc_64/include/QtWidgets/qmainwindow.h \
-		../../../Qt/5.4/gcc_64/include/QtWidgets/qwidget.h \
-		../../../Qt/5.4/gcc_64/include/QtGui/qwindowdefs.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qglobal.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qconfig.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qfeatures.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qsystemdetection.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qprocessordetection.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qcompilerdetection.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qtypeinfo.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qtypetraits.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qsysinfo.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qlogging.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qflags.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qatomic.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qbasicatomic.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qatomic_bootstrap.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qgenericatomic.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qatomic_msvc.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qatomic_armv7.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qatomic_armv6.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qatomic_armv5.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qatomic_ia64.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qatomic_mips.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qatomic_x86.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qatomic_cxx11.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qatomic_gcc.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qatomic_unix.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qglobalstatic.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qmutex.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qnumeric.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qobjectdefs.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qnamespace.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qobjectdefs_impl.h \
-		../../../Qt/5.4/gcc_64/include/QtGui/qwindowdefs_win.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qobject.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qstring.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qchar.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qbytearray.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qrefcount.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qarraydata.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qstringbuilder.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qlist.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qalgorithms.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qiterator.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qbytearraylist.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qcoreevent.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qscopedpointer.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qmetatype.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qvarlengtharray.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qcontainerfwd.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qisenum.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qobject_impl.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qmargins.h \
-		../../../Qt/5.4/gcc_64/include/QtGui/qpaintdevice.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qrect.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qsize.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qpoint.h \
-		../../../Qt/5.4/gcc_64/include/QtGui/qpalette.h \
-		../../../Qt/5.4/gcc_64/include/QtGui/qcolor.h \
-		../../../Qt/5.4/gcc_64/include/QtGui/qrgb.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qstringlist.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qdatastream.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qiodevice.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qpair.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qregexp.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qstringmatcher.h \
-		../../../Qt/5.4/gcc_64/include/QtGui/qbrush.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qvector.h \
-		../../../Qt/5.4/gcc_64/include/QtGui/qmatrix.h \
-		../../../Qt/5.4/gcc_64/include/QtGui/qpolygon.h \
-		../../../Qt/5.4/gcc_64/include/QtGui/qregion.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qline.h \
-		../../../Qt/5.4/gcc_64/include/QtGui/qtransform.h \
-		../../../Qt/5.4/gcc_64/include/QtGui/qpainterpath.h \
-		../../../Qt/5.4/gcc_64/include/QtGui/qimage.h \
-		../../../Qt/5.4/gcc_64/include/QtGui/qpixelformat.h \
-		../../../Qt/5.4/gcc_64/include/QtGui/qpixmap.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qsharedpointer.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qshareddata.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qhash.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qsharedpointer_impl.h \
-		../../../Qt/5.4/gcc_64/include/QtGui/qfont.h \
-		../../../Qt/5.4/gcc_64/include/QtGui/qfontmetrics.h \
-		../../../Qt/5.4/gcc_64/include/QtGui/qfontinfo.h \
-		../../../Qt/5.4/gcc_64/include/QtWidgets/qsizepolicy.h \
-		../../../Qt/5.4/gcc_64/include/QtGui/qcursor.h \
-		../../../Qt/5.4/gcc_64/include/QtGui/qkeysequence.h \
-		../../../Qt/5.4/gcc_64/include/QtGui/qevent.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qvariant.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qmap.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qdebug.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qtextstream.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qlocale.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qset.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qcontiguouscache.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qurl.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qurlquery.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qfile.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qfiledevice.h \
-		../../../Qt/5.4/gcc_64/include/QtGui/qvector2d.h \
-		../../../Qt/5.4/gcc_64/include/QtGui/qtouchdevice.h \
-		../../../Qt/5.4/gcc_64/include/QtWidgets/qtabwidget.h \
-		../../../Qt/5.4/gcc_64/include/QtGui/qicon.h \
-		../../../Qt/5.4/gcc_64/include/QtWidgets/QApplication \
-		../../../Qt/5.4/gcc_64/include/QtWidgets/qapplication.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qcoreapplication.h \
-		../../../Qt/5.4/gcc_64/include/QtCore/qeventloop.h \
-		../../../Qt/5.4/gcc_64/include/QtWidgets/qdesktopwidget.h \
-		../../../Qt/5.4/gcc_64/include/QtGui/qguiapplication.h \
-		../../../Qt/5.4/gcc_64/include/QtGui/qinputmethod.h
+main.o: main.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o main.cpp
 
 mainwindow.o: mainwindow.cpp mainwindow.hpp \
@@ -910,15 +814,39 @@ mainwindow.o: mainwindow.cpp mainwindow.hpp \
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o mainwindow.cpp
 
 crystal.o: model/crystal.cpp model/crystal.h \
-		model/point.h
+		model/point.h \
+		model/level.h \
+		model/dest.h \
+		model/lens.h \
+		model/mirror.h \
+		model/ray.h \
+		model/source.h \
+		model/wall.h \
+		model/nuke.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o crystal.o model/crystal.cpp
 
 dest.o: model/dest.cpp model/dest.h \
-		model/point.h
+		model/point.h \
+		model/level.h \
+		model/crystal.h \
+		model/lens.h \
+		model/mirror.h \
+		model/ray.h \
+		model/source.h \
+		model/wall.h \
+		model/nuke.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o dest.o model/dest.cpp
 
 lens.o: model/lens.cpp model/lens.h \
-		model/point.h
+		model/point.h \
+		model/level.h \
+		model/crystal.h \
+		model/dest.h \
+		model/mirror.h \
+		model/ray.h \
+		model/source.h \
+		model/wall.h \
+		model/nuke.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o lens.o model/lens.cpp
 
 level.o: model/level.cpp model/level.h \
@@ -930,31 +858,71 @@ level.o: model/level.cpp model/level.h \
 		model/ray.h \
 		model/source.h \
 		model/wall.h \
-		model/nuke.h
+		model/nuke.h \
+		model/starlightexception.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o level.o model/level.cpp
 
 mirror.o: model/mirror.cpp model/mirror.h \
-		model/point.h
+		model/point.h \
+		model/level.h \
+		model/crystal.h \
+		model/dest.h \
+		model/lens.h \
+		model/ray.h \
+		model/source.h \
+		model/wall.h \
+		model/nuke.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mirror.o model/mirror.cpp
 
 nuke.o: model/nuke.cpp model/nuke.h \
-		model/point.h
+		model/point.h \
+		model/level.h \
+		model/crystal.h \
+		model/dest.h \
+		model/lens.h \
+		model/mirror.h \
+		model/ray.h \
+		model/source.h \
+		model/wall.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o nuke.o model/nuke.cpp
 
 point.o: model/point.cpp model/point.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o point.o model/point.cpp
 
 ray.o: model/ray.cpp model/ray.h \
-		model/point.h
+		model/point.h \
+		model/level.h \
+		model/crystal.h \
+		model/dest.h \
+		model/lens.h \
+		model/mirror.h \
+		model/source.h \
+		model/wall.h \
+		model/nuke.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ray.o model/ray.cpp
 
 source.o: model/source.cpp model/source.h \
 		model/point.h \
-		model/ray.h
+		model/level.h \
+		model/crystal.h \
+		model/dest.h \
+		model/lens.h \
+		model/mirror.h \
+		model/ray.h \
+		model/wall.h \
+		model/nuke.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o source.o model/source.cpp
 
 wall.o: model/wall.cpp model/wall.h \
-		model/point.h
+		model/point.h \
+		model/level.h \
+		model/crystal.h \
+		model/dest.h \
+		model/lens.h \
+		model/mirror.h \
+		model/ray.h \
+		model/source.h \
+		model/nuke.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o wall.o model/wall.cpp
 
 polarPoint.o: model/polarPoint.cpp model/polarPoint.h \
@@ -974,8 +942,22 @@ levelFactory.o: model/levelFactory.cpp model/levelFactory.h \
 		model/nuke.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o levelFactory.o model/levelFactory.cpp
 
-polarpointtest.o: test/polarpointtest.cpp test/catch.hpp
+polarpointtest.o: test/polarpointtest.cpp test/catch.hpp \
+		model/point.h \
+		model/polarPoint.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o polarpointtest.o test/polarpointtest.cpp
+
+starlightexception.o: model/starlightexception.cpp model/starlightexception.hpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o starlightexception.o model/starlightexception.cpp
+
+levelfactorytest.o: test/levelfactorytest.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o levelfactorytest.o test/levelfactorytest.cpp
+
+positionable.o: model/positionable.cpp model/positionable.hpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o positionable.o model/positionable.cpp
+
+reactable.o: model/reactable.cpp model/reactable.hpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o reactable.o model/reactable.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp

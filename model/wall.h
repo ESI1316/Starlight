@@ -1,8 +1,11 @@
 #ifndef WALL_H
 #define WALL_H
 
-#include "point.h"
 #include <iostream>
+#include "point.h"
+#include "level.h"
+
+class Level;
 
 /**
  * Cette classe modélise les murs utilisés dans le jeu.
@@ -14,6 +17,8 @@ class Wall
 {
     Point start;
     Point end;
+
+    Level * level;
 
   public:
     /**

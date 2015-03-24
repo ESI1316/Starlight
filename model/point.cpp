@@ -30,9 +30,14 @@ void Point::setLocation(int x, int y)
     this->y = y;
 }
 
-int Point::distanceFrom(Point & p)
+int Point::distanceFrom(Point & point)
 {
-    // PDF page 9, dernières lignes. Simon.
+    return std::hypot((point.x - this->x),(point.y - this->y));
+}
+
+bool Point::operator==(const Point & point) const
+{
+    return ((this->x == point.x) && (this->y == point.y));
 }
 
 std::ostream & operator<<(std::ostream & out, const Point & p)

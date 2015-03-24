@@ -12,7 +12,7 @@ class Point
     int x {0};
     int y {0};
 
-  public:
+public:
     /**
      * Instancie le point (0,0)
      */
@@ -56,8 +56,18 @@ class Point
      */
     void setLocation(int x, int y);
 
+    /**
+     * @brief distanceFrom
+     * @param p
+     * @return
+     */
     int distanceFrom(Point & p);
 
+    /**
+     * @brief operator ==
+     * @return
+     */
+    bool operator==(const Point &) const;
 
     /**
      * Surcharge l'opérateur de flux de sortie pour afficher un

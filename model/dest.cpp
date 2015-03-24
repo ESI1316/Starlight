@@ -1,6 +1,7 @@
 #include "dest.h"
 
-Dest::Dest(const Point & p, int e) : pos {p}, edge {e}, light{false}
+Dest::Dest(const Point & p, int e)
+    : pos {p}, edge {e}, light{false}
 {
     // TODO : valider edge
 }

@@ -1,8 +1,9 @@
 #ifndef POLARCOORDINATE_HPP
 #define POLARCOORDINATE_HPP
-#include<model/point.h>
+
 #include<ostream>
 #include<string>
+#include "point.h"
 
 /**
  * @brief The PolarPoint class est une classe modélisant la représentation

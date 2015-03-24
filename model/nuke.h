@@ -1,8 +1,11 @@
 #ifndef NUKE_H
 #define NUKE_H
 
-#include "point.h"
 #include <ostream>
+#include "point.h"
+#include "level.h"
+
+class Level;
 
 /**
  * Cette classe modélise les bombes utilisées dans le jeu.
@@ -15,6 +18,8 @@ class Nuke
     Point pos;
     int rad;
     bool light {false};
+
+    Level * level;
 
   public:
     /**

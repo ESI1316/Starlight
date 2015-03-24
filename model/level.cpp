@@ -1,12 +1,18 @@
-#include "level.h"
+#ifdef _WINT32
+    #include <windows.h>
+#else
+    #include <X11/Xlib.h>
+#endif
 
 #include <string>
+#include "level.h"
+#include "starlightexception.hpp"
 
 using namespace std;
 
 Level::Level(int w, int h) : width {w}, height {h},
-walls { {{0, 0}, {0, h}}, {{0, h}, {w, h}},
-    {{w, h}, {w, 0}}, {{w, 0}, {0, 0}} }
+    walls { {{0, 0}, {0, h}}, {{0, h}, {w, h}},
+{{w, h}, {w, 0}}, {{w, 0}, {0, 0}} }
 
 {
     // TODO : valider width et height

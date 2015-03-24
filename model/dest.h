@@ -1,9 +1,11 @@
 #ifndef DEST_H
 #define DEST_H
 
-#include "point.h"
-
 #include <ostream>
+#include "point.h"
+#include "level.h"
+
+class Level;
 
 /**
  * Cette classe modélise la destination utilisée dans le jeu.
@@ -16,8 +18,11 @@ class Dest
     Point pos;
     int edge;
     bool light;
+    Level * level;
 
   public:
+    void reactToExposure();
+
     /**
      * Intancie une destination, de position et rayon donné.
      * @param p le coin supérieur gauche du carré modélisant

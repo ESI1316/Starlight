@@ -1,8 +1,11 @@
 #ifndef CRYSTAL_H
 #define CRYSTAL_H
 
-#include "point.h"
 #include <ostream>
+#include "point.h"
+#include "level.h"
+
+class Level;
 
 /**
  * Cette classe modélise les cristaux utilisés dans le jeu.
@@ -19,8 +22,10 @@ class Crystal
     Point center;
     int rad;
     int mod;
+    Level * level;
 
   public:
+    void reactToExposure();
     /**
      * Instancie un cristal centré au point donné, d'un certain
      * rayon et modifiant la longueur d'onde des rayons qui le

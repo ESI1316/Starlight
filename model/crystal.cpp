@@ -1,8 +1,8 @@
 #include "crystal.h"
 
 
-Crystal::Crystal(const Point & p, int r, int m) : center {p}, rad {r},
-mod {m}
+Crystal::Crystal(const Point & p, int r, int m)
+    : center {p}, rad {r}, mod {m}
 {
     // TODO : valider rad (et mod ?)
 }

@@ -1,8 +1,11 @@
 #ifndef RAY_H
 #define RAY_H
 
-#include "point.h"
 #include <iostream>
+#include "point.h"
+#include "level.h"
+
+class Level;
 
 /**
  * Cette classe modélise les rayons lumineux, concept central du jeu.
@@ -15,6 +18,8 @@ class Ray
     Point start;
     Point end;
     int wavelength;
+
+    Level * level;
 
   public:
     /**

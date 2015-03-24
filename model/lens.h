@@ -1,9 +1,11 @@
 #ifndef LENS_H
 #define LENS_H
 
-#include "point.h"
-
 #include <ostream>
+#include "point.h"
+#include "level.h"
+
+class Level;
 
 /**
  * Cette classe modélise les lentilles utilisées dans le jeu.
@@ -25,7 +27,11 @@ class Lens
     int wlmin;
     int wlmax;
 
+    Level * level;
+
   public:
+
+    void reactToExposure();
     /**
      * Instancie une lentille à l'aide de toutes ses
      * caractéristiques.

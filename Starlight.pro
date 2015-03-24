@@ -28,7 +28,11 @@ SOURCES += main.cpp\
     model/wall.cpp \
     model/polarPoint.cpp \
     model/levelFactory.cpp \
-    test/polarpointtest.cpp
+    test/polarpointtest.cpp \
+    model/starlightexception.cpp \
+    test/levelfactorytest.cpp \
+    model/positionable.cpp \
+    model/reactable.cpp
 
 HEADERS  += mainwindow.hpp \
     model/crystal.h \
@@ -43,6 +47,12 @@ HEADERS  += mainwindow.hpp \
     model/wall.h \
     model/polarPoint.h \
     model/levelFactory.h \
-    test/catch.hpp
+    test/catch.hpp \
+    model/starlightexception.hpp \
+    model/positionable.hpp \
+    model/reactable.hpp
 
 FORMS    += mainwindow.ui
+
+DISTFILES += \
+    ressources/level.lvl

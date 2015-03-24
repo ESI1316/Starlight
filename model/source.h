@@ -1,8 +1,11 @@
 #ifndef SOURCE_H
 #define SOURCE_H
 
-#include "point.h"
 #include <iostream>
+#include "point.h"
+#include "level.h"
+
+class Level;
 
 /**
  * Modélise la source lumineuse utilisée dans le jeu.
@@ -21,6 +24,8 @@ class Source
     double alpha;
     int edge;
     int wavelength;
+
+    Level * level;
 
   public:
     /**

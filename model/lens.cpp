@@ -1,7 +1,7 @@
 #include "lens.h"
 
-Lens::Lens(const Point & p, int w, int h, int wlmin, int wlmax) : pos {p},
-width {w}, height {h}, wlmin {wlmin}, wlmax {wlmax}
+Lens::Lens(const Point & p, int w, int h, int wlmin, int wlmax)
+    : pos {p}, width {w}, height {h}, wlmin {wlmin}, wlmax {wlmax}
 {
     // TODO : valider width, height, wlmin et wlmax
 }

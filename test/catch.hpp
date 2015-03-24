@@ -1472,7 +1472,7 @@ resultBuilder.react();
 
 ///////////////////////////////////////////////////////////////////////////////
 #define INTERNAL_CATCH_TEST( expr, resultDisposition, macroName ) \
-	do { \
+    do { \
 		Catch::ResultBuilder __catchResult( macroName, CATCH_INTERNAL_LINEINFO, #expr, resultDisposition ); \
 		try { \
 			( __catchResult->*expr ).endExpression(); \
