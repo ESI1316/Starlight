@@ -2,7 +2,9 @@
 
 ##Introduction
 > "Starlight est un petit jeu en deux dimensions se jouant sur une carte rectangulaire, 
-comportant une source de lumière, émettant un rayon recti-ligne. Le but du jeuest d'atteindre une cible avec ledit rayon, en évitant les obstacles via notamment des miroirs réfléchissant la lumière."
+comportant une source de lumière, émettant un rayon recti-ligne. 
+Le but du jeuest d'atteindre une cible avec ledit rayon, en évitant les 
+obstacles via notamment des miroirs réfléchissant la lumière."
 
 ##Rules
 Starlight est un puzzle à deux dimensions se jouant sur une carte rec-tangulaire. 
@@ -41,6 +43,8 @@ comme mentionné ci-dessus, si oui ou non un rayon traverse une lentille.
 Elle est modifiée par un cristal.
 
 ## Build & run
+
+### Build
 ```bash
 sudo add-apt-repository ppa:ubuntu:toolchain-r/test
 sudo apt-get update
@@ -55,6 +59,13 @@ sudo ln -s g++-4.9 g++
 ```bash
 chmod +x g++4_9.sh
 ./g++4_9.sh
+```
+
+### Run
+```bash
+cd Starlight
+make
+./Starlight
 ```
 
 ##Credits
