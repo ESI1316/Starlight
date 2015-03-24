@@ -1,4 +1,5 @@
 #include "ray.h"
+#include "level.h"
 
 // réservation des attributs statiques
 const int Ray::WL_MIN;

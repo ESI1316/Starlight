@@ -1,4 +1,5 @@
 #include "lens.h"
+#include "level.h"
 
 Lens::Lens(const Point & p, int w, int h, int wlmin, int wlmax)
     : pos {p}, width {w}, height {h}, wlmin {wlmin}, wlmax {wlmax}

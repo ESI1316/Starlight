@@ -13,7 +13,7 @@
 #include "point.h"
 #include "nuke.h"
 #include "reactable.hpp"
-
+/*
 class Crystal;
 class Dest;
 class Lens;
@@ -23,6 +23,7 @@ class Source;
 class Wall;
 class Point;
 class Nuke;
+*/
 
 enum LevelState
 {

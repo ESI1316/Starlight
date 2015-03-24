@@ -6,6 +6,15 @@
 
 #include <string>
 #include "level.h"
+#include "crystal.h"
+#include "dest.h"
+#include "lens.h"
+#include "mirror.h"
+#include "ray.h"
+#include "source.h"
+#include "wall.h"
+#include "point.h"
+#include "nuke.h"
 #include "starlightexception.hpp"
 
 using namespace std;
@@ -100,10 +109,14 @@ void Level::addNuke(const Nuke & newNuke)
 
 void Level::computeRays()
 {
-    this->computeRay(
-                Ray(this->s.getPosition(),
+    Ray ray(this->s.getPosition(),
                     this->s.getPosition(),
-                    this->s.getWavelength())
-                );
+                    this->s.getWavelength());
+    this->computeRay(ray);
     throw string {"todo !"};
+}
+
+void Level::computeRay(Ray &)
+{
+
 }

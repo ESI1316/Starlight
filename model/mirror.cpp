@@ -1,5 +1,6 @@
-#include "mirror.h"
 #include <iostream>
+#include "mirror.h"
+#include "level.h"
 
 Mirror::Mirror(const Point & p, int len, int x, double a)
     : Mirror {p, len, x, a, {0, 0}, {0, 0}, 0, 0}

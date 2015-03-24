@@ -1,4 +1,5 @@
 #include "dest.h"
+#include "level.h"
 
 Dest::Dest(const Point & p, int e)
     : pos {p}, edge {e}, light{false}

@@ -3,7 +3,6 @@
 
 #include <iostream>
 #include "point.h"
-#include "level.h"
 
 class Level;
 

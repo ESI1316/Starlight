@@ -1,4 +1,5 @@
 #include "wall.h"
+#include "level.h"
 
 Wall::Wall(const Point & p1, const Point & p2) : start {p1}, end {p2}
 {

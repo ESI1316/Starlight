@@ -1,4 +1,5 @@
 #include "nuke.h"
+#include "level.h"
 
 Nuke::Nuke(const Point & p, int r) : pos {p}, rad {r}
 {
