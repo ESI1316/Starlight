@@ -65,9 +65,14 @@ Project has been created, and *is owned*, by
 + A. Rousseau
 + N. Vansteenkiste
 + M. Wahid 
-@ [H.E.B. École Supérieure d'Informatique](http://www.heb.be/esi/)
+
+@[H.E.B. École Supérieure d'Informatique](http://www.heb.be/esi/)
 
 ##About
-2G13 C++ Project
+
++ Kriwin Paul @PKriwin
++ Placentino Simon @splacentino
+
+2G13@[H.E.B. École Supérieure d'Informatique](http://www.heb.be/esi/)
 
 © 2015 - Deckard Software
