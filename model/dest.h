@@ -18,6 +18,7 @@ class Dest
     Point pos;
     int edge;
     bool light;
+
     Level * level;
 
   public:
@@ -29,7 +30,7 @@ class Dest
      *        la destination.
      * @param e la longueur du côté du carré.
      */
-    Dest(const Point & p, int e);
+    Dest(const Point &, int);
 
     /**
      * Retourne la position du coin supérieur gauche du carré

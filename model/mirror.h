@@ -47,7 +47,7 @@ class Mirror
      *          du miroir
      * @param a l'angle d'inclinaison du miroir
      */
-    Mirror(const Point & p, int len, int x, double a);
+    Mirror(const Point &, int, int, double);
 
     /**
      * Instancie un miroir en une position donnée, d'une certaine
@@ -74,8 +74,8 @@ class Mirror
      * @param amin l'angle d'inclinaison minimum du miroir.
      * @param amax l'angle d'inclinaison maximum du miroir.
      */
-    Mirror(const Point & p, int len, int x, double a, Point min,
-           Point max, double amin, double amax);
+    Mirror(const Point &, int, int, double, Point,
+           Point, double, double);
 
     /**
      * Retourne la position (et le pivot) du miroir.

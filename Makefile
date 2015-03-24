@@ -956,7 +956,17 @@ levelfactorytest.o: test/levelfactorytest.cpp
 positionable.o: model/positionable.cpp model/positionable.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o positionable.o model/positionable.cpp
 
-reactable.o: model/reactable.cpp model/reactable.hpp
+reactable.o: model/reactable.cpp model/reactable.hpp \
+		model/ray.h \
+		model/point.h \
+		model/level.h \
+		model/crystal.h \
+		model/dest.h \
+		model/lens.h \
+		model/mirror.h \
+		model/source.h \
+		model/wall.h \
+		model/nuke.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o reactable.o model/reactable.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 

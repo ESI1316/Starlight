@@ -8,6 +8,7 @@ class Reactable
 public:
 
     virtual void reactToRay(Ray &) = 0;
+    virtual bool includePoint(Point &) = 0;
 
 };
 
