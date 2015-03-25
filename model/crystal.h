@@ -33,7 +33,7 @@ class Crystal
      * @param r le rayon du cristal
      * @param m le amplifierificateur de longueur d'onde du cristal
      */
-    Crystal(const Point &, int, int);
+    Crystal(const Point &, const int, const int);
 
     /**
      * Retourne la coordonnée du centre du cristal

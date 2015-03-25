@@ -31,8 +31,8 @@ private :
     const int width;
     const int height;
 
-    Source source {Point(0, 0), -1, 5., 600};
-    Dest dest {Point(0, 0), 5};
+    Source source{Point(0, 0), -1, 5., 600};
+    Dest dest{Point(0, 0), 5};
 
     std::vector<Wall> walls;
     std::vector<Mirror> mirrors;
@@ -46,7 +46,7 @@ private :
 public:
 
     void computeRay(Ray &);
-    Reactable & getComponentAt(const Point);
+    Reactable & getComponentAt(const Point &);
     void addRay(Ray &);
 
     /**
@@ -63,7 +63,7 @@ public:
      * @param w la largeur de la carte
      * @param h la heuteur de la carte
      */
-    Level(int, int);
+    Level(const int, const int);
 
     /**
      * Retourne la source de la carte.

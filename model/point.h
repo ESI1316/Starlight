@@ -23,7 +23,7 @@ public:
      * @param x l'abscisse du point
      * @param y l'ordonnée du point
      */
-    Point(int x, int y);
+    Point(const int, const int);
 
     /**
      * Retourne l'abscisse du point.
@@ -41,27 +41,27 @@ public:
      * Déplace le point en l'abscisse donnée.
      * @param x l'abscisse où déplacer le point.
      */
-    void setX(int x);
+    void setX(const int);
 
     /**
      * Déplace le point en l'ordonnée donnée.
      * @param y l'ordonnée où déplacer le point.
      */
-    void setY(int y);
+    void setY(const int);
 
     /**
      * Déplace le point en la coordonnée donnée.
      * @param x l'abscisse où déplacer le point.
      * @param y l'ordonnée où déplacer le point.
      */
-    void setLocation(int x, int y);
+    void setLocation(const int, const int);
 
     /**
      * @brief distanceFrom
      * @param p
      * @return
      */
-    int distanceFrom(Point & p);
+    int distanceFrom(const Point & p);
 
     /**
      * @brief operator ==
@@ -75,7 +75,7 @@ public:
      * console.
      * @return le flux dans lequel le point a été imprimé.
      */
-    friend std::ostream & operator<<(std::ostream & out, const Point & p);
+    friend std::ostream & operator<<(std::ostream &, const Point &);
 };
 
 #endif // POINT_H

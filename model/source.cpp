@@ -1,15 +1,15 @@
 #include "source.h"
 #include "ray.h"
 
-Source::Source(const Point & p, int e, double a, int wl) : pos {p},
-alpha {a}, edge {e}, wavelength {wl}
+Source::Source(const Point & position, const int edge, const double alpha, const int waveLength)
+    : position{position}, edge{edge}, alpha{alpha}, waveLength {waveLength}
 {
     // TODO : valider edge et wavelength
 }
 
 const Point & Source::getPosition() const
 {
-    return this->pos;
+    return this->position;
 }
 
 int Source::getAngle() const
@@ -22,9 +22,9 @@ int Source::getEdge() const
     return this->edge;
 }
 
-int Source::getWavelength() const
+int Source::getWaveLength() const
 {
-    return this->wavelength;
+    return this->waveLength;
 }
 
 bool Source::isOn() const
@@ -32,16 +32,18 @@ bool Source::isOn() const
     return this->on;
 }
 
-void Source::setOn(bool q)
+void Source::setOn(const bool on)
 {
-    this->on = q;
+    this->on = on;
 }
 
-std::ostream & operator<<(std::ostream & out, const Source & s)
+std::ostream & operator<<(std::ostream & out, const Source & source)
 {
-    out << "Source --- Position : " << s.pos << " , Angle : " << s.alpha
-        << "Frequency : " << s.wavelength << " , Edge : " << s.edge <<
-        " , on : " <<
-        s.on;
+    out << "Source --- Position : " << source.getPosition()
+        << " , Angle : " << source.getAngle()
+        << "Frequency : " << source.getWaveLength()
+        << " , Edge : " << source.getEdge()
+        << " , on : " << source.isOn();
+
     return out;
 }

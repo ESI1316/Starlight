@@ -19,10 +19,10 @@
 
 using namespace std;
 
-Level::Level(int width, int height)
+Level::Level(const int width,const int height)
     : width {width}, height {height},
-      walls { {{0, 0}, {0, height}}, {{0, height}, {width, height}},
-{{width, height}, {width, 0}}, {{width, 0}, {0, 0}} }
+      walls { Wall{Point{0, 0}, Point{0, height}}, Wall{Point{0, height}, Point{width, height}},
+              Wall{Point{width, height}, Point{width, 0}}, Wall{Point{width, 0}, Point{0, 0}} }
 
 {
     // TODO : valider width et height
@@ -112,7 +112,7 @@ void Level::computeRays()
 {
     Ray ray(this->source.getPosition(),
             this->source.getPosition(),
-            this->source.getWavelength()
+            this->source.getWaveLength()
             );
 
     this->computeRay(ray);

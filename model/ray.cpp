@@ -6,14 +6,14 @@ const int Ray::WL_MIN;
 const int Ray::WL_MAX;
 const int Ray::WL_DFT;
 
-Ray::Ray(const Point & p1, const Point & p2)
-    : Ray {p1, p2, Ray::WL_DFT}
+Ray::Ray(const Point & start, const Point & end)
+    : Ray {start, end, Ray::WL_DFT}
 {}
 
-Ray::Ray(const Point & p1, const Point & p2, int wl)
-    : start {p1}, end {p2}, wavelength {wl}
+Ray::Ray(const Point & start, const Point & end, int waveLength)
+    : start {start}, end {end}, waveLength {waveLength}
 {
-    // TODO : valider wavelength, (start et end ?)
+    // TODO : valider waveLength, (start et end ?)
 }
 
 const Point & Ray::getStart() const
@@ -26,31 +26,36 @@ const Point & Ray::getEnd() const
     return this->end;
 }
 
-int Ray::getWavelength() const
+int Ray::getWaveLength() const
 {
-    return this->wavelength;
+    return this->waveLength;
 }
 
-void Ray::setStart(const Point & p)
+void Ray::setStart(const Point & start)
 {
-    this->start = p;
+    this->start = start;
 }
 
-void Ray::setEnd(const Point & p)
+void Ray::setEnd(const Point & end)
 {
-    this->end = p;
+    this->end = end;
 }
 
-bool Ray::setWavelength(int wl)
+bool Ray::setWaveLength(const int waveLength)
 {
-    bool r = wl >= Ray::WL_MIN && wl <= Ray::WL_MAX;
-    if (r) this->wavelength = wl;
-    return r;
+    bool match = ((waveLength >= Ray::WL_MIN)
+                  && (waveLength <= Ray::WL_MAX));
+
+    if (match)
+        this->waveLength = waveLength;
+
+    return match;
 }
 
-std::ostream & operator<<(std::ostream & out, const Ray & p)
+std::ostream & operator<<(std::ostream & out, const Ray & ray)
 {
-    out << p.start << " ---------- " << p.end << " (" << p.wavelength <<
-           " nm)";
+    out << ray.getStart() << " ---------- " << ray.getEnd()
+        << " (" << ray.getWaveLength() << " nm)";
+
     return out;
 }

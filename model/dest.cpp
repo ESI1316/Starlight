@@ -1,7 +1,7 @@
 #include "dest.h"
 #include "level.h"
 
-Dest::Dest(const Point & position, int edge)
+Dest::Dest(const Point & position, const int edge)
     : position{position}, edge{edge}, light{false}
 {
     // TODO : valider edge

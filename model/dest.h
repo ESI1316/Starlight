@@ -29,7 +29,7 @@ class Dest
      *        la destination.
      * @param e la longueur du côté du carré.
      */
-    Dest(const Point &, int);
+    Dest(const Point &, const int);
 
     /**
      * Retourne la position du coin supérieur gauche du carré

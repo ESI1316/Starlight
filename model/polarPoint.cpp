@@ -20,7 +20,7 @@ PolarPoint::PolarPoint()
  * @param azimut La longueur du segment de cercle depuis l'axe horizontal.
  *
  */
-PolarPoint::PolarPoint(double radius, double azimut)
+PolarPoint::PolarPoint(const double radius, const double azimut)
     : radius{radius}, azimut{azimut}
 {
 }
@@ -29,7 +29,7 @@ PolarPoint::PolarPoint(double radius, double azimut)
  * @brief PolarPoint::PolarPoint Copie d'un point polaire.
  * @param polarPoint Un autre point polaire.
  */
-PolarPoint::PolarPoint(PolarPoint & polarPoint)
+PolarPoint::PolarPoint(const PolarPoint & polarPoint)
     : PolarPoint{polarPoint.radius, polarPoint.azimut}
 {
 }
@@ -41,7 +41,7 @@ PolarPoint::PolarPoint(PolarPoint & polarPoint)
  * @see <a href="http://fr.wikipedia.org/wiki/Coordonn%C3%A9es_polaires">
  * wikipedia - Coordonnées polaires </a>
  */
-PolarPoint::PolarPoint(Point & point)
+PolarPoint::PolarPoint(const Point &point)
     : PolarPoint()
 {
     int x = point.getX();
@@ -109,7 +109,7 @@ double PolarPoint::getAzimutAsDegrees() const
  * @brief PolarPoint::rotate
  * @return
  */
-PolarPoint & PolarPoint::rotate(double alpha)
+PolarPoint & PolarPoint::rotate(const double alpha)
 {
     this->azimut += alpha;
     return *this;
@@ -123,9 +123,9 @@ PolarPoint & PolarPoint::rotate(double alpha)
  */
 std::ostream & operator<<(std::ostream & out, const PolarPoint & polarPoint)
 {
-    out << "(radius, azimut) = " <<
-           "(" << polarPoint.getRadius() <<
-           ", " << polarPoint.getAzimut() << ")";
+    out << "(radius, azimut) = "
+        << "(" << polarPoint.getRadius()
+        << ", " << polarPoint.getAzimut() << ")";
 
     return out;
 }

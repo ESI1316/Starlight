@@ -43,7 +43,7 @@ class Lens
      * @param wlmax la longueur d'onde maximale des rayons
      *              autorisés à franchir la lentille
      */
-    Lens(const Point &, int, int, int, int);
+    Lens(const Point &, const int, const int, const int, const int);
 
     /**
      * Retourne la position du coin supérieur gauche du

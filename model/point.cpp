@@ -1,7 +1,7 @@
 #include <cmath>
 #include "point.h"
 
-Point::Point(int a, int b) : x {a}, y {b}
+Point::Point(const int a, const int b) : x {a}, y {b}
 {}
 
 int Point::getX() const
@@ -14,23 +14,23 @@ int Point::getY() const
     return this->y;
 }
 
-void Point::setX(int x)
+void Point::setX(const int x)
 {
     this->x = x;
 }
 
-void Point::setY(int y)
+void Point::setY(const int y)
 {
     this->y = y;
 }
 
-void Point::setLocation(int x, int y)
+void Point::setLocation(const int x, const int y)
 {
     this->x = x;
     this->y = y;
 }
 
-int Point::distanceFrom(Point & point)
+int Point::distanceFrom(const Point &point)
 {
     return std::hypot((point.x - this->x),(point.y - this->y));
 }

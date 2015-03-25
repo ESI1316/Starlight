@@ -1,8 +1,8 @@
 #include "lens.h"
 #include "level.h"
 
-Lens::Lens(const Point & p, int width, int height, int wlmin, int wlmax)
-    : position {p}, width {width}, height {height}, wlmin {wlmin}, wlmax {wlmax}
+Lens::Lens(const Point & position, const int width, const int height, const int wlmin, const int wlmax)
+    : position {position}, width {width}, height {height}, wlmin {wlmin}, wlmax {wlmax}
 {
     // TODO : valider width, height, wlmin et wlmax
 }

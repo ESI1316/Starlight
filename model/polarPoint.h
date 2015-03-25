@@ -44,18 +44,18 @@ public:
      * @brief PolarPoint Construteur avec paramètres, reçoit un rayon et un
      * azimut passé en argument.
      */
-    PolarPoint(double, double);
+    PolarPoint(const double, const double);
 
     /**
      * @brief PolarPoint Construction d'un point polaire ~ au point cartésien
      * passé en paramètre.
      */
-    PolarPoint(Point &);
+    PolarPoint(const Point &);
 
     /**
      * @brief PolarPoint Constructeur de recopie.
      */
-    PolarPoint(PolarPoint &);
+    PolarPoint(const PolarPoint &);
 
     /**
      * @brief ~PolarPoint Destructeur de point polaire.
@@ -99,7 +99,7 @@ public:
      * plan par rotation autour du centre (0,0).
      * @return Le point courant après rotation.
      */
-    PolarPoint & rotate(double);
+    PolarPoint & rotate(const double);
 
     /**
      * @brief toString Chaine de caractères représentant la coordonnée polaire

@@ -1,7 +1,7 @@
 #include "crystal.h"
 
 
-Crystal::Crystal(const Point & center, int radius, int amplifier)
+Crystal::Crystal(const Point & center, const int radius, const int amplifier)
     : center {center}, radius {radius}, amplifier {amplifier}
 {
     // TODO : valider radius (et amplifier ?)

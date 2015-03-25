@@ -4,7 +4,8 @@
 
 class Positionable
 {
-public:
+protected:
+        // pour éviter que la classe "abstraite" soit instanciable.
     Positionable();
     ~Positionable();
 };
