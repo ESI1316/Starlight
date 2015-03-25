@@ -2,7 +2,7 @@
 #define CRYSTAL_H
 
 #include <ostream>
-#include "point.h"
+#include "point.hpp"
 
 class Level;
 
@@ -18,9 +18,11 @@ class Level;
  */
 class Crystal
 {
+
+private :
     Point center;
-    int radius;
     int amplifier;
+    int radius;
     Level * level;
 
   public:
@@ -53,6 +55,7 @@ class Crystal
      */
     int getRadius() const;
 
+    Crystal & operator=(const Crystal &);
     /**
      * Surcharge l'opérateur de flux de sortie pour afficher
      * un récapitulatif des caractéristiques du cristal

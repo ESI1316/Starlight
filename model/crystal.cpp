@@ -1,10 +1,15 @@
-#include "crystal.h"
+#include "crystal.hpp"
+#include "starlightexception.hpp"
+#include "level.hpp"
 
 
 Crystal::Crystal(const Point & center, const int radius, const int amplifier)
-    : center {center}, radius {radius}, amplifier {amplifier}
+    : center {center}, amplifier {amplifier}
 {
-    // TODO : valider radius (et amplifier ?)
+    if(radius <= 0)
+        throw new StarlightException("Le rayon doit être strictement positif.");
+
+    this->radius = radius;
 }
 
 const Point & Crystal::getCenter() const
@@ -20,6 +25,16 @@ int Crystal::getAmplifier() const
 int Crystal::getRadius() const
 {
     return this->radius;
+}
+
+Crystal & Crystal::operator =(const Crystal & crystal)
+{
+    this->center = crystal.center;
+    this->radius = crystal.radius;
+    this->amplifier = crystal.amplifier;
+    this->level = crystal.level;
+
+    return *this;
 }
 
 std::ostream & operator<<(std::ostream & out, const Crystal & c)

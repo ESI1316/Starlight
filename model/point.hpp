@@ -69,6 +69,8 @@ public:
      */
     bool operator==(const Point &) const;
 
+    Point & operator=(const Point &);
+
     /**
      * Surcharge l'opérateur de flux de sortie pour afficher un
      * récapitulatif des caractéristiques du point sous-jacent en

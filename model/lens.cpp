@@ -1,10 +1,25 @@
-#include "lens.h"
-#include "level.h"
+#include "lens.hpp"
+#include "level.hpp"
+#include "starlightexception.hpp"
 
-Lens::Lens(const Point & position, const int width, const int height, const int wlmin, const int wlmax)
-    : position {position}, width {width}, height {height}, wlmin {wlmin}, wlmax {wlmax}
+Lens::Lens(const Point & position, const int width, const int height, const int wlMin, const int wlMax)
+    : position {position}
 {
-    // TODO : valider width, height, wlmin et wlmax
+    if(width <= 0)
+        throw new StarlightException("Largeur positive requise");
+    if(height <= 0)
+        throw new StarlightException("Hauteur positive requise");
+    if(wlMin < 0)
+        throw new StarlightException("Longueur d'onde minimale non nulle req.");
+    if(wlMax < 0)
+        throw new StarlightException("Longueur d'onde maximale non nulle req.");
+    if(wlMax < wlMin)
+        throw new StarlightException("Longueur d'onde minimale > maximale");
+
+    this->width = width;
+    this->height = height;
+    this->wlMin = wlMin;
+    this->wlMax = wlMax;
 }
 
 const Point & Lens::getPosition() const
@@ -22,14 +37,26 @@ int Lens::getHeight() const
     return this->height;
 }
 
-int Lens::getMinWavelength() const
+int Lens::getMinWaveLength() const
 {
-    return this->wlmin;
+    return this->wlMin;
 }
 
-int Lens::getMaxWavelength() const
+int Lens::getMaxWaveLength() const
 {
-    return this->wlmax;
+    return this->wlMax;
+}
+
+Lens & Lens::operator =(const Lens & lens)
+{
+    this->position = lens.position;
+    this->width = lens.width;
+    this->height = lens.height;
+    this->wlMin = lens.wlMin;
+    this->wlMax = lens.wlMax;
+    this->level = lens.level;
+
+    return *this;
 }
 
 std::ostream & operator<<(std::ostream & out, const Lens & lens)
@@ -37,7 +64,8 @@ std::ostream & operator<<(std::ostream & out, const Lens & lens)
     out << "Lens -- Position : " <<lens.getPosition()
         << " , width : " <<lens.getWidth()
         << " , height : " <<lens.getHeight()
-        << " , Freq. Min. : " <<lens.getMinWavelength()
-        << " , Freq. Max. : " <<lens.getMaxWavelength();
+        << " , Freq. Min. : " <<lens.getMinWaveLength()
+        << " , Freq. Max. : " <<lens.getMaxWaveLength();
+
     return out;
 }

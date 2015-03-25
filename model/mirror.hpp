@@ -2,7 +2,7 @@
 #define MIRROR_H
 
 #include <ostream>
-#include "point.h"
+#include "point.hpp"
 
 class Level;
 
@@ -185,13 +185,14 @@ class Mirror
      */
     bool checkPivotRange(const Point &) const;
 
+    Mirror & operator=(const Mirror &);
     /**
      * Surcharge l'opérateur de flux de sortie pour
      * afficher un récapitulatif des caractéristiques du
      * miroir sous-jacent en console.
      * @return le flux dans lequel le miroir a été imprimé.
      */
-    friend std::ostream & operator<<(std::ostream &, const Mirror &);
+    //friend std::ostream & operator<<(std::ostream &, const Mirror &);
 };
 
 #endif // MIRROR_H

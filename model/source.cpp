@@ -1,5 +1,5 @@
-#include "source.h"
-#include "ray.h"
+#include "source.hpp"
+#include "ray.hpp"
 
 Source::Source(const Point & position, const int edge, const double alpha, const int waveLength)
     : position{position}, edge{edge}, alpha{alpha}, waveLength {waveLength}

@@ -1,5 +1,5 @@
 #include <cmath>
-#include "point.h"
+#include "point.hpp"
 
 Point::Point(const int a, const int b) : x {a}, y {b}
 {}
@@ -33,6 +33,14 @@ void Point::setLocation(const int x, const int y)
 int Point::distanceFrom(const Point &point)
 {
     return std::hypot((point.x - this->x),(point.y - this->y));
+}
+
+Point & Point::operator=(const Point & point)
+{
+    this->x = point.x;
+    this->y = point.y;
+
+    return *this;
 }
 
 bool Point::operator==(const Point & point) const

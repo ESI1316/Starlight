@@ -1,6 +1,6 @@
 #ifndef REACTABLE_HPP
 #define REACTABLE_HPP
-#include "ray.h"
+#include "ray.hpp"
 
 class Reactable
 {

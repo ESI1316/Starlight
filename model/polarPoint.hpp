@@ -3,7 +3,7 @@
 
 #include<ostream>
 #include<string>
-#include "point.h"
+#include "point.hpp"
 
 /**
  * @brief The PolarPoint class est une classe modélisant la représentation
@@ -108,6 +108,7 @@ public:
      */
     std::string toString() const;
 
+    PolarPoint & operator=(const PolarPoint &);
     //friend std::ostream & operator<<(std::ostream &, PolarPoint &);
 };
 

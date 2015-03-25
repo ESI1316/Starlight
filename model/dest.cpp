@@ -1,10 +1,15 @@
-#include "dest.h"
-#include "level.h"
+#include "dest.hpp"
+#include "starlightexception.hpp"
+#include "level.hpp"
 
 Dest::Dest(const Point & position, const int edge)
-    : position{position}, edge{edge}, light{false}
+    : position{position}, light{false}
 {
-    // TODO : valider edge
+    if(edge <= 0)
+        throw new StarlightException
+            ("Cotés de la destinations doivent être strictement positifs.");
+
+     this->edge = edge;
 }
 
 const Point & Dest::getPosition() const

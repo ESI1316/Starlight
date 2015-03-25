@@ -1,7 +1,7 @@
 #define CATCH_CONFIG_MAIN
 #include "catch.hpp"
-#include "../model/point.h"
-#include "../model/polarPoint.h"
+#include "../model/point.hpp"
+#include "../model/polarPoint.hpp"
 
 TEST_CASE("Construct some polar points", "PolarPoint")
 {

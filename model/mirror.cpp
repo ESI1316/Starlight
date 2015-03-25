@@ -1,6 +1,6 @@
 #include <iostream>
-#include "mirror.h"
-#include "level.h"
+#include "mirror.hpp"
+#include "level.hpp"
 
 Mirror::Mirror(const Point & point, int length, int xpad, double alpha)
     : Mirror {point, length, xpad, alpha, Point{0, 0}, Point{0, 0}, 0, 0}
@@ -117,6 +117,22 @@ bool Mirror::checkPivotRange(const Point & point) const
     }
 }
 
+Mirror & Mirror::operator =(const Mirror & mirror)
+{
+    this->pivot = mirror.pivot;
+    this->length = mirror.length;
+    this->xpad = mirror.xpad;
+    this->xMin = mirror.xMin;
+    this->xMax = mirror.xMax;
+    this->yMin = mirror.yMin;
+    this->yMax = mirror.yMax;
+    this->alpha = mirror.alpha;
+    this->alphaMin = mirror.alphaMin;
+    this->alphaMax = mirror.alphaMax;
+
+    return *this;
+}
+
 /**
  * @brief operator << A CLEAN A COUP DE GETTERS POUR EVITER LE FRIEND.
  * @param out
@@ -125,15 +141,16 @@ bool Mirror::checkPivotRange(const Point & point) const
  */
 std::ostream & operator<<(std::ostream & out, const Mirror & mirror)
 {
-    out << "Mirror --- Pivot : " << mirror.pivot
-        << " , Length : " << mirror.length
-        << " , x-pad : " << mirror.xpad
-        << ", Angle : " << mirror.alpha
-        << " , Angle range : [" << mirror.alphaMin
-        << "," << mirror.alphaMax << "]"
-        << "Pivot range : [(" << mirror.xMin
-        << "," << mirror.yMin
-        << "),(" << mirror.xMax
-        << "," << mirror.yMax << ")]";
+    out << "Mirror --- Pivot : " << mirror.getPivot()
+        << " , Length : " << mirror.getLength()
+        << " , x-pad : " << mirror.getXPad()
+        << ", Angle : " << mirror.getAngle()
+        << " , Angle range : [" << mirror.getMinAngle()
+        << "," << mirror.getMaxAngle() << "]"
+        << "Pivot range : [(" << mirror.getMinPivot().getX()
+        << "," << mirror.getMinPivot().getY()
+        << "),(" << mirror.getMaxPivot().getX()
+        << "," << mirror.getMaxPivot().getY() << ")]";
+
     return out;
 }

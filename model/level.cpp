@@ -5,16 +5,16 @@
 #endif
 
 #include <string>
-#include "level.h"
-#include "crystal.h"
-#include "dest.h"
-#include "lens.h"
-#include "mirror.h"
-#include "ray.h"
-#include "source.h"
-#include "wall.h"
-#include "point.h"
-#include "nuke.h"
+#include "level.hpp"
+#include "crystal.hpp"
+#include "dest.hpp"
+#include "lens.hpp"
+#include "mirror.hpp"
+#include "ray.hpp"
+#include "source.hpp"
+#include "wall.hpp"
+#include "point.hpp"
+#include "nuke.hpp"
 #include "starlightexception.hpp"
 
 using namespace std;

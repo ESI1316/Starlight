@@ -1,5 +1,5 @@
 #include <cmath>
-#include "polarPoint.h"
+#include "polarPoint.hpp"
 
 /**
  * @brief PolarPoint::PolarPoint Création d'un point confondu avec le centre du
@@ -112,6 +112,14 @@ double PolarPoint::getAzimutAsDegrees() const
 PolarPoint & PolarPoint::rotate(const double alpha)
 {
     this->azimut += alpha;
+    return *this;
+}
+
+PolarPoint & PolarPoint::operator=(const PolarPoint & polarPoint)
+{
+    this->radius = polarPoint.radius;
+    this->azimut = polarPoint.azimut;
+
     return *this;
 }
 

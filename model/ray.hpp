@@ -2,7 +2,7 @@
 #define RAY_H
 
 #include <iostream>
-#include "point.h"
+#include "point.hpp"
 
 class Level;
 
@@ -106,6 +106,7 @@ class Ray
      */
     bool setWaveLength(const int);
 
+    Ray & operator=(const Ray &);
     /**
      * Surcharge l'opérateur de flux de sortie pour afficher un
      * récapitulatif des caractéristiques du rayon sous-jacent en

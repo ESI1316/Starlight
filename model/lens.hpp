@@ -2,7 +2,7 @@
 #define LENS_H
 
 #include <ostream>
-#include "point.h"
+#include "point.hpp"
 
 class Level;
 
@@ -23,8 +23,8 @@ class Lens
     int width;
     int height;
 
-    int wlmin;
-    int wlmax;
+    int wlMin;
+    int wlMax;
 
     Level * level;
 
@@ -38,9 +38,9 @@ class Lens
      *          rectangle modélisant la lentille.
      * @param w la largeur de la lentille
      * @param h la hauteur de la lentille
-     * @param wlmin la longueur d'onde minimale des rayons
+     * @param wlMin la longueur d'onde minimale des rayons
      *              autorisés à franchir la lentille
-     * @param wlmax la longueur d'onde maximale des rayons
+     * @param wlMax la longueur d'onde maximale des rayons
      *              autorisés à franchir la lentille
      */
     Lens(const Point &, const int, const int, const int, const int);
@@ -71,7 +71,7 @@ class Lens
      * @return la longueur d'onde minimale des rayons
      * autorisés à franchir la lentille
      */
-    int getMinWavelength() const;
+    int getMinWaveLength() const;
 
     /**
      * Retourne la longueur d'onde maximale des rayons
@@ -79,7 +79,9 @@ class Lens
      * @return la longueur d'onde maximale des rayons
      * autorisés à franchir la lentille
      */
-    int getMaxWavelength() const;
+    int getMaxWaveLength() const;
+
+    Lens & operator=(const Lens &);
 
     /**
      * Surcharge l'opérateur de flux de sortie pour afficher

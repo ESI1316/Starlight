@@ -2,7 +2,7 @@
 #define WALL_H
 
 #include <iostream>
-#include "point.h"
+#include "point.hpp"
 
 class Level;
 
@@ -39,14 +39,14 @@ class Wall
      */
     const Point & getEnd() const;
 
+    Wall & operator=(const Wall &);
     /**
      * Surcharge l'opérateur de flux de sortie pour afficher
      * un récapitulatif des caractéristiques du mur sous-jacent
      * en console.
      * @return le flux dans lequel le mur a été imprimé.
      */
-    friend std::ostream & operator<<(std::ostream &,
-                                     const Wall &);
+    // friend std::ostream & operator<<(std::ostream &, const Wall &);
 };
 
 #endif // WALL_H

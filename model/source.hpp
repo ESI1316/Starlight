@@ -2,7 +2,7 @@
 #define SOURCE_H
 
 #include <iostream>
-#include "point.h"
+#include "point.hpp"
 
 class Level;
 

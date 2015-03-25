@@ -2,7 +2,7 @@
 #define DEST_H
 
 #include <ostream>
-#include "point.h"
+#include "point.hpp"
 
 class Level;
 

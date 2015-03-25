@@ -2,7 +2,7 @@
 #define NUKE_H
 
 #include <ostream>
-#include "point.h"
+#include "point.hpp"
 
 class Level;
 
@@ -14,8 +14,8 @@ class Level;
  */
 class Nuke
 {
-    Point pos;
-    int rad;
+    Point position;
+    int radian;
     bool light {false};
 
     Level * level;
@@ -27,7 +27,7 @@ class Nuke
      * @param p la position de la bombe
      * @param r le rayon de la bombe
      */
-    Nuke(const Point &, int);
+    Nuke(const Point &,const int);
 
     /**
      * Retourne la position de la bombe.
@@ -47,11 +47,12 @@ class Nuke
      */
     bool isLightedUp() const;
 
+    Nuke & operator=(const Nuke &);
     /**
      * Illumine la bombe ou non.
      * @param q vrai si la bombe est illuminée, faux sinon.
      */
-    void setLightedUp(bool);
+    void setLightedUp(const bool);
 
     /**
      * Surcharge l'opérateur de flux de sortie pour afficher un
