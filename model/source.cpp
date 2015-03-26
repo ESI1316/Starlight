@@ -1,12 +1,20 @@
+#include "starlightexception.hpp"
 #include "source.hpp"
 #include "ray.hpp"
 
 Source::Source(const Point & position, const int edge, const double alpha, const int waveLength)
-    : position{position}, edge{edge}, alpha{alpha}, waveLength {waveLength}
+    : position{position}, edge{this->valideEdge(edge)}, alpha{alpha}, waveLength {waveLength}
 {
     // TODO : valider edge et wavelength
 }
 
+const int & Source::valideEdge(const int & edge) const
+{
+   if(edge <= 0)
+       throw StarlightException("La longueur du coté doit être strict. positif");
+
+   return edge;
+}
 const Point & Source::getPosition() const
 {
     return this->position;
