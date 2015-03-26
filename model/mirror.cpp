@@ -16,7 +16,6 @@ Mirror::Mirror(const Point & pivot, int length, int xpad, double alpha, Point pm
       yMin {pm.getY()}, yMax {pM.getY()}, alpha {alpha}, alphaMin {alphaMin},
       alphaMax {alphaMax}
 {
-
     if(pivot.getX() < pm.getX() || pivot.getX() > pM.getX())
         throw StarlightException("Le miroir est trop haut ou trop bas");
 

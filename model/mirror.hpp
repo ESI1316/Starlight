@@ -31,6 +31,7 @@ class Mirror : public Element
 
     const int & valideLength(const int &) const;
     const int & valideXpad(const int &) const;
+
 public:
     void reactToRay(Ray &);
     bool includePoint(Point &);
