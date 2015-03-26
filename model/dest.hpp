@@ -17,8 +17,6 @@ class Dest : public Element
     bool light;
 
   public:
-    void reactToRay(Ray &);
-    bool includePoint(Point &);
 
     /**
      * Intancie une destination, de position et rayon donné.
@@ -55,6 +53,16 @@ class Dest : public Element
      * faux sinon.
      */
     void setLightedUp(const bool);
+
+    /**
+     * @brief reactToRay
+     */
+    void reactToRay(Ray &);
+    /**
+     * @brief includePoint
+     * @return
+     */
+    bool includePoint(Point &);
 
     /**
      * Surcharge l'opérateur de flux de sortie pour afficher

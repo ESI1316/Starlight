@@ -1,10 +1,15 @@
 #include "wall.hpp"
 #include "level.hpp"
+#include "starlightexception.hpp"
 
-Wall::Wall(const Point & p1, const Point & p2)
-    : Element(), start {p1}, end {p2}
+Wall::Wall(const Point & start, const Point & end)
+    : Element()
 {
-    // TODO : valider les points (différents ?)
+    if (start == end)
+        throw new StarlightException("Les points ne peuvent être confondus");
+
+    this->start = start;
+    this->end = end;
 }
 
 const Point & Wall::getStart() const
@@ -17,6 +22,16 @@ const Point & Wall::getEnd() const
     return this->end;
 }
 
+void Wall::reactToRay(Ray & ray)
+{
+    throw new StarlightException("Not implemented yet");
+}
+
+bool Wall::includePoint(Point & point)
+{
+    throw new StarlightException("Not implemented yet");
+}
+
 Wall & Wall::operator=(const Wall & wall)
 {
     this->start = wall.start;
@@ -25,20 +40,12 @@ Wall & Wall::operator=(const Wall & wall)
     return *this;
 }
 
-void Wall::reactToRay(Ray &)
-{
 
-}
-bool Wall::includePoint(Point &)
-{
-
-}
-
-std::ostream & operator<<(std::ostream & out, const Wall & w)
+std::ostream & operator<<(std::ostream & out, const Wall & wall)
 {
     out << "Wall --- "
-        << "Start : "  << w.getStart()
-        << ", End : " << w.getEnd();
+        << "Start : "  << wall.getStart()
+        << ", End : " << wall.getEnd();
 
     return out;
 }

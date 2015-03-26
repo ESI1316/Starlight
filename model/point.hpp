@@ -69,6 +69,10 @@ public:
      */
     bool operator==(const Point &) const;
 
+    /**
+     * @brief operator =
+     * @return
+     */
     Point & operator=(const Point &);
 
     /**
@@ -77,6 +81,7 @@ public:
      * console.
      * @return le flux dans lequel le point a été imprimé.
      */
+
     friend std::ostream & operator<<(std::ostream &, const Point &);
 };
 

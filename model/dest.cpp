@@ -32,13 +32,14 @@ void Dest::setLightedUp(const bool light)
     this->light = light;
 }
 
-void Dest::reactToRay(Ray &)
+void Dest::reactToRay(Ray & ray)
 {
-
+    throw new StarlightException("Not implemented yet");
 }
-bool Dest::includePoint(Point &)
-{
 
+bool Dest::includePoint(Point & point)
+{
+    throw new StarlightException("Not implemented yet");
 }
 
 std::ostream & operator<<(std::ostream & out, const Dest & dest)

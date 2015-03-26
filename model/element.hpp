@@ -22,6 +22,7 @@ public :
     virtual bool includePoint(Point &) = 0;
 
     void setLevel(Level *);
+    Level * getLevel() const;
 };
 
 #endif // ELEMENT_HPP

@@ -1,4 +1,5 @@
 #include <iostream>
+#include "starlightexception.hpp"
 #include "mirror.hpp"
 #include "level.hpp"
 
@@ -8,12 +9,19 @@ Mirror::Mirror(const Point & point, int length, int xpad, double alpha)
 
 }
 
-Mirror::Mirror(const Point & p, int length, int xpad, double alpha, Point pm,
+Mirror::Mirror(const Point & pivot, int length, int xpad, double alpha, Point pm,
                Point pM, double alphaMin, double alphaMax)
-    : Element(), pivot {p}, length(length), xpad(xpad), xMin {pm.getX()},
+    : Element(), pivot {pivot}, length(length), xpad(xpad), xMin {pm.getX()},
       xMax {pM.getX()}, yMin {pm.getY()}, yMax {pM.getY()}, alpha {alpha},
       alphaMin {alphaMin}, alphaMax {alphaMax}
 {
+    if (length <= 0)
+        throw new StarlightException("La longueur doit être strict. positive");
+
+    if(xpad < 0)
+        throw new StarlightException("Le décalage du pivot doit être positif");
+
+
     // TODO : valider length, xpad, (alphaMin et alphaMax),
     //                (alpha et [alphaMin, alphaMax]), (xMin et xMax),
     //                (x et [xMin, xMax]), (yMin et yMax),
@@ -133,13 +141,13 @@ Mirror & Mirror::operator =(const Mirror & mirror)
     return *this;
 }
 
-void Mirror::reactToRay(Ray &)
+void Mirror::reactToRay(Ray & ray)
 {
-
+    throw new StarlightException("Not implemented yet");
 }
-bool Mirror::includePoint(Point &)
+bool Mirror::includePoint(Point & point)
 {
-
+    throw new StarlightException("Not implemented yet");
 }
 
 /**

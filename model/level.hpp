@@ -20,11 +20,11 @@ class Level
 {
 private :
 
-    const int width;
-    const int height;
+    int width;
+    int height;
 
-    Source source{Point(0, 0), -1, 5., 600};
-    Dest dest{Point(0, 0), 5};
+    Source source{Point{0, 0}, -1, 5., 600};
+    Dest dest{Point{0, 0}, 5};
 
     std::vector<Wall> walls;
     std::vector<Mirror> mirrors;
@@ -34,9 +34,6 @@ private :
     std::vector<Nuke> nukes;
 
 public:
-
-    void computeRay(Ray &);
-    void addRay(Ray &);
 
     /**
      * Instancie une carte de largeur et hauteur donnée.
@@ -149,6 +146,16 @@ public:
      * @param newNuke nouvelle bombe à ajouter.
      */
     void addNuke(const Nuke &);
+
+    /**
+     * @brief computeRay
+     */
+    void computeRay(Ray &);
+
+    /**
+     * @brief addRay
+     */
+    void addRay(Ray &);
 
     /**
      * Calcule les rayons lumineux de la carte.

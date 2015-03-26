@@ -24,9 +24,6 @@ private :
     int radius;
 
   public:
-
-    void reactToRay(Ray &);
-    bool includePoint(Point &);
     /**
      * Instancie un cristal centré au point donné, d'un certain
      * rayon et amplifierifiant la longueur d'onde des rayons qui le
@@ -55,6 +52,17 @@ private :
      */
     int getRadius() const;
 
+    /**
+     * @brief reactToRay
+     */
+    void reactToRay(Ray &);
+
+    /**
+     * @brief includePoint
+     * @return
+     */
+    bool includePoint(Point &);
+
     Crystal & operator=(const Crystal &);
     /**
      * Surcharge l'opérateur de flux de sortie pour afficher
@@ -62,6 +70,7 @@ private :
      * sous-jacent en console.
      * @return le flux dans lequel le cristal a été imprimé.
      */
+
     //friend std::ostream & operator<<(std::ostream &, const Crystal &);
 };
 

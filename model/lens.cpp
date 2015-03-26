@@ -47,6 +47,15 @@ int Lens::getMaxWaveLength() const
     return this->wlMax;
 }
 
+void Lens::reactToRay(Ray & ray)
+{
+    throw new StarlightException("Not implemented yet");
+}
+bool Lens::includePoint(Point & point)
+{
+    throw new StarlightException("Not implemented yet");
+}
+
 Lens & Lens::operator =(const Lens & lens)
 {
     this->position = lens.position;
@@ -56,15 +65,6 @@ Lens & Lens::operator =(const Lens & lens)
     this->wlMax = lens.wlMax;
 
     return *this;
-}
-
-void Lens::reactToRay(Ray &)
-{
-
-}
-bool Lens::includePoint(Point &)
-{
-
 }
 
 std::ostream & operator<<(std::ostream & out, const Lens & lens)

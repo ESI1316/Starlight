@@ -41,13 +41,14 @@ Nuke & Nuke::operator=(const Nuke & nuke)
     return *this;
 }
 
-void Nuke::reactToRay(Ray &)
+void Nuke::reactToRay(Ray & ray)
 {
-
+    throw new StarlightException("Not implemented yet");
 }
-bool Nuke::includePoint(Point &)
-{
 
+bool Nuke::includePoint(Point & point)
+{
+    throw new StarlightException("Not implemented yet");
 }
 
 std::ostream & operator<<(std::ostream & out, const Nuke & nuke)
