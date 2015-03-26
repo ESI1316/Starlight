@@ -20,8 +20,8 @@ class Level
 {
 private :
 
-    int width;
-    int height;
+    const int width;
+    const int height;
 
     Source source{Point{0, 0}, -1, 5., 600};
     Dest dest{Point{0, 0}, 5};

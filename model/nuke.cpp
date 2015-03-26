@@ -9,7 +9,6 @@ Nuke::Nuke(const Point & position, const int radian)
 
 const int & Nuke::valideRadian(const int & radian) const
 {
-
     if (radian <= 0)
         throw StarlightException("Le rayon de la bombe doit être strict. positif");
 

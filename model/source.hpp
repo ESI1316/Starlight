@@ -22,6 +22,8 @@ class Source
     double alpha;
     int waveLength;
 
+    const int & valideEdge(const int &) const;
+
 public:
     /**
      * Instancie une nouvelle source de position, côté et

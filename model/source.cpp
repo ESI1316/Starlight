@@ -5,7 +5,7 @@
 Source::Source(const Point & position, const int edge, const double alpha, const int waveLength)
     : position{position}, edge{this->valideEdge(edge)}, alpha{alpha}, waveLength {waveLength}
 {
-    // TODO : valider edge et wavelength
+    // TODO : valider wavelength
 }
 
 const int & Source::valideEdge(const int & edge) const
@@ -15,6 +15,7 @@ const int & Source::valideEdge(const int & edge) const
 
    return edge;
 }
+
 const Point & Source::getPosition() const
 {
     return this->position;
