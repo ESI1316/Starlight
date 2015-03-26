@@ -41,11 +41,11 @@ Nuke & Nuke::operator=(const Nuke & nuke)
     return *this;
 }
 
-void reactToRay(Ray &)
+void Nuke::reactToRay(Ray &)
 {
 
 }
-bool includePoint(Point &)
+bool Nuke::includePoint(Point &)
 {
 
 }

@@ -32,11 +32,11 @@ void Dest::setLightedUp(const bool light)
     this->light = light;
 }
 
-void reactToRay(Ray &)
+void Dest::reactToRay(Ray &)
 {
 
 }
-bool includePoint(Point &)
+bool Dest::includePoint(Point &)
 {
 
 }

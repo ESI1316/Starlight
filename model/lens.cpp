@@ -58,11 +58,11 @@ Lens & Lens::operator =(const Lens & lens)
     return *this;
 }
 
-void reactToRay(Ray &)
+void Lens::reactToRay(Ray &)
 {
 
 }
-bool includePoint(Point &)
+bool Lens::includePoint(Point &)
 {
 
 }

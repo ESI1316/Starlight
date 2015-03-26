@@ -8,6 +8,5 @@
  */
 void Element::setLevel(Level * level)
 {
-    if(this->level == nullptr)
-        this->level = level;
+    this->level = level;
 }

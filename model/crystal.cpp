@@ -36,11 +36,11 @@ Crystal & Crystal::operator =(const Crystal & crystal)
     return *this;
 }
 
-    void reactToRay(Ray &){
+    void Crystal::reactToRay(Ray &){
 
     }
 
-    bool includePoint(Point &)
+    bool Crystal::includePoint(Point &)
     {
 
     }

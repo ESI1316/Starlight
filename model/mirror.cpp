@@ -133,11 +133,11 @@ Mirror & Mirror::operator =(const Mirror & mirror)
     return *this;
 }
 
-void reactToRay(Ray &)
+void Mirror::reactToRay(Ray &)
 {
 
 }
-bool includePoint(Point &)
+bool Mirror::includePoint(Point &)
 {
 
 }

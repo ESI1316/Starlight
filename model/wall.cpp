@@ -25,11 +25,11 @@ Wall & Wall::operator=(const Wall & wall)
     return *this;
 }
 
-void reactToRay(Ray &)
+void Wall::reactToRay(Ray &)
 {
 
 }
-bool includePoint(Point &)
+bool Wall::includePoint(Point &)
 {
 
 }
