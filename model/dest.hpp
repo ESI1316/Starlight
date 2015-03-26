@@ -17,6 +17,8 @@ class Dest : public Element
     bool light;
 
   public:
+    void reactToRay(Ray &);
+    bool includePoint(Point &);
 
     /**
      * Intancie une destination, de position et rayon donné.

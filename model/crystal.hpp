@@ -24,6 +24,9 @@ private :
     int radius;
 
   public:
+
+    void reactToRay(Ray &);
+    bool includePoint(Point &);
     /**
      * Instancie un cristal centré au point donné, d'un certain
      * rayon et amplifierifiant la longueur d'onde des rayons qui le

@@ -30,6 +30,8 @@ class Mirror : public Element
     double alphaMax {0};
 
 public:
+    void reactToRay(Ray &);
+    bool includePoint(Point &);
     /**
      * Instancie un miroir en une position donnée, d'une certaine
      * longueur et orienté d'un certain angle.

@@ -18,6 +18,8 @@ class Nuke : Element
     bool light {false};
 
 public:
+    void reactToRay(Ray &);
+    bool includePoint(Point &);
     /**
      * Instancie une bombe en une position donnée avec un rayon
      * déterminé.

@@ -26,6 +26,8 @@ class Lens : public Element
     int wlMax;
 
   public:
+    void reactToRay(Ray &);
+    bool includePoint(Point &);
 
     /**
      * Instancie une lentille à l'aide de toutes ses
