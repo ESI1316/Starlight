@@ -10,9 +10,9 @@ Mirror::Mirror(const Point & point, int length, int xpad, double alpha)
 
 Mirror::Mirror(const Point & p, int length, int xpad, double alpha, Point pm,
                Point pM, double alphaMin, double alphaMax)
-    : pivot {p}, length(length), xpad(xpad), xMin {pm.getX()}, xMax {pM.getX()},
-      yMin {pm.getY()}, yMax {pM.getY()}, alpha {alpha}, alphaMin {alphaMin},
-      alphaMax {alphaMax}
+    : Element(), pivot {p}, length(length), xpad(xpad), xMin {pm.getX()},
+      xMax {pM.getX()}, yMin {pm.getY()}, yMax {pM.getY()}, alpha {alpha},
+      alphaMin {alphaMin}, alphaMax {alphaMax}
 {
     // TODO : valider length, xpad, (alphaMin et alphaMax),
     //                (alpha et [alphaMin, alphaMax]), (xMin et xMax),
@@ -131,6 +131,15 @@ Mirror & Mirror::operator =(const Mirror & mirror)
     this->alphaMax = mirror.alphaMax;
 
     return *this;
+}
+
+void reactToRay(Ray &)
+{
+
+}
+bool includePoint(Point &)
+{
+
 }
 
 /**

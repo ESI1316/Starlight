@@ -1,7 +1,8 @@
 #include "wall.hpp"
 #include "level.hpp"
 
-Wall::Wall(const Point & p1, const Point & p2) : start {p1}, end {p2}
+Wall::Wall(const Point & p1, const Point & p2)
+    : Element(), start {p1}, end {p2}
 {
     // TODO : valider les points (différents ?)
 }
@@ -20,9 +21,17 @@ Wall & Wall::operator=(const Wall & wall)
 {
     this->start = wall.start;
     this->end = wall.end;
-    this->level = wall.level;
 
     return *this;
+}
+
+void reactToRay(Ray &)
+{
+
+}
+bool includePoint(Point &)
+{
+
 }
 
 std::ostream & operator<<(std::ostream & out, const Wall & w)

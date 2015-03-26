@@ -3,21 +3,13 @@
 
 #include <vector>
 
-#include "crystal.hpp"
-#include "dest.hpp"
-#include "lens.hpp"
-#include "mirror.hpp"
-#include "ray.hpp"
-#include "source.hpp"
 #include "wall.hpp"
-#include "point.hpp"
+#include "mirror.hpp"
+#include "crystal.hpp"
+#include "lens.hpp"
 #include "nuke.hpp"
-#include "reactable.hpp"
-
-enum LevelState
-{
-    STOPPED, DESTINATION_HIT, BOMBED, PLAYABLE
-};
+#include "source.hpp"
+#include "dest.hpp"
 
 /**
  * Modélise une carte telle qu'utilisée dans le jeu.
@@ -41,12 +33,9 @@ private :
     std::vector<Ray> rays;
     std::vector<Nuke> nukes;
 
-    LevelState levelState{LevelState::PLAYABLE};
-
 public:
 
     void computeRay(Ray &);
-    Reactable & getComponentAt(const Point &);
     void addRay(Ray &);
 
     /**

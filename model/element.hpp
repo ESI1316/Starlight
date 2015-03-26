@@ -1,6 +1,8 @@
 #ifndef ELEMENT_HPP
 #define ELEMENT_HPP
 
+#include "ray.hpp"
+
 class Level;
 
 class Element
@@ -13,9 +15,11 @@ private :
 protected :
 
     Element() = default;
-    ~Element();
 
 public :
+
+    virtual void reactToRay(Ray &) = 0;
+    virtual bool includePoint(Point &) = 0;
 
     void setLevel(Level *);
 };

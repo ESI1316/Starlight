@@ -3,8 +3,7 @@
 
 #include <ostream>
 #include "point.hpp"
-
-class Level;
+#include "element.hpp"
 
 /**
  * Cette classe modélise les miroirs utilisés dans le jeu.
@@ -17,7 +16,7 @@ class Level;
  * Les miroirs sont capables d'être déplacés et pivotés dans
  *  une certaine limite.
  */
-class Mirror
+class Mirror : public Element
 {
     Point pivot;
     int length;
@@ -30,9 +29,7 @@ class Mirror
     double alphaMin {0};
     double alphaMax {0};
 
-    Level * level;
-
-  public:
+public:
     /**
      * Instancie un miroir en une position donnée, d'une certaine
      * longueur et orienté d'un certain angle.

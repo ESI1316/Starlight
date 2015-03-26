@@ -3,7 +3,7 @@
 #include "starlightexception.hpp"
 
 Nuke::Nuke(const Point & position, const int radian)
-    : position{position}
+    : Element(), position{position}
 {
     if (radian <= 0)
         throw new StarlightException("Le rayon de la bombe doit être strict. positif");
@@ -37,9 +37,17 @@ Nuke & Nuke::operator=(const Nuke & nuke)
     this->position = nuke.position;
     this->radian = nuke.radian;
     this->light = nuke.light;
-    this->level = nuke.level;
 
     return *this;
+}
+
+void reactToRay(Ray &)
+{
+
+}
+bool includePoint(Point &)
+{
+
 }
 
 std::ostream & operator<<(std::ostream & out, const Nuke & nuke)

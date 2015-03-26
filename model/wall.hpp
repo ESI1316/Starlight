@@ -3,8 +3,7 @@
 
 #include <iostream>
 #include "point.hpp"
-
-class Level;
+#include "element.hpp"
 
 /**
  * Cette classe modélise les murs utilisés dans le jeu.
@@ -12,14 +11,12 @@ class Level;
  * Les murs sont des segments de droite qui ne réfléchissent
  * pas la lumière.
  */
-class Wall
+class Wall : public Element
 {
     Point start;
     Point end;
 
-    Level * level;
-
-  public:
+public:
     /**
      * Instancie un mur.
      * @param p1 le début du mur.

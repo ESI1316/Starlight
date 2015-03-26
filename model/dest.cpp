@@ -3,13 +3,13 @@
 #include "level.hpp"
 
 Dest::Dest(const Point & position, const int edge)
-    : position{position}, light{false}
+    : Element(), position{position}, light{false}
 {
     if(edge <= 0)
         throw new StarlightException
             ("Cotés de la destinations doivent être strictement positifs.");
 
-     this->edge = edge;
+    this->edge = edge;
 }
 
 const Point & Dest::getPosition() const
@@ -30,6 +30,15 @@ bool Dest::isLightedUp() const
 void Dest::setLightedUp(const bool light)
 {
     this->light = light;
+}
+
+void reactToRay(Ray &)
+{
+
+}
+bool includePoint(Point &)
+{
+
 }
 
 std::ostream & operator<<(std::ostream & out, const Dest & dest)

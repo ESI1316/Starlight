@@ -3,7 +3,7 @@
 #include "starlightexception.hpp"
 
 Lens::Lens(const Point & position, const int width, const int height, const int wlMin, const int wlMax)
-    : position {position}
+    : Element(), position {position}
 {
     if(width <= 0)
         throw new StarlightException("Largeur positive requise");
@@ -54,9 +54,17 @@ Lens & Lens::operator =(const Lens & lens)
     this->height = lens.height;
     this->wlMin = lens.wlMin;
     this->wlMax = lens.wlMax;
-    this->level = lens.level;
 
     return *this;
+}
+
+void reactToRay(Ray &)
+{
+
+}
+bool includePoint(Point &)
+{
+
 }
 
 std::ostream & operator<<(std::ostream & out, const Lens & lens)

@@ -3,8 +3,7 @@
 
 #include <ostream>
 #include "point.hpp"
-
-class Level;
+#include "element.hpp"
 
 /**
  * Cette classe modélise les bombes utilisées dans le jeu.
@@ -12,15 +11,13 @@ class Level;
  * Une bomnbe est un objet circulaire qui, si illuminé par
  * un rayon, fait perdre la partie au joueur.
  */
-class Nuke
+class Nuke : Element
 {
     Point position;
     int radian;
     bool light {false};
 
-    Level * level;
-
-  public:
+public:
     /**
      * Instancie une bombe en une position donnée avec un rayon
      * déterminé.

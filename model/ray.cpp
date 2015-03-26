@@ -57,7 +57,6 @@ bool Ray::setWaveLength(const int waveLength)
         this->start = ray.start;
         this->end = ray.end;
         this->waveLength = ray.waveLength;
-        this->level = ray.level;
 
         return *this;
     }

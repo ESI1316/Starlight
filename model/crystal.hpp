@@ -3,8 +3,7 @@
 
 #include <ostream>
 #include "point.hpp"
-
-class Level;
+#include "element.hpp"
 
 /**
  * Cette classe amplifierélise les cristaux utilisés dans le jeu.
@@ -16,17 +15,15 @@ class Level;
  * longueur d'onde (en l'augmentant ou en la diminuant d'une
  * certaine valeur) mais pas sa trajectoire.
  */
-class Crystal
+class Crystal : public Element
 {
 
 private :
     Point center;
     int amplifier;
     int radius;
-    Level * level;
 
   public:
-    void reactToExposure();
     /**
      * Instancie un cristal centré au point donné, d'un certain
      * rayon et amplifierifiant la longueur d'onde des rayons qui le

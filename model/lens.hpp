@@ -3,8 +3,7 @@
 
 #include <ostream>
 #include "point.hpp"
-
-class Level;
+#include "element.hpp"
 
 /**
  * Cette classe modélise les lentilles utilisées dans le jeu.
@@ -16,7 +15,7 @@ class Level;
  * aucune modification. Sinon, la lentille se comporte comme un
  * mur.
  */
-class Lens
+class Lens : public Element
 {
     Point position;
 
@@ -26,11 +25,8 @@ class Lens
     int wlMin;
     int wlMax;
 
-    Level * level;
-
   public:
 
-    void reactToExposure();
     /**
      * Instancie une lentille à l'aide de toutes ses
      * caractéristiques.

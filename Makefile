@@ -65,8 +65,6 @@ SOURCES       = main.cpp \
 		test/polarpointtest.cpp \
 		model/starlightexception.cpp \
 		test/levelfactorytest.cpp \
-		model/positionable.cpp \
-		model/reactable.cpp \
 		model/element.cpp moc_mainwindow.cpp
 OBJECTS       = main.o \
 		mainwindow.o \
@@ -85,8 +83,6 @@ OBJECTS       = main.o \
 		polarpointtest.o \
 		starlightexception.o \
 		levelfactorytest.o \
-		positionable.o \
-		reactable.o \
 		element.o \
 		moc_mainwindow.o
 DIST          = ressources/level.lvl \
@@ -204,8 +200,6 @@ DIST          = ressources/level.lvl \
 		Starlight.pro mainwindow.hpp \
 		test/catch.hpp \
 		model/starlightexception.hpp \
-		model/positionable.hpp \
-		model/reactable.hpp \
 		model/element.hpp \
 		model/crystal.hpp \
 		model/dest.hpp \
@@ -235,8 +229,6 @@ DIST          = ressources/level.lvl \
 		test/polarpointtest.cpp \
 		model/starlightexception.cpp \
 		test/levelfactorytest.cpp \
-		model/positionable.cpp \
-		model/reactable.cpp \
 		model/element.cpp
 QMAKE_TARGET  = Starlight
 DESTDIR       = #avoid trailing-slash linebreak
@@ -513,8 +505,8 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
-	$(COPY_FILE) --parents mainwindow.hpp test/catch.hpp model/starlightexception.hpp model/positionable.hpp model/reactable.hpp model/element.hpp model/crystal.hpp model/dest.hpp model/lens.hpp model/level.hpp model/levelFactory.hpp model/mirror.hpp model/nuke.hpp model/point.hpp model/polarPoint.hpp model/ray.hpp model/source.hpp model/wall.hpp $(DISTDIR)/
-	$(COPY_FILE) --parents main.cpp mainwindow.cpp model/crystal.cpp model/dest.cpp model/lens.cpp model/level.cpp model/mirror.cpp model/nuke.cpp model/point.cpp model/ray.cpp model/source.cpp model/wall.cpp model/polarPoint.cpp model/levelFactory.cpp test/polarpointtest.cpp model/starlightexception.cpp test/levelfactorytest.cpp model/positionable.cpp model/reactable.cpp model/element.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents mainwindow.hpp test/catch.hpp model/starlightexception.hpp model/element.hpp model/crystal.hpp model/dest.hpp model/lens.hpp model/level.hpp model/levelFactory.hpp model/mirror.hpp model/nuke.hpp model/point.hpp model/polarPoint.hpp model/ray.hpp model/source.hpp model/wall.hpp $(DISTDIR)/
+	$(COPY_FILE) --parents main.cpp mainwindow.cpp model/crystal.cpp model/dest.cpp model/lens.cpp model/level.cpp model/mirror.cpp model/nuke.cpp model/point.cpp model/ray.cpp model/source.cpp model/wall.cpp model/polarPoint.cpp model/levelFactory.cpp test/polarpointtest.cpp model/starlightexception.cpp test/levelfactorytest.cpp model/element.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents mainwindow.ui $(DISTDIR)/
 
 
@@ -819,6 +811,8 @@ mainwindow.o: mainwindow.cpp mainwindow.hpp \
 
 crystal.o: model/crystal.cpp model/crystal.hpp \
 		model/point.hpp \
+		model/element.hpp \
+		model/starlightexception.hpp \
 		model/level.hpp \
 		model/dest.hpp \
 		model/lens.hpp \
@@ -826,12 +820,13 @@ crystal.o: model/crystal.cpp model/crystal.hpp \
 		model/ray.hpp \
 		model/source.hpp \
 		model/wall.hpp \
-		model/nuke.hpp \
-		model/reactable.hpp
+		model/nuke.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o crystal.o model/crystal.cpp
 
 dest.o: model/dest.cpp model/dest.hpp \
 		model/point.hpp \
+		model/element.hpp \
+		model/starlightexception.hpp \
 		model/level.hpp \
 		model/crystal.hpp \
 		model/lens.hpp \
@@ -839,12 +834,12 @@ dest.o: model/dest.cpp model/dest.hpp \
 		model/ray.hpp \
 		model/source.hpp \
 		model/wall.hpp \
-		model/nuke.hpp \
-		model/reactable.hpp
+		model/nuke.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o dest.o model/dest.cpp
 
 lens.o: model/lens.cpp model/lens.hpp \
 		model/point.hpp \
+		model/element.hpp \
 		model/level.hpp \
 		model/crystal.hpp \
 		model/dest.hpp \
@@ -853,13 +848,13 @@ lens.o: model/lens.cpp model/lens.hpp \
 		model/source.hpp \
 		model/wall.hpp \
 		model/nuke.hpp \
-		model/reactable.hpp \
 		model/starlightexception.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o lens.o model/lens.cpp
 
 level.o: model/level.cpp model/level.hpp \
 		model/crystal.hpp \
 		model/point.hpp \
+		model/element.hpp \
 		model/dest.hpp \
 		model/lens.hpp \
 		model/mirror.hpp \
@@ -867,12 +862,12 @@ level.o: model/level.cpp model/level.hpp \
 		model/source.hpp \
 		model/wall.hpp \
 		model/nuke.hpp \
-		model/reactable.hpp \
 		model/starlightexception.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o level.o model/level.cpp
 
 mirror.o: model/mirror.cpp model/mirror.hpp \
 		model/point.hpp \
+		model/element.hpp \
 		model/level.hpp \
 		model/crystal.hpp \
 		model/dest.hpp \
@@ -880,12 +875,12 @@ mirror.o: model/mirror.cpp model/mirror.hpp \
 		model/ray.hpp \
 		model/source.hpp \
 		model/wall.hpp \
-		model/nuke.hpp \
-		model/reactable.hpp
+		model/nuke.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mirror.o model/mirror.cpp
 
 nuke.o: model/nuke.cpp model/nuke.hpp \
 		model/point.hpp \
+		model/element.hpp \
 		model/level.hpp \
 		model/crystal.hpp \
 		model/dest.hpp \
@@ -894,7 +889,6 @@ nuke.o: model/nuke.cpp model/nuke.hpp \
 		model/ray.hpp \
 		model/source.hpp \
 		model/wall.hpp \
-		model/reactable.hpp \
 		model/starlightexception.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o nuke.o model/nuke.cpp
 
@@ -905,13 +899,13 @@ ray.o: model/ray.cpp model/ray.hpp \
 		model/point.hpp \
 		model/level.hpp \
 		model/crystal.hpp \
+		model/element.hpp \
 		model/dest.hpp \
 		model/lens.hpp \
 		model/mirror.hpp \
 		model/source.hpp \
 		model/wall.hpp \
-		model/nuke.hpp \
-		model/reactable.hpp
+		model/nuke.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ray.o model/ray.cpp
 
 source.o: model/source.cpp model/source.hpp \
@@ -921,6 +915,7 @@ source.o: model/source.cpp model/source.hpp \
 
 wall.o: model/wall.cpp model/wall.hpp \
 		model/point.hpp \
+		model/element.hpp \
 		model/level.hpp \
 		model/crystal.hpp \
 		model/dest.hpp \
@@ -928,8 +923,7 @@ wall.o: model/wall.cpp model/wall.hpp \
 		model/mirror.hpp \
 		model/ray.hpp \
 		model/source.hpp \
-		model/nuke.hpp \
-		model/reactable.hpp
+		model/nuke.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o wall.o model/wall.cpp
 
 polarPoint.o: model/polarPoint.cpp model/polarPoint.hpp \
@@ -940,14 +934,14 @@ levelFactory.o: model/levelFactory.cpp model/levelFactory.hpp \
 		model/level.hpp \
 		model/crystal.hpp \
 		model/point.hpp \
+		model/element.hpp \
 		model/dest.hpp \
 		model/lens.hpp \
 		model/mirror.hpp \
 		model/ray.hpp \
 		model/source.hpp \
 		model/wall.hpp \
-		model/nuke.hpp \
-		model/reactable.hpp
+		model/nuke.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o levelFactory.o model/levelFactory.cpp
 
 polarpointtest.o: test/polarpointtest.cpp test/catch.hpp \
@@ -961,14 +955,6 @@ starlightexception.o: model/starlightexception.cpp model/starlightexception.hpp
 levelfactorytest.o: test/levelfactorytest.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o levelfactorytest.o test/levelfactorytest.cpp
 
-positionable.o: model/positionable.cpp model/positionable.hpp
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o positionable.o model/positionable.cpp
-
-reactable.o: model/reactable.cpp model/reactable.hpp \
-		model/ray.hpp \
-		model/point.hpp
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o reactable.o model/reactable.cpp
-
 element.o: model/element.cpp model/element.hpp \
 		model/level.hpp \
 		model/crystal.hpp \
@@ -979,8 +965,7 @@ element.o: model/element.cpp model/element.hpp \
 		model/ray.hpp \
 		model/source.hpp \
 		model/wall.hpp \
-		model/nuke.hpp \
-		model/reactable.hpp
+		model/nuke.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o element.o model/element.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 

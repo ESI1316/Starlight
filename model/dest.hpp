@@ -2,9 +2,7 @@
 #define DEST_H
 
 #include <ostream>
-#include "point.hpp"
-
-class Level;
+#include "element.hpp"
 
 /**
  * Cette classe modélise la destination utilisée dans le jeu.
@@ -12,16 +10,13 @@ class Level;
  * Une destination est un objet carré qui, quand traversé par
  * un rayon lumineux, fait remporter la partie au joueur.
  */
-class Dest
+class Dest : public Element
 {
     Point position;
     int edge;
     bool light;
 
-    Level * level;
-
   public:
-    void reactToExposure();
 
     /**
      * Intancie une destination, de position et rayon donné.

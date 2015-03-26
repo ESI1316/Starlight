@@ -31,15 +31,11 @@ SOURCES += main.cpp\
     test/polarpointtest.cpp \
     model/starlightexception.cpp \
     test/levelfactorytest.cpp \
-    model/positionable.cpp \
-    model/reactable.cpp \
     model/element.cpp
 
 HEADERS  += mainwindow.hpp \
     test/catch.hpp \
     model/starlightexception.hpp \
-    model/positionable.hpp \
-    model/reactable.hpp \
     model/element.hpp \
     model/crystal.hpp \
     model/dest.hpp \

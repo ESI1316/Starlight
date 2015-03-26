@@ -4,7 +4,7 @@
 
 
 Crystal::Crystal(const Point & center, const int radius, const int amplifier)
-    : center {center}, amplifier {amplifier}
+    : Element(), center {center}, amplifier {amplifier}
 {
     if(radius <= 0)
         throw new StarlightException("Le rayon doit être strictement positif.");
@@ -32,10 +32,18 @@ Crystal & Crystal::operator =(const Crystal & crystal)
     this->center = crystal.center;
     this->radius = crystal.radius;
     this->amplifier = crystal.amplifier;
-    this->level = crystal.level;
 
     return *this;
 }
+
+    void reactToRay(Ray &){
+
+    }
+
+    bool includePoint(Point &)
+    {
+
+    }
 
 std::ostream & operator<<(std::ostream & out, const Crystal & c)
 {

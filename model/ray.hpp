@@ -4,8 +4,6 @@
 #include <iostream>
 #include "point.hpp"
 
-class Level;
-
 /**
  * Cette classe modélise les rayons lumineux, concept central du jeu.
  * </p>
@@ -17,8 +15,6 @@ class Ray
     Point start;
     Point end;
     int waveLength;
-
-    Level * level;
 
   public:
     /**

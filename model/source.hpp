@@ -4,8 +4,6 @@
 #include <iostream>
 #include "point.hpp"
 
-class Level;
-
 /**
  * Modélise la source lumineuse utilisée dans le jeu.
  * </p>
@@ -24,9 +22,7 @@ class Source
     double alpha;
     int waveLength;
 
-    Level * level;
-
-  public:
+public:
     /**
      * Instancie une nouvelle source de position, côté et
      * longueur d'onde donnée.
