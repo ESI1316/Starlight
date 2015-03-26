@@ -1,8 +1,8 @@
 #ifndef SOURCE_H
 #define SOURCE_H
 
-#include "point.h"
 #include <iostream>
+#include "point.hpp"
 
 /**
  * Modélise la source lumineuse utilisée dans le jeu.
@@ -17,12 +17,12 @@
 class Source
 {
     bool on {false};
-    Point pos;
-    double alpha;
+    Point position;
     int edge;
-    int wavelength;
+    double alpha;
+    int waveLength;
 
-  public:
+public:
     /**
      * Instancie une nouvelle source de position, côté et
      * longueur d'onde donnée.
@@ -41,7 +41,7 @@ class Source
      * @see Ray::WL_MAX
      * @see Ray::WL_DFT
      */
-    Source(const Point & p, int e, double a, int wl);
+    Source(const Point &, const int, const double, const int);
 
     /**
      * Retourne la coordonnée du coin supérieur gauche du carré
@@ -67,7 +67,7 @@ class Source
      * Retourne la longueur d'onde du rayon émis.
      * @return la longueur d'onde du rayon émis.
      */
-    int getWavelength() const;
+    int getWaveLength() const;
 
     /**
      * Retourne vrai si la source émet un rayon lumineux,
@@ -82,7 +82,7 @@ class Source
      * @param q vrai si la source doit être allumée,
      * faux sinon.
      */
-    void setOn(bool q);
+    void setOn(const bool);
 
     /**
      * Surcharge l'opérateur de flux de sortie pour afficher
@@ -90,8 +90,7 @@ class Source
      * sous-jacente en console.
      * @return le flux dans lequel la source a été imprimée.
      */
-    friend std::ostream & operator<<(std::ostream & out,
-                                     const Source & s);
+    //friend std::ostream & operator<<(std::ostream &, const Source &);
 };
 
 #endif // SOURCE_H

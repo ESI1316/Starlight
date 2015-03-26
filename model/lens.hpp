@@ -1,9 +1,9 @@
 #ifndef LENS_H
 #define LENS_H
 
-#include "point.h"
-
 #include <ostream>
+#include "point.hpp"
+#include "element.hpp"
 
 /**
  * Cette classe modélise les lentilles utilisées dans le jeu.
@@ -15,17 +15,20 @@
  * aucune modification. Sinon, la lentille se comporte comme un
  * mur.
  */
-class Lens
+class Lens : public Element
 {
-    Point pos;
+    Point position;
 
     int width;
     int height;
 
-    int wlmin;
-    int wlmax;
+    int wlMin;
+    int wlMax;
 
   public:
+    void reactToRay(Ray &);
+    bool includePoint(Point &);
+
     /**
      * Instancie une lentille à l'aide de toutes ses
      * caractéristiques.
@@ -33,12 +36,12 @@ class Lens
      *          rectangle modélisant la lentille.
      * @param w la largeur de la lentille
      * @param h la hauteur de la lentille
-     * @param wlmin la longueur d'onde minimale des rayons
+     * @param wlMin la longueur d'onde minimale des rayons
      *              autorisés à franchir la lentille
-     * @param wlmax la longueur d'onde maximale des rayons
+     * @param wlMax la longueur d'onde maximale des rayons
      *              autorisés à franchir la lentille
      */
-    Lens(const Point & p, int w, int h, int wlmin, int wlmax);
+    Lens(const Point &, const int, const int, const int, const int);
 
     /**
      * Retourne la position du coin supérieur gauche du
@@ -66,7 +69,7 @@ class Lens
      * @return la longueur d'onde minimale des rayons
      * autorisés à franchir la lentille
      */
-    int getMinWavelength() const;
+    int getMinWaveLength() const;
 
     /**
      * Retourne la longueur d'onde maximale des rayons
@@ -74,7 +77,9 @@ class Lens
      * @return la longueur d'onde maximale des rayons
      * autorisés à franchir la lentille
      */
-    int getMaxWavelength() const;
+    int getMaxWaveLength() const;
+
+    Lens & operator=(const Lens &);
 
     /**
      * Surcharge l'opérateur de flux de sortie pour afficher

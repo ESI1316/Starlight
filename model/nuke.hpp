@@ -1,8 +1,9 @@
 #ifndef NUKE_H
 #define NUKE_H
 
-#include "point.h"
 #include <ostream>
+#include "point.hpp"
+#include "element.hpp"
 
 /**
  * Cette classe modélise les bombes utilisées dans le jeu.
@@ -10,20 +11,22 @@
  * Une bomnbe est un objet circulaire qui, si illuminé par
  * un rayon, fait perdre la partie au joueur.
  */
-class Nuke
+class Nuke : Element
 {
-    Point pos;
-    int rad;
+    Point position;
+    int radian;
     bool light {false};
 
-  public:
+public:
+    void reactToRay(Ray &);
+    bool includePoint(Point &);
     /**
      * Instancie une bombe en une position donnée avec un rayon
      * déterminé.
      * @param p la position de la bombe
      * @param r le rayon de la bombe
      */
-    Nuke(const Point & p, int r);
+    Nuke(const Point &,const int);
 
     /**
      * Retourne la position de la bombe.
@@ -43,11 +46,12 @@ class Nuke
      */
     bool isLightedUp() const;
 
+    Nuke & operator=(const Nuke &);
     /**
      * Illumine la bombe ou non.
      * @param q vrai si la bombe est illuminée, faux sinon.
      */
-    void setLightedUp(bool q);
+    void setLightedUp(const bool);
 
     /**
      * Surcharge l'opérateur de flux de sortie pour afficher un

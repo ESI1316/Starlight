@@ -1,4 +1,4 @@
-#include "levelFactory.h"
+#include "levelFactory.hpp"
 
 Level * levelFactory::getLevelFromFile(std::string mapFilePath)
 {

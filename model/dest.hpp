@@ -1,9 +1,8 @@
 #ifndef DEST_H
 #define DEST_H
 
-#include "point.h"
-
 #include <ostream>
+#include "element.hpp"
 
 /**
  * Cette classe modélise la destination utilisée dans le jeu.
@@ -11,20 +10,23 @@
  * Une destination est un objet carré qui, quand traversé par
  * un rayon lumineux, fait remporter la partie au joueur.
  */
-class Dest
+class Dest : public Element
 {
-    Point pos;
+    Point position;
     int edge;
     bool light;
 
   public:
+    void reactToRay(Ray &);
+    bool includePoint(Point &);
+
     /**
      * Intancie une destination, de position et rayon donné.
      * @param p le coin supérieur gauche du carré modélisant
      *        la destination.
      * @param e la longueur du côté du carré.
      */
-    Dest(const Point & p, int e);
+    Dest(const Point &, const int);
 
     /**
      * Retourne la position du coin supérieur gauche du carré
@@ -52,7 +54,7 @@ class Dest
      * @param vrai si la destination doit être illuminée,
      * faux sinon.
      */
-    void setLightedUp(const bool q);
+    void setLightedUp(const bool);
 
     /**
      * Surcharge l'opérateur de flux de sortie pour afficher

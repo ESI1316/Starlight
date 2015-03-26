@@ -1,17 +1,18 @@
-#include "mirror.h"
 #include <iostream>
+#include "mirror.hpp"
+#include "level.hpp"
 
-Mirror::Mirror(const Point & p, int len, int x, double a)
-    : Mirror {p, len, x, a, {0, 0}, {0, 0}, 0, 0}
+Mirror::Mirror(const Point & point, int length, int xpad, double alpha)
+    : Mirror {point, length, xpad, alpha, Point{0, 0}, Point{0, 0}, 0, 0}
 {
 
 }
 
-Mirror::Mirror(const Point & p, int len, int x, double a, Point pm,
-               Point pM, double am, double aM)
-    : pivot {p}, length(len), xpad(x), xMin {pm.getX()}, xMax {pM.getX()},
-      yMin {pm.getY()}, yMax {pM.getY()}, alpha {a}, alphaMin {am},
-      alphaMax {aM}
+Mirror::Mirror(const Point & p, int length, int xpad, double alpha, Point pm,
+               Point pM, double alphaMin, double alphaMax)
+    : Element(), pivot {p}, length(length), xpad(xpad), xMin {pm.getX()},
+      xMax {pM.getX()}, yMin {pm.getY()}, yMax {pM.getY()}, alpha {alpha},
+      alphaMin {alphaMin}, alphaMax {alphaMax}
 {
     // TODO : valider length, xpad, (alphaMin et alphaMax),
     //                (alpha et [alphaMin, alphaMax]), (xMin et xMax),
@@ -59,27 +60,43 @@ Point Mirror::getMaxPivot() const
     return Point {xMax, yMax};
 }
 
-bool Mirror::setPivot(const Point & p)
+bool Mirror::setPivot(const Point & pivot)
 {
-    bool r {checkPivotRange(p)};
-    if (r) this->pivot = p;
-    return r;
+    bool match{this->checkPivotRange(pivot)};
+
+    if (match)
+        this->pivot = pivot;
+
+    return match;
 }
 
-bool Mirror::setAngle(double a)
+bool Mirror::setAngle(double alpha)
 {
-    bool r {checkAngleRange(a)};
-    if (r) this->alpha = a;
-    return r;
+    bool match{this->checkAngleRange(alpha)};
+
+    if (match)
+        this->alpha = alpha;
+
+    return match;
 }
 
+/**
+ * @brief Mirror::checkAngleRange A NETTOYER TOUTE CES CRAPS ALGO
+ * @param a
+ * @return
+ */
 bool Mirror::checkAngleRange(double a) const
 {
     return (this->alphaMin == 0 && this->alphaMax == 0) ||
             (a >= this->alphaMin && a <= this->alphaMax);
 }
 
-bool Mirror::checkPivotRange(const Point & p) const
+/**
+ * @brief Mirror::checkPivotRange A NETTOYER TOUTE CES CRAPS ALGO
+ * @param point
+ * @return
+ */
+bool Mirror::checkPivotRange(const Point & point) const
 {
     if (this->xMin == 0 && this->xMax == 0 && this->yMin == 0 && this->yMax == 0)
     {
@@ -87,30 +104,62 @@ bool Mirror::checkPivotRange(const Point & p) const
     }
     else if (this->xMin == 0 && this->xMax == 0)
     {
-        return p.getY() >= this->yMin && p.getY() <= this->yMax;
+        return point.getY() >= this->yMin && point.getY() <= this->yMax;
     }
     else if (this->yMin == 0 && this->yMax == 0)
     {
-        return p.getX() >= this->xMin && p.getX() <= this->xMax;
+        return point.getX() >= this->xMin && point.getX() <= this->xMax;
     }
     else
     {
-        return p.getX() >= this->xMin && p.getX() <= this->xMax
-                && p.getY() >= this->yMin && p.getY() <= this->yMax;
+        return point.getX() >= this->xMin && point.getX() <= this->xMax
+                && point.getY() >= this->yMin && point.getY() <= this->yMax;
     }
 }
 
-std::ostream & operator<<(std::ostream & out, const Mirror & m)
+Mirror & Mirror::operator =(const Mirror & mirror)
 {
-    out << "Mirror --- Pivot : " << m.pivot
-        << " , Length : " << m.length
-        << " , x-pad : " << m.xpad
-        << ", Angle : " << m.alpha
-        << " , Angle range : [" << m.alphaMin
-        << "," << m.alphaMax << "]"
-        << "Pivot range : [(" << m.xMin
-        << "," << m.yMin
-        << "),(" << m.xMax
-        << "," << m.yMax << ")]";
+    this->pivot = mirror.pivot;
+    this->length = mirror.length;
+    this->xpad = mirror.xpad;
+    this->xMin = mirror.xMin;
+    this->xMax = mirror.xMax;
+    this->yMin = mirror.yMin;
+    this->yMax = mirror.yMax;
+    this->alpha = mirror.alpha;
+    this->alphaMin = mirror.alphaMin;
+    this->alphaMax = mirror.alphaMax;
+
+    return *this;
+}
+
+void Mirror::reactToRay(Ray &)
+{
+
+}
+bool Mirror::includePoint(Point &)
+{
+
+}
+
+/**
+ * @brief operator << A CLEAN A COUP DE GETTERS POUR EVITER LE FRIEND.
+ * @param out
+ * @param mirror
+ * @return
+ */
+std::ostream & operator<<(std::ostream & out, const Mirror & mirror)
+{
+    out << "Mirror --- Pivot : " << mirror.getPivot()
+        << " , Length : " << mirror.getLength()
+        << " , x-pad : " << mirror.getXPad()
+        << ", Angle : " << mirror.getAngle()
+        << " , Angle range : [" << mirror.getMinAngle()
+        << "," << mirror.getMaxAngle() << "]"
+        << "Pivot range : [(" << mirror.getMinPivot().getX()
+        << "," << mirror.getMinPivot().getY()
+        << "),(" << mirror.getMaxPivot().getX()
+        << "," << mirror.getMaxPivot().getY() << ")]";
+
     return out;
 }

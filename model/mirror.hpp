@@ -1,9 +1,9 @@
 #ifndef MIRROR_H
 #define MIRROR_H
 
-#include "point.h"
-
 #include <ostream>
+#include "point.hpp"
+#include "element.hpp"
 
 /**
  * Cette classe modélise les miroirs utilisés dans le jeu.
@@ -16,7 +16,7 @@
  * Les miroirs sont capables d'être déplacés et pivotés dans
  *  une certaine limite.
  */
-class Mirror
+class Mirror : public Element
 {
     Point pivot;
     int length;
@@ -29,7 +29,9 @@ class Mirror
     double alphaMin {0};
     double alphaMax {0};
 
-  public:
+public:
+    void reactToRay(Ray &);
+    bool includePoint(Point &);
     /**
      * Instancie un miroir en une position donnée, d'une certaine
      * longueur et orienté d'un certain angle.
@@ -43,7 +45,7 @@ class Mirror
      *          du miroir
      * @param a l'angle d'inclinaison du miroir
      */
-    Mirror(const Point & p, int len, int x, double a);
+    Mirror(const Point &, int, int, double);
 
     /**
      * Instancie un miroir en une position donnée, d'une certaine
@@ -70,8 +72,7 @@ class Mirror
      * @param amin l'angle d'inclinaison minimum du miroir.
      * @param amax l'angle d'inclinaison maximum du miroir.
      */
-    Mirror(const Point & p, int len, int x, double a, Point min,
-           Point max, double amin, double amax);
+    Mirror(const Point &, int, int, double, Point, Point, double, double);
 
     /**
      * Retourne la position (et le pivot) du miroir.
@@ -183,13 +184,14 @@ class Mirror
      */
     bool checkPivotRange(const Point &) const;
 
+    Mirror & operator=(const Mirror &);
     /**
      * Surcharge l'opérateur de flux de sortie pour
      * afficher un récapitulatif des caractéristiques du
      * miroir sous-jacent en console.
      * @return le flux dans lequel le miroir a été imprimé.
      */
-    friend std::ostream & operator<<(std::ostream & out, const Mirror & m);
+    //friend std::ostream & operator<<(std::ostream &, const Mirror &);
 };
 
 #endif // MIRROR_H

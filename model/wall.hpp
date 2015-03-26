@@ -1,8 +1,9 @@
 #ifndef WALL_H
 #define WALL_H
 
-#include "point.h"
 #include <iostream>
+#include "point.hpp"
+#include "element.hpp"
 
 /**
  * Cette classe modélise les murs utilisés dans le jeu.
@@ -10,12 +11,14 @@
  * Les murs sont des segments de droite qui ne réfléchissent
  * pas la lumière.
  */
-class Wall
+class Wall : public Element
 {
     Point start;
     Point end;
 
-  public:
+public:
+    void reactToRay(Ray &);
+    bool includePoint(Point &);
     /**
      * Instancie un mur.
      * @param p1 le début du mur.
@@ -35,14 +38,14 @@ class Wall
      */
     const Point & getEnd() const;
 
+    Wall & operator=(const Wall &);
     /**
      * Surcharge l'opérateur de flux de sortie pour afficher
      * un récapitulatif des caractéristiques du mur sous-jacent
      * en console.
      * @return le flux dans lequel le mur a été imprimé.
      */
-    friend std::ostream & operator<<(std::ostream &,
-                                     const Wall &);
+    // friend std::ostream & operator<<(std::ostream &, const Wall &);
 };
 
 #endif // WALL_H

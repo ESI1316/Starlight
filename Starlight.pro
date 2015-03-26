@@ -28,21 +28,29 @@ SOURCES += main.cpp\
     model/wall.cpp \
     model/polarPoint.cpp \
     model/levelFactory.cpp \
-    test/polarpointtest.cpp
+    test/polarpointtest.cpp \
+    model/starlightexception.cpp \
+    test/levelfactorytest.cpp \
+    model/element.cpp
 
 HEADERS  += mainwindow.hpp \
-    model/crystal.h \
-    model/dest.h \
-    model/lens.h \
-    model/level.h \
-    model/mirror.h \
-    model/nuke.h \
-    model/point.h \
-    model/ray.h \
-    model/source.h \
-    model/wall.h \
-    model/polarPoint.h \
-    model/levelFactory.h \
-    test/catch.hpp
+    test/catch.hpp \
+    model/starlightexception.hpp \
+    model/element.hpp \
+    model/crystal.hpp \
+    model/dest.hpp \
+    model/lens.hpp \
+    model/level.hpp \
+    model/levelFactory.hpp \
+    model/mirror.hpp \
+    model/nuke.hpp \
+    model/point.hpp \
+    model/polarPoint.hpp \
+    model/ray.hpp \
+    model/source.hpp \
+    model/wall.hpp
 
 FORMS    += mainwindow.ui
+
+DISTFILES += \
+    ressources/level.lvl

@@ -1,18 +1,25 @@
-#include "nuke.h"
+#include "nuke.hpp"
+#include "level.hpp"
+#include "starlightexception.hpp"
 
-Nuke::Nuke(const Point & p, int r) : pos {p}, rad {r}
+Nuke::Nuke(const Point & position, const int radian)
+    : Element(), position{position}
 {
-    // TODO : valider rad
+    if (radian <= 0)
+        throw new StarlightException("Le rayon de la bombe doit être strict. positif");
+
+    this->radian = radian;
+    // TODO : valider rad :: Simon : OK ?
 }
 
 const Point &Nuke::getLocation() const
 {
-    return this->pos;
+    return this->position;
 }
 
 int Nuke::getRadius() const
 {
-    return this->rad;
+    return this->radian;
 }
 
 bool Nuke::isLightedUp() const
@@ -20,15 +27,34 @@ bool Nuke::isLightedUp() const
     return this->light;
 }
 
-void Nuke::setLightedUp(bool light)
+void Nuke::setLightedUp(const bool light)
 {
     this->light = light;
 }
 
-std::ostream & operator<<(std::ostream & out, const Nuke & s)
+Nuke & Nuke::operator=(const Nuke & nuke)
 {
-    out << "Nuke --- Position : " << s.getLocation()
-        << " , Radius : " << s.getRadius()
-        << " On : " << s.isLightedUp();
+    this->position = nuke.position;
+    this->radian = nuke.radian;
+    this->light = nuke.light;
+
+    return *this;
+}
+
+void Nuke::reactToRay(Ray &)
+{
+
+}
+bool Nuke::includePoint(Point &)
+{
+
+}
+
+std::ostream & operator<<(std::ostream & out, const Nuke & nuke)
+{
+    out << "Nuke --- Position : " << nuke.getLocation()
+        << " , Radius : " << nuke.getRadius()
+        << " On : " << nuke.isLightedUp();
+
     return out;
 }

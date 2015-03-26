@@ -1,31 +1,30 @@
 #ifndef LEVEL_H
 #define LEVEL_H
 
-#include "crystal.h"
-#include "dest.h"
-#include "lens.h"
-#include "mirror.h"
-#include "ray.h"
-#include "source.h"
-#include "wall.h"
-#include "point.h"
-#include "nuke.h"
-
 #include <vector>
+
+#include "wall.hpp"
+#include "mirror.hpp"
+#include "crystal.hpp"
+#include "lens.hpp"
+#include "nuke.hpp"
+#include "source.hpp"
+#include "dest.hpp"
 
 /**
  * Modélise une carte telle qu'utilisée dans le jeu.
- * </p>
  * Une carte est un ensemble de composant tels que des murs,
  * des miroirs, etc.
  */
 class Level
 {
+private :
+
     const int width;
     const int height;
 
-    Source s {{0, 0}, -1, 5, 600};
-    Dest d {{0, 0}, 5};
+    Source source{Point(0, 0), -1, 5., 600};
+    Dest dest{Point(0, 0), 5};
 
     std::vector<Wall> walls;
     std::vector<Mirror> mirrors;
@@ -34,7 +33,10 @@ class Level
     std::vector<Ray> rays;
     std::vector<Nuke> nukes;
 
-  public:
+public:
+
+    void computeRay(Ray &);
+    void addRay(Ray &);
 
     /**
      * Instancie une carte de largeur et hauteur donnée.
@@ -50,7 +52,7 @@ class Level
      * @param w la largeur de la carte
      * @param h la heuteur de la carte
      */
-    Level(int w, int h);
+    Level(const int, const int);
 
     /**
      * Retourne la source de la carte.
@@ -62,7 +64,7 @@ class Level
      * Change la source de la carte
      * @param value la nouvelle source
      */
-    void setSource(const Source & value);
+    void setSource(const Source &);
 
     /**
      * Retourne la desination de la carte
@@ -74,7 +76,7 @@ class Level
      * Change la destination de la carte
      * @param value la destination de la carte
      */
-    void setDestination(const Dest & value);
+    void setDestination(const Dest &);
 
     /**
      * Retourne l'ensemble des murs de la carte
@@ -86,7 +88,7 @@ class Level
      * Permet d'ajouter un mur sur la carte.
      * @param newWall nouveau mur à ajouter.
      */
-    void addWall(const Wall & newWall);
+    void addWall(const Wall &);
 
     /**
      * Retourne l'ensemble des miroirs de la carte
@@ -98,7 +100,7 @@ class Level
      * Permet d'ajouter un mirroir sur la carte.
      * @param newMirror nouveau mirroir à ajouter.
      */
-    void addMirror(const Mirror & newMirror);
+    void addMirror(const Mirror &);
 
     /**
      * Retourne l'ensemble des cristaux de la carte
@@ -110,7 +112,7 @@ class Level
      * Permet d'ajouter un crystal sur la carte.
      * @param newCrystal nouveau crystal à ajouter.
      */
-    void addCrystal(const Crystal & newCrystal);
+    void addCrystal(const Crystal &);
 
     /**
      * Retourne l'ensemble des lentilles de la carte
@@ -122,7 +124,7 @@ class Level
      * Permet d'ajouter une lentille sur la carte.
      * @param newLens nouvelle lentille à ajouter.
      */
-    void addLens(const Lens & newLens);
+    void addLens(const Lens &);
 
     /**
      * Retourne l'ensemble des rayons de la carte
@@ -134,7 +136,7 @@ class Level
      * Change l'ensemble des rayons de la carte
      * @param le nouvel ensemble de rayons de la carte
      */
-    void setRays(const std::vector<Ray> & v);
+    void setRays(const std::vector<Ray> &);
 
     /**
      * Retourne l'ensemble des bombes de la carte
@@ -146,7 +148,7 @@ class Level
      * Permet d'ajouter une bombe sur la carte.
      * @param newNuke nouvelle bombe à ajouter.
      */
-    void addNuke(const Nuke & newNuke);
+    void addNuke(const Nuke &);
 
     /**
      * Calcule les rayons lumineux de la carte.

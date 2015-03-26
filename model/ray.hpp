@@ -1,8 +1,8 @@
 #ifndef RAY_H
 #define RAY_H
 
-#include "point.h"
 #include <iostream>
+#include "point.hpp"
 
 /**
  * Cette classe modélise les rayons lumineux, concept central du jeu.
@@ -14,7 +14,7 @@ class Ray
 {
     Point start;
     Point end;
-    int wavelength;
+    int waveLength;
 
   public:
     /**
@@ -44,7 +44,7 @@ class Ray
      * @param p1 le début du rayon lumineux
      * @param p2 la fin du rayon lumineux
      */
-    Ray(const Point & p1, const Point & p2);
+    Ray(const Point &, const Point &);
 
     /**
      * Instancie un rayon lumineux de début et de fin donnés, et de
@@ -59,7 +59,7 @@ class Ray
      * @see Ray::WL_MAX
      * @see Ray::WL_DFT
      */
-    Ray(const Point & p1, const Point & p2, int wl);
+    Ray(const Point &, const Point &, int);
 
     /**
      * Retourne le début du rayon.
@@ -77,19 +77,19 @@ class Ray
      * Retourne la longueur d'onde du rayon.
      * @return la longueur d'onde du rayon.
      */
-    int getWavelength() const;
+    int getWaveLength() const;
 
     /**
      * Change la coordonnée du début du rayon.
      * @param p la nouvelle coordonnée du début du rayon.
      */
-    void setStart(const Point & p);
+    void setStart(const Point &);
 
     /**
      * Change la coordonnée de la fin du rayon.
      * @param p la nouvelle coordonnée de la fin du rayon.
      */
-    void setEnd(const Point & p);
+    void setEnd(const Point &);
 
     /**
      * Change la longueur d'onde du rayon. Si la longueur d'onde
@@ -100,15 +100,16 @@ class Ray
      * @return vrai si la longueur d'onde a bel et bien été changée,
      * retourne faux sinon.
      */
-    bool setWavelength(int wl);
+    bool setWaveLength(const int);
 
+    Ray & operator=(const Ray &);
     /**
      * Surcharge l'opérateur de flux de sortie pour afficher un
      * récapitulatif des caractéristiques du rayon sous-jacent en
      * console.
      * @return le flux dans lequel le rayon a été imprimé.
      */
-    friend std::ostream & operator<<(std::ostream & out, const Ray & p);
+    //friend std::ostream & operator<<(std::ostream &, const Ray &);
 };
 
 #endif // RAY_H
