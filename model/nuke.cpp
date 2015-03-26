@@ -3,13 +3,10 @@
 #include "starlightexception.hpp"
 
 Nuke::Nuke(const Point & position, const int radian)
-    : Element(), position{position}
+    : Element(), position{position}, radian{radian}
 {
     if (radian <= 0)
-        throw new StarlightException("Le rayon de la bombe doit être strict. positif");
-
-    this->radian = radian;
-    // TODO : valider rad :: Simon : OK ?
+        throw StarlightException("Le rayon de la bombe doit être strict. positif");
 }
 
 const Point &Nuke::getLocation() const
@@ -43,12 +40,12 @@ Nuke & Nuke::operator=(const Nuke & nuke)
 
 void Nuke::reactToRay(Ray & ray)
 {
-    throw new StarlightException("Not implemented yet");
+    throw StarlightException("Not implemented yet");
 }
 
 bool Nuke::includePoint(Point & point)
 {
-    throw new StarlightException("Not implemented yet");
+    throw StarlightException("Not implemented yet");
 }
 
 std::ostream & operator<<(std::ostream & out, const Nuke & nuke)

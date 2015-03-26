@@ -20,10 +20,12 @@ class Crystal : public Element
 
 private :
     Point center;
-    int amplifier;
     int radius;
+    int amplifier;
 
-  public:
+    const int & valideRadius(const int &) const;
+
+public:
     /**
      * Instancie un cristal centré au point donné, d'un certain
      * rayon et amplifierifiant la longueur d'onde des rayons qui le

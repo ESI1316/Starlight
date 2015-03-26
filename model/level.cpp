@@ -20,19 +20,29 @@
 using namespace std;
 
 Level::Level(const int width, const int height)
+    : width{this->valideWidth(width)},
+      height {this->valideHeight(height)},
+      walls { Wall{Point{0, 0}, Point{0, height}},
+              Wall{Point{0, height}, Point{width, height}},
+              Wall{Point{width, height}, Point{width, 0}},
+              Wall{Point{width, 0}, Point{0, 0}} }
+{
+}
+
+const int & Level::valideWidth(const int & width) const
 {
     if(width <= 0)
-        throw new StarlightException("Hauteur doit être strict. positive");
+        throw StarlightException("Hauteur doit être strict. positive");
 
+    return width;
+}
+
+const int &Level::valideHeight(const int &height) const
+{
     if(height <= 0)
-        throw new StarlightException("Largeur doit être strict. positive");
+        throw StarlightException("Largeur doit être strict. positive");
 
-    this->width = width;
-    this->height = height;
-    this->walls = { Wall{Point{0, 0}, Point{0, height}},
-                    Wall{Point{0, height}, Point{width, height}},
-                    Wall{Point{width, height}, Point{width, 0}},
-                    Wall{Point{width, 0}, Point{0, 0}} };
+    return height;
 }
 
 const Source & Level::getSource() const
@@ -123,10 +133,10 @@ void Level::computeRays()
             );
 
     this->computeRay(ray);
-    throw new StarlightException("to do");
+    throw StarlightException("to do");
 }
 
 void Level::computeRay(Ray &)
 {
-    throw new StarlightException("Largeur doit être strict. positive");
+    throw StarlightException("Largeur doit être strict. positive");
 }

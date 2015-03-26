@@ -4,12 +4,19 @@
 
 
 Crystal::Crystal(const Point & center, const int radius, const int amplifier)
-    : Element(), center {center}, amplifier {amplifier}
+    : Element(),
+      center {center},
+      radius{this->valideRadius(radius)},
+      amplifier {amplifier}
+{
+}
+
+const int & Crystal::valideRadius(const int & radius) const
 {
     if(radius <= 0)
-        throw new StarlightException("Le rayon doit être strictement positif");
+        throw StarlightException("Le rayon doit être strictement positif");
 
-    this->radius = radius;
+    return radius;
 }
 
 const Point & Crystal::getCenter() const
@@ -29,12 +36,12 @@ int Crystal::getRadius() const
 
 void Crystal::reactToRay(Ray & ray)
 {
-    throw new StarlightException("Not implemented yet");
+    throw StarlightException("Not implemented yet");
 }
 
 bool Crystal::includePoint(Point & point)
 {
-    throw new StarlightException("Not implemented yet");
+    throw StarlightException("Not implemented yet");
 }
 
 Crystal & Crystal::operator =(const Crystal & crystal)

@@ -16,7 +16,9 @@ class Dest : public Element
     int edge;
     bool light;
 
-  public:
+    const int & valideEdge(const int &) const;
+
+public:
 
     /**
      * Intancie une destination, de position et rayon donné.

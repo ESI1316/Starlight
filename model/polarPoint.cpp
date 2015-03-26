@@ -2,15 +2,6 @@
 #include "polarPoint.hpp"
 
 /**
- * @brief PolarPoint::PolarPoint Création d'un point confondu avec le centre du
- * cercle de rayon dont il est issue.
- */
-PolarPoint::PolarPoint()
-    : PolarPoint{0., 0.}
-{
-}
-
-/**
  * @brief PolarPoint::PolarPoint Créé un point polaire selon les arguments passés
  * en paramètre.
  * "Il est commode d'autoriser des valeurs négatives de $ r$, étant entendu que

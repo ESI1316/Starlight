@@ -3,13 +3,10 @@
 #include "starlightexception.hpp"
 
 Wall::Wall(const Point & start, const Point & end)
-    : Element()
+    : Element(), start{start}, end{end}
 {
     if (start == end)
-        throw new StarlightException("Les points ne peuvent être confondus");
-
-    this->start = start;
-    this->end = end;
+        throw StarlightException("Les points ne peuvent être confondus");
 }
 
 const Point & Wall::getStart() const
@@ -24,12 +21,12 @@ const Point & Wall::getEnd() const
 
 void Wall::reactToRay(Ray & ray)
 {
-    throw new StarlightException("Not implemented yet");
+    throw StarlightException("Not implemented yet");
 }
 
 bool Wall::includePoint(Point & point)
 {
-    throw new StarlightException("Not implemented yet");
+    throw StarlightException("Not implemented yet");
 }
 
 Wall & Wall::operator=(const Wall & wall)

@@ -1,7 +1,7 @@
 #include "starlightexception.hpp"
 
 StarlightException::StarlightException()
-    :std::exception(), error{"Erreur non précisée"}
+    : StarlightException{"Erreur non précisée"}
 {
 }
 

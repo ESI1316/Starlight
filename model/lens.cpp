@@ -3,23 +3,49 @@
 #include "starlightexception.hpp"
 
 Lens::Lens(const Point & position, const int width, const int height, const int wlMin, const int wlMax)
-    : Element(), position {position}
+    : Element(),
+      position {position},
+      width{this->valideWidth(width)},
+      height{this->valideHeight(height)},
+      wlMin{this->valideWlMin(wlMin, wlMax)},
+      wlMax{this->valideWlMax(wlMax, wlMin)}
+{
+}
+
+const int & Lens::valideWidth(const int & width) const
 {
     if(width <= 0)
-        throw new StarlightException("Largeur positive requise");
-    if(height <= 0)
-        throw new StarlightException("Hauteur positive requise");
-    if(wlMin < 0)
-        throw new StarlightException("Longueur d'onde minimale non nulle req.");
-    if(wlMax < 0)
-        throw new StarlightException("Longueur d'onde maximale non nulle req.");
-    if(wlMax < wlMin)
-        throw new StarlightException("Longueur d'onde minimale > maximale");
+        throw StarlightException("Largeur positive requise");
 
-    this->width = width;
-    this->height = height;
-    this->wlMin = wlMin;
-    this->wlMax = wlMax;
+    return width;
+}
+
+const int & Lens::valideHeight(const int & height) const
+{
+    if(height <= 0)
+        throw StarlightException("Hauteur positive requise");
+
+    return height;
+}
+
+const int & Lens::valideWlMin(const int & wlMin, const int & wlMax) const
+{
+    if(wlMin < 0)
+        throw StarlightException("Longueur d'onde minimale non nulle req.");
+    if(wlMax < wlMin)
+        throw StarlightException("Longueur d'onde minimale > maximale");
+
+    return wlMin;
+}
+
+const int & Lens::valideWlMax(const int & wlMax, const int & wlMin) const
+{
+    if(wlMax < 0)
+        throw StarlightException("Longueur d'onde maximale non nulle req.");
+    if(wlMax < wlMin)
+        throw StarlightException("Longueur d'onde minimale > maximale");
+
+    return wlMax;
 }
 
 const Point & Lens::getPosition() const
@@ -49,11 +75,11 @@ int Lens::getMaxWaveLength() const
 
 void Lens::reactToRay(Ray & ray)
 {
-    throw new StarlightException("Not implemented yet");
+    throw StarlightException("Not implemented yet");
 }
 bool Lens::includePoint(Point & point)
 {
-    throw new StarlightException("Not implemented yet");
+    throw StarlightException("Not implemented yet");
 }
 
 Lens & Lens::operator =(const Lens & lens)

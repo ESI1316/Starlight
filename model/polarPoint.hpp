@@ -26,19 +26,19 @@ private :
     /**
      * @brief radius la distance du point par rapport à l'origine du plan cartésien.
      */
-    double radius;
+    double radius{0.};
     /**
      * @brief azimut le segment de cercle exprimé en radian depuis l'axe
      * horizontal et dans un sens anti-horlogé.
      */
-    double azimut;
+    double azimut{0.};
 
 public:
     /**
      * @brief PolarPoint Constructeur sans paramètre de point polaire,
      * reçoit un rayon 0 et un béta quelconque.
      */
-    PolarPoint();
+    PolarPoint() = default;
 
     /**
      * @brief PolarPoint Construteur avec paramètres, reçoit un rayon et un
