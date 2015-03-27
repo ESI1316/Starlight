@@ -49,7 +49,9 @@ int Lens::getMaxWaveLength() const
 
 void Lens::reactToRay(Ray & ray)
 {
-    throw StarlightException("Not implemented yet");
+    if(ray.getWaveLength() >= this->getMinWaveLength()
+            && ray.getWaveLength() <= this->getMaxWaveLength())
+        this->getLevel()->computeRay(ray);
 }
 bool Lens::includePoint(Point & point)
 {

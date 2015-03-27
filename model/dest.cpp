@@ -32,7 +32,7 @@ void Dest::setLightedUp(const bool light)
 
 void Dest::reactToRay(Ray & ray)
 {
-    throw StarlightException("Not implemented yet");
+    this->setLightedUp(true);
 }
 
 bool Dest::includePoint(Point & point)
