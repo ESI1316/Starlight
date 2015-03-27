@@ -19,10 +19,7 @@ const Point & Wall::getEnd() const
     return this->end;
 }
 
-void Wall::reactToRay(Ray & ray)
-{
-    throw StarlightException("Not implemented yet");
-}
+void Wall::reactToRay(Ray & ray) {}
 
 bool Wall::includePoint(Point & point)
 {
