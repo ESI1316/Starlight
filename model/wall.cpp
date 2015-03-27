@@ -33,7 +33,7 @@ Wall & Wall::operator=(const Wall & wall)
 {
     this->start = wall.start;
     this->end = wall.end;
-
+    this->setLevel(wall.getLevel());
     return *this;
 }
 

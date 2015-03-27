@@ -5,47 +5,21 @@
 Lens::Lens(const Point & position, const int width, const int height, const int wlMin, const int wlMax)
     : Element(),
       position {position},
-      width{this->valideWidth(width)},
-      height{this->valideHeight(height)},
-      wlMin{this->valideWlMin(wlMin, wlMax)},
-      wlMax{this->valideWlMax(wlMax, wlMin)}
-{
-}
-
-const int & Lens::valideWidth(const int & width) const
+      width{width},
+      height{height},
+      wlMin{wlMin},
+      wlMax{wlMax}
 {
     if(width <= 0)
         throw StarlightException("Largeur positive requise");
-
-    return width;
-}
-
-const int & Lens::valideHeight(const int & height) const
-{
     if(height <= 0)
         throw StarlightException("Hauteur positive requise");
-
-    return height;
-}
-
-const int & Lens::valideWlMin(const int & wlMin, const int & wlMax) const
-{
     if(wlMin < 0)
         throw StarlightException("Longueur d'onde minimale non nulle req.");
-    if(wlMax < wlMin)
-        throw StarlightException("Longueur d'onde minimale > maximale");
-
-    return wlMin;
-}
-
-const int & Lens::valideWlMax(const int & wlMax, const int & wlMin) const
-{
     if(wlMax < 0)
         throw StarlightException("Longueur d'onde maximale non nulle req.");
     if(wlMax < wlMin)
         throw StarlightException("Longueur d'onde minimale > maximale");
-
-    return wlMax;
 }
 
 const Point & Lens::getPosition() const
@@ -89,6 +63,7 @@ Lens & Lens::operator =(const Lens & lens)
     this->height = lens.height;
     this->wlMin = lens.wlMin;
     this->wlMax = lens.wlMax;
+    this->setLevel(lens.getLevel());
 
     return *this;
 }

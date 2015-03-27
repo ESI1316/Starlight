@@ -33,8 +33,6 @@ private :
     std::vector<Ray> rays;
     std::vector<Nuke> nukes;
 
-    const int & valideWidth(const int &) const;
-    const int & valideHeight(const int &) const;
 
 public:
 

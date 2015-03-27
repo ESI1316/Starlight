@@ -97,13 +97,23 @@ double PolarPoint::getAzimutAsDegrees() const
 }
 
 /**
- * @brief PolarPoint::rotate
+ * @brief PolarPoint::rotate Pour faire une rotation autour d'un pivot et
+ * non de l'origine, il suffit de translater le pivot sur l'origine.
  * @return
  */
-PolarPoint & PolarPoint::rotate(const double alpha)
+PolarPoint & PolarPoint::rotateAround(const PolarPoint & center, double alpha)
 {
+    /*
+    Point thisCartesian{this->toCartesian()};
+    Point centerCartesian{center.toCartesian()};
+
+    thisCartesian.setX(thisCartesian.getX() - centerCartesian.getX());
+    thisCartesian.setY(thisCartesian.getY() - centerCartesian.getY());
+
+    this =
     this->azimut += alpha;
     return *this;
+    */
 }
 
 PolarPoint & PolarPoint::operator=(const PolarPoint & polarPoint)

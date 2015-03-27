@@ -16,7 +16,6 @@ class Dest : public Element
     int edge;
     bool light;
 
-    const int & valideEdge(const int &) const;
 
 public:
 

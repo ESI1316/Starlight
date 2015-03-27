@@ -29,8 +29,6 @@ class Mirror : public Element
     double alphaMin {0};
     double alphaMax {0};
 
-    const int & valideLength(const int &) const;
-    const int & valideXpad(const int &) const;
 
 public:
     void reactToRay(Ray &);

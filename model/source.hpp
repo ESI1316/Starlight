@@ -22,7 +22,6 @@ class Source
     double alpha;
     int waveLength;
 
-    const int & valideEdge(const int &) const;
 
 public:
     /**

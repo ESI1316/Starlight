@@ -1,4 +1,4 @@
-#define CATCH_CONFIG_MAIN
+/*#define CATCH_CONFIG_MAIN
 #include "catch.hpp"
 #include "../model/point.hpp"
 #include "../model/polarPoint.hpp"
@@ -15,15 +15,23 @@ TEST_CASE("Construct some polar points", "PolarPoint")
 
     SECTION("exotics polar points")
     {
+        Point ps;
+
         PolarPoint s{-2, -2};
         REQUIRE(s.getAzimutAsDegrees() < -114.4000);
         REQUIRE(s.getAzimutAsDegrees() > -114.7000);
 
-        Point ps = s.toCartesian();
+        ps = s.toCartesian();
         REQUIRE(ps.getX() == 1);
         REQUIRE(ps.getY() == 2);
 
-        PolarPoint t{};
+        PolarPoint t{0, 0};
+        REQUIRE(t.getAzimutAsDegrees() > -0.0001);
+        REQUIRE(t.getAzimutAsDegrees() < 0.0001);
+
+        ps = t.toCartesian();
+        REQUIRE(ps.getX() == 0);
+        REQUIRE(ps.getY() == 0);
     }
 }
 
@@ -62,3 +70,4 @@ TEST_CASE("Converting a polar point to a cartesian one ", "PolarPoint")
         REQUIRE(p.getY() == 1);
     }
 }
+*/

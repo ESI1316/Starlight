@@ -11,36 +11,26 @@ Mirror::Mirror(const Point & point, int length, int xpad, double alpha)
 
 Mirror::Mirror(const Point & pivot, int length, int xpad, double alpha, Point pm,
                Point pM, double alphaMin, double alphaMax)
-    : Element(), pivot {pivot}, length(this->valideLength(length)),
-      xpad(this->valideXpad(xpad)), xMin {pm.getX()}, xMax {pM.getX()},
+    : Element(), pivot {pivot}, length(length),
+      xpad(xpad), xMin {pm.getX()}, xMax {pM.getX()},
       yMin {pm.getY()}, yMax {pM.getY()}, alpha {alpha}, alphaMin {alphaMin},
       alphaMax {alphaMax}
 {
+    if (length <= 0)
+        throw StarlightException("La longueur doit être strict. positive");
+
+    if(xpad < 0)
+        throw StarlightException("Le décalage du pivot doit être positif");
+
     if(pivot.getX() < pm.getX() || pivot.getX() > pM.getX())
         throw StarlightException("Le miroir est trop haut ou trop bas");
 
     if(pivot.getY() < pm.getY() || pivot.getY() > pM.getY())
         throw StarlightException("Le miroir est trop à gauche ou trop à droite");
-
     // TODO : valider length, xpad, (alphaMin et alphaMax),
     //                (alpha et [alphaMin, alphaMax]), (xMin et xMax),
     //                (x et [xMin, xMax]), (yMin et yMax),
     //                (y et [yMin, yMax])
-}
-
-const int & Mirror::valideLength(const int & length) const
-{
-    if (length <= 0)
-        throw StarlightException("La longueur doit être strict. positive");
-
-    return length;
-}
-const int & Mirror::valideXpad(const int & xpad) const
-{
-    if(xpad < 0)
-        throw StarlightException("Le décalage du pivot doit être positif");
-
-    return xpad;
 }
 
 const Point & Mirror::getPivot() const
@@ -152,6 +142,7 @@ Mirror & Mirror::operator =(const Mirror & mirror)
     this->alpha = mirror.alpha;
     this->alphaMin = mirror.alphaMin;
     this->alphaMax = mirror.alphaMax;
+    this->setLevel(mirror.getLevel());
 
     return *this;
 }

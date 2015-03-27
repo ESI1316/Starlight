@@ -6,17 +6,11 @@
 Crystal::Crystal(const Point & center, const int radius, const int amplifier)
     : Element(),
       center {center},
-      radius{this->valideRadius(radius)},
+      radius{radius},
       amplifier {amplifier}
-{
-}
-
-const int & Crystal::valideRadius(const int & radius) const
 {
     if(radius <= 0)
         throw StarlightException("Le rayon doit être strictement positif");
-
-    return radius;
 }
 
 const Point & Crystal::getCenter() const
@@ -49,6 +43,7 @@ Crystal & Crystal::operator =(const Crystal & crystal)
     this->center = crystal.center;
     this->radius = crystal.radius;
     this->amplifier = crystal.amplifier;
+    this->setLevel(crystal.getLevel());
 
     return *this;
 }

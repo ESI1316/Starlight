@@ -3,18 +3,13 @@
 #include "level.hpp"
 
 Dest::Dest(const Point & position, const int edge)
-    : Element(), position{position}, edge{this->valideEdge(edge)}, light{false}
-{
-}
-
-const int & Dest::valideEdge(const int & edge) const
+    : Element(), position{position}, edge{edge}, light{false}
 {
     if(edge <= 0)
         throw StarlightException
             ("Cotés de la destinations doivent être strictement positifs.");
-
-    return edge;
 }
+
 const Point & Dest::getPosition() const
 {
     return this->position;

@@ -23,7 +23,6 @@ private :
     int radius;
     int amplifier;
 
-    const int & valideRadius(const int &) const;
 
 public:
     /**

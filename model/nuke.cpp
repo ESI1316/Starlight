@@ -3,16 +3,10 @@
 #include "starlightexception.hpp"
 
 Nuke::Nuke(const Point & position, const int radian)
-    : Element(), position{position}, radian{this->valideRadian(radian)}
-{
-}
-
-const int & Nuke::valideRadian(const int & radian) const
+    : Element(), position{position}, radian{radian}
 {
     if (radian <= 0)
         throw StarlightException("Le rayon de la bombe doit être strict. positif");
-
-    return radian;
 }
 
 const Point &Nuke::getLocation() const
@@ -40,6 +34,7 @@ Nuke & Nuke::operator=(const Nuke & nuke)
     this->position = nuke.position;
     this->radian = nuke.radian;
     this->light = nuke.light;
+    this->setLevel(nuke.getLevel());
 
     return *this;
 }

@@ -22,6 +22,10 @@
 class PolarPoint
 {
 
+public :
+
+    static const PolarPoint origin;
+
 private :
     /**
      * @brief radius la distance du point par rapport à l'origine du plan cartésien.
@@ -99,7 +103,7 @@ public:
      * plan par rotation autour du centre (0,0).
      * @return Le point courant après rotation.
      */
-    PolarPoint & rotate(const double);
+    PolarPoint & rotateAround(const PolarPoint &, const double);
 
     /**
      * @brief toString Chaine de caractères représentant la coordonnée polaire

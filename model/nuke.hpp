@@ -17,7 +17,6 @@ class Nuke : Element
     int radian;
     bool light {false};
 
-    const int & valideRadian(const int &) const;
 
 public:
     void reactToRay(Ray &);

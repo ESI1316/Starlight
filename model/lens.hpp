@@ -25,11 +25,6 @@ class Lens : public Element
     int wlMin;
     int wlMax;
 
-    const int & valideWidth(const int &) const;
-    const int & valideHeight(const int &) const;
-    const int & valideWlMin(const int &, const int &) const;
-    const int & valideWlMax(const int &, const int &) const;
-
   public:
     void reactToRay(Ray &);
     bool includePoint(Point &);
