@@ -19,7 +19,7 @@ protected :
 public :
 
     virtual void reactToRay(Ray &) = 0;
-    virtual bool includePoint(Point &) = 0;
+    virtual bool includeRay(const Ray &) const = 0;
 
     void setLevel(Level *);
     Level * getLevel() const;

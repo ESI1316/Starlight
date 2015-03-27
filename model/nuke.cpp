@@ -44,7 +44,7 @@ void Nuke::reactToRay(Ray & ray)
     this->setLightedUp(true);
 }
 
-bool Nuke::includePoint(Point & point)
+bool Nuke::includeRay(const Ray & ray) const
 {
     throw StarlightException("Not implemented yet");
 }

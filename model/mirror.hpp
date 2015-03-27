@@ -32,7 +32,7 @@ class Mirror : public Element
 
 public:
     void reactToRay(Ray &);
-    bool includePoint(Point &);
+    bool includeRay(const Ray &) const;
     /**
      * Instancie un miroir en une position donnée, d'une certaine
      * longueur et orienté d'un certain angle.

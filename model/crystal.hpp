@@ -62,7 +62,7 @@ public:
      * @brief includePoint
      * @return
      */
-    bool includePoint(Point &);
+    bool includeRay(const Ray &) const;
 
     Crystal & operator=(const Crystal &);
     /**

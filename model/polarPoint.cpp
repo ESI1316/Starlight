@@ -103,17 +103,12 @@ double PolarPoint::getAzimutAsDegrees() const
  */
 PolarPoint & PolarPoint::rotateAround(const PolarPoint & center, double alpha)
 {
-    /*
-    Point thisCartesian{this->toCartesian()};
-    Point centerCartesian{center.toCartesian()};
+    Point point = this->toCartesian();
+}
 
-    thisCartesian.setX(thisCartesian.getX() - centerCartesian.getX());
-    thisCartesian.setY(thisCartesian.getY() - centerCartesian.getY());
-
-    this =
+void PolarPoint::rotate(const double alpha)
+{
     this->azimut += alpha;
-    return *this;
-    */
 }
 
 PolarPoint & PolarPoint::operator=(const PolarPoint & polarPoint)
@@ -122,6 +117,11 @@ PolarPoint & PolarPoint::operator=(const PolarPoint & polarPoint)
     this->azimut = polarPoint.azimut;
 
     return *this;
+}
+
+PolarPoint & PolarPoint::operator=(const Point & point)
+{
+    *this = PolarPoint{point};
 }
 
 /**

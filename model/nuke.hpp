@@ -20,7 +20,7 @@ class Nuke : Element
 
 public:
     void reactToRay(Ray &);
-    bool includePoint(Point &);
+    bool includeRay(const Ray & ray) const;
     /**
      * Instancie une bombe en une position donnée avec un rayon
      * déterminé.

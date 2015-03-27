@@ -27,7 +27,7 @@ class Lens : public Element
 
   public:
     void reactToRay(Ray &);
-    bool includePoint(Point &);
+bool includeRay(const Ray & ray) const;
 
     /**
      * Instancie une lentille à l'aide de toutes ses

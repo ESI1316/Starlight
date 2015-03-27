@@ -151,7 +151,7 @@ void Mirror::reactToRay(Ray & ray)
 {
     throw StarlightException("Not implemented yet");
 }
-bool Mirror::includePoint(Point & point)
+    bool Mirror::includeRay(const Ray &) const
 {
     throw StarlightException("Not implemented yet");
 }

@@ -63,7 +63,7 @@ public:
      * @brief includePoint
      * @return
      */
-    bool includePoint(Point &);
+    bool includeRay(const Ray &) const;
 
     /**
      * Surcharge l'opérateur de flux de sortie pour afficher

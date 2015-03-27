@@ -104,6 +104,7 @@ public:
      * @return Le point courant après rotation.
      */
     PolarPoint & rotateAround(const PolarPoint &, const double);
+    void rotate(const double);
 
     /**
      * @brief toString Chaine de caractères représentant la coordonnée polaire
@@ -113,6 +114,7 @@ public:
     std::string toString() const;
 
     PolarPoint & operator=(const PolarPoint &);
+    PolarPoint & operator=(const Point &);
     //friend std::ostream & operator<<(std::ostream &, PolarPoint &);
 };
 

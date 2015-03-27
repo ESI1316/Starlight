@@ -18,7 +18,7 @@ class Wall : public Element
 
 public:
     void reactToRay(Ray &);
-    bool includePoint(Point &);
+    bool includeRay(const Ray &) const;
     /**
      * Instancie un mur.
      * @param p1 le début du mur.
