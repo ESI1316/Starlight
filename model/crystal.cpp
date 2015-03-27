@@ -30,7 +30,9 @@ int Crystal::getRadius() const
 
 void Crystal::reactToRay(Ray & ray)
 {
-    throw StarlightException("Not implemented yet");
+    ray.setWaveLength(ray.getWaveLength() + this->amplifier);
+
+    this->getLevel()->computeRay(ray);
 }
 
 bool Crystal::includePoint(Point & point)
