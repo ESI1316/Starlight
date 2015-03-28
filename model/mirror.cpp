@@ -3,13 +3,13 @@
 #include "mirror.hpp"
 #include "level.hpp"
 
-Mirror::Mirror(const Point & point, int length, int xpad, double alpha)
+Mirror::Mirror(const Point & point, int xpad, int length, double alpha)
     : Mirror {point, length, xpad, alpha, Point{0, 0}, Point{0, 0}, 0, 0}
 {
 
 }
 
-Mirror::Mirror(const Point & pivot, int length, int xpad, double alpha, Point pm,
+Mirror::Mirror(const Point & pivot, int xpad, int length, double alpha, Point pm,
                Point pM, double alphaMin, double alphaMax)
     : Element(), pivot {pivot}, length(length),
       xpad(xpad), xMin {pm.getX()}, xMax {pM.getX()},

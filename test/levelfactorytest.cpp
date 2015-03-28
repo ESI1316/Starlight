@@ -28,5 +28,6 @@ TEST_CASE("creation of a level from a file", "levelFactory::getLevel(std::string
         REQUIRE(level->getDestination().getPosition() == Point(721, 275));
         REQUIRE(level->getDestination().getEdge() == 29);
     }
+
     delete level;
 }
