@@ -17,8 +17,7 @@ class Wall : public Element
     Point end;
 
 public:
-    void reactToRay(Ray &);
-    bool includeRay(const Ray &) const;
+
     /**
      * Instancie un mur.
      * @param p1 le début du mur.
@@ -38,14 +37,30 @@ public:
      */
     const Point & getEnd() const;
 
-    Wall & operator=(const Wall &);
+    /**
+     * Réaction à l'exposition d'un rayon.
+     *
+     * @param ray Le rayon.
+     */
+    void reactToRay(Ray &);
+
+    /**
+     * Renseigne si le mur est dans la trajectoire du rayon.
+     *
+     * @param ray Le rayon.
+     *
+     * @return true Si la mur se trouve dans la trajectoire du rayon
+     * entré en paramètre.
+     */
+    bool includeRay(const Ray &) const;
+
     /**
      * Surcharge l'opérateur de flux de sortie pour afficher
      * un récapitulatif des caractéristiques du mur sous-jacent
      * en console.
      * @return le flux dans lequel le mur a été imprimé.
      */
-    // friend std::ostream & operator<<(std::ostream &, const Wall &);
+     friend std::ostream & operator<<(std::ostream &, const Wall &);
 };
 
 #endif // WALL_H

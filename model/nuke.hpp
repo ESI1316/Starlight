@@ -48,6 +48,7 @@ public:
 
     /**
      * Illumine la bombe ou non.
+     *
      * @param q vrai si la bombe est illuminée, faux sinon.
      */
     void setLightedUp(const bool);

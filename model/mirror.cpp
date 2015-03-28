@@ -130,23 +130,6 @@ bool Mirror::checkPivotRange(const Point & point) const
     }
 }
 
-Mirror & Mirror::operator =(const Mirror & mirror)
-{
-    this->pivot = mirror.pivot;
-    this->length = mirror.length;
-    this->xpad = mirror.xpad;
-    this->xMin = mirror.xMin;
-    this->xMax = mirror.xMax;
-    this->yMin = mirror.yMin;
-    this->yMax = mirror.yMax;
-    this->alpha = mirror.alpha;
-    this->alphaMin = mirror.alphaMin;
-    this->alphaMax = mirror.alphaMax;
-    this->setLevel(mirror.getLevel());
-
-    return *this;
-}
-
 void Mirror::reactToRay(Ray & ray)
 {
     throw StarlightException("Not implemented yet");

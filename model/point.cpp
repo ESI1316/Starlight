@@ -37,14 +37,6 @@ int Point::distanceFrom(const Point & point)
     return std::hypot((point.x - this->x),(point.y - this->y));
 }
 
-Point & Point::operator=(const Point & point)
-{
-    this->x = point.x;
-    this->y = point.y;
-
-    return *this;
-}
-
 bool Point::operator==(const Point & point) const
 {
     return ((this->x == point.x) && (this->y == point.y));

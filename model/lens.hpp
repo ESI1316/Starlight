@@ -77,9 +77,21 @@ class Lens : public Element
      */
     int getMaxWaveLength() const;
 
-
+    /**
+     * Réaction à l'exposition d'un rayon.
+     *
+     * @param ray Le rayon.
+     */
     void reactToRay(Ray &);
 
+    /**
+     * Renseigne si la lentille est dans la trajectoire du rayon.
+     *
+     * @param ray Le rayon.
+     *
+     * @return true Si la lentille se trouve dans la trajectoire du rayon entré
+     * en paramètre.
+     */
     bool includeRay(const Ray & ray) const;
 
     /**

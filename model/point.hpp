@@ -13,6 +13,7 @@ class Point
     int y {0};
 
 public:
+
     /**
      * Instancie le point (0,0)
      */
@@ -75,7 +76,6 @@ public:
      * console.
      * @return le flux dans lequel le point a été imprimé.
      */
-
     friend std::ostream & operator<<(std::ostream &, const Point &);
 };
 

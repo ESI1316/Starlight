@@ -31,8 +31,7 @@ class Mirror : public Element
 
 
 public:
-    void reactToRay(Ray &);
-    bool includeRay(const Ray &) const;
+
     /**
      * Instancie un miroir en une position donnée, d'une certaine
      * longueur et orienté d'un certain angle.
@@ -185,14 +184,30 @@ public:
      */
     bool checkPivotRange(const Point &) const;
 
-    Mirror & operator=(const Mirror &);
+    /**
+     * Réaction à l'exposition d'un rayon.
+     *
+     * @param ray Le rayon.
+     */
+    void reactToRay(Ray &);
+
+    /**
+     * Renseigne si le mirroir est dans la trajectoire du rayon.
+     *
+     * @param ray Le rayon.
+     *
+     * @return true Si le mirroir se trouve dans la trajectoire du rayon entré
+     * en paramètre.
+     */
+    bool includeRay(const Ray &) const;
+
     /**
      * Surcharge l'opérateur de flux de sortie pour
      * afficher un récapitulatif des caractéristiques du
      * miroir sous-jacent en console.
      * @return le flux dans lequel le miroir a été imprimé.
      */
-    //friend std::ostream & operator<<(std::ostream &, const Mirror &);
+    friend std::ostream & operator<<(std::ostream &, const Mirror &);
 };
 
 #endif // MIRROR_H

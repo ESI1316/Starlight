@@ -52,15 +52,6 @@ bool Ray::setWaveLength(const int waveLength)
     return match;
 }
 
-Ray & Ray::operator=(const Ray & ray)
-{
-    this->start = ray.start;
-    this->end = ray.end;
-    this->waveLength = ray.waveLength;
-
-    return *this;
-}
-
 std::ostream & operator<<(std::ostream & out, const Ray & ray)
 {
     out << ray.getStart() << " ---------- " << ray.getEnd()

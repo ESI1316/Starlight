@@ -17,6 +17,7 @@ class Ray
     int waveLength;
 
   public:
+
     /**
      * Longueur d'onde minimum autorisée pour un rayon lumineux. Cette
      * valeur correspond à la longueur d'onde minimum (en nm) du
@@ -102,14 +103,13 @@ class Ray
      */
     bool setWaveLength(const int);
 
-    Ray & operator=(const Ray &);
     /**
      * Surcharge l'opérateur de flux de sortie pour afficher un
      * récapitulatif des caractéristiques du rayon sous-jacent en
      * console.
      * @return le flux dans lequel le rayon a été imprimé.
      */
-    //friend std::ostream & operator<<(std::ostream &, const Ray &);
+    friend std::ostream & operator<<(std::ostream &, const Ray &);
 };
 
 #endif // RAY_H

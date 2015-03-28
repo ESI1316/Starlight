@@ -8,13 +8,17 @@ class StarlightException : public std::exception
 {
 
 private :
+
     std::string error;
 
 public:
 
-    StarlightException();
+    /**
+     * Construit une nouvelle erreur inhérente au jeu.
+     *
+     * @param error Message expliquant l'erreur.
+     */
     StarlightException(std::string);
-    ~StarlightException();
 };
 
 #endif // STARLIGHTEXCEPTION_HPP

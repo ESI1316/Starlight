@@ -58,18 +58,6 @@ bool Lens::includeRay(const Ray & ray) const
     throw StarlightException("Not implemented yet");
 }
 
-Lens & Lens::operator =(const Lens & lens)
-{
-    this->position = lens.position;
-    this->width = lens.width;
-    this->height = lens.height;
-    this->wlMin = lens.wlMin;
-    this->wlMax = lens.wlMax;
-    this->setLevel(lens.getLevel());
-
-    return *this;
-}
-
 std::ostream & operator<<(std::ostream & out, const Lens & lens)
 {
     out << "Lens -- Position : " <<lens.getPosition()

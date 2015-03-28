@@ -24,6 +24,7 @@ PolarPoint::PolarPoint(const PolarPoint & polarPoint)
     : PolarPoint{polarPoint.radius, polarPoint.azimut}
 {
 }
+
 /**
  * @brief PolarPoint::PolarPoint Construit un point polaire à l'aide d'un
  * point cartésien.

@@ -55,13 +55,19 @@ public:
     void setLightedUp(const bool);
 
     /**
-     * @brief reactToRay
+     * Réaction à l'exposition d'un rayon.
+     *
+     * @param ray Le rayon.
      */
     void reactToRay(Ray &);
 
     /**
-     * @brief includePoint
-     * @return
+     * Renseigne si la destination est dans la trajectoire du rayon.
+     *
+     * @param ray Le rayon.
+     *
+     * @return true Si la destination se trouve dans la trajectoire du rayon
+     * entré en paramètre.
      */
     bool includeRay(const Ray &) const;
 

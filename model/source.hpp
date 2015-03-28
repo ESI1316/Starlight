@@ -24,6 +24,7 @@ class Source
 
 
 public:
+
     /**
      * Instancie une nouvelle source de position, côté et
      * longueur d'onde donnée.

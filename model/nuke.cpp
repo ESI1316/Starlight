@@ -29,16 +29,6 @@ void Nuke::setLightedUp(const bool light)
     this->light = light;
 }
 
-Nuke & Nuke::operator=(const Nuke & nuke)
-{
-    this->position = nuke.position;
-    this->radian = nuke.radian;
-    this->light = nuke.light;
-    this->setLevel(nuke.getLevel());
-
-    return *this;
-}
-
 void Nuke::reactToRay(Ray & ray)
 {
     this->setLightedUp(true);

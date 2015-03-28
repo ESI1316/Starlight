@@ -27,8 +27,10 @@ public :
     static const PolarPoint origin;
 
 private :
+
     /**
-     * @brief radius la distance du point par rapport à l'origine du plan cartésien.
+     * @brief radius la distance du point par rapport à l'origine du plan
+     * cartésien.
      */
     double radius{0.};
     /**
@@ -38,6 +40,7 @@ private :
     double azimut{0.};
 
 public:
+
     /**
      * @brief PolarPoint Constructeur sans paramètre de point polaire,
      * reçoit un rayon 0 et un béta quelconque.
@@ -104,6 +107,7 @@ public:
      * @return Le point courant après rotation.
      */
     PolarPoint & rotateAround(const PolarPoint &, const double);
+
     void rotate(const double);
 
     /**
@@ -115,7 +119,8 @@ public:
 
     PolarPoint & operator=(const PolarPoint &);
     PolarPoint & operator=(const Point &);
-    //friend std::ostream & operator<<(std::ostream &, PolarPoint &);
+
+    friend std::ostream & operator<<(std::ostream &, PolarPoint &);
 };
 
 #endif // POLARCOORDINATE_HPP

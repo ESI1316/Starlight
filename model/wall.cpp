@@ -26,15 +26,6 @@ void Wall::reactToRay(Ray & ray) {}
     throw StarlightException("Not implemented yet");
 }
 
-Wall & Wall::operator=(const Wall & wall)
-{
-    this->start = wall.start;
-    this->end = wall.end;
-    this->setLevel(wall.getLevel());
-    return *this;
-}
-
-
 std::ostream & operator<<(std::ostream & out, const Wall & wall)
 {
     out << "Wall --- "
