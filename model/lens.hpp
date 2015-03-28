@@ -26,8 +26,6 @@ class Lens : public Element
     int wlMax;
 
   public:
-    void reactToRay(Ray &);
-bool includeRay(const Ray & ray) const;
 
     /**
      * Instancie une lentille à l'aide de toutes ses
@@ -79,7 +77,10 @@ bool includeRay(const Ray & ray) const;
      */
     int getMaxWaveLength() const;
 
-    Lens & operator=(const Lens &);
+
+    void reactToRay(Ray &);
+
+    bool includeRay(const Ray & ray) const;
 
     /**
      * Surcharge l'opérateur de flux de sortie pour afficher
@@ -87,7 +88,7 @@ bool includeRay(const Ray & ray) const;
      * sous-jacente en console.
      * @return le flux dans lequel la lentille a été imprimée.
      */
-    //friend std::ostream & operator<<(std::ostream & out, const Lens & m);
+    friend std::ostream & operator<<(std::ostream & out, const Lens & m);
 };
 
 #endif // LENS_H

@@ -20,8 +20,7 @@
 using namespace std;
 
 Level::Level(const int width, const int height)
-    : width{width},
-      height {height},
+    : width{width},height {height},
       walls { Wall{Point{0, 0}, Point{0, height}},
               Wall{Point{0, height}, Point{width, height}},
               Wall{Point{width, height}, Point{width, 0}},
@@ -68,8 +67,9 @@ const vector<Mirror> & Level::getMirrors() const
     return this->mirrors;
 }
 
-void Level::addMirror(const Mirror & mirror)
+void Level::addMirror(Mirror mirror)
 {
+    mirror.setLevel(this);
     this->mirrors.push_back(mirror);
 }
 
@@ -78,8 +78,9 @@ const vector<Crystal> & Level::getCrystals() const
     return this->crystals;
 }
 
-void Level::addCrystal(const Crystal & crystal)
+void Level::addCrystal(Crystal crystal)
 {
+    crystal.setLevel(this);
     this->crystals.push_back(crystal);
 }
 
@@ -88,8 +89,9 @@ const vector<Lens> & Level::getLenses() const
     return this->lenses;
 }
 
-void Level::addLens(const Lens & lens)
+void Level::addLens(Lens lens)
 {
+    lens.setLevel(this);
     this->lenses.push_back(lens);
 }
 
@@ -117,11 +119,9 @@ void Level::computeRays()
 {
     Ray ray(this->source.getPosition(),
             this->source.getPosition(),
-            this->source.getWaveLength()
-            );
+            this->source.getWaveLength());
 
     this->computeRay(ray);
-    throw StarlightException("to do");
 }
 
 void Level::computeRay(Ray &)

@@ -54,6 +54,7 @@ public:
 
     /**
      * Retourne l'angle du rayon émis.
+     *
      * @return l'angle du rayon émis.
      */
     int getAngle() const;
@@ -91,7 +92,7 @@ public:
      * sous-jacente en console.
      * @return le flux dans lequel la source a été imprimée.
      */
-    //friend std::ostream & operator<<(std::ostream &, const Source &);
+    friend std::ostream & operator<<(std::ostream &, const Source &);
 };
 
 #endif // SOURCE_H

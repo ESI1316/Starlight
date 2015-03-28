@@ -70,12 +70,6 @@ public:
     bool operator==(const Point &) const;
 
     /**
-     * @brief operator =
-     * @return
-     */
-    Point & operator=(const Point &);
-
-    /**
      * Surcharge l'opérateur de flux de sortie pour afficher un
      * récapitulatif des caractéristiques du point sous-jacent en
      * console.

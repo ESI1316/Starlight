@@ -5,8 +5,8 @@
 Source::Source(const Point & position, const int edge, const double alpha, const int waveLength)
     : position{position}, edge{edge}, alpha{alpha}, waveLength {waveLength}
 {
-   if(edge <= 0)
-       throw StarlightException("La longueur du coté doit être strict. positif");
+   //if (edge <= 0)
+   //    throw StarlightException("La longueur du coté doit être strict. positif");
     // TODO : valider wavelength
 }
 

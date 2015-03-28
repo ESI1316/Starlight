@@ -42,7 +42,8 @@ bool Dest::includeRay(const Ray & ray) const
 
 std::ostream & operator<<(std::ostream & out, const Dest & dest)
 {
-    out << "Dest --- Position : " << dest.getPosition()
+    out << "Dest --- " << std::endl
+        << "Position : " << dest.getPosition()
         << " , Edge : " << dest.getEdge()
         << " , lighted up : " << dest.isLightedUp();
     return out;

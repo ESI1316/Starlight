@@ -33,7 +33,6 @@ private :
     std::vector<Ray> rays;
     std::vector<Nuke> nukes;
 
-
 public:
 
     /**
@@ -54,114 +53,130 @@ public:
 
     /**
      * Retourne la source de la carte.
+     *
      * @return la source de la carte.
      */
     const Source & getSource() const;
 
     /**
      * Change la source de la carte
+     *
      * @param value la nouvelle source
      */
     void setSource(const Source &);
 
     /**
      * Retourne la desination de la carte
+     *
      * @return la destination de la carte
      */
     const Dest & getDestination() const;
 
     /**
      * Change la destination de la carte
+     *
      * @param value la destination de la carte
      */
     void setDestination(const Dest &);
 
     /**
      * Retourne l'ensemble des murs de la carte
+     *
      * @return l'ensemble des murs de la carte
      */
     const std::vector<Wall> & getWalls() const;
 
     /**
      * Permet d'ajouter un mur sur la carte.
+     *
      * @param newWall nouveau mur à ajouter.
      */
     void addWall(const Wall &);
 
     /**
      * Retourne l'ensemble des miroirs de la carte
+     *
      * @return l'ensemble des miroirs de la carte
      */
     const std::vector<Mirror> & getMirrors() const;
 
     /**
      * Permet d'ajouter un mirroir sur la carte.
+     *
      * @param newMirror nouveau mirroir à ajouter.
      */
-    void addMirror(const Mirror &);
+    void addMirror(Mirror);
 
     /**
      * Retourne l'ensemble des cristaux de la carte
+     *
      * @return l'ensemble des cristaux de la carte
      */
     const std::vector<Crystal> & getCrystals() const;
 
     /**
      * Permet d'ajouter un crystal sur la carte.
+     *
      * @param newCrystal nouveau crystal à ajouter.
      */
-    void addCrystal(const Crystal &);
+    void addCrystal(Crystal);
 
     /**
      * Retourne l'ensemble des lentilles de la carte
+     *
      * @return l'ensemble des lentilles de la carte
      */
     const std::vector<Lens> & getLenses() const;
 
     /**
      * Permet d'ajouter une lentille sur la carte.
+     *
      * @param newLens nouvelle lentille à ajouter.
      */
-    void addLens(const Lens &);
+    void addLens(Lens);
 
     /**
      * Retourne l'ensemble des rayons de la carte
+     *
      * @return l'ensemble des rayons de la carte
      */
     const std::vector<Ray> & getRays() const;
 
     /**
      * Change l'ensemble des rayons de la carte
+     *
      * @param le nouvel ensemble de rayons de la carte
      */
     void setRays(const std::vector<Ray> &);
 
     /**
      * Retourne l'ensemble des bombes de la carte
+     *
      * @return l'ensemble des bombes de la carte
      */
     const std::vector<Nuke> & getNukes() const;
 
     /**
      * Permet d'ajouter une bombe sur la carte.
+     *
      * @param newNuke nouvelle bombe à ajouter.
      */
     void addNuke(const Nuke &);
 
     /**
-     * @brief computeRay
+     * Permet de calculer un rayon à partir du rayon entré en paramètre.
+     *
+     * @param ray Rayon précedent.
      */
     void computeRay(Ray &);
 
     /**
-     * @brief addRay
+     * Permet d'ajouter un rayon au level.
      */
     void addRay(Ray &);
 
     /**
      * Calcule les rayons lumineux de la carte.
-     * </p>
-     * Cette fonction doit être surchargée obligatoirement.
      */
     void computeRays();
 };

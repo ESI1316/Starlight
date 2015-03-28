@@ -19,8 +19,7 @@ class Nuke : Element
 
 
 public:
-    void reactToRay(Ray &);
-    bool includeRay(const Ray & ray) const;
+
     /**
      * Instancie une bombe en une position donnée avec un rayon
      * déterminé.
@@ -47,7 +46,6 @@ public:
      */
     bool isLightedUp() const;
 
-    Nuke & operator=(const Nuke &);
     /**
      * Illumine la bombe ou non.
      * @param q vrai si la bombe est illuminée, faux sinon.
@@ -55,12 +53,29 @@ public:
     void setLightedUp(const bool);
 
     /**
+     * Réaction à l'exposition d'un rayon.
+     *
+     * @param ray Le rayon.
+     */
+    void reactToRay(Ray &);
+
+    /**
+     * Renseigne si la bombe est dans la trajectoire du rayon.
+     *
+     * @param ray Le rayon.
+     *
+     * @return true Si la bombe se trouve dans la trajectoire du rayon entré en
+     * paramètre.
+     */
+    bool includeRay(const Ray & ray) const;
+
+    /**
      * Surcharge l'opérateur de flux de sortie pour afficher un
      * récapitulatif des caractéristiques de la bombe
      * sous-jacente en console.
      * @return le flux dans lequel la bombe a été imprimée.
      */
-    //friend std::ostream & operator<<(std::ostream & out, const Nuke & s);
+    friend std::ostream & operator<<(std::ostream & out, const Nuke & s);
 };
 
 #endif // NUKE_H

@@ -16,7 +16,6 @@ class Dest : public Element
     int edge;
     bool light;
 
-
 public:
 
     /**
@@ -59,6 +58,7 @@ public:
      * @brief reactToRay
      */
     void reactToRay(Ray &);
+
     /**
      * @brief includePoint
      * @return
