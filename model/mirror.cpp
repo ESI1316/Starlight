@@ -4,17 +4,13 @@
 #include "model/level.hpp"
 
 Mirror::Mirror(const Point & point, int xpad, int length, double alpha)
-    : Mirror {point, length, xpad, alpha, Point{0, 0}, Point{0, 0}, 0, 0}
-{
-
-}
+    : Mirror {point, length, xpad, alpha, Point{0, 0}, Point{0, 0}, 0., 0.} {}
 
 Mirror::Mirror(const Point & pivot, int xpad, int length, double alpha, Point pm,
                Point pM, double alphaMin, double alphaMax)
-    : Element(), pivot {pivot}, length(length),
-      xpad(xpad), xMin {pm.getX()}, xMax {pM.getX()},
-      yMin {pm.getY()}, yMax {pM.getY()}, alpha {alpha}, alphaMin {alphaMin},
-      alphaMax {alphaMax}
+    : Element(), pivot {pivot}, length(length), xpad(xpad), xMin {pm.getX()},
+      xMax {pM.getX()}, yMin {pm.getY()}, yMax {pM.getY()}, alpha {alpha},
+      alphaMin {alphaMin}, alphaMax {alphaMax}
 {
     if (length <= 0)
         throw StarlightException("La longueur doit être strict. positive");
