@@ -1,6 +1,6 @@
-#include "nuke.hpp"
-#include "level.hpp"
-#include "starlightexception.hpp"
+#include "model/nuke.hpp"
+#include "model/level.hpp"
+#include "model/starlightexception.hpp"
 
 Nuke::Nuke(const Point & position, const int radian)
     : Element(), position{position}, radian{radian}

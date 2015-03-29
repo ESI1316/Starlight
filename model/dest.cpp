@@ -1,13 +1,14 @@
-#include "dest.hpp"
-#include "starlightexception.hpp"
-#include "level.hpp"
+#include "model/dest.hpp"
+#include "model/starlightexception.hpp"
+#include "model/level.hpp"
 
 Dest::Dest(const Point & position, const int edge)
     : Element(), position{position}, edge{edge}, light{false}
 {
     if(edge <= 0)
-        throw StarlightException
-            ("Cotés de la destinations doivent être strictement positifs.");
+        throw StarlightException("Cotés de la destinations "
+                                 "doivent être strictement "
+                                 "positifs.");
 }
 
 const Point & Dest::getPosition() const
@@ -40,13 +41,13 @@ bool Dest::includeRay(const Ray & ray) const
     throw StarlightException("Not implemented yet");
 }
 
-    bool Dest::operator==(const Dest & dest) const
-    {
-        return this->position == dest.position
-                && this->edge == dest.edge
-                && this->light == dest.light
-                && Element::operator==(dest);
-    }
+bool Dest::operator==(const Dest & dest) const
+{
+    return this->position == dest.position
+            && this->edge == dest.edge
+            && this->light == dest.light
+            && Element::operator==(dest);
+}
 
 std::ostream & operator<<(std::ostream & out, const Dest & dest)
 {

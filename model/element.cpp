@@ -1,11 +1,6 @@
-#include "element.hpp"
-#include "level.hpp"
+#include "model/element.hpp"
+#include "model/level.hpp"
 
-
-/**
- * @brief Element::setLevel
- * @param level
- */
 void Element::setLevel(Level * level)
 {
     this->level = level;

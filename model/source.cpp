@@ -1,6 +1,6 @@
-#include "starlightexception.hpp"
-#include "source.hpp"
-#include "ray.hpp"
+#include "model/starlightexception.hpp"
+#include "model/source.hpp"
+#include "model/ray.hpp"
 
 Source::Source(const Point & position, const int edge, const double alpha, const int waveLength)
     : position{position}, edge{edge}, alpha{alpha}, waveLength {waveLength}

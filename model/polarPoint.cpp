@@ -1,5 +1,5 @@
 #include <cmath>
-#include "polarPoint.hpp"
+#include "model/polarPoint.hpp"
 
 /**
  * @brief PolarPoint::PolarPoint Créé un point polaire selon les arguments passés

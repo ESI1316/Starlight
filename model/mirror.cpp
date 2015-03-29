@@ -1,7 +1,7 @@
 #include <iostream>
-#include "starlightexception.hpp"
-#include "mirror.hpp"
-#include "level.hpp"
+#include "model/starlightexception.hpp"
+#include "model/mirror.hpp"
+#include "model/level.hpp"
 
 Mirror::Mirror(const Point & point, int xpad, int length, double alpha)
     : Mirror {point, length, xpad, alpha, Point{0, 0}, Point{0, 0}, 0, 0}

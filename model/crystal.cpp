@@ -1,13 +1,10 @@
-#include "crystal.hpp"
-#include "starlightexception.hpp"
-#include "level.hpp"
+#include "model/crystal.hpp"
+#include "model/starlightexception.hpp"
+#include "model/level.hpp"
 
 
 Crystal::Crystal(const Point & center, const int radius, const int amplifier)
-    : Element(),
-      center {center},
-      radius{radius},
-      amplifier {amplifier}
+    : Element(), center {center}, radius{radius}, amplifier {amplifier}
 {
     if(radius <= 0)
         throw StarlightException("Le rayon doit être strictement positif");

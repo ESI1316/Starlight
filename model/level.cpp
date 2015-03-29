@@ -5,17 +5,17 @@
 #endif
 
 #include <string>
-#include "level.hpp"
-#include "crystal.hpp"
-#include "dest.hpp"
-#include "lens.hpp"
-#include "mirror.hpp"
-#include "ray.hpp"
-#include "source.hpp"
-#include "wall.hpp"
-#include "point.hpp"
-#include "nuke.hpp"
-#include "starlightexception.hpp"
+#include "model/level.hpp"
+#include "model/crystal.hpp"
+#include "model/dest.hpp"
+#include "model/lens.hpp"
+#include "model/mirror.hpp"
+#include "model/ray.hpp"
+#include "model/source.hpp"
+#include "model/wall.hpp"
+#include "model/point.hpp"
+#include "model/nuke.hpp"
+#include "model/starlightexception.hpp"
 
 using namespace std;
 

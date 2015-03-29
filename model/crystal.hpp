@@ -77,14 +77,6 @@ public:
      * @return <code>true</code> si deux cristaux sont les même.
      */
     bool operator==(const Crystal &) const;
-
-    /**
-     * Surcharge l'opérateur de flux de sortie pour afficher
-     * un récapitulatif des caractéristiques du cristal
-     * sous-jacent en console.
-     * @return le flux dans lequel le cristal a été imprimé.
-     */
-    friend std::ostream & operator<<(std::ostream &, const Crystal &);
 };
 
 #endif // CRYSTAL_H

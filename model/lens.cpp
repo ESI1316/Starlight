@@ -1,14 +1,10 @@
-#include "lens.hpp"
-#include "level.hpp"
-#include "starlightexception.hpp"
+#include "model/lens.hpp"
+#include "model/level.hpp"
+#include "model/starlightexception.hpp"
 
 Lens::Lens(const Point & position, const int width, const int height, const int wlMin, const int wlMax)
-    : Element(),
-      position {position},
-      width{width},
-      height{height},
-      wlMin{wlMin},
-      wlMax{wlMax}
+    : Element(), position {position}, width{width}, height{height},
+      wlMin{wlMin}, wlMax{wlMax}
 {
     if(width <= 0)
         throw StarlightException("Largeur positive requise");
@@ -47,12 +43,16 @@ int Lens::getMaxWaveLength() const
     return this->wlMax;
 }
 
+/* DEBUG DEBUG
+    SI RAYON NE PASSE PASSE, ON SET LE END
+*/
 void Lens::reactToRay(Ray & ray)
 {
     if(ray.getWaveLength() >= this->getMinWaveLength()
             && ray.getWaveLength() <= this->getMaxWaveLength())
         this->getLevel()->computeRay(ray);
 }
+
 bool Lens::includeRay(const Ray & ray) const
 {
     throw StarlightException("Not implemented yet");
