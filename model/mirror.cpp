@@ -132,32 +132,34 @@ bool Mirror::checkPivotRange(const Point & point) const
 
 void Mirror::reactToRay(Ray & ray)
 {
-    throw StarlightException("Not implemented yet");
+    double alpha = (-180.) + this->alpha - ray.getSlope();
+    Point point = ray.getEnd();
+
+    Ray newRay(point, alpha, ray.getWaveLength());
+    newRay.setIndTerm(point.getY() - (newRay.getSlope() * point.getX()));
+
+    this->getLevel()->computeRay(newRay);
 }
-    bool Mirror::includeRay(const Ray &) const
+
+bool Mirror::includeRay(const Ray &) const
 {
     throw StarlightException("Not implemented yet");
 }
 
-    bool Mirror::operator==(const Mirror & mirror) const
-    {
-        return this->pivot == mirror.pivot
-                && this->length == mirror.length
-                && this->xpad == mirror.xpad
-                && this->xMin == mirror.xMin
-                && this->xMax == mirror.xMax
-                && this->yMin == mirror.yMin
-                && this->alpha == mirror.alpha
-                && this->alphaMin == mirror.alphaMin
-                && this->alphaMax == mirror.alphaMax
-                && Element::operator ==(mirror);
-    }
-/**
- * @brief operator << A CLEAN A COUP DE GETTERS POUR EVITER LE FRIEND.
- * @param out
- * @param mirror
- * @return
- */
+bool Mirror::operator==(const Mirror & mirror) const
+{
+    return this->pivot == mirror.pivot
+            && this->length == mirror.length
+            && this->xpad == mirror.xpad
+            && this->xMin == mirror.xMin
+            && this->xMax == mirror.xMax
+            && this->yMin == mirror.yMin
+            && this->alpha == mirror.alpha
+            && this->alphaMin == mirror.alphaMin
+            && this->alphaMax == mirror.alphaMax
+            && Element::operator ==(mirror);
+}
+
 std::ostream & operator<<(std::ostream & out, const Mirror & mirror)
 {
     out << "Mirror --- Pivot : " << mirror.getPivot()

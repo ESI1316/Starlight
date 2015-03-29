@@ -1,6 +1,6 @@
-#include "ray.hpp"
-#include "level.hpp"
-#include "starlightexception.hpp"
+#include "model/ray.hpp"
+#include "model/level.hpp"
+#include "model/starlightexception.hpp"
 
 // réservation des attributs statiques
 const int Ray::WL_MIN;
@@ -13,7 +13,7 @@ Ray::Ray(const PolarPoint start, double alpha, int waveLength)
 }
 
 Ray::Ray(const Point start, double alpha, int waveLength)
-    :start{start}, slope{alpha}, waveLength{waveLength}
+    :start{start},end{start}, slope{alpha}, waveLength{waveLength}
 {
     if (waveLength < Ray::WL_MIN || waveLength > Ray::WL_MAX)
         throw StarlightException("Longueur d'onde doit être comprise entre");
@@ -65,6 +65,16 @@ bool Ray::operator==(const Ray & ray) const
             && this->slope == ray.slope
             && this->indTerm == ray.indTerm;
 
+}
+
+double Ray::getSlope() const
+{
+    return this->slope;
+}
+
+void Ray::setIndTerm(const double indTerm)
+{
+    this->indTerm = indTerm;
 }
 
 std::ostream & operator<<(std::ostream & out, const Ray & ray)

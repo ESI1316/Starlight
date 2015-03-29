@@ -16,8 +16,8 @@ class Ray
     Point start;
     Point end;
     int waveLength;
-    double slope;
-    double indTerm;
+    double slope{0.};
+    double indTerm{0.};
 
   public:
 
@@ -63,6 +63,9 @@ class Ray
      */
     int getWaveLength() const;
 
+    double getSlope() const;
+    double getIndTerm() const;
+    void setIndTerm(const double);
     /**
      * Change la coordonnée du début du rayon.
      * @param p la nouvelle coordonnée du début du rayon.
