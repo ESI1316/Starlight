@@ -38,7 +38,7 @@ Source levelFactory::getSource(std::ifstream & mapFile)
 
     mapFile >> x >> y >> edge >> alpha >> wavelength;
 
-    return Source(Point(x, y), edge, alpha, wavelength);
+    return Source{Point{x, y}, edge, alpha, wavelength};
 }
 
 Dest levelFactory::getDestination(std::ifstream & mapFile)
@@ -47,7 +47,7 @@ Dest levelFactory::getDestination(std::ifstream & mapFile)
 
     mapFile >> x >> y >> edge;
 
-    return Dest(Point(x, y), edge);
+    return Dest{Point{x, y}, edge};
 }
 
 Crystal levelFactory::getCrystal(std::ifstream &  mapFile)
@@ -56,7 +56,7 @@ Crystal levelFactory::getCrystal(std::ifstream &  mapFile)
 
     mapFile >> x >> y >> rad >> mod;
 
-    return Crystal(Point(x, y), rad, mod);
+    return Crystal{Point{x, y}, rad, mod};
 }
 
 Lens levelFactory::getLens(std::ifstream & mapFile)
@@ -65,7 +65,7 @@ Lens levelFactory::getLens(std::ifstream & mapFile)
 
     mapFile >> x >> y >>  width >> height >> wlmin >> wlmax;
 
-    return Lens(Point(x, y), width, height, wlmin, wlmax);
+    return Lens{Point{x, y}, width, height, wlmin, wlmax};
 }
 
 Wall levelFactory::getWall(std::ifstream & mapFile)
@@ -74,7 +74,7 @@ Wall levelFactory::getWall(std::ifstream & mapFile)
 
     mapFile >> x1 >> y1 >> x2 >> y2;
 
-    return Wall(Point(x1, y1), Point(x2, y2));
+    return Wall{Point{x1, y1}, Point{x2, y2}};
 }
 
 Nuke levelFactory::getNuke(std::ifstream & mapFile)
@@ -83,7 +83,7 @@ Nuke levelFactory::getNuke(std::ifstream & mapFile)
 
     mapFile >> x >> y >> rad;
 
-    return Nuke(Point(x, y), rad);
+    return Nuke{Point{x, y}, rad};
 }
 
 Mirror levelFactory::getMirror(std::ifstream & mapFile)
@@ -92,8 +92,8 @@ Mirror levelFactory::getMirror(std::ifstream & mapFile)
     double alpha, alphaMin, alphaMax;
 
     mapFile >> x >> y >> length >> xPad >> alpha >> xMin >> yMin >> xMax >> yMax
-        >> alphaMin >> alphaMax;
+            >> alphaMin >> alphaMax;
 
-    return Mirror(Point(x, y), length, xPad, alpha, Point(xMin, yMin),
-                  Point(xMax, yMax), alphaMin, alphaMax);
+    return Mirror{Point{x, y}, length, xPad, alpha, Point{xMin, yMin},
+        Point{xMax, yMax}, alphaMin, alphaMax};
 }

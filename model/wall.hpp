@@ -1,7 +1,7 @@
 #ifndef WALL_H
 #define WALL_H
 
-#include <iostream>
+#include <ostream>
 #include "model/point.hpp"
 #include "model/element.hpp"
 
@@ -60,14 +60,6 @@ public:
      * @return <code>true</code> Si les murs sont les même.
      */
     bool operator==(const Wall &) const;
-
-    /**
-     * Surcharge l'opérateur de flux de sortie pour afficher
-     * un récapitulatif des caractéristiques du mur sous-jacent
-     * en console.
-     * @return le flux dans lequel le mur a été imprimé.
-     */
-     friend std::ostream & operator<<(std::ostream &, const Wall &);
 };
 
 #endif // WALL_H

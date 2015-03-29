@@ -95,14 +95,6 @@ class Ray
      * @return <code>true</code> Si deux rayons sont les même.
      */
     bool operator==(const Ray &) const;
-
-    /**
-     * Surcharge l'opérateur de flux de sortie pour afficher un
-     * récapitulatif des caractéristiques du rayon sous-jacent en
-     * console.
-     * @return le flux dans lequel le rayon a été imprimé.
-     */
-    friend std::ostream & operator<<(std::ostream &, const Ray &);
 };
 
 #endif // RAY_H

@@ -36,7 +36,7 @@ bool Wall::operator==(const Wall & wall) const
 
 std::ostream & operator<<(std::ostream & out, const Wall & wall)
 {
-    out << "Wall --- "
+    out << "Wall --- " << std::endl
         << "Start : "  << wall.getStart()
         << ", End : " << wall.getEnd();
 

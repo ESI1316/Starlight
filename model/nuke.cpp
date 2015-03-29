@@ -6,7 +6,8 @@ Nuke::Nuke(const Point & position, const int radian)
     : Element(), position{position}, radian{radian}
 {
     if (radian <= 0)
-        throw StarlightException("Le rayon de la bombe doit être strict. positif");
+        throw StarlightException("Le rayon de la bombe doit être "
+                                 "strict. positif");
 }
 
 const Point &Nuke::getLocation() const

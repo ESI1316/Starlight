@@ -93,14 +93,6 @@ public:
      * @return <code>true</code> Si deux sources sont les mêmes.
      */
     bool operator==(const Source &) const;
-
-    /**
-     * Surcharge l'opérateur de flux de sortie pour afficher
-     * un récapitulatif des caractéristiques de la source
-     * sous-jacente en console.
-     * @return le flux dans lequel la source a été imprimée.
-     */
-    friend std::ostream & operator<<(std::ostream &, const Source &);
 };
 
 #endif // SOURCE_H
