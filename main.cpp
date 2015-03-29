@@ -1,4 +1,4 @@
-/*#include "mainwindow.hpp"
+#include "mainwindow.hpp"
 #include <QApplication>
 #include "model/levelFactory.hpp"
 int main(int argc, char *argv[])
@@ -12,5 +12,5 @@ int main(int argc, char *argv[])
     Level *l = levelFactory::getLevelFromFile("ressources/level.lvl");
 
     return 0;
+    */
 }
-*/

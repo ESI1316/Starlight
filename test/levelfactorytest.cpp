@@ -1,4 +1,4 @@
-#define CATCH_CONFIG_MAIN
+/*#define CATCH_CONFIG_MAIN
 #include "catch.hpp"
 #include "../model/levelFactory.hpp"
 #include "../model/level.hpp"
@@ -56,7 +56,6 @@ TEST_CASE("création d'un Level à partir d'un fichier .lvl", "levelFactory::get
             REQUIRE(level->getLenses()[0].getMinWaveLength() == 500);
             REQUIRE(level->getLenses()[0].getMaxWaveLength() == 600);
         }
-     /*
         SECTION("vérification des murs")
         {
             SECTION("murs entourant le level")
@@ -68,8 +67,9 @@ TEST_CASE("création d'un Level à partir d'un fichier .lvl", "levelFactory::get
             {
 
             }
-        } */
+        }
     }
 
     delete level;
 }
+*/

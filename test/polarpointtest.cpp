@@ -1,4 +1,4 @@
-#include "catch.hpp"
+/*#include "catch.hpp"
 #include "../model/point.hpp"
 #include "../model/polarPoint.hpp"
 
@@ -69,3 +69,4 @@ TEST_CASE("Converting a polar point to a cartesian one ", "PolarPoint")
         REQUIRE(p.getY() == 1);
     }
 }
+*/

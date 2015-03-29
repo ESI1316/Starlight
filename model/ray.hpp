@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include "model/point.hpp"
+#include "model/polarPoint.hpp"
 
 /**
  * Cette classe modélise les rayons lumineux, concept central du jeu.
@@ -41,28 +42,8 @@ class Ray
      */
     static const int WL_DFT {600};
 
-    /**
-     * Instancie un rayon lumineux de début et de fin donnés, et de
-     * longueur d'onde 600 nm.
-     * @param p1 le début du rayon lumineux
-     * @param p2 la fin du rayon lumineux
-     */
-    Ray(const Point &, const Point &);
-
-    /**
-     * Instancie un rayon lumineux de début et de fin donnés, et de
-     * longueur d'onde spécifiée.
-     * </p>
-     * Si la longueur d'onde spécifiée ne rentre pas dans les valeurs
-     * autorisées, elle est automatiquement réglée sur WL_DFT nm.
-     * @param p1 le début du rayon lumineux
-     * @param p2 la fin du rayon lumineux
-     * @param f la longueur d'onde du rayon lumineux.
-     * @see Ray::WL_MIN
-     * @see Ray::WL_MAX
-     * @see Ray::WL_DFT
-     */
-    Ray(const Point &, const Point &, int);
+    Ray(const PolarPoint, double, int);
+    Ray(const Point, double, int);
 
     /**
      * Retourne le début du rayon.

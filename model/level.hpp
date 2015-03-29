@@ -168,7 +168,7 @@ public:
      *
      * @param ray Rayon précedent.
      */
-    void computeRay(Ray &);
+    void computeRay(const Ray &);
 
     /**
      * Permet d'ajouter un rayon au level.

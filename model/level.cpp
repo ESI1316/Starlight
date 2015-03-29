@@ -118,13 +118,13 @@ void Level::addNuke(const Nuke & nuke)
 void Level::computeRays()
 {
     Ray ray(this->source.getPosition(),
-            this->source.getPosition(),
+            this->source.getAngle(),
             this->source.getWaveLength());
 
     this->computeRay(ray);
 }
 
-void Level::computeRay(Ray &)
+void Level::computeRay(const Ray &)
 {
     throw StarlightException("Largeur doit être strict. positive");
 }
