@@ -71,7 +71,13 @@ public:
      */
     bool includeRay(const Ray &) const;
 
+    /**
+     * Permet de savoir si deux destinations sont les même
+     *
+     * @return <code>true</code> Si les destinations sont les même.
+     */
     bool operator==(const Dest &) const;
+
     /**
      * Surcharge l'opérateur de flux de sortie pour afficher
      * un récapitulatif des caractéristiques de la destination

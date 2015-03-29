@@ -48,6 +48,11 @@ public :
      */
     Level * getLevel() const;
 
+    /**
+     * Compare deux éléments pour savoir si ils pointent vers le même niveau.
+     *
+     * @return <code>true</code> Si les deux éléments sont liés au même niveau.
+     */
     bool operator==(const Element &) const;
 };
 

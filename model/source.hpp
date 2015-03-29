@@ -87,7 +87,13 @@ public:
      */
     void setOn(const bool);
 
+    /**
+     * Permet de savoir si deux sources sont les mêmes.
+     *
+     * @return <code>true</code> Si deux sources sont les mêmes.
+     */
     bool operator==(const Source &) const;
+
     /**
      * Surcharge l'opérateur de flux de sortie pour afficher
      * un récapitulatif des caractéristiques de la source

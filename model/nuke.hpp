@@ -70,7 +70,13 @@ public:
      */
     bool includeRay(const Ray & ray) const;
 
+    /**
+     * Permet de savoir si deux bombes sont les mêmes.
+     *
+     * @return <code>true</code> Si les deux bombes sont les mêmes.
+     */
     bool operator==(const Nuke &) const;
+
     /**
      * Surcharge l'opérateur de flux de sortie pour afficher un
      * récapitulatif des caractéristiques de la bombe

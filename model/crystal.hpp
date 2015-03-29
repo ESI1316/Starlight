@@ -71,7 +71,13 @@ public:
      */
     bool includeRay(const Ray &) const;
 
+    /**
+     * Permet de savoir si deux cristaux sont les même.
+     *
+     * @return <code>true</code> si deux cristaux sont les même.
+     */
     bool operator==(const Crystal &) const;
+
     /**
      * Surcharge l'opérateur de flux de sortie pour afficher
      * un récapitulatif des caractéristiques du cristal

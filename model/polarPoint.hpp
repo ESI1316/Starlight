@@ -118,8 +118,26 @@ public:
      */
     std::string toString() const;
 
+    /**
+     * Operateur de copie d'un point polaire.
+     *
+     * @return Le point polaire courant.
+     */
     PolarPoint & operator=(const PolarPoint &);
+
+    /**
+     * Operateur de copie d'un point cartésien en un point polaire.
+     *
+     * @return Le point polaire courant.
+     */
     PolarPoint & operator=(const Point &);
+
+    /**
+     * Permet de savoir si deux points sont à la même position.
+     *
+     * @return <code>true</code> Si les deux points sont au même endroit sur le
+     * plan.
+     */
     bool operator==(const PolarPoint &) const;
 
     friend std::ostream & operator<<(std::ostream &, PolarPoint &);

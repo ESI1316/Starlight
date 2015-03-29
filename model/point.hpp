@@ -65,8 +65,9 @@ public:
     int distanceFrom(const Point & p);
 
     /**
-     * @brief operator ==
-     * @return
+     * Permet de savoir si deux points sont aux même endroit.
+     *
+     * @return <code>true</code> Si les deux points ont les même coordonnées.
      */
     bool operator==(const Point &) const;
 

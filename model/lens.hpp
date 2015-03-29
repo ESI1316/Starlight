@@ -94,7 +94,13 @@ class Lens : public Element
      */
     bool includeRay(const Ray &) const;
 
+    /**
+     * Permet de savoir si deux lentilles sont les mêmes.
+     *
+     * @return <code>true</code> Si les deux lentilles sont les même.
+     */
     bool operator==(const Lens &) const;
+
     /**
      * Surcharge l'opérateur de flux de sortie pour afficher
      * un récapitulatif des caractéristiques de la lentille

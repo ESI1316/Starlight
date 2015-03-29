@@ -201,7 +201,13 @@ public:
      */
     bool includeRay(const Ray &) const;
 
+    /**
+     * Permet de savoir si deux mirroirs sont les même.
+     *
+     * @return <code>true</code> Si deux mirroirs sont les même.
+     */
     bool operator==(const Mirror &) const;
+
     /**
      * Surcharge l'opérateur de flux de sortie pour
      * afficher un récapitulatif des caractéristiques du

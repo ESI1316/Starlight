@@ -105,7 +105,13 @@ class Ray
      */
     bool setWaveLength(const int);
 
+    /**
+     * Permet de savoir si deux rayons sont les mêmes.
+     *
+     * @return <code>true</code> Si deux rayons sont les même.
+     */
     bool operator==(const Ray &) const;
+
     /**
      * Surcharge l'opérateur de flux de sortie pour afficher un
      * récapitulatif des caractéristiques du rayon sous-jacent en

@@ -54,7 +54,13 @@ public:
      */
     bool includeRay(const Ray &) const;
 
+    /**
+     * Permet de savoir si deux murs sont identiques.
+     *
+     * @return <code>true</code> Si les murs sont les même.
+     */
     bool operator==(const Wall &) const;
+
     /**
      * Surcharge l'opérateur de flux de sortie pour afficher
      * un récapitulatif des caractéristiques du mur sous-jacent
