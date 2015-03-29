@@ -2,7 +2,7 @@
 #define RAY_H
 
 #include <iostream>
-#include "point.hpp"
+#include "model/point.hpp"
 
 /**
  * Cette classe modélise les rayons lumineux, concept central du jeu.

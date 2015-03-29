@@ -3,13 +3,13 @@
 
 #include <vector>
 
-#include "wall.hpp"
-#include "mirror.hpp"
-#include "crystal.hpp"
-#include "lens.hpp"
-#include "nuke.hpp"
-#include "source.hpp"
-#include "dest.hpp"
+#include "model/wall.hpp"
+#include "model/mirror.hpp"
+#include "model/crystal.hpp"
+#include "model/lens.hpp"
+#include "model/nuke.hpp"
+#include "model/source.hpp"
+#include "model/dest.hpp"
 
 /**
  * Modélise une carte telle qu'utilisée dans le jeu.

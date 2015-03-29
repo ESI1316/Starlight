@@ -4,7 +4,7 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
-#include "level.hpp"
+#include "model/level.hpp"
 
 /**
  * Fonctions utilitaires permettant divers éléments du jeu à partir d'un

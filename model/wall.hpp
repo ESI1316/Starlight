@@ -2,8 +2,8 @@
 #define WALL_H
 
 #include <iostream>
-#include "point.hpp"
-#include "element.hpp"
+#include "model/point.hpp"
+#include "model/element.hpp"
 
 /**
  * Cette classe modélise les murs utilisés dans le jeu.

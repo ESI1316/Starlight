@@ -2,8 +2,8 @@
 #define NUKE_H
 
 #include <ostream>
-#include "point.hpp"
-#include "element.hpp"
+#include "model/point.hpp"
+#include "model/element.hpp"
 
 /**
  * Cette classe modélise les bombes utilisées dans le jeu.
@@ -76,14 +76,6 @@ public:
      * @return <code>true</code> Si les deux bombes sont les mêmes.
      */
     bool operator==(const Nuke &) const;
-
-    /**
-     * Surcharge l'opérateur de flux de sortie pour afficher un
-     * récapitulatif des caractéristiques de la bombe
-     * sous-jacente en console.
-     * @return le flux dans lequel la bombe a été imprimée.
-     */
-    friend std::ostream & operator<<(std::ostream & out, const Nuke & s);
 };
 
 #endif // NUKE_H

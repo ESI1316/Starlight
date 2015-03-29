@@ -50,7 +50,7 @@ bool Crystal::operator==(const Crystal & crystal) const
 std::ostream & operator<<(std::ostream & out, const Crystal & crystal)
 {
     out << "Crystal --- Center : " << crystal.getCenter()
-        << " , Radius : " << crystal.getRadius()
-        << " , Modifier : " << crystal.getAmplifier();
+        << " , Radius : " << std::to_string(crystal.getRadius())
+        << " , Modifier : " << std::to_string(crystal.getAmplifier());
     return out;
 }

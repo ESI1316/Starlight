@@ -2,7 +2,7 @@
 #define SOURCE_H
 
 #include <iostream>
-#include "point.hpp"
+#include "model/point.hpp"
 
 /**
  * Modélise la source lumineuse utilisée dans le jeu.

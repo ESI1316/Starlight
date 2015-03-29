@@ -71,12 +71,6 @@ public:
      */
     bool operator==(const Point &) const;
 
-    /**
-     * Surcharge l'opérateur de flux de sortie pour afficher un
-     * récapitulatif des caractéristiques du point sous-jacent en
-     * console.
-     * @return le flux dans lequel le point a été imprimé.
-     */
     friend std::ostream & operator<<(std::ostream &, const Point &);
 };
 

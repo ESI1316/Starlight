@@ -1,7 +1,7 @@
 #ifndef ELEMENT_HPP
 #define ELEMENT_HPP
 
-#include "ray.hpp"
+#include "model/ray.hpp"
 
 class Level;
 

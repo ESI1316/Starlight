@@ -2,8 +2,8 @@
 #define CRYSTAL_H
 
 #include <ostream>
-#include "point.hpp"
-#include "element.hpp"
+#include "model/point.hpp"
+#include "model/element.hpp"
 
 /**
  * Cette classe amplifierélise les cristaux utilisés dans le jeu.

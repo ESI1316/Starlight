@@ -2,7 +2,7 @@
 #define DEST_H
 
 #include <ostream>
-#include "element.hpp"
+#include "model/element.hpp"
 
 /**
  * Cette classe modélise la destination utilisée dans le jeu.
@@ -77,14 +77,6 @@ public:
      * @return <code>true</code> Si les destinations sont les même.
      */
     bool operator==(const Dest &) const;
-
-    /**
-     * Surcharge l'opérateur de flux de sortie pour afficher
-     * un récapitulatif des caractéristiques de la destination
-     * sous-jacente en console.
-     * @return le flux dans lequel la destination a été imprimée.
-     */
-    //friend std::ostream & operator<<(std::ostream & out, const Dest & s);
 };
 
 #endif // DEST_H

@@ -2,8 +2,8 @@
 #define LENS_H
 
 #include <ostream>
-#include "point.hpp"
-#include "element.hpp"
+#include "model/point.hpp"
+#include "model/element.hpp"
 
 /**
  * Cette classe modélise les lentilles utilisées dans le jeu.
@@ -100,14 +100,6 @@ class Lens : public Element
      * @return <code>true</code> Si les deux lentilles sont les même.
      */
     bool operator==(const Lens &) const;
-
-    /**
-     * Surcharge l'opérateur de flux de sortie pour afficher
-     * un récapitulatif des caractéristiques de la lentille
-     * sous-jacente en console.
-     * @return le flux dans lequel la lentille a été imprimée.
-     */
-    //friend std::ostream & operator<<(std::ostream & out, const Lens & m);
 };
 
 #endif // LENS_H

@@ -3,7 +3,7 @@
 
 #include<ostream>
 #include<string>
-#include "point.hpp"
+#include "model/point.hpp"
 
 /**
  * @brief The PolarPoint class est une classe modélisant la représentation
@@ -139,8 +139,6 @@ public:
      * plan.
      */
     bool operator==(const PolarPoint &) const;
-
-    friend std::ostream & operator<<(std::ostream &, PolarPoint &);
 };
 
 #endif // POLARCOORDINATE_HPP

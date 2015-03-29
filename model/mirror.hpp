@@ -2,8 +2,8 @@
 #define MIRROR_H
 
 #include <ostream>
-#include "point.hpp"
-#include "element.hpp"
+#include "model/point.hpp"
+#include "model/element.hpp"
 
 /**
  * Cette classe modélise les miroirs utilisés dans le jeu.
@@ -207,14 +207,6 @@ public:
      * @return <code>true</code> Si deux mirroirs sont les même.
      */
     bool operator==(const Mirror &) const;
-
-    /**
-     * Surcharge l'opérateur de flux de sortie pour
-     * afficher un récapitulatif des caractéristiques du
-     * miroir sous-jacent en console.
-     * @return le flux dans lequel le miroir a été imprimé.
-     */
-    friend std::ostream & operator<<(std::ostream &, const Mirror &);
 };
 
 #endif // MIRROR_H
