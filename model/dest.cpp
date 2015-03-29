@@ -40,6 +40,14 @@ bool Dest::includeRay(const Ray & ray) const
     throw StarlightException("Not implemented yet");
 }
 
+    bool Dest::operator==(const Dest & dest) const
+    {
+        return this->position == dest.position
+                && this->edge == dest.edge
+                && this->light == dest.light
+                && Element::operator==(dest);
+    }
+
 std::ostream & operator<<(std::ostream & out, const Dest & dest)
 {
     out << "Dest --- " << std::endl

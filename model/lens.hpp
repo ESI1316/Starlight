@@ -92,15 +92,16 @@ class Lens : public Element
      * @return true Si la lentille se trouve dans la trajectoire du rayon entré
      * en paramètre.
      */
-    bool includeRay(const Ray & ray) const;
+    bool includeRay(const Ray &) const;
 
+    bool operator==(const Lens &) const;
     /**
      * Surcharge l'opérateur de flux de sortie pour afficher
      * un récapitulatif des caractéristiques de la lentille
      * sous-jacente en console.
      * @return le flux dans lequel la lentille a été imprimée.
      */
-    friend std::ostream & operator<<(std::ostream & out, const Lens & m);
+    //friend std::ostream & operator<<(std::ostream & out, const Lens & m);
 };
 
 #endif // LENS_H

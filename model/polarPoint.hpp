@@ -99,7 +99,7 @@ public:
      * point cartésien caractérisé par une position sur un axe x et y.
      * @return
      */
-    Point toCartesian();
+    Point toCartesian() const;
 
     /**
      * @brief rotate Cette méthode change la position du point courant dans le
@@ -107,6 +107,7 @@ public:
      * @return Le point courant après rotation.
      */
     PolarPoint & rotateAround(const PolarPoint &, const double);
+    PolarPoint & rotateAround(const Point &, const double);
 
     void rotate(const double);
 
@@ -119,6 +120,7 @@ public:
 
     PolarPoint & operator=(const PolarPoint &);
     PolarPoint & operator=(const Point &);
+    bool operator==(const PolarPoint &) const;
 
     friend std::ostream & operator<<(std::ostream &, PolarPoint &);
 };

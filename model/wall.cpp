@@ -21,9 +21,17 @@ const Point & Wall::getEnd() const
 
 void Wall::reactToRay(Ray & ray) {}
 
-    bool Wall::includeRay(const Ray &) const
+bool Wall::includeRay(const Ray &) const
 {
     throw StarlightException("Not implemented yet");
+}
+
+
+bool Wall::operator==(const Wall & wall) const
+{
+    return this->start == wall.start
+            && this->end == wall.end
+            && Element::operator ==(wall);
 }
 
 std::ostream & operator<<(std::ostream & out, const Wall & wall)

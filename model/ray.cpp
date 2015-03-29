@@ -1,5 +1,6 @@
 #include "ray.hpp"
 #include "level.hpp"
+#include "starlightexception.hpp"
 
 // réservation des attributs statiques
 const int Ray::WL_MIN;
@@ -13,7 +14,8 @@ Ray::Ray(const Point & start, const Point & end)
 Ray::Ray(const Point & start, const Point & end, int waveLength)
     : start {start}, end {end}, waveLength {waveLength}
 {
-    // TODO : valider waveLength, (start et end ?)
+    if (waveLength < Ray::WL_MIN || waveLength > Ray::WL_MAX)
+        throw StarlightException("Longueur d'onde doit être comprise entre");
 }
 
 const Point & Ray::getStart() const
@@ -50,6 +52,16 @@ bool Ray::setWaveLength(const int waveLength)
         this->waveLength = waveLength;
 
     return match;
+}
+
+bool Ray::operator==(const Ray & ray) const
+{
+    return this->start == ray.start
+            && this->end == ray.end
+            && this->waveLength == ray.waveLength
+            && this->slope == ray.slope
+            && this->indTerm == ray.indTerm;
+
 }
 
 std::ostream & operator<<(std::ostream & out, const Ray & ray)

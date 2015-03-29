@@ -39,6 +39,14 @@ bool Crystal::includeRay(const Ray & ray) const
     throw StarlightException("Not implemented yet");
 }
 
+bool Crystal::operator==(const Crystal & crystal) const
+{
+    return this->center == crystal.center
+            && this->radius == crystal.radius
+            && this->amplifier == crystal.amplifier
+            && Element::operator==(crystal);
+}
+
 std::ostream & operator<<(std::ostream & out, const Crystal & crystal)
 {
     out << "Crystal --- Center : " << crystal.getCenter()

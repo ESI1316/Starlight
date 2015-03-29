@@ -47,6 +47,8 @@ public :
      * @return un pointeur vers le niveau auquel appartient l'élément.
      */
     Level * getLevel() const;
+
+    bool operator==(const Element &) const;
 };
 
 #endif // ELEMENT_HPP

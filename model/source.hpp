@@ -87,6 +87,7 @@ public:
      */
     void setOn(const bool);
 
+    bool operator==(const Source &) const;
     /**
      * Surcharge l'opérateur de flux de sortie pour afficher
      * un récapitulatif des caractéristiques de la source

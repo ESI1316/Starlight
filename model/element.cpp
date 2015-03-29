@@ -15,3 +15,8 @@ Level * Element::getLevel() const
 {
     return this->level;
 }
+
+bool Element::operator==(const Element & element) const
+{
+    return this->level == element.level;
+}

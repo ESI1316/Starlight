@@ -15,6 +15,8 @@ class Ray
     Point start;
     Point end;
     int waveLength;
+    double slope;
+    double indTerm;
 
   public:
 
@@ -103,6 +105,7 @@ class Ray
      */
     bool setWaveLength(const int);
 
+    bool operator==(const Ray &) const;
     /**
      * Surcharge l'opérateur de flux de sortie pour afficher un
      * récapitulatif des caractéristiques du rayon sous-jacent en

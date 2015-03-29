@@ -139,6 +139,19 @@ void Mirror::reactToRay(Ray & ray)
     throw StarlightException("Not implemented yet");
 }
 
+    bool Mirror::operator==(const Mirror & mirror) const
+    {
+        return this->pivot == mirror.pivot
+                && this->length == mirror.length
+                && this->xpad == mirror.xpad
+                && this->xMin == mirror.xMin
+                && this->xMax == mirror.xMax
+                && this->yMin == mirror.yMin
+                && this->alpha == mirror.alpha
+                && this->alphaMin == mirror.alphaMin
+                && this->alphaMax == mirror.alphaMax
+                && Element::operator ==(mirror);
+    }
 /**
  * @brief operator << A CLEAN A COUP DE GETTERS POUR EVITER LE FRIEND.
  * @param out

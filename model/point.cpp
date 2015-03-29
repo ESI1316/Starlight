@@ -39,7 +39,8 @@ int Point::distanceFrom(const Point & point)
 
 bool Point::operator==(const Point & point) const
 {
-    return ((this->x == point.x) && (this->y == point.y));
+    return this->x == point.x
+            && this->y == point.y;
 }
 
 std::ostream & operator<<(std::ostream & out, const Point & point)

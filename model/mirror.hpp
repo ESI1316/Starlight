@@ -201,6 +201,7 @@ public:
      */
     bool includeRay(const Ray &) const;
 
+    bool operator==(const Mirror &) const;
     /**
      * Surcharge l'opérateur de flux de sortie pour
      * afficher un récapitulatif des caractéristiques du

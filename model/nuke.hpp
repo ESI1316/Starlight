@@ -70,6 +70,7 @@ public:
      */
     bool includeRay(const Ray & ray) const;
 
+    bool operator==(const Nuke &) const;
     /**
      * Surcharge l'opérateur de flux de sortie pour afficher un
      * récapitulatif des caractéristiques de la bombe

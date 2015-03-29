@@ -63,7 +63,7 @@ bool PolarPoint::isCenter() const
  * @brief PolarPoint::toCartesian
  * @return
  */
-Point PolarPoint::toCartesian()
+Point PolarPoint::toCartesian() const
 {
     return Point(
                 std::round(this->radius * std::cos(this->azimut)),
@@ -102,9 +102,22 @@ double PolarPoint::getAzimutAsDegrees() const
  * non de l'origine, il suffit de translater le pivot sur l'origine.
  * @return
  */
-PolarPoint & PolarPoint::rotateAround(const PolarPoint & center, double alpha)
+PolarPoint & PolarPoint::rotateAround(const PolarPoint & polarPoint, double alpha)
+{
+    return this->rotateAround(polarPoint.toCartesian(), alpha);
+}
+
+PolarPoint & PolarPoint::rotateAround(const Point & pivot, const double alpha)
 {
     Point point = this->toCartesian();
+
+    point.setX(point.getX() - pivot.getX());
+    point.setY(point.getY() - pivot.getY());
+
+    PolarPoint pointModifie(point);
+    pointModifie.rotate(alpha);
+
+    return *this = pointModifie;
 }
 
 void PolarPoint::rotate(const double alpha)
@@ -123,8 +136,16 @@ PolarPoint & PolarPoint::operator=(const PolarPoint & polarPoint)
 PolarPoint & PolarPoint::operator=(const Point & point)
 {
     *this = PolarPoint{point};
+
+    return *this;
 }
 
+    bool PolarPoint::operator==(const PolarPoint & polarPoint) const
+    {
+        return this->radius == polarPoint.radius
+                && this->azimut == polarPoint.azimut;
+
+    }
 /**
  * @brief operator <<
  * @param out

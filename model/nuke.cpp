@@ -39,6 +39,14 @@ bool Nuke::includeRay(const Ray & ray) const
     throw StarlightException("Not implemented yet");
 }
 
+bool Nuke::operator==(const Nuke & nuke) const
+{
+    return this->position == nuke.position
+            && this->radian == nuke.radian
+            && this->light == nuke.light
+            && Element::operator ==(nuke);
+}
+
 std::ostream & operator<<(std::ostream & out, const Nuke & nuke)
 {
     out << "Nuke --- Position : " << nuke.getLocation()

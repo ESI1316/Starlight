@@ -5,8 +5,8 @@
 Source::Source(const Point & position, const int edge, const double alpha, const int waveLength)
     : position{position}, edge{edge}, alpha{alpha}, waveLength {waveLength}
 {
-   //if (edge <= 0)
-   //    throw StarlightException("La longueur du coté doit être strict. positif");
+    //if (edge <= 0)
+    //    throw StarlightException("La longueur du coté doit être strict. positif");
     // TODO : valider wavelength
 }
 
@@ -40,6 +40,14 @@ void Source::setOn(const bool on)
     this->on = on;
 }
 
+bool Source::operator==(const Source & source) const
+{
+    return this->on == source.on
+            && this->position == source.position
+            && this->edge == source.edge
+            && this->alpha == source.alpha
+            && this->waveLength == source.waveLength;
+}
 std::ostream & operator<<(std::ostream & out, const Source & source)
 {
     out << "Source --- Position : " << source.getPosition()

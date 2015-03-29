@@ -71,6 +71,7 @@ public:
      */
     bool includeRay(const Ray &) const;
 
+    bool operator==(const Dest &) const;
     /**
      * Surcharge l'opérateur de flux de sortie pour afficher
      * un récapitulatif des caractéristiques de la destination
