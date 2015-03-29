@@ -2,7 +2,7 @@
 #define NUKE_H
 
 #include <ostream>
-#include "model/point.hpp"
+//#include "model/point.hpp"
 #include "model/element.hpp"
 
 /**
