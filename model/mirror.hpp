@@ -186,6 +186,32 @@ public:
 
     /**
      * Réaction à l'exposition d'un rayon.
+     * Le rayon incident du miroir égal au rayon réflechi. Pour ainsi calculer
+     * le coeficiant angulaire de l'angle réflechis, on utilise la démonstration
+     * suivante :
+     *
+     * Soient alpha l'angle de pivot du miroir (sens anti-horlogé, augmentation
+     * des degré dans le sens du cercle trigonométrique), slope le coefficiant
+     * angulaire du rayon déjà tiré, et ray.getEnd() le point de colision avec
+     * le miroir,
+     *          \
+     *           \MIROIR
+     * _ _ _ __ _ê\ _ _ _ _ MIROIR AVEC ALPHA 0
+     *             \ê       ê = ê car opposés par le sommet
+     *              \
+     * _ _  _ _ _ _ ê\_ _ _ ê = ê car alterne interne
+     *             ô/ \		ô = â car les angles sont alterne-interne
+     *             /   \
+     *            /     \
+     *           /       \
+     *          /         \
+     *         /â		   \ 	ê = angle de rotation du miroir
+     * --------------------		â = angle (coefficiant ang.) du rayon
+     *
+     * Angle réflechis = 180 - (â + (360 - ê))
+     * 					= 180 - (â + 360 - ê)
+     * 					= 180 - â - 360 + ê
+     * 					= - 180 + ê - â
      *
      * @param ray Le rayon.
      */

@@ -1,3 +1,4 @@
+#include <cmath>
 #include <iostream>
 #include "model/starlightexception.hpp"
 #include "model/mirror.hpp"
@@ -128,7 +129,7 @@ bool Mirror::checkPivotRange(const Point & point) const
 
 void Mirror::reactToRay(Ray & ray)
 {
-    double alpha = (-180.) + this->alpha - ray.getSlope();
+    double alpha = std::fmod((-180.) + this->alpha - ray.getSlope(), 180.);
     Point point = ray.getEnd();
 
     Ray newRay(point, alpha, ray.getWaveLength());

@@ -7,18 +7,17 @@ const int Ray::WL_MIN;
 const int Ray::WL_MAX;
 const int Ray::WL_DFT;
 
-Ray::Ray(const PolarPoint start, double alpha, int waveLength)
-    :Ray{start.toCartesian(), alpha, waveLength}
-{
-}
+Ray::Ray(const PolarPoint start, double slope, int waveLength)
+    :Ray{start.toCartesian(), slope, waveLength} {}
 
-Ray::Ray(const Point start, double alpha, int waveLength)
-    :start{start},end{start}, slope{alpha}, waveLength{waveLength}
+Ray::Ray(const Point start, double slope, int waveLength)
+    :start{start}, end{start}, slope{slope}, waveLength{waveLength},
+      indTerm{(start.getY() - (this->slope * start.getX()))}
 {
     if (waveLength < Ray::WL_MIN || waveLength > Ray::WL_MAX)
         throw StarlightException("Longueur d'onde doit être comprise entre");
 
-    this->indTerm = (start.getY() - (this->slope * start.getX()));
+    //this->indTerm = (start.getY() - (this->slope * start.getX()));
 }
 
 const Point & Ray::getStart() const
