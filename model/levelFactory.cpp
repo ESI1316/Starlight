@@ -57,6 +57,7 @@ Crystal levelFactory::getCrystal(std::ifstream &  mapFile)
     mapFile >> x >> y >> rad >> mod;
 
     return Crystal{Point{x, y}, rad, mod};
+
 }
 
 Lens levelFactory::getLens(std::ifstream & mapFile)
@@ -91,9 +92,9 @@ Mirror levelFactory::getMirror(std::ifstream & mapFile)
     int x, y, length, xPad, xMin, yMin, xMax, yMax;
     double alpha, alphaMin, alphaMax;
 
-    mapFile >> x >> y >> length >> xPad >> alpha >> xMin >> yMin >> xMax >> yMax
+    mapFile >> x >> y >> xPad >> length >> alpha >> xMin >> yMin >> xMax >> yMax
             >> alphaMin >> alphaMax;
 
-    return Mirror{Point{x, y}, length, xPad, alpha, Point{xMin, yMin},
+    return Mirror{Point{x, y}, xPad, length, alpha, Point{xMin, yMin},
         Point{xMax, yMax}, alphaMin, alphaMax};
 }

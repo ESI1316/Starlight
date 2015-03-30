@@ -53,4 +53,6 @@ HEADERS  += mainwindow.hpp \
 FORMS    += mainwindow.ui
 
 DISTFILES += \
-    ressources/level.lvl
+    ressources/level.lvl \
+    test/cinclude2dot.pl \
+    test/include_hierarchy.dot

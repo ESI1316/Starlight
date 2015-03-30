@@ -18,6 +18,7 @@ Ray::Ray(const Point start, double slope, int waveLength)
         throw StarlightException("Longueur d'onde doit être comprise entre");
 
     //this->indTerm = (start.getY() - (this->slope * start.getX()));
+    // Devrait disparaitre car inutil \o//
 }
 
 const Point & Ray::getStart() const

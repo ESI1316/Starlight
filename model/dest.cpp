@@ -9,6 +9,8 @@ Dest::Dest(const Point & position, const int edge)
         throw StarlightException("Cotés de la destinations "
                                  "doivent être strictement "
                                  "positifs.");
+
+    //this->getLevel()->getWidth >= position.getX() +
 }
 
 const Point & Dest::getPosition() const

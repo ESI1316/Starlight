@@ -7,7 +7,7 @@
 Mirror::Mirror(const Point & point, int xpad, int length, double alpha)
     : Mirror {point, length, xpad, alpha, Point{0, 0}, Point{0, 0}, 0., 0.} {}
 
-Mirror::Mirror(const Point & pivot, int xpad, int length, double alpha, Point pm,
+Mirror::Mirror(const Point & pivot, int xpad, int length, double alpha, Point pointMin,
                Point pM, double alphaMin, double alphaMax)
     : Element(), pivot {pivot}, length(length), xpad(xpad), xMin {pm.getX()},
       xMax {pM.getX()}, yMin {pm.getY()}, yMax {pM.getY()}, alpha {alpha},
@@ -24,6 +24,13 @@ Mirror::Mirror(const Point & pivot, int xpad, int length, double alpha, Point pm
 
     if(pivot.getY() < pm.getY() || pivot.getY() > pM.getY())
         throw StarlightException("Le miroir est trop à gauche ou trop à droite");
+
+    if(alphaMin < 0. || alphaMax > 360.)
+        throw StarlightException("Les limites de pivot ne sont pas bonnes");
+
+    if(alpha > alphaMax || alpha < alphaMin)
+        throw StarlightException("L'angle est en dehors des limites");
+
     // TODO : valider length, xpad, (alphaMin et alphaMax),
     //                (alpha et [alphaMin, alphaMax]), (xMin et xMax),
     //                (x et [xMin, xMax]), (yMin et yMax),
