@@ -53,7 +53,7 @@ void Lens::reactToRay(Ray & ray)
         this->getLevel()->computeRay(ray);
 }
 
-bool Lens::includeRay(const Ray & ray) const
+Point * Lens::includeRay(const Ray & ray) const
 {
     throw StarlightException("Not implemented yet");
 }

@@ -23,9 +23,25 @@ const Point & Wall::getEnd() const
 
 void Wall::reactToRay(Ray & ray) {}
 
-bool Wall::includeRay(const Ray &) const
+Point * Wall::includeRay(const Ray & ray) const
 {
-    throw StarlightException("Not implemented yet");
+    Point p(-1, -1);
+
+    double slopeWall = (this->getStart().getX() - this->getEnd().getX())
+            / (this->getStart().getY() - this->getEnd().getY());
+    double ind = this->getStart().getY() - (slopeWall * this->getStart().getX());
+
+    if(slopeWall != ray.getSlope() || ind == ray.getIndTerm())
+    {
+        double x = (ind - ray.getIndTerm()) / (ray.getSlope() - slopeWall);
+        double y = slopeWall * x + ind;
+
+        //if()
+        p.setX(x);
+        p.setY(y);
+    }
+
+    return &p;
 }
 
 
@@ -33,7 +49,7 @@ bool Wall::operator==(const Wall & wall) const
 {
     return this->start == wall.start
             && this->end == wall.end
-            && Element::operator ==(wall);
+            && Element::operator==(wall);
 }
 
 std::ostream & operator<<(std::ostream & out, const Wall & wall)

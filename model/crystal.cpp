@@ -31,7 +31,7 @@ void Crystal::reactToRay(Ray & ray)
     this->getLevel()->computeRay(ray);
 }
 
-bool Crystal::includeRay(const Ray & ray) const
+Point * Crystal::includeRay(const Ray & ray) const
 {
     throw StarlightException("Not implemented yet");
 }

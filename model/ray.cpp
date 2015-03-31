@@ -12,7 +12,8 @@ Ray::Ray(const PolarPoint start, double slope, int waveLength)
 
 Ray::Ray(const Point start, double slope, int waveLength)
     :start{start}, end{start}, slope{slope}, waveLength{waveLength},
-      indTerm{(start.getY() - (this->slope * start.getX()))}
+      indTerm{(start.getY() - (this->slope * start.getX()))},
+      vertical{slope == 90.}
 {
     if (waveLength < Ray::WL_MIN || waveLength > Ray::WL_MAX)
         throw StarlightException("Longueur d'onde doit être comprise entre");
@@ -67,6 +68,11 @@ bool Ray::operator==(const Ray & ray) const
 
 }
 
+bool Ray::isVertical() const
+{
+    return this->isVertical();
+}
+
 double Ray::getSlope() const
 {
     return this->slope;
@@ -75,6 +81,11 @@ double Ray::getSlope() const
 void Ray::setIndTerm(const double indTerm)
 {
     this->indTerm = indTerm;
+}
+
+double Ray::getIndTerm() const
+{
+    return this->indTerm;
 }
 
 std::ostream & operator<<(std::ostream & out, const Ray & ray)

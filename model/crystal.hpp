@@ -69,7 +69,7 @@ public:
      * @return true Si le crystal se trouve dans la trajectoire du rayon entré
      * en paramètre.
      */
-    bool includeRay(const Ray &) const;
+    Point * includeRay(const Ray &) const;
 
     /**
      * Permet de savoir si deux cristaux sont les même.

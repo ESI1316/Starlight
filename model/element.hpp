@@ -32,7 +32,7 @@ public :
      * @return true Si l'élément se trouve dans la trajectoire du rayon
      * entré en paramètre.
      */
-    virtual bool includeRay(const Ray &) const = 0;
+    virtual Point * includeRay(const Ray &) const = 0;
 
     /**
      * Permet de modifier le level auquel appertient l'élément.

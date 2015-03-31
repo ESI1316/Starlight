@@ -225,7 +225,7 @@ public:
      * @return true Si le mirroir se trouve dans la trajectoire du rayon entré
      * en paramètre.
      */
-    bool includeRay(const Ray &) const;
+    Point * includeRay(const Ray &) const;
 
     /**
      * Permet de savoir si deux mirroirs sont les même.

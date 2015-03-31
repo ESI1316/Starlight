@@ -16,6 +16,7 @@ class Ray
     Point start;
     Point end;
     int waveLength{Ray::WL_DFT};
+    bool vertical{false};
     double slope{0.};
     double indTerm{0.};
 
@@ -88,6 +89,8 @@ class Ray
      * retourne faux sinon.
      */
     bool setWaveLength(const int);
+
+    bool isVertical() const;
 
     /**
      * Permet de savoir si deux rayons sont les mêmes.

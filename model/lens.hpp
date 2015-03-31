@@ -92,7 +92,7 @@ class Lens : public Element
      * @return true Si la lentille se trouve dans la trajectoire du rayon entré
      * en paramètre.
      */
-    bool includeRay(const Ray &) const;
+    Point * includeRay(const Ray &) const;
 
     /**
      * Permet de savoir si deux lentilles sont les mêmes.

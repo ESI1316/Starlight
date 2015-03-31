@@ -69,7 +69,7 @@ public:
      * @return true Si la destination se trouve dans la trajectoire du rayon
      * entré en paramètre.
      */
-    bool includeRay(const Ray &) const;
+    Point * includeRay(const Ray &) const;
 
     /**
      * Permet de savoir si deux destinations sont les même

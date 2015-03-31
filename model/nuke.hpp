@@ -68,7 +68,7 @@ public:
      * @return true Si la bombe se trouve dans la trajectoire du rayon entré en
      * paramètre.
      */
-    bool includeRay(const Ray & ray) const;
+    Point * includeRay(const Ray & ray) const;
 
     /**
      * Permet de savoir si deux bombes sont les mêmes.

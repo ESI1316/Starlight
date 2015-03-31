@@ -52,7 +52,7 @@ public:
      * @return true Si la mur se trouve dans la trajectoire du rayon
      * entré en paramètre.
      */
-    bool includeRay(const Ray &) const;
+    Point * includeRay(const Ray &) const;
 
     /**
      * Permet de savoir si deux murs sont identiques.

@@ -9,8 +9,8 @@ Mirror::Mirror(const Point & point, int xpad, int length, double alpha)
 
 Mirror::Mirror(const Point & pivot, int xpad, int length, double alpha, Point pointMin,
                Point pM, double alphaMin, double alphaMax)
-    : Element(), pivot {pivot}, length(length), xpad(xpad), xMin {pm.getX()},
-      xMax {pM.getX()}, yMin {pm.getY()}, yMax {pM.getY()}, alpha {alpha},
+    : Element(), pivot {pivot}, length(length), xpad(xpad), xMin {pointMin.getX()},
+      xMax {pM.getX()}, yMin {pointMin.getY()}, yMax {pM.getY()}, alpha {alpha},
       alphaMin {alphaMin}, alphaMax {alphaMax}
 {
     if (length <= 0)
@@ -19,10 +19,10 @@ Mirror::Mirror(const Point & pivot, int xpad, int length, double alpha, Point po
     if(xpad < 0)
         throw StarlightException("Le décalage du pivot doit être positif");
 
-    if(pivot.getX() < pm.getX() || pivot.getX() > pM.getX())
+    if(pivot.getX() < pointMin.getX() || pivot.getX() > pM.getX())
         throw StarlightException("Le miroir est trop haut ou trop bas");
 
-    if(pivot.getY() < pm.getY() || pivot.getY() > pM.getY())
+    if(pivot.getY() < pointMin.getY() || pivot.getY() > pM.getY())
         throw StarlightException("Le miroir est trop à gauche ou trop à droite");
 
     if(alphaMin < 0. || alphaMax > 360.)
@@ -115,28 +115,15 @@ bool Mirror::checkAngleRange(double a) const
  */
 bool Mirror::checkPivotRange(const Point & point) const
 {
-    if (this->xMin == 0 && this->xMax == 0 && this->yMin == 0 && this->yMax == 0)
-    {
-        return true;
-    }
-    else if (this->xMin == 0 && this->xMax == 0)
-    {
-        return point.getY() >= this->yMin && point.getY() <= this->yMax;
-    }
-    else if (this->yMin == 0 && this->yMax == 0)
-    {
-        return point.getX() >= this->xMin && point.getX() <= this->xMax;
-    }
-    else
-    {
-        return point.getX() >= this->xMin && point.getX() <= this->xMax
-                && point.getY() >= this->yMin && point.getY() <= this->yMax;
-    }
+    return true;
 }
 
 void Mirror::reactToRay(Ray & ray)
 {
-    double alpha = std::fmod((-180.) + this->alpha - ray.getSlope(), 180.);
+    double alpha = std::tan(std::abs(
+                                std::fmod((-M_PI) + this->alpha - ray.getSlope(), M_PI)
+                                ));
+
     Point point = ray.getEnd();
 
     Ray newRay(point, alpha, ray.getWaveLength());
@@ -145,7 +132,7 @@ void Mirror::reactToRay(Ray & ray)
     this->getLevel()->computeRay(newRay);
 }
 
-bool Mirror::includeRay(const Ray &) const
+Point * Mirror::includeRay(const Ray &) const
 {
     throw StarlightException("Not implemented yet");
 }
