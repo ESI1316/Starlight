@@ -43,9 +43,6 @@ int Lens::getMaxWaveLength() const
     return this->wlMax;
 }
 
-/* DEBUG DEBUG
-    SI RAYON NE PASSE PASSE, ON SET LE END
-*/
 void Lens::reactToRay(Ray & ray)
 {
     if(ray.getWaveLength() >= this->getMinWaveLength()

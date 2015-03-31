@@ -34,7 +34,7 @@ Level * levelFactory::getLevelFromFile(std::string mapFilePath)
 
 Source levelFactory::getSource(std::ifstream & mapFile)
 {
-    int x, y, edge, wavelength; double alpha;
+    int edge, wavelength; double alpha, x, y;
 
     mapFile >> x >> y >> edge >> alpha >> wavelength;
 
@@ -43,7 +43,8 @@ Source levelFactory::getSource(std::ifstream & mapFile)
 
 Dest levelFactory::getDestination(std::ifstream & mapFile)
 {
-    int x, y, edge;
+    int edge;
+    double x, y;
 
     mapFile >> x >> y >> edge;
 
@@ -52,7 +53,7 @@ Dest levelFactory::getDestination(std::ifstream & mapFile)
 
 Crystal levelFactory::getCrystal(std::ifstream &  mapFile)
 {
-    int x, y, rad, mod;
+    double x, y, rad; int mod;
 
     mapFile >> x >> y >> rad >> mod;
 
@@ -62,7 +63,7 @@ Crystal levelFactory::getCrystal(std::ifstream &  mapFile)
 
 Lens levelFactory::getLens(std::ifstream & mapFile)
 {
-    int x, y, width, height, wlmin, wlmax;
+    double x, y; int  width, height, wlmin, wlmax;
 
     mapFile >> x >> y >>  width >> height >> wlmin >> wlmax;
 
@@ -71,7 +72,7 @@ Lens levelFactory::getLens(std::ifstream & mapFile)
 
 Wall levelFactory::getWall(std::ifstream & mapFile)
 {
-    int x1, y1, x2, y2;
+    double x1, y1, x2, y2;
 
     mapFile >> x1 >> y1 >> x2 >> y2;
 
@@ -80,7 +81,7 @@ Wall levelFactory::getWall(std::ifstream & mapFile)
 
 Nuke levelFactory::getNuke(std::ifstream & mapFile)
 {
-    int x, y, rad;
+    double x, y, rad;
 
     mapFile >> x >> y >> rad;
 
@@ -89,8 +90,8 @@ Nuke levelFactory::getNuke(std::ifstream & mapFile)
 
 Mirror levelFactory::getMirror(std::ifstream & mapFile)
 {
-    int x, y, length, xPad, xMin, yMin, xMax, yMax;
-    double alpha, alphaMin, alphaMax;
+    int length, xPad;
+    double xMin, yMin, xMax, yMax, alpha, alphaMin, alphaMax, x, y;
 
     mapFile >> x >> y >> xPad >> length >> alpha >> xMin >> yMin >> xMax >> yMax
             >> alphaMin >> alphaMax;

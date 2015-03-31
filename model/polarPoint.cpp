@@ -66,8 +66,8 @@ bool PolarPoint::isCenter() const
 Point PolarPoint::toCartesian() const
 {
     return Point(
-                std::round(this->radius * std::cos(this->azimut)),
-                std::round(this->radius * std::sin(this->azimut))
+                this->radius * std::cos(this->azimut),
+                this->radius * std::sin(this->azimut)
                 );
 }
 
@@ -142,8 +142,8 @@ PolarPoint & PolarPoint::operator=(const Point & point)
 
     bool PolarPoint::operator==(const PolarPoint & polarPoint) const
     {
-        return this->radius == polarPoint.radius
-                && this->azimut == polarPoint.azimut;
+        return std::abs(this->radius - polarPoint.radius) <= 0.1
+                && std::abs(this->azimut == polarPoint.azimut) <= 0.1;
 
     }
 /**

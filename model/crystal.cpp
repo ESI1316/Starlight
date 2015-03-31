@@ -1,9 +1,10 @@
+#include <cmath>
 #include "model/crystal.hpp"
 #include "model/starlightexception.hpp"
 #include "model/level.hpp"
 
 
-Crystal::Crystal(const Point & center, const int radius, const int amplifier)
+Crystal::Crystal(const Point & center, const double radius, const int amplifier)
     : Element(), center {center}, radius{radius}, amplifier {amplifier}
 {
     if(radius <= 0)
@@ -39,7 +40,7 @@ Point * Crystal::includeRay(const Ray & ray) const
 bool Crystal::operator==(const Crystal & crystal) const
 {
     return this->center == crystal.center
-            && this->radius == crystal.radius
+            && std::abs(this->radius - crystal.radius) <= 0.1
             && this->amplifier == crystal.amplifier
             && Element::operator==(crystal);
 }

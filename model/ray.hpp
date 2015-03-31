@@ -16,9 +16,9 @@ class Ray
     Point start;
     Point end;
     int waveLength{Ray::WL_DFT};
-    bool vertical{false};
-    double slope{0.};
-    double indTerm{0.};
+    bool vertical;
+    double slope;
+    double indTerm;
 
   public:
 

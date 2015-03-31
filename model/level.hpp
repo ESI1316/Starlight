@@ -20,11 +20,11 @@ class Level
 {
 private :
 
-    const int width;
-    const int height;
+    const double width;
+    const double height;
 
-    Source source{Point{0, 0}, -1, 5., 600};
-    Dest dest{Point{0, 0}, 5};
+    Source source{Point{0., 0.}, -1, 5., 600};
+    Dest dest{Point{0., 0.}, 5};
 
     std::vector<Wall> walls;
     std::vector<Mirror> mirrors;
@@ -49,7 +49,7 @@ public:
      * @param w la largeur de la carte
      * @param h la heuteur de la carte
      */
-    Level(const int, const int);
+    Level(const double, const double);
 
     /**
      * Retourne la source de la carte.

@@ -14,7 +14,7 @@
 class Nuke : Element
 {
     Point position;
-    int radian;
+    double radian;
     bool light {false};
 
 
@@ -26,7 +26,7 @@ public:
      * @param p la position de la bombe
      * @param r le rayon de la bombe
      */
-    Nuke(const Point &,const int);
+    Nuke(const Point &,const double);
 
     /**
      * Retourne la position de la bombe.

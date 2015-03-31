@@ -5,12 +5,12 @@
 #include "model/level.hpp"
 
 Mirror::Mirror(const Point & point, int xpad, int length, double alpha)
-    : Mirror {point, length, xpad, alpha, Point{0, 0}, Point{0, 0}, 0., 0.} {}
+    : Mirror {point, length, xpad, alpha, Point{0., 0.}, Point{0., 0.}, 0., 0.} {}
 
 Mirror::Mirror(const Point & pivot, int xpad, int length, double alpha, Point pointMin,
-               Point pM, double alphaMin, double alphaMax)
+               Point pointMax, double alphaMin, double alphaMax)
     : Element(), pivot {pivot}, length(length), xpad(xpad), xMin {pointMin.getX()},
-      xMax {pM.getX()}, yMin {pointMin.getY()}, yMax {pM.getY()}, alpha {alpha},
+      xMax {pointMax.getX()}, yMin {pointMin.getY()}, yMax {pointMax.getY()}, alpha {alpha},
       alphaMin {alphaMin}, alphaMax {alphaMax}
 {
     if (length <= 0)
@@ -19,10 +19,10 @@ Mirror::Mirror(const Point & pivot, int xpad, int length, double alpha, Point po
     if(xpad < 0)
         throw StarlightException("Le décalage du pivot doit être positif");
 
-    if(pivot.getX() < pointMin.getX() || pivot.getX() > pM.getX())
+    if(pivot.getX() < pointMin.getX() || pivot.getX() > pointMax.getX())
         throw StarlightException("Le miroir est trop haut ou trop bas");
 
-    if(pivot.getY() < pointMin.getY() || pivot.getY() > pM.getY())
+    if(pivot.getY() < pointMin.getY() || pivot.getY() > pointMax.getY())
         throw StarlightException("Le miroir est trop à gauche ou trop à droite");
 
     if(alphaMin < 0. || alphaMax > 360.)
@@ -120,13 +120,13 @@ bool Mirror::checkPivotRange(const Point & point) const
 
 void Mirror::reactToRay(Ray & ray)
 {
-    double alpha = std::tan(std::abs(
-                                std::fmod((-M_PI) + this->alpha - ray.getSlope(), M_PI)
-                                ));
+    double alpha = std::abs(
+                std::fmod((-M_PI) + this->alpha - ray.getSlope(), M_PI)
+                );
 
     Point point = ray.getEnd();
 
-    Ray newRay(point, alpha, ray.getWaveLength());
+    Ray newRay(point, std::tan(alpha), ray.getWaveLength());
     newRay.setIndTerm(point.getY() - (newRay.getSlope() * point.getX()));
 
     this->getLevel()->computeRay(newRay);

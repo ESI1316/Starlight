@@ -21,13 +21,13 @@ class Mirror : public Element
     Point pivot;
     int length;
     int xpad;
-    int xMin {0};
-    int xMax {0};
-    int yMin {0};
-    int yMax {0};
+    double xMin;
+    double xMax;
+    double yMin;
+    double yMax;
     double alpha;
-    double alphaMin {0};
-    double alphaMax {0};
+    double alphaMin;
+    double alphaMax;
 
 
 public:

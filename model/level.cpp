@@ -19,12 +19,12 @@
 
 using namespace std;
 
-Level::Level(const int width, const int height)
+Level::Level(const double width, const double height)
     : width{width},height {height},
-      walls { Wall{Point{0, 0}, Point{0, height}},
-              Wall{Point{0, height}, Point{width, height}},
-              Wall{Point{width, height}, Point{width, 0}},
-              Wall{Point{width, 0}, Point{0, 0}} }
+      walls { Wall{Point{0., 0.}, Point{0., height}},
+              Wall{Point{0., height}, Point{width, height}},
+              Wall{Point{width, height}, Point{width, 0.}},
+              Wall{Point{width, 0.}, Point{0., 0.}} }
 {
     if(width <= 0)
         throw StarlightException("Hauteur doit être strict. positive");

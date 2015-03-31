@@ -11,15 +11,14 @@ Ray::Ray(const PolarPoint start, double slope, int waveLength)
     :Ray{start.toCartesian(), slope, waveLength} {}
 
 Ray::Ray(const Point start, double slope, int waveLength)
-    :start{start}, end{start}, slope{slope}, waveLength{waveLength},
-      indTerm{(start.getY() - (this->slope * start.getX()))},
-      vertical{slope == 90.}
+    :start{start}, end{start}, waveLength{waveLength}, vertical{slope == 90.},
+      slope{slope}, indTerm{0.}
 {
     if (waveLength < Ray::WL_MIN || waveLength > Ray::WL_MAX)
         throw StarlightException("Longueur d'onde doit être comprise entre");
 
-    //this->indTerm = (start.getY() - (this->slope * start.getX()));
-    // Devrait disparaitre car inutil \o//
+    if(!vertical)
+        this->indTerm = (start.getY() - (this->slope * start.getX()));
 }
 
 const Point & Ray::getStart() const
