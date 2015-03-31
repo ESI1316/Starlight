@@ -124,7 +124,7 @@ void Level::computeRays()
     this->computeRay(ray);
 }
 
-void Level::computeRay(const Ray &)
+void Level::computeRay(const Ray)
 {
     throw StarlightException("Largeur doit être strict. positive");
 }

@@ -25,16 +25,11 @@ Mirror::Mirror(const Point & pivot, int xpad, int length, double alpha, Point po
     if(pivot.getY() < pointMin.getY() || pivot.getY() > pointMax.getY())
         throw StarlightException("Le miroir est trop à gauche ou trop à droite");
 
-    if(alphaMin < 0. || alphaMax > 360.)
+    if(alphaMin < 0. || alphaMax > 2 * M_PI)
         throw StarlightException("Les limites de pivot ne sont pas bonnes");
 
     if(alpha > alphaMax || alpha < alphaMin)
         throw StarlightException("L'angle est en dehors des limites");
-
-    // TODO : valider length, xpad, (alphaMin et alphaMax),
-    //                (alpha et [alphaMin, alphaMax]), (xMin et xMax),
-    //                (x et [xMin, xMax]), (yMin et yMax),
-    //                (y et [yMin, yMax])
 }
 
 const Point & Mirror::getPivot() const
@@ -97,22 +92,12 @@ bool Mirror::setAngle(double alpha)
     return match;
 }
 
-/**
- * @brief Mirror::checkAngleRange A NETTOYER TOUTE CES CRAPS ALGO
- * @param a
- * @return
- */
 bool Mirror::checkAngleRange(double a) const
 {
     return (this->alphaMin == 0 && this->alphaMax == 0) ||
             (a >= this->alphaMin && a <= this->alphaMax);
 }
 
-/**
- * @brief Mirror::checkPivotRange A NETTOYER TOUTE CES CRAPS ALGO
- * @param point
- * @return
- */
 bool Mirror::checkPivotRange(const Point & point) const
 {
     return true;
@@ -120,11 +105,13 @@ bool Mirror::checkPivotRange(const Point & point) const
 
 void Mirror::reactToRay(Ray & ray)
 {
-    double alpha = std::abs(
-                std::fmod((-M_PI) + this->alpha - ray.getSlope(), M_PI)
-                );
-
     Point point = ray.getEnd();
+    double alpha = std::abs(std::fmod(
+                                -M_PI
+                                + this->getAngle() // Alpha est un angle en radian,
+                                - std::atan(ray.getSlope()) //slope est un ratio
+                            ,M_PI));
+
 
     Ray newRay(point, std::tan(alpha), ray.getWaveLength());
     newRay.setIndTerm(point.getY() - (newRay.getSlope() * point.getX()));
