@@ -34,7 +34,16 @@ void Crystal::reactToRay(Ray & ray)
 
 Point * Crystal::includeRay(const Ray & ray) const
 {
-    throw StarlightException("Not implemented yet");
+    Point * intersec1, * intersec2, * ret = 0;
+    bool thereIsIntersec = geometryUtilities::intersecPointsLineCircle
+            (ray.getSlope(), ray.getIndTerm(), this->center, this->radius,
+             intersec1, intersec2);
+
+    if (thereIsIntersec)
+        ret = ray.getStart().distanceFrom(*intersec1) > ray.getStart().distanceFrom(*intersec2) ?
+                    intersec1 : intersec2;
+
+    return ret;
 }
 
 bool Crystal::operator==(const Crystal & crystal) const

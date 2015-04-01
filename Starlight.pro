@@ -31,7 +31,8 @@ SOURCES += main.cpp\
     test/polarpointtest.cpp \
     model/starlightexception.cpp \
     test/levelfactorytest.cpp \
-    model/element.cpp
+    model/element.cpp \
+    model/geometryUtilities.cpp
 
 HEADERS  += mainwindow.hpp \
     test/catch.hpp \
@@ -48,7 +49,8 @@ HEADERS  += mainwindow.hpp \
     model/polarPoint.hpp \
     model/ray.hpp \
     model/source.hpp \
-    model/wall.hpp
+    model/wall.hpp \
+    model/geometryUtilities.hpp
 
 FORMS    += mainwindow.ui
 

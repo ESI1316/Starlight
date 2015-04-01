@@ -4,6 +4,7 @@
 #include <ostream>
 //#include "model/point.hpp"
 #include "model/element.hpp"
+#include "geometryUtilities.hpp"
 
 /**
  * Cette classe amplifierélise les cristaux utilisés dans le jeu.
@@ -22,7 +23,6 @@ private :
     Point center;
     double radius;
     int amplifier;
-
 
 public:
 
@@ -66,8 +66,8 @@ public:
      *
      * @param ray Le rayon.
      *
-     * @return true Si le crystal se trouve dans la trajectoire du rayon entré
-     * en paramètre.
+     * @return Un pointeur vers le point d'intersection (le plus eloigné) avec
+     * le rayon s'il existe un pointeur null sinon.
      */
     Point * includeRay(const Ray &) const;
 

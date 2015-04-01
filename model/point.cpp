@@ -32,7 +32,7 @@ void Point::setLocation(const double x, const double y)
     this->y = y;
 }
 
-double Point::distanceFrom(const Point & point)
+double Point::distanceFrom(const Point & point) const
 {
     return std::hypot((point.x - this->x),(point.y - this->y));
 }

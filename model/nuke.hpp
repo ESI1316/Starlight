@@ -17,7 +17,6 @@ class Nuke : Element
     double radian;
     bool light {false};
 
-
 public:
 
     /**

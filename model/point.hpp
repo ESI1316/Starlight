@@ -62,7 +62,7 @@ public:
      * @param p
      * @return
      */
-    double distanceFrom(const Point & p);
+    double distanceFrom(const Point & p) const;
 
     /**
      * Permet de savoir si deux points sont aux même endroit.
