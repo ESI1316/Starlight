@@ -19,7 +19,7 @@ TEST_CASE("Construction de points polaires", "PolarPoint")
 
         PolarPoint s{-2, -2};
         REQUIRE(s.getAzimutAsDegrees() > 245.3000);
-        REQUIRE(s.getAzimutAsDegrees() < 245.5000);
+        REQUIRE(s.getAzimutAsDegrees() < 245.6000);
 
         ps = s.toCartesian();
         REQUIRE(ps == Point(1., 2.));

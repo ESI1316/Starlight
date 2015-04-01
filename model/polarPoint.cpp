@@ -1,4 +1,5 @@
 #include <cmath>
+#include <iostream>
 #include "model/polarPoint.hpp"
 
 const PolarPoint PolarPoint::CARTESIAN_PLAN_ORIGIN;
@@ -63,7 +64,12 @@ double PolarPoint::getAzimut() const
 
 double PolarPoint::getAzimutAsDegrees() const
 {
-    return std::abs((this->getAzimut() * 180.) / M_PI);
+    double degre = (this->getAzimut() * 180.) / M_PI;
+
+    if(degre < 0.)
+        degre += 360.;
+
+    return degre;
 }
 
 PolarPoint & PolarPoint::rotateAround(const PolarPoint & polarPoint, double alpha)
