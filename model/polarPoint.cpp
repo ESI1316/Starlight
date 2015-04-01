@@ -119,9 +119,12 @@ bool PolarPoint::operator==(const PolarPoint & polarPoint) const
 
 std::ostream & operator<<(std::ostream & out, const PolarPoint & polarPoint)
 {
-    out << "(radius, azimut) = "
-        << "(" << polarPoint.getRadius()
-        << ", " << polarPoint.getAzimut() << ")";
+    out << "(radius, azimut) = ";
+    out << "(";
+    out << polarPoint.getRadius();
+    out << ", ";
+    out << polarPoint.getAzimut();
+    out << ")";
 
     return out;
 }

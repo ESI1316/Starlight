@@ -26,8 +26,8 @@ Mirror::Mirror(const Point & pivot, int xpad, int length, double alpha, Point po
     if(pivot.getY() < pointMin.getY() || pivot.getY() > pointMax.getY())
         throw StarlightException("Le miroir est trop à gauche ou trop à droite");
 
-    if(alphaMin < 0. || alphaMax > 2 * M_PI)
-        throw StarlightException("Les limites de pivot ne sont pas bonnes");
+    if(alphaMax < alphaMin)
+        throw StarlightException("L'angle est en dehors des limites");
 
     if(alpha > alphaMax || alpha < alphaMin)
         throw StarlightException("L'angle est en dehors des limites");
@@ -112,7 +112,6 @@ void Mirror::reactToRay(Ray & ray)
                                 + this->getAngle() // Alpha est un angle en radian,
                                 - std::atan(ray.getSlope()) //slope est un ratio
                             ,M_PI));
-
 
     Ray newRay(point, std::tan(alpha), ray.getWaveLength());
     newRay.setIndTerm(point.getY() - (newRay.getSlope() * point.getX()));
