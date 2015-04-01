@@ -24,7 +24,7 @@ class PolarPoint
 
 public :
 
-    static const PolarPoint origin;
+    static const PolarPoint CARTESIAN_PLAN_ORIGIN;
 
 private :
 
@@ -54,9 +54,12 @@ public:
     PolarPoint(const double, const double);
 
     /**
-     * @brief PolarPoint Construction d'un point polaire ~ au point cartésien
-     * passé en paramètre.
-     */
+    * Construit un point polaire à l'aide d'un point cartésien.
+    * Azimut sera toujours dans l'interval [0 et 360[ [0 et 2\pi[ pour permettre de
+    * représenter un point d'une seule manière possible.
+    * @see <a href="http://fr.wikipedia.org/wiki/Coordonn%C3%A9es_polaires">
+    * wikipedia - Coordonnées polaires </a>
+    */
     PolarPoint(const Point &);
 
     /**

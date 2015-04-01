@@ -1,4 +1,4 @@
-/*#define CATCH_CONFIG_MAIN
+/*
 #include "catch.hpp"
 #include "../model/levelFactory.hpp"
 #include "../model/level.hpp"
@@ -7,7 +7,7 @@ TEST_CASE("création d'un Level à partir d'un fichier .lvl", "levelFactory::get
 {
     Level * level = levelFactory::getLevelFromFile("./ressources/level.lvl");
 
-    REQUIRE(level != 0);
+    REQUIRE(level != nullptr);
 
     SECTION("vérification de la taille des vecteurs")
     {
@@ -25,7 +25,7 @@ TEST_CASE("création d'un Level à partir d'un fichier .lvl", "levelFactory::get
         {
             REQUIRE(level->getSource().getPosition() == Point(0, 0));
             REQUIRE(level->getSource().getEdge() == 29);
-            REQUIRE(level->getSource().getAngle() == 4);
+            REQUIRE(level->getSource().getAngle() == 4.);
             REQUIRE(level->getSource().getWaveLength() == 400);
         }
 
@@ -45,7 +45,7 @@ TEST_CASE("création d'un Level à partir d'un fichier .lvl", "levelFactory::get
         SECTION("vérification d'une bombe")
         {
             REQUIRE(level->getNukes()[0].getLocation() == Point(464, 232));
-            REQUIRE(level->getNukes()[0].getRadius() == 29);
+            REQUIRE(level->getNukes()[0].getRadius() == 29.);
         }
 
         SECTION("vérification d'une lentille")

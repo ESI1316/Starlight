@@ -1,6 +1,8 @@
 #include <cmath>
 #include "model/polarPoint.hpp"
 
+const PolarPoint PolarPoint::CARTESIAN_PLAN_ORIGIN;
+
 /**
  * @brief PolarPoint::PolarPoint Créé un point polaire selon les arguments passés
  * en paramètre.
@@ -12,7 +14,7 @@
  *
  */
 PolarPoint::PolarPoint(const double radius, const double azimut)
-    : radius{radius}, azimut{azimut}
+    : radius{radius}, azimut{std::fmod(azimut, 2 * M_PI)}
 {
 }
 
@@ -25,44 +27,22 @@ PolarPoint::PolarPoint(const PolarPoint & polarPoint)
 {
 }
 
-/**
- * @brief PolarPoint::PolarPoint Construit un point polaire à l'aide d'un
- * point cartésien.
- * Azimut sera toujours compris entre 0 et 360 (0 et 2\pi) pour permettre de
- * représenter un point d'une seule manière possible.
- * @see <a href="http://fr.wikipedia.org/wiki/Coordonn%C3%A9es_polaires">
- * wikipedia - Coordonnées polaires </a>
- */
 PolarPoint::PolarPoint(const Point &point)
     : PolarPoint()
 {
-    int x = point.getX();
-    int y = point.getY();
+    double x = point.getX();
+    double y = point.getY();
 
-    this->radius = std::hypot(x, y);
-    this->azimut = std::atan2(x, y);
+    *this = PolarPoint{std::hypot(x, y), std::atan2(x, y)};
 }
 
-/**
- * @brief PolarPoint::~PolarPoint
- */
-PolarPoint::~PolarPoint()
-{}
+PolarPoint::~PolarPoint() {}
 
-/**
- * @brief PolarPoint::isCenter
- */
 bool PolarPoint::isCenter() const
 {
     return (std::round(this->radius) == 0.);
 }
 
-/**
- * /// TODO : Precision double -> int pour pixels
- * CAST CAST CAST
- * @brief PolarPoint::toCartesian
- * @return
- */
 Point PolarPoint::toCartesian() const
 {
     return Point(
@@ -71,37 +51,21 @@ Point PolarPoint::toCartesian() const
                 );
 }
 
-/**
- * @brief PolarPoint::getRadius
- * @return
- */
 double PolarPoint::getRadius() const
 {
     return this->radius;
 }
-/**
- * @brief PolarPoint::getAzimut
- * @return
- */
+
 double PolarPoint::getAzimut() const
 {
     return this->azimut;
 }
 
-/**
- * @brief PolarPoint::getAzimutAsDegrees
- * @return
- */
 double PolarPoint::getAzimutAsDegrees() const
 {
-    return (this->getAzimut() * 180.) / M_PI;
+    return std::abs((this->getAzimut() * 180.) / M_PI);
 }
 
-/**
- * @brief PolarPoint::rotate Pour faire une rotation autour d'un pivot et
- * non de l'origine, il suffit de translater le pivot sur l'origine.
- * @return
- */
 PolarPoint & PolarPoint::rotateAround(const PolarPoint & polarPoint, double alpha)
 {
     return this->rotateAround(polarPoint.toCartesian(), alpha);
@@ -140,18 +104,13 @@ PolarPoint & PolarPoint::operator=(const Point & point)
     return *this;
 }
 
-    bool PolarPoint::operator==(const PolarPoint & polarPoint) const
-    {
-        return std::abs(this->radius - polarPoint.radius) <= 0.1
-                && std::abs(this->azimut == polarPoint.azimut) <= 0.1;
+bool PolarPoint::operator==(const PolarPoint & polarPoint) const
+{
+    return std::abs(this->radius - polarPoint.radius) <= 0.1
+            && std::abs(this->azimut == polarPoint.azimut) <= 0.1;
 
-    }
-/**
- * @brief operator <<
- * @param out
- * @param polarCoordinate
- * @return
- */
+}
+
 std::ostream & operator<<(std::ostream & out, const PolarPoint & polarPoint)
 {
     out << "(radius, azimut) = "

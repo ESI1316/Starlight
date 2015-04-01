@@ -15,7 +15,7 @@ const Point & Source::getPosition() const
     return this->position;
 }
 
-int Source::getAngle() const
+double Source::getAngle() const
 {
     return this->alpha;
 }
