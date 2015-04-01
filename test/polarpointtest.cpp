@@ -1,5 +1,4 @@
-#define CATCH_CONFIG_MAIN
-#include "catch.hpp"
+#include "../test/catch.hpp"
 #include "../model/point.hpp"
 #include "../model/polarPoint.hpp"
 
