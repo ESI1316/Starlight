@@ -32,7 +32,8 @@ SOURCES += main.cpp\
     model/starlightexception.cpp \
     test/levelfactorytest.cpp \
     model/element.cpp \
-    model/geometryUtilities.cpp
+    model/geometryUtilities.cpp \
+    test/pointtest.cpp
 
 HEADERS  += mainwindow.hpp \
     test/catch.hpp \
