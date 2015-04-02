@@ -6,10 +6,8 @@
 #include "model/element.hpp"
 
 /**
- * Cette classe modélise les murs utilisés dans le jeu.
- * </p>
- * Les murs sont des segments de droite qui ne réfléchissent
- * pas la lumière.
+ * Cette classe modélise les murs utilisés dans le jeu. Les murs sont des
+ * segments de droite qui ne réfléchissent pas la lumière.
  */
 class Wall : public Element
 {
@@ -20,20 +18,22 @@ public:
 
     /**
      * Instancie un mur.
-     * @param p1 le début du mur.
-     * @param p2 la fin du mur.
+     * @param start Le début du mur.
+     * @param end La fin du mur.
      */
-    Wall(const Point & p1, const Point & p2);
+    Wall(const Point &, const Point &);
 
     /**
      * Retourne le début du mur.
-     * @return le début du mur.
+     *
+     * @return Le début du mur.
      */
     const Point &getStart() const;
 
     /**
      * Retourne la fin du mur.
-     * @return la fin du mur.
+     *
+     * @return La fin du mur.
      */
     const Point & getEnd() const;
 
@@ -62,6 +62,13 @@ public:
     bool operator==(const Wall &) const;
 };
 
+/**
+ * Définition, externe, de l'opérateur permettant de produire un affichage
+ * formaté.
+ *
+ * @return Le ostream rempli de la chaine formatée représentant le Wall en
+ * paramètre.
+ */
 std::ostream & operator<<(std::ostream &, const Wall &);
 
 #endif // WALL_H
