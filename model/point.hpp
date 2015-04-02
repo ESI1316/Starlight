@@ -27,6 +27,11 @@ public:
     Point(const double, const double);
 
     /**
+     * @brief Point
+     */
+    Point(const Point &);
+
+    /**
      * Retourne l'abscisse du point.
      * @return l'abscisse du point.
      */
@@ -63,6 +68,12 @@ public:
      * @return
      */
     double distanceFrom(const Point & p) const;
+
+    /**
+     * @brief operator =
+     * @return
+     */
+    Point & operator=(const Point &);
 
     /**
      * Permet de savoir si deux points sont aux même endroit.

@@ -125,8 +125,11 @@ TEST_CASE("Méthodes de points polaires")
     {
         PolarPoint pp{2., M_PI / 2};
         PolarPoint centerP{3., M_PI / 2};
-        double radiusRotate = pp.toCartesian().distanceFrom(centerP.toCartesian());
 
-        REQUIRE(radiusRotate == 1.);
+        double rayon = pp.toCartesian().distanceFrom(centerP.toCartesian());
+        REQUIRE(rayon == 1.);
+
+        pp.rotateAround(centerP, M_PI);
+        REQUIRE(rayon == pp.toCartesian().distanceFrom(centerP.toCartesian()));
     }
 }

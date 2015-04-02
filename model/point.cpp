@@ -3,8 +3,10 @@
 
 // 19:30 < niva1> abs(a-b) < 10^e-5
 Point::Point(const double x, const double y)
-    : x {x}, y {y}
-{}
+    : x {x}, y {y} {}
+
+Point::Point(const Point & point)
+    :Point{point.x, point.y} {}
 
 double Point::getX() const
 {
@@ -35,6 +37,12 @@ void Point::setLocation(const double x, const double y)
 double Point::distanceFrom(const Point & point) const
 {
     return std::hypot((point.x - this->x),(point.y - this->y));
+}
+
+Point & Point::operator =(const Point & point)
+{
+    this->x = point.x;
+    this->y = point.y;
 }
 
 bool Point::operator==(const Point & point) const
