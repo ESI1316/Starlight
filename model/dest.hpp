@@ -6,7 +6,6 @@
 
 /**
  * Cette classe modélise la destination utilisée dans le jeu.
- * </p>
  * Une destination est un objet carré qui, quand traversé par
  * un rayon lumineux, fait remporter la partie au joueur.
  */
@@ -20,44 +19,45 @@ public:
 
     /**
      * Intancie une destination, de position et rayon donné.
-     * @param p le coin supérieur gauche du carré modélisant
-     *        la destination.
-     * @param e la longueur du côté du carré.
+     *
+     * @param position Le coin supérieur gauche du carré modélisant la destination.
+     * @param edge La longueur du côté du carré.
      */
     Dest(const Point &, const int);
 
     /**
-     * Retourne la position du coin supérieur gauche du carré
-     * modélisant la destination.
-     * @return la position de la destination.
+     * Retourne la position du coin supérieur gauche du carré modélisant la destination.
+     *
+     * @return La position de la destination.
      */
     const Point & getPosition() const;
 
     /**
      * Retourne la longueur du côté du carré.
-     * @return la longueur du côté du carré.
+     * @return La longueur du côté du carré.
      */
     int getEdge() const;
 
     /**
-     * Retourne vrai si la destination est illuminée,
-     * faux sinon.
-     * @return vrai si la destination est illuminée,
-     * faux sinon.
+     * Permet de savoir si la destination est éclairée et donc si le jeu est
+     * terminé.
+     *
+     * @return <code>true</code> Si la destination est illuminée.
      */
     bool isLightedUp() const;
 
     /**
-     * Illumine la destination ou non.
-     * @param vrai si la destination doit être illuminée,
-     * faux sinon.
+     * Permet de changer l'état d'illumination de la destination.
+     *
+     * @param Le nouvelle état d'illumination de la destination.
      */
     void setLightedUp(const bool);
 
     /**
-     * Réaction à l'exposition d'un rayon.
+     * Cette méthode est lancé lorsque la destination courant est exposé à un rayon.
+     * Elle va s'exposer comme illuminée.
      *
-     * @param ray Le rayon.
+     * @param ray Un rayon percutant la destination.
      */
     void reactToRay(Ray &);
 
@@ -66,8 +66,8 @@ public:
      *
      * @param ray Le rayon.
      *
-     * @return true Si la destination se trouve dans la trajectoire du rayon
-     * entré en paramètre.
+     * @return <code>true</code> Si la destination se trouve dans la trajectoire
+     * du rayon entré en paramètre.
      */
     Point * includeRay(const Ray &) const;
 
@@ -79,6 +79,13 @@ public:
     bool operator==(const Dest &) const;
 };
 
+/**
+ * Définition, externe, de l'opérateur permettant de produire un affichage
+ * formaté.
+ *
+ * @return Le ostream rempli de la chaine formatée représentant la Dest en
+ * paramètre.
+ */
 std::ostream & operator<<(std::ostream &, const Dest &);
 
 #endif // DEST_H

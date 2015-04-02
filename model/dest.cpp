@@ -5,12 +5,9 @@
 Dest::Dest(const Point & position, const int edge)
     : Element(), position{position}, edge{edge}, light{false}
 {
-    if(edge <= 0)
-        throw StarlightException("Cotés de la destinations "
-                                 "doivent être strictement "
-                                 "positifs.");
-
-    //this->getLevel()->getWidth >= position.getX() +
+    if(edge <= 0) throw StarlightException("Cotés de la destinations "
+                                           "doivent être strictement "
+                                           "positifs.");
 }
 
 const Point & Dest::getPosition() const
@@ -57,5 +54,6 @@ std::ostream & operator<<(std::ostream & out, const Dest & dest)
         << "Position : " << dest.getPosition()
         << " , Edge : " << dest.getEdge()
         << " , lighted up : " << dest.isLightedUp();
+
     return out;
 }
