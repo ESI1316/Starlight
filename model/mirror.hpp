@@ -7,7 +7,6 @@
 
 /**
  * Cette classe modélise les miroirs utilisés dans le jeu.
- * </p>
  * Un miroir est un segment de droite dont la propriété est
  * de réfléchir la lumière d'un seul côté uniquement. Si un
  * rayon lumineux touche un miroir du côté non réfléchissant,
@@ -48,9 +47,8 @@ public:
     Mirror(const Point &, int, int, double);
 
     /**
-     * Instancie un miroir en une position donnée, d'une certaine
-     * longueur et orienté d'un certain angle.
-     * </p>
+     * Instancie un miroir en une position donnée, d'une certaine longueur
+     * et orienté d'un certain angle.
      * Ce constructeur permet également aux miroirs de pivoter
      * dans une certaine limite.
      * </p>
@@ -62,35 +60,36 @@ public:
      * a < b, le miroir pivote dans le sens horloger, si a = b le
      * miroir ne peut pas pivoter, si a > b, le miroir
      * pivote dans le sens anti-horloger.
-     * @param p la position (et le point de pivot) du miroir
-     * @param len la longueur du miroir
-     * @param x le décalage du pivot par rapport au bord gauche
-     *          du miroir
-     * @param a l'angle d'inclinaison du miroir
-     * @param min l'abscisse et l'ordonnée minimum du miroir.
-     * @param max l'abscisse et l'ordonnée maximum du miroir.
-     * @param amin l'angle d'inclinaison minimum du miroir.
-     * @param amax l'angle d'inclinaison maximum du miroir.
+     *
+     * @param pivot La position du point de pivot du miroir.
+     * @param xpad le décalage du pivot par rapport au bord gauche du miroir
+     * @param length La longueur du miroir
+     * @param alpha L'angle d'inclinaison du miroir (en radian).
+     * @param pointMin Le point de coordonnées minimum.
+     * @param pointMax Le point de coordonnées maximum.
+     * @param alphaMin L'angle d'inclinaison minimum du miroir (en radian).
+     * @param alphaMax L'angle d'inclinaison maximum du miroir (en radian).
      */
     Mirror(const Point &, int, int, double, Point, Point, double, double);
 
     /**
      * Retourne la position (et le pivot) du miroir.
-     * @return la position (et le pivot) du miroir.
+     *
+     * @return La position du pivot du miroir.
      */
     const Point & getPivot() const;
 
     /**
-     * Retourne la longueur du miroir
-     * @return la longueur du miroir
+     * Retourne la longueur du miroir.
+     *
+     * @return La longueur du miroir.
      */
     int getLength() const;
 
     /**
-     * Retourne le décalage du pivot par rapport au bord gauche
-     * du miroir.
-     * @return le décalage du pivot par rapport au bord gauche
-     * du miroir.
+     * Retourne le décalage du pivot par rapport au bord gauche du miroir.
+     *
+     * @return Le décalage du pivot par rapport au bord gauche du miroir.
      */
     int getXPad() const;
 
@@ -102,35 +101,41 @@ public:
 
     /**
      * Retourne l'inclinaison minimum du miroir.
-     * </p>
-     * Si l'intervalle de limite d'inclinaison [a,b] est tel que
-     * a < b, le miroir pivote dans le sens horloger, si a = b
-     * le miroir ne peut pas pivoter, si a > b, le miroir pivote
-     * dans le sens anti-horloger. Si a = b = 0, le miroir peut
-     * être pivoté librement.
-     * @return l'inclinaison minimum du miroir.
+     * Si l'intervalle de limite d'inclinaison [a,b] est tel que :
+     * <ul>
+     * <li>a < b, le miroir pivote dans le sens horloger</li>
+     * <li>a = b, le miroir ne peut pas pivoter</li>
+     * <li>a > b, le miroir pivote dans le sens anti-horloger</li>
+     * <li>Si a = b = 0, le miroir peut être pivoté librement</li>
+     * </ul>
+     *
+     * @return l'inclinaison minimum du miroir en radian.
      */
     double getMinAngle() const;
 
     /**
-     * Retourne l'inclinaison maximum du miroir.
-     * </p>
-     * Si l'intervalle de limite d'inclinaison [a,b] est tel
-     * que a < b, le miroir pivote dans le sens horloger, si
-     * a = b le miroir ne peut pas pivoter, si a > b, le miroir
-     * pivote dans le sens anti-horloger. Si a = b = 0, le miroir
-     * peut être pivoté librement.
-     * @return l'inclinaison minimum du miroir.
+     * Retourne l'inclinaison minimum du miroir.
+     * Si l'intervalle de limite d'inclinaison [a,b] est tel que :
+     * <ul>
+     * <li>a < b, le miroir pivote dans le sens horloger</li>
+     * <li>a = b, le miroir ne peut pas pivoter</li>
+     * <li>a > b, le miroir pivote dans le sens anti-horloger</li>
+     * <li>Si a = b = 0, le miroir peut être pivoté librement</li>
+     * </ul>
+     *
+     * @return l'inclinaison maximum du miroir en radian.
      */
     double getMaxAngle() const;
 
     /**
      * Retourne la position minimum du miroir.
-     * </p>
      * Si l'intervalle de limite de déplacement (e.g., sur les
-     * abscisses) [a,b] est tel que a = b, le miroir ne peut
-     * être déplacé sur l'axe considéré. Si a = b = 0, le miroir
-     * peut être déplacé librement.
+     * abscisses) [a,b] est tel que :
+     * <ul>
+     * <li>a = b, le miroir ne peut être déplacé sur l'axe considéré</li>
+     * <li>a = b = 0, le miroir peut être déplacé librement</li>
+     * </ul>
+     *
      * @return la position minimum du miroir.
      */
     Point getMinPivot() const;
@@ -147,22 +152,20 @@ public:
     Point getMaxPivot() const;
 
     /**
-     * Déplace le miroir en la position donnée, si c'est
-     * autorisé. Retourne vrai si le déplacement a été
-     * effectué correctement, retourne faux sinon.
-     * @return vrai si le déplacement a été effectué
-     * correctement, retourne faux sinon.
+     * Déplace le miroir en la position donnée, si celle-ci est autorisée.
+     *
      * @see Mirror::getPivot()
+     *
+     * @return <code>true</code> Si le déplacement a été effectué.
      */
     bool setPivot(const Point &);
 
     /**
-     * Pivote le miroir sur un angle donné, si c'est
-     * autorisé. Retourne vrai si la rotation a été effectuée
-     * correctement, retourne faux sinon.
-     * @return vrai si la rotation a été effectuée
-     * correctement, retourne faux sinon.
+     * Pivote le miroir sur un angle donné, si celui-ci est autorisé.
+     *
      * @see Mirror::getAngle()
+     *
+     * @return <code>true</code> Si la rotation a été effectuée.
      */
     bool setAngle(double);
 
@@ -208,10 +211,10 @@ public:
      *         /â		   \ 	ê = angle de rotation du miroir
      * --------------------		â = angle (coefficiant ang.) du rayon
      *
-     * Angle réflechis = 180 - (â + (360 - ê))
-     * 					= 180 - (â + 360 - ê)
-     * 					= 180 - â - 360 + ê
-     * 					= - 180 + ê - â
+     * Angle réflechis = M_PI - (â + (2 * M_PI - ê))
+     * 					= M_PI - (â + 2 * M_PI - ê)
+     * 					= M_PI - â - 2 * M_PI + ê
+     * 					= - M_PI + ê - â
      *
      * @param ray Le rayon.
      */
@@ -235,6 +238,13 @@ public:
     bool operator==(const Mirror &) const;
 };
 
+/**
+ * Définition, externe, de l'opérateur permettant de produire un affichage
+ * formaté.
+ *
+ * @return Le ostream rempli de la chaine formatée représentant le Mirror en
+ * paramètre.
+ */
 std::ostream & operator<<(std::ostream &, const Mirror &);
 
 #endif // MIRROR_H
