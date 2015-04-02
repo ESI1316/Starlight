@@ -52,6 +52,11 @@ bool Wall::operator==(const Wall & wall) const
             && Element::operator==(wall);
 }
 
+bool Wall::operator!=(const Wall & wall) const
+{
+    return !(*this == wall);
+}
+
 std::ostream & operator<<(std::ostream & out, const Wall & wall)
 {
     out << "Wall --- " << std::endl

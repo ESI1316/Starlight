@@ -88,6 +88,13 @@ public:
      * @return <code>true</code> Si deux sources sont les mêmes.
      */
     bool operator==(const Source &) const;
+
+    /**
+     * Permet de savoir si deux sources sont différentes.
+     *
+     * @return <code>true</code> Si deux sources sont différentes.
+     */
+    bool operator!=(const Source &) const;
 };
 
 /**

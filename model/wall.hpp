@@ -60,6 +60,13 @@ public:
      * @return <code>true</code> Si les murs sont les même.
      */
     bool operator==(const Wall &) const;
+
+    /**
+     * Permet de savoir si deux murs sont différents.
+     *
+     * @return <code>true</code> Si les murs sont différents.
+     */
+    bool operator!=(const Wall &) const;
 };
 
 /**

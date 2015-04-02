@@ -75,6 +75,13 @@ public:
      * @return <code>true</code> Si les deux bombes sont les mêmes.
      */
     bool operator==(const Nuke &) const;
+
+    /**
+     * Permet de savoir si deux bombes sont différentes.
+     *
+     * @return <code>true</code> Si les deux bombes sont différentes.
+     */
+    bool operator!=(const Nuke &) const;
 };
 
 /**

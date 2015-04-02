@@ -177,6 +177,14 @@ public:
      * plan.
      */
     bool operator==(const PolarPoint &) const;
+
+    /**
+     * Permet de savoir si deux points ne sont pas à la même position.
+     *
+     * @return <code>true</code> Si les deux points ne sont pas au même endroit sur le
+     * plan.
+     */
+    bool operator!=(const PolarPoint &) const;
 };
 
 /**

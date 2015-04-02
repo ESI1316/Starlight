@@ -77,6 +77,13 @@ public:
      * @return <code>true</code> Si les destinations sont les même.
      */
     bool operator==(const Dest &) const;
+
+    /**
+     * Permet de savoir si deux destinations sont différentes.
+     *
+     * @return <code>true</code> Si les destinations sont différentes.
+     */
+    bool operator!=(const Dest &) const;
 };
 
 /**

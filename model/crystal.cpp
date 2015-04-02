@@ -54,6 +54,11 @@ bool Crystal::operator==(const Crystal & crystal) const
             && Element::operator==(crystal);
 }
 
+bool Crystal::operator!=(const Crystal & crystal) const
+{
+    return !(*this == crystal);
+}
+
 std::ostream & operator<<(std::ostream & out, const Crystal & crystal)
 {
     out << "Crystal --- Center : " << crystal.getCenter()

@@ -49,6 +49,11 @@ bool Nuke::operator==(const Nuke & nuke) const
             && Element::operator ==(nuke);
 }
 
+bool Nuke::operator!=(const Nuke & nuke) const
+{
+    return !(*this == nuke);
+}
+
 std::ostream & operator<<(std::ostream & out, const Nuke & nuke)
 {
     out << "Nuke --- Position : " << nuke.getLocation()

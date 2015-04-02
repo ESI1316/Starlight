@@ -57,16 +57,6 @@ bool Ray::setWaveLength(const int waveLength)
     return match;
 }
 
-bool Ray::operator==(const Ray & ray) const
-{
-    return this->start == ray.start
-            && this->end == ray.end
-            && this->waveLength == ray.waveLength
-            && this->slope == ray.slope
-            && this->indTerm == ray.indTerm;
-
-}
-
 bool Ray::isVertical() const
 {
     return this->isVertical();
@@ -85,6 +75,20 @@ void Ray::setIndTerm(const double indTerm)
 double Ray::getIndTerm() const
 {
     return this->indTerm;
+}
+
+bool Ray::operator==(const Ray & ray) const
+{
+    return this->start == ray.start
+            && this->end == ray.end
+            && this->waveLength == ray.waveLength
+            && this->slope == ray.slope
+            && this->indTerm == ray.indTerm;
+}
+
+bool Ray::operator!=(const Ray & ray) const
+{
+    return !(*this == ray);
 }
 
 std::ostream & operator<<(std::ostream & out, const Ray & ray)

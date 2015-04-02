@@ -134,6 +134,13 @@ class Ray
      * @return <code>true</code> Si deux rayons sont les même.
      */
     bool operator==(const Ray &) const;
+
+    /**
+     * Permet de savoir si deux rayons sont différents.
+     *
+     * @return <code>true</code> Si deux rayons sont différents.
+     */
+    bool operator!=(const Ray &) const;
 };
 
 /**

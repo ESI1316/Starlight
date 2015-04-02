@@ -233,6 +233,14 @@ public:
      * @return <code>true</code> Si deux mirroirs sont les même.
      */
     bool operator==(const Mirror &) const;
+
+    /**
+     * Permet de savoir si deux mirroirs sont différents.
+     *
+     * @return <code>true</code> Si deux mirroirs sont différents.
+     */
+    bool operator!=(const Mirror &) const;
+
 };
 
 /**

@@ -65,6 +65,12 @@ bool Lens::operator==(const Lens & lens) const
             && Element::operator ==(lens);
 }
 
+
+bool Lens::operator!=(const Lens & lens) const
+{
+    return !(*this == lens);
+}
+
 std::ostream & operator<<(std::ostream & out, const Lens & lens)
 {
     out << "Lens -- Position : " <<lens.getPosition()

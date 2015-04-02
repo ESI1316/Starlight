@@ -48,6 +48,11 @@ bool Dest::operator==(const Dest & dest) const
             && Element::operator==(dest);
 }
 
+bool Dest::operator!=(const Dest & dest) const
+{
+    return !(*this == dest);
+}
+
 std::ostream & operator<<(std::ostream & out, const Dest & dest)
 {
     out << "Dest --- " << std::endl

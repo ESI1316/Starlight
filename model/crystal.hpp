@@ -90,6 +90,13 @@ public:
      * @return <code>true</code> si deux cristaux sont les même.
      */
     bool operator==(const Crystal &) const;
+
+    /**
+     * Permet de savoir si deux cristaux sont différents.
+     *
+     * @return <code>true</code> si deux cristaux sont différents.
+     */
+    bool operator!=(const Crystal &) const;
 };
 
 /**

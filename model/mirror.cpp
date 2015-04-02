@@ -138,6 +138,11 @@ bool Mirror::operator==(const Mirror & mirror) const
             && Element::operator ==(mirror);
 }
 
+bool Mirror::operator!=(const Mirror & mirror) const
+{
+    return !(*this == mirror);
+}
+
 std::ostream & operator<<(std::ostream & out, const Mirror & mirror)
 {
     out << "Mirror --- Pivot : " << mirror.getPivot()

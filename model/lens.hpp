@@ -110,6 +110,13 @@ class Lens : public Element
      * @return <code>true</code> Si les deux lentilles sont les même.
      */
     bool operator==(const Lens &) const;
+
+    /**
+     * Permet de savoir si deux lentilles sont différentes.
+     *
+     * @return <code>true</code> Si les deux lentilles sont différentes.
+     */
+    bool operator!=(const Lens &) const;
 };
 
 /**
