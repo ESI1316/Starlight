@@ -7,7 +7,7 @@
 
 /**
  * Cette classe modélise les lentilles utilisées dans le jeu.
- * </p>
+ *
  * Une lentille est un objet rectangulaire qui ne laisse passer
  * les rayons lumineux que dans un certain intervalle de longueur
  * d'onde. Si un rayon lumineux se trouve dans l'intervalle de
@@ -28,59 +28,69 @@ class Lens : public Element
   public:
 
     /**
-     * Instancie une lentille à l'aide de toutes ses
-     * caractéristiques.
-     * @param p la position du coin supérieur gauche du
-     *          rectangle modélisant la lentille.
-     * @param w la largeur de la lentille
-     * @param h la hauteur de la lentille
-     * @param wlMin la longueur d'onde minimale des rayons
-     *              autorisés à franchir la lentille
-     * @param wlMax la longueur d'onde maximale des rayons
-     *              autorisés à franchir la lentille
+     * Créer une nouvelle lentille pouvant être un obstacle à un rayon :
+     * si le rayon souhaite passer au travers, il devra être d'une longueur
+     * d'onde comprise dans l'interval souhaité par cette lentille. Dans le cas
+     * contraire, le rayon ne passera pas.
+     *
+     * @param position La position du coin supérieur gauche du rectangle
+     * circonscrit à l'ellipse modélisant la lentille.
+     * @param width La largeur du rectangle circonscrit à la lentille.
+     * @param height la hauteur du rectangle circonscrit à la lentille.
+     * @param wlMin La longueur d'onde minimale des rayons autorisés à
+     * franchir la lentille.
+     * @param wlMax La longueur d'onde maximale des rayons autorisés à franchir
+     * la lentille.
      */
     Lens(const Point &, const int, const int, const int, const int);
 
     /**
-     * Retourne la position du coin supérieur gauche du
-     * rectangle modélisant la lentille.
-     * @return la position du coin supérieur gauche du
-     * rectangle modélisant la lentille.
+     * Retourne la position du coin supérieur gauche du rectangle circonscrit
+     * à la lentille.
+     *
+     * @return La coordonnée cartésienne du coin supérieur gauche du rectangle
+     * modélisant la lentille.
      */
     const Point & getPosition() const;
 
     /**
-     * Retourne la largeur de la lentille
-     * @return la largeur de la lentille
+     * Retourne la largeur du rectangle circonscrit à la lentille.
+     *
+     * @return La largeur du rectangle circonscrit à la lentille.
      */
     int getWidth() const;
 
     /**
-     * Retourne la hauteur de la lentille
-     * @return la hauteur de la lentille
+     * Retourne la hauteur de la lentille.
+     *
+     * @return La hauteur du rectangle circonscrit à la lentille.
      */
     int getHeight() const;
 
     /**
-     * Retourne la longueur d'onde minimale des rayons
-     * autorisés à franchir la lentille
-     * @return la longueur d'onde minimale des rayons
-     * autorisés à franchir la lentille
+     * Retourne la longueur d'onde minimale des rayons autorisés à franchir la
+     * lentille.
+     *
+     * @return La longueur d'onde minimale des rayons autorisés à franchir
+     * la lentille.
      */
     int getMinWaveLength() const;
 
     /**
      * Retourne la longueur d'onde maximale des rayons
      * autorisés à franchir la lentille
-     * @return la longueur d'onde maximale des rayons
-     * autorisés à franchir la lentille
+     *
+     * @return La longueur d'onde maximale des rayon autorisés à franchir
+     * la lentille.
      */
     int getMaxWaveLength() const;
 
     /**
-     * Réaction à l'exposition d'un rayon.
+     * Cette méthode est lancé lorsque la lentille courante est exposée à un rayon.
+     * Elle va communiquer au niveau la fin du rayon si il ne peut pas passer
+     * ou ne va rien faire si le rayon passe.
      *
-     * @param ray Le rayon.
+     * @param ray Un rayon percutant la lentille.
      */
     void reactToRay(Ray &);
 
@@ -89,8 +99,8 @@ class Lens : public Element
      *
      * @param ray Le rayon.
      *
-     * @return true Si la lentille se trouve dans la trajectoire du rayon entré
-     * en paramètre.
+     * @return <code>true</code> Si la lentille se trouve dans la trajectoire
+     * du rayon entré en paramètre.
      */
     Point * includeRay(const Ray &) const;
 
@@ -102,6 +112,13 @@ class Lens : public Element
     bool operator==(const Lens &) const;
 };
 
+/**
+ * Définition, externe, de l'opérateur permettant de produire un affichage
+ * formaté.
+ *
+ * @return Le ostream rempli de la chaine formatée représentant la Lens en
+ * paramètre.
+ */
 std::ostream & operator<<(std::ostream &, const Lens &);
 
 #endif // LENS_H
