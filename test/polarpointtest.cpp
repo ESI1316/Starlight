@@ -120,4 +120,13 @@ TEST_CASE("Méthodes de points polaires")
         pp.rotate(-2.3289999);
         REQUIRE(pp == PolarPoint(pp.getRadius(), 3 * M_PI + 1.4235 -2.3289999));
     }
+
+    SECTION("Rotate around")
+    {
+        PolarPoint pp{2., M_PI / 2};
+        PolarPoint centerP{3., M_PI / 2};
+        double radiusRotate = pp.toCartesian().distanceFrom(centerP.toCartesian());
+
+        REQUIRE(radiusRotate == 1.);
+    }
 }
