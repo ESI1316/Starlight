@@ -77,4 +77,6 @@ public:
     bool operator==(const Nuke &) const;
 };
 
+std::ostream & operator<<(std::ostream &, const Nuke &);
+
 #endif // NUKE_H

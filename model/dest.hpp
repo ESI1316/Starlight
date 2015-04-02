@@ -79,4 +79,6 @@ public:
     bool operator==(const Dest &) const;
 };
 
+std::ostream & operator<<(std::ostream &, const Dest &);
+
 #endif // DEST_H

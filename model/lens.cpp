@@ -64,6 +64,7 @@ bool Lens::operator==(const Lens & lens) const
             && this->wlMax == lens.wlMax
             && Element::operator ==(lens);
 }
+
 std::ostream & operator<<(std::ostream & out, const Lens & lens)
 {
     out << "Lens -- Position : " <<lens.getPosition()

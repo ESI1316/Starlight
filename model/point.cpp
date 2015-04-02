@@ -53,8 +53,11 @@ bool Point::operator==(const Point & point) const
 
 std::ostream & operator<<(std::ostream & out, const Point & point)
 {
-    out << "( " << std::to_string(point.getX())
-        << " , " << std::to_string(point.getY()) << " )";
+    out << "( ";
+    out << point.getX();
+    out << " , ";
+    out << point.getY();
+    out << " )";
 
     return out;
 }

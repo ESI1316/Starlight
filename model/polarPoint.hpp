@@ -144,4 +144,6 @@ public:
     bool operator==(const PolarPoint &) const;
 };
 
+std::ostream & operator<<(std::ostream &, const PolarPoint &);
+
 #endif // POLARCOORDINATE_HPP

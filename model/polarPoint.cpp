@@ -77,11 +77,6 @@ PolarPoint & PolarPoint::rotateAround(const Point & pivot, const double alpha)
 {
     Point point = this->toCartesian();
 
-    std::cout << pivot;
-    std::cout << std::endl;
-
-    std::cout << point;
-    std::cout << std::endl;
     point.setX(point.getX() - pivot.getX());
     point.setY(point.getY() - pivot.getY());
 

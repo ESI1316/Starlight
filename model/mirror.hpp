@@ -235,4 +235,6 @@ public:
     bool operator==(const Mirror &) const;
 };
 
+std::ostream & operator<<(std::ostream &, const Mirror &);
+
 #endif // MIRROR_H

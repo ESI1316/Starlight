@@ -100,4 +100,6 @@ class Ray
     bool operator==(const Ray &) const;
 };
 
+std::ostream & operator<<(std::ostream &, const Ray &);
+
 #endif // RAY_H

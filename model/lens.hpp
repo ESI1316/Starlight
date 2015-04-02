@@ -102,4 +102,6 @@ class Lens : public Element
     bool operator==(const Lens &) const;
 };
 
+std::ostream & operator<<(std::ostream &, const Lens &);
+
 #endif // LENS_H

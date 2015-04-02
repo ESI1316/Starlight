@@ -62,4 +62,6 @@ public:
     bool operator==(const Wall &) const;
 };
 
+std::ostream & operator<<(std::ostream &, const Wall &);
+
 #endif // WALL_H

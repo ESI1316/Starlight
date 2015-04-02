@@ -81,8 +81,7 @@ public:
      * @return <code>true</code> Si les deux points ont les même coordonnées.
      */
     bool operator==(const Point &) const;
-
-    friend std::ostream & operator<<(std::ostream &, const Point &);
 };
+std::ostream & operator<<(std::ostream &, const Point &);
 
 #endif // POINT_H

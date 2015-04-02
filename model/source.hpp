@@ -95,4 +95,6 @@ public:
     bool operator==(const Source &) const;
 };
 
+std::ostream & operator<<(std::ostream &, const Source &);
+
 #endif // SOURCE_H

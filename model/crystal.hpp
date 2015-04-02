@@ -79,4 +79,6 @@ public:
     bool operator==(const Crystal &) const;
 };
 
+std::ostream & operator<<(std::ostream &, const Crystal &);
+
 #endif // CRYSTAL_H
