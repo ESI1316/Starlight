@@ -108,9 +108,9 @@ void Mirror::reactToRay(Ray & ray)
     Point point = ray.getEnd();
     double alpha = std::abs(std::fmod(
                                 -M_PI
-                                + this->getAngle() // Alpha est un angle en radian,
-                                - std::atan(ray.getSlope()) //slope est un ratio
-                            ,M_PI));
+                                + this->getAngle()
+                                - std::atan(ray.getSlope())
+                                ,M_PI));
 
     Ray newRay(point, std::tan(alpha), ray.getWaveLength());
     newRay.setIndTerm(point.getY() - (newRay.getSlope() * point.getX()));
@@ -128,12 +128,13 @@ bool Mirror::operator==(const Mirror & mirror) const
     return this->pivot == mirror.pivot
             && this->length == mirror.length
             && this->xpad == mirror.xpad
-            && this->xMin == mirror.xMin
-            && this->xMax == mirror.xMax
-            && this->yMin == mirror.yMin
-            && this->alpha == mirror.alpha
-            && this->alphaMin == mirror.alphaMin
-            && this->alphaMax == mirror.alphaMax
+            && std::abs(this->xMin- mirror.xMin) < 0.1
+            && std::abs(this->xMax- mirror.xMax) < 0.1
+            && std::abs(this->yMin- mirror.yMin) < 0.1
+            && std::abs(this->yMax- mirror.yMax) < 0.1
+            && std::abs(this->alpha - mirror.alpha) < 0.1
+            && std::abs(this->alphaMin - mirror.alphaMin) < 0.1
+            && std::abs(this->alphaMax - mirror.alphaMax) < 0.1
             && Element::operator ==(mirror);
 }
 

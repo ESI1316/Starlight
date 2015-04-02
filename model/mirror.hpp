@@ -11,7 +11,6 @@
  * de réfléchir la lumière d'un seul côté uniquement. Si un
  * rayon lumineux touche un miroir du côté non réfléchissant,
  * le miroir se comporte comme un mur.
- * </p>
  * Les miroirs sont capables d'être déplacés et pivotés dans
  *  une certaine limite.
  */
@@ -32,17 +31,15 @@ class Mirror : public Element
 public:
 
     /**
-     * Instancie un miroir en une position donnée, d'une certaine
-     * longueur et orienté d'un certain angle.
-     * </p>
-     * Comme dans ce constructeur les limites de déplacement et
-     * de rotation du miroir ne sont pas définies, ce miroir
+     * Instancie un miroir en une position donnée, d'une certaine longueur et
+     * orienté d'un certain angle. Comme dans ce constructeur les limites de
+     * déplacement et de rotation du miroir ne sont pas définies, ce miroir
      * peut se déplacer et pivoter librement.
-     * @param p la position (et le point de pivot) du miroir
-     * @param len la longueur du miroir
-     * @param x le décalage du pivot par rapport au bord gauche
-     *          du miroir
-     * @param a l'angle d'inclinaison du miroir
+     *
+     * @param pivot La position du pivot du miroir.
+     * @param xpad Le décalage du pivot par rapport au bord gauche du miroir.
+     * @param length La longueur du miroir.
+     * @param alpha L'angle d'inclinaison du miroir.
      */
     Mirror(const Point &, int, int, double);
 
@@ -51,20 +48,19 @@ public:
      * et orienté d'un certain angle.
      * Ce constructeur permet également aux miroirs de pivoter
      * dans une certaine limite.
-     * </p>
      * Si l'intervalle de limite de déplacement (e.g., sur les
-     * abscisses) [a,b] est tel que a = b, le miroir ne peut
-     * être déplacé sur l'axe considéré.
-     * </p>
-     * Si l'intervalle de limite d'inclinaison [a,b] est tel que
-     * a < b, le miroir pivote dans le sens horloger, si a = b le
-     * miroir ne peut pas pivoter, si a > b, le miroir
-     * pivote dans le sens anti-horloger.
+     * abscisses) [a,b] est tel que si :
+     * <ul>
+     * <li>a = b, le miroir ne peut être déplacé sur l'axe considéré</li>
+     * <li>a < b, le miroir pivote dans le sens horloger</li>
+     * <li>a = b le miroir ne peut pas pivoter</li>
+     * <li>a > b, le miroir pivote dans le sens anti-horloger</li>
+     * </ul>
      *
-     * @param pivot La position du point de pivot du miroir.
-     * @param xpad le décalage du pivot par rapport au bord gauche du miroir
-     * @param length La longueur du miroir
-     * @param alpha L'angle d'inclinaison du miroir (en radian).
+     * @param pivot La position du pivot du miroir.
+     * @param xpad Le décalage du pivot par rapport au bord gauche du miroir.
+     * @param length La longueur du miroir.
+     * @param alpha L'angle d'inclinaison du miroir.
      * @param pointMin Le point de coordonnées minimum.
      * @param pointMax Le point de coordonnées maximum.
      * @param alphaMin L'angle d'inclinaison minimum du miroir (en radian).
@@ -73,7 +69,7 @@ public:
     Mirror(const Point &, int, int, double, Point, Point, double, double);
 
     /**
-     * Retourne la position (et le pivot) du miroir.
+     * Retourne la position du pivot du miroir.
      *
      * @return La position du pivot du miroir.
      */
@@ -95,6 +91,7 @@ public:
 
     /**
      * Retourne l'inclinaison du miroir.
+     *
      * @return l'inclinaison du miroir.
      */
     double getAngle() const;
