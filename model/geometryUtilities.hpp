@@ -1,3 +1,18 @@
+#ifndef M_PI
+#define M_PI 3.14159265358979323846
+#endif
+#ifndef M_PI_2
+#define M_PI_2 1.57079632679489661923
+#endif
+#ifndef M_PI_4
+#define M_PI_4 0.785398163397448309616
+#endif
+#ifndef M_1_PI
+#define M_1_PI 0.318309886183790671538
+#endif
+#ifndef M_2_PI
+#define M_2_PI 0.636619772367581343076
+#endif
 #ifndef GEOMETRYUTILITIES
 #define GEOMETRYUTILITIES
 
@@ -41,5 +56,19 @@ namespace geometryUtilities
      * @return true S'il existe des racines.
      */
     bool secondDegreeEquationSolver(double, double, double, double *, double *);
+
+    /**
+     * Permet de trouver l'angle en degré d'un angle en radian.
+     * @param alpha Un angle en radian.
+     * @return L'angle exprimé en degré.
+     */
+    double angleAsDegree(double);
+
+    /**
+     * Permet de trouver l'angle en degré, entre 0 et 360, d'un angle en radian.
+     * @param alpha Un angle en radian.
+     * @return L'angle exprimé en degré dans l'interval [0, 360°[
+     */
+    double angleAsDegree0to360(double);
 }
 #endif // GEOMETRYUTILITIES

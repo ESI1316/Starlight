@@ -1,9 +1,9 @@
-#include "model/geometryUtilities.hpp"
 #include <cmath>
+#include "model/geometryUtilities.hpp"
 
 bool geometryUtilities::intersecPointsLineCircle(const double slope,
-                              const int indepTerm, const Point & circleCenter,
-                              const int radius, Point * intersec1, Point * intersec2)
+                                                 const int indepTerm, const Point & circleCenter,
+                                                 const int radius, Point * intersec1, Point * intersec2)
 {
     double x1, x2;
     bool thereIsIntersec = geometryUtilities::secondDegreeEquationSolver
@@ -35,4 +35,21 @@ bool geometryUtilities::secondDegreeEquationSolver(double a, double b, double c,
     }
 
     return thereIsRadix;
+}
+
+double geometryUtilities::angleAsDegree(double alpha)
+{
+    return ((alpha * 180.) / M_PI);
+}
+
+double geometryUtilities::angleAsDegree0to360(double alpha)
+{
+    double degree = geometryUtilities::angleAsDegree(alpha);
+
+    if(degree < 0)
+        degree += 360;
+    else if (degree >= 360)
+        degree -= 360;
+
+    return degree;
 }

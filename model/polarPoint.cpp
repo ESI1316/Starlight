@@ -1,6 +1,6 @@
 #include <cmath>
-#include <iostream>
 #include "model/polarPoint.hpp"
+#include "model/geometryUtilities.hpp"
 
 const PolarPoint PolarPoint::CARTESIAN_PLAN_ORIGIN;
 
@@ -15,7 +15,7 @@ const PolarPoint PolarPoint::CARTESIAN_PLAN_ORIGIN;
  *
  */
 PolarPoint::PolarPoint(const double radius, const double azimut)
-    : radius{radius}, azimut{std::fmod(azimut, 2 * M_PI)}
+    : radius{radius}, azimut{azimut}
 {
 }
 
@@ -64,12 +64,7 @@ double PolarPoint::getAzimut() const
 
 double PolarPoint::getAzimutAsDegrees() const
 {
-    double degre = (this->getAzimut() * 180.) / M_PI;
-
-    if(degre < 0.)
-        degre += 360.;
-
-    return degre;
+    return geometryUtilities::angleAsDegree0to360(this->getAzimut());
 }
 
 PolarPoint & PolarPoint::rotateAround(const PolarPoint & polarPoint, double alpha)
@@ -112,8 +107,8 @@ PolarPoint & PolarPoint::operator=(const Point & point)
 
 bool PolarPoint::operator==(const PolarPoint & polarPoint) const
 {
-    return std::abs(this->radius - polarPoint.radius) <= 0.1
-            && std::abs(this->azimut == polarPoint.azimut) <= 0.1;
+    return (std::abs(this->radius - polarPoint.radius) <= 0.1)
+            && (std::abs(this->azimut - polarPoint.azimut) <= 0.1);
 
 }
 
