@@ -1,5 +1,4 @@
 #include <cmath>
-#include <iostream>
 #include "model/polarPoint.hpp"
 #include "model/geometryUtilities.hpp"
 

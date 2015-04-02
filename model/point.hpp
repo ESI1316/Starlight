@@ -27,7 +27,7 @@ public:
     Point(const double, const double);
 
     /**
-     * @brief Point
+     * Instancie un point par copie d'un autre point : constructeur de recopie.
      */
     Point(const Point &);
 
@@ -63,15 +63,28 @@ public:
     void setLocation(const double, const double);
 
     /**
-     * @brief distanceFrom
-     * @param p
-     * @return
+     * Permet de connaitre la distance séparant le point courant d'un autre.
+     * La distance est calculée à l'aide du théorème de pythagore au triangle
+     * rectangle :
+     * soient les deux points du plan cartésien reliés formant un segment de
+     * droite, en tracant les paralleles aux axes passant par ces points on peut
+     * délimiter un triangle rectangle par l'intersection des deux droites.
+     * De là, il est simple d'appliquer le théorème de Pythagore aux triangles
+     * rectangles :
+     * l'hypothénuse au carré = la somme du carré des deux autres cotés
+     * distance(p1, p2)² = (p1.x - p2.x)² + (p1.y - p2.y)²
+     * Dans la bibliothèque standard C++, la fonction std::hypot de <cmath>
+     * nous permet de faire cette opération en lui passant simplement les cotés
+     * autre que l'hypothénuse.
+     * @param point Un autre point.
+     * @return La distance séparant deux point.
      */
-    double distanceFrom(const Point & p) const;
+    double distanceFrom(const Point &) const;
 
     /**
-     * @brief operator =
-     * @return
+     * Permet de copier le contenu d'un point dans un autre point.
+     *
+     * @return Le point courant modifié.
      */
     Point & operator=(const Point &);
 
@@ -82,6 +95,12 @@ public:
      */
     bool operator==(const Point &) const;
 };
+
+/**
+ * Définition, externe, de l'opérateur permettant de produire un affichage
+ * formaté.
+ * @return Le ostream rempli de l'affichage de l'objet en paramètre.
+ */
 std::ostream & operator<<(std::ostream &, const Point &);
 
 #endif // POINT_H

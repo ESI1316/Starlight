@@ -1,4 +1,5 @@
 #include <cmath>
+#include <iostream>
 #include "model/point.hpp"
 
 // 19:30 < niva1> abs(a-b) < 10^e-5
@@ -53,11 +54,7 @@ bool Point::operator==(const Point & point) const
 
 std::ostream & operator<<(std::ostream & out, const Point & point)
 {
-    out << "( ";
-    out << point.getX();
-    out << " , ";
-    out << point.getY();
-    out << " )";
+    out << "( " << point.getX() << " , " << point.getY() << " )";
 
     return out;
 }

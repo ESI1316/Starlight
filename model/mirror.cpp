@@ -1,6 +1,5 @@
 #define _USE_MATH_DEFINES
 #include <cmath>
-#include <iostream>
 #include "model/starlightexception.hpp"
 #include "model/mirror.hpp"
 #include "model/level.hpp"
