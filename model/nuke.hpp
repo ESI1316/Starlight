@@ -7,23 +7,22 @@
 
 /**
  * Cette classe modélise les bombes utilisées dans le jeu.
- * </p>
- * Une bomnbe est un objet circulaire qui, si illuminé par
- * un rayon, fait perdre la partie au joueur.
+ * Une bombe est un objet circulaire qui, si illuminé par un rayon, fait
+ * perdre la partie au joueur.
  */
 class Nuke : Element
 {
     Point position;
-    double radian;
+    double radius;
     bool light {false};
 
 public:
 
     /**
-     * Instancie une bombe en une position donnée avec un rayon
-     * déterminé.
-     * @param p la position de la bombe
-     * @param r le rayon de la bombe
+     * Instancie une bombe en une position donnée avec un rayon déterminé.
+     *
+     * @param position La position du centre de la bombe.
+     * @param radius Le rayon de la bombe.
      */
     Nuke(const Point &,const double);
 
@@ -40,15 +39,16 @@ public:
     int getRadius() const;
 
     /**
-     * Retourne vrai si la bombe est illuminée, faux sinon.
-     * @return vrai si la bombe est illuminée, faux sinon.
+     * Cette méthode permet de savoir si la bombe est illuminée.
+     *
+     * @return <code>true</code> Si la bombe est illuminée, faux sinon.
      */
     bool isLightedUp() const;
 
     /**
-     * Illumine la bombe ou non.
+     * Cette méthode permet d'établir un nouvel état d'illumination de la bombe.
      *
-     * @param q vrai si la bombe est illuminée, faux sinon.
+     * @param light Le nouvel état d'illumination de la bombe.
      */
     void setLightedUp(const bool);
 
@@ -64,8 +64,8 @@ public:
      *
      * @param ray Le rayon.
      *
-     * @return true Si la bombe se trouve dans la trajectoire du rayon entré en
-     * paramètre.
+     * @return <code>true</code> Si la bombe se trouve dans la trajectoire du
+     * rayon entré en paramètre.
      */
     Point * includeRay(const Ray & ray) const;
 
@@ -77,6 +77,13 @@ public:
     bool operator==(const Nuke &) const;
 };
 
+/**
+ * Définition, externe, de l'opérateur permettant de produire un affichage
+ * formaté.
+ *
+ * @return Le ostream rempli de la chaine formatée représentant le Nuke en
+ * paramètre.
+ */
 std::ostream & operator<<(std::ostream &, const Nuke &);
 
 #endif // NUKE_H
