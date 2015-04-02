@@ -109,15 +109,15 @@ TEST_CASE("Méthodes de points polaires")
         PolarPoint pp{3., M_PI};
 
         pp.rotate(M_PI);
-        PolarPoint result{pp.getRadius(), 2 * M_PI};
-        REQUIRE(pp == result);
+        REQUIRE(pp == PolarPoint(pp.getRadius(), 2 * M_PI));
 
         pp.rotate(M_PI);
-        result = PolarPoint(pp.getRadius(), (3 * M_PI));
-        REQUIRE(pp == result);
+        REQUIRE(pp == PolarPoint(pp.getRadius(), 3 * M_PI));
 
         pp.rotate(1.4235);
-        result = PolarPoint(pp.getRadius(), (3 * M_PI) + 1.4235);
-        REQUIRE(pp == result);
+        REQUIRE(pp == PolarPoint(pp.getRadius(), 3 * M_PI + 1.4235));
+
+        pp.rotate(-2.3289999);
+        REQUIRE(pp == PolarPoint(pp.getRadius(), 3 * M_PI + 1.4235 -2.3289999));
     }
 }
