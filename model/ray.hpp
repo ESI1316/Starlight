@@ -7,7 +7,6 @@
 
 /**
  * Cette classe modélise les rayons lumineux, concept central du jeu.
- * </p>
  * Un rayon lumineux est un segment de droite muni d'une longueur
  * d'onde.
  */
@@ -43,7 +42,20 @@ class Ray
      */
     static const int WL_DFT {600};
 
+    /**
+     * Créer un nouveau rayon tel une demi droite possèdant un point,
+     * un coefficiant angulaire, une longueur d'onde et un terme indépendant.
+     * Ce dernier est calculé à la fin, permettant de d'écrire le rayon au format
+     * y = mx + p
+     */
     Ray(const PolarPoint, double, int);
+
+    /**
+     * Créer un nouveau rayon tel une demi droite possèdant un point,
+     * un coefficiant angulaire, une longueur d'onde et un terme indépendant.
+     * Ce dernier est calculé à la fin, permettant de d'écrire le rayon au format
+     * y = mx + p
+     */
     Ray(const Point, double, int);
 
     /**
@@ -64,18 +76,37 @@ class Ray
      */
     int getWaveLength() const;
 
+    /**
+     * Cette méthode permet d'obtenir le coefficiant angulaire de la droite du
+     * rayon.
+     *
+     * @return Le coefficiant angulaire du rayon.
+     */
     double getSlope() const;
+
+    /**
+     * Cette méthode permet d'obtenir le terme indépendant de la droite du rayon.
+     *
+     * @return Le terme indépendant de la droite du rayon.
+     */
     double getIndTerm() const;
+
+    /**
+     * Cette méthode permet de modifier le terme indépendant de la droite du rayon.
+     */
     void setIndTerm(const double);
+
     /**
      * Change la coordonnée du début du rayon.
-     * @param p la nouvelle coordonnée du début du rayon.
+     *
+     * @param start La nouvelle coordonnée du début du rayon.
      */
     void setStart(const Point &);
 
     /**
      * Change la coordonnée de la fin du rayon.
-     * @param p la nouvelle coordonnée de la fin du rayon.
+     *
+     * @param end La nouvelle coordonnée de la fin du rayon.
      */
     void setEnd(const Point &);
 
@@ -83,13 +114,18 @@ class Ray
      * Change la longueur d'onde du rayon. Si la longueur d'onde
      * spécifiée est en dehors des limites autorisées, laisse la
      * longueur d'onde inchangée.
-     * </p> La longueur d'onde doit être comprise entre 360 et 830 nm.
-     * @param f la nouvelle longueur d'onde du rayon
-     * @return vrai si la longueur d'onde a bel et bien été changée,
-     * retourne faux sinon.
+     * La longueur d'onde doit être comprise entre 360 et 830 nm.
+     *
+     * @param waveLength La nouvelle longueur d'onde du rayon
+     *
+     * @return <code>true</code> Si la longueur d'onde a été changé.
      */
     bool setWaveLength(const int);
 
+    /**
+     *
+     * @return
+     */
     bool isVertical() const;
 
     /**
@@ -100,6 +136,13 @@ class Ray
     bool operator==(const Ray &) const;
 };
 
+/**
+ * Définition, externe, de l'opérateur permettant de produire un affichage
+ * formaté.
+ *
+ * @return Le ostream rempli de la chaine formatée représentant le Ray en
+ * paramètre.
+ */
 std::ostream & operator<<(std::ostream &, const Ray &);
 
 #endif // RAY_H
