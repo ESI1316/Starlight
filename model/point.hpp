@@ -99,7 +99,9 @@ public:
 /**
  * Définition, externe, de l'opérateur permettant de produire un affichage
  * formaté.
- * @return Le ostream rempli de l'affichage de l'objet en paramètre.
+ *
+ * @return Le ostream rempli de la chaine formatée représentant le Point en
+ * paramètre.
  */
 std::ostream & operator<<(std::ostream &, const Point &);
 

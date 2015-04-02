@@ -4,29 +4,8 @@
 
 const PolarPoint PolarPoint::CARTESIAN_PLAN_ORIGIN;
 
-/**
- * @brief PolarPoint::PolarPoint Créé un point polaire selon les arguments passés
- * en paramètre.
- * "Il est commode d'autoriser des valeurs négatives de $ r$, étant entendu que
- * les coodonnées polaires $ (r,\theta)$ et $ (-r, \pi+\theta)$ représentent
- * alors le même point. Les formules ci-dessus sont encore applicables. "
- * @param radius Le rayon séparant le centre du point voulu. Doit être positif.
- * @param azimut La longueur du segment de cercle depuis l'axe horizontal.
- *
- */
 PolarPoint::PolarPoint(const double radius, const double azimut)
-    : radius{radius}, azimut{azimut}
-{
-}
-
-/**
- * @brief PolarPoint::PolarPoint Copie d'un point polaire.
- * @param polarPoint Un autre point polaire.
- */
-PolarPoint::PolarPoint(const PolarPoint & polarPoint)
-    : PolarPoint{polarPoint.radius, polarPoint.azimut}
-{
-}
+    : radius{radius}, azimut{azimut} {}
 
 PolarPoint::PolarPoint(const Point &point)
     : PolarPoint()
@@ -36,6 +15,9 @@ PolarPoint::PolarPoint(const Point &point)
 
     *this = PolarPoint{std::hypot(x, y), std::atan2(x, y)};
 }
+
+PolarPoint::PolarPoint(const PolarPoint & polarPoint)
+    : PolarPoint{polarPoint.radius, polarPoint.azimut} {}
 
 PolarPoint::~PolarPoint() {}
 
@@ -114,12 +96,11 @@ bool PolarPoint::operator==(const PolarPoint & polarPoint) const
 
 std::ostream & operator<<(std::ostream & out, const PolarPoint & polarPoint)
 {
-    out << "(radius, azimut) = ";
-    out << "(";
-    out << polarPoint.getRadius();
-    out << ", ";
-    out << polarPoint.getAzimut();
-    out << ")";
+    out << "(radius, azimut) = "
+        << "(" << polarPoint.getRadius()
+        << ", "
+        << polarPoint.getAzimut()
+        << ")";
 
     return out;
 }
