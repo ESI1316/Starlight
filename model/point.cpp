@@ -48,8 +48,13 @@ Point & Point::operator =(const Point & point)
 
 bool Point::operator==(const Point & point) const
 {
-    return std::round(this->x) == std::round(point.x)
-            && std::round(this->y) == std::round(point.y);
+    return std::round(this->x - point.x) < 0.1
+            && std::round(this->y - point.y) < 0.1;
+}
+
+bool Point::operator !=(const Point & point) const
+{
+    return !(*this == point);
 }
 
 std::ostream & operator<<(std::ostream & out, const Point & point)

@@ -60,4 +60,19 @@ TEST_CASE("Autres méthodes de points")
 TEST_CASE("Opérateurs de point")
 {
 
+    Point a{18., 42.333};
+    Point b = a;
+
+    REQUIRE(a.getX() == b.getX());
+    REQUIRE(a.getY() == b.getY());
+
+    Point c{3., 3.4444};
+    Point d;
+    Point e;
+
+    REQUIRE(d == e);
+    REQUIRE(!(c == d));
+    REQUIRE((!(c == d)) == (c != d));
+    REQUIRE(c != d);
+    REQUIRE(!(d != e));
 }

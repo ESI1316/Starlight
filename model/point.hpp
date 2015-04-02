@@ -94,6 +94,13 @@ public:
      * @return <code>true</code> Si les deux points ont les même coordonnées.
      */
     bool operator==(const Point &) const;
+
+    /**
+     * Permet de savoir si deux points ne sont pas au même endroit.
+     *
+     * @return <code>true</code> Si les deux points ne sont pas les mêmes.
+     */
+    bool operator!=(const Point &) const;
 };
 
 /**
