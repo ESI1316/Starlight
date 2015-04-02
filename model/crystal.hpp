@@ -27,44 +27,57 @@ private :
 public:
 
     /**
-     * Instancie un cristal centré au point donné, d'un certain
-     * rayon et amplifierifiant la longueur d'onde des rayons qui le
-     * traversent d'une valeur donnée.
-     * @param p le centre du cristal
-     * @param r le rayon du cristal
-     * @param m le amplifierificateur de longueur d'onde du cristal
+     * Instancie un cristal :
+     * <ul>
+     * <li>centré au point donné</li>
+     * <li>avec un rayon donné</li>
+     * <li>et un amplifier de longueur d'ondes donné</li>
+     * </ul>,
+     *
+     * ce crystal modifie la longueur d'onde du rayon le traversant en suivant
+     * la règle suivante : si la longueur d'onde modifié sort de l'interval
+     * [longueur d'onde minimale, longueur d'onde maximale] alors elle ne sera
+     * pas appliquée.
+     *
+     * @param point Le point du centre du cristal.
+     * @param radius Le rayon du cristal.
+     * @param amplifieur le modificateur de longueur d'onde du cristal.
      */
     Crystal(const Point &, const double, const int);
 
     /**
-     * Retourne la coordonnée du centre du cristal
-     * @return  la coordonnée du centre du cristal
+     * Retourne la coordonnée cartésienne du centre du cristal
+     *
+     * @return  la coordonnée cartésienne du centre du cristal
      */
     const Point & getCenter() const;
 
     /**
-     * Retourne le amplifierificateur de longueur d'onde du cristal
-     * @return  le amplifierificateur de longueur d'onde du cristal
+     * Retourne le modifieur de longueur d'onde du cristal
+     *
+     * @return  le modifieur de longueur d'onde du cristal
      */
     int getAmplifier() const;
 
     /**
-     * Retourne le rayon du cristal
-     * @return le rayon du cristal
+     * Retourne la longueur du rayon du cristal
+     *
+     * @return la longueur du rayon du cristal
      */
     int getRadius() const;
 
     /**
-     * Réaction à l'exposition d'un rayon.
+     * Cette méthode est lancé lorsque le miroir courant est exposé à un rayon.
+     * Il va communiquer au niveau le nouveau rayon sortant du cristal.
      *
-     * @param ray Le rayon.
+     * @param ray Un rayon percutant le miroir.
      */
     void reactToRay(Ray &);
 
     /**
      * Renseigne si le crystal est dans la trajectoire du rayon.
      *
-     * @param ray Le rayon.
+     * @param ray Un rayon.
      *
      * @return Un pointeur vers le point d'intersection (le plus eloigné) avec
      * le rayon s'il existe un pointeur null sinon.
@@ -79,6 +92,13 @@ public:
     bool operator==(const Crystal &) const;
 };
 
+/**
+ * Définition, externe, de l'opérateur permettant de produire un affichage
+ * formaté.
+ *
+ * @return Le ostream rempli de la chaine formatée représentant le Crystal en
+ * paramètre.
+ */
 std::ostream & operator<<(std::ostream &, const Crystal &);
 
 #endif // CRYSTAL_H
