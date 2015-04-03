@@ -4,7 +4,7 @@
 #include <ostream>
 //#include "model/point.hpp"
 #include "model/element.hpp"
-#include "geometryUtilities.hpp"
+#include "utilities.hpp"
 
 /**
  * Cette classe amplifierélise les cristaux utilisés dans le jeu.

@@ -1,12 +1,12 @@
 #include <cmath>
-#include "model/geometryUtilities.hpp"
+#include "model/utilities.hpp"
 
-bool geometryUtilities::intersecPointsLineCircle(const double slope,
+bool utilities::intersecPointsLineCircle(const double slope,
                                                  const int indepTerm, const Point & circleCenter,
                                                  const int radius, Point * intersec1, Point * intersec2)
 {
     double x1, x2;
-    bool thereIsIntersec = geometryUtilities::secondDegreeEquationSolver
+    bool thereIsIntersec = utilities::secondDegreeEquationSolver
             (1 + std::pow(slope, 2),
              (-2 * circleCenter.getX()) + (2 * slope * (indepTerm - circleCenter.getY())),
              std::pow((indepTerm - circleCenter.getY()), 2) + std::pow(circleCenter.getX(), 2)
@@ -22,7 +22,7 @@ bool geometryUtilities::intersecPointsLineCircle(const double slope,
     return thereIsIntersec;
 }
 
-bool geometryUtilities::secondDegreeEquationSolver(double a, double b, double c,
+bool utilities::secondDegreeEquationSolver(double a, double b, double c,
                                                    double * rad1, double * rad2)
 {
     int delta = std::pow(b, 2) - (4 * a * c);
@@ -37,14 +37,14 @@ bool geometryUtilities::secondDegreeEquationSolver(double a, double b, double c,
     return thereIsRadix;
 }
 
-double geometryUtilities::angleAsDegree(double alpha)
+double utilities::angleAsDegree(double alpha)
 {
     return ((alpha * 180.) / M_PI);
 }
 
-double geometryUtilities::angleAsDegree0to360(double alpha)
+double utilities::angleAsDegree0to360(double alpha)
 {
-    double degree = geometryUtilities::angleAsDegree(alpha);
+    double degree = utilities::angleAsDegree(alpha);
 
     if(degree < 0)
         degree += 360;

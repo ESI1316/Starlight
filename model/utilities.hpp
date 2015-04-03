@@ -13,15 +13,15 @@
 #ifndef M_2_PI
 #define M_2_PI 0.636619772367581343076
 #endif
-#ifndef GEOMETRYUTILITIES
-#define GEOMETRYUTILITIES
+#ifndef UTILITIES
+#define UTILITIES
 
 #include "model/point.hpp"
 
 /**
  * Diverse fonctions utilitaires de géometrie.
  */
-namespace geometryUtilities
+namespace utilities
 {
     /**
     * Permet d'obtenir les points d'intersection entre une droite (déterminée
@@ -71,4 +71,4 @@ namespace geometryUtilities
      */
     double angleAsDegree0to360(double);
 }
-#endif // GEOMETRYUTILITIES
+#endif // UTILITIES
