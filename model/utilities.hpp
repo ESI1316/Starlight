@@ -14,6 +14,7 @@ namespace utilities
     const double _M_PI_4{0.785398163397448309616};
     const double _M_1_PI{0.318309886183790671538};
     const double _M_2_PI{0.636619772367581343076};
+    const double _EPSILON{10E-7};
 
     /**
     * Permet d'obtenir les points d'intersection entre une droite (déterminée
@@ -58,9 +59,45 @@ namespace utilities
 
     /**
      * Permet de trouver l'angle en degré, entre 0 et 360, d'un angle en radian.
+     * Le calcul permet d'encadrer les cas où
+     * <ul>
+     * <li>alpha < 0</li>
+     * <li>alpha >= 2\pi</li>
+     * <li>0 <= alpha < 2\pi</li>
+     * </ul>
+     *
      * @param alpha Un angle en radian.
+     *
      * @return L'angle exprimé en degré dans l'interval [0, 360°[
      */
     double angleAsDegree0to360(const double);
+
+    /**
+     * Cette méthode permet de savoir si deux double sont égaux avec une
+     * marge d'erreur Epsilon passée en paramètre.
+     *
+     * @param nb1 Un réel.
+     * @param nb2 Un réel.
+     * @param epsilon Niveau de précision souhaitée permettant de justifier
+     * l'égalité.
+     *
+     * @return <code>true</code> Si les deux nombres sont égaux avec la précision
+     * souhaitée.
+     */
+    bool equals(const double, const double, const double);
+
+    /**
+     * Cette méthode permet de savoir si deux double sont égaux avec une
+     * marge d'erreur Epsilon imposée à 10E-7
+     *
+     * @param nb1 Un réel.
+     * @param nb2 Un réel.
+     * @param epsilon Niveau de précision souhaitée permettant de justifier
+     * l'égalité.
+     *
+     * @return <code>true</code> Si les deux nombres sont égaux avec la précision
+     * 10E-7
+     */
+    bool equals(const double, const double);
 }
 #endif // UTILITIES
