@@ -54,13 +54,13 @@ namespace utilities
      * @param alpha Un angle en radian.
      * @return L'angle exprimé en degré.
      */
-    double angleAsDegree(double);
+    double angleAsDegree(const double);
 
     /**
      * Permet de trouver l'angle en degré, entre 0 et 360, d'un angle en radian.
      * @param alpha Un angle en radian.
      * @return L'angle exprimé en degré dans l'interval [0, 360°[
      */
-    double angleAsDegree0to360(double);
+    double angleAsDegree0to360(const double);
 }
 #endif // UTILITIES

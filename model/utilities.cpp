@@ -25,8 +25,8 @@ bool utilities::intersecPointsLineCircle(const double slope,
 bool utilities::secondDegreeEquationSolver(double a, double b, double c,
                                                    double * rad1, double * rad2)
 {
-    int delta = std::pow(b, 2) - (4 * a * c);
-    bool thereIsRadix = delta >= 0;
+    double delta = std::pow(b, 2.) - (4. * a * c);
+    bool thereIsRadix = (delta >= 0);
 
     if (thereIsRadix)
     {
@@ -37,19 +37,12 @@ bool utilities::secondDegreeEquationSolver(double a, double b, double c,
     return thereIsRadix;
 }
 
-double utilities::angleAsDegree(double alpha)
+double utilities::angleAsDegree(const double alpha)
 {
     return ((alpha * 180.) / utilities::_M_PI);
 }
 
-double utilities::angleAsDegree0to360(double alpha)
+double utilities::angleAsDegree0to360(const double alpha)
 {
-    double degree = utilities::angleAsDegree(alpha);
-
-    if(degree < 0)
-        degree += 360;
-    else if (degree >= 360)
-        degree -= 360;
-
-    return degree;
+    return std::fmod(utilities::angleAsDegree(alpha) + 360., 360.);
 }
