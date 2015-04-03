@@ -88,7 +88,7 @@ namespace utilities
 
     /**
      * Cette méthode permet de savoir si deux double sont égaux avec une
-     * marge d'erreur Epsilon imposée à 10E-7
+     * marge d'erreur Epsilon imposée à $10^{-7}$
      *
      * @param nb1 Un réel.
      * @param nb2 Un réel.
@@ -96,7 +96,7 @@ namespace utilities
      * l'égalité.
      *
      * @return <code>true</code> Si les deux nombres sont égaux avec la précision
-     * 10E-7
+     * $10^{-7}$
      */
     bool equals(const double, const double);
 }
