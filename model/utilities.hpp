@@ -1,18 +1,3 @@
-#ifndef M_PI
-#define M_PI 3.14159265358979323846
-#endif
-#ifndef M_PI_2
-#define M_PI_2 1.57079632679489661923
-#endif
-#ifndef M_PI_4
-#define M_PI_4 0.785398163397448309616
-#endif
-#ifndef M_1_PI
-#define M_1_PI 0.318309886183790671538
-#endif
-#ifndef M_2_PI
-#define M_2_PI 0.636619772367581343076
-#endif
 #ifndef UTILITIES
 #define UTILITIES
 
@@ -23,6 +8,13 @@
  */
 namespace utilities
 {
+
+    const double _M_PI{3.14159265358979323846};
+    const double _M_PI_2{1.57079632679489661923};
+    const double _M_PI_4{0.785398163397448309616};
+    const double _M_1_PI{0.318309886183790671538};
+    const double _M_2_PI{0.636619772367581343076};
+
     /**
     * Permet d'obtenir les points d'intersection entre une droite (déterminée
     * par sa pente et le terme indépendant de son équation) et un cercle

@@ -1,9 +1,3 @@
-#ifdef _WINT32
-#include <windows.h>
-#else
-#include <X11/Xlib.h>
-#endif
-
 #include <string>
 #include "model/level.hpp"
 #include "model/crystal.hpp"

@@ -1,5 +1,6 @@
 #include "../test/catch.hpp"
 #include "../model/point.hpp"
+#include "../model/utilities.hpp"
 
 TEST_CASE("Construction de points")
 {
@@ -26,9 +27,9 @@ TEST_CASE("Ascesseurs de point")
     REQUIRE(pp.getX() == -18.3);
     REQUIRE(pp.getY() == 2.);
 
-    pp.setY(M_PI);
+    pp.setY(utilities::_M_PI);
     REQUIRE(pp.getX() == -18.3);
-    REQUIRE(pp.getY() == M_PI);
+    REQUIRE(pp.getY() == utilities::_M_PI);
 
     pp.setLocation(4.28, 8.10);
     REQUIRE(pp.getX() == 4.28);

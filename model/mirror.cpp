@@ -3,6 +3,7 @@
 #include "model/starlightexception.hpp"
 #include "model/mirror.hpp"
 #include "model/level.hpp"
+#include "utilities.hpp"
 
 Mirror::Mirror(const Point & point, int xpad, int length, double alpha)
     : Mirror {point, length, xpad, alpha, Point{0., 0.}, Point{0., 0.}, 0., 0.} {}
@@ -107,10 +108,10 @@ void Mirror::reactToRay(Ray & ray)
 {
     Point point = ray.getEnd();
     double alpha = std::abs(std::fmod(
-                                -M_PI
+                                -utilities::_M_PI
                                 + this->getAngle()
                                 - std::atan(ray.getSlope())
-                                ,M_PI));
+                                ,utilities::_M_PI));
 
     Ray newRay(point, std::tan(alpha), ray.getWaveLength());
     newRay.setIndTerm(point.getY() - (newRay.getSlope() * point.getX()));

@@ -1,6 +1,7 @@
 #include "../test/catch.hpp"
 #include "../model/point.hpp"
 #include "../model/polarPoint.hpp"
+#include "../model/utilities.hpp"
 
 TEST_CASE("Construction de points polaires", "PolarPoint")
 {
@@ -75,57 +76,57 @@ TEST_CASE("Méthodes de points polaires")
     }
     SECTION("AzimutAsDegre")
     {
-        PolarPoint pp{2., 2 * M_PI}; // 2 PI radian
+        PolarPoint pp{2., 2 * utilities::_M_PI}; // 2 PI radian
         REQUIRE((pp.getAzimutAsDegrees() - 0.) < 0.1);
 
-        pp = PolarPoint{2., 4 * M_PI_2}; // Same as 2 PI
+        pp = PolarPoint{2., 4 * utilities::_M_PI_2}; // Same as 2 PI
         REQUIRE((pp.getAzimutAsDegrees() - 0.) < 0.1);
 
-        pp = PolarPoint{2., M_PI / 3}; // PI/3 radian
+        pp = PolarPoint{2., utilities::_M_PI / 3}; // PI/3 radian
         REQUIRE((pp.getAzimutAsDegrees() - 60.) < 0.1);
 
-        pp = PolarPoint{2., M_PI_2}; // PI/2 radian
+        pp = PolarPoint{2., utilities::_M_PI_2}; // PI/2 radian
         REQUIRE((pp.getAzimutAsDegrees() - 90.) < 0.1);
 
-        pp = PolarPoint{2., 2 * M_PI / 3}; // 2 * PI/3 radian
+        pp = PolarPoint{2., 2 * utilities::_M_PI / 3}; // 2 * PI/3 radian
         REQUIRE((pp.getAzimutAsDegrees() - 120.) < 0.1);
 
-        pp = PolarPoint{2., 8 * M_PI / 3}; // same as 2 * PI/3 radian
+        pp = PolarPoint{2., 8 * utilities::_M_PI / 3}; // same as 2 * PI/3 radian
         REQUIRE((pp.getAzimutAsDegrees() - 120.) < 0.1);
 
-        pp = PolarPoint{2., M_PI}; // PI radian
+        pp = PolarPoint{2., utilities::_M_PI}; // PI radian
         REQUIRE((pp.getAzimutAsDegrees() - 180.) < 0.1);
 
-        pp = PolarPoint{2., -M_PI}; //
+        pp = PolarPoint{2., -utilities::_M_PI}; //
         REQUIRE((pp.getAzimutAsDegrees() - 180.) < 0.1);
 
-        pp = PolarPoint{2., 3 * M_PI_2}; // 3 * PI/2 radian
+        pp = PolarPoint{2., 3 * utilities::_M_PI_2}; // 3 * PI/2 radian
         REQUIRE((pp.getAzimutAsDegrees() - 270.) < 0.1);
     }
 
     SECTION("Rotation")
     {
-        PolarPoint pp{3., M_PI};
+        PolarPoint pp{3., utilities::_M_PI};
 
-        pp.rotate(M_PI);
-        REQUIRE(pp == PolarPoint(pp.getRadius(), 2 * M_PI));
+        pp.rotate(utilities::_M_PI);
+        REQUIRE(pp == PolarPoint(pp.getRadius(), 2 * utilities::_M_PI));
 
-        pp.rotate(M_PI);
-        REQUIRE(pp == PolarPoint(pp.getRadius(), 3 * M_PI));
+        pp.rotate(utilities::_M_PI);
+        REQUIRE(pp == PolarPoint(pp.getRadius(), 3 * utilities::_M_PI));
 
         pp.rotate(1.4235);
-        REQUIRE(pp == PolarPoint(pp.getRadius(), 3 * M_PI + 1.4235));
+        REQUIRE(pp == PolarPoint(pp.getRadius(), 3 * utilities::_M_PI + 1.4235));
 
         pp.rotate(-2.3289999);
-        REQUIRE(pp == PolarPoint(pp.getRadius(), 3 * M_PI + 1.4235 -2.3289999));
+        REQUIRE(pp == PolarPoint(pp.getRadius(), 3 * utilities::_M_PI + 1.4235 -2.3289999));
     }
 
     SECTION("Rotation")
     {
-        PolarPoint point{2., M_PI / 2};
+        PolarPoint point{2., utilities::_M_PI / 2};
         Point pointCartesien = point.toCartesian();
 
-        PolarPoint centrePoint{3., M_PI / 2};
+        PolarPoint centrePoint{3., utilities::_M_PI / 2};
         Point centerPointCartesien = centrePoint.toCartesian();
     }
 }

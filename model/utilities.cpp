@@ -39,7 +39,7 @@ bool utilities::secondDegreeEquationSolver(double a, double b, double c,
 
 double utilities::angleAsDegree(double alpha)
 {
-    return ((alpha * 180.) / M_PI);
+    return ((alpha * 180.) / utilities::_M_PI);
 }
 
 double utilities::angleAsDegree0to360(double alpha)
