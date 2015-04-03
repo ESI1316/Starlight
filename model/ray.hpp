@@ -2,7 +2,6 @@
 #define RAY_H
 
 #include <iostream>
-#include "model/point.hpp"
 #include "model/polarPoint.hpp"
 
 /**

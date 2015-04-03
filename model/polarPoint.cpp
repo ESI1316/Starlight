@@ -56,17 +56,18 @@ PolarPoint & PolarPoint::rotateAround(const PolarPoint & polarPoint, double alph
 
 PolarPoint & PolarPoint::rotateAround(const Point & pivot, const double alpha)
 {
-    Point point = this->toCartesian();
+    Point point{this->toCartesian()};
     point.setX(point.getX() - pivot.getX());
     point.setY(point.getY() - pivot.getY());
 
-    PolarPoint pointModifie(point);
+    PolarPoint pointModifie{point};
     pointModifie.rotate(alpha);
+
     point = pointModifie.toCartesian();
     point.setX(point.getX() + pivot.getX());
     point.setY(point.getY() + pivot.getY());
 
-    return *this = pointModifie;
+    return *this = PolarPoint(point);
 }
 
 void PolarPoint::rotate(const double alpha)

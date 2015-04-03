@@ -1,5 +1,4 @@
 #include "../test/catch.hpp"
-#include "../model/point.hpp"
 #include "../model/polarPoint.hpp"
 #include "../model/utilities.hpp"
 
@@ -128,5 +127,7 @@ TEST_CASE("Méthodes de points polaires")
 
         PolarPoint centrePoint{3., utilities::_M_PI / 2};
         Point centerPointCartesien = centrePoint.toCartesian();
+
+        std::cout << point.rotateAround(centerPointCartesien, utilities::_M_PI);
     }
 }
