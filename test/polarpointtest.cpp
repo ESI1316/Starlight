@@ -11,25 +11,24 @@ TEST_CASE("Construction de points polaires", "PolarPoint")
     REQUIRE(p.getAzimut() == 0.);
     REQUIRE(q.getAzimut() == 2.2);
     REQUIRE(r.getAzimut() == q.getAzimut());
+    REQUIRE(p.getRadius() == 0.);
+    REQUIRE(q.getRadius() == 0.);
+    REQUIRE(r.getRadius() == 0.);
 
-    SECTION("Construction de point polaire null et négatif.")
-    {
-        Point ps;
+    PolarPoint t{0, 0};
+    REQUIRE(t.getAzimutAsDegrees() > -0.0001);
+    REQUIRE(t.getAzimutAsDegrees() < 0.0001);
 
-        PolarPoint s{-2, -2};
-        REQUIRE(s.getAzimutAsDegrees() > 245.3000);
-        REQUIRE(s.getAzimutAsDegrees() < 245.6000);
+    Point ps;
+    PolarPoint s{-2, -2};
+    REQUIRE(s.getAzimutAsDegrees() > 245.3000);
+    REQUIRE(s.getAzimutAsDegrees() < 245.6000);
+}
 
-        ps = s.toCartesian();
-        REQUIRE(ps == Point(1., 2.));
+TEST_CASE("Méthodes")
+{
 
-        PolarPoint t{0, 0};
-        REQUIRE(t.getAzimutAsDegrees() > -0.0001);
-        REQUIRE(t.getAzimutAsDegrees() < 0.0001);
 
-        ps = t.toCartesian();
-        REQUIRE(ps == Point(0, 0));
-    }
 }
 
 TEST_CASE("Construction d'un point cartésien en polaire")
@@ -69,7 +68,7 @@ TEST_CASE("Méthodes de points polaires")
 
     SECTION("isCenter")
     {
-    PolarPoint pp{0., 0.};
+        PolarPoint pp{0., 0.};
 
         REQUIRE(pp.isCenter());
         REQUIRE(PolarPoint::CARTESIAN_PLAN_ORIGIN.isCenter());
@@ -121,17 +120,12 @@ TEST_CASE("Méthodes de points polaires")
         REQUIRE(pp == PolarPoint(pp.getRadius(), 3 * M_PI + 1.4235 -2.3289999));
     }
 
-    SECTION("Rotate around")
+    SECTION("Rotation")
     {
-        PolarPoint pp{2., M_PI / 2};
-        Point ppp = pp.toCartesian();
-        PolarPoint centerP{3., M_PI / 2};
-        Point centerPP = centerP.toCartesian();
+        PolarPoint point{2., M_PI / 2};
+        Point pointCartesien = point.toCartesian();
 
-        double rayon = ppp.distanceFrom(centerPP);
-        REQUIRE(rayon == 1.);
-
-        PolarPoint rotation = pp.rotateAround(centerPP, M_PI);
-        REQUIRE(rayon == rotation.toCartesian().distanceFrom(centerPP));
+        PolarPoint centrePoint{3., M_PI / 2};
+        Point centerPointCartesien = centrePoint.toCartesian();
     }
 }

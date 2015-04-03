@@ -13,7 +13,7 @@ PolarPoint::PolarPoint(const Point &point)
     double x = point.getX();
     double y = point.getY();
 
-    *this = PolarPoint{std::hypot(x, y), std::atan2(x, y)};
+    *this = PolarPoint{std::hypot(x, y), std::atan2(y, x)};
 }
 
 PolarPoint::PolarPoint(const PolarPoint & polarPoint)
@@ -57,12 +57,14 @@ PolarPoint & PolarPoint::rotateAround(const PolarPoint & polarPoint, double alph
 PolarPoint & PolarPoint::rotateAround(const Point & pivot, const double alpha)
 {
     Point point = this->toCartesian();
-
     point.setX(point.getX() - pivot.getX());
     point.setY(point.getY() - pivot.getY());
 
     PolarPoint pointModifie(point);
     pointModifie.rotate(alpha);
+    point = pointModifie.toCartesian();
+    point.setX(point.getX() + pivot.getX());
+    point.setY(point.getY() + pivot.getY());
 
     return *this = pointModifie;
 }

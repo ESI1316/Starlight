@@ -2,7 +2,6 @@
 #include <iostream>
 #include "model/point.hpp"
 
-// 19:30 < niva1> abs(a-b) < 10^e-5
 Point::Point(const double x, const double y)
     : x {x}, y {y} {}
 
@@ -44,6 +43,8 @@ Point & Point::operator =(const Point & point)
 {
     this->x = point.x;
     this->y = point.y;
+
+    return *this;
 }
 
 bool Point::operator==(const Point & point) const

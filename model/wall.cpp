@@ -7,8 +7,6 @@ Wall::Wall(const Point & start, const Point & end)
 {
     if (start == end)
         throw StarlightException("Les points ne peuvent être confondus");
-
-    // Tester que point >= (0, 0)
 }
 
 const Point & Wall::getStart() const
