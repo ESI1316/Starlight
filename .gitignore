@@ -4,3 +4,5 @@
 *.pro.user
 Starlight
 Makefile
+html/*
+latex/*
