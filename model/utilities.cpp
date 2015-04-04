@@ -54,9 +54,3 @@ bool utilities::equals(const double nb1, const double nb2, const double epsilon)
 {
     return (std::abs(nb1 - nb2) < epsilon);
 }
-
-bool utilities::equals(const double nb1, const double nb2)
-{
-    return utilities::equals(nb1, nb2, utilities::EPSILON);
-}
-

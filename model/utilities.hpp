@@ -98,31 +98,17 @@ namespace utilities
 
     /**
      * Cette méthode permet de savoir si deux double sont égaux avec une
-     * marge d'erreur Epsilon passée en paramètre.
+     * marge d'erreur Epsilon passée en paramètre ou imposée par défaut à
+     * \f$ \epsilon = 10^{-7}\f$.
      *
      * @param nb1 Un réel.
      * @param nb2 Un réel.
      * @param epsilon Niveau de précision souhaitée permettant de justifier
-     * l'égalité.
+     * l'égalité ou \f$ \epsilon = 10^{-7}\f$ par défault.
      *
      * @return <code>true</code> Si les deux nombres sont égaux avec la précision
      * souhaitée.
      */
-    bool equals(const double, const double, const double);
-
-    /**
-     * Cette méthode permet de savoir si deux double sont égaux si la différence
-     * des deux deux est plus petite que la marge d'erreur Epsilon
-     * imposée à \f$ \epsilon = 10^{-7}\f$
-     *
-     * @param nb1 Un réel.
-     * @param nb2 Un réel.
-     * @param epsilon Niveau de précision souhaitée permettant de justifier
-     * l'égalité.
-     *
-     * @return <code>true</code> Si les deux nombres sont égaux avec la précision
-     * \f$ \epsilon = 10^{-7}\f$
-     */
-    bool equals(const double, const double);
+    bool equals(const double, const double, const double = utilities::EPSILON);
 }
 #endif // UTILITIES

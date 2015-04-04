@@ -50,10 +50,8 @@ TEST_CASE("Conversion de points polaires en cartésien", "PolarPoint")
 {
     PolarPoint pp(1.4142, 0.7853);
 
-    REQUIRE(pp.getRadius() >= 1.4141);
-    REQUIRE(pp.getRadius() <= 1.4143);
-    REQUIRE(pp.getAzimut() >= 0.7852);
-    REQUIRE(pp.getAzimut() <= 0.7855);
+    REQUIRE(utilities::equals(pp.getRadius(), 1.4142));
+    REQUIRE(utilities::equals(pp.getAzimut(), 0.7853));
 
     SECTION("Conversion bounds")
     {
