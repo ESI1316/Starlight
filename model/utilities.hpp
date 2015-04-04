@@ -9,34 +9,57 @@
 namespace utilities
 {
 
-    const double _M_PI{3.14159265358979323846};
-    const double _M_PI_2{1.57079632679489661923};
-    const double _M_PI_4{0.785398163397448309616};
-    const double _M_1_PI{0.318309886183790671538};
-    const double _M_2_PI{0.636619772367581343076};
-    const double _EPSILON{10E-7};
+    /**
+      * Représentation de la constante PI sur 26 décimales.
+      */
+    const double PI{3.14159265358979323846};
 
     /**
-    * Permet d'obtenir les points d'intersection entre une droite (déterminée
-    * par sa pente et le terme indépendant de son équation) et un cercle
-    * (déterminé par son son centre (un point) et son rayon).
-    *
-    * @param slope Pente de la droite.
-    * @param indepTerm Terme indépendant de l'équation de la droite.
-    * @param circleCenter Centre du cercle.
-    * @param radius Rayon du cercle.
-    * @param intersec1 Pointeur vers le conteneur du point du premier point d'
-    * intersection (non utilisé s'il n'existe pas d' intersection).
-    * @param intersec2 Pointeur vers le conteneur du point du deuxième point d'
-    * intersection (non utilisé s'il n'existe pas d' intersection).
-    *
-    * @return true s'il existe une intersection.
-    */
+      * Représentation de la constante PI/2 sur 26 décimales.
+      */
+    const double PI_2{1.57079632679489661923};
+
+    /**
+      * Représentation de la constante PI/4 sur 26 décimales.
+      */
+    const double PI_4{0.785398163397448309616};
+
+    /**
+      * Représentation de la constante 1/PI sur 26 décimales.
+      */
+    const double ONE_PI{0.318309886183790671538};
+
+    /**
+      * Représentation de la constante 2/PI sur 26 décimales.
+      */
+    const double TWO_PI{0.636619772367581343076};
+
+    /**
+      * Représentation de la marge d'erreur maximale acceptée.
+      */
+    const double EPSILON{10E-7};
+
+    /**
+     * Permet d'obtenir les points d'intersection entre une droite (déterminée
+     * par sa pente et le terme indépendant de son équation) et un cercle
+     * (déterminé par son son centre (un point) et son rayon).
+     *
+     * @param slope Pente de la droite.
+     * @param indepTerm Terme indépendant de l'équation de la droite.
+     * @param circleCenter Centre du cercle.
+     * @param radius Rayon du cercle.
+     * @param intersec1 Pointeur vers le conteneur du point du premier point d'
+     * intersection (non utilisé s'il n'existe pas d' intersection).
+     * @param intersec2 Pointeur vers le conteneur du point du deuxième point d'
+     * intersection (non utilisé s'il n'existe pas d' intersection).
+     *
+     * @return true s'il existe une intersection.
+     */
     bool intersecPointsLineCircle(const double, const int, const Point &,
                                   const int, Point *, Point *);
     /**
      * Permet de trouver les racines (si elles existe) d'une fonction du
-     * deuxième degré de forme ax² + bx + c.
+     * deuxième degré de forme \f$ax² + bx + c\f$
      *
      * @param a Paramètre de x².
      * @param b Paramètre de x.
@@ -68,7 +91,7 @@ namespace utilities
      *
      * @param alpha Un angle en radian.
      *
-     * @return L'angle exprimé en degré dans l'interval [0, 360°[
+     * @return L'angle exprimé en degré dans l'interval \f$[0, 360°[\f$
      */
     double angleAsDegree0to360(const double);
 
@@ -87,8 +110,9 @@ namespace utilities
     bool equals(const double, const double, const double);
 
     /**
-     * Cette méthode permet de savoir si deux double sont égaux avec une
-     * marge d'erreur Epsilon imposée à $10^{-7}$
+     * Cette méthode permet de savoir si deux double sont égaux si la différence
+     * des deux deux est plus petite que la marge d'erreur Epsilon
+     * imposée à \f$ \epsilon = 10^{-7}\f$
      *
      * @param nb1 Un réel.
      * @param nb2 Un réel.
@@ -96,7 +120,7 @@ namespace utilities
      * l'égalité.
      *
      * @return <code>true</code> Si les deux nombres sont égaux avec la précision
-     * $10^{-7}$
+     * \f$ \epsilon = 10^{-7}\f$
      */
     bool equals(const double, const double);
 }

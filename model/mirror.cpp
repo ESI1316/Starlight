@@ -108,10 +108,10 @@ void Mirror::reactToRay(Ray & ray)
 {
     Point point = ray.getEnd();
     double alpha = std::abs(std::fmod(
-                                -utilities::_M_PI
+                                -utilities::PI
                                 + this->getAngle()
                                 - std::atan(ray.getSlope())
-                                ,utilities::_M_PI));
+                                ,utilities::PI));
 
     Ray newRay(point, std::tan(alpha), ray.getWaveLength());
     newRay.setIndTerm(point.getY() - (newRay.getSlope() * point.getX()));

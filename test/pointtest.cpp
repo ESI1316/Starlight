@@ -26,9 +26,9 @@ TEST_CASE("Ascesseurs de point")
     REQUIRE(pp.getX() == -18.3);
     REQUIRE(pp.getY() == 2.);
 
-    pp.setY(utilities::_M_PI);
+    pp.setY(utilities::PI);
     REQUIRE(pp.getX() == -18.3);
-    REQUIRE(pp.getY() == utilities::_M_PI);
+    REQUIRE(pp.getY() == utilities::PI);
 
     pp.setLocation(4.28, 8.10);
     REQUIRE(pp.getX() == 4.28);

@@ -39,12 +39,14 @@ bool utilities::secondDegreeEquationSolver(double a, double b, double c,
 
 double utilities::angleAsDegree(const double alpha)
 {
-    return ((alpha * 180.) / utilities::_M_PI);
+    return ((alpha * 180.) / utilities::PI);
 }
 
 double utilities::angleAsDegree0to360(const double alpha)
 {
-    return std::fmod(utilities::angleAsDegree(alpha) + 360., 360.);
+    return std::fmod(
+                std::fmod(utilities::angleAsDegree(alpha), 360.) + 360.,
+                360.);
 }
 
 bool utilities::equals(const double nb1, const double nb2, const double epsilon)
@@ -54,6 +56,6 @@ bool utilities::equals(const double nb1, const double nb2, const double epsilon)
 
 bool utilities::equals(const double nb1, const double nb2)
 {
-    return utilities::equals(nb1, nb2, utilities::_EPSILON);
+    return utilities::equals(nb1, nb2, utilities::EPSILON);
 }
 
