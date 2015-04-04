@@ -49,7 +49,7 @@ Point * Crystal::includeRay(const Ray & ray) const
 bool Crystal::operator==(const Crystal & crystal) const
 {
     return this->center == crystal.center
-            && std::abs(this->radius - crystal.radius) <= 0.1
+            && utilities::equals(this->radius, crystal.radius)
             && this->amplifier == crystal.amplifier
             && Element::operator==(crystal);
 }
@@ -62,7 +62,7 @@ bool Crystal::operator!=(const Crystal & crystal) const
 std::ostream & operator<<(std::ostream & out, const Crystal & crystal)
 {
     out << "Crystal --- Center : " << crystal.getCenter()
-        << " , Radius : " << std::to_string(crystal.getRadius())
-        << " , Modifier : " << std::to_string(crystal.getAmplifier());
+        << " , Radius : " << crystal.getRadius()
+        << " , Modifier : " << crystal.getAmplifier();
     return out;
 }

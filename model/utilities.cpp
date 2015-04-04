@@ -1,9 +1,10 @@
 #include <cmath>
 #include "model/utilities.hpp"
+#include "model/point.hpp"
 
 bool utilities::intersecPointsLineCircle(const double slope,
-                                                 const int indepTerm, const Point & circleCenter,
-                                                 const int radius, Point * intersec1, Point * intersec2)
+                                         const int indepTerm, const Point & circleCenter,
+                                         const int radius, Point * intersec1, Point * intersec2)
 {
     double x1, x2;
     bool thereIsIntersec = utilities::secondDegreeEquationSolver
@@ -23,7 +24,7 @@ bool utilities::intersecPointsLineCircle(const double slope,
 }
 
 bool utilities::secondDegreeEquationSolver(double a, double b, double c,
-                                                   double * rad1, double * rad2)
+                                           double * rad1, double * rad2)
 {
     double delta = std::pow(b, 2.) - (4. * a * c);
     bool thereIsRadix = (delta >= 0);

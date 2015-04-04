@@ -1,7 +1,8 @@
 #ifndef UTILITIES
 #define UTILITIES
 
-#include "model/point.hpp"
+
+class Point;
 
 /**
  * Diverse fonctions utilitaires de géometrie.

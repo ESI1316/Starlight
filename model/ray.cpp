@@ -82,8 +82,8 @@ bool Ray::operator==(const Ray & ray) const
     return this->start == ray.start
             && this->end == ray.end
             && this->waveLength == ray.waveLength
-            && this->slope == ray.slope
-            && this->indTerm == ray.indTerm;
+            && utilities::equals(this->slope, ray.slope)
+            && utilities::equals(this->indTerm, ray.indTerm);
 }
 
 bool Ray::operator!=(const Ray & ray) const

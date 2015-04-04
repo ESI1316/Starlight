@@ -23,7 +23,9 @@ void Wall::reactToRay(Ray & ray) {}
 
 Point * Wall::includeRay(const Ray & ray) const
 {
-    Point p(-1, -1);
+    Point * p = nullptr;
+    double startx = this->getStart().getX();
+    double starty = this->getStart().getY();
 
     double slopeWall = (this->getStart().getX() - this->getEnd().getX())
             / (this->getStart().getY() - this->getEnd().getY());
@@ -34,12 +36,10 @@ Point * Wall::includeRay(const Ray & ray) const
         double x = (ind - ray.getIndTerm()) / (ray.getSlope() - slopeWall);
         double y = slopeWall * x + ind;
 
-        //if()
-        p.setX(x);
-        p.setY(y);
+        p = new Point{x, y};
     }
 
-    return &p;
+    return p;
 }
 
 

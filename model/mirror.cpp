@@ -129,13 +129,13 @@ bool Mirror::operator==(const Mirror & mirror) const
     return this->pivot == mirror.pivot
             && this->length == mirror.length
             && this->xpad == mirror.xpad
-            && std::abs(this->xMin- mirror.xMin) < 0.1
-            && std::abs(this->xMax- mirror.xMax) < 0.1
-            && std::abs(this->yMin- mirror.yMin) < 0.1
-            && std::abs(this->yMax- mirror.yMax) < 0.1
-            && std::abs(this->alpha - mirror.alpha) < 0.1
-            && std::abs(this->alphaMin - mirror.alphaMin) < 0.1
-            && std::abs(this->alphaMax - mirror.alphaMax) < 0.1
+            && utilities::equals(this->xMin, mirror.xMin)
+            && utilities::equals(this->xMax, mirror.xMax)
+            && utilities::equals(this->yMin, mirror.yMin)
+            && utilities::equals(this->yMax, mirror.yMax)
+            && utilities::equals(this->alpha, mirror.alpha)
+            && utilities::equals(this->alphaMin, mirror.alphaMin)
+            && utilities::equals(this->alphaMax, mirror.alphaMax)
             && Element::operator ==(mirror);
 }
 

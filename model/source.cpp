@@ -1,6 +1,7 @@
 #include "model/starlightexception.hpp"
 #include "model/source.hpp"
 #include "model/ray.hpp"
+#include "model/utilities.hpp"
 
 Source::Source(const Point & position, const int edge, const double alpha, const int waveLength)
     : position{position}, edge{edge}, alpha{alpha}, waveLength {waveLength}
@@ -45,7 +46,7 @@ bool Source::operator==(const Source & source) const
     return this->on == source.on
             && this->position == source.position
             && this->edge == source.edge
-            && this->alpha == source.alpha
+            && utilities::equals(this->alpha, source.alpha)
             && this->waveLength == source.waveLength;
 }
 

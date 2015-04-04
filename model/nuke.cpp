@@ -44,7 +44,7 @@ Point * Nuke::includeRay(const Ray & ray) const
 bool Nuke::operator==(const Nuke & nuke) const
 {
     return this->position == nuke.position
-            && std::abs(this->radius - nuke.radius) <= 0.1
+            && utilities::equals(this->radius, nuke.radius)
             && this->light == nuke.light
             && Element::operator ==(nuke);
 }

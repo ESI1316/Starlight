@@ -1,5 +1,6 @@
 #include "../test/catch.hpp"
 #include "../model/utilities.hpp"
+#include "../model/point.hpp"
 
 TEST_CASE("Construction de points")
 {

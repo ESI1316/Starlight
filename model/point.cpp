@@ -1,5 +1,6 @@
 #include <cmath>
 #include <iostream>
+#include "utilities.hpp"
 #include "model/point.hpp"
 
 Point::Point(const double x, const double y)
@@ -49,8 +50,8 @@ Point & Point::operator =(const Point & point)
 
 bool Point::operator==(const Point & point) const
 {
-    return std::round(this->x - point.x) < 0.1
-            && std::round(this->y - point.y) < 0.1;
+    return utilities::equals(this->x, point.x)
+            && utilities::equals(this->y, point.y);
 }
 
 bool Point::operator !=(const Point & point) const
