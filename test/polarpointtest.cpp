@@ -39,19 +39,17 @@ TEST_CASE("Construction d'un point cartésien en polaire")
     {
         PolarPoint pp(p);
 
-        REQUIRE(pp.getRadius() >= 1.4141);
-        REQUIRE(pp.getRadius() <= 1.4143);
-        REQUIRE(pp.getAzimut() >= 0.7852);
-        REQUIRE(pp.getAzimut() <= 0.7855);
+        REQUIRE(utilities::equals(pp.getRadius(), 1.41421356));
+        REQUIRE(utilities::equals(pp.getAzimut(), 0.785398163));
     }
 }
 
 TEST_CASE("Conversion de points polaires en cartésien", "PolarPoint")
 {
-    PolarPoint pp(1.4142, 0.7853);
+    PolarPoint pp(1.41421356, 0.785398163);
 
-    REQUIRE(utilities::equals(pp.getRadius(), 1.4142));
-    REQUIRE(utilities::equals(pp.getAzimut(), 0.7853));
+    REQUIRE(utilities::equals(pp.getRadius(), 1.41421356));
+    REQUIRE(utilities::equals(pp.getAzimut(), 0.785398163));
 
     SECTION("Conversion bounds")
     {
@@ -101,7 +99,7 @@ TEST_CASE("Méthodes de points polaires")
         REQUIRE((pp.getAzimutAsDegrees() - 270.) < 0.1);
     }
 
-    SECTION("Rotation")
+    SECTION("Rotation autour de l'origine")
     {
         PolarPoint pp{3., utilities::PI};
 
@@ -118,14 +116,23 @@ TEST_CASE("Méthodes de points polaires")
         REQUIRE(pp == PolarPoint(pp.getRadius(), 3 * utilities::PI + 1.4235 -2.3289999));
     }
 
-    SECTION("Rotation")
+    SECTION("Rotation autour d'un point par PI")
     {
         PolarPoint point{2., utilities::PI / 2};
-        Point pointCartesien = point.toCartesian();
-
         PolarPoint centrePoint{3., utilities::PI / 2};
-        Point centerPointCartesien = centrePoint.toCartesian();
 
-        std::cout << point.rotateAround(centerPointCartesien, utilities::PI);
+        point.rotateAround(centrePoint, utilities::PI);
+        REQUIRE(utilities::equals(point.getRadius(), 4.));
+        REQUIRE(utilities::equals(point.getAzimut(), utilities::PI_2));
+    }
+
+    SECTION("Rotation autour d'un point")
+    {
+        PolarPoint point{4.23, 1.1827};
+        std::cout << point << std::endl;
+        PolarPoint centrePoint{0.32, 0.32};
+
+        point.rotateAround(centrePoint, -0.14);
+        std::cout << point << std::endl;
     }
 }
