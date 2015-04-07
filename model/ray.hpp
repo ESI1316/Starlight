@@ -2,7 +2,8 @@
 #define RAY_H
 
 #include <iostream>
-#include "model/polarPoint.hpp"
+#include "model/point.hpp"
+
 
 /**
  * Cette classe modélise les rayons lumineux, concept central du jeu.
@@ -40,14 +41,6 @@ class Ray
      * orangé-rouge du spectre visible de la lumière.
      */
     static const int WL_DFT {600};
-
-    /**
-     * Créer un nouveau rayon tel une demi droite possèdant un point,
-     * un coefficiant angulaire, une longueur d'onde et un terme indépendant.
-     * Ce dernier est calculé à la fin, permettant de d'écrire le rayon au format
-     * y = mx + p
-     */
-    Ray(const PolarPoint, double, int);
 
     /**
      * Créer un nouveau rayon tel une demi droite possèdant un point,

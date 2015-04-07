@@ -2,8 +2,8 @@
 #define NUKE_H
 
 #include <ostream>
-//#include "model/point.hpp"
 #include "model/element.hpp"
+#include "model/point.hpp"
 
 /**
  * Cette classe modélise les bombes utilisées dans le jeu.

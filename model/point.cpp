@@ -8,7 +8,7 @@ Point::Point(const double x, const double y)
       y {y}, azimut{std::atan2(y, x)} {}
 
 Point::Point(const Point & point)
-    :Point{point.x, point.y} {}
+    : x{point.x}, y{point.y}, radius{point.radius}, azimut{point.azimut} {}
 
 double Point::getX() const
 {
@@ -42,17 +42,25 @@ bool Point::isCenter() const
 
 void Point::setX(const double x)
 {
-    this->setLocation(x, this->y);
+    this->setCartesianLocation(x, this->y);
 }
 
 void Point::setY(const double y)
 {
-    this->setLocation(this->x, y);
+    this->setCartesianLocation(this->x, y);
 }
 
-void Point::setLocation(const double x, const double y)
+void Point::setCartesianLocation(const double x, const double y)
 {
     *this = Point{x, y};
+}
+
+void Point::setPolarLocation(const double radius, const double azimut)
+{
+    this->radius = radius;
+    this->azimut = azimut;
+    this->x = this->radius * std::cos(this->azimut);
+    this->y = this->radius * std::sin(this->azimut);
 }
 
 double Point::distanceFrom(const Point & point) const
@@ -62,16 +70,14 @@ double Point::distanceFrom(const Point & point) const
 
 void Point::rotate(const double alpha)
 {
-    this->azimut += alpha;
-    this->x = this->radius * std::cos(this->azimut);
-    this->y = this->radius * std::sin(this->azimut);
+    this->setPolarLocation(this->radius, this->azimut + alpha);
 }
 
 Point & Point::rotateAround(const Point & pivot, const double alpha)
 {
-    this->setLocation(this->getX() - pivot.getX(), this->getY() - pivot.getY());
+    this->setCartesianLocation(this->getX() - pivot.getX(), this->getY() - pivot.getY());
     this->rotate(alpha);
-    this->setLocation(this->getX() + pivot.getX(), this->getY() + pivot.getY());
+    this->setCartesianLocation(this->getX() + pivot.getX(), this->getY() + pivot.getY());
 
     return *this;
 }

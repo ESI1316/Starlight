@@ -37,11 +37,11 @@ TEST_CASE("mutateurs de point")
     REQUIRE(utilities::equals(pp.getX(), -18.3));
     REQUIRE(utilities::equals(pp.getY(), utilities::PI));
 
-    pp.setLocation(4.28, 8.10);
+    pp.setCartesianLocation(4.28, 8.10);
     REQUIRE(utilities::equals(pp.getX(), 4.28));
     REQUIRE(utilities::equals(pp.getY(), 8.10));
 
-    pp.setLocation(1., 1.);
+    pp.setCartesianLocation(1., 1.);
     REQUIRE(utilities::equals(pp.getRadius(), 1.41421356));
     REQUIRE(utilities::equals(pp.getAzimut(), 0.785398163));
 }
@@ -87,6 +87,83 @@ TEST_CASE("Azimut en degré")
     REQUIRE(utilities::equals(pppp.getAzimutAsDegrees(), 225.));
     Point ppppp{-0.5, 0.866025404};
     REQUIRE(utilities::equals(ppppp.getAzimutAsDegrees(), 120.));
+
+    Point a;
+    a.setPolarLocation(2., 2 * utilities::PI);
+    REQUIRE(utilities::equals(a.getAzimutAsDegrees(), 0.));
+
+    a.setPolarLocation(2., 4 * utilities::PI_2);
+    REQUIRE(utilities::equals(a.getAzimutAsDegrees(), 0.));
+
+    a.setPolarLocation(2., utilities::PI / 3);
+    REQUIRE(utilities::equals(a.getAzimutAsDegrees(), 60.));
+
+    a.setPolarLocation(2., utilities::PI_2);
+    REQUIRE(utilities::equals(a.getAzimutAsDegrees(), 90.));
+
+    a.setPolarLocation(2., 2 * utilities::PI / 3);
+    REQUIRE(utilities::equals(a.getAzimutAsDegrees(), 120.));
+
+    a.setPolarLocation(2., 8 * utilities::PI / 3);
+    REQUIRE(utilities::equals(a.getAzimutAsDegrees(), 120.));
+
+    a.setPolarLocation(2., utilities::PI);
+    REQUIRE(utilities::equals(a.getAzimutAsDegrees(), 180.));
+
+    a.setPolarLocation(2., -utilities::PI);
+    REQUIRE(utilities::equals(a.getAzimutAsDegrees(), 180.));
+
+    a.setPolarLocation(2., 3 * utilities::PI_2);
+    REQUIRE(utilities::equals(a.getAzimutAsDegrees(), 270.));
+}
+
+TEST_CASE("Rotation de point")
+{
+    Point p;
+    p.setPolarLocation(3., utilities::PI);
+
+    p.rotate(utilities::PI);
+    REQUIRE(utilities::equals(p.getAzimut(), 2 * utilities::PI));
+    REQUIRE(utilities::equals(p.getRadius(), 3.));
+
+    p.rotate(utilities::PI);
+    REQUIRE(utilities::equals(p.getAzimut(), 3 * utilities::PI));
+    REQUIRE(utilities::equals(p.getRadius(), 3.));
+
+    p.rotate(1.4235);
+    REQUIRE(utilities::equals(p.getAzimut(), 3 * utilities::PI + 1.4235));
+    REQUIRE(utilities::equals(p.getRadius(), 3.));
+
+    p.rotate(-2.3289999);
+    REQUIRE(utilities::equals(p.getAzimut(), 3 * utilities::PI + 1.4235 - 2.3289999));
+    REQUIRE(utilities::equals(p.getRadius(), 3.));
+}
+
+TEST_CASE("Rotation autour d'un point par PI")
+{
+    Point point;
+    point.setPolarLocation(2., utilities::PI / 2);
+
+    Point pivot;
+    pivot.setPolarLocation(3., utilities::PI / 2);
+
+    point.rotateAround(pivot, utilities::PI);
+
+    REQUIRE(utilities::equals(point.getAzimut(), utilities::PI_2));
+    REQUIRE(utilities::equals(point.getRadius(), 4.));
+
+    Point a{3. , 3.};
+    REQUIRE(utilities::equals(a.getAzimut(), utilities::PI / 4));
+    REQUIRE(utilities::equals(a.getRadius(), std::sqrt(18.)));
+
+    pivot = Point{2., 1.};
+    a.rotateAround(pivot, -0.83);
+
+    Point d{3. - 2., 3. - 1};
+    d.rotate(-0.83);
+    d.setCartesianLocation(d.getX() + 2., d.getY() + 1);
+
+    REQUIRE(a == d);
 }
 
 TEST_CASE("Opérateurs de point")
@@ -97,6 +174,8 @@ TEST_CASE("Opérateurs de point")
 
     REQUIRE(utilities::equals(a.getX(), b.getX()));
     REQUIRE(utilities::equals(a.getY(), b.getY()));
+    REQUIRE(utilities::equals(a.getRadius(), b.getRadius()));
+    REQUIRE(utilities::equals(a.getAzimut(), b.getAzimut()));
 
     Point c{3., 3.4444};
     Point d;
@@ -107,4 +186,5 @@ TEST_CASE("Opérateurs de point")
     REQUIRE((!(c == d)) == (c != d));
     REQUIRE(c != d);
     REQUIRE(!(d != e));
+    REQUIRE(a != Point(19, 19));
 }

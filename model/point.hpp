@@ -129,11 +129,18 @@ public:
     void rotate(const double);
 
     /**
-     * Déplace le point en la coordonnée donnée.
+     * Déplace le point en la coordonnée cartésienne donnée.
      * @param x l'abscisse où déplacer le point.
      * @param y l'ordonnée où déplacer le point.
      */
-    void setLocation(const double, const double);
+    void setCartesianLocation(const double, const double);
+
+    /**
+     * Déplace le point en la coordonnée polaire donnée.
+     * @param radius La distance séparant le point de l'origine.
+     * @param azimut L'angle, en radian, selon le cercle trigonométrique.
+     */
+    void setPolarLocation(const double, const double);
 
     /**
      * Permet de connaitre la distance séparant le point courant d'un autre.
