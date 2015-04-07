@@ -25,12 +25,6 @@ TEST_CASE("Construction de points polaires", "PolarPoint")
     REQUIRE(s.getAzimutAsDegrees() < 245.6000);
 }
 
-TEST_CASE("Méthodes")
-{
-
-
-}
-
 TEST_CASE("Construction d'un point cartésien en polaire")
 {
     Point p{1., 1.};
@@ -151,8 +145,27 @@ TEST_CASE("Méthodes de points polaires")
         {
             pointCartesien.setX(pointCartesien.getX() + centrePointCartesien.getX());
             pointCartesien.setY(pointCartesien.getY() + centrePointCartesien.getY());
-            /* OK PRECISION */
-            // REQUIRE(pointCartesien == Point(2.435213484, 3.754399179));
+            REQUIRE(pointCartesien == Point(2.4352134, 3.7543991));
         }
+    }
+
+    SECTION("Operateurs")
+    {
+        PolarPoint polarPoint{-3.2, 1.};
+        PolarPoint autrePoint;
+        autrePoint = polarPoint;
+        REQUIRE(utilities::equals(autrePoint.getRadius(), -3.2));
+        REQUIRE(utilities::equals(autrePoint.getAzimut(), 1.));
+
+        REQUIRE(polarPoint == autrePoint);
+        REQUIRE(polarPoint != PolarPoint(19, 19));
+
+        PolarPoint oppose{-polarPoint.getRadius(), polarPoint.getAzimut() + utilities::PI};
+        REQUIRE(polarPoint == oppose);
+        oppose = PolarPoint{-polarPoint.getRadius(), polarPoint.getAzimut() - utilities::PI};
+        REQUIRE(polarPoint == oppose);
+
+        autrePoint = Point{-1.72896738, -2.69270715};
+        REQUIRE(polarPoint == autrePoint);
     }
 }

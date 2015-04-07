@@ -92,8 +92,23 @@ PolarPoint & PolarPoint::operator=(const Point & point)
 
 bool PolarPoint::operator==(const PolarPoint & polarPoint) const
 {
-    return utilities::equals(this->radius, polarPoint.radius)
-            && utilities::equals(this->azimut, polarPoint.azimut);
+    bool equals = (utilities::equals(this->radius, polarPoint.radius)
+                   && utilities::equals(this->azimut, polarPoint.azimut));
+
+    if (!equals)
+    {
+        if(utilities::equals(this->radius, -polarPoint.radius))
+        {
+            double azimutThis = std::fmod(this->azimut, 2 * utilities::PI);
+            double azimutOther = std::fmod(polarPoint.azimut, 2 * utilities::PI);
+
+            equals = utilities::equals(
+                        std::fmod(azimutThis - azimutOther, utilities::PI),
+                        0);
+        }
+    }
+
+    return equals;
 }
 
 bool PolarPoint::operator!=(const PolarPoint & polarPoint) const
