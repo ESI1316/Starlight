@@ -24,5 +24,4 @@ TEST_CASE("reaction au rayon")
 
 TEST_CASE("Intersection cristal et rayon")
 {
-    Ray ray{Point{0., 1.}, 1, 240};
 }
