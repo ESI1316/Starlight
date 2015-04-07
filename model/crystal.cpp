@@ -29,12 +29,14 @@ int Crystal::getRadius() const
 void Crystal::reactToRay(Ray & ray)
 {
     ray.setWaveLength(ray.getWaveLength() + this->amplifier);
-    this->getLevel()->computeRay(ray);
+
+    if(this->getLevel() != nullptr)
+        this->getLevel()->computeRay(ray);
 }
 
 Point * Crystal::includeRay(const Ray & ray) const
 {
-    Point * intersec1, * intersec2, * ret = 0;
+    Point * intersec1, * intersec2, * ret = nullptr;
     bool thereIsIntersec = utilities::intersecPointsLineCircle
             (ray.getSlope(), ray.getIndTerm(), this->center, this->radius,
              intersec1, intersec2);

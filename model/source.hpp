@@ -14,10 +14,29 @@
  */
 class Source
 {
+    /**
+     * Etat d'émission de la source.
+     */
     bool on {false};
+
+    /**
+     * La position cartésienne du coin supérieur gauche de la source.
+     */
     Point position;
+
+    /**
+     * La longueur du coté du carré représentant la source.
+     */
     int edge;
+
+    /**
+     * L'angle, en radian, d'émission de la source lumineuse.
+     */
     double alpha;
+
+    /**
+     * La longueur d'onde du rayon tiré par la source.
+     */
     int waveLength;
 
 

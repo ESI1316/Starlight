@@ -33,7 +33,8 @@ SOURCES += main.cpp\
     test/levelfactorytest.cpp \
     model/element.cpp \
     test/pointtest.cpp \
-    model/utilities.cpp
+    model/utilities.cpp \
+    test/crystaltest.cpp
 
 HEADERS  += mainwindow.hpp \
     test/catch.hpp \
