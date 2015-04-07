@@ -4,18 +4,44 @@
 #include <iostream>
 
 /**
- * Cette classe modélise un simple point de coordonnées entières,
- * utilisés pour modéliser les positions des objets dans le jeu.
+ * Cette classe modélise un point de coordonnés dans le plan \f$ R^2 \f$ sous
+ * deux formes :
+ * <ul>
+ * <li> coordonnées cartésiennes sous la forme \f$ c(x, y) \f$,</li>
+ * <li> coordonnées polaires sous la forme \f$ p(r, \alpha) \f$.</li>
+ * </ul>
+ * Elle sert à définir la position d'un objet dans l'espace à deux dimensions.
  */
 class Point
 {
+    /**
+     * @brief x La distance, sur l'axe des abcisses, du point par rapport à
+     * l'origine.
+     */
     double x {0.};
+
+    /**
+     * @brief y La distance, sur l'axe des ordonnées, du point par rapport à
+     * l'origine.
+     */
     double y {0.};
+
+    /**
+     * @brief radius la distance du point par rapport à l'origine du plan
+     * cartésien.
+     */
+    double radius{0.};
+
+    /**
+     * @brief azimut le segment de cercle exprimé en radian depuis l'axe
+     * horizontal et dans un sens anti-horlogé.
+     */
+    double azimut{0.};
 
 public:
 
     /**
-     * Instancie le point (0,0)
+     * Instancie le point \f$c(0, 0) p(0, 0)\f$
      */
     Point() = default;
 
@@ -56,11 +82,65 @@ public:
     void setY(const double);
 
     /**
-     * Déplace le point en la coordonnée donnée.
+     * Permet de savoir si le point courant est l'origine du plan cartésien.
+     *
+     * @return <code>true</code> Si le point courant est l'origine du plan
+     * cartésien.
+     */
+    bool isCenter() const;
+
+    /**
+     * Permet d'obtenir la distance séparant le point du centre de rotation.
+     *
+     * @return Le rayon séparant le point polaire de son centre.
+     */
+    double getRadius() const;
+
+    /**
+     * Permet d'obtenir l'angle de la coordonnée polaire courante.
+     *
+     * @return L'amplitude du point polaire courant en radian.
+     */
+    double getAzimut() const;
+
+    /**
+     * Permet d'obtenir l'angle de la coordonnée polaire courante exprimée en degrés.
+     *
+     * @return L'amplitude du point polaire courant en degré.
+     */
+    double getAzimutAsDegrees() const;
+
+    /**
+     * Cette méthode change la position du point courant dans le plan par
+     * rotation autour du point cartésien passé en paramètre.
+     *
+     * @param pivot Le centre autour duquel le point courant doit tourner.
+     * @param alpha L'amplitude de la rotation à effectuer (en radian).
+     *
+     * @return Le point courant après rotation.
+     */
+    Point & rotateAround(const Point &, const double);
+
+    /**
+     * Effectue une rotation autour de l'origine du plan cartésien.
+     *
+     * @param alpha L'amplitude de la rotation à effectuer (en radian).
+     */
+    void rotate(const double);
+
+    /**
+     * Déplace le point en la coordonnée cartésienne donnée.
      * @param x l'abscisse où déplacer le point.
      * @param y l'ordonnée où déplacer le point.
      */
-    void setLocation(const double, const double);
+    void setCartesianLocation(const double, const double);
+
+    /**
+     * Déplace le point en la coordonnée polaire donnée.
+     * @param radius La distance séparant le point de l'origine.
+     * @param azimut L'angle, en radian, selon le cercle trigonométrique.
+     */
+    void setPolarLocation(const double, const double);
 
     /**
      * Permet de connaitre la distance séparant le point courant d'un autre.
@@ -72,7 +152,7 @@ public:
      * De là, il est simple d'appliquer le théorème de Pythagore aux triangles
      * rectangles :
      * l'hypothénuse au carré = la somme du carré des deux autres cotés
-     * distance(p1, p2)² = (p1.x - p2.x)² + (p1.y - p2.y)²
+     * \f$ distance(p1, p2)^2 = (p1.x - p2.x)^2 + (p1.y - p2.y)^2 \f$
      * Dans la bibliothèque standard C++, la fonction std::hypot de <cmath>
      * nous permet de faire cette opération en lui passant simplement les cotés
      * autre que l'hypothénuse.

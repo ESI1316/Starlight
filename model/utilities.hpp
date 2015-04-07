@@ -11,32 +11,32 @@ namespace utilities
 {
 
     /**
-     * Représentation de la constante PI sur 26 décimales.
+     * @brief PI Représentation de la constante PI sur 26 décimales.
      */
     const double PI{3.14159265358979323846};
 
     /**
-     * Représentation de la constante PI/2 sur 26 décimales.
+     * @brief PI_2 Représentation de la constante PI/2 sur 26 décimales.
      */
     const double PI_2{1.57079632679489661923};
 
     /**
-     * Représentation de la constante PI/4 sur 26 décimales.
+     * @brief PI_4 Représentation de la constante PI/4 sur 26 décimales.
      */
     const double PI_4{0.785398163397448309616};
 
     /**
-     * Représentation de la constante 1/PI sur 26 décimales.
+     * @brief ONE_PI Représentation de la constante 1/PI sur 26 décimales.
      */
     const double ONE_PI{0.318309886183790671538};
 
     /**
-     * Représentation de la constante 2/PI sur 26 décimales.
+     * @brief TWO_PI Représentation de la constante 2/PI sur 26 décimales.
      */
     const double TWO_PI{0.636619772367581343076};
 
     /**
-     * Représentation de la marge d'erreur maximale acceptée.
+     * @brief EPSILON Représentation de la marge d'erreur maximale acceptée.
      */
     const double EPSILON{10E-7};
 

@@ -26,9 +26,7 @@ SOURCES += main.cpp\
     model/ray.cpp \
     model/source.cpp \
     model/wall.cpp \
-    model/polarPoint.cpp \
     model/levelFactory.cpp \
-    test/polarpointtest.cpp \
     model/starlightexception.cpp \
     test/levelfactorytest.cpp \
     model/element.cpp \
@@ -51,7 +49,6 @@ HEADERS  += mainwindow.hpp \
     model/mirror.hpp \
     model/nuke.hpp \
     model/point.hpp \
-    model/polarPoint.hpp \
     model/ray.hpp \
     model/source.hpp \
     model/wall.hpp \

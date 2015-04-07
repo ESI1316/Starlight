@@ -1,3 +1,4 @@
+#include "model/point.hpp"
 #include "model/ray.hpp"
 #include "model/level.hpp"
 #include "model/starlightexception.hpp"
@@ -6,9 +7,6 @@
 const int Ray::WL_MIN;
 const int Ray::WL_MAX;
 const int Ray::WL_DFT;
-
-Ray::Ray(const PolarPoint start, double slope, int waveLength)
-    :Ray{start.toCartesian(), slope, waveLength} {}
 
 Ray::Ray(const Point start, double slope, int waveLength)
     :start{start}, end{start}, waveLength{waveLength}, vertical{slope == 90.},

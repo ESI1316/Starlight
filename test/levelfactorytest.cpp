@@ -1,12 +1,12 @@
 #define CATCH_CONFIG_MAIN
-#include "../test/catch.hpp"
+#include "./test/catch.hpp"
 #include "../model/levelFactory.hpp"
 
 TEST_CASE("création d'un Level à partir d'un fichier .lvl", "levelFactory::getLevel(std::string)")
 {
     Level * level = levelFactory::getLevelFromFile("./ressources/level.lvl");
 
-    REQUIRE(level != 0);
+    REQUIRE(level != nullptr);
 
     SECTION("vérification de la taille des vecteurs")
     {
@@ -22,29 +22,29 @@ TEST_CASE("création d'un Level à partir d'un fichier .lvl", "levelFactory::get
     {
         SECTION("vérification de la source")
         {
-            REQUIRE(level->getSource().getPosition() == Point(0, 0));
+            REQUIRE(level->getSource().getPosition() == Point(0., 0.));
             REQUIRE(level->getSource().getEdge() == 29);
-            REQUIRE(level->getSource().getAngle() == 4.);
+            REQUIRE(utilities::equals(level->getSource().getAngle(), 4.));
             REQUIRE(level->getSource().getWaveLength() == 400);
         }
 
         SECTION("vérification de la destination")
         {
-            REQUIRE(level->getDestination().getPosition() == Point(721, 275));
+            REQUIRE(level->getDestination().getPosition() == Point(721., 275.));
             REQUIRE(level->getDestination().getEdge() == 29);
         }
 
         SECTION("vérification d'un des crystals")
         {
-            REQUIRE(level->getCrystals()[0].getCenter() == Point(464, 290));
-            REQUIRE(level->getCrystals()[0].getRadius() == 29);
+            REQUIRE(level->getCrystals()[0].getCenter() == Point(464., 290.));
+            REQUIRE(utilities::equals(level->getCrystals()[0].getRadius(), 29));
             REQUIRE(level->getCrystals()[0].getAmplifier() == 40);
         }
 
         SECTION("vérification d'une bombe")
         {
-            REQUIRE(level->getNukes()[0].getLocation() == Point(464, 232));
-            REQUIRE(level->getNukes()[0].getRadius() == 29.);
+            REQUIRE(level->getNukes()[0].getLocation() == Point(464., 232.));
+            REQUIRE(utilities::equals(level->getNukes()[0].getRadius(), 29.));
         }
 
         SECTION("vérification d'une lentille")
