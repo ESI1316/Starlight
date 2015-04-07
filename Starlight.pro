@@ -34,7 +34,10 @@ SOURCES += main.cpp\
     model/element.cpp \
     test/pointtest.cpp \
     model/utilities.cpp \
-    test/crystaltest.cpp
+    test/crystaltest.cpp \
+    model/line.cpp \
+    model/rectangle.cpp \
+    model/ellipse.cpp
 
 HEADERS  += mainwindow.hpp \
     test/catch.hpp \
@@ -52,7 +55,10 @@ HEADERS  += mainwindow.hpp \
     model/ray.hpp \
     model/source.hpp \
     model/wall.hpp \
-    model/utilities.hpp
+    model/utilities.hpp \
+    model/line.h \
+    model/rectangle.h \
+    model/ellipse.h
 
 FORMS    += mainwindow.ui
 
