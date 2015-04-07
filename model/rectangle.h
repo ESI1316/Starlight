@@ -36,7 +36,7 @@ public:
      *
      * @return Les côtés du rectangle sous forme de droites.
      */
-    Line* getEdges() const;
+    Line * getEdges() const;
 
     /**
      * Permet d'obtenir la longueur du rectangle.
@@ -50,7 +50,7 @@ public:
      *
      * @return La hauteur du rectangle.
      */
-    int getEight() const;
+    int getHeight() const;
 
     /**
      * Permet d'obtenir les coordonnées du coté supérieur du rectangle.

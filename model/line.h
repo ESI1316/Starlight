@@ -1,7 +1,7 @@
 #ifndef LINE_H
 #define LINE_H
 
-#include
+#include "model/point.hpp"
 
 /**
  * Représente une droite sous la forme de son équation complète;
@@ -14,6 +14,7 @@ private:
     int yParam;
     int xParam;
     int indepTerm;
+    double slope;
 
 public:
 
