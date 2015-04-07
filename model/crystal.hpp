@@ -19,8 +19,18 @@ class Crystal : public Element
 {
 private :
 
+    /**
+     * Les coordonnées cartésiennes du centre du cristal.
+     */
     Point center;
+    /**
+     * La longueur du rayon du cercle représentant le cristal.
+     */
     double radius;
+    /**
+     * Le modificateur de longueur d'onde agissant sur un rayon passant dans ce
+     * cristal.
+     */
     int amplifier;
 
 public:

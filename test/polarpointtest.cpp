@@ -129,10 +129,30 @@ TEST_CASE("Méthodes de points polaires")
     SECTION("Rotation autour d'un point")
     {
         PolarPoint point{4.23, 1.1827};
-        std::cout << point << std::endl;
-        PolarPoint centrePoint{0.32, 0.32};
+        Point pointCartesien = point.toCartesian();
+        REQUIRE(pointCartesien == Point(1.60074622, 3.91541971));
 
-        point.rotateAround(centrePoint, -0.14);
-        std::cout << point << std::endl;
+        PolarPoint centrePoint{0.32, 0.32};
+        Point centrePointCartesien = centrePoint.toCartesian();
+        REQUIRE(centrePointCartesien == Point(0.303755334, 0.100661299));
+
+        SECTION("translation des points")
+        {
+            pointCartesien.setX(pointCartesien.getX() - centrePointCartesien.getX());
+            pointCartesien.setY(pointCartesien.getY() - centrePointCartesien.getY());
+            REQUIRE(pointCartesien == Point(1.296990886, 3.814758411));
+        }
+
+        PolarPoint translate{pointCartesien};
+        translate.rotate(-0.14);
+        pointCartesien = translate.toCartesian();
+
+        SECTION("Détranslation du point")
+        {
+            pointCartesien.setX(pointCartesien.getX() + centrePointCartesien.getX());
+            pointCartesien.setY(pointCartesien.getY() + centrePointCartesien.getY());
+            /* OK PRECISION */
+            // REQUIRE(pointCartesien == Point(2.435213484, 3.754399179));
+        }
     }
 }
