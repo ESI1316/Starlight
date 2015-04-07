@@ -55,6 +55,17 @@ bool Source::operator!=(const Source & source) const
     return !(*this == source);
 }
 
+Source & Source::operator =(const Source & source)
+{
+    this->on = source.on;
+    this->position = source.position;
+    this->edge = source.edge;
+    this->alpha = source.alpha;
+    this->waveLength = source.waveLength;
+
+    return *this;
+}
+
 std::ostream & operator<<(std::ostream & out, const Source & source)
 {
     out << "Source --- Position : " << source.getPosition()

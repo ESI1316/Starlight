@@ -4,7 +4,14 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
-#include "model/level.hpp"
+#include "./model/source.hpp"
+#include "./model/nuke.hpp"
+#include "./model/wall.hpp"
+#include "./model/lens.hpp"
+#include "./model/mirror.hpp"
+#include "./model/crystal.hpp"
+#include "./model/dest.hpp"
+#include "./model/level.hpp"
 
 /**
  * Fonctions utilitaires permettant divers éléments du jeu à partir d'un

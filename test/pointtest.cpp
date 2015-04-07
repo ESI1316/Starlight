@@ -4,7 +4,6 @@
 
 TEST_CASE("Construction de points")
 {
-
     Point p{2., 2.};
     REQUIRE(utilities::equals(p.getX(), 2.));
     REQUIRE(utilities::equals(p.getY(), 2.));

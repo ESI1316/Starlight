@@ -114,6 +114,12 @@ public:
      * @return <code>true</code> Si deux sources sont différentes.
      */
     bool operator!=(const Source &) const;
+
+    /**
+     * Permet de copier la source en paramètre dans la source locale.
+     * @return La source locale modifiée.
+     */
+    Source & operator=(const Source &);
 };
 
 /**

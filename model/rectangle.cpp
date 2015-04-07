@@ -2,7 +2,7 @@
 
 Line* Rectangle::getEdges() const
 {
-    return this->edges;
+    //return this->edges;
 }
 
 int Rectangle::getWidth() const
@@ -12,11 +12,11 @@ int Rectangle::getWidth() const
 
 int Rectangle::getHeight() const
 {
-    return this->height
+    //return this->height;
 }
 
 Point Rectangle::getUpLeftCorner() const
 {
-    return this-upLeftCorner;
+    //return this->upLeftCorner;
 }
 
