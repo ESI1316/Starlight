@@ -8,9 +8,10 @@ Rectangle::Rectangle(int width, int height, const Point & upLeftCorner)
             {Line{0., upLeftCorner.getY() + height}},
             {Line{1./0., 0, upLeftCorner.getX() + width}}}
 {
-    if(width <= 0 || height <= 0) throw StarlightException("Cotés de la destinations "
-                                                           "doivent être strictement "
-                                                           "positifs.");
+    if(width <= 0)
+        throw StarlightException("Largeur strictement positive requise");
+    if(height <= 0)
+        throw StarlightException("Hauteur strictement positive requise");
 }
 
 std::vector<Point> Rectangle::getIntersectionPoints(const Line & line) const

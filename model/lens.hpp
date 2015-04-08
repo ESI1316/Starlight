@@ -2,8 +2,8 @@
 #define LENS_H
 
 #include <ostream>
-//#include "model/point.hpp"
 #include "model/element.hpp"
+#include "model/rectangle.hpp"
 
 /**
  * Cette classe modélise les lentilles utilisées dans le jeu.
@@ -15,12 +15,10 @@
  * aucune modification. Sinon, la lentille se comporte comme un
  * mur.
  */
-class Lens : public Element
+class Lens : public Element, public Rectangle
 {
-    Point position;
 
-    int width;
-    int height;
+private :
 
     int wlMin;
     int wlMax;
@@ -52,20 +50,6 @@ class Lens : public Element
      * modélisant la lentille.
      */
     const Point & getPosition() const;
-
-    /**
-     * Retourne la largeur du rectangle circonscrit à la lentille.
-     *
-     * @return La largeur du rectangle circonscrit à la lentille.
-     */
-    int getWidth() const;
-
-    /**
-     * Retourne la hauteur de la lentille.
-     *
-     * @return La hauteur du rectangle circonscrit à la lentille.
-     */
-    int getHeight() const;
 
     /**
      * Retourne la longueur d'onde minimale des rayons autorisés à franchir la

@@ -3,13 +3,8 @@
 #include "model/starlightexception.hpp"
 
 Lens::Lens(const Point & position, const int width, const int height, const int wlMin, const int wlMax)
-    : Element(), position {position}, width{width}, height{height},
-      wlMin{wlMin}, wlMax{wlMax}
+    : Element(), Rectangle(width, height, position), wlMin{wlMin}, wlMax{wlMax}
 {
-    if(width <= 0)
-        throw StarlightException("Largeur strictement positive requise");
-    if(height <= 0)
-        throw StarlightException("Hauteur strictement positive requise");
     if(wlMin < Ray::WL_MIN)
         throw StarlightException("Longueur d'onde minimale non nulle req.");
     if(wlMax < Ray::WL_MAX)
@@ -20,17 +15,7 @@ Lens::Lens(const Point & position, const int width, const int height, const int 
 
 const Point & Lens::getPosition() const
 {
-    return this->position;
-}
-
-int Lens::getWidth() const
-{
-    return this->width;
-}
-
-int Lens::getHeight() const
-{
-    return this->height;
+    return this->upLeftCorner;
 }
 
 int Lens::getMinWaveLength() const
@@ -57,11 +42,9 @@ Point * Lens::includeRay(const Ray & ray) const
 
 bool Lens::operator==(const Lens & lens) const
 {
-    return this->position == lens.position
-            && this->width == lens.width
-            && this->height == lens.height
-            && this->wlMin == lens.wlMin
+    return this->wlMin == lens.wlMin
             && this->wlMax == lens.wlMax
+            && Rectangle::operator ==(lens)
             && Element::operator ==(lens);
 }
 

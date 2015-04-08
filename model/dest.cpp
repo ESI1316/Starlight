@@ -3,17 +3,17 @@
 #include "model/starlightexception.hpp"
 
 Dest::Dest(const Point & position, const int edge)
-    : Element(), Rectangle(edge, edge, position), position{position}, edge{edge}, light{false}
+    : Element(), Rectangle(edge, edge, position), light{false}
 {}
 
 const Point & Dest::getPosition() const
 {
-    return this->position;
+    return this->upLeftCorner;
 }
 
 int Dest::getEdge() const
 {
-    return this->edge;
+    return this->height;
 }
 
 bool Dest::isLightedUp() const
@@ -38,9 +38,8 @@ Point * Dest::includeRay(const Ray & ray) const
 
 bool Dest::operator==(const Dest & dest) const
 {
-    return this->position == dest.position
-            && this->edge == dest.edge
-            && this->light == dest.light
+    return this->light == dest.light
+            && Rectangle::operator ==(dest)
             && Element::operator==(dest);
 }
 

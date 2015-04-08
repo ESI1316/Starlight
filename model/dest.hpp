@@ -12,8 +12,9 @@
  */
 class Dest : public Element, public Rectangle
 {
-    Point position;
-    int edge;
+
+private :
+
     bool light;
 
 public:

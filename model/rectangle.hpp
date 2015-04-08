@@ -9,7 +9,8 @@
 
 class Rectangle
 {
-private:
+
+protected:
 
     int width;
     int height;
@@ -62,14 +63,14 @@ public:
      *
      * @return La longueur du rectangle.
      */
-    int getWidth() const;
+    virtual int getWidth() const;
 
     /**
      * Permet d'obtenir la hauteur du rectangle.
      *
      * @return La hauteur du rectangle.
      */
-    int getHeight() const;
+    virtual int getHeight() const;
 
     /**
      * Permet d'obtenir les coordonnées du coté supérieur du rectangle.
