@@ -31,16 +31,12 @@ Point * Wall::includeRay(const Ray & ray) const
 
     if(intersection != 0)
     {
-        double minX = this->start.getX() < this->end.getX()
-                ? this->start.getX() : this->end.getX();
-        double minY = this->start.getY() < this->end.getY()
-                ? this->start.getY() : this->end.getY();
-        double maxX = this->start.getX() > this->end.getX()
-                ? this->start.getX() : this->end.getX();
-        double maxY = this->start.getX() > this->end.getX()
-                ? this->start.getX() : this->end.getY();
+        double minX = std::min(this->start.getX(), this->end.getX());
+        double minY = std::min(this->start.getY(), this->end.getY());
+        double maxX = std::max(this->start.getX(), this->end.getX());
+        double maxY = std::max(this->start.getY(), this->end.getY());
 
-        if(intersection->getX() < minX || intersection->getX > maxX
+        if(intersection->getX() < minX || intersection->getX() > maxX
                 || intersection->getY() < minY || intersection->getY() > maxY)
         {
             delete intersection;
