@@ -9,16 +9,26 @@
 
 /**
  * Représente une droite sous la forme de son équation complète;
- * y = slope * x + indepTerm.
+ * \f$ eq \equiv y = slope \cdot x + indepTerm \f$.
  */
 class Line
 {
 private:
 
-    double indepTerm;
+    /**
+     * @brief slope Valeur du coefficiant angulaire de la droite.
+     */
     double slope;
 
-    double xValue; //Contient la valeur de x lorsque la droite est verticale.
+    /**
+     * @brief indepTerm Contient la valeur du terme indépendant de la droite.
+     */
+    double indepTerm;
+
+    /**
+     * @brief xValue Contient la valeur de x lorsque la droite est verticale.
+     */
+    double xValue;
 
 public:
 
@@ -29,7 +39,7 @@ public:
      * @param indepTerm Terme indépendant de la droite.
      * @param xValue Valeur de x si la droite est verticale.
      */
-    Line(double, double, double);
+    Line(double, double, double = 0);
 
     /**
      * Permet d'obtenir le point d'intersection entre la droite et celle entrée
@@ -67,11 +77,21 @@ public:
     double getIndepTerm() const;
 
     /**
+     * Permet de connaitre la valeur de x, cette valeur est incohérence si
+     * la droite n'est pas verticale.
+     *
+     * @return La valeur de x si la droite est verticale.
+     */
+    double getXValue() const;
+
+    /**
      * Renseigne si la droite est verticale.
      *
      * @return true Si la droite est verticale.
      */
     bool isVertical() const;
 };
+
+std::ostream & operator<<(std::ostream &, const Line &);
 
 #endif // LINE_H

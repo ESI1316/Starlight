@@ -1,6 +1,6 @@
 #include "model/line.hpp"
 
-Line::Line(double slope, double indepTerm, double xValue = 0)
+Line::Line(double slope, double indepTerm, double xValue)
     : slope{slope}, indepTerm{indepTerm}, xValue{xValue} {}
 
 Point * Line::getIntersectionPoint(const Line & line) const
@@ -38,7 +38,29 @@ double Line::getIndepTerm() const
     return this->indepTerm;
 }
 
+double Line::getXValue() const
+{
+    return this->xValue;
+}
+
 bool Line::isVertical() const
 {
     return std::isinf(this->slope);
+}
+
+std::ostream & operator<<(std::ostream & out, const Line & line)
+{
+    out << "Equation de la droite ≡ ";
+
+    if(line.isVertical())
+    {
+        out << "x = " << line.getXValue();
+    }
+    else
+    {
+        out << "y = "
+            << line.getSlope() << "x + "
+            << line.getIndepTerm();
+    }
+    return out;
 }

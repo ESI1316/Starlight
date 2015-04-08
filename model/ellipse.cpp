@@ -2,7 +2,7 @@
 
 Ellipse::Ellipse(int xRadius, int yRadius) : xRadius{xRadius}, yRadius{yRadius} {}
 
-int Ellipse::getYRadius() const
+int Ellipse::getXRadius() const
 {
     return this->xRadius;
 }

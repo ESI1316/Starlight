@@ -2,6 +2,7 @@
 #define RECTANGLE_H
 
 #include <vector>
+#include <ostream>
 
 #include "model/line.hpp"
 #include "model/point.hpp"
@@ -54,7 +55,7 @@ public:
      *
      * @return Les côtés du rectangle sous forme de droites.
      */
-    const std::vector<Line> getEdges() const;
+    std::vector<Line> getEdges() const;
 
     /**
      * Permet d'obtenir la longueur du rectangle.
@@ -78,4 +79,5 @@ public:
     Point getUpLeftCorner() const;
 };
 
+std::ostream & operator<<(std::ostream, const Rectangle &);
 #endif // RECTANGLE_H
