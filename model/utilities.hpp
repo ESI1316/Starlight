@@ -110,5 +110,7 @@ namespace utilities
      * souhaitée.
      */
     bool equals(const double, const double, const double = utilities::EPSILON);
+
+    double slopeFromPoints(const Point &, const Point &);
 }
 #endif // UTILITIES

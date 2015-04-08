@@ -4,8 +4,8 @@
 
 Wall::Wall(const Point & start, const Point & end)
     : Element(),
-      Line((end.getY() - start.getY()) / (end.getX() - start.getX()),
-           (start.getY() - (this->slope * start.getX())),
+      Line(utilities::slopeFromPoints(start, end),
+           (start.getY() - (utilities::slopeFromPoints(start, end) * start.getX())),
            (utilities::equals(start.getX(), end.getX())) ? start.getX() : 0.),
       start{start}, end{end}
 {
