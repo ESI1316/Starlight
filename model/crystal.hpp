@@ -3,6 +3,7 @@
 
 #include <ostream>
 #include "model/element.hpp"
+#include "model/ellipse.hpp"
 #include "utilities.hpp"
 
 /**
@@ -15,7 +16,7 @@
  * longueur d'onde (en l'augmentant ou en la diminuant d'une
  * certaine valeur) mais pas sa trajectoire.
  */
-class Crystal : public Element
+class Crystal : public Element, public Ellipse
 {
 private :
 

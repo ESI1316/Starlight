@@ -3,13 +3,14 @@
 
 #include <ostream>
 #include "model/element.hpp"
+#include "model/rectangle.hpp"
 
 /**
  * Cette classe modélise la destination utilisée dans le jeu.
  * Une destination est un objet carré qui, quand traversé par
  * un rayon lumineux, fait remporter la partie au joueur.
  */
-class Dest : public Element
+class Dest : public Element, public Rectangle
 {
     Point position;
     int edge;

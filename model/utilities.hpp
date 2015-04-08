@@ -85,9 +85,9 @@ namespace utilities
      * Permet de trouver l'angle en degré, entre 0 et 360, d'un angle en radian.
      * Le calcul permet d'encadrer les cas où
      * <ul>
-     * <li>alpha < 0</li>
-     * <li>alpha >= 2\pi</li>
-     * <li>0 <= alpha < 2\pi</li>
+     * <li>\f$\alpha < 0\f$</li>
+     * <li>\f$\alpha \geq 2\pi\f$</li>
+     * <li>\f$0 \leq \alpha < 2\pi\f$</li>
      * </ul>
      *
      * @param alpha Un angle en radian.

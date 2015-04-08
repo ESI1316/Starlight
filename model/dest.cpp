@@ -1,14 +1,10 @@
 #include "model/dest.hpp"
-#include "model/starlightexception.hpp"
 #include "model/level.hpp"
+#include "model/starlightexception.hpp"
 
 Dest::Dest(const Point & position, const int edge)
-    : Element(), position{position}, edge{edge}, light{false}
-{
-    if(edge <= 0) throw StarlightException("Cotés de la destinations "
-                                           "doivent être strictement "
-                                           "positifs.");
-}
+    : Element(), Rectangle(edge, edge, position), position{position}, edge{edge}, light{false}
+{}
 
 const Point & Dest::getPosition() const
 {

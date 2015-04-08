@@ -1,4 +1,5 @@
 #include "model/rectangle.hpp"
+#include "model/starlightexception.hpp"
 
 Rectangle::Rectangle(int width, int height, const Point & upLeftCorner)
     : width{width}, height{height}, upLeftCorner{upLeftCorner},
@@ -7,6 +8,9 @@ Rectangle::Rectangle(int width, int height, const Point & upLeftCorner)
             {Line{0., upLeftCorner.getY() + height}},
             {Line{1./0., 0, upLeftCorner.getX() + width}}}
 {
+    if(width <= 0 || height <= 0) throw StarlightException("Cotés de la destinations "
+                                                           "doivent être strictement "
+                                                           "positifs.");
 }
 
 std::vector<Point> Rectangle::getIntersectionPoints(const Line & line) const
@@ -14,7 +18,7 @@ std::vector<Point> Rectangle::getIntersectionPoints(const Line & line) const
     std::vector<Point> intersecs{};
     Point * p;
 
-    for (unsigned i = 0; i < this->edges.size() && intersecs.size() <=2 ; i++)
+    for (unsigned i = 0; i < this->edges.size() && intersecs.size() <= 2 ; i++)
     {
         if ((p = edges.at(i).getIntersectionPoint(line)) && this->isOnBorder(*p))
             intersecs.push_back(*p);
@@ -25,14 +29,14 @@ std::vector<Point> Rectangle::getIntersectionPoints(const Line & line) const
 
 bool Rectangle::isOnBorder(const Point & point) const
 {
-    bool commonX = (point.getX() == this->upLeftCorner.getX()) ||
-                   (point.getX() == (this->upLeftCorner.getX() + this->width));
-    bool commonY = (point.getY() == this->upLeftCorner.getY()) ||
-                   (point.getY() == (this->upLeftCorner.getY() + this->height));
+    bool commonX = (utilities::equals(point.getX(), this->upLeftCorner.getX())) ||
+                    (utilities::equals(point.getX(), this->upLeftCorner.getX() + this->width));
+    bool commonY = (utilities::equals(point.getY(), this->upLeftCorner.getY())) ||
+                    (utilities::equals(point.getY(), this->upLeftCorner.getY() + this->height));
     bool xInLimits = (point.getX() >= this->upLeftCorner.getX()) &&
-                     (point.getX() <= (this->upLeftCorner.getX() + this->width));
+            (point.getX() <= (this->upLeftCorner.getX() + this->width));
     bool yInLimits = (point.getY() >= this->upLeftCorner.getY()) &&
-                     (point.getY() <= (this->upLeftCorner.getY() + this->height));
+            (point.getY() <= (this->upLeftCorner.getY() + this->height));
 
     return (commonX && yInLimits) || (commonY && xInLimits);
 }
