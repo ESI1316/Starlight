@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include "model/point.hpp"
+#include "model/line.hpp"
 
 
 /**
@@ -10,14 +11,14 @@
  * Un rayon lumineux est un segment de droite muni d'une longueur
  * d'onde.
  */
-class Ray
+class Ray : public Line
 {
+
+protected:
+
     Point start;
     Point end;
     int waveLength{Ray::WL_DFT};
-    bool vertical;
-    double slope;
-    double indTerm;
 
   public:
 
@@ -26,21 +27,21 @@ class Ray
      * valeur correspond à la longueur d'onde minimum (en nm) du
      * spectre visible de la lumière.
      */
-    static const int WL_MIN {360};
+    static const int WL_MIN{360};
 
     /**
      * Longueur d'onde maximum autorisée pour un rayon lumineux. Cette
      * valeur correspond à la longueur d'onde maximum (en nm) du
      * spectre visible de la lumière.
      */
-    static const int WL_MAX {830};
+    static const int WL_MAX{830};
 
     /**
      * Longueur d'onde par défaut pour un rayon lumineux. Cette
      * valeur correspond à la longueur d'onde (en nm) de la couleur
      * orangé-rouge du spectre visible de la lumière.
      */
-    static const int WL_DFT {600};
+    static const int WL_DFT{600};
 
     /**
      * Créer un nouveau rayon tel une demi droite possèdant un point,
@@ -67,26 +68,6 @@ class Ray
      * @return la longueur d'onde du rayon.
      */
     int getWaveLength() const;
-
-    /**
-     * Cette méthode permet d'obtenir le coefficiant angulaire de la droite du
-     * rayon.
-     *
-     * @return Le coefficiant angulaire du rayon.
-     */
-    double getSlope() const;
-
-    /**
-     * Cette méthode permet d'obtenir le terme indépendant de la droite du rayon.
-     *
-     * @return Le terme indépendant de la droite du rayon.
-     */
-    double getIndTerm() const;
-
-    /**
-     * Cette méthode permet de modifier le terme indépendant de la droite du rayon.
-     */
-    void setIndTerm(const double);
 
     /**
      * Change la coordonnée du début du rayon.

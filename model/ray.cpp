@@ -3,20 +3,12 @@
 #include "model/level.hpp"
 #include "model/starlightexception.hpp"
 
-// réservation des attributs statiques
-const int Ray::WL_MIN;
-const int Ray::WL_MAX;
-const int Ray::WL_DFT;
-
-Ray::Ray(const Point start, double slope, int waveLength)
-    :start{start}, end{start}, waveLength{waveLength}, vertical{slope == 90.},
-      slope{slope}, indTerm{0.}
+Ray::Ray(const Point start, double alpha, int waveLength)
+    :Line(std::tan(alpha), start.getY() - (this->slope * start.getX())),
+      start{start}, end{start}, waveLength{waveLength}
 {
     if (waveLength < Ray::WL_MIN || waveLength > Ray::WL_MAX)
         throw StarlightException("Longueur d'onde doit être comprise entre");
-
-    if(!vertical)
-        this->indTerm = (start.getY() - (this->slope * start.getX()));
 }
 
 const Point & Ray::getStart() const
@@ -55,33 +47,12 @@ bool Ray::setWaveLength(const int waveLength)
     return match;
 }
 
-bool Ray::isVertical() const
-{
-    return this->isVertical();
-}
-
-double Ray::getSlope() const
-{
-    return this->slope;
-}
-
-void Ray::setIndTerm(const double indTerm)
-{
-    this->indTerm = indTerm;
-}
-
-double Ray::getIndTerm() const
-{
-    return this->indTerm;
-}
-
 bool Ray::operator==(const Ray & ray) const
 {
     return this->start == ray.start
             && this->end == ray.end
             && this->waveLength == ray.waveLength
-            && utilities::equals(this->slope, ray.slope)
-            && utilities::equals(this->indTerm, ray.indTerm);
+            && Line::operator ==(ray);
 }
 
 bool Ray::operator!=(const Ray & ray) const

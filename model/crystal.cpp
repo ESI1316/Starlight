@@ -36,6 +36,7 @@ void Crystal::reactToRay(Ray & ray)
 
 Point * Crystal::includeRay(const Ray & ray) const
 {
+    /*
     Point * intersec1, * intersec2, * ret = nullptr;
     bool thereIsIntersec = utilities::intersecPointsLineCircle
             (ray.getSlope(), ray.getIndTerm(), this->center, this->radius,
@@ -46,6 +47,7 @@ Point * Crystal::includeRay(const Ray & ray) const
                     intersec1 : intersec2;
 
     return ret;
+    */
 }
 
 bool Crystal::operator==(const Crystal & crystal) const

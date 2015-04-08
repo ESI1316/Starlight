@@ -105,6 +105,7 @@ bool Mirror::checkPivotRange(const Point & point) const
 
 void Mirror::reactToRay(Ray & ray)
 {
+    /*
     Point point = ray.getEnd();
     double alpha = std::abs(std::fmod(
                                 -utilities::PI
@@ -116,6 +117,7 @@ void Mirror::reactToRay(Ray & ray)
     newRay.setIndTerm(point.getY() - (newRay.getSlope() * point.getX()));
 
     this->getLevel()->computeRay(newRay);
+    */
 }
 
 Point * Mirror::includeRay(const Ray &) const

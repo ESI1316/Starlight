@@ -13,7 +13,8 @@
  */
 class Line
 {
-private:
+
+protected:
 
     /**
      * @brief slope Valeur du coefficiant angulaire de la droite.
@@ -67,14 +68,14 @@ public:
      *
      * @return La pente de la droite.
      */
-    double getSlope() const;
+    virtual double getSlope() const;
 
     /**
      * Permet d'obtenir le terme indépendant.
      *
      * @return Le terme indépendant.
      */
-    double getIndepTerm() const;
+    virtual double getIndepTerm() const;
 
     /**
      * Permet de connaitre la valeur de x, cette valeur est incohérence si
@@ -89,7 +90,7 @@ public:
      *
      * @return true Si la droite est verticale.
      */
-    bool isVertical() const;
+    virtual bool isVertical() const;
 
     /**
      * Permet de savoir si deux lignes sont identiques.

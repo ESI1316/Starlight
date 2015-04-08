@@ -31,9 +31,9 @@ Point * Wall::includeRay(const Ray & ray) const
             / (this->getStart().getY() - this->getEnd().getY());
     double ind = this->getStart().getY() - (slopeWall * this->getStart().getX());
 
-    if(slopeWall != ray.getSlope() || ind == ray.getIndTerm())
+    if(slopeWall != ray.getSlope() || ind == ray.getIndepTerm())
     {
-        double x = (ind - ray.getIndTerm()) / (ray.getSlope() - slopeWall);
+        double x = (ind - ray.getIndepTerm()) / (ray.getSlope() - slopeWall);
         double y = slopeWall * x + ind;
 
         p = new Point{x, y};
