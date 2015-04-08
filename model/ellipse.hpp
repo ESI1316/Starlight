@@ -8,7 +8,7 @@
 
 /**
  * Représente un cercle sous la forme;
- * x²/xRadius² + y²/yRadius² = 1;
+ * \f$ circle \equiv x^2/xRadius^2 + y^2/yRadius^2 = 1 \f$
  */
 class Ellipse
 {
