@@ -41,24 +41,6 @@ namespace utilities
     const double EPSILON{10E-7};
 
     /**
-     * Permet d'obtenir les points d'intersection entre une droite (déterminée
-     * par sa pente et le terme indépendant de son équation) et un cercle
-     * (déterminé par son son centre (un point) et son rayon).
-     *
-     * @param slope Pente de la droite.
-     * @param indepTerm Terme indépendant de l'équation de la droite.
-     * @param circleCenter Centre du cercle.
-     * @param radius Rayon du cercle.
-     * @param intersec1 Pointeur vers le conteneur du point du premier point d'
-     * intersection (non utilisé s'il n'existe pas d' intersection).
-     * @param intersec2 Pointeur vers le conteneur du point du deuxième point d'
-     * intersection (non utilisé s'il n'existe pas d' intersection).
-     *
-     * @return true s'il existe une intersection.
-     */
-    bool intersecPointsLineCircle(const double, const int, const Point &,
-                                  const int, Point *, Point *);
-    /**
      * Permet de trouver les racines (si elles existe) d'une fonction du
      * deuxième degré de forme \f$ax² + bx + c\f$
      *

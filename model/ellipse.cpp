@@ -3,24 +3,30 @@
 Ellipse::Ellipse(double xRadius, double yRadius, const Point & center)
     : xRadius{xRadius}, yRadius{yRadius}, center{center} {}
 
+std::vector<Point> getIntersections(const Line & line) const
+{
+    double x1, y1, x2, y2;
+    std::vector<Point> intersecs;
+    bool thereIsintersec = thereIsintersec = line.isVertical() ?
+                utilities::secondDegreeEquationSolver()
+              : utilities::secondDegreeEquationSolver();
+
+    if (thereIsIntersec)
+    {
+        intersecs.push_back(Point{x1, y1});
+    }
+
+    return intersecs;
+}
+
 double Ellipse::getXRadius() const
 {
     return this->xRadius;
 }
 
-double Ellipse::getHeight() const
-{
-    return this->getXRadius() * 2.;
-}
-
 double Ellipse::getYRadius() const
 {
     return this->yRadius;
-}
-
-double Ellipse::getWidth() const
-{
-    return this->getYRadius() * 2.;
 }
 
 Point Ellipse::getCenter() const

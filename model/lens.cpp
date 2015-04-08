@@ -15,6 +15,7 @@ Lens::Lens(const Point & upLeftCorner, const int width, const int height, const 
 
 const Point & Lens::getPosition() const
 {
+    return this->upLeftCorner;
 }
 
 int Lens::getMinWaveLength() const

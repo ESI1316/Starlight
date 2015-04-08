@@ -33,7 +33,17 @@ void Dest::reactToRay(Ray &)
 
 Point * Dest::includeRay(const Ray & ray) const
 {
-    throw StarlightException("Not implemented yet");
+    Point * intersec = 0;
+    std::vector<Point> p = this->getIntersectionPoints(ray);
+
+    if (p.size() > 0)
+    {
+        intersec =
+            ray.getStart().distanceFrom(p[0]) > ray.getStart().distanceFrom(p[1]) ?
+                new Point{p[0]} : new Point{p[1]};
+    }
+
+    return intersec;
 }
 
 bool Dest::operator==(const Dest & dest) const
