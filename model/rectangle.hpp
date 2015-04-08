@@ -92,6 +92,12 @@ public:
      * @return <code>true</code> Si les deux rectangles sont différents.
      */
     bool operator!=(const Rectangle &) const;
+
+    /**
+     * @brief operator =
+     * @return
+     */
+    Rectangle & operator=(const Rectangle &);
 };
 
 /**

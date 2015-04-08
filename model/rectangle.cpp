@@ -74,6 +74,14 @@ bool Rectangle::operator !=(const Rectangle & rectangle) const
     return !(*this == rectangle);
 }
 
+Rectangle & Rectangle::operator =(const Rectangle & rectangle)
+{
+    this->width = rectangle.width;
+    this->height = rectangle.height;
+    this->upLeftCorner = rectangle.upLeftCorner;
+    this->edges = rectangle.edges;
+}
+
 std::ostream & operator<<(std::ostream & out, const Rectangle & rectangle)
 {
     out << "------" << std::endl

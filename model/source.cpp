@@ -4,16 +4,14 @@
 #include "model/utilities.hpp"
 
 Source::Source(const Point & position, const int edge, const double alpha, const int waveLength)
-    : position{position}, edge{edge}, alpha{alpha}, waveLength {waveLength}
+    : Rectangle(edge, edge, position), alpha{alpha}, waveLength {waveLength}
 {
-    //if (edge <= 0)
-    //    throw StarlightException("La longueur du coté doit être strict. positif");
     // TODO : valider wavelength
 }
 
 const Point & Source::getPosition() const
 {
-    return this->position;
+    return this->upLeftCorner;
 }
 
 double Source::getAngle() const
@@ -23,7 +21,7 @@ double Source::getAngle() const
 
 int Source::getEdge() const
 {
-    return this->edge;
+    return this->width;
 }
 
 int Source::getWaveLength() const
@@ -44,10 +42,9 @@ void Source::setOn(const bool on)
 bool Source::operator==(const Source & source) const
 {
     return this->on == source.on
-            && this->position == source.position
-            && this->edge == source.edge
+            && this->waveLength == source.waveLength
             && utilities::equals(this->alpha, source.alpha)
-            && this->waveLength == source.waveLength;
+            && Rectangle::operator ==(source);
 }
 
 bool Source::operator!=(const Source & source) const
@@ -58,10 +55,9 @@ bool Source::operator!=(const Source & source) const
 Source & Source::operator =(const Source & source)
 {
     this->on = source.on;
-    this->position = source.position;
-    this->edge = source.edge;
     this->alpha = source.alpha;
     this->waveLength = source.waveLength;
+    Rectangle::operator =(source);
 
     return *this;
 }

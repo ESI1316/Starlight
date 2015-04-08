@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include "model/point.hpp"
+#include "model/rectangle.hpp"
 
 /**
  * Modélise la source lumineuse utilisée dans le jeu.
@@ -12,22 +13,12 @@
  * Le rayon lumineux est émis depuis la position, i.e., le coin
  * supérieur gauche, de la source.
  */
-class Source
+class Source : public Rectangle
 {
     /**
      * Etat d'émission de la source.
      */
     bool on {false};
-
-    /**
-     * La position cartésienne du coin supérieur gauche de la source.
-     */
-    Point position;
-
-    /**
-     * La longueur du coté du carré représentant la source.
-     */
-    int edge;
 
     /**
      * L'angle, en radian, d'émission de la source lumineuse.
