@@ -15,11 +15,12 @@
  * aucune modification. Sinon, la lentille se comporte comme un
  * mur.
  */
-class Lens : public Element, public Ellipse
+class Lens : public Element
 {
 
 private :
 
+    Point upLeftCorner;
     int wlMin;
     int wlMax;
 

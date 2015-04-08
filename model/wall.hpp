@@ -2,14 +2,13 @@
 #define WALL_H
 
 #include <ostream>
-//#include "model/point.hpp"
 #include "model/element.hpp"
 
 /**
  * Cette classe modélise les murs utilisés dans le jeu. Les murs sont des
  * segments de droite qui ne réfléchissent pas la lumière.
  */
-class Wall : public Element
+class Wall : public Element, public Line
 {
     Point start;
     Point end;

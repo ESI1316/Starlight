@@ -3,7 +3,11 @@
 #include "model/starlightexception.hpp"
 
 Wall::Wall(const Point & start, const Point & end)
-    : Element(), start{start}, end{end}
+    : Element(),
+      Line((end.getY() - start.getY()) / (end.getX() - start.getX()),
+           (start.getY() - (this->slope * start.getX())),
+           0),
+      start{start}, end{end}
 {
     if (start == end)
         throw StarlightException("Les points ne peuvent être confondus");
