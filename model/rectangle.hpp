@@ -93,5 +93,12 @@ public:
     bool operator!=(const Rectangle &) const;
 };
 
+/**
+ * Définition, externe, de l'opérateur permettant de produire un affichage
+ * formaté.
+ *
+ * @return Le ostream rempli de la chaine formatée représentant le Rectangle en
+ * paramètre.
+ */
 std::ostream & operator<<(std::ostream, const Rectangle &);
 #endif // RECTANGLE_H
