@@ -53,9 +53,9 @@ HEADERS  += mainwindow.hpp \
     model/source.hpp \
     model/wall.hpp \
     model/utilities.hpp \
-    model/line.h \
-    model/rectangle.h \
-    model/ellipse.h
+    model/ellipse.hpp \
+    model/rectangle.hpp \
+    model/line.hpp
 
 FORMS    += mainwindow.ui
 
