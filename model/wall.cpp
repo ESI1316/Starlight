@@ -6,7 +6,7 @@ Wall::Wall(const Point & start, const Point & end)
     : Element(),
       Line((end.getY() - start.getY()) / (end.getX() - start.getX()),
            (start.getY() - (this->slope * start.getX())),
-           0),
+           (utilities::equals(start.getX(), end.getX())) ? start.getX() : 0.),
       start{start}, end{end}
 {
     if (start == end)
@@ -27,23 +27,28 @@ void Wall::reactToRay(Ray & ray) {}
 
 Point * Wall::includeRay(const Ray & ray) const
 {
-    Point * p = nullptr;
-    double startx = this->getStart().getX();
-    double starty = this->getStart().getY();
+    Point * intersection = Line::getIntersectionPoint(ray);
 
-    double slopeWall = (this->getStart().getX() - this->getEnd().getX())
-            / (this->getStart().getY() - this->getEnd().getY());
-    double ind = this->getStart().getY() - (slopeWall * this->getStart().getX());
-
-    if(slopeWall != ray.getSlope() || ind == ray.getIndepTerm())
+    if(intersection != 0)
     {
-        double x = (ind - ray.getIndepTerm()) / (ray.getSlope() - slopeWall);
-        double y = slopeWall * x + ind;
+        double minX = this->start.getX() < this->end.getX()
+                ? this->start.getX() : this->end.getX();
+        double minY = this->start.getY() < this->end.getY()
+                ? this->start.getY() : this->end.getY();
+        double maxX = this->start.getX() > this->end.getX()
+                ? this->start.getX() : this->end.getX();
+        double maxY = this->start.getX() > this->end.getX()
+                ? this->start.getX() : this->end.getY();
 
-        p = new Point{x, y};
+        if(intersection->getX() < minX || intersection->getX > maxX
+                || intersection->getY() < minY || intersection->getY() > maxY)
+        {
+            delete intersection;
+            intersection = nullptr;
+        }
     }
 
-    return p;
+    return intersection;
 }
 
 
