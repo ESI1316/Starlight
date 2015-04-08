@@ -68,14 +68,14 @@ public:
      *
      * @return La pente de la droite.
      */
-    virtual double getSlope() const;
+    double getSlope() const;
 
     /**
      * Permet d'obtenir le terme indépendant.
      *
      * @return Le terme indépendant.
      */
-    virtual double getIndepTerm() const;
+    double getIndepTerm() const;
 
     /**
      * Permet de connaitre la valeur de x, cette valeur est incohérence si
@@ -90,7 +90,7 @@ public:
      *
      * @return true Si la droite est verticale.
      */
-    virtual bool isVertical() const;
+    bool isVertical() const;
 
     /**
      * Permet de savoir si deux lignes sont identiques.
