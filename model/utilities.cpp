@@ -59,3 +59,8 @@ double utilities::slopeFromPoints(const Point & p1, const Point & p2)
 {
     return ((p2.getY() - p1.getY()) / (p2.getX() - p1.getX()));
 }
+
+bool utilities::isHalfPiPlusNPi(const double alpha)
+{
+    return utilities::equals(std::fmod(alpha, utilities::PI), utilities::PI_2);
+}

@@ -33,7 +33,14 @@ void Dest::reactToRay(Ray &)
 
 Point * Dest::includeRay(const Ray & ray) const
 {
-    throw StarlightException("Not implemented yet");
+    std::vector<Point> intersections = Rectangle::getIntersectionPoints(ray);
+
+    Point * bestIntersection = 0;
+
+    if (!intersections.empty())
+        bestIntersection = new Point{intersections.at(0).getX(), intersections.at(0).getY()};
+
+    return bestIntersection;
 }
 
 bool Dest::operator==(const Dest & dest) const

@@ -40,7 +40,7 @@ Point * Wall::includeRay(const Ray & ray) const
                 || intersection->getY() < minY || intersection->getY() > maxY)
         {
             delete intersection;
-            intersection = nullptr;
+            intersection = 0;
         }
     }
 
