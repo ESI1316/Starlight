@@ -2,7 +2,6 @@
 #define MIRROR_H
 
 #include <ostream>
-//#include "model/point.hpp"
 #include "model/element.hpp"
 
 /**
