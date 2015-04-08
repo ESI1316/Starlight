@@ -1,13 +1,35 @@
 #include "ellipse.hpp"
 
-Ellipse::Ellipse(int xRadius, int yRadius) : xRadius{xRadius}, yRadius{yRadius} {}
+Ellipse::Ellipse(double xRadius, double yRadius, const Point & center)
+    : xRadius{xRadius}, yRadius{yRadius}, center{center} {}
 
-int Ellipse::getXRadius() const
+double Ellipse::getXRadius() const
 {
     return this->xRadius;
 }
 
-int Ellipse::getYRadius() const
+double Ellipse::getHeight() const
+{
+    return this->getXRadius() * 2.;
+}
+
+double Ellipse::getYRadius() const
 {
     return this->yRadius;
+}
+
+double Ellipse::getWidth() const
+{
+    return this->getYRadius() * 2.;
+}
+
+Point Ellipse::getCenter() const
+{
+    return this->center;
+}
+
+bool Ellipse::operator ==(const Ellipse & ellipse) const
+{
+    return utilities::equals(this->xRadius, ellipse.xRadius)
+            && utilities::equals(this->yRadius, ellipse.yRadius);
 }

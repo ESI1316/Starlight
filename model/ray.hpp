@@ -96,12 +96,6 @@ protected:
     bool setWaveLength(const int);
 
     /**
-     *
-     * @return
-     */
-    bool isVertical() const;
-
-    /**
      * Permet de savoir si deux rayons sont les mêmes.
      *
      * @return <code>true</code> Si deux rayons sont les même.

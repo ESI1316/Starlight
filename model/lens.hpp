@@ -3,7 +3,7 @@
 
 #include <ostream>
 #include "model/element.hpp"
-#include "model/rectangle.hpp"
+#include "model/ellipse.hpp"
 
 /**
  * Cette classe modélise les lentilles utilisées dans le jeu.
@@ -15,7 +15,7 @@
  * aucune modification. Sinon, la lentille se comporte comme un
  * mur.
  */
-class Lens : public Element, public Rectangle
+class Lens : public Element, public Ellipse
 {
 
 private :

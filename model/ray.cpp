@@ -4,7 +4,9 @@
 #include "model/starlightexception.hpp"
 
 Ray::Ray(const Point start, double alpha, int waveLength)
-    :Line(std::tan(alpha), start.getY() - (this->slope * start.getX()), 0),
+    :Line((std::sin(alpha) / std::cos(alpha)),
+          start.getY() - (this->slope * start.getX()),
+          utilities::equals(std::fmod(alpha, utilities::PI_2), 0.) ? start.getX() : 0),
       start{start}, end{start}, waveLength{waveLength}
 {
     if (waveLength < Ray::WL_MIN || waveLength > Ray::WL_MAX)

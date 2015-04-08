@@ -2,8 +2,8 @@
 #include "model/level.hpp"
 #include "model/starlightexception.hpp"
 
-Lens::Lens(const Point & position, const int width, const int height, const int wlMin, const int wlMax)
-    : Element(), Rectangle(width, height, position), wlMin{wlMin}, wlMax{wlMax}
+Lens::Lens(const Point & center, const int width, const int height, const int wlMin, const int wlMax)
+    : Element(), Ellipse(height / 2., width / 2., center), wlMin{wlMin}, wlMax{wlMax}
 {
     if(wlMin < Ray::WL_MIN)
         throw StarlightException("Longueur d'onde minimale non nulle req.");
@@ -15,7 +15,7 @@ Lens::Lens(const Point & position, const int width, const int height, const int 
 
 const Point & Lens::getPosition() const
 {
-    return this->upLeftCorner;
+    this->center;
 }
 
 int Lens::getMinWaveLength() const
@@ -44,7 +44,7 @@ bool Lens::operator==(const Lens & lens) const
 {
     return this->wlMin == lens.wlMin
             && this->wlMax == lens.wlMax
-            && Rectangle::operator ==(lens)
+            && Ellipse::operator ==(lens)
             && Element::operator ==(lens);
 }
 
@@ -57,8 +57,8 @@ bool Lens::operator!=(const Lens & lens) const
 std::ostream & operator<<(std::ostream & out, const Lens & lens)
 {
     out << "Lens -- Position : " <<lens.getPosition()
-        << " , width : " <<lens.getWidth()
-        << " , height : " <<lens.getHeight()
+        << " , width : " << lens.getWidth()
+        << " , height : " << lens.getHeight()
         << " , Freq. Min. : " <<lens.getMinWaveLength()
         << " , Freq. Max. : " <<lens.getMaxWaveLength();
 

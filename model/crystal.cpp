@@ -5,7 +5,7 @@
 
 
 Crystal::Crystal(const Point & center, const double radius, const int amplifier)
-    : Element(), Ellipse(0, 0), center {center}, radius{radius}, amplifier {amplifier}
+    : Element(), Ellipse(radius, radius, center), center {center}, radius{radius}, amplifier {amplifier}
 {
     if(radius <= 0)
         throw StarlightException("Le rayon doit être strictement positif");

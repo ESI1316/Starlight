@@ -12,10 +12,12 @@
  */
 class Ellipse
 {
-private:
 
-    int xRadius;
-    int yRadius;
+protected:
+
+    Point center;
+    double xRadius;
+    double yRadius;
 
 public:
 
@@ -24,8 +26,9 @@ public:
      *
      * @param xRadius Valeur du ratio de largeur de l'ellipse.
      * @param yRadius Valeur du ratio de hauteur de l'ellipse.
+     * @parm center Point du centre de l'ellipse.
      */
-    Ellipse(int xRadius, int yRadius);
+    Ellipse(double, double, const Point &);
 
     /**
      * Permet d'obtenir les points d'intersection entre le cercle et la droite
@@ -41,14 +44,34 @@ public:
      *
      * @return La valeur du ratio de largeur de l'ellipse.
      */
-    int getXRadius() const;
+    double getXRadius() const;
+
+    /**
+     * @brief getHeight
+     * @return
+     */
+    double getHeight() const;
 
     /**
      * Permet d'obtenir la valeur du ratio de hauteur de l'ellipse.
      *
      * @return La valeur du ratio de hauteur de l'ellipse.
      */
-    int getYRadius() const;
+    double getYRadius() const;
+
+    /**
+     * @brief getWidth
+     * @return
+     */
+    double getWidth() const;
+
+    /**
+     * @brief getCenter
+     * @return
+     */
+    Point getCenter() const;
+
+    bool operator==(const Ellipse &) const;
 };
 
 #endif // ELLIPSE_H
