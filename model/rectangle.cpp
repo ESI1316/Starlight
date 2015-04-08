@@ -57,6 +57,18 @@ Point Rectangle::getUpLeftCorner() const
     return this->upLeftCorner;
 }
 
+bool Rectangle::operator ==(const Rectangle & rectangle) const
+{
+    return this->width == rectangle.width
+            && this->height == rectangle.height
+            && this->upLeftCorner == rectangle.upLeftCorner;
+}
+
+bool Rectangle::operator !=(const Rectangle & rectangle) const
+{
+    return !(*this == rectangle);
+}
+
 std::ostream & operator<<(std::ostream & out, const Rectangle & rectangle)
 {
     out << "------" << std::endl

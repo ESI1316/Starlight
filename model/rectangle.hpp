@@ -77,6 +77,20 @@ public:
      * @return Les coordonnées du coté supérieur du rectangle.
      */
     Point getUpLeftCorner() const;
+
+    /**
+     * Permet de savoir si deux rectangles sont identiques.
+     *
+     * @return <code>true</code> Si les deux rectangles sont identiques.
+     */
+    bool operator==(const Rectangle &) const;
+
+    /**
+     * Permet de savoir si deux rectangles sont différents.
+     *
+     * @return <code>true</code> Si les deux rectangles sont différents.
+     */
+    bool operator!=(const Rectangle &) const;
 };
 
 std::ostream & operator<<(std::ostream, const Rectangle &);

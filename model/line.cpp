@@ -48,6 +48,17 @@ bool Line::isVertical() const
     return std::isinf(this->slope);
 }
 
+bool Line::operator ==(const Line & line) const
+{
+    return utilities::equals(this->slope, line.slope)
+            && utilities::equals(this->indepTerm, line.indepTerm)
+            && utilities::equals(this->xValue, line.xValue);
+}
+
+bool Line::operator !=(const Line & line) const
+{
+    return !(*this == line);
+}
 std::ostream & operator<<(std::ostream & out, const Line & line)
 {
     out << "Equation de la droite ≡ ";
@@ -62,5 +73,6 @@ std::ostream & operator<<(std::ostream & out, const Line & line)
             << line.getSlope() << "x + "
             << line.getIndepTerm();
     }
+
     return out;
 }

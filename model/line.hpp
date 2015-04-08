@@ -90,6 +90,20 @@ public:
      * @return true Si la droite est verticale.
      */
     bool isVertical() const;
+
+    /**
+     * Permet de savoir si deux lignes sont identiques.
+     *
+     * @return <code>true</code> Si deux lignes sont identiques.
+     */
+    bool operator==(const Line &) const;
+
+    /**
+     * Permet de savoir si deux lignes sont différentes.
+     *
+     * @return <code>true</code> Si deux lignes sont différentes.
+     */
+    bool operator!=(const Line &) const;
 };
 
 std::ostream & operator<<(std::ostream &, const Line &);
