@@ -27,7 +27,7 @@ public:
      *
      * @return Le début du mur.
      */
-    const Point & getStart() const;
+    const Point &getStart() const;
 
     /**
      * Retourne la fin du mur.

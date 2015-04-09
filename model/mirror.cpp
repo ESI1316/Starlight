@@ -100,11 +100,7 @@ bool Mirror::checkAngleRange(double a) const
 
 bool Mirror::checkPivotRange(const Point & point) const
 {
-    return (xMin == 0 && xMax == 0 && yMin == 0 && yMax == 0)
-            || (xMin == 0 && xMax == 0 && point.getY() >= yMin && point.getY() <= yMax)
-            || (yMin == 0 && yMax == 0 && point.getX() >= xMin && point.getX() <= xMax)
-            || ((point.getX() >= xMin && point.getX() <= xMax)
-                && (point.getY() >= yMin && point.getY() <= yMax));
+    return true;
 }
 
 void Mirror::reactToRay(Ray & ray)
@@ -124,26 +120,9 @@ void Mirror::reactToRay(Ray & ray)
     */
 }
 
-Point * Mirror::includeRay(const Ray & ray) const
+Point * Mirror::includeRay(const Ray &) const
 {
-
-    Point * intersection;// = Line::getIntersectionPoint(ray);
-
-    if(intersection != 0)
-    {
-        double minX = 0;
-        double minY = 0;
-        double maxX = 0;
-        double maxY = 0;
-
-        if(intersection->getX())
-        {
-            delete intersection;
-            intersection = 0;
-        }
-    }
-
-    return intersection;
+    throw StarlightException("Not implemented yet");
 }
 
 bool Mirror::operator==(const Mirror & mirror) const
