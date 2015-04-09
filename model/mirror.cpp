@@ -113,7 +113,7 @@ void Mirror::reactToRay(Ray & ray)
                                 - std::atan(ray.getSlope())
                                 ,utilities::PI));
 
-    Ray newRay(point, std::tan(alpha), ray.getWaveLength());
+    Ray newRay(point, utilities::tan(alpha), ray.getWaveLength());
     newRay.setIndTerm(point.getY() - (newRay.getSlope() * point.getX()));
 
     this->getLevel()->computeRay(newRay);
