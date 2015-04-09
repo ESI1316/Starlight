@@ -16,7 +16,7 @@ Rectangle::Rectangle(int width, int height, const Point & upLeftCorner)
 
 std::vector<Point> Rectangle::getIntersectionPoints(const Line & line) const
 {
-    std::vector<Point> intersecs;
+    std::vector<Point> intersecs{};
     Point * p;
 
     for (unsigned i = 0; i < this->edges.size() && intersecs.size() <= 2 ; i++)

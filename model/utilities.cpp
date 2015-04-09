@@ -32,13 +32,3 @@ bool utilities::equals(const double nb1, const double nb2, const double epsilon)
 {
     return (std::abs(nb1 - nb2) < epsilon);
 }
-
-double utilities::slopeFromPoints(const Point & p1, const Point & p2)
-{
-    return ((p2.getY() - p1.getY()) / (p2.getX() - p1.getX()));
-}
-
-bool utilities::isHalfPiPlusNPi(const double alpha)
-{
-    return utilities::equals(std::fmod(alpha, utilities::PI), utilities::PI_2);
-}
