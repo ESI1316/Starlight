@@ -3,8 +3,8 @@
 
 #include <ostream>
 #include "model/element.hpp"
-#include "model/ellipse.hpp"
-#include "utilities.hpp"
+#include "model/geometry/ellipse.hpp"
+#include "model/geometry/utilities.hpp"
 
 /**
  * Cette classe amplifierélise les cristaux utilisés dans le jeu.

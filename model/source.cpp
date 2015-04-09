@@ -1,7 +1,7 @@
 #include "model/starlightexception.hpp"
 #include "model/source.hpp"
 #include "model/ray.hpp"
-#include "model/utilities.hpp"
+#include "model/geometry/utilities.hpp"
 
 Source::Source(const Point & position, const int edge, const double alpha, const int waveLength)
     : Rectangle(edge, edge, position), alpha{alpha}, waveLength {waveLength}

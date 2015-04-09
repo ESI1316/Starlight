@@ -1,6 +1,6 @@
 #include <cmath>
 #include <iostream>
-#include "utilities.hpp"
+#include "geometry/utilities.hpp"
 #include "model/point.hpp"
 
 Point::Point(const double x, const double y)

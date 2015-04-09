@@ -1,5 +1,5 @@
 #include <cmath>
-#include "model/utilities.hpp"
+#include "model/geometry/utilities.hpp"
 #include "model/point.hpp"
 
 bool utilities::secondDegreeEquationSolver(double a, double b, double c,

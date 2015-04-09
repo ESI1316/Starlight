@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include "model/point.hpp"
-#include "model/rectangle.hpp"
+#include "model/geometry/rectangle.hpp"
 
 /**
  * Modélise la source lumineuse utilisée dans le jeu.

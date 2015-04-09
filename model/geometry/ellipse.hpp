@@ -4,8 +4,8 @@
 #include <vector>
 
 #include "model/point.hpp"
-#include "model/line.hpp"
-#include "model/utilities.hpp"
+#include "model/geometry/line.hpp"
+#include "model/geometry/utilities.hpp"
 
 /**
  * Représente un cercle sous la forme;

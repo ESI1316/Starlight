@@ -28,19 +28,18 @@ SOURCES += main.cpp\
     model/wall.cpp \
     model/levelFactory.cpp \
     model/starlightexception.cpp \
-    test/levelfactorytest.cpp \
     model/element.cpp \
+    test/levelfactorytest.cpp \
     test/pointtest.cpp \
-    model/utilities.cpp \
     test/crystaltest.cpp \
-    model/line.cpp \
-    model/rectangle.cpp \
-    model/ellipse.cpp \
     test/rectangletest.cpp \
-    test/linetest.cpp
+    test/linetest.cpp \
+    model/geometry/utilities.cpp \
+    model/geometry/rectangle.cpp \
+    model/geometry/line.cpp \
+    model/geometry/ellipse.cpp
 
 HEADERS  += mainwindow.hpp \
-    test/catch.hpp \
     model/starlightexception.hpp \
     model/element.hpp \
     model/crystal.hpp \
@@ -55,9 +54,11 @@ HEADERS  += mainwindow.hpp \
     model/source.hpp \
     model/wall.hpp \
     model/utilities.hpp \
-    model/ellipse.hpp \
-    model/rectangle.hpp \
-    model/line.hpp
+    test/catch.hpp \
+    model/geometry/utilities.hpp \
+    model/geometry/rectangle.hpp \
+    model/geometry/line.hpp \
+    model/geometry/ellipse.hpp
 
 FORMS    += mainwindow.ui
 

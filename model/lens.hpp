@@ -3,7 +3,7 @@
 
 #include <ostream>
 #include "model/element.hpp"
-#include "model/ellipse.hpp"
+#include "model/geometry/ellipse.hpp"
 
 /**
  * Cette classe modélise les lentilles utilisées dans le jeu.

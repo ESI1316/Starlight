@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include "model/point.hpp"
-#include "model/line.hpp"
+#include "model/geometry/line.hpp"
 
 
 /**

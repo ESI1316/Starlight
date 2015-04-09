@@ -3,7 +3,7 @@
 
 #include <ostream>
 #include "model/element.hpp"
-#include "model/rectangle.hpp"
+#include "model/geometry/rectangle.hpp"
 
 /**
  * Cette classe modélise la destination utilisée dans le jeu.

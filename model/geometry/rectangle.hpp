@@ -4,7 +4,7 @@
 #include <vector>
 #include <ostream>
 
-#include "model/line.hpp"
+#include "model/geometry/line.hpp"
 #include "model/point.hpp"
 
 class Rectangle

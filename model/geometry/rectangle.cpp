@@ -1,4 +1,4 @@
-#include "model/rectangle.hpp"
+#include "model/geometry/rectangle.hpp"
 #include "model/starlightexception.hpp"
 
 Rectangle::Rectangle(int width, int height, const Point & upLeftCorner)

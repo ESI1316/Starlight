@@ -1,4 +1,4 @@
-#include "model/line.hpp"
+#include "model/geometry/line.hpp"
 
 Line::Line(double slope, double indepTerm, double xValue)
     : slope{slope}, indepTerm{indepTerm}, xValue{xValue} {}
