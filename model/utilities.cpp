@@ -40,7 +40,9 @@ double utilities::slopeFromPoints(const Point & p1, const Point & p2)
 
 bool utilities::isHalfPiPlusNPi(const double alpha)
 {
-    return utilities::equals(std::fmod(alpha, utilities::PI), utilities::PI_2);
+    return utilities::equals(
+                std::fmod(std::abs(alpha), utilities::PI), utilities::PI_2
+                );
 }
 
 double utilities::tan(const double alpha)

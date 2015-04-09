@@ -196,3 +196,6 @@ TEST_CASE("Intersection de droites")
         intersection = 0;
     }
 }
+
+TEST_CASE()
+{}

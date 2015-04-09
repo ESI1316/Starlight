@@ -100,7 +100,11 @@ bool Mirror::checkAngleRange(double a) const
 
 bool Mirror::checkPivotRange(const Point & point) const
 {
-    return true;
+    return (xMin == 0 && xMax == 0 && yMin == 0 && yMax == 0)
+            || (xMin == 0 && xMax == 0 && point.getY() >= yMin && point.getY() <= yMax)
+            || (yMin == 0 && yMax == 0 && point.getX() >= xMin && point.getX() <= xMax)
+            || ((point.getX() >= xMin && point.getX() <= xMax)
+                && (point.getY() >= yMin && point.getY() <= yMax));
 }
 
 void Mirror::reactToRay(Ray & ray)

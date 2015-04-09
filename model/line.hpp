@@ -92,6 +92,9 @@ public:
      */
     bool isVertical() const;
 
+    double findX(const double) const;
+    double findY(const double) const;
+
     /**
      * Permet de savoir si deux lignes sont identiques.
      *

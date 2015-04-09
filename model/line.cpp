@@ -55,6 +55,34 @@ double Line::getXValue() const
     return this->xValue;
 }
 
+double Line::findX(const double y) const
+{
+    double x;
+
+    if(this->isVertical())
+        x = this->xValue;
+    else if (utilities::equals(this->slope, 0.))
+        x = this->indepTerm;
+    else
+        x = (y - this->indepTerm) / this->slope;
+
+    return x;
+}
+
+double Line::findY(const double x) const
+{
+    double y;
+
+    if(this->isVertical())
+        y = 0;
+    else if (utilities::equals(this->slope, 0.))
+        y = this->indepTerm;
+    else
+        y = this->slope * x + this->indepTerm;
+
+    return y;
+}
+
 bool Line::isVertical() const
 {
     return std::isinf(this->slope);
