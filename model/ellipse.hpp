@@ -5,6 +5,7 @@
 
 #include "model/point.hpp"
 #include "model/line.hpp"
+#include "model/utilities.hpp"
 
 /**
  * Représente un cercle sous la forme;
@@ -12,7 +13,6 @@
  */
 class Ellipse
 {
-
 protected:
 
     Point center;
@@ -26,13 +26,16 @@ public:
      *
      * @param xRadius Valeur du ratio de largeur de l'ellipse.
      * @param yRadius Valeur du ratio de hauteur de l'ellipse.
-     * @parm center Point du centre de l'ellipse.
+     * @param center Point du centre de l'ellipse.
      */
     Ellipse(double, double, const Point &);
 
     /**
      * Permet d'obtenir les points d'intersection entre le cercle et la droite
      * entrée en paramètre.
+     *
+     * @param line droite dont on désire obtenir les points d'intersection avec
+     * l'éllipse.
      *
      * @return Un vecteur contenant les points d'intersections entre le cercle
      * et la droite entrée en paramètre.
@@ -47,12 +50,6 @@ public:
     double getXRadius() const;
 
     /**
-     * @brief getHeight
-     * @return
-     */
-    double getHeight() const;
-
-    /**
      * Permet d'obtenir la valeur du ratio de hauteur de l'ellipse.
      *
      * @return La valeur du ratio de hauteur de l'ellipse.
@@ -60,14 +57,9 @@ public:
     double getYRadius() const;
 
     /**
-     * @brief getWidth
-     * @return
-     */
-    double getWidth() const;
-
-    /**
-     * @brief getCenter
-     * @return
+     * Permet d'obtenir le centre de l'éllipse.
+     *
+     * @return Le centre de l'éllipse.
      */
     Point getCenter() const;
 
