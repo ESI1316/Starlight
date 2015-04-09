@@ -3,17 +3,12 @@
 #include "model/starlightexception.hpp"
 #include "model/level.hpp"
 
-
 Crystal::Crystal(const Point & center, const double radius, const int amplifier)
-    : Element(), Ellipse(radius, radius, center), center {center}, radius{radius}, amplifier {amplifier}
+    : Element(), Ellipse(std::pow(radius, 2), std::pow(radius, 2), center),
+      amplifier{amplifier}
 {
     if(radius <= 0)
         throw StarlightException("Le rayon doit être strictement positif");
-}
-
-const Point & Crystal::getCenter() const
-{
-    return this->center;
 }
 
 int Crystal::getAmplifier() const
@@ -23,7 +18,7 @@ int Crystal::getAmplifier() const
 
 int Crystal::getRadius() const
 {
-    return this->radius;
+    return (int) std::sqrt(this->xRadius);
 }
 
 void Crystal::reactToRay(Ray & ray)
@@ -36,24 +31,12 @@ void Crystal::reactToRay(Ray & ray)
 
 Point * Crystal::includeRay(const Ray & ray) const
 {
-    /*
-    Point * intersec1, * intersec2, * ret = nullptr;
-    bool thereIsIntersec = utilities::intersecPointsLineCircle
-            (ray.getSlope(), ray.getIndTerm(), this->center, this->radius,
-             intersec1, intersec2);
-
-    if (thereIsIntersec)
-        ret = ray.getStart().distanceFrom(*intersec1) > ray.getStart().distanceFrom(*intersec2) ?
-                    intersec1 : intersec2;
-
-    return ret;
-    */
 }
 
 bool Crystal::operator==(const Crystal & crystal) const
 {
     return this->center == crystal.center
-            && utilities::equals(this->radius, crystal.radius)
+            && utilities::equals(this->getRadius(), crystal.getRadius())
             && this->amplifier == crystal.amplifier
             && Element::operator==(crystal);
 }
@@ -68,5 +51,6 @@ std::ostream & operator<<(std::ostream & out, const Crystal & crystal)
     out << "Crystal --- Center : " << crystal.getCenter()
         << " , Radius : " << crystal.getRadius()
         << " , Modifier : " << crystal.getAmplifier();
+
     return out;
 }

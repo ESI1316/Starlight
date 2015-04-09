@@ -21,14 +21,6 @@ class Crystal : public Element, public Ellipse
 private :
 
     /**
-     * Les coordonnées cartésiennes du centre du cristal.
-     */
-    Point center;
-    /**
-     * La longueur du rayon du cercle représentant le cristal.
-     */
-    double radius;
-    /**
      * Le modificateur de longueur d'onde agissant sur un rayon passant dans ce
      * cristal.
      */
@@ -54,13 +46,6 @@ public:
      * @param amplifieur le modificateur de longueur d'onde du cristal.
      */
     Crystal(const Point &, const double, const int);
-
-    /**
-     * Retourne la coordonnée cartésienne du centre du cristal
-     *
-     * @return  la coordonnée cartésienne du centre du cristal
-     */
-    const Point & getCenter() const;
 
     /**
      * Retourne le modifieur de longueur d'onde du cristal

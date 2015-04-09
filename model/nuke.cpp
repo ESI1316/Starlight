@@ -4,7 +4,7 @@
 #include "model/starlightexception.hpp"
 
 Nuke::Nuke(const Point & position, const double radius)
-    : Element(), position{position}, radius{radius}
+    : Element(), Ellipse{std::pow(radius, 2), std::pow(radius, 2), position}
 {
     if (radius <= 0.)
         throw StarlightException("Le rayon de la bombe doit être "
@@ -13,12 +13,12 @@ Nuke::Nuke(const Point & position, const double radius)
 
 const Point &Nuke::getLocation() const
 {
-    return this->position;
+    return this->center;
 }
 
 int Nuke::getRadius() const
 {
-    return this->radius;
+    return (int) std::sqrt(this->xRadius);
 }
 
 bool Nuke::isLightedUp() const
@@ -43,8 +43,8 @@ Point * Nuke::includeRay(const Ray & ray) const
 
 bool Nuke::operator==(const Nuke & nuke) const
 {
-    return this->position == nuke.position
-            && utilities::equals(this->radius, nuke.radius)
+    return this->center == nuke.center
+            && utilities::equals(this->getRadius(), nuke.getRadius())
             && this->light == nuke.light
             && Element::operator ==(nuke);
 }

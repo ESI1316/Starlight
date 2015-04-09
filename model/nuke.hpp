@@ -2,18 +2,18 @@
 #define NUKE_H
 
 #include <ostream>
+
 #include "model/element.hpp"
 #include "model/point.hpp"
+#include "model/geometry/ellipse.hpp"
 
 /**
  * Cette classe modélise les bombes utilisées dans le jeu.
  * Une bombe est un objet circulaire qui, si illuminé par un rayon, fait
  * perdre la partie au joueur.
  */
-class Nuke : public Element
+class Nuke : public Element, public Ellipse
 {
-    Point position;
-    double radius;
     bool light {false};
 
 public:
