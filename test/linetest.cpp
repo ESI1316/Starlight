@@ -122,11 +122,13 @@ TEST_CASE("Intersection de droites")
 
         intersection = a.getIntersectionPoint(b);
         REQUIRE(*intersection == Point(0., 18.2));
-
+        delete intersection;
         intersection = 0;
 
         intersection = b.getIntersectionPoint(a);
         REQUIRE(*intersection == Point(0., 18.2));
+        delete intersection;
+        intersection = 0;
     }
 
     SECTION("Droites non confondue mais proches")
@@ -137,11 +139,13 @@ TEST_CASE("Intersection de droites")
 
         intersection = a.getIntersectionPoint(b);
         REQUIRE(*intersection == Point(0., 18.2));
-
+        delete intersection;
         intersection = 0;
 
         intersection = b.getIntersectionPoint(a);
         REQUIRE(*intersection == Point(0., 18.2));
+        delete intersection;
+        intersection = 0;
     }
 
     SECTION("Une droite verticale et une quelconque")
@@ -152,6 +156,8 @@ TEST_CASE("Intersection de droites")
 
         intersection = a.getIntersectionPoint(b);
         REQUIRE(*intersection == Point(3., 6.));
+        delete intersection;
+        intersection = 0;
     }
     SECTION("Une droite quelconque et une droite verticale")
     {
@@ -161,5 +167,32 @@ TEST_CASE("Intersection de droites")
 
         intersection = a.getIntersectionPoint(b);
         REQUIRE(*intersection == Point(3., 6.));
+        delete intersection;
+        intersection = 0;
+    }
+
+    SECTION("Droite horizontale et quelconque")
+    {
+        Line a{0., 8.44};
+        Line b{-2.9, 18.2};
+        Point * intersection = 0;
+
+        intersection = a.getIntersectionPoint(b);
+        REQUIRE(*intersection == Point(3.365517241, 8.44));
+        delete intersection;
+        intersection = 0;
+
+    }
+
+    SECTION("Droite verticale et horizontale")
+    {
+        Line a{0., 8.44};
+        Line b{1./0.,3., 18.2};
+        Point * intersection = 0;
+
+        intersection = a.getIntersectionPoint(b);
+        REQUIRE(*intersection == Point(18.2, 8.44));
+        delete intersection;
+        intersection = 0;
     }
 }
