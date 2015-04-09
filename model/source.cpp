@@ -6,7 +6,8 @@
 Source::Source(const Point & position, const int edge, const double alpha, const int waveLength)
     : Rectangle(edge, edge, position), alpha{alpha}, waveLength {waveLength}
 {
-    // TODO : valider wavelength
+    if (waveLength < Ray::WL_MIN || waveLength > Ray::WL_MAX)
+        throw StarlightException("Mauvaise longueur d'onde");
 }
 
 const Point & Source::getPosition() const

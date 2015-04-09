@@ -5,15 +5,27 @@ Line::Line(double slope, double indepTerm, double xValue)
 
 Point * Line::getIntersectionPoint(const Line & line) const
 {
-    double x, y;
     Point * intersec = 0;
 
-    if (this->slope != line.getSlope())
+    if (!utilities::equals(this->getSlope(), line.getSlope()))
     {
-        x = this->isVertical() ? this->xValue
-                               : (this->indepTerm - line.getIndepTerm()) /
-                                 (line.getSlope() - this->slope);
-        y = this->slope * x + this->getIndepTerm();
+        double x, y;
+
+        if (this->isVertical())
+        {
+            x = this->xValue;
+            y = line.slope * x + line.indepTerm;
+        }
+        else if (line.isVertical())
+        {
+            x = line.xValue;
+            y = this->slope * x + this->indepTerm;
+        }
+        else
+        {
+            x = (this->indepTerm - line.indepTerm) / (line.slope - this->slope);
+            y = this->slope * x + this->indepTerm;
+        }
 
         intersec = new Point{x, y};
     }
@@ -24,8 +36,8 @@ Point * Line::getIntersectionPoint(const Line & line) const
 bool Line::includes(const Point & point) const
 {
     return this->isVertical() ?
-                point.getX() == this->xValue
-              : point.getY() == ((this->slope * point.getX()) + this->indepTerm);
+                utilities::equals(point.getX(), this->xValue)
+              : utilities::equals(point.getY(), ((this->slope * point.getX()) + this->indepTerm));
 }
 
 double Line::getSlope() const
