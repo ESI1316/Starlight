@@ -100,5 +100,7 @@ namespace utilities
     double slopeFromPoints(const Point &, const Point &);
 
     bool isHalfPiPlusNPi(const double);
+
+    double tan(const double);
 }
 #endif // UTILITIES

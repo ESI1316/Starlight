@@ -32,7 +32,7 @@ TEST_CASE("Constructeur")
 
     SECTION("x = 3")
     {
-        Line line{1./0., 0, 3};
+        Line line{utilities::tan(utilities::PI_2), 0, 3};
         REQUIRE(line.isVertical());
     }
 
@@ -73,7 +73,7 @@ TEST_CASE("inclusion d'un point")
 
     SECTION("x = 3")
     {
-        Line line{1./0., 0, 3};
+        Line line{utilities::tan(utilities::PI_2), 0, 3};
         REQUIRE(line.includes(Point{3., 0.9}));
         REQUIRE(line.includes(Point{3., -290.9}));
         REQUIRE_FALSE(line.includes(Point{1., 1.}));
@@ -150,7 +150,7 @@ TEST_CASE("Intersection de droites")
 
     SECTION("Une droite verticale et une quelconque")
     {
-        Line a{1./0., 2, 3};
+        Line a{utilities::tan(utilities::PI_2), 2, 3};
         Line b{2., 0.};
         Point * intersection = 0;
 
@@ -162,7 +162,7 @@ TEST_CASE("Intersection de droites")
     SECTION("Une droite quelconque et une droite verticale")
     {
         Line a{2., 0.};
-        Line b{1./0., 2, 3};
+        Line b{utilities::tan(utilities::PI_2), 2, 3};
         Point * intersection = 0;
 
         intersection = a.getIntersectionPoint(b);
@@ -187,7 +187,7 @@ TEST_CASE("Intersection de droites")
     SECTION("Droite verticale et horizontale")
     {
         Line a{0., 8.44};
-        Line b{1./0.,3., 18.2};
+        Line b{utilities::tan(utilities::PI_2),3., 18.2};
         Point * intersection = 0;
 
         intersection = a.getIntersectionPoint(b);

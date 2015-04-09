@@ -42,3 +42,13 @@ bool utilities::isHalfPiPlusNPi(const double alpha)
 {
     return utilities::equals(std::fmod(alpha, utilities::PI), utilities::PI_2);
 }
+
+double utilities::tan(const double alpha)
+{
+    double tan = (1. / 0.);
+
+    if(!utilities::isHalfPiPlusNPi(alpha))
+        tan = std::tan(alpha);
+
+    return tan;
+}
