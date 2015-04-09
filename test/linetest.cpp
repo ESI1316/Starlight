@@ -153,4 +153,13 @@ TEST_CASE("Intersection de droites")
         intersection = a.getIntersectionPoint(b);
         REQUIRE(*intersection == Point(3., 6.));
     }
+    SECTION("Une droite quelconque et une droite verticale")
+    {
+        Line a{2., 0.};
+        Line b{1./0., 2, 3};
+        Point * intersection = 0;
+
+        intersection = a.getIntersectionPoint(b);
+        REQUIRE(*intersection == Point(3., 6.));
+    }
 }

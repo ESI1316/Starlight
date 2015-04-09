@@ -10,12 +10,22 @@ Point * Line::getIntersectionPoint(const Line & line) const
     if (!utilities::equals(this->getSlope(), line.getSlope()))
     {
         double x, y;
-        x = this->isVertical() ? this->xValue
-                               : (this->indepTerm - line.indepTerm) /
-                                 (line.slope - this->slope);
 
-        y = this->isVertical() ? line.slope * x + line.indepTerm
-                               : this->slope * x + this->indepTerm;
+        if (this->isVertical())
+        {
+            x = this->xValue;
+            y = line.slope * x + line.indepTerm;
+        }
+        else if (line.isVertical())
+        {
+            x = line.xValue;
+            y = this->slope * x + this->indepTerm;
+        }
+        else
+        {
+            x = (this->indepTerm - line.indepTerm) / (line.slope - this->slope);
+            y = this->slope * x + this->indepTerm;
+        }
 
         intersec = new Point{x, y};
     }
