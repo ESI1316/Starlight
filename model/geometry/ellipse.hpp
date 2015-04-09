@@ -76,7 +76,7 @@ public:
      * @return Un vecteur contenant les points d'intersections entre le cercle
      * et la droite entrée en paramètre.
      */
-    std::vector<Point> getIntersections(const Line &) const;
+    std::vector<Point> getIntersectionPoints(const Line &) const;
 
     /**
      * Permet d'obtenir la valeur du ratio de largeur de l'ellipse.

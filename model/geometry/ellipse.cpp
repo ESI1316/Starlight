@@ -3,7 +3,7 @@
 Ellipse::Ellipse(double xRadius, double yRadius, const Point & center)
     : xRadius{xRadius}, yRadius{yRadius}, center{center} {}
 
-std::vector<Point> Ellipse::getIntersections(const Line & line) const
+std::vector<Point> Ellipse::getIntersectionPoints(const Line & line) const
 {
     double x1, y1, x2, y2;
     std::vector<Point> intersecs;

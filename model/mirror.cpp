@@ -74,22 +74,12 @@ Point Mirror::getMaxPivot() const
 
 bool Mirror::setPivot(const Point & pivot)
 {
-    bool match{this->checkPivotRange(pivot)};
-
-    if (match)
-        this->pivot = pivot;
-
-    return match;
+    return this->checkPivotRange(pivot) ? this->pivot = pivot, true : false;
 }
 
 bool Mirror::setAngle(double alpha)
 {
-    bool match{this->checkAngleRange(alpha)};
-
-    if (match)
-        this->alpha = alpha;
-
-    return match;
+    return this->checkAngleRange(alpha) ? this->alpha = alpha, true : false;
 }
 
 bool Mirror::checkAngleRange(double a) const
