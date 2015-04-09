@@ -126,7 +126,8 @@ void Mirror::reactToRay(Ray & ray)
 
 Point * Mirror::includeRay(const Ray & ray) const
 {
-    Point * intersection = Line::getIntersectionPoint(ray);
+
+    Point * intersection;// = Line::getIntersectionPoint(ray);
 
     if(intersection != 0)
     {

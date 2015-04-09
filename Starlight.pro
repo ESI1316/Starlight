@@ -35,7 +35,9 @@ SOURCES += main.cpp\
     test/crystaltest.cpp \
     model/line.cpp \
     model/rectangle.cpp \
-    model/ellipse.cpp
+    model/ellipse.cpp \
+    test/rectangletest.cpp \
+    test/linetest.cpp
 
 HEADERS  += mainwindow.hpp \
     test/catch.hpp \
