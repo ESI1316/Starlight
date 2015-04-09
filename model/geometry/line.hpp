@@ -92,7 +92,26 @@ public:
      */
     bool isVertical() const;
 
+    /**
+     * Permet de résoudre l'équation de la droite à partir d'une valeur de y
+     * entrée en paramètre.
+     *
+     * @param y Valeur de y pour résoudre l"équation de la droite.
+     *
+     * @return le valeur de x après résolution de l'équation de la droite
+     * à partir d'une valeur de y entrée en paramètre.
+     */
     double findX(const double) const;
+
+    /**
+     * Permet de résoudre l'équation de la droite à partir d'une valeur de x
+     * entrée en paramètre.
+     *
+     * @param x Valeur de x pour résoudre l"équation de la droite.
+     *
+     * @return la valeur de y après résolution de l'équation de la droite
+     * à partir d'une valeur de y entrée en paramètre.
+     */
     double findY(const double) const;
 
     /**

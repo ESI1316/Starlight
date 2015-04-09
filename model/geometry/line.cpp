@@ -57,30 +57,13 @@ double Line::getXValue() const
 
 double Line::findX(const double y) const
 {
-    double x;
-
-    if(this->isVertical())
-        x = this->xValue;
-    else if (utilities::equals(this->slope, 0.))
-        x = this->indepTerm;
-    else
-        x = (y - this->indepTerm) / this->slope;
-
-    return x;
+    return this->isVertical() ?
+                this->indepTerm : (y - this->getIndepTerm()) / this->slope;
 }
 
 double Line::findY(const double x) const
 {
-    double y;
-
-    if(this->isVertical())
-        y = 0;
-    else if (utilities::equals(this->slope, 0.))
-        y = this->indepTerm;
-    else
-        y = this->slope * x + this->indepTerm;
-
-    return y;
+    return this->slope * x + this->indepTerm;
 }
 
 bool Line::isVertical() const
@@ -99,6 +82,7 @@ bool Line::operator !=(const Line & line) const
 {
     return !(*this == line);
 }
+
 std::ostream & operator<<(std::ostream & out, const Line & line)
 {
     out << "Equation de la droite ≡ ";
