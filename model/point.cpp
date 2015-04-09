@@ -105,10 +105,10 @@ bool Point::operator !=(const Point & point) const
 
 std::ostream & operator<<(std::ostream & out, const Point & point)
 {
-    out << "c(x, y) = c( "
-        << point.getX() << " , " << point.getY() << " )"
-        << "p(r, a) = p( "
-        << point.getRadius() << " , " << point.getAzimut() << " )";
+    out << "c(x, y) = c("
+        << point.getX() << " , " << point.getY() << ") - "
+        << "p(r, a) = p("
+        << point.getRadius() << " , " << point.getAzimut() << ")";
 
     return out;
 }

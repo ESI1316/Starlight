@@ -92,5 +92,13 @@ namespace utilities
      * souhaitée.
      */
     bool equals(const double, const double, const double = utilities::EPSILON);
+
+    /**
+     * @brief slopeFromPoints
+     * @return
+     */
+    double slopeFromPoints(const Point &, const Point &);
+
+    bool isHalfPiPlusNPi(const double);
 }
 #endif // UTILITIES
