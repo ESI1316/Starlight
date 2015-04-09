@@ -11,21 +11,14 @@ std::vector<Point> Ellipse::getIntersections(const Line & line) const
 
     if (line.isVertical())
     {
-         thereIsIntersec = utilities::secondDegreeEquationSolver
-                    (1, 2 * -this->center.getY(),
-                     (((std::pow(line.getXValue() - this->center.getX(), 2)
-                     /std::pow(this->xRadius, 2)) - 1) * std::pow(this->yRadius, 2))
-                     + std::pow(this->center.getY(), 2), &y1, &y2);
-         x1 = x2 = line.getXValue();
+        thereIsIntersec = this->getYOfIntersPoints(line.getIndepTerm(), &y1, &y2);
+        x1 = x2 = line.getXValue();
     }
     else
-    {/*
-        thereIsintersec = utilities::secondDegreeEquationSolver
-                (1 + std::pow(line.getSlope(), 2),
-                    , &x1, &x2);
-
-        y1 = x1 * line.getSlope() + line.getIndepTerm();
-        y2 = x2 * line.getSlope() + line.getIndepTerm(); */
+    {
+        thereIsIntersec = this->getXOfIntersPoints
+                (line.getSlope(), line.getIndepTerm(), &x1, &x2);
+        y1 = line.findY(x1); y2 = line.findY(x2);
     }
 
     if (thereIsIntersec)
@@ -35,6 +28,39 @@ std::vector<Point> Ellipse::getIntersections(const Line & line) const
     }
 
     return intersecs;
+}
+
+bool Ellipse::getYOfIntersPoints(const double xValue, double * y1, double * y2) const
+{
+    double xSquareParam, xParam, indepTerm;
+
+    xSquareParam = 1 / this->yRadius;
+
+    xParam = (2 * -this->center.getY()) / this->yRadius;
+
+    indepTerm = (std::pow(xValue - this->center.getX(), 2) / this->xRadius)
+            + (std::pow(this->center.getY(), 2)/this->getYRadius()) - 1;
+
+    return utilities::secondDegreeEquationSolver
+            (xSquareParam, xParam, indepTerm, y1,  y2);
+}
+
+bool Ellipse::getXOfIntersPoints(const double slope, const double lineIT, double * x1,
+                                 double *x2) const
+{
+    double xSquareParam, xParam, indepTerm;
+
+    xSquareParam = (std::pow(slope, 2)/this->getYRadius()) + (1/this->xRadius);
+
+    xParam = ((-2 * this->getCenter().getX())/this->xRadius)
+            + (((2 * slope) * (lineIT - this->center.getY()))/this->yRadius);
+
+    indepTerm = (std::pow(this->center.getX(), 2) / this->xRadius)
+            + (std::pow(lineIT - this->center.getY(), 2)
+               /this->yRadius) - 1;
+
+    return utilities::secondDegreeEquationSolver
+            (xSquareParam, xParam, indepTerm, x1, x2);
 }
 
 double Ellipse::getXRadius() const
