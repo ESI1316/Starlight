@@ -1,7 +1,9 @@
 #include "model/geometry/ellipse.hpp"
 
+#include "model/geometry/line.hpp"
+
 Ellipse::Ellipse(double xRadius, double yRadius, const Point & center)
-    : xRadius{xRadius}, yRadius{yRadius}, center{center} {}
+    : center{center}, xRadius{xRadius}, yRadius{yRadius} {}
 
 std::vector<Point> Ellipse::getIntersectionPoints(const Line & line) const
 {

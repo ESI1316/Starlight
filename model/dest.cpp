@@ -1,6 +1,9 @@
 #include "model/dest.hpp"
+
 #include "model/level.hpp"
 #include "model/starlightexception.hpp"
+#include "model/ray.hpp"
+#include "model/point.hpp"
 
 Dest::Dest(const Point & position, const int edge)
     : Element(), Rectangle(edge, edge, position), light{false} {}

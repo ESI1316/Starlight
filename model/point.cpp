@@ -1,11 +1,12 @@
-#include <cmath>
-#include <iostream>
-#include "geometry/utilities.hpp"
 #include "model/point.hpp"
 
+#include <cmath>
+
+#include "geometry/utilities.hpp"
+
 Point::Point(const double x, const double y)
-    : x {x}, radius{std::hypot(x, y)},
-      y {y}, azimut{std::atan2(y, x)} {}
+    : x {x}, y {y}, radius{std::hypot(x, y)}, azimut{std::atan2(y, x)} {}
+
 
 Point::Point(const Point & point)
     : x{point.x}, y{point.y}, radius{point.radius}, azimut{point.azimut} {}

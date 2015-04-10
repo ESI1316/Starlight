@@ -1,10 +1,14 @@
-#ifndef CRYSTAL_H
-#define CRYSTAL_H
+#ifndef CRYSTAL_HPP
+#define CRYSTAL_HPP
 
 #include <ostream>
+
 #include "model/element.hpp"
 #include "model/geometry/ellipse.hpp"
 #include "model/geometry/utilities.hpp"
+
+class Ray;
+class Point;
 
 /**
  * Cette classe amplifierélise les cristaux utilisés dans le jeu.
@@ -103,4 +107,4 @@ public:
  */
 std::ostream & operator<<(std::ostream &, const Crystal &);
 
-#endif // CRYSTAL_H
+#endif // CRYSTAL_HPP

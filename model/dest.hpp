@@ -1,9 +1,13 @@
-#ifndef DEST_H
-#define DEST_H
+#ifndef DEST_HPPPP
+#define DEST_HPPPP
 
 #include <ostream>
+
 #include "model/element.hpp"
 #include "model/geometry/rectangle.hpp"
+
+class Point;
+class Ray;
 
 /**
  * Cette classe modélise la destination utilisée dans le jeu.
@@ -97,4 +101,4 @@ public:
  */
 std::ostream & operator<<(std::ostream &, const Dest &);
 
-#endif // DEST_H
+#endif // DEST_HPP

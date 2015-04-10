@@ -1,9 +1,9 @@
 #ifndef ELEMENT_HPP
 #define ELEMENT_HPP
 
-#include "model/ray.hpp"
-
 class Level;
+class Ray;
+class Point;
 
 class Element
 {

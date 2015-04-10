@@ -4,14 +4,15 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
-#include "./model/source.hpp"
-#include "./model/nuke.hpp"
-#include "./model/wall.hpp"
-#include "./model/lens.hpp"
-#include "./model/mirror.hpp"
-#include "./model/crystal.hpp"
-#include "./model/dest.hpp"
-#include "./model/level.hpp"
+
+class Source;
+class Nuke;
+class Wall;
+class Lens;
+class Mirror;
+class Crystal;
+class Dest;
+class Level;
 
 /**
  * Fonctions utilitaires permettant divers éléments du jeu à partir d'un

@@ -1,11 +1,12 @@
-#ifndef ELLIPSE_H
-#define ELLIPSE_H
+#ifndef ELLIPSE_HPP
+#define ELLIPSE_HPP
 
 #include <vector>
 
 #include "model/point.hpp"
-#include "model/geometry/line.hpp"
 #include "model/geometry/utilities.hpp"
+
+class Line;
 
 /**
  * Représente un cercle sous la forme;
@@ -13,6 +14,7 @@
  */
 class Ellipse
 {
+
 protected:
 
     Point center;
@@ -34,7 +36,7 @@ protected:
      * @return true Si il existe des points d'intersection entre la droite et
      * l'éllipse.
      */
-    bool getYOfIntersPoints(const double xValue, double * y1, double * y2) const;
+    bool getYOfIntersPoints(const double, double *, double *) const;
 
     /**
      * Permet d'obtenir les abcisses des points d'intersection entre une droite
@@ -99,7 +101,12 @@ public:
      */
     Point getCenter() const;
 
+    /*!
+     * \brief Permet de savoir si deux Ellipse sont les mêmes.
+     *
+     * \return <code>true</code> Si deux Ellipses sont identiques.
+     */
     bool operator==(const Ellipse &) const;
 };
 
-#endif // ELLIPSE_H
+#endif // ELLIPSE_HPP

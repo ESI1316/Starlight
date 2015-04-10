@@ -10,6 +10,7 @@
 #include "model/nuke.hpp"
 #include "model/source.hpp"
 #include "model/dest.hpp"
+#include "model/ray.hpp"
 
 /**
  * Modélise une carte telle qu'utilisée dans le jeu.

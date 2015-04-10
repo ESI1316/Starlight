@@ -1,6 +1,8 @@
-#include <cmath>
-#include "model/starlightexception.hpp"
 #include "model/mirror.hpp"
+
+#include <cmath>
+
+#include "model/starlightexception.hpp"
 #include "model/level.hpp"
 #include "geometry/utilities.hpp"
 

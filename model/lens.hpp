@@ -1,9 +1,13 @@
-#ifndef LENS_H
-#define LENS_H
+#ifndef LENS_HPP
+#define LENS_HPP
 
 #include <ostream>
+
 #include "model/element.hpp"
 #include "model/geometry/ellipse.hpp"
+#include "model/point.hpp"
+
+class Ray;
 
 /**
  * Cette classe modélise les lentilles utilisées dans le jeu.
@@ -113,4 +117,4 @@ private :
  */
 std::ostream & operator<<(std::ostream &, const Lens &);
 
-#endif // LENS_H
+#endif // LENS_HPP

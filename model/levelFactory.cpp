@@ -1,5 +1,14 @@
 #include "model/levelFactory.hpp"
 
+#include "model/source.hpp"
+#include "model/nuke.hpp"
+#include "model/wall.hpp"
+#include "model/lens.hpp"
+#include "model/mirror.hpp"
+#include "model/crystal.hpp"
+#include "model/dest.hpp"
+#include "model/level.hpp"
+
 Level * levelFactory::getLevelFromFile(std::string mapFilePath)
 {
     std::ifstream mapFile(mapFilePath);

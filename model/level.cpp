@@ -1,14 +1,7 @@
-#include <string>
 #include "model/level.hpp"
-#include "model/crystal.hpp"
-#include "model/dest.hpp"
-#include "model/lens.hpp"
-#include "model/mirror.hpp"
-#include "model/ray.hpp"
-#include "model/source.hpp"
-#include "model/wall.hpp"
-#include "model/point.hpp"
-#include "model/nuke.hpp"
+
+#include <string>
+
 #include "model/starlightexception.hpp"
 
 Level::Level(const double width, const double height)

@@ -1,5 +1,5 @@
-#ifndef UTILITIES
-#define UTILITIES
+#ifndef UTILITIES_HPP
+#define UTILITIES_HPP
 
 
 class Point;
@@ -103,4 +103,4 @@ namespace utilities
 
     double tan(const double);
 }
-#endif // UTILITIES
+#endif // UTILITIES_HPP

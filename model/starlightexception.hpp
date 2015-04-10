@@ -1,5 +1,6 @@
 #ifndef STARLIGHTEXCEPTION_HPP
 #define STARLIGHTEXCEPTION_HPP
+
 #include <exception>
 #include <string>
 

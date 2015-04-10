@@ -1,8 +1,13 @@
-#ifndef WALL_H
-#define WALL_H
+#ifndef WALL_HPP
+#define WALL_HPP
 
 #include <ostream>
+
+#include "model/geometry/line.hpp"
 #include "model/element.hpp"
+#include "model/point.hpp"
+
+class Ray;
 
 /**
  * Cette classe modélise les murs utilisés dans le jeu. Les murs sont des
@@ -77,4 +82,4 @@ public:
  */
 std::ostream & operator<<(std::ostream &, const Wall &);
 
-#endif // WALL_H
+#endif // WALL_HPP

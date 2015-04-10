@@ -1,6 +1,8 @@
 #include "model/wall.hpp"
+
 #include "model/level.hpp"
 #include "model/starlightexception.hpp"
+#include "model/ray.hpp"
 
 Wall::Wall(const Point & start, const Point & end)
     : Element(),

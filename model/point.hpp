@@ -1,7 +1,7 @@
-#ifndef POINT_H
-#define POINT_H
+#ifndef POINT_HPP
+#define POINT_HPP
 
-#include <iostream>
+#include <ostream>
 
 /**
  * Cette classe modélise un point de coordonnés dans le plan \f$ R^2 \f$ sous
@@ -192,4 +192,4 @@ public:
  */
 std::ostream & operator<<(std::ostream &, const Point &);
 
-#endif // POINT_H
+#endif // POINT_HPP

@@ -1,8 +1,11 @@
-#ifndef MIRROR_H
-#define MIRROR_H
+#ifndef MIRROR_HPP
+#define MIRROR_HPP
 
 #include <ostream>
 #include "model/element.hpp"
+#include "model/point.hpp"
+
+class Ray;
 
 /**
  * Cette classe modélise les miroirs utilisés dans le jeu.
@@ -251,4 +254,4 @@ public:
  */
 std::ostream & operator<<(std::ostream &, const Mirror &);
 
-#endif // MIRROR_H
+#endif // MIRROR_HPP

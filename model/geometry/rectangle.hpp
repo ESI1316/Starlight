@@ -1,11 +1,12 @@
-#ifndef RECTANGLE_H
-#define RECTANGLE_H
+#ifndef RECTANGLE_HPP
+#define RECTANGLE_HPP
 
 #include <vector>
 #include <ostream>
 
-#include "model/geometry/line.hpp"
 #include "model/point.hpp"
+
+class Line;
 
 class Rectangle
 {
@@ -108,4 +109,4 @@ public:
  * paramètre.
  */
 std::ostream & operator<<(std::ostream &, const Rectangle &);
-#endif // RECTANGLE_H
+#endif // RECTANGLE_HPP

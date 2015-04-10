@@ -1,9 +1,11 @@
-#ifndef SOURCE_H
-#define SOURCE_H
+#ifndef SOURCE_HPP
+#define SOURCE_HPP
 
-#include <iostream>
-#include "model/point.hpp"
+#include <ostream>
+
 #include "model/geometry/rectangle.hpp"
+
+class Point;
 
 /**
  * Modélise la source lumineuse utilisée dans le jeu.
@@ -122,4 +124,4 @@ public:
  */
 std::ostream & operator<<(std::ostream &, const Source &);
 
-#endif // SOURCE_H
+#endif // SOURCE_HPP

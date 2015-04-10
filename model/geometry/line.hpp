@@ -1,11 +1,10 @@
-#ifndef LINE_H
-#define LINE_H
+#ifndef LINE_HPP
+#define LINE_HPP
 
 #include <cmath>
+#include <ostream>
 
-#include "model/geometry/utilities.hpp"
-#include "model/point.hpp"
-
+class Point;
 
 /**
  * Représente une droite sous la forme de son équation complète;
@@ -138,4 +137,4 @@ public:
  */
 std::ostream & operator<<(std::ostream &, const Line &);
 
-#endif // LINE_H
+#endif // LINE_HPP

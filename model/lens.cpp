@@ -1,6 +1,9 @@
 #include "model/lens.hpp"
+
 #include "model/level.hpp"
 #include "model/starlightexception.hpp"
+#include "model/ray.hpp"
+#include "model/point.hpp"
 
 Lens::Lens(const Point & upLeftCorner, const int width, const int height, const int wlMin, const int wlMax)
     : Element(), upLeftCorner{upLeftCorner}, wlMin{wlMin}, wlMax{wlMax}

@@ -1,7 +1,10 @@
-#include <cmath>
 #include "model/nuke.hpp"
-#include "model/level.hpp"
+
+#include <cmath>
+
 #include "model/starlightexception.hpp"
+#include "model/ray.hpp"
+#include "model/point.hpp"
 
 Nuke::Nuke(const Point & position, const double radius)
     : Element(), Ellipse{std::pow(radius, 2), std::pow(radius, 2), position}

@@ -1,7 +1,8 @@
-#ifndef RAY_H
-#define RAY_H
+#ifndef RAY_HPP
+#define RAY_HPP
 
-#include <iostream>
+#include <ostream>
+
 #include "model/point.hpp"
 #include "model/geometry/line.hpp"
 
@@ -119,4 +120,4 @@ protected:
  */
 std::ostream & operator<<(std::ostream &, const Ray &);
 
-#endif // RAY_H
+#endif // RAY_HPP

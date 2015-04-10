@@ -2,6 +2,8 @@
 
 #include <cmath>
 
+#include "model/ray.hpp"
+#include "model/point.hpp"
 #include "model/starlightexception.hpp"
 #include "model/level.hpp"
 

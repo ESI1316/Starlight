@@ -1,7 +1,7 @@
-#include "model/point.hpp"
 #include "model/ray.hpp"
-#include "model/level.hpp"
+
 #include "model/starlightexception.hpp"
+#include "model/level.hpp"
 
 Ray::Ray(const Point start, double alpha, int waveLength)
     :Line(utilities::tan(alpha),

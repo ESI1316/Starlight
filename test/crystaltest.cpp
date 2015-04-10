@@ -1,6 +1,7 @@
 #include "test/catch.hpp"
 #include "model/starlightexception.hpp"
 #include "model/crystal.hpp"
+#include "model/ray.hpp"
 
 TEST_CASE("Constructions de cristals")
 {

@@ -1,11 +1,13 @@
-#ifndef NUKE_H
-#define NUKE_H
+#ifndef NUKE_HPP
+#define NUKE_HPP
 
 #include <ostream>
 
 #include "model/element.hpp"
-#include "model/point.hpp"
 #include "model/geometry/ellipse.hpp"
+
+class Point;
+class Ray;
 
 /**
  * Cette classe modélise les bombes utilisées dans le jeu.
@@ -93,4 +95,4 @@ public:
  */
 std::ostream & operator<<(std::ostream &, const Nuke &);
 
-#endif // NUKE_H
+#endif // NUKE_HPP
