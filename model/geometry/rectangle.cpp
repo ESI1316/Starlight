@@ -1,7 +1,8 @@
 #include "model/geometry/rectangle.hpp"
+
 #include "model/starlightexception.hpp"
 
-Rectangle::Rectangle(int width, int height, const Point & upLeftCorner)
+Rectangle::Rectangle(double width, double height, const Point & upLeftCorner)
     : width{width}, height{height}, upLeftCorner{upLeftCorner},
       edges{{Line{0., upLeftCorner.getY()}},
             {Line{1./0., 0, upLeftCorner.getX()}},
@@ -47,12 +48,12 @@ std::vector<Line> Rectangle::getEdges() const
     return this->edges;
 }
 
-int Rectangle::getWidth() const
+double Rectangle::getWidth() const
 {
     return this->width;
 }
 
-int Rectangle::getHeight() const
+double Rectangle::getHeight() const
 {
     return this->height;
 }
@@ -80,6 +81,8 @@ Rectangle & Rectangle::operator =(const Rectangle & rectangle)
     this->height = rectangle.height;
     this->upLeftCorner = rectangle.upLeftCorner;
     this->edges = rectangle.edges;
+
+    return *this;
 }
 
 std::ostream & operator<<(std::ostream & out, const Rectangle & rectangle)

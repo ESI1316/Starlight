@@ -12,8 +12,8 @@ class Rectangle
 
 protected:
 
-    int width;
-    int height;
+    double width;
+    double height;
     Point upLeftCorner;
     std::vector<Line> edges;
 
@@ -26,7 +26,7 @@ public:
      * @param height Hauteur du rectangle.
      * @param upLeftCorner Côté supérieur gauche du rectangle.
      */
-    Rectangle(int width, int height, const Point & upLeftCorner);
+    Rectangle(double, double, const Point &);
 
     /**
      * Permet d'obtenir les points d'intersection entre le rectangle et la
@@ -63,14 +63,14 @@ public:
      *
      * @return La longueur du rectangle.
      */
-    virtual int getWidth() const;
+    virtual double getWidth() const;
 
     /**
      * Permet d'obtenir la hauteur du rectangle.
      *
      * @return La hauteur du rectangle.
      */
-    virtual int getHeight() const;
+    virtual double getHeight() const;
 
     /**
      * Permet d'obtenir les coordonnées du coté supérieur du rectangle.

@@ -1,5 +1,7 @@
-#include <cmath>
 #include "model/crystal.hpp"
+
+#include <cmath>
+
 #include "model/starlightexception.hpp"
 #include "model/level.hpp"
 
@@ -34,7 +36,7 @@ Point * Crystal::includeRay(const Ray & ray) const
     Point * intersec = 0;
     std::vector<Point> p = this->getIntersectionPoints(ray);
 
-    if (p.size() > 0)
+    if (!p.empty())
     {
         intersec =
             ray.getStart().distanceFrom(p[0]) > ray.getStart().distanceFrom(p[1]) ?

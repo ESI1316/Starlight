@@ -63,7 +63,7 @@ double Line::findX(const double y) const
 
 double Line::findY(const double x) const
 {
-    return this->slope * x + this->indepTerm;
+    return (this->isVertical()) ? x : this->slope * x + this->indepTerm;
 }
 
 bool Line::isVertical() const

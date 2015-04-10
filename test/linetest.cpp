@@ -197,5 +197,15 @@ TEST_CASE("Intersection de droites")
     }
 }
 
-TEST_CASE()
-{}
+TEST_CASE("operateurs")
+{
+        Line a{0., 8.44};
+        Line b{0., 8.44};
+        Line c{utilities::tan(utilities::PI_2),3., 18.2};
+
+
+        REQUIRE(a == a);
+        REQUIRE(a == b);
+        REQUIRE_FALSE(a == c);
+        REQUIRE(a != c);
+}

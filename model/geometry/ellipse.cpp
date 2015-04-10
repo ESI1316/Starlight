@@ -1,4 +1,4 @@
-#include "ellipse.hpp"
+#include "model/geometry/ellipse.hpp"
 
 Ellipse::Ellipse(double xRadius, double yRadius, const Point & center)
     : xRadius{xRadius}, yRadius{yRadius}, center{center} {}
