@@ -20,7 +20,7 @@ std::vector<Point> Rectangle::getIntersectionPoints(const Line & line) const
     std::vector<Point> intersecs;
     Point * p;
 
-    for (unsigned i = 0; i < this->edges.size() && intersecs.size() <= 2 ; i++)
+    for (unsigned i = 0; i < this->edges.size() && intersecs.size() < 2 ; i++)
     {
         if ((p = edges.at(i).getIntersectionPoint(line)) && this->isOnBorder(*p))
             intersecs.push_back(*p);
@@ -87,12 +87,11 @@ Rectangle & Rectangle::operator =(const Rectangle & rectangle)
 
 std::ostream & operator<<(std::ostream & out, const Rectangle & rectangle)
 {
-    out << "------" << std::endl
-        << "|    |   ^" << std::endl
-        << "|    |   |" << rectangle.getHeight() << " : hauteur" << std::endl
+    out << rectangle.getWidth() << " : largeur" << std::endl
         << "------" << std::endl
-        << " <->" << std::endl
-        << " " << rectangle.getWidth() << " : largeur" << std::endl
+        << "|    |" << std::endl
+        << "|    | " << rectangle.getHeight() << " : hauteur" << std::endl
+        << "------" << std::endl
         << "Coin supérieur gauche : " << rectangle.getUpLeftCorner();
 
     return out;
