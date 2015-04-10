@@ -73,9 +73,15 @@ bool Line::isVertical() const
 
 bool Line::operator ==(const Line & line) const
 {
-    return utilities::equals(this->slope, line.slope)
-            && utilities::equals(this->indepTerm, line.indepTerm)
-            && utilities::equals(this->xValue, line.xValue);
+    bool equals = false;
+
+    if (this->isVertical() && line.isVertical())
+        equals = utilities::equals(this->xValue, line.xValue);
+    else
+        equals = utilities::equals(this->slope, line.slope)
+                && utilities::equals(this->indepTerm, line.indepTerm);
+
+    return equals;
 }
 
 bool Line::operator !=(const Line & line) const

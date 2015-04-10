@@ -9,9 +9,9 @@ Rectangle::Rectangle(double width, double height, const Point & upLeftCorner)
             {Line{0., upLeftCorner.getY() + height}},
             {Line{1./0., 0, upLeftCorner.getX() + width}}}
 {
-    if(width <= 0)
+    if(width < 0. || utilities::equals(width, 0.))
         throw StarlightException("Largeur strictement positive requise");
-    if(height <= 0)
+    if(height < 0. || utilities::equals(height, 0.))
         throw StarlightException("Hauteur strictement positive requise");
 }
 
@@ -65,8 +65,8 @@ Point Rectangle::getUpLeftCorner() const
 
 bool Rectangle::operator ==(const Rectangle & rectangle) const
 {
-    return this->width == rectangle.width
-            && this->height == rectangle.height
+    return utilities::equals(this->width, rectangle.width)
+            && utilities::equals(this->height, rectangle.height)
             && this->upLeftCorner == rectangle.upLeftCorner;
 }
 
