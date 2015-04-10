@@ -3,12 +3,16 @@
 Level * levelFactory::getLevelFromFile(std::string mapFilePath)
 {
     std::ifstream mapFile(mapFilePath);
-    int i; char c;
-    Level * newLevel = new Level((mapFile >> i, i), (mapFile >> i, i));
+    double levelWidth, levelHeight;
+    char type;
+    Level * newLevel;
 
-    while (mapFile >> c)
+    mapFile >> levelWidth >> levelHeight;
+    newLevel = new Level{levelWidth, levelHeight};
+
+    while (mapFile >> type)
     {
-        switch(c)
+        switch(type)
         {
         case 'S': newLevel->setSource(levelFactory::getSource(mapFile));
             break;

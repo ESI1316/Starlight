@@ -3,8 +3,7 @@
 #include "model/starlightexception.hpp"
 
 Dest::Dest(const Point & position, const int edge)
-    : Element(), Rectangle(edge, edge, position), light{false}
-{}
+    : Element(), Rectangle(edge, edge, position), light{false} {}
 
 const Point & Dest::getPosition() const
 {

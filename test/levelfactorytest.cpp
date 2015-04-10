@@ -2,10 +2,20 @@
 #include "test/catch.hpp"
 #include "model/levelFactory.hpp"
 #include "model/level.hpp"
+#include "model/starlightexception.hpp"
 
 TEST_CASE("création d'un Level à partir d'un fichier .lvl", "levelFactory::getLevel(std::string)")
 {
-    Level * level = levelFactory::getLevelFromFile("./ressources/level.lvl");
+    Level * level;
+
+    try
+    {
+        level = levelFactory::getLevelFromFile("./ressources/level.lvl");
+    }
+    catch (StarlightException ex)
+    {
+        std::cout << ex.getMessage() << std::endl;
+    }
 
     SECTION("vérification de la taille des vecteurs")
     {

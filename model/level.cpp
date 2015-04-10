@@ -11,10 +11,8 @@
 #include "model/nuke.hpp"
 #include "model/starlightexception.hpp"
 
-using namespace std;
-
 Level::Level(const double width, const double height)
-    : width{width},height {height},
+    : width{width}, height{height},
       walls { Wall{Point{0., 0.}, Point{0., height}},
               Wall{Point{0., height}, Point{width, height}},
               Wall{Point{width, height}, Point{width, 0.}},
@@ -46,7 +44,7 @@ void Level::setDestination(const Dest & dest)
     this->dest = dest;
 }
 
-const vector<Wall> & Level::getWalls() const
+const std::vector<Wall> & Level::getWalls() const
 {
     return this->walls;
 }
@@ -56,7 +54,7 @@ void Level::addWall(const Wall & wall)
     this->walls.push_back(wall);
 }
 
-const vector<Mirror> & Level::getMirrors() const
+const std::vector<Mirror> & Level::getMirrors() const
 {
     return this->mirrors;
 }
@@ -67,7 +65,7 @@ void Level::addMirror(Mirror mirror)
     this->mirrors.push_back(mirror);
 }
 
-const vector<Crystal> & Level::getCrystals() const
+const std::vector<Crystal> & Level::getCrystals() const
 {
     return this->crystals;
 }
@@ -78,7 +76,7 @@ void Level::addCrystal(Crystal crystal)
     this->crystals.push_back(crystal);
 }
 
-const vector<Lens> & Level::getLenses() const
+const std::vector<Lens> & Level::getLenses() const
 {
     return this->lenses;
 }
@@ -89,12 +87,12 @@ void Level::addLens(Lens lens)
     this->lenses.push_back(lens);
 }
 
-const vector<Ray> & Level::getRays() const
+const std::vector<Ray> & Level::getRays() const
 {
     return this->rays;
 }
 
-void Level::setRays(const vector<Ray> & rays)
+void Level::setRays(const std::vector<Ray> & rays)
 {
     this->rays = rays;
 }
