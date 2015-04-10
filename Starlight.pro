@@ -37,7 +37,8 @@ SOURCES += main.cpp\
     model/geometry/utilities.cpp \
     model/geometry/rectangle.cpp \
     model/geometry/line.cpp \
-    model/geometry/ellipse.cpp
+    model/geometry/ellipse.cpp \
+    test/ellipsetest.cpp
 
 HEADERS  += mainwindow.hpp \
     model/starlightexception.hpp \

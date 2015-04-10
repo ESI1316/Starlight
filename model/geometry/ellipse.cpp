@@ -1,9 +1,16 @@
 #include "model/geometry/ellipse.hpp"
 
 #include "model/geometry/line.hpp"
+#include "model/starlightexception.hpp"
 
 Ellipse::Ellipse(double xRadius, double yRadius, const Point & center)
-    : center{center}, xRadius{xRadius}, yRadius{yRadius} {}
+    : center{center}, xRadius{xRadius}, yRadius{yRadius}
+{
+    if (xRadius < 0. || utilities::equals(xRadius, 0.))
+        throw StarlightException("xRadius négatif");
+    if (yRadius < 0. || utilities::equals(yRadius, 0.))
+        throw StarlightException("xRadius négatif");
+}
 
 std::vector<Point> Ellipse::getIntersectionPoints(const Line & line) const
 {
@@ -83,5 +90,11 @@ Point Ellipse::getCenter() const
 bool Ellipse::operator ==(const Ellipse & ellipse) const
 {
     return utilities::equals(this->xRadius, ellipse.xRadius)
-            && utilities::equals(this->yRadius, ellipse.yRadius);
+            && utilities::equals(this->yRadius, ellipse.yRadius)
+            && this->center == ellipse.center;
+}
+
+bool Ellipse::operator !=(const Ellipse & ellipse) const
+{
+    return !(*this == ellipse);
 }

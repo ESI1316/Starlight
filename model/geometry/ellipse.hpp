@@ -107,6 +107,13 @@ public:
      * \return <code>true</code> Si deux Ellipses sont identiques.
      */
     bool operator==(const Ellipse &) const;
+
+    /*!
+     * \brief Permet de savoir si deux Ellipse sont différentes.
+     *
+     * \return <code>true</code> Si deux Ellipses sont différentes.
+     */
+    bool operator!=(const Ellipse &) const;
 };
 
 #endif // ELLIPSE_HPP
