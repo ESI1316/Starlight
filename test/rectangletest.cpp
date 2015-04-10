@@ -52,3 +52,39 @@ TEST_CASE("Rectangle operateurs")
     REQUIRE(rect != rectan);
     REQUIRE(rect != re);
 }
+
+TEST_CASE("Sur le bord du rectangle")
+{
+    Rectangle rectangle{139.22, 219.344, Point{55., 18.4}};
+
+    REQUIRE_FALSE(rectangle.isOnBorder(Point(55., 18.3)));
+    REQUIRE(rectangle.isOnBorder(Point(55., 18.4)));
+    REQUIRE(rectangle.isOnBorder(Point(55., 19.4)));
+    REQUIRE(rectangle.isOnBorder(Point(55., 219.9)));
+    REQUIRE(rectangle.isOnBorder(Point(55., 219.344 + 18.4)));
+    REQUIRE_FALSE(rectangle.isOnBorder(Point(55., 219.344 + 18.5)));
+
+    REQUIRE_FALSE(rectangle.isOnBorder(Point(54.9, 18.4)));
+    REQUIRE(rectangle.isOnBorder(Point(55., 18.4)));
+    REQUIRE(rectangle.isOnBorder(Point(148., 18.4)));
+    REQUIRE(rectangle.isOnBorder(Point(182.2, 18.4)));
+    REQUIRE(rectangle.isOnBorder(Point(139.22 + 55, 18.4)));
+    REQUIRE_FALSE(rectangle.isOnBorder(Point(139.23 + 55, 18.4)));
+
+    REQUIRE_FALSE(rectangle.isOnBorder(Point(54.9, 219.344 + 18.4)));
+    REQUIRE(rectangle.isOnBorder(Point(56., 219.344 + 18.4)));
+    REQUIRE(rectangle.isOnBorder(Point(56., 219.344 + 18.4)));
+    REQUIRE(rectangle.isOnBorder(Point(72.4, 219.344 + 18.4)));
+    REQUIRE(rectangle.isOnBorder(Point(139.22 + 55, 219.344 + 18.4)));
+    REQUIRE_FALSE(rectangle.isOnBorder(Point(139.22 + 55.1, 219.344 + 18.4)));
+
+    REQUIRE_FALSE(rectangle.isOnBorder(Point(139.22 + 55, 18.3)));
+    REQUIRE(rectangle.isOnBorder(Point(139.22 + 55, 18.5)));
+    REQUIRE(rectangle.isOnBorder(Point(139.22 + 55, 19.5)));
+    REQUIRE(rectangle.isOnBorder(Point(139.22 + 55, 20.5)));
+    REQUIRE(rectangle.isOnBorder(Point(139.22 + 55, 219.344 + 18.4)));
+    REQUIRE_FALSE(rectangle.isOnBorder(Point(139.22 + 55, 219.344 + 18.5)));
+
+    REQUIRE_FALSE(rectangle.isOnBorder(Point(60, 20)));
+    REQUIRE_FALSE(rectangle.isOnBorder(Point(55 + 109.22, 18.4 + 200.00)));
+}
