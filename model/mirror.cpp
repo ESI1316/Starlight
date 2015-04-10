@@ -6,9 +6,6 @@
 #include "model/level.hpp"
 #include "geometry/utilities.hpp"
 
-Mirror::Mirror(const Point & point, int xpad, int length, double alpha)
-    : Mirror {point, length, xpad, alpha, Point{0., 0.}, Point{0., 0.}, 0., 0.} {}
-
 Mirror::Mirror(const Point & pivot, int xpad, int length, double alpha, Point pointMin,
                Point pointMax, double alphaMin, double alphaMax)
     : Element(), pivot {pivot}, length(length), xpad(xpad), xMin {pointMin.getX()},
@@ -132,8 +129,7 @@ bool Mirror::operator==(const Mirror & mirror) const
             && utilities::equals(this->yMax, mirror.yMax)
             && utilities::equals(this->alpha, mirror.alpha)
             && utilities::equals(this->alphaMin, mirror.alphaMin)
-            && utilities::equals(this->alphaMax, mirror.alphaMax)
-            && Element::operator ==(mirror);
+            && utilities::equals(this->alphaMax, mirror.alphaMax);
 }
 
 bool Mirror::operator!=(const Mirror & mirror) const

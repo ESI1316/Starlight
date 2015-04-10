@@ -5,8 +5,6 @@
 #include "model/ray.hpp"
 #include "model/point.hpp"
 
-Dest::Dest() : Element(), Rectangle{4, 4, Point{0, 0}}, light{false} {}
-
 Dest::Dest(const Point & position, const int edge)
     : Element(), Rectangle(edge, edge, position), light{false} {}
 
@@ -53,8 +51,7 @@ Point * Dest::includeRay(const Ray & ray) const
 bool Dest::operator==(const Dest & dest) const
 {
     return this->light == dest.light
-            && Rectangle::operator ==(dest)
-            && Element::operator==(dest);
+            && Rectangle::operator ==(dest);
 }
 
 bool Dest::operator!=(const Dest & dest) const

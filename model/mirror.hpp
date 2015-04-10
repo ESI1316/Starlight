@@ -32,11 +32,6 @@ class Mirror : public Element
 public:
 
     /**
-     * Constructeur par défaut.
-     */
-    Mirror();
-
-    /**
      * Instancie un miroir en une position donnée, d'une certaine longueur et
      * orienté d'un certain angle. Comme dans ce constructeur les limites de
      * déplacement et de rotation du miroir ne sont pas définies, ce miroir

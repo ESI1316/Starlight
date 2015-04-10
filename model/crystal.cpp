@@ -1,13 +1,11 @@
 #include "model/crystal.hpp"
-
+#include <iostream>
 #include <cmath>
 
 #include "model/ray.hpp"
 #include "model/point.hpp"
 #include "model/starlightexception.hpp"
 #include "model/level.hpp"
-
-Crystal::Crystal() : Element(), Ellipse{4, 4, Point{0, 0}}, amplifier{100} {}
 
 Crystal::Crystal(const Point & center, const double radius, const int amplifier)
     : Element(), Ellipse(std::pow(radius, 2), std::pow(radius, 2), center),
@@ -54,8 +52,7 @@ bool Crystal::operator==(const Crystal & crystal) const
 {
     return this->center == crystal.center
             && utilities::equals(this->getRadius(), crystal.getRadius())
-            && this->amplifier == crystal.amplifier
-            && Element::operator==(crystal);
+            && this->amplifier == crystal.amplifier;
 }
 
 bool Crystal::operator!=(const Crystal & crystal) const

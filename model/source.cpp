@@ -5,8 +5,6 @@
 #include "model/point.hpp"
 #include "model/geometry/utilities.hpp"
 
-Source::Source() : Rectangle{20, 20, Point{0, 0}}, alpha{10}, waveLength{400}{}
-
 Source::Source(const Point & position, const int edge, const double alpha,
                const int waveLength)
     : Rectangle(edge, edge, position), alpha{alpha}, waveLength{waveLength}

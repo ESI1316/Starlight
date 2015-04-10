@@ -7,7 +7,6 @@
 Point::Point(const double x, const double y)
     : x {x}, y {y}, radius{std::hypot(x, y)}, azimut{std::atan2(y, x)} {}
 
-
 Point::Point(const Point & point)
     : x{point.x}, y{point.y}, radius{point.radius}, azimut{point.azimut} {}
 
@@ -106,9 +105,9 @@ bool Point::operator !=(const Point & point) const
 
 std::ostream & operator<<(std::ostream & out, const Point & point)
 {
-    out << "[c(x, y) = c("
+    out << "[cartésien (x, y) = ("
         << point.getX() << " , " << point.getY() << ")]"
-        << "[p(r, a) = p("
+        << "[polaire (r, a) = ("
         << point.getRadius() << " , " << point.getAzimut() << ")]";
 
     return out;

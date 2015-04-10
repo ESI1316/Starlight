@@ -32,7 +32,7 @@ double utilities::angleAsDegree0to360(const double alpha)
 
 bool utilities::equals(const double nb1, const double nb2, const double epsilon)
 {
-    return (std::abs(nb1 - nb2) < epsilon);
+    return (std::isinf(nb1) && std::isinf(nb2))|| (std::abs(nb1 - nb2) < epsilon);
 }
 
 double utilities::slopeFromPoints(const Point & p1, const Point & p2)
@@ -42,17 +42,11 @@ double utilities::slopeFromPoints(const Point & p1, const Point & p2)
 
 bool utilities::isHalfPiPlusNPi(const double alpha)
 {
-    return utilities::equals(
-                std::fmod(std::abs(alpha), utilities::PI), utilities::PI_2
-                );
+    return utilities::equals(std::fmod(std::abs(alpha), utilities::PI),
+                             utilities::PI_2);
 }
 
 double utilities::tan(const double alpha)
 {
-    double tan = (1. / 0.);
-
-    if(!utilities::isHalfPiPlusNPi(alpha))
-        tan = std::tan(alpha);
-
-    return tan;
+    return utilities::isHalfPiPlusNPi(alpha) ? 1./0. : std::tan(alpha);
 }

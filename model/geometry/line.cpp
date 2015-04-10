@@ -97,15 +97,9 @@ std::ostream & operator<<(std::ostream & out, const Line & line)
     out << "Equation de la droite ≡ ";
 
     if(line.isVertical())
-    {
         out << "x = " << line.getXValue();
-    }
     else
-    {
-        out << "y = "
-            << line.getSlope() << "x + "
-            << line.getIndepTerm();
-    }
+        out << "y = " << line.getSlope() << "x + "<< line.getIndepTerm();
 
     return out;
 }

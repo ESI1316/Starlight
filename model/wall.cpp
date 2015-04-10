@@ -53,8 +53,7 @@ Point * Wall::includeRay(const Ray & ray) const
 bool Wall::operator==(const Wall & wall) const
 {
     return this->start == wall.start
-            && this->end == wall.end
-            && Element::operator==(wall);
+            && this->end == wall.end;
 }
 
 bool Wall::operator!=(const Wall & wall) const
@@ -65,8 +64,8 @@ bool Wall::operator!=(const Wall & wall) const
 std::ostream & operator<<(std::ostream & out, const Wall & wall)
 {
     out << "Wall --- " << std::endl
-        << "Start : "  << wall.getStart()
-        << ", End : " << wall.getEnd();
+        << "Start : "  << wall.getStart() << std::endl
+        << "End : " << wall.getEnd() << std::endl;
 
     return out;
 }

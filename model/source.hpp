@@ -35,11 +35,6 @@ class Source : public Rectangle
 public:
 
     /**
-     * Constructeur par défaut.
-     */
-    Source();
-
-    /**
      * Instancie une nouvelle source de position, côté et longueur d'onde donnée.
      * La position dénote la coordonnée du coin supérieur gauche du carré
      * modélisant la source. La source est intialement éteinte. Si la longueur

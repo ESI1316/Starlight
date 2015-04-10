@@ -58,8 +58,7 @@ bool Nuke::operator==(const Nuke & nuke) const
 {
     return this->center == nuke.center
             && utilities::equals(this->getRadius(), nuke.getRadius())
-            && this->light == nuke.light
-            && Element::operator ==(nuke);
+            && this->light == nuke.light;
 }
 
 bool Nuke::operator!=(const Nuke & nuke) const

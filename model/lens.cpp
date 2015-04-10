@@ -47,9 +47,8 @@ Point * Lens::includeRay(const Ray & ray) const
 bool Lens::operator==(const Lens & lens) const
 {
     return this->wlMin == lens.wlMin
-            && this->wlMax == lens.wlMax
+            && this->wlMax == lens.wlMax;
             //&& Ellipse::operator ==(lens)
-            && Element::operator ==(lens);
 }
 
 

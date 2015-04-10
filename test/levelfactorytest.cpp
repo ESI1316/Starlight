@@ -38,7 +38,7 @@ TEST_CASE("création d'un Level à partir d'un fichier .lvl", "levelFactory::get
         SECTION("vérification des bombes")
         {
             REQUIRE(level->getNukes()[0] == Nuke(Point(464., 232.), 29));
-            REQUIRE(level->getNukes()[1] == Nuke(Point(464., 248.), 29));
+            REQUIRE(level->getNukes()[1] == Nuke(Point(464., 348.), 29));
         }
 
         SECTION("vérification des lentille")
