@@ -19,7 +19,7 @@ class Ray;
  * aucune modification. Sinon, la lentille se comporte comme un
  * mur.
  */
-class Lens : public Element
+class Lens : public Element, public Ellipse
 {
 
 private :
