@@ -1,3 +1,4 @@
+#include <iostream>
 #include "test/catch.hpp"
 #include "model/starlightexception.hpp"
 #include "model/crystal.hpp"
@@ -20,6 +21,7 @@ TEST_CASE("reaction au rayon")
     Ray ray{Point{2., 2.}, (utilities::PI / 3), 500};
 
     cristal.reactToRay(ray);
+
     REQUIRE(ray.getWaveLength() == 600);
 }
 

@@ -5,11 +5,7 @@
 #include "model/ray.hpp"
 
 Wall::Wall(const Point & start, const Point & end)
-    : Element(),
-      Line(utilities::slopeFromPoints(start, end),
-           (start.getY() - (utilities::slopeFromPoints(start, end) * start.getX())),
-           (utilities::equals(start.getX(), end.getX())) ? start.getX() : 0.),
-      start{start}, end{end}
+    : Element(), Line(start, end), start{start}, end{end}
 {
     if (start == end)
         throw StarlightException("Les points ne peuvent être confondus");

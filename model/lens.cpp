@@ -42,14 +42,24 @@ void Lens::reactToRay(Ray & ray)
 
 Point * Lens::includeRay(const Ray & ray) const
 {
-    throw StarlightException("Not implemented yet");
+    Point * intersec = 0;
+    std::vector<Point> p = this->getIntersectionPoints(ray);
+
+    if (p.size() > 0)
+    {
+        intersec =
+            ray.getStart().distanceFrom(p[0]) > ray.getStart().distanceFrom(p[1]) ?
+                new Point{p[0]} : new Point{p[1]};
+    }
+
+    return intersec;
 }
 
 bool Lens::operator==(const Lens & lens) const
 {
     return this->wlMin == lens.wlMin
-            && this->wlMax == lens.wlMax;
-            //&& Ellipse::operator ==(lens)
+            && this->wlMax == lens.wlMax
+            && Ellipse::operator ==(lens);
 }
 
 
@@ -61,10 +71,10 @@ bool Lens::operator!=(const Lens & lens) const
 std::ostream & operator<<(std::ostream & out, const Lens & lens)
 {
     out << "Lens -- Position : " <<lens.getPosition()
-        //<< " , width : " << lens.getWidth()
-        //<< " , height : " << lens.getHeight()
-        << " , Freq. Min. : " <<lens.getMinWaveLength()
-        << " , Freq. Max. : " <<lens.getMaxWaveLength();
+        << " , width : " << ((int) std::sqrt(lens.getXRadius()))
+        << " , height : " << ((int) std::sqrt(lens.getYRadius()))
+        << " , Freq. Min. : " << lens.getMinWaveLength()
+        << " , Freq. Max. : " << lens.getMaxWaveLength();
 
     return out;
 }

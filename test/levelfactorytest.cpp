@@ -41,9 +41,9 @@ TEST_CASE("création d'un Level à partir d'un fichier .lvl", "levelFactory::get
             REQUIRE(level->getNukes()[1] == Nuke(Point(464., 348.), 29));
         }
 
-        SECTION("vérification des lentille")
+        SECTION("vérification de la lentille")
         {
-            //quand les lens seront fully des ellipses (franglais Jean Claude Vandamme)
+            REQUIRE(level->getLenses()[0] == Lens(Point(552, 232), 58, 116, 500, 600));
         }
 
         SECTION("vérification des murs")
@@ -83,6 +83,34 @@ TEST_CASE("création d'un Level à partir d'un fichier .lvl", "levelFactory::get
             REQUIRE( level->getMirrors()[3] ==
                     Mirror(Point(174., 290.), 0, 58, 1.57, Point(174., 58.),
                            Point(174., 464.), 1.57, 4.71) );
+
+            REQUIRE( level->getMirrors()[4] ==
+                    Mirror(Point(116., 290.), 0, 58, -1.57, Point(116., 116.),
+                           Point(116., 522.), -1.57, 1.57) );
+
+            REQUIRE( level->getMirrors()[5] ==
+                    Mirror(Point(580., 116.), 0, 58, 1.57, Point(580., 58.),
+                           Point(580., 174.), 1.57, 3.14) );
+
+            REQUIRE( level->getMirrors()[6] ==
+                    Mirror(Point(377., 0.), 0, 58, 3.14, Point(232., 0.),
+                           Point(522., 0.), 3.14, 6.28) );
+
+            REQUIRE( level->getMirrors()[7] ==
+                    Mirror(Point(580., 464.), 0, 58, 4.71, Point(580., 406.),
+                           Point(580., 522.), 3.14, 4.71) );
+
+            REQUIRE( level->getMirrors()[8] ==
+                    Mirror(Point(203., 406.), 29, 58, 2.35, Point(203., 377.),
+                           Point(290., 435.), 0.78, 2.35) );
+
+            REQUIRE( level->getMirrors()[9] ==
+                    Mirror(Point(464., 348.), 29, 58, 2.35, Point(464., 348.),
+                           Point(551., 464.), 0.78, 2.35) );
+
+            REQUIRE( level->getMirrors()[10] ==
+                    Mirror(Point(203., 261.), 29, 58, 2.35, Point(203., 261.),
+                           Point(290., 522.), 0.78, 2.35) );
         }
     }
 

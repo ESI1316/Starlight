@@ -86,15 +86,14 @@ protected:
 
     /**
      * Change la longueur d'onde du rayon. Si la longueur d'onde
-     * spécifiée est en dehors des limites autorisées, laisse la
-     * longueur d'onde inchangée.
+     * spécifiée est en dehors des limites autorisées, la longueur d'onde
+     * vaudra la borne la plus proche.
      * La longueur d'onde doit être comprise entre 360 et 830 nm.
      *
      * @param waveLength La nouvelle longueur d'onde du rayon
      *
-     * @return <code>true</code> Si la longueur d'onde a été changé.
      */
-    bool setWaveLength(const int);
+    void setWaveLength(const int);
 
     /**
      * Permet de savoir si deux rayons sont les mêmes.

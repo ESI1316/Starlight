@@ -6,6 +6,11 @@
 Line::Line(double slope, double indepTerm, double xValue)
     : slope{slope}, indepTerm{indepTerm}, xValue{xValue} {}
 
+Line::Line(const Point & start, const Point & end) :
+    slope{utilities::slopeFromPoints(start, end)},
+    indepTerm{start.getY() - (utilities::slopeFromPoints(start, end) * start.getX())},
+    xValue{utilities::equals(start.getX(), end.getY()) ? start.getX() : 0} {}
+
 Point * Line::getIntersectionPoint(const Line & line) const
 {
     Point * intersec = 0;

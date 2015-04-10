@@ -4,9 +4,9 @@
 #include "model/level.hpp"
 
 Ray::Ray(const Point start, double alpha, int waveLength)
-    :Line(utilities::tan(alpha),
-          start.getY() - (utilities::tan(alpha) * start.getX()),
-          utilities::isHalfPiPlusNPi(alpha) ? start.getX() : 0),
+    : Line(utilities::tan(alpha),
+           start.getY() - (utilities::tan(alpha) * start.getX()),
+           utilities::isHalfPiPlusNPi(alpha) ? start.getX() : 0),
       start{start}, end{start}, waveLength{waveLength}
 {
     if (waveLength < Ray::WL_MIN || waveLength > Ray::WL_MAX)
@@ -38,15 +38,18 @@ void Ray::setEnd(const Point & end)
     this->end = end;
 }
 
-bool Ray::setWaveLength(const int waveLength)
+void Ray::setWaveLength(const int waveLength)
 {
-    bool match = ((waveLength >= Ray::WL_MIN)
-                  && (waveLength <= Ray::WL_MAX));
-
-    if (match)
+    if (waveLength < Ray::WL_MIN )
+    {
+        this->waveLength = Ray::WL_MIN;
+    }
+    else if (waveLength > Ray::WL_MAX)
+    {
+        this->waveLength = Ray::WL_MAX;
+    }
+    else
         this->waveLength = waveLength;
-
-    return match;
 }
 
 bool Ray::operator==(const Ray & ray) const

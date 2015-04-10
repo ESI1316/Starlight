@@ -42,6 +42,14 @@ public:
     Line(double, double, double = 0);
 
     /**
+     * Permet de construire une droite à partir de deux points.
+     *
+     * @param start Point le plus près de l'origine au niveau de l'abcisse.
+     * @param end Point le plus éloigné de l'origine au niveau de l'abcisse.
+     */
+    Line(const Point &, const Point &);
+
+    /**
      * Permet d'obtenir le point d'intersection entre la droite et celle entrée
      * en paramètre.
      *
