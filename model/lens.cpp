@@ -5,13 +5,14 @@
 #include "model/ray.hpp"
 #include "model/point.hpp"
 
-Lens::Lens(const Point & upLeftCorner, const int width, const int height, const int wlMin, const int wlMax)
+Lens::Lens(const Point & upLeftCorner, const int width, const int height,
+           const int wlMin, const int wlMax)
     : Element(), upLeftCorner{upLeftCorner}, wlMin{wlMin}, wlMax{wlMax}
 {
     if(wlMin < Ray::WL_MIN)
-        throw StarlightException("Longueur d'onde minimale non nulle req.");
-    if(wlMax < Ray::WL_MAX)
-        throw StarlightException("Longueur d'onde maximale non nulle req.");
+        throw StarlightException("Longueur d'onde minimale trop petite.");
+    if(wlMax > Ray::WL_MAX)
+        throw StarlightException("Longueur d'onde maximale trop grande");
     if(wlMax < wlMin)
         throw StarlightException("Longueur d'onde minimale > maximale");
 }

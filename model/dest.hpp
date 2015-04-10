@@ -24,6 +24,11 @@ private :
 public:
 
     /**
+     * Constructeur par défaut.
+     */
+    Dest();
+
+    /**
      * Intancie une destination, de position et rayon donné.
      *
      * @param position Le coin supérieur gauche du carré modélisant la destination.

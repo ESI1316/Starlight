@@ -29,8 +29,12 @@ class Mirror : public Element
     double alphaMin;
     double alphaMax;
 
-
 public:
+
+    /**
+     * Constructeur par défaut.
+     */
+    Mirror();
 
     /**
      * Instancie un miroir en une position donnée, d'une certaine longueur et

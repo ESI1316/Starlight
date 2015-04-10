@@ -24,8 +24,8 @@ private :
     const double width;
     const double height;
 
-    Source source {Point{0, 0}, 5, 5., 600};
-    Dest dest {Point{0, 0}, 5};
+    Source source;
+    Dest dest;
 
     std::vector<Wall> walls;
     std::vector<Mirror> mirrors;

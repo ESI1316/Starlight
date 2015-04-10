@@ -32,8 +32,12 @@ class Source : public Rectangle
      */
     int waveLength;
 
-
 public:
+
+    /**
+     * Constructeur par défaut.
+     */
+    Source();
 
     /**
      * Instancie une nouvelle source de position, côté et longueur d'onde donnée.

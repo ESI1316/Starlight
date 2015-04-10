@@ -10,7 +10,7 @@ TEST_CASE("Constructeur d'ellipse")
     REQUIRE_THROWS_AS(Ellipse(0.96, -2.8091279786, Point(5.22, 3.)), StarlightException);
     REQUIRE_THROWS_AS(Ellipse(0., -2.8091279786, Point(5.22, 3.)), StarlightException);
 }
-
+/*
 TEST_CASE("Accesseurs d'ellipse")
 {
     Ellipse ellipse{0.96, 2.8091279786, Point{5.22, 3.}};
@@ -46,3 +46,4 @@ TEST_CASE("Get points d'intersection")
 {
 
 }
+*/

@@ -33,6 +33,11 @@ private :
 public:
 
     /**
+     * Constructeur par défaut.
+     */
+    Crystal();
+
+    /**
      * Instancie un cristal :
      * <ul>
      * <li>centré au point donné</li>

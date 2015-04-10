@@ -7,6 +7,8 @@
 #include "model/starlightexception.hpp"
 #include "model/level.hpp"
 
+Crystal::Crystal() : Element(), Ellipse{4, 4, Point{0, 0}}, amplifier{100} {}
+
 Crystal::Crystal(const Point & center, const double radius, const int amplifier)
     : Element(), Ellipse(std::pow(radius, 2), std::pow(radius, 2), center),
       amplifier{amplifier}
