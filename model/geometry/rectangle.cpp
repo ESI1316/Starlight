@@ -87,12 +87,11 @@ Rectangle & Rectangle::operator =(const Rectangle & rectangle)
 
 std::ostream & operator<<(std::ostream & out, const Rectangle & rectangle)
 {
-    out << "------" << std::endl
-        << "|    |   ^" << std::endl
-        << "|    |   |" << rectangle.getHeight() << " : hauteur" << std::endl
+    out << rectangle.getWidth() << " : largeur" << std::endl
         << "------" << std::endl
-        << " <->" << std::endl
-        << " " << rectangle.getWidth() << " : largeur" << std::endl
+        << "|    |" << std::endl
+        << "|    | " << rectangle.getHeight() << " : hauteur" << std::endl
+        << "------" << std::endl
         << "Coin supérieur gauche : " << rectangle.getUpLeftCorner();
 
     return out;
