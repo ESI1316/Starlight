@@ -1,5 +1,5 @@
-#include "../test/catch.hpp"
-#include "./model/geometry/line.hpp"
+#include "test/catch.hpp"
+#include "model/geometry/line.hpp"
 
 TEST_CASE("Constructeur")
 {

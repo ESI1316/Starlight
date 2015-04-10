@@ -107,5 +107,5 @@ public:
  * @return Le ostream rempli de la chaine formatée représentant le Rectangle en
  * paramètre.
  */
-std::ostream & operator<<(std::ostream, const Rectangle &);
+std::ostream & operator<<(std::ostream &, const Rectangle &);
 #endif // RECTANGLE_H

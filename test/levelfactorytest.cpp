@@ -1,7 +1,7 @@
 #define CATCH_CONFIG_MAIN
-#include "./test/catch.hpp"
-#include "../model/levelFactory.hpp"
-#include "../model/level.hpp"
+#include "test/catch.hpp"
+#include "model/levelFactory.hpp"
+#include "model/level.hpp"
 
 TEST_CASE("création d'un Level à partir d'un fichier .lvl", "levelFactory::getLevel(std::string)")
 {
