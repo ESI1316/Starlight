@@ -59,7 +59,7 @@ bool Ellipse::getXOfIntersPoints(const double slope, const double lineIT, double
 {
     double xSquareParam, xParam, indepTerm;
 
-    xSquareParam = (std::pow(slope, 2)/this->getYRadius()) + (1/this->xRadius);
+    xSquareParam = (std::pow(slope, 2)/this->getYRadius()) + 1/this->xRadius;
 
     xParam = ((-2 * this->getCenter().getX())/this->xRadius)
             + (((2 * slope) * (lineIT - this->center.getY()))/this->yRadius);

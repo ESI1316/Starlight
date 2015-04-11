@@ -109,7 +109,6 @@ TEST_CASE("Pas d'intersection")
 TEST_CASE("Droites tangeantes à l'ellipse")
 {
     Ellipse ellipse{30., 15., Point{6., 6.}};
-    // (x + 6)² / 30² + (y + 6)² / 15² = 1
 
     SECTION("quelconque")
     {
@@ -130,7 +129,7 @@ TEST_CASE("Droites tangeantes à l'ellipse")
     SECTION("Horizontale")
     {
         Line line{0., 21.};
-        // y = 21
+
         std::vector<Point> intersections = ellipse.getIntersectionPoints(line);
 
         REQUIRE_FALSE(intersections.empty());
