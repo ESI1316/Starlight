@@ -84,7 +84,8 @@ bool Line::operator ==(const Line & line) const
     if (this->isVertical() && line.isVertical())
         equals = utilities::equals(this->xValue, line.xValue);
     else
-        equals = utilities::equals(this->slope, line.slope)
+        equals = (!this->isVertical() && !line.isVertical())
+                && utilities::equals(this->slope, line.slope)
                 && utilities::equals(this->indepTerm, line.indepTerm);
 
     return equals;
