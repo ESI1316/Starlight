@@ -51,9 +51,9 @@ TEST_CASE("création d'un Level à partir d'un fichier .lvl", "levelFactory::get
             SECTION("murs entourant le level")
             {
                 REQUIRE(level->getWalls()[0] == Wall(Point(0., 0.), Point(0., 580.)));
-                REQUIRE(level->getWalls()[1] == Wall(Point(0., 580.), Point(720., 580.)));
-                REQUIRE(level->getWalls()[2] == Wall(Point(720., 580.), Point(720., 0.)));
-                REQUIRE(level->getWalls()[3] == Wall(Point(720, 0.), Point(0., 0.)));
+                REQUIRE(level->getWalls()[1] == Wall(Point(0., 580.), Point(750., 580.)));
+                REQUIRE(level->getWalls()[2] == Wall(Point(750., 580.), Point(750., 0.)));
+                REQUIRE(level->getWalls()[3] == Wall(Point(750, 0.), Point(0., 0.)));
             }
 
             SECTION("murs à l'intérieur du level")
