@@ -76,3 +76,63 @@ TEST_CASE("Get points d'intersection - Droite verticale")
     REQUIRE(intersections.at(0) == Point(21.8523956411, -6.7348100932));
     REQUIRE(intersections.at(1) == Point(21.8523956411, 18.7348100932));
 }
+
+TEST_CASE("Pas d'intersection")
+{
+    Ellipse ellipse{30., 15., Point{6., 6.}};
+
+    SECTION("quelconque")
+    {
+        Line line{0.6112412178, -23.9357930877};
+        std::vector<Point> intersections = ellipse.getIntersectionPoints(line);
+
+        REQUIRE(intersections.empty());
+    }
+
+    SECTION("horizontales")
+    {
+        Line line{0., -13.7384156087};
+        std::vector<Point> intersections = ellipse.getIntersectionPoints(line);
+
+        REQUIRE(intersections.empty());
+    }
+
+    SECTION("Verticales")
+    {
+        Line line{1./0., 0., 48.4261720081};
+        std::vector<Point> intersections = ellipse.getIntersectionPoints(line);
+
+        REQUIRE(intersections.empty());
+    }
+}
+
+TEST_CASE("Droites tangeantes à l'ellipse")
+{
+    Ellipse ellipse{30., 15., Point{6., 6.}};
+    // (x + 6)² / 30² + (y + 6)² / 15² = 1
+
+    SECTION("quelconque")
+    {
+        Line line{-0.5128962807, 30.5658940414};
+        std::vector<Point> intersections = ellipse.getIntersectionPoints(line);
+
+        REQUIRE_FALSE(intersections.empty());
+    }
+
+    SECTION("Verticale")
+    {
+        Line line{1./0., 0., -24.};
+        std::vector<Point> intersections = ellipse.getIntersectionPoints(line);
+
+        REQUIRE_FALSE(intersections.empty());
+    }
+
+    SECTION("Horizontale")
+    {
+        Line line{0., 21.};
+        // y = 21
+        std::vector<Point> intersections = ellipse.getIntersectionPoints(line);
+
+        REQUIRE_FALSE(intersections.empty());
+    }
+}
