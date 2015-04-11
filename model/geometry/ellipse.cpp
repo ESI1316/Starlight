@@ -4,7 +4,7 @@
 #include "model/starlightexception.hpp"
 
 Ellipse::Ellipse(double xRadius, double yRadius, const Point & center)
-    : center{center}, xRadius{xRadius}, yRadius{yRadius}
+    : center{center}, xRadius{std::pow(xRadius, 2)}, yRadius{std::pow(yRadius, 2)}
 {
     if (xRadius < 0. || utilities::equals(xRadius, 0.))
         throw StarlightException("xRadius négatif");
@@ -43,7 +43,7 @@ bool Ellipse::getYOfIntersPoints(const double xValue, double * y1, double * y2) 
 {
     double xSquareParam, xParam, indepTerm;
 
-    xSquareParam = 1 / this->yRadius;
+    xSquareParam = 1 / std::pow(this->yRadius;
 
     xParam = (2 * -this->center.getY()) / this->yRadius;
 

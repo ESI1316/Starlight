@@ -8,7 +8,8 @@
 Lens::Lens(const Point & upLeftCorner, const int width, const int height,
            const int wlMin, const int wlMax)
     : Element(), upLeftCorner{upLeftCorner}, wlMin{wlMin}, wlMax{wlMax},
-      Ellipse(std::pow(width, 2), std::pow(height, 2), Point(width/2., height/2.))
+      Ellipse(width, height, Point(this->upLeftCorner.getX() + width / 2.,
+                                   this->upLeftCorner.getY() - height / 2.))
 {
     if(wlMin < Ray::WL_MIN)
         throw StarlightException("Longueur d'onde minimale trop petite.");

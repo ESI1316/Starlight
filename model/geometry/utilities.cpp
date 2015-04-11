@@ -32,7 +32,7 @@ double utilities::angleAsDegree0to360(const double alpha)
 
 bool utilities::equals(const double nb1, const double nb2, const double epsilon)
 {
-    return (std::isinf(nb1) && std::isinf(nb2))|| (std::abs(nb1 - nb2) < epsilon);
+    return (std::isinf(nb1) && std::isinf(nb2)) || (std::abs(nb1 - nb2) < epsilon);
 }
 
 double utilities::slopeFromPoints(const Point & p1, const Point & p2)

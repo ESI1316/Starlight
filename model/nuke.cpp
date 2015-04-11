@@ -7,7 +7,7 @@
 #include "model/point.hpp"
 
 Nuke::Nuke(const Point & position, const double radius)
-    : Element(), Ellipse{std::pow(radius, 2), std::pow(radius, 2), position}
+    : Element(), Ellipse{radius, radius, position}
 {
     if (radius <= 0.)
         throw StarlightException("Le rayon de la bombe doit être "

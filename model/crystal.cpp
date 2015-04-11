@@ -8,7 +8,7 @@
 #include "model/level.hpp"
 
 Crystal::Crystal(const Point & center, const double radius, const int amplifier)
-    : Element(), Ellipse(std::pow(radius, 2), std::pow(radius, 2), center),
+    : Element(), Ellipse(radius, radius, center),
       amplifier{amplifier}
 {
     if(radius <= 0)
