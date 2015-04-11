@@ -61,6 +61,14 @@ TEST_CASE("Constructeur")
         REQUIRE(utilities::equals(line.getSlope(), 0.));
         REQUIRE(utilities::equals(line.getIndepTerm(), 2.));
     }
+
+    SECTION("Ligne à partir de deux points : quelconque")
+    {
+        Line line{Point{173., 282.}, Point{28.223, 83.18888}};
+        REQUIRE_FALSE(line.isVertical());
+        REQUIRE(utilities::equals(line.getSlope(), 1.3732230948));
+        REQUIRE(utilities::equals(line.getIndepTerm(), 44.4324045947));
+    }
 }
 
 TEST_CASE("inclusion d'un point")
