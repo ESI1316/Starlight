@@ -26,8 +26,7 @@ Point * Line::getIntersectionPoint(const Line & line) const
         }
         else
         {
-            x = (line.isVertical())
-                    ? line.xValue
+            x = (line.isVertical()) ? line.xValue
                     : (this->indepTerm - line.indepTerm) / (line.slope - this->slope);
 
             y = this->slope * x + this->indepTerm;

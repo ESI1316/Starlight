@@ -8,7 +8,11 @@ bool utilities::secondDegreeEquationSolver(double a, double b, double c,
                                            double * rad1, double * rad2)
 {
     double delta = std::pow(b, 2.) - (4. * a * c);
-    bool thereIsRadix = ((delta >= 0.) || utilities::equals(delta, 0.));
+
+    if (utilities::equals(delta, 0.))
+            delta = 0.;
+
+    bool thereIsRadix = delta >= 0. ;
 
     if (thereIsRadix)
     {

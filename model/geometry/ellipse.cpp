@@ -43,12 +43,12 @@ bool Ellipse::getYOfIntersPoints(const double xValue, double * y1, double * y2) 
 {
     double xSquareParam, xParam, indepTerm;
 
-    xSquareParam = 1 / this->yRadius;
+    xSquareParam = 1. / this->yRadius;
 
-    xParam = (2 * -this->center.getY()) / this->yRadius;
+    xParam = (2. * -this->center.getY()) / this->yRadius;
 
-    indepTerm = (std::pow(xValue - this->center.getX(), 2) / this->xRadius)
-            + (std::pow(this->center.getY(), 2)/this->getYRadius()) - 1;
+    indepTerm = (std::pow(xValue - this->center.getX(), 2.) / this->xRadius)
+            + (std::pow(this->center.getY(), 2.)/this->getYRadius()) - 1.;
 
     return utilities::secondDegreeEquationSolver
             (xSquareParam, xParam, indepTerm, y1,  y2);
@@ -59,14 +59,14 @@ bool Ellipse::getXOfIntersPoints(const double slope, const double lineIT, double
 {
     double xSquareParam, xParam, indepTerm;
 
-    xSquareParam = (std::pow(slope, 2)/this->getYRadius()) + 1/this->xRadius;
+    xSquareParam = (std::pow(slope, 2.)/this->getYRadius()) + (1./this->xRadius);
 
-    xParam = ((-2 * this->getCenter().getX())/this->xRadius)
-            + (((2 * slope) * (lineIT - this->center.getY()))/this->yRadius);
+    xParam = ((-2. * this->getCenter().getX())/this->xRadius)
+            + (((2. * slope) * (lineIT - this->center.getY()))/this->yRadius);
 
-    indepTerm = (std::pow(this->center.getX(), 2) / this->xRadius)
-            + (std::pow(lineIT - this->center.getY(), 2)
-               /this->yRadius) - 1;
+    indepTerm = (std::pow(this->center.getX(), 2.) / this->xRadius)
+            + (std::pow(lineIT - this->center.getY(), 2.)
+               /this->yRadius) - 1.;
 
     return utilities::secondDegreeEquationSolver
             (xSquareParam, xParam, indepTerm, x1, x2);

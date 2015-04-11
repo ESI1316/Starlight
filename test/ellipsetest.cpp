@@ -1,5 +1,5 @@
 #include "test/catch.hpp"
-
+    #include <iostream>
 #include "model/geometry/ellipse.hpp"
 #include "model/geometry/line.hpp"
 #include "model/starlightexception.hpp"
@@ -116,6 +116,8 @@ TEST_CASE("Droites tangeantes à l'ellipse")
         std::vector<Point> intersections = ellipse.getIntersectionPoints(line);
 
         REQUIRE_FALSE(intersections.empty());
+        REQUIRE(intersections[0] == intersections[1]);
+        REQUIRE(intersections[0] == Point(27.48155065, 16.470708923));
     }
 
     SECTION("Verticale")
@@ -124,6 +126,8 @@ TEST_CASE("Droites tangeantes à l'ellipse")
         std::vector<Point> intersections = ellipse.getIntersectionPoints(line);
 
         REQUIRE_FALSE(intersections.empty());
+        REQUIRE(intersections[0] == intersections[1]);
+        REQUIRE(intersections[0] == Point(-24., 6.));
     }
 
     SECTION("Horizontale")
@@ -133,5 +137,7 @@ TEST_CASE("Droites tangeantes à l'ellipse")
         std::vector<Point> intersections = ellipse.getIntersectionPoints(line);
 
         REQUIRE_FALSE(intersections.empty());
+        REQUIRE(intersections[0] == intersections[1]);
+        REQUIRE(intersections[0] == Point(6., 21.));
     }
 }
