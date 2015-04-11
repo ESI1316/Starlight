@@ -20,7 +20,7 @@ std::vector<Point> Ellipse::getIntersectionPoints(const Line & line) const
 
     if (line.isVertical())
     {
-        thereIsIntersec = this->getYOfIntersPoints(line.getIndepTerm(), &y1, &y2);
+        thereIsIntersec = this->getYOfIntersPoints(line.getXValue(), &y1, &y2);
         x1 = x2 = line.getXValue();
     }
     else
