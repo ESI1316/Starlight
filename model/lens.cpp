@@ -7,9 +7,10 @@
 
 Lens::Lens(const Point & upLeftCorner, const int width, const int height,
            const int wlMin, const int wlMax)
-    : Element(), upLeftCorner{upLeftCorner}, wlMin{wlMin}, wlMax{wlMax},
-      Ellipse(width, height, Point{this->upLeftCorner.getX() + (width / 2.),
-                                   this->upLeftCorner.getY() - (height / 2.)})
+    : Element(),
+      Ellipse(width, height, Point{upLeftCorner.getX() + (width / 2.),
+                                   upLeftCorner.getY() - (height / 2.)}),
+      upLeftCorner{upLeftCorner}, wlMin{wlMin}, wlMax{wlMax}
 {
     if(wlMin < Ray::WL_MIN)
         throw StarlightException("Longueur d'onde minimale trop petite.");
@@ -71,7 +72,7 @@ bool Lens::operator!=(const Lens & lens) const
 
 std::ostream & operator<<(std::ostream & out, const Lens & lens)
 {
-    out << "Lens -- Position : " <<lens.getPosition()
+    out << "Lens -- Position : " << lens.getPosition()
         << " , width : " << std::sqrt(lens.getXRadius())
         << " , height : " << std::sqrt(lens.getYRadius())
         << " , Freq. Min. : " << lens.getMinWaveLength()

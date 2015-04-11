@@ -1,7 +1,5 @@
 #include "model/geometry/ellipse.hpp"
 
-#include <iostream>
-
 #include "model/geometry/line.hpp"
 #include "model/starlightexception.hpp"
 
