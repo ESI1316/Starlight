@@ -10,11 +10,11 @@ TEST_CASE("Constructeur d'ellipse")
     REQUIRE_THROWS_AS(Ellipse(0.96, -2.8091279786, Point(5.22, 3.)), StarlightException);
     REQUIRE_THROWS_AS(Ellipse(0., -2.8091279786, Point(5.22, 3.)), StarlightException);
 }
-/*
+
 TEST_CASE("Accesseurs d'ellipse")
 {
     Ellipse ellipse{0.96, 2.8091279786, Point{5.22, 3.}};
-    REQUIRE(ellipse.getCenter() = Point(5.22, 3.));
+    REQUIRE(ellipse.getCenter() == Point(5.22, 3.));
     REQUIRE(utilities::equals(ellipse.getXRadius(), 0.96));
     REQUIRE(utilities::equals(ellipse.getYRadius(), 2.8091279786));
 }
@@ -28,22 +28,12 @@ TEST_CASE("Operateurs d'ellipse")
 
     REQUIRE(ellipse == ellip);
     REQUIRE(ellipse != ell);
-    REQUIRE(!ellipse == ell);
+    REQUIRE(!(ellipse == ell));
     REQUIRE(e != ell);
-}
-
-TEST_CASE("Get x de l'intersection")
-{
-
-}
-
-TEST_CASE("Get y de l'intersection")
-{
-
 }
 
 TEST_CASE("Get points d'intersection")
 {
-
+    Ellipse ellipse{7.8912, 0.9216, Point{2., 2.}};
 }
-*/
+
