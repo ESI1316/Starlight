@@ -1,5 +1,7 @@
 #include "model/geometry/ellipse.hpp"
 
+#include <iostream>
+
 #include "model/geometry/line.hpp"
 #include "model/starlightexception.hpp"
 
@@ -43,7 +45,7 @@ bool Ellipse::getYOfIntersPoints(const double xValue, double * y1, double * y2) 
 {
     double xSquareParam, xParam, indepTerm;
 
-    xSquareParam = 1 / std::pow(this->yRadius;
+    xSquareParam = 1 / this->yRadius;
 
     xParam = (2 * -this->center.getY()) / this->yRadius;
 

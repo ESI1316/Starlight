@@ -43,7 +43,7 @@ TEST_CASE("création d'un Level à partir d'un fichier .lvl", "levelFactory::get
 
         SECTION("vérification de la lentille")
         {
-            REQUIRE(level->getLenses()[0] == Lens(Point(552, 232), 58, 116, 500, 600));
+            REQUIRE(level->getLenses().at(0) == Lens(Point(551., 232.), 58, 116, 500, 600));
         }
 
         SECTION("vérification des murs")
