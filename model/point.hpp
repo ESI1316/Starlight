@@ -138,6 +138,14 @@ public:
      */
     void setOrigin(const Point & = Point{0., 0.});
 
+    /*!
+     * \brief Modifie le point pour lui donner un position de même angle en lui
+     * ajoutant un radius.
+     *
+     * \param radius Un nouveau radius.
+     */
+    void extend(const double);
+
     /**
      * Déplace le point en la coordonnée cartésienne donnée.
      * @param x l'abscisse où déplacer le point.

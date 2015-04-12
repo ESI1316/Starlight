@@ -63,6 +63,17 @@ void Point::setPolarLocation(const double radius, const double azimut)
     this->y = this->radius * std::sin(this->azimut);
 }
 
+void Point::setOrigin(const Point & origin)
+{
+    this->setCartesianLocation(this->getX() - origin.getX(),
+                               this->getY() - origin.getY());
+}
+
+void Point::extend(const double radius)
+{
+    this->setPolarLocation(this->radius + radius, this->azimut);
+}
+
 double Point::distanceFrom(const Point & point) const
 {
     return std::hypot((point.x - this->x),(point.y - this->y));
