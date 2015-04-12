@@ -1,5 +1,6 @@
 #include "test/catch.hpp"
 #include "model/geometry/utilities.hpp"
+#include "model/point.hpp"
 
 TEST_CASE("egalité de doubles avec un Epsilon = 10^-7")
 {
@@ -107,4 +108,19 @@ TEST_CASE("Angle en degré [0, 360[")
 
     REQUIRE(utilities::equals(utilities::angleAsDegree0to360(5 * utilities::PI_2), 90.));
     REQUIRE(utilities::equals(utilities::angleAsDegree0to360(-5 * utilities::PI_2), 270.));
+}
+
+TEST_CASE("Coefficiant angulaire avec deux points")
+{
+    REQUIRE(utilities::equals(utilities::slopeFromPoints(Point(1., 1.), Point(2., 2.)),
+                              1.));
+    REQUIRE(utilities::equals(utilities::slopeFromPoints(Point(4.4288912019, 0.9901542708),
+                                                         Point(5.7910970369, 2.4594998906)),
+                              1.0786516854));
+    REQUIRE(std::isinf(utilities::slopeFromPoints(Point(-1.4025742268, 5.1686058772),
+                                                         Point(-1.4025742268, 2.6584737766))
+                              ));
+    REQUIRE(utilities::equals(utilities::slopeFromPoints(Point(0.6789987347, 4.6176012697),
+                                                         Point(3.5105501895, 4.6176012697)),
+                              0.));
 }
