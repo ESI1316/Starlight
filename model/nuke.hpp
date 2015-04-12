@@ -59,7 +59,7 @@ public:
      *
      * @param ray Le rayon.
      */
-    void reactToRay(Ray &);
+    void reactToRay(Ray);
 
     /**
      * Renseigne si la bombe est dans la trajectoire du rayon.

@@ -28,7 +28,7 @@ void Dest::setLightedUp(const bool light)
     this->light = light;
 }
 
-void Dest::reactToRay(Ray &)
+void Dest::reactToRay(Ray)
 {
     this->setLightedUp(true);
 }

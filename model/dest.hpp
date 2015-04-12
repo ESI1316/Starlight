@@ -65,7 +65,7 @@ public:
      *
      * @param ray Un rayon percutant la destination.
      */
-    void reactToRay(Ray &);
+    void reactToRay(Ray);
 
     /**
      * Renseigne si la destination est dans la trajectoire du rayon.

@@ -45,12 +45,9 @@ protected:
     static const int WL_DFT{600};
 
     /**
-     * Créer un nouveau rayon tel une demi droite possèdant un point,
-     * un coefficiant angulaire, une longueur d'onde et un terme indépendant.
-     * Ce dernier est calculé à la fin, permettant de d'écrire le rayon au format
-     * y = mx + p
+     * Créer un nouveau rayon.
      */
-    Ray(const Point, double, int);
+    Ray(const Point, int);
 
     /**
      * Retourne le début du rayon.

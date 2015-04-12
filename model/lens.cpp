@@ -35,7 +35,7 @@ int Lens::getMaxWaveLength() const
     return this->wlMax;
 }
 
-void Lens::reactToRay(Ray & ray)
+void Lens::reactToRay(Ray ray)
 {
     if(ray.getWaveLength() >= this->getMinWaveLength()
             && ray.getWaveLength() <= this->getMaxWaveLength())

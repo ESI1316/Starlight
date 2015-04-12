@@ -46,7 +46,7 @@ public:
      *
      * @param ray Le rayon.
      */
-    void reactToRay(Ray &);
+    void reactToRay(Ray);
 
     /**
      * Renseigne si le mur est dans la trajectoire du rayon.

@@ -25,7 +25,7 @@ int Crystal::getRadius() const
     return (int) std::sqrt(this->xRadius);
 }
 
-void Crystal::reactToRay(Ray & ray)
+void Crystal::reactToRay(Ray ray)
 {
     ray.setWaveLength(ray.getWaveLength() + this->amplifier);
 

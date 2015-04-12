@@ -71,7 +71,7 @@ public:
      *
      * @param ray Un rayon percutant le miroir.
      */
-    void reactToRay(Ray &);
+    void reactToRay(Ray);
 
     /**
      * Renseigne si le crystal est dans la trajectoire du rayon.

@@ -81,7 +81,7 @@ private :
      *
      * @param ray Un rayon percutant la lentille.
      */
-    void reactToRay(Ray &);
+    void reactToRay(Ray);
 
     /**
      * Renseigne si la lentille est dans la trajectoire du rayon.

@@ -22,7 +22,7 @@ public :
      *
      * @param ray Le rayon.
      */
-    virtual void reactToRay(Ray &) = 0;
+    virtual void reactToRay(Ray) = 0;
 
     /**
      * Renseigne si l'élément est dans la trajectoire du rayon.

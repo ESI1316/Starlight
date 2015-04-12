@@ -1,9 +1,5 @@
 #include "model/level.hpp"
 
-#include <string>
-
-#include "model/starlightexception.hpp"
-
 Level::Level(const double width, const double height)
     : width{width}, height{height},
       walls { Wall{Point{0., 0.}, Point{0., height}},
@@ -109,7 +105,22 @@ void Level::computeRays()
     this->computeRay(ray);
 }
 
-void Level::computeRay(const Ray)
+void Level::computeRay(Ray ray)
 {
-    throw StarlightException("Largeur doit être strict. positive");
+    std::map<Point *, Element *> candidates;
+    auto it = candidates.begin();
+    Point * nextInters = it.first;
+    Element * nextElt = it.second;
+
+    for (++it; it != candidates.end(); ++it)
+    {
+
+    }
+
+    ray.setEnd(*nextInters);
+    this->rays.push_back(ray);
+
+    nextElt->reactToRay(Ray{*nextInters, ray.getSlope()}});
+
+    delete nextInters;
 }

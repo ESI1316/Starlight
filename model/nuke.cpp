@@ -34,7 +34,7 @@ void Nuke::setLightedUp(const bool light)
     this->light = light;
 }
 
-void Nuke::reactToRay(Ray & ray)
+void Nuke::reactToRay(Ray ray)
 {
     this->setLightedUp(true);
 }

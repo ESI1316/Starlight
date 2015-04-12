@@ -2,7 +2,10 @@
 #define LEVEL_H
 
 #include <vector>
+#include <map>
+#include <string>
 
+#include "model/starlightexception.hpp"
 #include "model/wall.hpp"
 #include "model/mirror.hpp"
 #include "model/crystal.hpp"
@@ -169,12 +172,7 @@ public:
      *
      * @param ray Rayon précedent.
      */
-    void computeRay(const Ray);
-
-    /**
-     * Permet d'ajouter un rayon au level.
-     */
-    void addRay(Ray &);
+    void computeRay(Ray);
 
     /**
      * Calcule les rayons lumineux de la carte.
