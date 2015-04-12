@@ -27,7 +27,7 @@ Mirror::Mirror(const Point & pivot, int xpad, int length, double alpha, Point po
     if(alphaMax < alphaMin)
         throw StarlightException("L'angle est en dehors des limites");
 
-    if(alpha > alphaMax || alpha < alphaMin)
+    if(!this->checkAngleRange(alpha))
         throw StarlightException("L'angle est en dehors des limites");
 }
 
@@ -98,19 +98,21 @@ bool Mirror::checkPivotRange(const Point & point) const
 
 void Mirror::reactToRay(Ray & ray)
 {
-    /*
     Point point = ray.getEnd();
-    double alpha = std::abs(std::fmod(
-                                -utilities::PI
-                                + this->getAngle()
-                                - std::atan(ray.getSlope())
-                                ,utilities::PI));
+    double mirror = utilities::absoluteAngle(this->getAngle());
+    if (utilities::equals(mirror, 0.))
+        mirror = 0.;
 
-    Ray newRay(point, utilities::tan(alpha), ray.getWaveLength());
-    newRay.setIndTerm(point.getY() - (newRay.getSlope() * point.getX()));
+    double source = utilities::absoluteAngle(std::atan(ray.getSlope()));
+    if (utilities::equals(source, 0.))
+        source = 0.;
 
+    double alpha = (utilities::PI - mirror - source);
+    if (utilities::equals(alpha, 0.))
+        alpha = 0.;
+
+    Ray newRay(point, (source + alpha + alpha), ray.getWaveLength());
     this->getLevel()->computeRay(newRay);
-    */
 }
 
 Point * Mirror::includeRay(const Ray &) const

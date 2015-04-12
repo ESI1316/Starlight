@@ -68,7 +68,8 @@ bool Ray::operator!=(const Ray & ray) const
 std::ostream & operator<<(std::ostream & out, const Ray & ray)
 {
     out << ray.getStart() << " ---------- " << ray.getEnd()
-        << " (" << ray.getWaveLength() << " nm)";
+        << " (" << ray.getWaveLength() << " nm)" << std::endl
+        << (Line) ray;
 
     return out;
 }

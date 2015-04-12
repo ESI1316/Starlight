@@ -12,7 +12,7 @@ bool utilities::secondDegreeEquationSolver(double a, double b, double c,
     if (utilities::equals(delta, 0.))
             delta = 0.;
 
-    bool thereIsRadix = delta >= 0. ;
+    bool thereIsRadix = (delta >= 0.);
 
     if (thereIsRadix)
     {
@@ -21,6 +21,19 @@ bool utilities::secondDegreeEquationSolver(double a, double b, double c,
     }
 
     return thereIsRadix;
+}
+
+double utilities::absoluteAngle(const double alpha)
+{
+    double angle = fmod(alpha, 2. * utilities::PI);
+
+        if (angle < 0.)
+            angle += (2. * utilities::PI);
+
+        if (angle > utilities::PI)
+            angle = (2 * utilities::PI) - angle;
+
+    return angle;
 }
 
 double utilities::angleAsDegree(const double alpha)
@@ -36,7 +49,7 @@ double utilities::angleAsDegree0to360(const double alpha)
 
 bool utilities::equals(const double nb1, const double nb2, const double epsilon)
 {
-    return (std::isinf(nb1) && std::isinf(nb2)) || (std::abs(nb1 - nb2) < epsilon);
+    return (std::isinf(nb1) && std::isinf(nb2)) || (std::fabs(nb1 - nb2) < epsilon);
 }
 
 double utilities::slopeFromPoints(const Point & p1, const Point & p2)
@@ -46,7 +59,7 @@ double utilities::slopeFromPoints(const Point & p1, const Point & p2)
 
 bool utilities::isHalfPiPlusNPi(const double alpha)
 {
-    return utilities::equals(std::fmod(std::abs(alpha), utilities::PI),
+    return utilities::equals(std::fmod(std::fabs(alpha), utilities::PI),
                              utilities::PI_2);
 }
 
