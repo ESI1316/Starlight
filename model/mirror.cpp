@@ -99,9 +99,17 @@ bool Mirror::checkPivotRange(const Point & point) const
 void Mirror::reactToRay(Ray & ray)
 {
     Point point = ray.getEnd();
-    double mirror = utilities::absoluteAngle(this->alpha);
+    double mirror = utilities::absoluteAngle(this->getAngle());
+    if (utilities::equals(mirror, 0.))
+        mirror = 0.;
+
     double source = utilities::absoluteAngle(std::atan(ray.getSlope()));
-    double alpha = utilities::PI - mirror - source;
+    if (utilities::equals(source, 0.))
+        source = 0.;
+
+    double alpha = (utilities::PI - mirror - source);
+    if (utilities::equals(alpha, 0.))
+        alpha = 0.;
 
     Ray newRay(point, (source + alpha + alpha), ray.getWaveLength());
     this->getLevel()->computeRay(newRay);
