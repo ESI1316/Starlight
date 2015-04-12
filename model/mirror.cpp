@@ -118,6 +118,9 @@ void Mirror::reactToRay(Ray ray)
     double source = utilities::absoluteAngle(std::atan(ray.getSlope()));
     double alpha = (utilities::PI - mirror - source);
 
+    if (utilities::equals(alpha, 0.))
+        alpha = 0.;
+
     Ray newRay(point, (source + alpha + alpha), ray.getWaveLength());
 
     if(this->getLevel() != nullptr)
