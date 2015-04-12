@@ -112,7 +112,9 @@ void Mirror::reactToRay(Ray ray)
         alpha = 0.;
 
     Ray newRay(point, (source + alpha + alpha), ray.getWaveLength());
-    this->getLevel()->computeRay(newRay);
+
+    if(this->getLevel() != nullptr)
+        this->getLevel()->computeRay(newRay);
 }
 
 Point * Mirror::includeRay(const Ray &) const
