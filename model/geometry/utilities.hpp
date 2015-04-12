@@ -102,5 +102,7 @@ namespace utilities
     bool isHalfPiPlusNPi(const double);
 
     double tan(const double);
+
+    double absoluteAngle(const double);
 }
 #endif // UTILITIES_HPP
