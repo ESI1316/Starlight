@@ -68,4 +68,43 @@ TEST_CASE("Angle absolu")
     REQUIRE(utilities::equals(
                 utilities::absoluteAngle((4. / 3.) * utilities::PI),
                 (2. / 3.) * utilities::PI));
+    REQUIRE(utilities::equals(utilities::absoluteAngle(-2.), 2.));
+    REQUIRE(utilities::equals(utilities::absoluteAngle(4.), (2 * utilities::PI) - 4.));
+    REQUIRE(utilities::equals(utilities::absoluteAngle(0.), 0.));
+    REQUIRE(utilities::equals(utilities::absoluteAngle(7.), (7. - (2 * utilities::PI))));
+    REQUIRE(utilities::equals(utilities::absoluteAngle(-7.), (7. - (2 * utilities::PI))));
+}
+
+TEST_CASE("Angle en degrés")
+{
+    REQUIRE(utilities::equals(utilities::angleAsDegree(0.), 0.));
+    REQUIRE(utilities::equals(utilities::angleAsDegree(utilities::PI_2), 90.));
+    REQUIRE(utilities::equals(utilities::angleAsDegree(utilities::PI), 180.));
+    REQUIRE(utilities::equals(utilities::angleAsDegree(3 * utilities::PI_2), 270.));
+    REQUIRE(utilities::equals(utilities::angleAsDegree(2 * utilities::PI), 360.));
+    REQUIRE(utilities::equals(utilities::angleAsDegree(-0.), 0.));
+    REQUIRE(utilities::equals(utilities::angleAsDegree(-utilities::PI_2), -90.));
+    REQUIRE(utilities::equals(utilities::angleAsDegree(-utilities::PI), -180.));
+    REQUIRE(utilities::equals(utilities::angleAsDegree(-(3 * utilities::PI_2)), -270.));
+    REQUIRE(utilities::equals(utilities::angleAsDegree(-(2 * utilities::PI)), -360.));
+
+    REQUIRE(utilities::equals(utilities::angleAsDegree(5 * utilities::PI_2), 450.));
+    REQUIRE(utilities::equals(utilities::angleAsDegree(-5 * utilities::PI_2), -450.));
+}
+
+TEST_CASE("Angle en degré [0, 360[")
+{
+    REQUIRE(utilities::equals(utilities::angleAsDegree0to360(0.), 0.));
+    REQUIRE(utilities::equals(utilities::angleAsDegree0to360(utilities::PI_2), 90.));
+    REQUIRE(utilities::equals(utilities::angleAsDegree0to360(utilities::PI), 180.));
+    REQUIRE(utilities::equals(utilities::angleAsDegree0to360(3 * utilities::PI_2), 270.));
+    REQUIRE(utilities::equals(utilities::angleAsDegree0to360(2 * utilities::PI), 0.));
+    REQUIRE(utilities::equals(utilities::angleAsDegree0to360(-0.), 0.));
+    REQUIRE(utilities::equals(utilities::angleAsDegree0to360(-utilities::PI_2), 270.));
+    REQUIRE(utilities::equals(utilities::angleAsDegree0to360(-utilities::PI), 180.));
+    REQUIRE(utilities::equals(utilities::angleAsDegree0to360(-(3 * utilities::PI_2)), 90.));
+    REQUIRE(utilities::equals(utilities::angleAsDegree0to360(-(2 * utilities::PI)), 0.));
+
+    REQUIRE(utilities::equals(utilities::angleAsDegree0to360(5 * utilities::PI_2), 90.));
+    REQUIRE(utilities::equals(utilities::angleAsDegree0to360(-5 * utilities::PI_2), 270.));
 }
