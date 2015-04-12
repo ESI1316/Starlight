@@ -27,7 +27,7 @@ Mirror::Mirror(const Point & pivot, int xpad, int length, double alpha, Point po
     if(alphaMax < alphaMin)
         throw StarlightException("L'angle est en dehors des limites");
 
-    if(alpha > alphaMax || alpha < alphaMin)
+    if(!this->checkAngleRange(alpha))
         throw StarlightException("L'angle est en dehors des limites");
 }
 

@@ -136,3 +136,54 @@ TEST_CASE("Reflexion sur mirroir horizontale et perpendiculaire au tir")
     REQUIRE(utilities::equals(newRay.getXValue(),  8.0884039814));
 }
 
+TEST_CASE("Reflexion de mirroir angle quelconque + 2PI")
+{
+    Mirror mirroir{Point{4.6350324277, 6.0423035858}, 50, 80, 5.1882683952,
+                   Point{1.,1.}, Point{221., 2221.}, utilities::PI, utilities::PI * 2};
+
+    Ray ray{Point{3.8690993528, 1.9060097494}, 1.0492334171 + (2* utilities::PI), 500};
+
+    Point point{5.3967177826, 4.5644066284};
+    double mirror = utilities::absoluteAngle(mirroir.getAngle());
+    if (utilities::equals(mirror, 0.))
+        mirror = 0.;
+
+    double source = utilities::absoluteAngle(std::atan(ray.getSlope()));
+    if (utilities::equals(source, 0.))
+        source = 0.;
+
+    double alpha = (utilities::PI - mirror - source);
+    if (utilities::equals(alpha, 0.))
+        alpha = 0.;
+
+    Ray newRay(point, (source + alpha + alpha), ray.getWaveLength());
+
+    REQUIRE(utilities::equals(newRay.getSlope(), -0.0977844768));
+    REQUIRE(utilities::equals(newRay.getIndepTerm(), 5.0921218532));
+}
+
+TEST_CASE("Reflexion de mirroir angle quelconque négatif")
+{
+    Mirror mirroir{Point{4.6350324277, 6.0423035858}, 50, 80, 5.1882683952,
+                   Point{1.,1.}, Point{221., 2221.}, utilities::PI, utilities::PI * 2};
+
+    Ray ray{Point{3.8690993528, 1.9060097494}, -((utilities::PI * 2) - 1.0492334171), 500};
+
+    Point point{5.3967177826, 4.5644066284};
+    double mirror = utilities::absoluteAngle(mirroir.getAngle());
+    if (utilities::equals(mirror, 0.))
+        mirror = 0.;
+
+    double source = utilities::absoluteAngle(std::atan(ray.getSlope()));
+    if (utilities::equals(source, 0.))
+        source = 0.;
+
+    double alpha = (utilities::PI - mirror - source);
+    if (utilities::equals(alpha, 0.))
+        alpha = 0.;
+
+    Ray newRay(point, (source + alpha + alpha), ray.getWaveLength());
+
+    REQUIRE(utilities::equals(newRay.getSlope(), -0.0977844768));
+    REQUIRE(utilities::equals(newRay.getIndepTerm(), 5.0921218532));
+}
