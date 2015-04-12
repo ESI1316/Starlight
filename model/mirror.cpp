@@ -8,7 +8,11 @@
 
 Mirror::Mirror(const Point & pivot, int xpad, int length, double alpha, Point pointMin,
                Point pointMax, double alphaMin, double alphaMax)
-    : Element(), pivot {pivot}, length(length), xpad(xpad), xMin {pointMin.getX()},
+    : Element(),
+      Line(utilities::tan(alpha),
+           pivot.getY() - (utilities::tan(alpha) * pivot.getX()),
+           utilities::isHalfPiPlusNPi(alpha) ? pivot.getX() : 0),
+      pivot {pivot}, length(length), xpad(xpad), xMin {pointMin.getX()},
       xMax {pointMax.getX()}, yMin {pointMin.getY()}, yMax {pointMax.getY()}, alpha {alpha},
       alphaMin {alphaMin}, alphaMax {alphaMax}
 {
@@ -81,10 +85,11 @@ bool Mirror::setAngle(double alpha)
     return this->checkAngleRange(alpha) ? this->alpha = alpha, true : false;
 }
 
-bool Mirror::checkAngleRange(double a) const
+bool Mirror::checkAngleRange(double alpha) const
 {
-    return (this->alphaMin == 0 && this->alphaMax == 0) ||
-            (a >= this->alphaMin && a <= this->alphaMax);
+    return (utilities::equals(this->alphaMin, 0.) && utilities::equals(this->alphaMax, 0.))
+            || ((utilities::equals(alpha, this->alphaMin) || alpha > this->alphaMin)
+             && (utilities::equals(alpha, this->alphaMax) || alpha < this->alphaMax));
 }
 
 bool Mirror::checkPivotRange(const Point & point) const
@@ -93,17 +98,17 @@ bool Mirror::checkPivotRange(const Point & point) const
             && utilities::equals(this->yMin, 0.) && utilities::equals(this->yMax, 0.))
 
            || (utilities::equals(this->xMin, 0.) && utilities::equals(this->xMax, 0.)
-            && (utilities::equals(point.getY(), yMin) || point.getY() > yMin)
-            && (utilities::equals(point.getY(), yMax) || point.getY() < yMax))
+            && (utilities::equals(point.getY(), this->yMin) || point.getY() > this->yMin)
+            && (utilities::equals(point.getY(), this->yMax) || point.getY() < this->yMax))
 
            || (utilities::equals(this->yMin, 0.) && utilities::equals(this->yMax, 0.)
-            && (utilities::equals(point.getX(), xMin) || point.getX() > xMin)
-            && (utilities::equals(point.getX(), xMax) || point.getX() < xMax))
+            && (utilities::equals(point.getX(), this->xMin) || point.getX() > this->xMin)
+            && (utilities::equals(point.getX(), this->xMax) || point.getX() < this->xMax))
 
-           || ((utilities::equals(point.getX(), xMin) || point.getX() > xMin)
-            && (utilities::equals(point.getX(), xMax) || point.getX() < xMax)
-            && (utilities::equals(point.getY(), yMin) || point.getY() > yMin)
-            && (utilities::equals(point.getY(), yMax) || point.getY() < yMax));
+           || ((utilities::equals(point.getX(), this->xMin) || point.getX() > this->xMin)
+            && (utilities::equals(point.getX(), this->xMax) || point.getX() < this->xMax)
+            && (utilities::equals(point.getY(), this->yMin) || point.getY() > this->yMin)
+            && (utilities::equals(point.getY(), this->yMax) || point.getY() < this->yMax));
 }
 
 void Mirror::reactToRay(Ray ray)

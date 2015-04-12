@@ -3,6 +3,7 @@
 
 #include <ostream>
 #include "model/element.hpp"
+#include "model/geometry/line.hpp"
 #include "model/point.hpp"
 
 class Ray;
@@ -16,7 +17,7 @@ class Ray;
  * Les miroirs sont capables d'être déplacés et pivotés dans
  *  une certaine limite.
  */
-class Mirror : public Element
+class Mirror : public Element, public Line
 {
     Point pivot;
     int length;
