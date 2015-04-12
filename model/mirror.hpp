@@ -216,7 +216,7 @@ public:
      *
      * @param ray Le rayon.
      */
-    void reactToRay(Ray &);
+    void reactToRay(Ray);
 
     /**
      * Renseigne si le mirroir est dans la trajectoire du rayon.

@@ -98,18 +98,16 @@ void Level::addNuke(const Nuke & nuke)
 
 void Level::computeRays()
 {
-    Ray ray(this->source.getPosition(),
-            this->source.getAngle(),
-            this->source.getWaveLength());
-
-    this->computeRay(ray);
+    this->computeRay(Ray(this->source.getPosition(),
+                        this->source.getAngle(),
+                        this->source.getWaveLength()));
 }
 
 void Level::computeRay(Ray ray)
 {
     std::map<Point *, Element *> candidates;
     auto it = candidates.begin();
-    Point * nextInters = it.first;
+    /*Point * nextInters = it.first;
     Element * nextElt = it.second;
 
     for (++it; it != candidates.end(); ++it)
@@ -123,4 +121,5 @@ void Level::computeRay(Ray ray)
     nextElt->reactToRay(Ray{*nextInters, ray.getSlope()}});
 
     delete nextInters;
+    */
 }

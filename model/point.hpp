@@ -14,6 +14,8 @@
  */
 class Point
 {
+
+private :
     /**
      * @brief x La distance, sur l'axe des abcisses, du point par rapport à
      * l'origine.
@@ -127,6 +129,14 @@ public:
      * @param alpha L'amplitude de la rotation à effectuer (en radian).
      */
     void rotate(const double);
+
+    /*!
+     * \brief Considère la position d'un point par rapport à un point quelconque.
+     *
+     * \param origin La nouvelle origine du plan. Si ce paramètre est omis,
+     * l'origine du plan est rétabli.
+     */
+    void setOrigin(const Point & = Point{0., 0.});
 
     /**
      * Déplace le point en la coordonnée cartésienne donnée.

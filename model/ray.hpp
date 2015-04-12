@@ -47,7 +47,7 @@ protected:
     /**
      * Créer un nouveau rayon.
      */
-    Ray(const Point, int);
+    Ray(const Point, double, int);
 
     /**
      * Retourne le début du rayon.

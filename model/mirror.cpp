@@ -96,7 +96,7 @@ bool Mirror::checkPivotRange(const Point & point) const
                 && (point.getY() >= yMin && point.getY() <= yMax));
 }
 
-void Mirror::reactToRay(Ray & ray)
+void Mirror::reactToRay(Ray ray)
 {
     Point point = ray.getEnd();
     double mirror = utilities::absoluteAngle(this->getAngle());

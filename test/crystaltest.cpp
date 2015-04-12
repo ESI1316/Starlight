@@ -22,7 +22,7 @@ TEST_CASE("reaction au rayon")
 
     cristal.reactToRay(ray);
 
-    REQUIRE(ray.getWaveLength() == 600);
+    REQUIRE(ray.getWaveLength() == 500);
 }
 
 TEST_CASE("Intersection cristal et rayon")
