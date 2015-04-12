@@ -89,11 +89,21 @@ bool Mirror::checkAngleRange(double a) const
 
 bool Mirror::checkPivotRange(const Point & point) const
 {
-    return (xMin == 0 && xMax == 0 && yMin == 0 && yMax == 0)
-            || (xMin == 0 && xMax == 0 && point.getY() >= yMin && point.getY() <= yMax)
-            || (yMin == 0 && yMax == 0 && point.getX() >= xMin && point.getX() <= xMax)
-            || ((point.getX() >= xMin && point.getX() <= xMax)
-                && (point.getY() >= yMin && point.getY() <= yMax));
+    return (utilities::equals(this->xMin, .0) && utilities::equals(this->xMax, 0.)
+            && utilities::equals(this->yMin, 0.) && utilities::equals(this->yMax, 0.))
+
+           || (utilities::equals(this->xMin, 0.) && utilities::equals(this->xMax, 0.)
+            && (utilities::equals(point.getY(), yMin) || point.getY() > yMin)
+            && (utilities::equals(point.getY(), yMax) || point.getY() < yMax))
+
+           || (utilities::equals(this->yMin, 0.) && utilities::equals(this->yMax, 0.)
+            && (utilities::equals(point.getX(), xMin) || point.getX() > xMin)
+            && (utilities::equals(point.getX(), xMax) || point.getX() < xMax))
+
+           || ((utilities::equals(point.getX(), xMin) || point.getX() > xMin)
+            && (utilities::equals(point.getX(), xMax) || point.getX() < xMax)
+            && (utilities::equals(point.getY(), yMin) || point.getY() > yMin)
+            && (utilities::equals(point.getY(), yMax) || point.getY() < yMax));
 }
 
 void Mirror::reactToRay(Ray ray)
