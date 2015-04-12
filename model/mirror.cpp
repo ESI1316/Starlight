@@ -9,29 +9,29 @@
 Mirror::Mirror(const Point & pivot, int xpad, int length, double alpha, Point pointMin,
                Point pointMax, double alphaMin, double alphaMax)
     : Element(),
-      Line(utilities::tan(alpha),
+      Line(utilities::tan(utilities::inZeroTwoPi(alpha)),
            pivot.getY() - (utilities::tan(alpha) * pivot.getX()),
            utilities::isHalfPiPlusNPi(alpha) ? pivot.getX() : 0),
       pivot {pivot}, length(length), xpad(xpad), xMin {pointMin.getX()},
-      xMax {pointMax.getX()}, yMin {pointMin.getY()}, yMax {pointMax.getY()}, alpha {alpha},
-      alphaMin {alphaMin}, alphaMax {alphaMax}
+      xMax {pointMax.getX()}, yMin {pointMin.getY()}, yMax {pointMax.getY()},
+      alpha {alpha}, alphaMin {alphaMin}, alphaMax {alphaMax}
 {
-    if (length <= 0)
+    if (this->length <= 0)
         throw StarlightException("La longueur doit être strict. positive");
 
-    if(xpad < 0)
+    if(this->xpad < 0)
         throw StarlightException("Le décalage du pivot doit être positif");
 
-    if(pivot.getX() < pointMin.getX() || pivot.getX() > pointMax.getX())
+    if(this->pivot.getX() < this->xMin || this->pivot.getX() > this->xMax)
         throw StarlightException("Le miroir est trop haut ou trop bas");
 
-    if(pivot.getY() < pointMin.getY() || pivot.getY() > pointMax.getY())
+    if(this->pivot.getY() < this->yMin || this->pivot.getY() > this->yMax)
         throw StarlightException("Le miroir est trop à gauche ou trop à droite");
 
-    if(alphaMax < alphaMin)
+    if(this->alphaMax < this->alphaMin)
         throw StarlightException("L'angle est en dehors des limites");
 
-    if(!this->checkAngleRange(alpha))
+    if(!this->checkAngleRange(this->alpha))
         throw StarlightException("L'angle est en dehors des limites");
 }
 
@@ -115,16 +115,8 @@ void Mirror::reactToRay(Ray ray)
 {
     Point point = ray.getEnd();
     double mirror = utilities::absoluteAngle(this->getAngle());
-    if (utilities::equals(mirror, 0.))
-        mirror = 0.;
-
     double source = utilities::absoluteAngle(std::atan(ray.getSlope()));
-    if (utilities::equals(source, 0.))
-        source = 0.;
-
     double alpha = (utilities::PI - mirror - source);
-    if (utilities::equals(alpha, 0.))
-        alpha = 0.;
 
     Ray newRay(point, (source + alpha + alpha), ray.getWaveLength());
 

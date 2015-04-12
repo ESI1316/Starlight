@@ -33,7 +33,7 @@ double utilities::absoluteAngle(const double alpha)
         if (angle > utilities::PI)
             angle = (2 * utilities::PI) - angle;
 
-    return angle;
+    return utilities::equals(angle, 0) ? 0. : angle;
 }
 
 double utilities::inZeroTwoPi(const double alpha)
