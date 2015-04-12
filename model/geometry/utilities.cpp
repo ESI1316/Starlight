@@ -36,6 +36,12 @@ double utilities::absoluteAngle(const double alpha)
     return angle;
 }
 
+double utilities::inZeroTwoPi(const double alpha)
+{
+   return std::fmod((std::fmod(alpha, (2 * utilities::PI)) + (2 * utilities::PI)),
+                    (utilities::PI * 2));
+}
+
 double utilities::angleAsDegree(const double alpha)
 {
     return ((alpha * 180.) / utilities::PI);
@@ -43,8 +49,7 @@ double utilities::angleAsDegree(const double alpha)
 
 double utilities::angleAsDegree0to360(const double alpha)
 {
-    return std::fmod(std::fmod(utilities::angleAsDegree(alpha), 360.) + 360.,
-                     360.);
+    return utilities::angleAsDegree(utilities::inZeroTwoPi(alpha));
 }
 
 bool utilities::equals(const double nb1, const double nb2, const double epsilon)

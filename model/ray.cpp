@@ -7,7 +7,8 @@ Ray::Ray(const Point start, double alpha, int waveLength)
     : Line(utilities::tan(alpha),
            start.getY() - (utilities::tan(alpha) * start.getX()),
            utilities::isHalfPiPlusNPi(alpha) ? start.getX() : 0),
-      start{start}, end{start}, waveLength{waveLength}
+      start{start}, end{start}, waveLength{waveLength},
+      alpha{utilities::inZeroTwoPi(alpha)}
 {
     if (waveLength < Ray::WL_MIN || waveLength > Ray::WL_MAX)
         throw StarlightException("Longueur d'onde doit être comprise entre");
@@ -50,6 +51,38 @@ void Ray::setWaveLength(const int waveLength)
     }
     else
         this->waveLength = waveLength;
+}
+
+bool Ray::isInTrajectory(const Point & point) const
+{
+    bool inTrajectory;
+
+    if (utilities::equals(this->alpha, 0))
+        inTrajectory =(this->start.getX() < point.getX()
+                       && utilities::equals(this->start.getY(), point.getY()));
+    else if(utilities::equals(this->alpha, utilities::PI_2))
+        inTrajectory =(this->start.getY() < point.getY()
+                       && utilities::equals(this->start.getX(), point.getX()));
+    else if(utilities::equals(this->alpha, utilities::PI))
+        inTrajectory =(this->start.getX() > point.getX()
+                       && utilities::equals(this->start.getY(), point.getY()));
+    else if(utilities::equals(this->alpha, (3 * utilities::PI_2)))
+        inTrajectory =(this->start.getY() > point.getY()
+                       && utilities::equals(this->start.getX(), point.getX()));
+    else if(this->alpha > 0 && this->alpha < utilities::PI_2)
+        inTrajectory =(this->start.getY() > point.getY()
+                       && this->start.getX() > point.getX());
+    else if(this->alpha > utilities::PI_2 && this->alpha < utilities::PI)
+        inTrajectory =(this->start.getY() > point.getY()
+                       && this->start.getX() < point.getX());
+    else if(this->alpha > utilities::PI && this->alpha < (3 * utilities::PI_2))
+        inTrajectory =(this->start.getY() < point.getY()
+                       && this->start.getX() < point.getX());
+    else
+        inTrajectory =(this->start.getY() < point.getY()
+                       && this->start.getX() > point.getX());
+
+    return inTrajectory;
 }
 
 bool Ray::operator==(const Ray & ray) const

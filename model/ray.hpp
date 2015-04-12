@@ -20,6 +20,7 @@ protected:
     Point start;
     Point end;
     int waveLength{Ray::WL_DFT};
+    double alpha;
 
   public:
 
@@ -91,6 +92,8 @@ protected:
      *
      */
     void setWaveLength(const int);
+
+    bool isInTrajectory(const Point &) const;
 
     /**
      * Permet de savoir si deux rayons sont les mêmes.

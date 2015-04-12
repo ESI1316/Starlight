@@ -104,5 +104,6 @@ namespace utilities
     double tan(const double);
 
     double absoluteAngle(const double);
+    double inZeroTwoPi(const double alpha);
 }
 #endif // UTILITIES_HPP
