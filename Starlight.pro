@@ -40,7 +40,8 @@ SOURCES += main.cpp\
     model/geometry/ellipse.cpp \
     test/ellipsetest.cpp \
     test/utilitiestest.cpp \
-    test/mirrortest.cpp
+    test/mirrortest.cpp \
+    test/raytest.cpp
 
 HEADERS  += mainwindow.hpp \
     model/starlightexception.hpp \

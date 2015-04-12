@@ -70,17 +70,17 @@ bool Ray::isInTrajectory(const Point & point) const
         inTrajectory =(this->start.getY() > point.getY()
                        && utilities::equals(this->start.getX(), point.getX()));
     else if(this->alpha > 0 && this->alpha < utilities::PI_2)
-        inTrajectory =(this->start.getY() > point.getY()
-                       && this->start.getX() > point.getX());
+        inTrajectory =(this->start.getY() < point.getY()
+                       && this->start.getX() < point.getX());
     else if(this->alpha > utilities::PI_2 && this->alpha < utilities::PI)
-        inTrajectory =(this->start.getY() > point.getY()
-                       && this->start.getX() < point.getX());
-    else if(this->alpha > utilities::PI && this->alpha < (3 * utilities::PI_2))
-        inTrajectory =(this->start.getY() < point.getY()
-                       && this->start.getX() < point.getX());
-    else
         inTrajectory =(this->start.getY() < point.getY()
                        && this->start.getX() > point.getX());
+    else if(this->alpha > utilities::PI && this->alpha < (3 * utilities::PI_2))
+        inTrajectory =(this->start.getY() > point.getY()
+                       && this->start.getX() > point.getX());
+    else
+        inTrajectory =(this->start.getY() > point.getY()
+                       && this->start.getX() < point.getX());
 
     return inTrajectory;
 }
