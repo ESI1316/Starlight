@@ -53,6 +53,9 @@ Point * Lens::includeRay(const Ray & ray) const
         intersec =
             ray.getStart().distanceFrom(p[0]) > ray.getStart().distanceFrom(p[1]) ?
                 new Point{p[0]} : new Point{p[1]};
+
+        if (! ray.isInTrajectory(*intersec))
+            delete intersec, intersec = 0;
     }
 
     return intersec;

@@ -37,6 +37,8 @@ private :
     std::vector<Ray> rays;
     std::vector<Nuke> nukes;
 
+    std::map<Point *, Element *> getEltsInTrajectory(const Ray & ray);
+
 public:
 
     /**

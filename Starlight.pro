@@ -6,7 +6,7 @@
 
 QT       += core gui
 
-QMAKE_CXXFLAGS += -std=c++0x -pedantic-errors
+QMAKE_CXXFLAGS += -std=c++11 -pedantic-errors
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 

@@ -105,21 +105,53 @@ void Level::computeRays()
 
 void Level::computeRay(Ray ray)
 {
-    std::map<Point *, Element *> candidates;
+    std::map<Point *, Element *> candidates = this->getEltsInTrajectory(ray);
     auto it = candidates.begin();
-    /*Point * nextInters = it.first;
-    Element * nextElt = it.second;
+    Point * nextInters = it->first;
+    Element * nextElt = it->second;
 
     for (++it; it != candidates.end(); ++it)
     {
-
+        if (ray.getStart().distanceFrom(*nextInters) > ray.getStart().distanceFrom(*it->first))
+            nextInters = it->first, nextElt = it->second;
+        else
+            delete it->first;
     }
 
     ray.setEnd(*nextInters);
     this->rays.push_back(ray);
-
-    nextElt->reactToRay(Ray{*nextInters, ray.getSlope()}});
+    nextElt->reactToRay(ray);
 
     delete nextInters;
-    */
+}
+
+std::map<Point *, Element *> Level::getEltsInTrajectory(const Ray & ray)
+{
+    std::map<Point *, Element *> candidates;
+    Point * inters;
+
+    for (auto & elt : this->walls)
+        if((inters = elt.includeRay(ray)))
+            candidates[inters] = &elt;
+
+    //for (auto & elt : this->mirrors)
+    //    if((inters = elt.includeRay(ray)))
+    //        candidates[inters] = &elt;
+
+    for (auto & elt : this->crystals)
+        if((inters = elt.includeRay(ray)))
+            candidates[inters] = &elt;
+
+    for (auto & elt : this->lenses)
+        if((inters = elt.includeRay(ray)))
+            candidates[inters] = &elt;
+
+    for (auto & elt : this->nukes)
+        if((inters = elt.includeRay(ray)))
+            candidates[inters] = &elt;
+
+    if ((inters = this->dest.includeRay(ray)))
+            candidates[inters] = &this->dest;
+
+    return candidates;
 }
