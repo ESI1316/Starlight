@@ -1,9 +1,155 @@
 #include "test/catch.hpp"
 #include <iostream>
+#include "model/starlightexception.hpp"
 #include "model/geometry/utilities.hpp"
 #include "model/ray.hpp"
 #include "model/mirror.hpp"
 #include "model/point.hpp"
+
+TEST_CASE("Construction")
+{
+    REQUIRE_NOTHROW(Mirror(Point(2., 2.), 2, 5, 1., Point(1., 1.), Point(3., 3.), 0., 2.));
+    REQUIRE_THROWS_AS(Mirror(Point(2., 2.), -1, 5, 1., Point(1., 1.), Point(3., 3.), 0., 2.),
+                      StarlightException);
+    REQUIRE_THROWS_AS(Mirror(Point(2., 2.), 1, 0, 1., Point(1., 1.), Point(3., 3.), 0., 2.),
+                      StarlightException);
+    REQUIRE_THROWS_AS(Mirror(Point(4., 2.), 1, 1, 1., Point(1., 1.), Point(3., 3.), 0., 2.),
+                      StarlightException);
+    REQUIRE_THROWS_AS(Mirror(Point(2., 4.), 1, 1, 1., Point(1., 1.), Point(3., 3.), 0., 2.),
+                      StarlightException);
+    REQUIRE_THROWS_AS(Mirror(Point(2., 0.), 1, 1, 1., Point(1., 1.), Point(3., 3.), 0., 2.),
+                      StarlightException);
+    REQUIRE_THROWS_AS(Mirror(Point(0., 2.), 1, 1, 1., Point(1., 1.), Point(3., 3.), 0., 2.),
+                      StarlightException);
+    REQUIRE_THROWS_AS(Mirror(Point(2., 2.), 1, 1, 2., Point(1., 1.), Point(3., 3.), 2.1, 2.),
+                      StarlightException);
+}
+
+TEST_CASE("Miroir : Accesseurs")
+{
+    Mirror mirroir{Point{4.6350324277, 6.0423035858}, 50, 80, 5.1882683952,
+                   Point{1.,1.}, Point{221., 2221.}, utilities::PI, utilities::PI * 2};
+
+    REQUIRE(mirroir.getPivot() == Point(4.6350324277, 6.0423035858));
+    REQUIRE(mirroir.getXPad() == 50);
+    REQUIRE(mirroir.getLength() == 80);
+    REQUIRE(utilities::equals(mirroir.getAngle(), 5.1882683952));
+    REQUIRE(mirroir.getMinPivot() == Point(1., 1.));
+    REQUIRE(mirroir.getMaxPivot() == Point(221., 2221.));
+    REQUIRE(utilities::equals(mirroir.getMinAngle(), utilities::PI));
+    REQUIRE(utilities::equals(mirroir.getMaxAngle(), utilities::PI * 2));
+}
+
+TEST_CASE("Mirroir : setPivot")
+{
+    Mirror mirroir{Point{4.6350324277, 6.0423035858}, 50, 80, 5.1882683952,
+                   Point{1.,1.}, Point{221., 2221.}, utilities::PI, utilities::PI * 2};
+
+    REQUIRE(mirroir.setPivot(Point(2., 2.)));
+    REQUIRE_FALSE(mirroir.setPivot(Point(0., 2.)));
+    REQUIRE_FALSE(mirroir.setPivot(Point(1., 2221.1)));
+}
+
+TEST_CASE("Mirroir : setAngle")
+{
+    Mirror mirroir{Point{4.6350324277, 6.0423035858}, 50, 80, 5.1882683952,
+                   Point{1.,1.}, Point{221., 2221.}, utilities::PI, utilities::PI * 2};
+
+    REQUIRE(mirroir.setAngle(5.));
+    REQUIRE(mirroir.setAngle(utilities::PI));
+    REQUIRE(mirroir.setAngle(utilities::PI * 2));
+    REQUIRE_FALSE(mirroir.setAngle(1.));
+}
+
+TEST_CASE("Mirroir : CheckAngleRange")
+{
+    SECTION("Max = Min = 0")
+    {
+        Mirror mirroir{Point{4.6350324277, 6.0423035858}, 50, 80, 5.1882683952,
+                       Point{1.,1.}, Point{221., 2221.}, 0., 0.};
+
+        REQUIRE(mirroir.checkAngleRange(1999.));
+        REQUIRE(mirroir.checkAngleRange(-999.));
+    }
+
+    SECTION("!(Max = Min = 0)")
+    {
+        Mirror mirroir{Point{4.6350324277, 6.0423035858}, 50, 80, 4.1882683952,
+                       Point{1.,1.}, Point{221., 2221.}, 0., 5.};
+
+        REQUIRE(mirroir.checkAngleRange(4.));
+        REQUIRE(mirroir.checkAngleRange(2.));
+        REQUIRE_FALSE(mirroir.checkAngleRange(-1.));
+        REQUIRE_FALSE(mirroir.checkAngleRange(6.));
+    }
+
+}
+
+TEST_CASE("Mirroir : pivotRange")
+{
+    SECTION("xmin = xmax = ymin = ymax = 0")
+    {
+        Mirror mirroir{Point{4.6350324277, 6.0423035858}, 50, 80, 4.1882683952,
+                       Point{0.,0.}, Point{0., 0.}, 0., 5.};
+
+        REQUIRE(mirroir.checkPivotRange(Point(22., -33)));
+        REQUIRE(mirroir.checkPivotRange(Point(-22.2223, -33)));
+    }
+
+    SECTION("xmin = xmax = 0")
+    {
+        Mirror mirroir{Point{4., 6.}, 50, 80, 4.1882683952,
+                       Point{0.,-220.}, Point{0., 31.}, 0., 5.};
+
+        REQUIRE(mirroir.checkPivotRange(Point(22., 30)));
+        REQUIRE(mirroir.checkPivotRange(Point(-222., 30)));
+        REQUIRE_FALSE(mirroir.checkPivotRange(Point(-22.2223, 33)));
+        REQUIRE_FALSE(mirroir.checkPivotRange(Point(-22.2223, -221)));
+
+    }
+
+    SECTION("ymin = ymax = 0")
+    {
+        Mirror mirroir{Point{4., 6.}, 50, 80, 4.1882683952,
+                       Point{-220.,0.}, Point{31., 0.}, 0., 5.};
+
+        REQUIRE(mirroir.checkPivotRange(Point(-22., 2.230)));
+        REQUIRE(mirroir.checkPivotRange(Point(-122., -3330)));
+        REQUIRE_FALSE(mirroir.checkPivotRange(Point(32.2223, 33)));
+        REQUIRE_FALSE(mirroir.checkPivotRange(Point(-222.2223, -221)));
+    }
+
+    SECTION("Quelconque")
+    {
+        Mirror mirroir{Point{4., 55.}, 50, 80, 4.1882683952,
+                       Point{-220.,40.}, Point{31., 90.}, 0., 5.};
+
+        REQUIRE(mirroir.checkPivotRange(Point(-22., 50)));
+        REQUIRE(mirroir.checkPivotRange(Point(-122., 89)));
+        REQUIRE_FALSE(mirroir.checkPivotRange(Point(-332.2223, 33)));
+        REQUIRE_FALSE(mirroir.checkPivotRange(Point(-222.2223, -221)));
+    }
+}
+
+TEST_CASE("Mirroir : reactToRay")
+{
+        Mirror mirroir{Point{4., 55.}, 50, 80, 4.1882683952,
+                       Point{-220.,40.}, Point{31., 90.}, 0., 5.};
+
+        REQUIRE_NOTHROW(mirroir.reactToRay(Ray(Point(2., 2.), 3., 400)));
+}
+
+TEST_CASE("Mirroir : opérateurs")
+{
+        Mirror mirroir{Point{4., 55.}, 50, 80, 4.1882683952,
+                       Point{-220.,40.}, Point{31., 90.}, 0., 5.};
+
+        Mirror mirr{Point{4., 55.}, 50, 80, 4.1882683952,
+                       Point{-220.,40.}, Point{31., 90.}, 0., 5.};
+
+        REQUIRE(mirroir == mirr);
+        REQUIRE_FALSE(mirroir != mirr);
+}
 
 TEST_CASE("Reflexion de mirroir angle quelconque")
 {
@@ -34,7 +180,7 @@ TEST_CASE("Reflexion de mirroir angle quelconque")
 TEST_CASE("Reflexion de mirroir angle quelconque : 2")
 {
     Mirror mirroir{Point{4.6350324277, 6.0423035858}, 50, 80, (5.1882683952 - (2 * utilities::PI)),
-                   Point{1.,1.}, Point{221., 2221.}, 0., 0.};
+                Point{1.,1.}, Point{221., 2221.}, 0., 0.};
 
     Ray ray{Point{3.8690993528, 1.9060097494}, 1.0492334171, 500};
 
@@ -87,7 +233,7 @@ TEST_CASE("Reflexion de mirroir angle quelconque deux")
 TEST_CASE("Reflexion sur mirroir vertical et angle de tir 0°")
 {
     Mirror mirroir{Point{6.7091129602, 5.7891302282}, 50, 80, (3. * utilities::PI) / 2.,
-                   Point{1.,1.}, Point{221., 2221.}, utilities::PI, utilities::PI * 2};
+                Point{1.,1.}, Point{221., 2221.}, utilities::PI, utilities::PI * 2};
 
     Ray ray{Point{0.687119753, 2.0988911382}, 0., 500};
 
@@ -114,7 +260,7 @@ TEST_CASE("Reflexion sur mirroir vertical et angle de tir 0° avec"
           "angle en surplus de 2PI")
 {
     Mirror mirroir{Point{6.7091129602, 5.7891302282}, 50, 80, -(utilities::PI / 2.),
-                   Point{1.,1.}, Point{221., 2221.}, -utilities::PI * 2, utilities::PI * 2};
+                Point{1.,1.}, Point{221., 2221.}, -utilities::PI * 2, utilities::PI * 2};
 
     Ray ray{Point{0.687119753, 2.0988911382}, 0., 500};
 

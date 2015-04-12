@@ -93,17 +93,70 @@ namespace utilities
      */
     bool equals(const double, const double, const double = utilities::EPSILON);
 
-    /**
-     * @brief slopeFromPoints
-     * @return
+    /*!
+     * \brief Cette méthode permet de vérifier l'inégalité \f$ nb_1 \geq nb_2 \f$ sur
+     * deux nombres réels avec une marge d'erreur Epsilon passée en paramètre
+     * ou imposée par défaut à \f$ \epsilon = 10^{-7}\f$.
+     *
+     * \param nb1 Un nombre rééls.
+     * \param nb2 Un nombre rééls.
+     *
+     * \return <code>true</code> Si l'inégalité \f$ nb_1 \geq nb_2 \f$ est vérifiée.
+     */
+    bool greaterOrEquals(const double, const double, const double = utilities::EPSILON);
+
+    /*!
+     * \brief Cette méthode permet de vérifier l'inégalité \f$ nb_1 \leq nb_2 \f$ sur
+     * deux nombres réels avec une marge d'erreur Epsilon passée en paramètre
+     * ou imposée par défaut à \f$ \epsilon = 10^{-7}\f$.
+     *
+     * \param nb1 Un nombre rééls.
+     * \param nb2 Un nombre rééls.
+     *
+     * \return <code>true</code> Si l'inégalité \f$ nb_1 \geq nb_2 \f$ est vérifiée.
+     */
+    bool lessOrEquals(const double, const double, const double = utilities::EPSILON);
+
+    /*!
+     * \brief Permet de trouver la pente d'une droite formée par deux points.
+     *
+     * \param p1 Un point.
+     * \param p2 Un point.
+     *
+     * \return La pente de l'équation de droite passant par ces deux points.
      */
     double slopeFromPoints(const Point &, const Point &);
 
+    /*!
+     * \brief Permet de savoir si l'angle, en radian, vaut
+     * \f$ \frac{\pi}{2} + n \cdot (2 \cdot \pi)\f$
+     *
+     * \return <code>true</code> Si \f$ angle = \frac{\pi}{2} + n \cdot (2 \cdot \pi) \f$
+     */
     bool isHalfPiPlusNPi(const double);
 
+    /*!
+     * \brief Permet d'avoir la valeur trigonométrique tangante d'un angle
+     * ou l'infini si \f$ angle = \frac{\pi}{2} + n \cdot 2 \cdot \pi \f$.
+     *
+     * \return La tangante de l'angle ou l'infini.
+     *
+     */
     double tan(const double);
 
+    /*!
+     * \brief Permet d'avoir l'angle "absolu" de celui passé en paramètre,
+     * [0, PI_2].
+     *
+     * \return L'angle absolu de celui passé en paramètre.
+     */
     double absoluteAngle(const double);
-    double inZeroTwoPi(const double alpha);
+
+    /**
+     * @brief Permet de recadrer un angle dans un interval [0 ; 2PI[.
+     *
+     * @return L'angle passé en paramètre dans l'interval [0 ; 2PI[
+     */
+    double inZeroTwoPi(const double);
 }
 #endif // UTILITIES_HPP

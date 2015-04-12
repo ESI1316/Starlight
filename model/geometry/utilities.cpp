@@ -57,6 +57,16 @@ bool utilities::equals(const double nb1, const double nb2, const double epsilon)
     return (std::isinf(nb1) && std::isinf(nb2)) || (std::fabs(nb1 - nb2) < epsilon);
 }
 
+bool utilities::greaterOrEquals(const double nb1, const double nb2, const double epsilon)
+{
+    return (nb1 > nb2) || utilities::equals(nb1, nb2, epsilon);
+}
+
+bool utilities::lessOrEquals(const double nb1, const double nb2, const double epsilon)
+{
+    return (nb1 < nb2) || utilities::equals(nb1, nb2, epsilon);
+}
+
 double utilities::slopeFromPoints(const Point & p1, const Point & p2)
 {
     return ((p2.getY() - p1.getY()) / (p2.getX() - p1.getX()));

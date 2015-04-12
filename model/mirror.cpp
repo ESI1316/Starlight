@@ -16,20 +16,17 @@ Mirror::Mirror(const Point & pivot, int xpad, int length, double alpha, Point po
       xMax {pointMax.getX()}, yMin {pointMin.getY()}, yMax {pointMax.getY()},
       alpha {alpha}, alphaMin {alphaMin}, alphaMax {alphaMax}
 {
-    if (this->length <= 0)
-        throw StarlightException("La longueur doit être strict. positive");
-
     if(this->xpad < 0)
         throw StarlightException("Le décalage du pivot doit être positif");
 
-    if(this->pivot.getX() < this->xMin || this->pivot.getX() > this->xMax)
-        throw StarlightException("Le miroir est trop haut ou trop bas");
-
-    if(this->pivot.getY() < this->yMin || this->pivot.getY() > this->yMax)
-        throw StarlightException("Le miroir est trop à gauche ou trop à droite");
+    if (this->length <= 0)
+        throw StarlightException("La longueur doit être strict. positive");
 
     if(this->alphaMax < this->alphaMin)
-        throw StarlightException("L'angle est en dehors des limites");
+        throw StarlightException("L'angle max est inferieur au min");
+
+    if(!this->checkPivotRange(this->pivot))
+        throw StarlightException("Le miroir est trop haut ou trop bas");
 
     if(!this->checkAngleRange(this->alpha))
         throw StarlightException("L'angle est en dehors des limites");
@@ -88,8 +85,8 @@ bool Mirror::setAngle(double alpha)
 bool Mirror::checkAngleRange(double alpha) const
 {
     return (utilities::equals(this->alphaMin, 0.) && utilities::equals(this->alphaMax, 0.))
-            || ((utilities::equals(alpha, this->alphaMin) || alpha > this->alphaMin)
-             && (utilities::equals(alpha, this->alphaMax) || alpha < this->alphaMax));
+            || ((utilities::greaterOrEquals(alpha, this->alphaMin))
+             && (utilities::lessOrEquals(alpha, this->alphaMax)));
 }
 
 bool Mirror::checkPivotRange(const Point & point) const
@@ -98,17 +95,17 @@ bool Mirror::checkPivotRange(const Point & point) const
             && utilities::equals(this->yMin, 0.) && utilities::equals(this->yMax, 0.))
 
            || (utilities::equals(this->xMin, 0.) && utilities::equals(this->xMax, 0.)
-            && (utilities::equals(point.getY(), this->yMin) || point.getY() > this->yMin)
-            && (utilities::equals(point.getY(), this->yMax) || point.getY() < this->yMax))
+            && (utilities::greaterOrEquals(point.getY(), this->yMin))
+            && (utilities::lessOrEquals(point.getY(), this->yMax)))
 
            || (utilities::equals(this->yMin, 0.) && utilities::equals(this->yMax, 0.)
-            && (utilities::equals(point.getX(), this->xMin) || point.getX() > this->xMin)
-            && (utilities::equals(point.getX(), this->xMax) || point.getX() < this->xMax))
+            &&(utilities::greaterOrEquals(point.getX(), this->xMin))
+            &&(utilities::lessOrEquals(point.getX(), this->xMax)))
 
-           || ((utilities::equals(point.getX(), this->xMin) || point.getX() > this->xMin)
-            && (utilities::equals(point.getX(), this->xMax) || point.getX() < this->xMax)
-            && (utilities::equals(point.getY(), this->yMin) || point.getY() > this->yMin)
-            && (utilities::equals(point.getY(), this->yMax) || point.getY() < this->yMax));
+           || ((utilities::greaterOrEquals(point.getX(), this->xMin))
+            && (utilities::lessOrEquals(point.getX(), this->xMax))
+            && (utilities::greaterOrEquals(point.getY(), this->yMin))
+            && (utilities::lessOrEquals(point.getY(), this->yMax)));
 }
 
 void Mirror::reactToRay(Ray ray)
@@ -162,7 +159,8 @@ std::ostream & operator<<(std::ostream & out, const Mirror & mirror)
         << "Pivot range : [(" << mirror.getMinPivot().getX()
         << "," << mirror.getMinPivot().getY()
         << "),(" << mirror.getMaxPivot().getX()
-        << "," << mirror.getMaxPivot().getY() << ")]";
+        << "," << mirror.getMaxPivot().getY() << ")]"
+        << (Line) mirror;
 
     return out;
 }
