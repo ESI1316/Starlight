@@ -25,11 +25,9 @@ std::vector<Point> Rectangle::getIntersectionPoints(const Line & line) const
     {
 
         if ((p = edges.at(i).getIntersectionPoint(line)) && this->isOnBorder(*p))
-        {
             intersecs.push_back(*p);
-            delete p;
-            p = 0;
-        }
+        if (p != 0)
+            delete p, p = 0;
     }
 
     return intersecs;
