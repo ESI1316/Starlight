@@ -37,6 +37,17 @@ private :
     std::vector<Ray> rays;
     std::vector<Nuke> nukes;
 
+    /**
+     * Permet d'obtenir une map contenant les élément se trouvant sur la
+     * trajectoire du rayon, ayant pour clé; le point d'intersection avec cet
+     * élément.
+     *
+     * @param ray Rayon dont on désire obtenir les éléments sur sa trajectoire.
+     *
+     * @return Une map ontenant les élément se trouvant sur la
+     * trajectoire du rayon, ayant pour clé; le point d'intersection avec cet
+     * élément.
+     */
     std::map<Point *, Element *> getEltsInTrajectory(const Ray & ray);
 
 public:

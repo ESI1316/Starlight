@@ -124,7 +124,7 @@ void Level::computeRay(Ray ray)
 
     delete nextInters;
 }
-
+// méthode Lafay
 std::map<Point *, Element *> Level::getEltsInTrajectory(const Ray & ray)
 {
     std::map<Point *, Element *> candidates;
@@ -134,7 +134,7 @@ std::map<Point *, Element *> Level::getEltsInTrajectory(const Ray & ray)
         if((inters = elt.includeRay(ray)))
             candidates[inters] = &elt;
 
-    //for (auto & elt : this->mirrors)
+    //for (auto & elt : this->mirrors)            includeRay pas implémenté
     //    if((inters = elt.includeRay(ray)))
     //        candidates[inters] = &elt;
 
