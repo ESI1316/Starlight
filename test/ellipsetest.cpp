@@ -2,6 +2,7 @@
     #include <iostream>
 #include "model/geometry/ellipse.hpp"
 #include "model/geometry/line.hpp"
+#include "model/geometry/utilities.hpp"
 #include "model/starlightexception.hpp"
 
 TEST_CASE("Constructeur d'ellipse")

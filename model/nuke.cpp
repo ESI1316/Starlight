@@ -3,6 +3,7 @@
 #include <cmath>
 
 #include "model/starlightexception.hpp"
+#include "model/geometry/utilities.hpp"
 #include "model/ray.hpp"
 #include "model/point.hpp"
 
@@ -34,7 +35,7 @@ void Nuke::setLightedUp(const bool light)
     this->light = light;
 }
 
-void Nuke::reactToRay(Ray ray)
+void Nuke::reactToRay(Ray)
 {
     this->setLightedUp(true);
 }

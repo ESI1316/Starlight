@@ -4,7 +4,6 @@
 #include <vector>
 
 #include "model/point.hpp"
-#include "model/geometry/utilities.hpp"
 
 class Line;
 

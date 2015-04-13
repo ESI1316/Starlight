@@ -21,7 +21,7 @@ const Point & Wall::getEnd() const
     return this->end;
 }
 
-void Wall::reactToRay(Ray ray) {}
+void Wall::reactToRay(Ray) {}
 
 Point * Wall::includeRay(const Ray & ray) const
 {

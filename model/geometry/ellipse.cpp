@@ -1,6 +1,7 @@
 #include "model/geometry/ellipse.hpp"
 
 #include "model/geometry/line.hpp"
+#include "model/geometry/utilities.hpp"
 #include "model/starlightexception.hpp"
 
 Ellipse::Ellipse(double xRadius, double yRadius, const Point & center)
