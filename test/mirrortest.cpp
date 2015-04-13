@@ -2,6 +2,7 @@
 #include <iostream>
 #include "model/starlightexception.hpp"
 #include "model/geometry/utilities.hpp"
+#include "model/geometry/line.hpp"
 #include "model/ray.hpp"
 #include "model/mirror.hpp"
 #include "model/point.hpp"
@@ -133,22 +134,22 @@ TEST_CASE("Mirroir : pivotRange")
 
 TEST_CASE("Mirroir : reactToRay")
 {
-        Mirror mirroir{Point{4., 55.}, 50, 80, 4.1882683952,
-                       Point{-220.,40.}, Point{31., 90.}, 0., 5.};
+    Mirror mirroir{Point{4., 55.}, 50, 80, 4.1882683952,
+                   Point{-220.,40.}, Point{31., 90.}, 0., 5.};
 
-        REQUIRE_NOTHROW(mirroir.reactToRay(Ray(Point(2., 2.), 3., 400)));
+    REQUIRE_NOTHROW(mirroir.reactToRay(Ray(Point(2., 2.), 3., 400)));
 }
 
 TEST_CASE("Mirroir : opérateurs")
 {
-        Mirror mirroir{Point{4., 55.}, 50, 80, 4.1882683952,
-                       Point{-220.,40.}, Point{31., 90.}, 0., 5.};
+    Mirror mirroir{Point{4., 55.}, 50, 80, 4.1882683952,
+                   Point{-220.,40.}, Point{31., 90.}, 0., 5.};
 
-        Mirror mirr{Point{4., 55.}, 50, 80, 4.1882683952,
-                       Point{-220.,40.}, Point{31., 90.}, 0., 5.};
+    Mirror mirr{Point{4., 55.}, 50, 80, 4.1882683952,
+                Point{-220.,40.}, Point{31., 90.}, 0., 5.};
 
-        REQUIRE(mirroir == mirr);
-        REQUIRE_FALSE(mirroir != mirr);
+    REQUIRE(mirroir == mirr);
+    REQUIRE_FALSE(mirroir != mirr);
 }
 
 TEST_CASE("Reflexion de mirroir angle quelconque")
@@ -359,4 +360,82 @@ TEST_CASE("Reflexion de mirroir angle quelconque négatif")
 
     REQUIRE(utilities::equals(newRay.getSlope(), -0.0977844768));
     REQUIRE(utilities::equals(newRay.getIndepTerm(), 5.0921218532));
+}
+
+TEST_CASE("includeRay")
+{
+
+    SECTION("Droite quelconque : pas d'intersection")
+    {
+        Mirror mirroir{Point{6., 6.}, 5, 8, 5.1882683952,
+                       Point{1.,1.}, Point{221., 2221.}, 0., 0.};
+        Ray ray{Point{0.9131453839, 2.4382207854}, -0.5657014687, 500};
+
+        Point * intersection = mirroir.includeRay(ray);
+        REQUIRE(intersection == 0);
+    }
+
+    SECTION("Droite quelconque : intersection")
+    {
+        Mirror mirroir{Point{6., 6.}, 5, 8, 5.1882683952,
+                       Point{1.,1.}, Point{221., 2221.}, 0., 0.};
+        Ray ray{Point{0.9131453839, 2.4382207854}, 0.2478814126, 500};
+
+        Point * intersection = mirroir.includeRay(ray);
+        REQUIRE(intersection != 0);
+        REQUIRE(*intersection == Point(7.036920316, 3.9880650583));
+        delete intersection;
+    }
+    SECTION("Droite horizontale : pas intersection")
+    {
+        Mirror mirroir{Point{6., 6.}, 5, 8, 5.1882683952,
+                       Point{1.,1.}, Point{221., 2221.}, 0., 0.};
+        Ray ray{Point{0.8787051129, 11.6682134228}, 0., 500};
+
+        Point * intersection = mirroir.includeRay(ray);
+        REQUIRE(intersection == 0);
+    }
+
+    SECTION("Droite horizontale : intersection")
+    {
+        Mirror mirroir{Point{6., 6.}, 5, 8, 5.1882683952,
+                       Point{1.,1.}, Point{221., 2221.}, 0., 0.};
+        Ray ray{Point{0.8787051129, 8.6682134228}, 0., 500};
+
+        Point * intersection = mirroir.includeRay(ray);
+        REQUIRE(intersection != 0);
+        REQUIRE(*intersection == Point(4.6248438514, 8.6682134228));
+        delete intersection;
+
+    }
+
+    SECTION("Droite verticale : pas d'intersection")
+    {
+        Mirror mirroir{Point{6., 6.}, 5, 8, 5.1882683952,
+                       Point{1.,1.}, Point{221., 2221.}, 0., 0.};
+        Ray ray{Point{2.5662783936, 12.5981007408}, -utilities::PI_2, 500};
+
+        Point * intersection = mirroir.includeRay(ray);
+        REQUIRE(intersection == 0);
+
+    }
+
+    SECTION("Droite verticale : d'intersection")
+    {
+        Mirror mirroir{Point{6., 6.}, 5, 8, 5.1882683952,
+                       Point{1.,1.}, Point{221., 2221.}, 0., 0.};
+        Ray ray{Point{4.5662783936, 12.5981007408}, -utilities::PI_2, 500};
+
+        Point * intersection = mirroir.includeRay(ray);
+        REQUIRE(intersection != 0);
+        REQUIRE(*intersection == Point(4.5662783936, 8.7818478932));
+        delete intersection;
+    }
+}
+
+TEST_CASE("Mirroir est un rayon")
+{
+    Mirror mirroir{Point{4.6350324277, 6.0423035858}, 5, 8, 5.1882683952,
+                   Point{1.,1.}, Point{221., 2221.}, utilities::PI, utilities::PI * 2};
+
 }

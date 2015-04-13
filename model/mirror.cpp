@@ -127,11 +127,15 @@ void Mirror::reactToRay(Ray ray)
 Point * Mirror::includeRay(const Ray & ray) const
 {
     Point * intersection = this->getIntersectionPoint(ray);
-    Point start;
-    Point end;
 
     if(intersection != 0)
     {
+        Point start{this->pivot.getX() - this->xpad, this->pivot.getY()};
+        Point end{start.getX() + this->length, start.getY()};
+
+        start.rotateAround(this->pivot, this->alpha);
+        end.rotateAround(this->pivot, this->alpha);
+
         double minX = std::min(start.getX(), end.getX());
         double minY = std::min(start.getY(), end.getY());
         double maxX = std::max(start.getX(), end.getX());
