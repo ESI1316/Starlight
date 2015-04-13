@@ -44,7 +44,8 @@ SOURCES += main.cpp\
     test/raytest.cpp \
     test/nuketest.cpp \
     test/walltest.cpp \
-    test/sourcetest.cpp
+    test/sourcetest.cpp \
+    test/desttest.cpp
 
 HEADERS  += mainwindow.hpp \
     model/starlightexception.hpp \

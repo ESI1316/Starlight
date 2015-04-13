@@ -10,6 +10,7 @@ TEST_CASE("Source : constructeur")
     REQUIRE_THROWS_AS(Source(Point(2., 2.), 4, utilities::PI_4, 359), StarlightException);
     REQUIRE_THROWS_AS(Source(Point(2., 2.), 4, utilities::PI_4, 831), StarlightException);
     REQUIRE_THROWS_AS(Source(Point(2., 2.), -1, utilities::PI_4, 831), StarlightException);
+    REQUIRE_THROWS_AS(Source(Point(2., 2.), 0, utilities::PI_4, 831), StarlightException);
     REQUIRE_NOTHROW(Source(Point(2., 2.), 4, utilities::PI_4, 700));
 }
 
@@ -34,4 +35,11 @@ TEST_CASE("Source : accesseurs")
     REQUIRE(source != so);
     REQUIRE_FALSE(sour == s);
     REQUIRE(so != s);
+}
+
+TEST_CASE("Source : est un rectangle")
+{
+    Source source{Point{2., 2.}, 4, utilities::PI_4, 700};
+    REQUIRE(utilities::equals(source.getWidth(), source.getEdge()));
+    REQUIRE(utilities::equals(source.getHeight(), source.getEdge()));
 }
