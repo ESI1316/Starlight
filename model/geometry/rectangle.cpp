@@ -19,12 +19,17 @@ Rectangle::Rectangle(double width, double height, const Point & upLeftCorner)
 std::vector<Point> Rectangle::getIntersectionPoints(const Line & line) const
 {
     std::vector<Point> intersecs;
-    Point * p;
+    Point * p = 0;
 
     for (unsigned i = 0; i < this->edges.size() && intersecs.size() < 2 ; i++)
     {
+
         if ((p = edges.at(i).getIntersectionPoint(line)) && this->isOnBorder(*p))
+        {
             intersecs.push_back(*p);
+            delete p;
+            p = 0;
+        }
     }
 
     return intersecs;

@@ -142,8 +142,9 @@ Point * Mirror::includeRay(const Ray & ray) const
         double maxX = std::max(start.getX(), end.getX());
         double maxY = std::max(start.getY(), end.getY());
 
-        if(intersection->getX() < minX || intersection->getX() > maxX
+        if((intersection->getX() < minX || intersection->getX() > maxX
                 || intersection->getY() < minY || intersection->getY() > maxY)
+            || !ray.isInTrajectory(*intersection))
         {
             delete intersection;
             intersection = 0;
