@@ -10,9 +10,9 @@ Level::Level(const double width, const double height)
               Wall{Point{width, height}, Point{width, 0.}},
               Wall{Point{width, 0.}, Point{0., 0.}} }
 {
-    if(width <= 0)
+    if(utilities::lessOrEquals(width, 0))
         throw StarlightException("Hauteur doit être strict. positive");
-    if(height <= 0)
+    if(utilities::lessOrEquals(height, 0))
         throw StarlightException("Largeur doit être strict. positive");
 }
 

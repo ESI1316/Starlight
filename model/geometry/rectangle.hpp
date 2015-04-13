@@ -94,9 +94,10 @@ public:
      */
     bool operator!=(const Rectangle &) const;
 
-    /**
-     * @brief operator =
-     * @return
+    /*!
+     * \brief Permet de copier un rectangle dans un autre.
+     *
+     * \return Le rectangle courant modifié.
      */
     Rectangle & operator=(const Rectangle &);
 };
