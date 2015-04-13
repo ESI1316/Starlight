@@ -106,6 +106,16 @@ void Level::computeRays()
                         this->source.getWaveLength()));
 }
 
+bool Level::thereIsAnExplodedNuke() const
+{
+    bool nukeExp = false;
+
+    for (auto it = this->nukes.begin(); (it != this->nukes.end()) && !nukeExp; ++it)
+        nukeExp = it->isLightedUp();
+
+    return nukeExp;
+}
+
 void Level::computeRay(Ray ray)
 {
     std::map<Point *, Element *> candidates = this->getEltsInTrajectory(ray);
