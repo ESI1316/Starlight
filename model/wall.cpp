@@ -25,7 +25,7 @@ void Wall::reactToRay(Ray ray) {}
 
 Point * Wall::includeRay(const Ray & ray) const
 {
-    Point * intersection = Line::getIntersectionPoint(ray);
+    Point * intersection = this->getIntersectionPoint(ray);
 
     if(intersection != 0)
     {

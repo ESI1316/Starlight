@@ -124,9 +124,28 @@ void Mirror::reactToRay(Ray ray)
         this->getLevel()->computeRay(newRay);
 }
 
-Point * Mirror::includeRay(const Ray &) const
+Point * Mirror::includeRay(const Ray & ray) const
 {
-    throw StarlightException("Not implemented yet");
+    Point * intersection = this->getIntersectionPoint(ray);
+    Point start;
+    Point end;
+
+    if(intersection != 0)
+    {
+        double minX = std::min(start.getX(), end.getX());
+        double minY = std::min(start.getY(), end.getY());
+        double maxX = std::max(start.getX(), end.getX());
+        double maxY = std::max(start.getY(), end.getY());
+
+        if(intersection->getX() < minX || intersection->getX() > maxX
+                || intersection->getY() < minY || intersection->getY() > maxY)
+        {
+            delete intersection;
+            intersection = 0;
+        }
+    }
+
+    return intersection;
 }
 
 bool Mirror::operator==(const Mirror & mirror) const
