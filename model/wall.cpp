@@ -35,7 +35,8 @@ Point * Wall::includeRay(const Ray & ray) const
         double maxY = std::max(this->start.getY(), this->end.getY());
 
         if(intersection->getX() < minX || intersection->getX() > maxX
-                || intersection->getY() < minY || intersection->getY() > maxY)
+                || intersection->getY() < minY || intersection->getY() > maxY
+                || !ray.isInTrajectory(*intersection))
         {
             delete intersection;
             intersection = 0;
