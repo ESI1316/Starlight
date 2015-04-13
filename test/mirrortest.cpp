@@ -431,11 +431,43 @@ TEST_CASE("includeRay")
         REQUIRE(*intersection == Point(4.5662783936, 8.7818478932));
         delete intersection;
     }
+
+    SECTION("Rayon confondu au mirroir")
+    {
+        Mirror mirroir{Point{6., 6.}, 5, 8, 5.1882683952,
+                       Point{1.,1.}, Point{221., 2221.}, 0., 0.};
+        Ray ray{Point{2.5079006827, 12.7757150936}, 5.1882683952, 500};
+
+        Point * intersection = mirroir.includeRay(ray);
+        REQUIRE(intersection == 0);
+    }
 }
 
-TEST_CASE("Mirroir est un rayon")
+TEST_CASE("Mirroir est une ligne")
 {
-    Mirror mirroir{Point{4.6350324277, 6.0423035858}, 5, 8, 5.1882683952,
-                   Point{1.,1.}, Point{221., 2221.}, utilities::PI, utilities::PI * 2};
+    SECTION("Angle normal")
+    {
+    Mirror mirroir{Point{6., 6.}, 5, 8, 5.1882683952,
+                   Point{1.,1.}, Point{221., 2221.}, 0., 0.};
+    Line line{-1.9402985076, 17.6417910454};
+    Line li{-3.9402985076, 17.6417910454};
 
+    REQUIRE(line == mirroir);
+    REQUIRE((Line)mirroir == line);
+    REQUIRE((Line)mirroir != li);
+    REQUIRE(line != li);
+    }
+
+    SECTION("Angle négatif")
+    {
+    Mirror mirroir{Point{6., 6.}, 5, 8, -((utilities::PI * 2) - 5.1882683952),
+                   Point{1.,1.}, Point{221., 2221.}, 0., 0.};
+    Line line{-1.9402985076, 17.6417910454};
+    Line li{-3.9402985076, 17.6417910454};
+
+    REQUIRE(line == mirroir);
+    REQUIRE((Line)mirroir == line);
+    REQUIRE((Line)mirroir != li);
+    REQUIRE(line != li);
+    }
 }

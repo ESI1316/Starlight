@@ -84,9 +84,10 @@ bool Mirror::setAngle(double alpha)
 
 bool Mirror::checkAngleRange(double alpha) const
 {
-    return (utilities::equals(this->alphaMin, 0.) && utilities::equals(this->alphaMax, 0.))
-            || ((utilities::greaterOrEquals(alpha, this->alphaMin))
-             && (utilities::lessOrEquals(alpha, this->alphaMax)));
+    return (utilities::equals(this->alphaMin, 0.)
+            && utilities::equals(this->alphaMax, 0.))
+           || ((utilities::greaterOrEquals(alpha, this->alphaMin))
+            && (utilities::lessOrEquals(alpha, this->alphaMax)));
 }
 
 bool Mirror::checkPivotRange(const Point & point) const
