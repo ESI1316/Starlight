@@ -38,7 +38,7 @@ public:
      * Retourne le rayon de la bombe.
      * @return le rayon de la bombe.
      */
-    int getRadius() const;
+    double getRadius() const;
 
     /**
      * Cette méthode permet de savoir si la bombe est illuminée.

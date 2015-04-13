@@ -23,70 +23,70 @@ TEST_CASE("accesseurs et mutateurs")
 
 TEST_CASE("includeRay(Ray)")
 {
-    Nuke duke(Nuke(Point(15., 20.), 10.));
+    Nuke duke{Nuke{Point{4.66, 5.88}, 10.}};
 
     SECTION("Droite quelconque : pas d'intersection")
     {
-        Ray ray{Point{0., 0.}, 83., 400};
+        Ray ray{Point{-6.9684096396, -6.7533025782}, 1.4876550949, 400};
         Point * intersection = duke.includeRay(ray);
 
         REQUIRE(intersection == 0);
     }
-/*
+
     SECTION("Droite quelconque : tangeante")
     {
-        Ray ray{Point{2., 1.}, 45.02, 400};
+        Ray ray{Point{-6.9684096396, -6.7533025782}, 1.4484713166, 400};
         Point * intersection = duke.includeRay(ray);
 
         REQUIRE(intersection != 0);
-        REQUIRE(*intersection == Point(3.5947954986, 2.4295116134));
-
+        REQUIRE(*intersection == Point(-5.2652762061, 7.100201718));
         delete intersection;
     }
 
+
     SECTION("Droite quelconque : 2 intersections")
     {
-        Ray ray{Point{2., 1.}, 0.7308006587, 400};
+        Ray ray{Point{-6.9684096396, -6.7533025782}, 0.5324265834, 400};
         Point * intersection = duke.includeRay(ray);
 
         REQUIRE(intersection != 0);
-        REQUIRE(*intersection == Point(3.5947954986, 2.4295116134));
+        REQUIRE(*intersection == Point(14.6594015744, 5.9893990581));
 
         delete intersection;
     }
 
     SECTION("Droite horizontale : pas d'intersection")
     {
-        Ray ray{Point{1.4191947327, 3.4719175286}, 0., 400};
-        Point * intersection = wall.includeRay(ray);
+        Ray ray{Point{-6.9684096396, -6.7533025782}, 0., 400};
+        Point * intersection = duke.includeRay(ray);
 
         REQUIRE(intersection == 0);
     }
 
     SECTION("Droite horizontale : tangeante")
     {
-        Ray ray{Point{1.4191947327, 2.4719175286}, 0., 400};
-        Point * intersection = wall.includeRay(ray);
+        Ray ray{Point{-6.9684096396, -4.12}, 0., 400};
+        Point * intersection = duke.includeRay(ray);
 
         REQUIRE(intersection != 0);
-        REQUIRE(*intersection == Point(3.7163445871, 2.4719175286));
+        REQUIRE(*intersection == Point(4.66, -4.12));
         delete intersection;
     }
 
     SECTION("Droite horizontale : 2 intersections")
     {
-        Ray ray{Point{1.4191947327, 2.4719175286}, 0., 400};
-        Point * intersection = wall.includeRay(ray);
+        Ray ray{Point{-6.9684096396, 4.7533025782}, 0., 400};
+        Point * intersection = duke.includeRay(ray);
 
         REQUIRE(intersection != 0);
-        REQUIRE(*intersection == Point(3.7163445871, 2.4719175286));
+        REQUIRE(*intersection == Point(14.5963249202, 4.7533025782));
         delete intersection;
     }
 
     SECTION("Droite verticale : pas d'intersection")
     {
-        Ray ray{Point{2., 1.}, utilities::PI_2, 400};
-        Point * intersection = wall.includeRay(ray);
+        Ray ray{Point{-6.9684096396, -6.7533025782}, utilities::PI_2, 400};
+        Point * intersection = duke.includeRay(ray);
 
         REQUIRE(intersection == 0);
 
@@ -94,28 +94,22 @@ TEST_CASE("includeRay(Ray)")
 
     SECTION("Droite verticale : tangeante")
     {
-        Ray ray{Point{4.2685319879, 1.}, utilities::PI_2, 400};
-        Point * intersection = wall.includeRay(ray);
+        Ray ray{Point{-5.34, -3.0920099007}, utilities::PI_2, 400};
+        Point * intersection = duke.includeRay(ray);
 
         REQUIRE(intersection != 0);
-        REQUIRE(*intersection == Point(4.2685319879, 2.6645640747));
+        REQUIRE(*intersection == Point(-5.34, 5.88));
         delete intersection;
 
     }
 
     SECTION("Droite verticale : 2 intersctions")
     {
-        Ray ray{Point{4.2685319879, 1.}, utilities::PI_2, 400};
-        Point * intersection = wall.includeRay(ray);
+        Ray ray{Point{10.8200887993, -6.4217017861}, -(3 * utilities::PI_2), 400};
+        Point * intersection = duke.includeRay(ray);
 
         REQUIRE(intersection != 0);
-        REQUIRE(*intersection == Point(4.2685319879, 2.6645640747));
+        REQUIRE(*intersection == Point(10.8200887993, 13.7573920802));
         delete intersection;
-
     }
-    */
-    // je sais pas comment créer un ray :(
-    // Ray ray(point de depart, angle de tir, wavelenght)
-    // tu créer une droite sur geogebra, tu utilises l'outils pour trouver l'angle (en radian)
-    // de l'intersection avec l'axe des x
 }

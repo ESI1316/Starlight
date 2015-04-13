@@ -10,7 +10,7 @@
 Nuke::Nuke(const Point & position, const double radius)
     : Element(), Ellipse{radius, radius, position}
 {
-    if (radius <= 0.)
+    if (utilities::lessOrEquals(radius, 0.))
         throw StarlightException("Le rayon de la bombe doit être "
                                  "strict. positif");
 }
@@ -20,9 +20,9 @@ const Point &Nuke::getLocation() const
     return this->center;
 }
 
-int Nuke::getRadius() const
+double Nuke::getRadius() const
 {
-    return (int) std::sqrt(this->xRadius);
+    return std::sqrt(this->xRadius);
 }
 
 bool Nuke::isLightedUp() const
@@ -45,7 +45,7 @@ Point * Nuke::includeRay(const Ray & ray) const
     Point * intersec = 0;
     std::vector<Point> p = this->getIntersectionPoints(ray);
 
-    if (p.size() > 0)
+    if (!p.empty())
     {
         intersec =
             ray.getStart().distanceFrom(p[0]) > ray.getStart().distanceFrom(p[1]) ?
