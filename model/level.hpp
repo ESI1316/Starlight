@@ -15,6 +15,9 @@
 #include "model/dest.hpp"
 #include "model/ray.hpp"
 
+class Point;
+class Element;
+
 /**
  * Modélise une carte telle qu'utilisée dans le jeu.
  * Une carte est un ensemble de composant tels que des murs,

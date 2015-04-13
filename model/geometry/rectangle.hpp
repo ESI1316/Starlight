@@ -5,8 +5,8 @@
 #include <ostream>
 
 #include "model/point.hpp"
+#include "model/geometry/line.hpp"
 
-class Line;
 
 class Rectangle
 {

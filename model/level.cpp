@@ -1,5 +1,8 @@
 #include "model/level.hpp"
 
+#include "model/element.hpp"
+#include "model/point.hpp"
+
 Level::Level(const double width, const double height)
     : width{width}, height{height},
       walls { Wall{Point{0., 0.}, Point{0., height}},
@@ -124,7 +127,7 @@ void Level::computeRay(Ray ray)
 
     delete nextInters;
 }
-// méthode Lafay
+
 std::map<Point *, Element *> Level::getEltsInTrajectory(const Ray & ray)
 {
     std::map<Point *, Element *> candidates;
@@ -134,9 +137,9 @@ std::map<Point *, Element *> Level::getEltsInTrajectory(const Ray & ray)
         if((inters = elt.includeRay(ray)))
             candidates[inters] = &elt;
 
-    //for (auto & elt : this->mirrors)            includeRay pas implémenté
-    //    if((inters = elt.includeRay(ray)))
-    //        candidates[inters] = &elt;
+    for (auto & elt : this->mirrors)
+        if((inters = elt.includeRay(ray)))
+            candidates[inters] = &elt;
 
     for (auto & elt : this->crystals)
         if((inters = elt.includeRay(ray)))

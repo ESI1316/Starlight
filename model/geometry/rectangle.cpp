@@ -1,6 +1,5 @@
 #include "model/geometry/rectangle.hpp"
 
-#include "model/geometry/line.hpp"
 #include "model/geometry/utilities.hpp"
 #include "model/starlightexception.hpp"
 
