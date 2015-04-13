@@ -8,10 +8,9 @@
 #include "model/level.hpp"
 
 Crystal::Crystal(const Point & center, const double radius, const int amplifier)
-    : Element(), Ellipse(radius, radius, center),
-      amplifier{amplifier}
+    : Element(), Ellipse(radius, radius, center), amplifier{amplifier}
 {
-    if(radius <= 0)
+    if(utilities::lessOrEquals(radius, 0.))
         throw StarlightException("Le rayon doit être strictement positif");
 }
 
@@ -20,9 +19,9 @@ int Crystal::getAmplifier() const
     return this->amplifier;
 }
 
-int Crystal::getRadius() const
+double Crystal::getRadius() const
 {
-    return (int) std::sqrt(this->xRadius);
+    return std::sqrt(this->xRadius);
 }
 
 void Crystal::reactToRay(Ray ray)
@@ -53,9 +52,8 @@ Point * Crystal::includeRay(const Ray & ray) const
 
 bool Crystal::operator==(const Crystal & crystal) const
 {
-    return this->center == crystal.center
-            && utilities::equals(this->getRadius(), crystal.getRadius())
-            && this->amplifier == crystal.amplifier;
+    return this->amplifier == crystal.amplifier
+            && Ellipse::operator ==(crystal);
 }
 
 bool Crystal::operator!=(const Crystal & crystal) const

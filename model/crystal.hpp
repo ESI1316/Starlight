@@ -63,7 +63,7 @@ public:
      *
      * @return la longueur du rayon du cristal
      */
-    int getRadius() const;
+    double getRadius() const;
 
     /**
      * Cette méthode est lancé lorsque le miroir courant est exposé à un rayon.
