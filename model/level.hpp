@@ -30,7 +30,7 @@ private :
     const double width;
     const double height;
 
-    Source source {Point{0, 0}, 10, 5., 400};
+    Source source {Point{0, 0}, 10, 30., 400};
     Dest dest {Point{0, 0}, 5};
 
     std::vector<Wall> walls;
@@ -182,6 +182,13 @@ public:
      * @param newNuke nouvelle bombe à ajouter.
      */
     void addNuke(const Nuke &);
+
+    /**
+     * Renseigne si une bombe a explosé.
+     *
+     * @return true Si une bombe a explosé.
+     */
+    bool thereIsAnExplodedNuke() const;
 
     /**
      * Permet de calculer un rayon à partir du rayon entré en paramètre.
