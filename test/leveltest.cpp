@@ -46,7 +46,7 @@ TEST_CASE("computeRay")
 
     }
 }
-
+/*
 TEST_CASE("computeRays") // tous les parcours inclusent la rencontre avec des mirroirs
 {
     SECTION("parcour menant à la rencontre d'un mur ")
@@ -109,3 +109,4 @@ TEST_CASE("computeRays") // tous les parcours inclusent la rencontre avec des mi
         delete level;
     }
 }
+*/

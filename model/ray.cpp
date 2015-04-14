@@ -4,8 +4,8 @@
 #include "model/level.hpp"
 
 Ray::Ray(const Point start, double alpha, int waveLength)
-    : Line(utilities::tan(alpha),
-           start.getY() - (utilities::tan(alpha) * start.getX()),
+    : Line(-utilities::tan(alpha),
+           start.getY() - (-utilities::tan(alpha) * start.getX()),
            utilities::isHalfPiPlusNPi(alpha) ? start.getX() : 0),
       start{start}, end{start}, waveLength{waveLength},
       alpha{utilities::inZeroTwoPi(alpha)}

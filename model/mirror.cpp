@@ -9,8 +9,8 @@
 Mirror::Mirror(const Point & pivot, int xpad, int length, double alpha, Point pointMin,
                Point pointMax, double alphaMin, double alphaMax)
     : Element(),
-      Line(utilities::tan(utilities::inZeroTwoPi(alpha)),
-           pivot.getY() - (utilities::tan(alpha) * pivot.getX()),
+      Line(-utilities::tan(utilities::inZeroTwoPi(alpha)),
+           pivot.getY() - (-utilities::tan(alpha) * pivot.getX()),
            utilities::isHalfPiPlusNPi(alpha) ? pivot.getX() : 0),
       pivot {pivot}, length(length), xpad(xpad), xMin {pointMin.getX()},
       xMax {pointMax.getX()}, yMin {pointMin.getY()}, yMax {pointMax.getY()},

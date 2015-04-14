@@ -9,7 +9,7 @@ Lens::Lens(const Point & upLeftCorner, const int width, const int height,
            const int wlMin, const int wlMax)
     : Element(),
       Ellipse(width, height, Point{upLeftCorner.getX() + (width / 2.),
-                                   upLeftCorner.getY() - (height / 2.)}),
+                                   upLeftCorner.getY() + (height / 2.)}),
       upLeftCorner{upLeftCorner}, wlMin{wlMin}, wlMax{wlMax}
 {
     if(wlMin < Ray::WL_MIN)
