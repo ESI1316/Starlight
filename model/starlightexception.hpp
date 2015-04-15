@@ -27,6 +27,7 @@ public:
      * @return Le message d'erreur de l'exception.
      */
     std::string getMessage() const;
+const char * what() const throw();
 };
 
 #endif // STARLIGHTEXCEPTION_HPP

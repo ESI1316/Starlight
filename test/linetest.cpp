@@ -235,3 +235,4 @@ TEST_CASE("operateurs")
         REQUIRE_FALSE(a == c);
         REQUIRE(a != c);
 }
+

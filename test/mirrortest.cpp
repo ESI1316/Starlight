@@ -26,6 +26,7 @@ TEST_CASE("Construction")
                       StarlightException);
 }
 
+
 TEST_CASE("Miroir : Accesseurs")
 {
     Mirror mirroir{Point{4.6350324277, 6.0423035858}, 50, 80, 5.1882683952,
@@ -154,51 +155,37 @@ TEST_CASE("Mirroir : opérateurs")
 
 TEST_CASE("Reflexion de mirroir angle quelconque")
 {
-    Mirror mirroir{Point{4.6350324277, 6.0423035858}, 50, 80, 5.1882683952,
-                   Point{1.,1.}, Point{221., 2221.}, utilities::PI, utilities::PI * 2};
+    Mirror mirroir{Point{4.6350324277, 6.0423035858}, 50, 80, -5.1882683952,
+                   Point{1.,1.}, Point{221., 2221.}, -6., 3.};
 
-    Ray ray{Point{3.8690993528, 1.9060097494}, 1.0492334171, 500};
-
+    Ray ray{Point{3.8690993528, 1.9060097494}, -1.0492334171, 500};
     Point point{5.3967177826, 4.5644066284};
     double mirror = utilities::absoluteAngle(mirroir.getAngle());
-    if (utilities::equals(mirror, 0.))
-        mirror = 0.;
-
     double source = utilities::absoluteAngle(std::atan(ray.getSlope()));
-    if (utilities::equals(source, 0.))
-        source = 0.;
-
     double alpha = (utilities::PI - mirror - source);
     if (utilities::equals(alpha, 0.))
         alpha = 0.;
 
-    Ray newRay(point, (source + alpha + alpha), ray.getWaveLength());
-
+    Ray newRay(point, -(source + alpha + alpha), ray.getWaveLength());
     REQUIRE(utilities::equals(newRay.getSlope(), -0.0977844768));
-    REQUIRE(utilities::equals(newRay.getIndepTerm(), 5.0921218532));
+    REQUIRE(utilities::equals(newRay.getIndepTerm(), 5.0921218536));
 }
 
 TEST_CASE("Reflexion de mirroir angle quelconque : 2")
 {
-    Mirror mirroir{Point{4.6350324277, 6.0423035858}, 50, 80, (5.1882683952 - (2 * utilities::PI)),
+    Mirror mirroir{Point{4.6350324277, 6.0423035858}, 50, 80, -(5.1882683952 - (2 * utilities::PI)),
                 Point{1.,1.}, Point{221., 2221.}, 0., 0.};
 
-    Ray ray{Point{3.8690993528, 1.9060097494}, 1.0492334171, 500};
+    Ray ray{Point{3.8690993528, 1.9060097494}, -1.0492334171, 500};
 
     Point point{5.3967177826, 4.5644066284};
     double mirror = utilities::absoluteAngle(mirroir.getAngle());
-    if (utilities::equals(mirror, 0.))
-        mirror = 0.;
-
     double source = utilities::absoluteAngle(std::atan(ray.getSlope()));
-    if (utilities::equals(source, 0.))
-        source = 0.;
-
     double alpha = (utilities::PI - mirror - source);
     if (utilities::equals(alpha, 0.))
         alpha = 0.;
 
-    Ray newRay(point, (source + alpha + alpha), ray.getWaveLength());
+    Ray newRay(point, -(source + alpha + alpha), ray.getWaveLength());
 
     REQUIRE(utilities::equals(newRay.getSlope(), -0.0977844768));
     REQUIRE(utilities::equals(newRay.getIndepTerm(), 5.0921218532));
@@ -207,10 +194,10 @@ TEST_CASE("Reflexion de mirroir angle quelconque : 2")
 
 TEST_CASE("Reflexion de mirroir angle quelconque deux")
 {
-    Mirror mirroir{Point{1.7607403534, 6.592301552}, 50, 80, 5.6513040756,
-                   Point{1.,1.}, Point{221., 2221.}, utilities::PI, utilities::PI * 2};
+    Mirror mirroir{Point{1.7607403534, 6.592301552}, 50, 80, -5.6513040756,
+                   Point{1.,1.}, Point{221., 2221.}, 0., 0.};
 
-    Ray ray{Point{1.499676861, 2.0584973355}, 0.5303315945, 500};
+    Ray ray{Point{1.499676861, 2.0584973355}, -0.5303315945, 500};
 
     Point point{5.0835944758, 4.1599723344};
     double mirror = utilities::absoluteAngle(mirroir.getAngle());
@@ -225,7 +212,7 @@ TEST_CASE("Reflexion de mirroir angle quelconque deux")
     if (utilities::equals(alpha, 0.))
         alpha = 0.;
 
-    Ray newRay(point, (source + alpha + alpha), ray.getWaveLength());
+    Ray newRay(point, -(source + alpha + alpha), ray.getWaveLength());
 
     REQUIRE(utilities::equals(newRay.getSlope(), 4.403644668));
     REQUIRE(utilities::equals(newRay.getIndepTerm(), -18.2263713732));
@@ -233,8 +220,8 @@ TEST_CASE("Reflexion de mirroir angle quelconque deux")
 
 TEST_CASE("Reflexion sur mirroir vertical et angle de tir 0°")
 {
-    Mirror mirroir{Point{6.7091129602, 5.7891302282}, 50, 80, (3. * utilities::PI) / 2.,
-                Point{1.,1.}, Point{221., 2221.}, utilities::PI, utilities::PI * 2};
+    Mirror mirroir{Point{6.7091129602, 5.7891302282}, 50, 80, -(3. * utilities::PI) / 2.,
+                Point{1.,1.}, Point{221., 2221.}, -utilities::PI * 2, utilities::PI * 2};
 
     Ray ray{Point{0.687119753, 2.0988911382}, 0., 500};
 
@@ -312,54 +299,42 @@ TEST_CASE("Reflexion sur mirroir horizontale et perpendiculaire au tir")
 
 TEST_CASE("Reflexion de mirroir angle quelconque + 2PI")
 {
-    Mirror mirroir{Point{4.6350324277, 6.0423035858}, 50, 80, 5.1882683952,
-                   Point{1.,1.}, Point{221., 2221.}, utilities::PI, utilities::PI * 2};
+    Mirror mirroir{Point{4.6350324277, 6.0423035858}, 50, 80, -5.1882683952,
+                   Point{1.,1.}, Point{221., 2221.}, - 2 * utilities::PI, utilities::PI * 2};
 
-    Ray ray{Point{3.8690993528, 1.9060097494}, 1.0492334171 + (2* utilities::PI), 500};
+    Ray ray{Point{3.8690993528, 1.9060097494}, -(1.0492334171 + (2* utilities::PI)), 500};
 
     Point point{5.3967177826, 4.5644066284};
     double mirror = utilities::absoluteAngle(mirroir.getAngle());
-    if (utilities::equals(mirror, 0.))
-        mirror = 0.;
-
     double source = utilities::absoluteAngle(std::atan(ray.getSlope()));
-    if (utilities::equals(source, 0.))
-        source = 0.;
-
     double alpha = (utilities::PI - mirror - source);
     if (utilities::equals(alpha, 0.))
         alpha = 0.;
 
     Ray newRay(point, (source + alpha + alpha), ray.getWaveLength());
 
-    REQUIRE(utilities::equals(newRay.getSlope(), -0.0977844768));
-    REQUIRE(utilities::equals(newRay.getIndepTerm(), 5.0921218532));
+    REQUIRE(utilities::equals(newRay.getSlope(), 0.0977844768));
+    REQUIRE(utilities::equals(newRay.getIndepTerm(), 4.0366914032));
 }
 
 TEST_CASE("Reflexion de mirroir angle quelconque négatif")
 {
-    Mirror mirroir{Point{4.6350324277, 6.0423035858}, 50, 80, 5.1882683952,
-                   Point{1.,1.}, Point{221., 2221.}, utilities::PI, utilities::PI * 2};
+    Mirror mirroir{Point{4.6350324277, 6.0423035858}, 50, 80, -5.1882683952,
+                   Point{1.,1.}, Point{221., 2221.}, 0., 0.};
 
     Ray ray{Point{3.8690993528, 1.9060097494}, -((utilities::PI * 2) - 1.0492334171), 500};
 
     Point point{5.3967177826, 4.5644066284};
     double mirror = utilities::absoluteAngle(mirroir.getAngle());
-    if (utilities::equals(mirror, 0.))
-        mirror = 0.;
-
     double source = utilities::absoluteAngle(std::atan(ray.getSlope()));
-    if (utilities::equals(source, 0.))
-        source = 0.;
-
     double alpha = (utilities::PI - mirror - source);
     if (utilities::equals(alpha, 0.))
         alpha = 0.;
 
-    Ray newRay(point, (source + alpha + alpha), ray.getWaveLength());
+    Ray newRay(point, -(source + alpha + alpha), ray.getWaveLength());
 
     REQUIRE(utilities::equals(newRay.getSlope(), -0.0977844768));
-    REQUIRE(utilities::equals(newRay.getIndepTerm(), 5.0921218532));
+    REQUIRE(utilities::equals(newRay.getIndepTerm(), 5.0921218536));
 }
 
 TEST_CASE("includeRay")
@@ -367,7 +342,7 @@ TEST_CASE("includeRay")
 
     SECTION("Droite quelconque : pas d'intersection")
     {
-        Mirror mirroir{Point{6., 6.}, 5, 8, 5.1882683952,
+        Mirror mirroir{Point{6., 6.}, 5, 8, -5.1882683952,
                        Point{1.,1.}, Point{221., 2221.}, 0., 0.};
         Ray ray{Point{0.9131453839, 2.4382207854}, -0.5657014687, 500};
 
@@ -398,7 +373,7 @@ TEST_CASE("includeRay")
 
     SECTION("Droite horizontale : intersection")
     {
-        Mirror mirroir{Point{6., 6.}, 5, 8, 5.1882683952,
+        Mirror mirroir{Point{6., 6.}, 5, 8, -5.1882683952,
                        Point{1.,1.}, Point{221., 2221.}, 0., 0.};
         Ray ray{Point{0.8787051129, 8.6682134228}, 0., 500};
 
@@ -422,9 +397,9 @@ TEST_CASE("includeRay")
 
     SECTION("Droite verticale : d'intersection")
     {
-        Mirror mirroir{Point{6., 6.}, 5, 8, 5.1882683952,
+        Mirror mirroir{Point{6., 6.}, 5, 9, -5.1882683952,
                        Point{1.,1.}, Point{221., 2221.}, 0., 0.};
-        Ray ray{Point{4.5662783936, 12.5981007408}, -utilities::PI_2, 500};
+        Ray ray{Point{4.5662783936, 12.5981007408}, utilities::PI_2, 500};
 
         Point * intersection = mirroir.includeRay(ray);
         REQUIRE(intersection != 0);
@@ -447,7 +422,7 @@ TEST_CASE("Mirroir est une ligne")
 {
     SECTION("Angle normal")
     {
-    Mirror mirroir{Point{6., 6.}, 5, 8, 5.1882683952,
+    Mirror mirroir{Point{6., 6.}, 5, 8, -5.1882683952,
                    Point{1.,1.}, Point{221., 2221.}, 0., 0.};
     Line line{-1.9402985076, 17.6417910454};
     Line li{-3.9402985076, 17.6417910454};
@@ -460,7 +435,7 @@ TEST_CASE("Mirroir est une ligne")
 
     SECTION("Angle négatif")
     {
-    Mirror mirroir{Point{6., 6.}, 5, 8, -((utilities::PI * 2) - 5.1882683952),
+    Mirror mirroir{Point{6., 6.}, 5, 8, ((utilities::PI * 2) - 5.1882683952),
                    Point{1.,1.}, Point{221., 2221.}, 0., 0.};
     Line line{-1.9402985076, 17.6417910454};
     Line li{-3.9402985076, 17.6417910454};

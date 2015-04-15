@@ -50,7 +50,7 @@ TEST_CASE("Wall : intersection avec un rayon")
 
     SECTION("Droite quelconque : intersection")
     {
-        Ray ray{Point{2., 1.}, 0.7308006587, 400};
+        Ray ray{Point{2., 1.}, -0.7308006587, 400};
         Point * intersection = wall.includeRay(ray);
 
         REQUIRE(intersection != 0);
@@ -76,7 +76,7 @@ TEST_CASE("Wall : intersection avec un rayon")
     }
     SECTION("Droite verticale : pas d'intersection")
     {
-        Ray ray{Point{2., 1.}, utilities::PI_2, 400};
+        Ray ray{Point{2., 1.}, -utilities::PI_2, 400};
         Point * intersection = wall.includeRay(ray);
 
         REQUIRE(intersection == 0);
@@ -84,7 +84,7 @@ TEST_CASE("Wall : intersection avec un rayon")
     }
     SECTION("Droite verticale : intersection")
     {
-        Ray ray{Point{4.2685319879, 1.}, utilities::PI_2, 400};
+        Ray ray{Point{4.2685319879, 1.}, -utilities::PI_2, 400};
         Point * intersection = wall.includeRay(ray);
 
         REQUIRE(intersection != 0);
@@ -93,3 +93,4 @@ TEST_CASE("Wall : intersection avec un rayon")
 
     }
 }
+

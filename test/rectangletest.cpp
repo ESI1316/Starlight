@@ -158,3 +158,4 @@ TEST_CASE("Droites confondues avec les cotés")
     REQUIRE(right.at(0) == Point(6.424, 2));
     REQUIRE(right.at(1) == Point(6.424, 6.424));
 }
+

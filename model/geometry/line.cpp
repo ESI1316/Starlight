@@ -4,12 +4,16 @@
 #include "model/geometry/utilities.hpp"
 
 Line::Line(double slope, double indepTerm, double xValue)
-    : slope{slope}, indepTerm{indepTerm}, xValue{xValue} {}
+    : slope{slope}, indepTerm{indepTerm}, xValue{xValue}
+{
+    if (utilities::equals(this->indepTerm, 0.))
+        this->indepTerm = 0;
+}
 
 Line::Line(const Point & start, const Point & end) :
-    slope{utilities::slopeFromPoints(start, end)},
-    indepTerm{start.getY() - (utilities::slopeFromPoints(start, end) * start.getX())},
-    xValue{utilities::equals(start.getX(), end.getX()) ? start.getX() : 0} {}
+    Line{utilities::slopeFromPoints(start, end),
+    start.getY() - (utilities::slopeFromPoints(start, end) * start.getX()),
+    utilities::equals(start.getX(), end.getX()) ? start.getX() : 0} {}
 
 Point * Line::getIntersectionPoint(const Line & line) const
 {

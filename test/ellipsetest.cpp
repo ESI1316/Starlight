@@ -142,3 +142,4 @@ TEST_CASE("Droites tangeantes à l'ellipse")
         REQUIRE(intersections[0] == Point(6., 21.));
     }
 }
+

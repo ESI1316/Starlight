@@ -43,3 +43,4 @@ TEST_CASE("Source : est un rectangle")
     REQUIRE(utilities::equals(source.getWidth(), source.getEdge()));
     REQUIRE(utilities::equals(source.getHeight(), source.getEdge()));
 }
+

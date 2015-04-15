@@ -41,7 +41,7 @@ TEST_CASE("PI/2 + n * PI")
 TEST_CASE("Tangante")
 {
     REQUIRE(std::isinf(utilities::tan(utilities::PI_2)));
-    REQUIRE(utilities::equals(utilities::tan(3.33328), std::tan(3.33328)));
+    REQUIRE(utilities::equals(utilities::tan(3.33328), -std::tan(3.33328)));
 }
 
 TEST_CASE("Angle absolu")
@@ -123,4 +123,10 @@ TEST_CASE("Coefficiant angulaire avec deux points")
     REQUIRE(utilities::equals(utilities::slopeFromPoints(Point(0.6789987347, 4.6176012697),
                                                          Point(3.5105501895, 4.6176012697)),
                               0.));
+}
+
+TEST_CASE("Entre 0 et 2PI")
+{
+    REQUIRE(utilities::inZeroTwoPi(0.) == 0.);
+    REQUIRE(utilities::inZeroTwoPi(utilities::PI_2) == utilities::PI_2);
 }

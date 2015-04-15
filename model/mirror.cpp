@@ -1,5 +1,6 @@
 #include "model/mirror.hpp"
 
+#include <iostream>
 #include <cmath>
 
 #include "model/starlightexception.hpp"
@@ -119,7 +120,7 @@ void Mirror::reactToRay(Ray ray)
     if (utilities::equals(alpha, 0.))
         alpha = 0.;
 
-    Ray newRay(point, (source + alpha + alpha), ray.getWaveLength());
+    Ray newRay(point, -(source + alpha + alpha), ray.getWaveLength());
 
     if(this->getLevel() != nullptr)
         this->getLevel()->computeRay(newRay);
@@ -134,9 +135,8 @@ Point * Mirror::includeRay(const Ray & ray) const
         Point start{this->pivot.getX() - this->xpad, this->pivot.getY()};
         Point end{start.getX() + this->length, start.getY()};
 
-        start.rotateAround(this->pivot, this->alpha);
-        end.rotateAround(this->pivot, this->alpha);
-
+        start.rotateAround(this->pivot, -this->alpha);
+        end.rotateAround(this->pivot, -this->alpha);
         double minX = std::min(start.getX(), end.getX());
         double minY = std::min(start.getY(), end.getY());
         double maxX = std::max(start.getX(), end.getX());

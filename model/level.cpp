@@ -1,5 +1,7 @@
 #include "model/level.hpp"
 
+#include <iostream>
+
 #include "model/element.hpp"
 #include "model/point.hpp"
 
@@ -118,6 +120,7 @@ bool Level::thereIsAnExplodedNuke() const
 
 void Level::computeRay(Ray ray)
 {
+    std::cout << ray << std::endl;
     std::map<Point *, Element *> candidates = this->getEltsInTrajectory(ray);
     auto it = candidates.begin();
     Point * nextInters = it->first;

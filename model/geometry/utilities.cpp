@@ -80,5 +80,5 @@ bool utilities::isHalfPiPlusNPi(const double alpha)
 
 double utilities::tan(const double alpha)
 {
-    return utilities::isHalfPiPlusNPi(alpha) ? 1./0. : std::tan(alpha);
+    return utilities::isHalfPiPlusNPi(alpha) ? 1./0. : -std::tan(alpha);
 }

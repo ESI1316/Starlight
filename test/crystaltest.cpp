@@ -54,7 +54,7 @@ TEST_CASE("Intersection cristal et rayon ! le point de sortie")
     SECTION("Droite quelconque : intersection")
     {
         Crystal cristal{Point{3., 3.}, 2.5862714475, -72};
-        Ray ray{Point{-2.38, -1.62}, 0.4644210041, 373};
+        Ray ray{Point{-2.38, -1.62}, -0.4644210041, 373};
 
         Point * intersection = cristal.includeRay(ray);
         REQUIRE(intersection != 0);
@@ -65,7 +65,7 @@ TEST_CASE("Intersection cristal et rayon ! le point de sortie")
     SECTION("Droite verticale : pas d'intersection")
     {
         Crystal cristal{Point{3., 3.}, 2.5862714475, -72};
-        Ray ray{Point{-2.38, -1.62}, utilities::PI_2, 373};
+        Ray ray{Point{-2.38, -1.62}, -utilities::PI_2, 373};
 
         Point * intersection = cristal.includeRay(ray);
 
@@ -75,7 +75,7 @@ TEST_CASE("Intersection cristal et rayon ! le point de sortie")
     SECTION("Droite verticale : intersection")
     {
         Crystal cristal{Point{3., 3.}, 2.5862714475, -72};
-        Ray ray{Point{1.55, -1.62}, utilities::PI_2, 373};
+        Ray ray{Point{1.55, -1.62}, -utilities::PI_2, 373};
 
         Point * intersection = cristal.includeRay(ray);
         REQUIRE(intersection != 0);
@@ -104,3 +104,4 @@ TEST_CASE("Intersection cristal et rayon ! le point de sortie")
         delete intersection;
     }
 }
+

@@ -1,4 +1,5 @@
 #include "test/catch.hpp"
+#include <iostream>
 #include "model/dest.hpp"
 #include "model/geometry/rectangle.hpp"
 #include "model/geometry/utilities.hpp"
@@ -43,14 +44,13 @@ TEST_CASE("Dest : includeRay")
 
     SECTION("droite quelconque : pas d'intersection")
     {
-        Ray ray{Point{2.7766139723, -2.5169499277}, 0.2415937631, 649};
-
+        Ray ray{Point{2.7766139723, -2.5169499277}, -0.2415937631, 649};
         Point * intersection = dest.includeRay(ray);
         REQUIRE(intersection == 0);
     }
     SECTION("droite quelconque : intersection")
     {
-        Ray ray{Point{2.7766139723, -2.5169499277}, 0.4413298865, 649};
+        Ray ray{Point{2.7766139723, -2.5169499277}, -0.4413298865, 649};
 
         Point * intersection = dest.includeRay(ray);
         REQUIRE(intersection != 0);
@@ -60,7 +60,7 @@ TEST_CASE("Dest : includeRay")
 
     SECTION("droite verticale : pas d'intersection")
     {
-        Ray ray{Point{2.7766139723, -2.5169499277}, utilities::PI_2, 649};
+        Ray ray{Point{2.7766139723, -2.5169499277}, -utilities::PI_2, 649};
 
         Point * intersection = dest.includeRay(ray);
         REQUIRE(intersection == 0);
@@ -68,7 +68,7 @@ TEST_CASE("Dest : includeRay")
 
     SECTION("droite verticale : intersection")
     {
-        Ray ray{Point{9.7766139723, -2.5169499277}, utilities::PI_2, 649};
+        Ray ray{Point{9.7766139723, -2.5169499277}, -utilities::PI_2, 649};
 
         Point * intersection = dest.includeRay(ray);
         REQUIRE(intersection != 0);
@@ -92,3 +92,4 @@ TEST_CASE("Dest : includeRay")
         delete intersection;
     }
 }
+

@@ -35,7 +35,7 @@ TEST_CASE("includeRay(Ray)")
 
     SECTION("Droite quelconque : tangeante")
     {
-        Ray ray{Point{-6.9684096396, -6.7533025782}, 1.4484713166, 400};
+        Ray ray{Point{-6.9684096396, -6.7533025782}, -1.4484713166, 400};
         Point * intersection = duke.includeRay(ray);
 
         REQUIRE(intersection != 0);
@@ -46,7 +46,7 @@ TEST_CASE("includeRay(Ray)")
 
     SECTION("Droite quelconque : 2 intersections")
     {
-        Ray ray{Point{-6.9684096396, -6.7533025782}, 0.5324265834, 400};
+        Ray ray{Point{-6.9684096396, -6.7533025782}, -0.5324265834, 400};
         Point * intersection = duke.includeRay(ray);
 
         REQUIRE(intersection != 0);
@@ -94,7 +94,7 @@ TEST_CASE("includeRay(Ray)")
 
     SECTION("Droite verticale : tangeante")
     {
-        Ray ray{Point{-5.34, -3.0920099007}, utilities::PI_2, 400};
+        Ray ray{Point{-5.34, -3.0920099007}, -utilities::PI_2, 400};
         Point * intersection = duke.includeRay(ray);
 
         REQUIRE(intersection != 0);
@@ -105,7 +105,7 @@ TEST_CASE("includeRay(Ray)")
 
     SECTION("Droite verticale : 2 intersctions")
     {
-        Ray ray{Point{10.8200887993, -6.4217017861}, -(3 * utilities::PI_2), 400};
+        Ray ray{Point{10.8200887993, -6.4217017861}, (3 * utilities::PI_2), 400};
         Point * intersection = duke.includeRay(ray);
 
         REQUIRE(intersection != 0);
@@ -113,3 +113,4 @@ TEST_CASE("includeRay(Ray)")
         delete intersection;
     }
 }
+
