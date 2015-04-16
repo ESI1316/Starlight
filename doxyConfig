@@ -241,7 +241,8 @@ OPTIMIZE_OUTPUT_VHDL   = NO
 EXTENSION_MAPPING      =
 
 # If you use STL classes (i.e. std::string, std::vector, etc.) but do not want
-# to include (a tag file for) the STL sources as input, then you should
+# to include (a tag file for) the STL sources as 
+, then you should
 # set this tag to YES in order to let doxygen match functions declarations and
 # definitions whose arguments contain STL classes (e.g. func(std::string); v.s.
 # func(std::string) {}). This also makes the inheritance and collaboration
@@ -648,7 +649,7 @@ WARN_LOGFILE           =
 # directories like "/usr/src/myproject". Separate the files or directories
 # with spaces.
 
-INPUT                  = ./model/geometry/ ./model ./test ./ressources 
+INPUT                  = ./model/geometry/ ./model/elements/ ./model/exception ./test/geometry ./test/elements
 
 # This tag can be used to specify the character encoding of the source files
 # that doxygen parses. Internally doxygen uses the UTF-8 encoding, which is

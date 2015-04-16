@@ -3,7 +3,7 @@
 
 #include <vector>
 
-#include "model/point.hpp"
+#include "model/geometry/point.hpp"
 
 class Line;
 

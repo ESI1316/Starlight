@@ -1,7 +1,7 @@
 #include "model/geometry/rectangle.hpp"
 
 #include "model/geometry/utilities.hpp"
-#include "model/starlightexception.hpp"
+#include "model/exception/starlightexception.hpp"
 
 Rectangle::Rectangle(double width, double height, const Point & upLeftCorner)
     : width{width}, height{height}, upLeftCorner{upLeftCorner},

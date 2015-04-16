@@ -15,62 +15,62 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp \
-    model/crystal.cpp \
-    model/dest.cpp \
-    model/lens.cpp \
-    model/level.cpp \
-    model/mirror.cpp \
-    model/nuke.cpp \
-    model/point.cpp \
-    model/ray.cpp \
-    model/source.cpp \
-    model/wall.cpp \
-    model/levelFactory.cpp \
-    model/starlightexception.cpp \
-    model/element.cpp \
-    test/levelfactorytest.cpp \
-    test/pointtest.cpp \
-    test/crystaltest.cpp \
-    test/rectangletest.cpp \
-    test/linetest.cpp \
+    view/mainwindow.cpp \
+    model/elements/crystal.cpp \
+    model/elements/dest.cpp \
+    model/elements/lens.cpp \
+    model/elements/level.cpp \
+    model/elements/mirror.cpp \
+    model/elements/nuke.cpp \
+    model/elements/ray.cpp \
+    model/elements/source.cpp \
+    model/elements/wall.cpp \
+    model/elements/levelFactory.cpp \
+    model/exception/starlightexception.cpp \
+    model/elements/element.cpp \
+    test/elements/levelfactorytest.cpp \
+    test/elements/crystaltest.cpp \
+    model/geometry/point.cpp \
     model/geometry/utilities.cpp \
     model/geometry/rectangle.cpp \
     model/geometry/line.cpp \
     model/geometry/ellipse.cpp \
-    test/ellipsetest.cpp \
-    test/utilitiestest.cpp \
-    test/mirrortest.cpp \
-    test/raytest.cpp \
-    test/nuketest.cpp \
-    test/walltest.cpp \
-    test/sourcetest.cpp \
-    test/desttest.cpp \
-    test/leveltest.cpp \
-    test/lenstest.cpp
+    test/geometry/pointtest.cpp \
+    test/geometry/ellipsetest.cpp \
+    test/geometry/utilitiestest.cpp \
+    test/geometry/rectangletest.cpp \
+    test/geometry/linetest.cpp \
+    test/elements/mirrortest.cpp \
+    test/elements/raytest.cpp \
+    test/elements/nuketest.cpp \
+    test/elements/walltest.cpp \
+    test/elements/sourcetest.cpp \
+    test/elements/desttest.cpp \
+    test/elements/leveltest.cpp \
+    test/elements/lenstest.cpp
 
-HEADERS  += mainwindow.hpp \
-    model/starlightexception.hpp \
-    model/element.hpp \
-    model/crystal.hpp \
-    model/dest.hpp \
-    model/lens.hpp \
-    model/level.hpp \
-    model/levelFactory.hpp \
-    model/mirror.hpp \
-    model/nuke.hpp \
-    model/point.hpp \
-    model/ray.hpp \
-    model/source.hpp \
-    model/wall.hpp \
-    model/utilities.hpp \
+HEADERS  += view/mainwindow.hpp \
+    model/exception/starlightexception.hpp \
+    model/elements/element.hpp \
+    model/elements/crystal.hpp \
+    model/elements/dest.hpp \
+    model/elements/lens.hpp \
+    model/elements/level.hpp \
+    model/elements/levelFactory.hpp \
+    model/elements/mirror.hpp \
+    model/elements/nuke.hpp \
+    model/elements/ray.hpp \
+    model/elements/source.hpp \
+    model/elements/wall.hpp \
+    model/elements/utilities.hpp \
     test/catch.hpp \
+    model/geometry/point.hpp \
     model/geometry/utilities.hpp \
     model/geometry/rectangle.hpp \
     model/geometry/line.hpp \
     model/geometry/ellipse.hpp
 
-FORMS    += mainwindow.ui
+FORMS    += view/mainwindow.ui
 
 DISTFILES += \
     ressources/level.lvl \

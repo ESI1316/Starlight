@@ -4,7 +4,7 @@
 #include <vector>
 #include <ostream>
 
-#include "model/point.hpp"
+#include "model/geometry/point.hpp"
 #include "model/geometry/line.hpp"
 
 

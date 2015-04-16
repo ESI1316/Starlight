@@ -2,7 +2,7 @@
 
 #include "model/geometry/line.hpp"
 #include "model/geometry/utilities.hpp"
-#include "model/starlightexception.hpp"
+#include "model/exception/starlightexception.hpp"
 
 Ellipse::Ellipse(double xRadius, double yRadius, const Point & center)
     : center{center}, xRadius{std::pow(xRadius, 2)}, yRadius{std::pow(yRadius, 2)}

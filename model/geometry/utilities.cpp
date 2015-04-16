@@ -2,7 +2,7 @@
 
 #include <cmath>
 
-#include "model/point.hpp"
+#include "model/geometry/point.hpp"
 
 bool utilities::secondDegreeEquationSolver(double a, double b, double c,
                                            double * rad1, double * rad2)
