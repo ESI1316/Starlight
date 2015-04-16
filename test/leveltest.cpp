@@ -1,20 +1,17 @@
 #include "test/catch.hpp"
 #include "model/level.hpp"
 #include "model/levelFactory.hpp"
- 
+
 // constructeur, accesseurs et mutateurs sont testés dans levelFactoryTest
 
 TEST_CASE("computeRay")
 {
-    Level * level = levelFactory::getLevelFromFile("./ressources/level_test.lvl");
-    level->computeRays();
-}
-    /*
+
     SECTION("des éléments se trouvent de part et d'autre de la trajectoire du rayon")
     {
-       
+
     }
-    
+
     SECTION("des éléments se trouvent dans la trajectoire du rayon")
     {
 
@@ -22,12 +19,16 @@ TEST_CASE("computeRay")
 
     SECTION("Rencontre avecc un mur")
     {
-
+        Level * level = levelFactory::getLevelFromFile("./ressources/level.lvl");
+        level->computeRays();
+        delete level;
     }
 
     SECTION("Rencontre avec un miroir")
     {
-
+        Level * level = levelFactory::getLevelFromFile("./ressources/MW.lvl");
+        level->computeRays();
+        delete level;
     }
 
     SECTION("Rencontre avec une bombe")
@@ -50,26 +51,29 @@ TEST_CASE("computeRay")
 
     }
 }
-/*
+
 TEST_CASE("computeRays") // tous les parcours inclusent la rencontre avec des mirroirs
 {
     SECTION("parcour menant à la rencontre d'un mur ")
     {
-        Level * level = levelFactory::getLevelFromFile("");
+        Level * level = levelFactory::getLevelFromFile("./ressources/MW.lvl");
+        level->computeRays();
 
-        REQUIRE(level.getRays().size() == );
-        REQUIRE(level.getRays()[0] == );
-        
+        REQUIRE(level->getRays().size() == 2);
+
+        Ray ray(Point(0, 0), 4.75, 400);
+        REQUIRE((Line) level->getRays().at(0) ==  (Line)ray);
+
         delete level;
     }
-
+/*
     SECTION("parcour menant à la l'illumination de la destination")
     {
         Level * level = levelFactory::getLevelFromFile("");
 
         REQUIRE(level.getRays().size() == );
         REQUIRE(level.getDestination().isLightedUp());
-        
+
         delete level;
     }
 
@@ -79,8 +83,8 @@ TEST_CASE("computeRays") // tous les parcours inclusent la rencontre avec des mi
 
         REQUIRE(level.getRays().size() == );
         REQUIRE(level->thereIsAnExplodedNuke());
-        
-        delete level; 
+
+        delete level;
     }
 
     SECTION("parcour menant à la rencontre d'un crystal")
@@ -89,7 +93,7 @@ TEST_CASE("computeRays") // tous les parcours inclusent la rencontre avec des mi
 
         REQUIRE(level.getRays().size() == );
         REQUIRE(level.getDestination().isLightedUp());
-        
+
         delete level;
     }
 
@@ -99,7 +103,7 @@ TEST_CASE("computeRays") // tous les parcours inclusent la rencontre avec des mi
 
         REQUIRE(level.getRays().size() == );
         REQUIRE(level.getDestination().isLightedUp());
-        
+
         delete level;
     }
 
@@ -109,8 +113,8 @@ TEST_CASE("computeRays") // tous les parcours inclusent la rencontre avec des mi
 
         REQUIRE(level.getRays().size() == );
         REQUIRE(level.getDestination().isLightedUp());
-        
+
         delete level;
     }
+    */
 }
-*/

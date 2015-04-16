@@ -134,7 +134,6 @@ void Level::computeRay(Ray ray)
     }
 
     ray.setEnd(*nextInters);
-    std::cout << ray << std::endl;
     this->rays.push_back(ray);
     nextElt->reactToRay(ray);
 
