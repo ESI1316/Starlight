@@ -470,7 +470,7 @@ TEST_CASE("Mirroir")
         alpha = 0.;
 
     Ray newRay(*point, -(source + alpha + alpha), ray.getWaveLength());
-    REQUIRE((Line) newRay == Line(-0.225503926, 531.8761363734));
+    REQUIRE(newRay == Ray(*point, 0.2217940346, 400));
     delete point;
 
     REQUIRE(newRay.isInTrajectory(Point(-2.8729472097, 532.5239972484)));

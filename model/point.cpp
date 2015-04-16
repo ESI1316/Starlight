@@ -116,10 +116,7 @@ bool Point::operator !=(const Point & point) const
 
 std::ostream & operator<<(std::ostream & out, const Point & point)
 {
-    out << "[cartésien (x, y) = ("
-        << point.getX() << " , " << point.getY() << ")]"
-        << "[polaire (r, a) = ("
-        << point.getRadius() << " , " << point.getAzimut() << ")]";
+        out << "(" << point.getX() << ", " << point.getY() << ")";
 
     return out;
 }
