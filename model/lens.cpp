@@ -39,8 +39,12 @@ void Lens::reactToRay(Ray ray)
 {
     if(ray.getWaveLength() >= this->getMinWaveLength()
             && ray.getWaveLength() <= this->getMaxWaveLength())
+    {
         if(this->getLevel() != nullptr)
-            this->getLevel()->computeRay(ray);
+            this->getLevel()->computeRay(Ray{ray.getEnd(),
+                                             ray.getAlpha(),
+                                             ray.getWaveLength()});
+    }
 }
 
 Point * Lens::includeRay(const Ray & ray) const

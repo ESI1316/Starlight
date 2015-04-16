@@ -103,9 +103,9 @@ void Level::addNuke(const Nuke & nuke)
 
 void Level::computeRays()
 {
-    this->computeRay(Ray(this->source.getPosition(),
+    this->computeRay(Ray{this->source.getPosition(),
                         this->source.getAngle(),
-                        this->source.getWaveLength()));
+                        this->source.getWaveLength()});
 }
 
 bool Level::thereIsAnExplodedNuke() const

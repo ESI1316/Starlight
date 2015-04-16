@@ -69,7 +69,8 @@ TEST_CASE("computeRay")
     {
         Level * level = levelFactory::getLevelFromFile("./ressources/ML_STOP.lvl");
         level->computeRays();
-        REQUIRE(level->getRays().size() == 2);
+        REQUIRE(level->getRays().size() == 3);
+        std::cout << level->getRays().at(2) << std::endl;
         delete level;
     }
 

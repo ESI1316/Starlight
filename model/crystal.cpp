@@ -26,10 +26,10 @@ double Crystal::getRadius() const
 
 void Crystal::reactToRay(Ray ray)
 {
-    ray.setWaveLength(ray.getWaveLength() + this->amplifier);
-
     if(this->getLevel() != nullptr)
-        this->getLevel()->computeRay(ray);
+        this->getLevel()->computeRay(Ray{ray.getEnd(),
+                                         ray.getAlpha(),
+                                         ray.getWaveLength() + this->amplifier});
 }
 
 Point * Crystal::includeRay(const Ray & ray) const

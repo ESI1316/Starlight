@@ -113,22 +113,22 @@ bool Mirror::checkPivotRange(const Point & point) const
 void Mirror::reactToRay(Ray ray)
 {
     Point point = ray.getEnd();
-    double mirror = utilities::absoluteAngle(this->getAngle());
-    double source = utilities::absoluteAngle(std::atan(ray.getSlope()));
-    double alpha = (utilities::PI + mirror - source);
+    double mirror{utilities::absoluteAngle(this->getAngle())};
+    double source{utilities::absoluteAngle(std::atan(ray.getSlope()))};
+    double alpha{(utilities::PI + mirror - source)};
 
     if (utilities::equals(alpha, 0.))
         alpha = 0.;
 
-    Ray newRay(point, -(source + alpha + alpha), ray.getWaveLength());
-
     if(this->getLevel() != nullptr)
-        this->getLevel()->computeRay(newRay);
+            this->getLevel()->computeRay(Ray{point,
+                                             -(source + alpha + alpha),
+                                             ray.getWaveLength()});
 }
 
 Point * Mirror::includeRay(const Ray & ray) const
 {
-    Point * intersection = this->getIntersectionPoint(ray);
+    Point * intersection{this->getIntersectionPoint(ray)};
 
     if(intersection != 0)
     {
@@ -138,10 +138,10 @@ Point * Mirror::includeRay(const Ray & ray) const
         start.rotateAround(this->pivot, this->alpha);
         end.rotateAround(this->pivot, this->alpha);
 
-        double minX = std::min(start.getX(), end.getX());
-        double minY = std::min(start.getY(), end.getY());
-        double maxX = std::max(start.getX(), end.getX());
-        double maxY = std::max(start.getY(), end.getY());
+        double minX{std::min(start.getX(), end.getX())};
+        double minY{std::min(start.getY(), end.getY())};
+        double maxX{std::max(start.getX(), end.getX())};
+        double maxY{std::max(start.getY(), end.getY())};
 
         if((intersection->getX() < minX || intersection->getX() > maxX
                 || intersection->getY() < minY || intersection->getY() > maxY)
