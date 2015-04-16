@@ -18,7 +18,7 @@ TEST_CASE("Construction de points")
 
     Point pppp{1., 1.};
     REQUIRE(utilities::equals(pppp.getRadius(), 1.41421356));
-    REQUIRE(utilities::equals(pppp.getAzimut(), 0.785398163));
+    REQUIRE(utilities::equals(pppp.getAzimut(), -0.785398163));
 
     Point ppppp{2., 2.};
     REQUIRE(utilities::equals(ppppp.getRadius(), p.getRadius()));
@@ -42,7 +42,7 @@ TEST_CASE("mutateurs de point")
 
     pp.setCartesianLocation(1., 1.);
     REQUIRE(utilities::equals(pp.getRadius(), 1.41421356));
-    REQUIRE(utilities::equals(pp.getAzimut(), 0.785398163));
+    REQUIRE(utilities::equals(pp.getAzimut(), -0.785398163));
 }
 
 TEST_CASE("Autres méthodes de points")
@@ -77,15 +77,15 @@ TEST_CASE("Autres méthodes de points")
 TEST_CASE("Azimut en degré")
 {
     Point p{1., 1.};
-    REQUIRE(utilities::equals(p.getAzimutAsDegrees(), 45.));
+    REQUIRE(utilities::equals(p.getAzimutAsDegrees(), 315.));
     Point pp{0., 1};
-    REQUIRE(utilities::equals(pp.getAzimutAsDegrees(), 90.));
+    REQUIRE(utilities::equals(pp.getAzimutAsDegrees(), 270.));
     Point ppp{-1., 1};
-    REQUIRE(utilities::equals(ppp.getAzimutAsDegrees(), 135.));
+    REQUIRE(utilities::equals(ppp.getAzimutAsDegrees(), 225.));
     Point pppp{-1, -1};
-    REQUIRE(utilities::equals(pppp.getAzimutAsDegrees(), 225.));
+    REQUIRE(utilities::equals(pppp.getAzimutAsDegrees(), 135.));
     Point ppppp{-0.5, 0.866025404};
-    REQUIRE(utilities::equals(ppppp.getAzimutAsDegrees(), 120.));
+    REQUIRE(utilities::equals(ppppp.getAzimutAsDegrees(), 240.));
 
     Point a;
     a.setPolarLocation(2., 2 * utilities::PI);
@@ -152,7 +152,7 @@ TEST_CASE("Rotation autour d'un point par PI")
     REQUIRE(utilities::equals(point.getRadius(), 4.));
 
     Point a{3. , 3.};
-    REQUIRE(utilities::equals(a.getAzimut(), utilities::PI / 4));
+    REQUIRE(utilities::equals(a.getAzimut(), -utilities::PI / 4));
     REQUIRE(utilities::equals(a.getRadius(), std::sqrt(18.)));
 
     pivot = Point{2., 1.};
@@ -186,4 +186,13 @@ TEST_CASE("Opérateurs de point")
     REQUIRE(c != d);
     REQUIRE(!(d != e));
     REQUIRE(a != Point(19, 19));
+}
+
+TEST_CASE("Setters")
+{
+    Point a;
+
+    a.setPolarLocation(1.41421356, -0.785398163);
+    REQUIRE(utilities::equals(a.getX(), 1.));
+    REQUIRE(utilities::equals(a.getX(), 1.));
 }

@@ -5,7 +5,7 @@
 #include "geometry/utilities.hpp"
 
 Point::Point(const double x, const double y)
-    : x {x}, y {y}, radius{std::hypot(x, y)}, azimut{std::atan2(y, x)} {}
+    : x {x}, y {y}, radius{std::hypot(x, y)}, azimut{std::atan2(-y, x)} {}
 
 Point::Point(const Point & point)
     : x{point.x}, y{point.y}, radius{point.radius}, azimut{point.azimut} {}
@@ -60,7 +60,7 @@ void Point::setPolarLocation(const double radius, const double azimut)
     this->radius = radius;
     this->azimut = azimut;
     this->x = this->radius * std::cos(this->azimut);
-    this->y = this->radius * std::sin(this->azimut);
+    this->y = this->radius * std::sin(-this->azimut);
 }
 
 void Point::setOrigin(const Point & origin)
