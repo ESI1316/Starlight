@@ -19,8 +19,10 @@ TEST_CASE("computeRay")
 
     SECTION("Rencontre avecc un mur")
     {
-        Level * level = levelFactory::getLevelFromFile("./ressources/level.lvl");
+        Level * level = levelFactory::getLevelFromFile("./ressources/W.lvl");
         level->computeRays();
+
+        REQUIRE(level->getRays().size() == 1);
         delete level;
     }
 
@@ -33,17 +35,36 @@ TEST_CASE("computeRay")
 
     SECTION("Rencontre avec une bombe")
     {
+        Level * level = levelFactory::getLevelFromFile("./ressources/N.lvl");
+        level->computeRays();
+        REQUIRE(level->getRays().size() == 1);
 
+        bool boom = false;
+
+        for(Nuke a : level->getNukes())
+            boom = (boom || a.isLightedUp());
+
+        REQUIRE(boom);
+
+        delete level;
     }
 
     SECTION("Rencontre avec une lentille laissant passer le rayon")
     {
+        Level * level = levelFactory::getLevelFromFile("./ressources/LW.lvl");
+        level->computeRays();
+        REQUIRE(level->getRays().size() == 1);
+        delete level;
 
     }
 
     SECTION("Rencontre avec une lentille ne laissant pas passer le rayon")
     {
-
+        Level * level = levelFactory::getLevelFromFile("./ressources/L_STOP.lvl");
+        level->computeRays();
+        REQUIRE(level->getRays().size() == 1);
+        std::cout << level->getRays().at(0) << std::endl;
+        delete level;
     }
 
     SECTION("Rencontre avec un crystal")

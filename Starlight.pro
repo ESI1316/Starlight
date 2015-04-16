@@ -76,4 +76,9 @@ DISTFILES += \
     ressources/level.lvl \
     test/cinclude2dot.pl \
     test/include_hierarchy.dot \
-    ressources/MW.lvl
+    ressources/MW.lvl \
+    ressources/W.lvl \
+    ressources/N.lvl \
+    ressources/ML_STOP.lvl \
+    ressources/LW.lvl \
+    ressources/L_STOP.lvl
