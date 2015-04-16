@@ -120,7 +120,6 @@ bool Level::thereIsAnExplodedNuke() const
 
 void Level::computeRay(Ray ray)
 {
-    std::cout << ray << std::endl;
     std::map<Point *, Element *> candidates = this->getEltsInTrajectory(ray);
     auto it = candidates.begin();
     Point * nextInters = it->first;
@@ -135,6 +134,7 @@ void Level::computeRay(Ray ray)
     }
 
     ray.setEnd(*nextInters);
+    std::cout << ray << std::endl;
     this->rays.push_back(ray);
     nextElt->reactToRay(ray);
 

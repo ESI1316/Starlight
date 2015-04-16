@@ -85,6 +85,10 @@ bool Ray::isInTrajectory(const Point & point) const
     return inTrajectory;
 }
 
+double Ray::getAlpha() const
+{
+    return this->alpha;
+}
 bool Ray::operator==(const Ray & ray) const
 {
     return this->start == ray.start
@@ -100,8 +104,8 @@ bool Ray::operator!=(const Ray & ray) const
 
 std::ostream & operator<<(std::ostream & out, const Ray & ray)
 {
-    out << ray.getStart() << " ---------- " << ray.getEnd()
-        << " (" << ray.getWaveLength() << " nm)" << std::endl
+    out << ray.getStart() << " -R-A-Y- " << ray.getEnd()
+        << " (" << ray.getWaveLength() << " nm) | Angle : " << ray.getAlpha() << std::endl
         << (Line) ray;
 
     return out;

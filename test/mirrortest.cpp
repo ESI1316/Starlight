@@ -422,27 +422,57 @@ TEST_CASE("Mirroir est une ligne")
 {
     SECTION("Angle normal")
     {
-    Mirror mirroir{Point{6., 6.}, 5, 8, -5.1882683952,
-                   Point{1.,1.}, Point{221., 2221.}, 0., 0.};
-    Line line{-1.9402985076, 17.6417910454};
-    Line li{-3.9402985076, 17.6417910454};
+        Mirror mirroir{Point{6., 6.}, 5, 8, -5.1882683952,
+                       Point{1.,1.}, Point{221., 2221.}, 0., 0.};
+        Line line{-1.9402985076, 17.6417910454};
+        Line li{-3.9402985076, 17.6417910454};
 
-    REQUIRE(line == mirroir);
-    REQUIRE((Line)mirroir == line);
-    REQUIRE((Line)mirroir != li);
-    REQUIRE(line != li);
+        REQUIRE(line == mirroir);
+        REQUIRE((Line)mirroir == line);
+        REQUIRE((Line)mirroir != li);
+        REQUIRE(line != li);
     }
 
     SECTION("Angle négatif")
     {
-    Mirror mirroir{Point{6., 6.}, 5, 8, ((utilities::PI * 2) - 5.1882683952),
-                   Point{1.,1.}, Point{221., 2221.}, 0., 0.};
-    Line line{-1.9402985076, 17.6417910454};
-    Line li{-3.9402985076, 17.6417910454};
+        Mirror mirroir{Point{6., 6.}, 5, 8, ((utilities::PI * 2) - 5.1882683952),
+                    Point{1.,1.}, Point{221., 2221.}, 0., 0.};
+        Line line{-1.9402985076, 17.6417910454};
+        Line li{-3.9402985076, 17.6417910454};
 
-    REQUIRE(line == mirroir);
-    REQUIRE((Line)mirroir == line);
-    REQUIRE((Line)mirroir != li);
-    REQUIRE(line != li);
+        REQUIRE(line == mirroir);
+        REQUIRE((Line)mirroir == line);
+        REQUIRE((Line)mirroir != li);
+        REQUIRE(line != li);
     }
+}
+
+TEST_CASE("Mirroir")
+{
+    Mirror mirroir(Point(34, 509),14, 68, -2.226491953, Point(-500,-500), Point(10000, 10000), 0., 0.);
+
+    Point start{mirroir.getPivot().getX() - mirroir.getXPad(), mirroir.getPivot().getY()};
+    Point end{start.getX() + mirroir.getLength(), start.getY()};
+
+    start.rotateAround(mirroir.getPivot(), mirroir.getAngle());
+    end.rotateAround(mirroir.getPivot(), mirroir.getAngle());
+
+    REQUIRE(start == Point(42.5359506519, 497.9032641525));
+    REQUIRE(end == Point(1.0756189141, 551.8016954116));
+
+    Ray ray(Point(0, 0), 4.75, 400);
+    Point * point = ray.getIntersectionPoint(mirroir);
+
+    double mirror = utilities::absoluteAngle(mirroir.getAngle());
+    double source = utilities::absoluteAngle(std::atan(ray.getSlope()));
+    double alpha = (utilities::PI + mirror - source);
+    if (utilities::equals(alpha, 0.))
+        alpha = 0.;
+
+    Ray newRay(*point, -(source + alpha + alpha), ray.getWaveLength());
+    REQUIRE((Line) newRay == Line(-0.225503926, 531.8761363734));
+    delete point;
+
+    REQUIRE(newRay.isInTrajectory(Point(-2.8729472097, 532.5239972484)));
+    REQUIRE_FALSE(newRay.isInTrajectory(Point(59.6450443514, 518.4259447057)));
 }

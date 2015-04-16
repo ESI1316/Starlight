@@ -4,11 +4,12 @@
  
 // constructeur, accesseurs et mutateurs sont testés dans levelFactoryTest
 
-    /*
 TEST_CASE("computeRay")
 {
     Level * level = levelFactory::getLevelFromFile("./ressources/level.lvl");
     level->computeRays();
+}
+    /*
     SECTION("des éléments se trouvent de part et d'autre de la trajectoire du rayon")
     {
        

@@ -68,6 +68,7 @@ protected:
      */
     int getWaveLength() const;
 
+    double getAlpha() const;
     /**
      * Change la coordonnée du début du rayon.
      *
