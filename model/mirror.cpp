@@ -10,7 +10,7 @@
 Mirror::Mirror(const Point & pivot, int xpad, int length, double alpha, Point pointMin,
                Point pointMax, double alphaMin, double alphaMax)
     : Element(),
-      Line(utilities::tan(utilities::inZeroTwoPi(alpha)),
+      Line(utilities::tan(alpha),
            pivot.getY() - (utilities::tan(alpha) * pivot.getX()),
            utilities::isHalfPiPlusNPi(alpha) ? pivot.getX() : 0),
       pivot {pivot}, length(length), xpad(xpad), xMin {pointMin.getX()},
@@ -135,8 +135,9 @@ Point * Mirror::includeRay(const Ray & ray) const
         Point start{this->pivot.getX() - this->xpad, this->pivot.getY()};
         Point end{start.getX() + this->length, start.getY()};
 
-        start.rotateAround(this->pivot, -this->alpha);
-        end.rotateAround(this->pivot, -this->alpha);
+        start.rotateAround(this->pivot, this->alpha);
+        end.rotateAround(this->pivot, this->alpha);
+
         double minX = std::min(start.getX(), end.getX());
         double minY = std::min(start.getY(), end.getY());
         double maxX = std::max(start.getX(), end.getX());

@@ -344,7 +344,7 @@ TEST_CASE("includeRay")
     {
         Mirror mirroir{Point{6., 6.}, 5, 8, -5.1882683952,
                        Point{1.,1.}, Point{221., 2221.}, 0., 0.};
-        Ray ray{Point{0.9131453839, 2.4382207854}, -0.5657014687, 500};
+        Ray ray{Point{0.9131453839, 2.4382207854}, 0.5657014687, 500};
 
         Point * intersection = mirroir.includeRay(ray);
         REQUIRE(intersection == 0);
@@ -354,11 +354,11 @@ TEST_CASE("includeRay")
     {
         Mirror mirroir{Point{6., 6.}, 5, 8, 5.1882683952,
                        Point{1.,1.}, Point{221., 2221.}, 0., 0.};
-        Ray ray{Point{0.9131453839, 2.4382207854}, 0.2478814126, 500};
+        Ray ray{Point{0.9131453839, 2.4382207854}, -0.2478814126, 500};
 
         Point * intersection = mirroir.includeRay(ray);
         REQUIRE(intersection != 0);
-        REQUIRE(*intersection == Point(7.036920316, 3.9880650583));
+        REQUIRE(*intersection == Point(4.651997927, 3.3844735895));
         delete intersection;
     }
     SECTION("Droite horizontale : pas intersection")

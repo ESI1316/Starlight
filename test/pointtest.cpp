@@ -190,9 +190,21 @@ TEST_CASE("Opérateurs de point")
 
 TEST_CASE("Setters")
 {
-    Point a;
+    Point a, b, c, d;
 
     a.setPolarLocation(1.41421356, -0.785398163);
     REQUIRE(utilities::equals(a.getX(), 1.));
     REQUIRE(utilities::equals(a.getX(), 1.));
+
+    b.setPolarLocation(4., -0.5235987756);
+    REQUIRE(utilities::equals(b.getX(), 3.4641016151));
+    REQUIRE(utilities::equals(b.getY(), 2));
+
+    c.setPolarLocation(6., -1.0471975512);
+    REQUIRE(utilities::equals(c.getX(), 3));
+    REQUIRE(utilities::equals(c.getY(), 5.1961524227));
+
+    d.setPolarLocation(6.9904347345, -0.1725176252);
+    REQUIRE(utilities::equals(d.getX(), 6.8866666667));
+    REQUIRE(utilities::equals(d.getY(), 1.2));
 }
