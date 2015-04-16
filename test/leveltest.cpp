@@ -6,7 +6,7 @@
 
 TEST_CASE("computeRay")
 {
-    Level * level = levelFactory::getLevelFromFile("./ressources/level.lvl");
+    Level * level = levelFactory::getLevelFromFile("./ressources/level_test.lvl");
     level->computeRays();
 }
     /*
