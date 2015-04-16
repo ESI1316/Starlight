@@ -4,14 +4,14 @@
 #include "model/elements/level.hpp"
 
 Ray::Ray(const Point start, double alpha, int waveLength)
-    : Line(utilities::tan(alpha),
+    : Line{utilities::tan(alpha),
            start.getY() - (utilities::tan(alpha) * start.getX()),
-           utilities::isHalfPiPlusNPi(alpha) ? start.getX() : 0),
+           utilities::isHalfPiPlusNPi(alpha) ? start.getX() : 0.},
       start{start}, end{start}, waveLength{waveLength},
       alpha{utilities::inZeroTwoPi(alpha)}
 {
     if (waveLength < Ray::WL_MIN || waveLength > Ray::WL_MAX)
-        throw StarlightException("Longueur d'onde doit être comprise entre");
+        throw StarlightException{"Longueur d'onde doit être comprise entre"};
 }
 
 const Point & Ray::getStart() const
@@ -42,13 +42,9 @@ void Ray::setEnd(const Point & end)
 void Ray::setWaveLength(const int waveLength)
 {
     if (waveLength < Ray::WL_MIN )
-    {
         this->waveLength = Ray::WL_MIN;
-    }
     else if (waveLength > Ray::WL_MAX)
-    {
         this->waveLength = Ray::WL_MAX;
-    }
     else
         this->waveLength = waveLength;
 }

@@ -11,8 +11,8 @@ Nuke::Nuke(const Point & position, const double radius)
     : Element(), Ellipse{radius, radius, position}
 {
     if (utilities::lessOrEquals(radius, 0.))
-        throw StarlightException("Le rayon de la bombe doit être "
-                                 "strict. positif");
+        throw StarlightException{"Le rayon de la bombe doit être "
+                                 "strict. positif"};
 }
 
 const Point &Nuke::getLocation() const
@@ -42,8 +42,8 @@ void Nuke::reactToRay(Ray)
 
 Point * Nuke::includeRay(const Ray & ray) const
 {
-    Point * intersec = 0;
-    std::vector<Point> p = this->getIntersectionPoints(ray);
+    Point * intersec{nullptr};
+    std::vector<Point> p{this->getIntersectionPoints(ray)};
 
     if (!p.empty())
     {
@@ -52,7 +52,7 @@ Point * Nuke::includeRay(const Ray & ray) const
                 new Point{p[0]} : new Point{p[1]};
 
         if (! ray.isInTrajectory(*intersec))
-            delete intersec, intersec = 0;
+            delete intersec, intersec = nullptr;
     }
 
     return intersec;

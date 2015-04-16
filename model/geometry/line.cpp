@@ -17,7 +17,7 @@ Line::Line(const Point & start, const Point & end) :
 
 Point * Line::getIntersectionPoint(const Line & line) const
 {
-    Point * intersec = 0;
+    Point * intersec{nullptr};
 
     if (!utilities::equals(this->getSlope(), line.getSlope()))
     {
@@ -82,7 +82,7 @@ bool Line::isVertical() const
 
 bool Line::operator ==(const Line & line) const
 {
-    bool equals = false;
+    bool equals{false};
 
     if (this->isVertical() && line.isVertical())
         equals = utilities::equals(this->xValue, line.xValue);

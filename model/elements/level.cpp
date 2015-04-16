@@ -13,9 +13,9 @@ Level::Level(const double width, const double height)
               Wall{Point{width, 0.}, Point{0., 0.}} }
 {
     if(utilities::lessOrEquals(width, 0))
-        throw StarlightException("Hauteur doit être strict. positive");
+        throw StarlightException{"Hauteur doit être strict. positive"};
     if(utilities::lessOrEquals(height, 0))
-        throw StarlightException("Largeur doit être strict. positive");
+        throw StarlightException{"Largeur doit être strict. positive"};
 }
 
 const Source & Level::getSource() const
@@ -110,7 +110,7 @@ void Level::computeRays()
 
 bool Level::thereIsAnExplodedNuke() const
 {
-    bool nukeExp = false;
+    bool nukeExp{false};
 
     for (auto it = this->nukes.begin(); (it != this->nukes.end()) && !nukeExp; ++it)
         nukeExp = it->isLightedUp();
@@ -120,10 +120,10 @@ bool Level::thereIsAnExplodedNuke() const
 
 void Level::computeRay(Ray ray)
 {
-    std::map<Point *, Element *> candidates = this->getEltsInTrajectory(ray);
+    std::map<Point *, Element *> candidates{this->getEltsInTrajectory(ray)};
     auto it = candidates.begin();
-    Point * nextInters = it->first;
-    Element * nextElt = it->second;
+    Point * nextInters{it->first};
+    Element * nextElt{it->second};
 
     for (++it; it != candidates.end(); ++it)
     {
@@ -137,7 +137,7 @@ void Level::computeRay(Ray ray)
     this->rays.push_back(ray);
     nextElt->reactToRay(ray);
 
-    delete nextInters;
+    delete nextInters, nextInters = nullptr;
 }
 
 std::map<Point *, Element *> Level::getEltsInTrajectory(const Ray & ray)

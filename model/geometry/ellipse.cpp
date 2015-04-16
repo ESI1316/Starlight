@@ -8,9 +8,9 @@ Ellipse::Ellipse(double xRadius, double yRadius, const Point & center)
     : center{center}, xRadius{std::pow(xRadius, 2)}, yRadius{std::pow(yRadius, 2)}
 {
     if (xRadius < 0. || utilities::equals(xRadius, 0.))
-        throw StarlightException("xRadius négatif");
+        throw StarlightException{"xRadius négatif"};
     if (yRadius < 0. || utilities::equals(yRadius, 0.))
-        throw StarlightException("xRadius négatif");
+        throw StarlightException{"xRadius négatif"};
 }
 
 std::vector<Point> Ellipse::getIntersectionPoints(const Line & line) const

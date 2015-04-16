@@ -5,10 +5,10 @@
 #include "model/elements/ray.hpp"
 
 Wall::Wall(const Point & start, const Point & end)
-    : Element(), Line(start, end), start{start}, end{end}
+    : Element(), Line{start, end}, start{start}, end{end}
 {
     if (start == end)
-        throw StarlightException("Les points ne peuvent être confondus");
+        throw StarlightException{"Les points ne peuvent être confondus"};
 }
 
 const Point & Wall::getStart() const
@@ -25,9 +25,9 @@ void Wall::reactToRay(Ray) {}
 
 Point * Wall::includeRay(const Ray & ray) const
 {
-    Point * intersection = this->getIntersectionPoint(ray);
+    Point * intersection{this->getIntersectionPoint(ray)};
 
-    if(intersection != 0)
+    if(intersection != nullptr)
     {
         double minX = std::min(this->start.getX(), this->end.getX());
         double minY = std::min(this->start.getY(), this->end.getY());
@@ -38,8 +38,7 @@ Point * Wall::includeRay(const Ray & ray) const
                 || intersection->getY() < minY || intersection->getY() > maxY
                 || !ray.isInTrajectory(*intersection))
         {
-            delete intersection;
-            intersection = 0;
+            delete intersection, intersection = nullptr;
         }
     }
 

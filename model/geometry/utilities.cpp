@@ -7,12 +7,12 @@
 bool utilities::secondDegreeEquationSolver(double a, double b, double c,
                                            double * rad1, double * rad2)
 {
-    double delta = std::pow(b, 2.) - (4. * a * c);
+    double delta{std::pow(b, 2.) - (4. * a * c)};
 
     if (utilities::equals(delta, 0.))
             delta = 0.;
 
-    bool thereIsRadix = (delta >= 0.);
+    bool thereIsRadix{(delta >= 0.)};
 
     if (thereIsRadix)
     {
@@ -25,7 +25,7 @@ bool utilities::secondDegreeEquationSolver(double a, double b, double c,
 
 double utilities::absoluteAngle(const double alpha)
 {
-    double angle = fmod(alpha, 2. * utilities::PI);
+    double angle{fmod(alpha, 2. * utilities::PI)};
 
         if (angle < 0.)
             angle += (2. * utilities::PI);

@@ -8,10 +8,10 @@
 #include "model/elements/level.hpp"
 
 Crystal::Crystal(const Point & center, const double radius, const int amplifier)
-    : Element(), Ellipse(radius, radius, center), amplifier{amplifier}
+    : Element(), Ellipse{radius, radius, center}, amplifier{amplifier}
 {
     if(utilities::lessOrEquals(radius, 0.))
-        throw StarlightException("Le rayon doit être strictement positif");
+        throw StarlightException{"Le rayon doit être strictement positif"};
 }
 
 int Crystal::getAmplifier() const
@@ -34,8 +34,8 @@ void Crystal::reactToRay(Ray ray)
 
 Point * Crystal::includeRay(const Ray & ray) const
 {
-    Point * intersec = 0;
-    std::vector<Point> p = this->getIntersectionPoints(ray);
+    Point * intersec{nullptr};
+    std::vector<Point> p{this->getIntersectionPoints(ray)};
 
     if (!p.empty())
     {
@@ -44,7 +44,7 @@ Point * Crystal::includeRay(const Ray & ray) const
                 new Point{p[0]} : new Point{p[1]};
 
         if (! ray.isInTrajectory(*intersec))
-            delete intersec, intersec = 0;
+            delete intersec, intersec = nullptr;
     }
 
     return intersec;

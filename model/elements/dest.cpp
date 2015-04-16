@@ -35,17 +35,17 @@ void Dest::reactToRay(Ray)
 
 Point * Dest::includeRay(const Ray & ray) const
 {
-    Point * intersec = 0;
-    std::vector<Point> p = this->getIntersectionPoints(ray);
+    Point * intersec{nullptr};
+    std::vector<Point> p{this->getIntersectionPoints(ray)};
 
-    if (p.size() > 0)
+    if (!p.empty())
     {
         intersec =
             ray.getStart().distanceFrom(p[0]) > ray.getStart().distanceFrom(p[1]) ?
                 new Point{p[0]} : new Point{p[1]};
 
         if (! ray.isInTrajectory(*intersec))
-            delete intersec, intersec = 0;
+            delete intersec, intersec = nullptr;
     }
 
     return intersec;

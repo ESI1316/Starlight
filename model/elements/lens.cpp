@@ -13,11 +13,11 @@ Lens::Lens(const Point & upLeftCorner, const int width, const int height,
       upLeftCorner{upLeftCorner}, wlMin{wlMin}, wlMax{wlMax}
 {
     if(wlMin < Ray::WL_MIN)
-        throw StarlightException("Longueur d'onde minimale trop petite.");
+        throw StarlightException{"Longueur d'onde minimale trop petite."};
     if(wlMax > Ray::WL_MAX)
-        throw StarlightException("Longueur d'onde maximale trop grande");
+        throw StarlightException{"Longueur d'onde maximale trop grande"};
     if(wlMax < wlMin)
-        throw StarlightException("Longueur d'onde minimale > maximale");
+        throw StarlightException{"Longueur d'onde minimale > maximale"};
 }
 
 const Point & Lens::getPosition() const
@@ -49,17 +49,17 @@ void Lens::reactToRay(Ray ray)
 
 Point * Lens::includeRay(const Ray & ray) const
 {
-    Point * intersec = 0;
-    std::vector<Point> p = this->getIntersectionPoints(ray);
+    Point * intersec{nullptr};
+    std::vector<Point> p{this->getIntersectionPoints(ray)};
 
-    if (p.size() > 0)
+    if (!p.empty())
     {
         intersec =
             ray.getStart().distanceFrom(p[0]) > ray.getStart().distanceFrom(p[1]) ?
                 new Point{p[0]} : new Point{p[1]};
 
         if (! ray.isInTrajectory(*intersec))
-            delete intersec, intersec = 0;
+            delete intersec, intersec = nullptr;
     }
 
     return intersec;

@@ -11,15 +11,15 @@ Rectangle::Rectangle(double width, double height, const Point & upLeftCorner)
             {Line{1./0., 0, upLeftCorner.getX() + width}}}
 {
     if(width < 0. || utilities::equals(width, 0.))
-        throw StarlightException("Largeur strictement positive requise");
+        throw StarlightException{"Largeur strictement positive requise"};
     if(height < 0. || utilities::equals(height, 0.))
-        throw StarlightException("Hauteur strictement positive requise");
+        throw StarlightException{"Hauteur strictement positive requise"};
 }
 
 std::vector<Point> Rectangle::getIntersectionPoints(const Line & line) const
 {
     std::vector<Point> intersecs;
-    Point * p = 0;
+    Point * p{nullptr};
 
     for (unsigned i = 0; i < this->edges.size() && intersecs.size() < 2 ; i++)
     {
@@ -28,7 +28,7 @@ std::vector<Point> Rectangle::getIntersectionPoints(const Line & line) const
             intersecs.push_back(*p);
 
         if (p != 0)
-            delete p, p = 0;
+            delete p, p = nullptr;
     }
 
     return intersecs;
@@ -36,15 +36,15 @@ std::vector<Point> Rectangle::getIntersectionPoints(const Line & line) const
 
 bool Rectangle::isOnBorder(const Point & point) const
 {
-    bool commonX = (utilities::equals(point.getX(), this->upLeftCorner.getX())) ||
-                    (utilities::equals(point.getX(), this->upLeftCorner.getX() + this->width));
-    bool commonY = (utilities::equals(point.getY(), this->upLeftCorner.getY())) ||
-                    (utilities::equals(point.getY(), this->upLeftCorner.getY() + this->height));
+    bool commonX {(utilities::equals(point.getX(), this->upLeftCorner.getX())) ||
+                    (utilities::equals(point.getX(), this->upLeftCorner.getX() + this->width))};
+    bool commonY {(utilities::equals(point.getY(), this->upLeftCorner.getY())) ||
+                    (utilities::equals(point.getY(), this->upLeftCorner.getY() + this->height))};
 
-    bool xInLimits = (utilities::greaterOrEquals(point.getX(), this->upLeftCorner.getX()))
-            && (utilities::lessOrEquals(point.getX(), this->upLeftCorner.getX() + this->width));
-    bool yInLimits = (utilities::greaterOrEquals(point.getY(), this->upLeftCorner.getY()))
-            && (utilities::lessOrEquals(point.getY(), this->upLeftCorner.getY() + this->height));
+    bool xInLimits {(utilities::greaterOrEquals(point.getX(), this->upLeftCorner.getX()))
+            && (utilities::lessOrEquals(point.getX(), this->upLeftCorner.getX() + this->width))};
+    bool yInLimits {(utilities::greaterOrEquals(point.getY(), this->upLeftCorner.getY()))
+            && (utilities::lessOrEquals(point.getY(), this->upLeftCorner.getY() + this->height))};
 
     return (commonX && yInLimits) || (commonY && xInLimits);
 }

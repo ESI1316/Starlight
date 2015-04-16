@@ -10,27 +10,27 @@
 Mirror::Mirror(const Point & pivot, int xpad, int length, double alpha, Point pointMin,
                Point pointMax, double alphaMin, double alphaMax)
     : Element(),
-      Line(utilities::tan(alpha),
+      Line{utilities::tan(alpha),
            pivot.getY() - (utilities::tan(alpha) * pivot.getX()),
-           utilities::isHalfPiPlusNPi(alpha) ? pivot.getX() : 0),
+           utilities::isHalfPiPlusNPi(alpha) ? pivot.getX() : 0.},
       pivot {pivot}, length(length), xpad(xpad), xMin {pointMin.getX()},
       xMax {pointMax.getX()}, yMin {pointMin.getY()}, yMax {pointMax.getY()},
       alpha {alpha}, alphaMin {alphaMin}, alphaMax {alphaMax}
 {
     if(this->xpad < 0)
-        throw StarlightException("Le décalage du pivot doit être positif");
+        throw StarlightException{"Le décalage du pivot doit être positif"};
 
     if (this->length <= 0)
-        throw StarlightException("La longueur doit être strict. positive");
+        throw StarlightException{"La longueur doit être strict. positive"};
 
     if(this->alphaMax < this->alphaMin)
-        throw StarlightException("L'angle max est inferieur au min");
+        throw StarlightException{"L'angle max est inferieur au min"};
 
     if(!this->checkPivotRange(this->pivot))
-        throw StarlightException("Le miroir est trop haut ou trop bas");
+        throw StarlightException{"Le miroir est trop haut ou trop bas"};
 
     if(!this->checkAngleRange(this->alpha))
-        throw StarlightException("L'angle est en dehors des limites");
+        throw StarlightException{"L'angle est en dehors des limites"};
 }
 
 const Point & Mirror::getPivot() const
@@ -112,7 +112,7 @@ bool Mirror::checkPivotRange(const Point & point) const
 
 void Mirror::reactToRay(Ray ray)
 {
-    Point point = ray.getEnd();
+    Point point{ray.getEnd()};
     double mirror{utilities::absoluteAngle(this->getAngle())};
     double source{utilities::absoluteAngle(std::atan(ray.getSlope()))};
     double alpha{(utilities::PI + mirror - source)};
@@ -130,7 +130,7 @@ Point * Mirror::includeRay(const Ray & ray) const
 {
     Point * intersection{this->getIntersectionPoint(ray)};
 
-    if(intersection != 0)
+    if(intersection != nullptr)
     {
         Point start{this->pivot.getX() - this->xpad, this->pivot.getY()};
         Point end{start.getX() + this->length, start.getY()};
@@ -147,8 +147,7 @@ Point * Mirror::includeRay(const Ray & ray) const
                 || intersection->getY() < minY || intersection->getY() > maxY)
             || !ray.isInTrajectory(*intersection))
         {
-            delete intersection;
-            intersection = 0;
+            delete intersection, intersection = nullptr;
         }
     }
 

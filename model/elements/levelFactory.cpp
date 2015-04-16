@@ -11,7 +11,7 @@
 
 Level * levelFactory::getLevelFromFile(std::string mapFilePath)
 {
-    std::ifstream mapFile(mapFilePath);
+    std::ifstream mapFile{mapFilePath};
     double levelWidth, levelHeight;
     char type;
     Level * newLevel;
