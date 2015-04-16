@@ -63,7 +63,13 @@ TEST_CASE("computeRay")
         Level * level = levelFactory::getLevelFromFile("./ressources/L_STOP.lvl");
         level->computeRays();
         REQUIRE(level->getRays().size() == 1);
-        std::cout << level->getRays().at(0) << std::endl;
+        delete level;
+    }
+    SECTION("Rencontre avec une lentille ne laissant pas passer le rayon 2")
+    {
+        Level * level = levelFactory::getLevelFromFile("./ressources/ML_STOP.lvl");
+        level->computeRays();
+        REQUIRE(level->getRays().size() == 2);
         delete level;
     }
 
