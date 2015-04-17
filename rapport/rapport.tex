@@ -2,48 +2,72 @@
 
 \usepackage[utf8]{inputenc}
 \usepackage[french]{babel}
+\usepackage[T1]{fontenc}
 \usepackage[pdftex]{graphicx} 
 \usepackage{url} 
+\usepackage{listings}
 \usepackage[bookmarks, colorlinks=false, pdfborder={0 0 0}, pdftitle={Starlight
-: Rapport}, pdfauthor={Kriwin Paul, Placentino Simon}, pdfsubject={Starlight},
+: rapport}, pdfauthor={Kriwin Paul, Placentino Simon}, pdfsubject={Starlight},
 pdfkeywords={C++, ISO/IEC 14882:2011, Starlight, Projet}]{hyperref} 
 
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 
 \begin{document}
-	\input{./title.tex}
-	\tableofcontents
+\input{./title.tex}
+\tableofcontents
+
+\chapter{Introduction}
 
 
-\chapter{Premier chap}
-Voici un peu de texte dans le premier chapitre de mon document. Pour le
-moment, mon document n'a pas énormément d'intérêt, si ce n'est de montrer
-comment il est possible de structurer simplement un document sous LaTeX!
+\chapter[Les classes]{Présentation succinte des classes}
+\section[Les objets géométriques]{geometry}
+\subsection[Ellipse]{ellipse.hpp}
+\subsection[Droite]{line.hpp}
+\subsection[Rectangle]{rectangle.hpp}
+\subsection[Point]{point.hpp}
+\subsection[Utilitaire]{utilities.hpp}
+\section[Les éléments]{elements}
+\subsection[Element]{element.hpp}
+\subsection[Cristal]{crystal.hpp}
+\subsection[Destination]{dest.hpp}
+\subsection[Lentille]{lens.hpp}
+\subsection[Niveau]{level.hpp}
+\subsection[Createur de niveau]{levelfactory.hpp}
+\subsection[Mirroir]{mirror.hpp}
+\subsection[Bombe]{nuke.hpp}
+\subsection[Rayon]{ray.hpp}
+\subsection[Source]{source.hpp}
+\subsection[Mur]{wall.hpp}
+\section[L'exception]{exception}
+\subsection[Exception Starlight]{starlightexception.hpp}
+Il faut, pour bon nombre des classes créées, valider les arguments passés en
+paramètre dans le but de ne pas produire d'objets incohérents par rapport à
+l'analyse préalable du travail à fournir. Pour ce faire, des exceptions doivent
+être levées quand une instanciation créera un objet non désiré. 
+Cette classe hérite de std::exception appartenant à la librairie standard. Elle n'a aucune
+capacité supplémentaire mise à part être spécifique à ce projet.
+\section[Les objets visuels]{view}
 
-\section{Section un chap 1}
-Ceci est une première section, au sein du premier chapitre.
-
-\section{Section deux chap 1}
-Ceci est une seconde section, au sein du premier chapitre.
+\chapter[Structure du programme]{Structure générale du programme}
 
 
-\chapter{Mon deuxieme chapitre}
-Voici un peu de texte dans le deuxième chapitre de mon
-document.
+\chapter[Algorithmes]{Détail des algorithmes utilisés}
+\section[Réflexion]{Algorithme de réflection}
+\section[Intersection]{Algorithme d'intersection}
+\subsection[Deux droites]{Intersection de deux droites}
+\subsection[Droite et rectangle]{Intersection d'une droite et d'un rectangle}
+\subsection[Droite et ellipse]{Intersection d'une droite et d'une ellipse}
 
-\section{Une section}
-Ceci est une première section, au sein du
-deuxième chapitre.
 
-\section{Une seconde section}
-Ceci est une seconde section, au sein du
-deuxième chapitre.
+\chapter{Test effectués}
 
-\section{titre}
 
-\subsection{titre}
-\subsubsection{titre}
-\paragraph{titre}
-\subparagraph{titre}
+\chapter{Conclusion}
+
+
+\appendix
+
+\chapter{Réferences}
+
 
 \end{document}
