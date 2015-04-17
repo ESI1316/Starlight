@@ -2,6 +2,7 @@
 #define ELLIPSE_HPP
 
 #include <vector>
+#include <ostream>
 
 #include "model/geometry/point.hpp"
 
@@ -114,5 +115,14 @@ public:
      */
     bool operator!=(const Ellipse &) const;
 };
+
+/**
+ * Définition, externe, de l'opérateur permettant de produire un affichage
+ * formaté.
+ *
+ * @return Le ostream rempli de la chaine formatée représentant l'Ellipse en
+ * paramètre.
+ */
+std::ostream & operator<<(std::ostream &, const Ellipse &);
 
 #endif // ELLIPSE_HPP

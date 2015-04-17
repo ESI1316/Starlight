@@ -1,6 +1,7 @@
 #include "test/catch.hpp"
 
 #include "model/elements/lens.hpp"
+#include "model/elements/ray.hpp"
 #include "model/exception/starlightexception.hpp"
 #include "model/geometry/utilities.hpp"
 
@@ -23,4 +24,28 @@ TEST_CASE("Lentille : accesseurs")
     REQUIRE(lens.getPosition() == Point(4., 5.));
     REQUIRE(lens.getMinWaveLength() == 400);
     REQUIRE(lens.getMaxWaveLength() == 500);
+}
+
+TEST_CASE("Lentille : react to ray")
+{
+    Lens lens{Point{4, 5}, 7, 4, 400, 500};
+
+    SECTION("OK")
+    {
+        Ray ray(Point(2,2), -0.5880026035, 450);
+        Point * intersection{lens.includeRay(ray)};
+        REQUIRE(intersection != nullptr);
+        delete intersection;
+        REQUIRE(ray.getWaveLength() >= lens.getMinWaveLength());
+        REQUIRE(ray.getWaveLength() <= lens.getMaxWaveLength());
+    }
+
+    SECTION("NOK")
+    {
+        Ray ray(Point(2,2), -0.5880026035, 370);
+        Point * intersection{lens.includeRay(ray)};
+        REQUIRE(intersection != nullptr);
+        delete intersection;
+        REQUIRE_FALSE(ray.getWaveLength() >= lens.getMinWaveLength());
+    }
 }

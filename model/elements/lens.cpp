@@ -84,7 +84,9 @@ std::ostream & operator<<(std::ostream & out, const Lens & lens)
         << " , width : " << std::sqrt(lens.getXRadius())
         << " , height : " << std::sqrt(lens.getYRadius())
         << " , Freq. Min. : " << lens.getMinWaveLength()
-        << " , Freq. Max. : " << lens.getMaxWaveLength();
+        << " , Freq. Max. : " << lens.getMaxWaveLength() << std::endl
+        << (Ellipse) lens;
+
 
     return out;
 }

@@ -99,3 +99,12 @@ bool Ellipse::operator !=(const Ellipse & ellipse) const
 {
     return !(*this == ellipse);
 }
+
+std::ostream & operator<<(std::ostream & out, const Ellipse & ellipse)
+{
+    out << "Center : " << ellipse.getCenter() << std::endl
+        << "xRadius : " << ellipse.getXRadius() << std::endl
+        << "yRadius : " << ellipse.getYRadius() << std::endl;
+
+    return out;
+}
