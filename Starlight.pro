@@ -70,7 +70,7 @@ HEADERS  += view/mainwindow.hpp \
     model/geometry/rectangle.hpp \
     model/geometry/line.hpp \
     model/geometry/ellipse.hpp \
-    view/levelview.h
+    view/levelview.hpp
 
 FORMS    += view/mainwindow.ui
 

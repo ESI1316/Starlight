@@ -1,5 +1,5 @@
-#ifndef LEVELVIEW_H
-#define LEVELVIEW_H
+#ifndef LEVELVIEW_HPP
+#define LEVELVIEW_HPP
 
 #include <QFrame>
 
@@ -55,4 +55,4 @@ public slots:
     void switchRaysDisplay();
 };
 
-#endif // LEVELVIEW_H
+#endif // LEVELVIEW_HPP

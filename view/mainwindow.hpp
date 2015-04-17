@@ -3,7 +3,7 @@
 
 #include <QMainWindow>
 
-#include "view/levelview.h"
+#include "view/levelview.hpp"
 
 namespace Ui
 {

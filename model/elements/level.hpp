@@ -1,5 +1,5 @@
-#ifndef LEVEL_H
-#define LEVEL_H
+#ifndef LEVEL_HPP
+#define LEVEL_HPP
 
 #include <vector>
 #include <map>
@@ -217,4 +217,4 @@ public:
     void computeRays();
 };
 
-#endif // LEVEL_H
+#endif // LEVEL_HPP

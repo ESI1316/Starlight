@@ -20,12 +20,12 @@ Level::Level(const double width, const double height)
 
 int Level::getWidth() const
 {
-    return (int) this->width;
+    return std::round(this->width);
 }
 
 int Level::getHeight() const
 {
-    return (int) this->height;
+    return std::round(this->height);
 }
 
 const Source & Level::getSource() const
