@@ -10,8 +10,8 @@
 class Ray;
 class Point;
 
-/**
- * Cette classe amplifierélise les cristaux utilisés dans le jeu.
+/*!
+ * \brief Cette classe amplifie les cristaux utilisés dans le jeu.
  * </p>
  * Un cristal est un objet circulaire centré en un point, et
  * d'un certain rayon.
@@ -24,16 +24,16 @@ class Crystal : public Element, public Ellipse
 {
 private :
 
-    /**
-     * Le modificateur de longueur d'onde agissant sur un rayon passant dans ce
+    /*!
+     * \brief Le modificateur de longueur d'onde agissant sur un rayon passant dans ce
      * cristal.
      */
     int amplifier;
 
 public:
 
-    /**
-     * Instancie un cristal :
+    /*!
+     * \brief Instancie un cristal
      * <ul>
      * <li>centré au point donné</li>
      * <li>avec un rayon donné</li>
@@ -45,64 +45,64 @@ public:
      * [longueur d'onde minimale, longueur d'onde maximale] alors elle ne sera
      * pas appliquée.
      *
-     * @param point Le point du centre du cristal.
-     * @param radius Le rayon du cristal.
-     * @param amplifieur le modificateur de longueur d'onde du cristal.
+     * \param point Le point du centre du cristal.
+     * \param radius Le rayon du cristal.
+     * \param amplifieur le modificateur de longueur d'onde du cristal.
      */
     Crystal(const Point &, const double, const int);
 
-    /**
-     * Retourne le modifieur de longueur d'onde du cristal
+    /*!
+     * \brief Retourne le modifieur de longueur d'onde du cristal
      *
-     * @return  le modifieur de longueur d'onde du cristal
+     * \return  le modifieur de longueur d'onde du cristal
      */
     int getAmplifier() const;
 
-    /**
-     * Retourne la longueur du rayon du cristal
+    /*!
+     * \brief Retourne la longueur du rayon du cristal
      *
-     * @return la longueur du rayon du cristal
+     * \return la longueur du rayon du cristal
      */
     double getRadius() const;
 
-    /**
-     * Cette méthode est lancé lorsque le miroir courant est exposé à un rayon.
+    /*!
+     * \brief Cette méthode est lancé lorsque le miroir courant est exposé à un rayon.
      * Il va communiquer au niveau le nouveau rayon sortant du cristal.
      *
-     * @param ray Un rayon percutant le miroir.
+     * \param ray Un rayon percutant le miroir.
      */
     void reactToRay(Ray);
 
-    /**
-     * Renseigne si le crystal est dans la trajectoire du rayon.
+    /*!
+     * \brief Renseigne si le crystal est dans la trajectoire du rayon.
      *
-     * @param ray Un rayon.
+     * \param ray Un rayon.
      *
-     * @return Un pointeur vers le point d'intersection (le plus eloigné) avec
+     * \return Un pointeur vers le point d'intersection (le plus eloigné) avec
      * le rayon s'il existe un pointeur null sinon.
      */
     Point * includeRay(const Ray &) const;
 
-    /**
-     * Permet de savoir si deux cristaux sont les même.
+    /*!
+     * \brief Permet de savoir si deux cristaux sont les même.
      *
-     * @return <code>true</code> si deux cristaux sont les même.
+     * \return <code>true</code> si deux cristaux sont les même.
      */
     bool operator==(const Crystal &) const;
 
-    /**
-     * Permet de savoir si deux cristaux sont différents.
+    /*!
+     * \brief Permet de savoir si deux cristaux sont différents.
      *
-     * @return <code>true</code> si deux cristaux sont différents.
+     * \return <code>true</code> si deux cristaux sont différents.
      */
     bool operator!=(const Crystal &) const;
 };
 
-/**
- * Définition, externe, de l'opérateur permettant de produire un affichage
+/*!
+ * \brief Définition, externe, de l'opérateur permettant de produire un affichage
  * formaté.
  *
- * @return Le ostream rempli de la chaine formatée représentant le Crystal en
+ * \return Le ostream rempli de la chaine formatée représentant le Crystal en
  * paramètre.
  */
 std::ostream & operator<<(std::ostream &, const Crystal &);

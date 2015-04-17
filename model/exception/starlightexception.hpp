@@ -14,22 +14,22 @@ private :
 
 public:
 
-    /**
-     * Construit une nouvelle erreur inhérente au jeu.
+    /*!
+     * \brief Construit une nouvelle erreur inhérente au jeu.
      *
-     * @param errorMsg Message expliquant l'erreur.
+     * \param errorMsg Message expliquant l'erreur.
      */
     StarlightException(std::string);
 
-    /**
-     * Permet d'obtenir le message d'erreur de l'exception.
+    /*!
+     * \brief Permet d'obtenir le message d'erreur de l'exception.
      *
-     * @return Le message d'erreur de l'exception.
+     * \return Le message d'erreur de l'exception.
      */
     std::string getMessage() const;
 
     /*!
-     * Permet d'afficher l'erreur en cas d'erreur.
+     * \brief Permet d'afficher l'erreur en cas d'erreur.
      *
      * \return Le message d'erreur.
      */

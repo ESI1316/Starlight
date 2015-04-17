@@ -22,8 +22,8 @@ private:
 
 public slots:
 
-    /**
-     * Permet d'afficher le menu principal du jeu.
+    /*!
+     * \brief Permet d'afficher le menu principal du jeu.
      */
     void displayMainMenu();
 
