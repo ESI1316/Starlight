@@ -24,8 +24,8 @@ TEST_CASE("egalité de doubles avec un Epsilon = 10^-7")
     REQUIRE(utilities::equals(0.0000001, 0));
     REQUIRE(utilities::equals(-0.0000001, 0));
 
-    REQUIRE(utilities::equals(1./0., 2./0.));
-    REQUIRE_FALSE(utilities::equals(1./0., 1.));
+    REQUIRE(utilities::equals(utilities::INF, 2./0.));
+    REQUIRE_FALSE(utilities::equals(utilities::INF, 1.));
 }
 
 TEST_CASE("PI/2 + n * PI")

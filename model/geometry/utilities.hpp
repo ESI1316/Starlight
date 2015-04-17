@@ -41,6 +41,11 @@ namespace utilities
     const double EPSILON{10E-7};
 
     /*!
+     * \brief INF Représente une division impossible.
+     */
+    const double INF{1./0.};
+
+    /*!
      * \brief Permet de trouver les racines (si elles existe) d'une fonction du
      * deuxième degré de forme \f$ax² + bx + c\f$
      *

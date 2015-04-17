@@ -6,9 +6,9 @@
 Rectangle::Rectangle(double width, double height, const Point & upLeftCorner)
     : width{width}, height{height}, upLeftCorner{upLeftCorner},
       edges{{Line{0., upLeftCorner.getY()}},
-            {Line{1./0., 0, upLeftCorner.getX()}},
+            {Line{utilities::INF, 0, upLeftCorner.getX()}},
             {Line{0., upLeftCorner.getY() + height}},
-            {Line{1./0., 0, upLeftCorner.getX() + width}}}
+            {Line{utilities::INF, 0, upLeftCorner.getX() + width}}}
 {
     if(width < 0. || utilities::equals(width, 0.))
         throw StarlightException{"Largeur strictement positive requise"};
@@ -27,7 +27,7 @@ std::vector<Point> Rectangle::getIntersectionPoints(const Line & line) const
         if ((p = edges.at(i).getIntersectionPoint(line)) && this->isOnBorder(*p))
             intersecs.push_back(*p);
 
-        if (p != 0)
+        if (p != nullptr)
             delete p, p = nullptr;
     }
 

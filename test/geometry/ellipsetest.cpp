@@ -69,7 +69,7 @@ TEST_CASE("Get points d'intersection - Droite horizontale")
 TEST_CASE("Get points d'intersection - Droite verticale")
 {
     Ellipse ellipse{30., 15., Point{6., 6.}};
-    Line line{1./0., 0., 21.8523956411};
+    Line line{utilities::INF, 0., 21.8523956411};
     std::vector<Point> intersections = ellipse.getIntersectionPoints(line);
 
     REQUIRE_FALSE(intersections.empty());
@@ -99,7 +99,7 @@ TEST_CASE("Pas d'intersection")
 
     SECTION("Verticales")
     {
-        Line line{1./0., 0., 48.4261720081};
+        Line line{utilities::INF, 0., 48.4261720081};
         std::vector<Point> intersections = ellipse.getIntersectionPoints(line);
 
         REQUIRE(intersections.empty());
@@ -122,7 +122,7 @@ TEST_CASE("Droites tangeantes à l'ellipse")
 
     SECTION("Verticale")
     {
-        Line line{1./0., 0., -24.};
+        Line line{utilities::INF, 0., -24.};
         std::vector<Point> intersections = ellipse.getIntersectionPoints(line);
 
         REQUIRE_FALSE(intersections.empty());
