@@ -76,8 +76,6 @@ FORMS    += view/mainwindow.ui
 
 DISTFILES += \
     ressources/level.lvl \
-    test/cinclude2dot.pl \
-    test/include_hierarchy.dot \
     ressources/MW.lvl \
     ressources/W.lvl \
     ressources/N.lvl \

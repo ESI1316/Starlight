@@ -24,9 +24,9 @@ class Lens : public Element, public Ellipse
 
 private :
 
-    Point upLeftCorner;
-    int wlMin;
-    int wlMax;
+    const Point upLeftCorner;
+    const int wlMin;
+    const int wlMax;
 
   public:
 
