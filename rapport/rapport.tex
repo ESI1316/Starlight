@@ -1,27 +1,33 @@
 \documentclass[a4paper,11pt]{report}
+
 \usepackage[utf8]{inputenc}
 \usepackage[french]{babel}
+\usepackage[pdftex]{graphicx} 
+\usepackage{url} 
+\usepackage[bookmarks, colorlinks=false, pdfborder={0 0 0}, pdftitle={Starlight
+: Rapport}, pdfauthor={Kriwin Paul, Placentino Simon}, pdfsubject={Starlight},
+pdfkeywords={C++, ISO/IEC 14882:2011, Starlight, Projet}]{hyperref} 
 
-\title{Projet C++ : Starlight}
-\author{Kriwin Paul, Placentino Simon}
-\date{17 Avril 2015} 
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 
 \begin{document}
-\maketitle
-\tableofcontents
+	\input{./title.tex}
+	\tableofcontents
+
 
 \chapter{Premier chap}
 Voici un peu de texte dans le premier chapitre de mon document. Pour le
 moment, mon document n'a pas énormément d'intérêt, si ce n'est de montrer
 comment il est possible de structurer simplement un document sous LaTeX!
 
-\section{Une section}
+\section{Section un chap 1}
 Ceci est une première section, au sein du premier chapitre.
 
-\section{Une seconde section}
+\section{Section deux chap 1}
 Ceci est une seconde section, au sein du premier chapitre.
 
-\chapter{Mon deuxième chapitre}
+
+\chapter{Mon deuxieme chapitre}
 Voici un peu de texte dans le deuxième chapitre de mon
 document.
 
