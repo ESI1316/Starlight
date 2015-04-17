@@ -72,6 +72,20 @@ public:
     Level(const double, const double);
 
     /**
+     * Permet d'obtenir la longueur du niveau.
+     *
+     * @return La longueur du niveau.
+     */
+    int getWidth() const;
+
+    /**
+     * Permet d'obtenir la hauteur du niveau.
+     *
+     * @return la hauteur du niveau.
+     */
+    int getHeight() const;
+
+    /**
      * Retourne la source de la carte.
      *
      * @return la source de la carte.

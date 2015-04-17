@@ -18,6 +18,16 @@ Level::Level(const double width, const double height)
         throw StarlightException{"Largeur doit être strict. positive"};
 }
 
+int Level::getWidth() const
+{
+    return (int) this->width;
+}
+
+int Level::getHeight() const
+{
+    return (int) this->height;
+}
+
 const Source & Level::getSource() const
 {
     return this->source;
@@ -103,8 +113,8 @@ void Level::addNuke(const Nuke & nuke)
 
 void Level::computeRays()
 {
-    this->computeRay(Ray{this->source.getPosition(),
-                        this->source.getAngle(),
+    this->rays.clear();
+    this->computeRay(Ray{this->source.getPosition(), this->source.getAngle(),
                         this->source.getWaveLength()});
 }
 
