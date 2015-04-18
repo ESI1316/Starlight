@@ -97,7 +97,7 @@ public:
      *
      * \return la source de la carte.
      */
-    const Source & getSource() const;
+    Source &getSource();
 
     /*!
      * \brief Change la source de la carte
@@ -181,7 +181,7 @@ public:
      *
      * \return l'ensemble des rayons de la carte
      */
-    const std::vector<Ray> & getRays() const;
+    std::vector<Ray> &getRays();
 
     /*!
      * \brief Change l'ensemble des rayons de la carte

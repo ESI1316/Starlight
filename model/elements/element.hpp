@@ -46,7 +46,7 @@ public :
      *
      * \return un pointeur vers le niveau auquel appartient l'élément.
      */
-    Level * getLevel() const;
+    Level * getLevel();
 
     /*!
      * \brief Compare deux éléments pour savoir si ils pointent vers le même niveau.

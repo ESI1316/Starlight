@@ -1,13 +1,15 @@
 #include "model/elements/source.hpp"
 
 #include "model/exception/starlightexception.hpp"
+#include "model/elements/level.hpp"
 #include "model/elements/ray.hpp"
 #include "model/geometry/point.hpp"
 #include "model/geometry/utilities.hpp"
 
 Source::Source(const Point & position, const int edge, const double alpha,
                const int waveLength)
-    : Rectangle(edge, edge, position), alpha{alpha}, waveLength{waveLength}
+    : Element(), Rectangle(edge, edge, position), alpha{alpha},
+      waveLength{waveLength}
 {
     if (waveLength < Ray::WL_MIN || waveLength > Ray::WL_MAX)
         throw StarlightException{"Mauvaise longueur d'onde"};
@@ -41,7 +43,18 @@ bool Source::isOn() const
 void Source::setOn(const bool on)
 {
     this->on = on;
+
+    if (this->getLevel() != nullptr)
+    {
+        this->isOn() ? this->getLevel()->computeRays()
+                     : this->getLevel()->getRays().clear();
+    }
 }
+
+
+void Source::reactToRay(Ray) {}
+
+Point * Source::includeRay(const Ray &) const {return nullptr;}
 
 bool Source::operator==(const Source & source) const
 {

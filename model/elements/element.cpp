@@ -8,7 +8,7 @@ void Element::setLevel(Level * level)
     this->level = level;
 }
 
-Level * Element::getLevel() const
+Level * Element::getLevel()
 {
     return this->level;
 }
