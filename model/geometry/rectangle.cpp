@@ -21,10 +21,9 @@ std::vector<Point> Rectangle::getIntersectionPoints(const Line & line) const
     std::vector<Point> intersecs;
     Point * p{nullptr};
 
-    for (unsigned i = 0; i < this->edges.size() && intersecs.size() < 2 ; i++)
+    for (auto i = this->edges.begin(); (i != this->edges.end()) && (intersecs.size() < 2) ; i++)
     {
-
-        if ((p = edges.at(i).getIntersectionPoint(line)) && this->isOnBorder(*p))
+        if ((p = i->getIntersectionPoint(line)) && this->isOnBorder(*p))
             intersecs.push_back(*p);
 
         if (p != nullptr)

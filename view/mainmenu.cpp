@@ -9,9 +9,9 @@
 
 MainMenu::MainMenu(QWidget *parent) : QFrame(parent)
 {
-    QVBoxLayout * lay = new QVBoxLayout;
-    QLabel * title = new QLabel("Starlight");
-    QPushButton * openLvlFile = new QPushButton{"Ouvrir un fichier de niveau"};
+    QVBoxLayout * lay{new QVBoxLayout};
+    QLabel * title{new QLabel{tr("Starlight")}};
+    QPushButton * openLvlFile{new QPushButton{tr("Ouvrir un fichier de niveau")}};
 
     QObject::connect(openLvlFile, SIGNAL(clicked()), this, SLOT(selectNewLevelFile()));
     title->setFont(QFont{"Arial", 100, 75});
@@ -27,7 +27,7 @@ MainMenu::~MainMenu() {}
 void MainMenu::selectNewLevelFile()
 {
     QString lvlFile = QFileDialog::getOpenFileName
-            (this, "Ouvrir un fichier", "./ressources", "Niveaux (*.lvl *.mapl)");
+            (this, tr("Ouvrir un fichier"), tr("./ressources"), tr("Niveaux (*.lvl *.mapl)"));
 
     if (!lvlFile.isEmpty())
         emit newLevelFileSelected(lvlFile);

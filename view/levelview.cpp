@@ -10,7 +10,7 @@ LevelView::LevelView(QWidget *parent) : QFrame{parent}, level{nullptr} {}
 LevelView::~LevelView()
 {
     if (this->level != nullptr)
-        delete level;
+        delete this->level, this->level = nullptr;
 }
 
 void LevelView::setLevelFilePath(const QString levelFile)
@@ -22,7 +22,7 @@ void LevelView::setLevelFilePath(const QString levelFile)
 void LevelView::loadLevelFromFile()
 {
     if (this->level != nullptr)
-        delete this->level;
+        delete this->level, this->level = nullptr;
 
     this->level = levelFactory::getLevelFromFile(this->displayedLevelFilePath);
     this->level->computeRays();
@@ -61,13 +61,13 @@ QPointF LevelView::toQPoint(const Point & point)
 void LevelView::displayEndOfGame()
 {
     QMessageBox msgBox;
-    QPushButton *quitB = msgBox.addButton("Retour au menu principal", QMessageBox::YesRole);
+    QPushButton *quitB = msgBox.addButton(tr("Retour au menu principal"), QMessageBox::YesRole);
 
-    msgBox.addButton("Recommencer", QMessageBox::NoRole);
-    msgBox.setText("<strong>Fin de partie :<strong>");
+    msgBox.addButton(tr("Recommencer"), QMessageBox::NoRole);
+    msgBox.setText(tr("<strong>Fin de partie :<strong>"));
     msgBox.setInformativeText(this->level->getDestination().isLightedUp() ?
-                                  "Bravo !\nVous avez gagné" :
-                                  "Perdu !\nUne bombe a explosée");
+                                  tr("<br>Bravo</br> !\nVous avez gagné") :
+                                  tr("<br>Perdu</br> !\nUne bombe a explosée"));
     msgBox.setWindowFlags(msgBox.windowFlags() ^ Qt::WindowCloseButtonHint);
     msgBox.exec();
 

@@ -1,5 +1,4 @@
 #include "view/mainwindow.hpp"
-#include "ui_mainwindow.h"
 
 #include <QVBoxLayout>
 #include <QLabel>
@@ -12,8 +11,7 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow{parent}, mainMenu{new MainMenu{this}},
     levelView{new LevelView{this}}
 {
-    this->setWindowTitle("Starlight");
-    //ui->setupUi(this);
+    this->setWindowTitle(tr("Starlight"));
     QObject::connect(this->mainMenu, SIGNAL(newLevelFileSelected(const QString)),
                      this->levelView, SLOT(setLevelFilePath(const QString)));
     QObject::connect(this->levelView, SIGNAL(displayingStarted()), this, SLOT(displayLevel()));

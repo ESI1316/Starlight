@@ -1,5 +1,4 @@
 #include "model/elements/crystal.hpp"
-#include <iostream>
 #include <cmath>
 
 #include "model/elements/ray.hpp"

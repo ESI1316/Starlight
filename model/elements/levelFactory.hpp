@@ -1,7 +1,6 @@
 #ifndef LEVELFACTORY
 #define LEVELFACTORY
 
-#include <iostream>
 #include <fstream>
 #include <sstream>
 

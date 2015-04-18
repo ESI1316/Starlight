@@ -1,6 +1,5 @@
 #include "model/elements/mirror.hpp"
 
-#include <iostream>
 #include <cmath>
 
 #include "model/exception/starlightexception.hpp"

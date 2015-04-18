@@ -1,7 +1,5 @@
 #include "model/elements/level.hpp"
 
-#include <iostream>
-
 #include "model/elements/element.hpp"
 #include "model/geometry/point.hpp"
 
