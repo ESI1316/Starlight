@@ -4,6 +4,7 @@
 #include <ostream>
 
 #include "model/geometry/rectangle.hpp"
+#include "model/elements/element.hpp"
 
 class Point;
 
@@ -15,7 +16,7 @@ class Point;
  * Le rayon lumineux est émis depuis la position, i.e., le coin
  * supérieur gauche, de la source.
  */
-class Source : public Rectangle
+class Source : public Element, public Rectangle
 {
     /*!
      * \brief Etat d'émission de la source.
@@ -112,6 +113,10 @@ public:
      * \return La source locale modifiée.
      */
     Source & operator=(const Source &);
+
+    void reactToRay(Ray);
+
+    Point * includeRay(const Ray &) const;
 };
 
 /*!

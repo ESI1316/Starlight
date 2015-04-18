@@ -28,7 +28,7 @@ int Level::getHeight() const
     return std::round(this->height);
 }
 
-const Source & Level::getSource() const
+Source & Level::getSource()
 {
     return this->source;
 }
@@ -36,6 +36,7 @@ const Source & Level::getSource() const
 void Level::setSource(const Source & source)
 {
     this->source = source;
+    this->source.setLevel(this);
 }
 
 const Dest & Level::getDestination() const
@@ -91,7 +92,7 @@ void Level::addLens(Lens lens)
     this->lenses.push_back(lens);
 }
 
-const std::vector<Ray> & Level::getRays() const
+std::vector<Ray> & Level::getRays()
 {
     return this->rays;
 }
@@ -113,7 +114,6 @@ void Level::addNuke(const Nuke & nuke)
 
 void Level::computeRays()
 {
-    this->rays.clear();
     this->computeRay(Ray{this->source.getPosition(), this->source.getAngle(),
                         this->source.getWaveLength()});
 }

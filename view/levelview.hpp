@@ -2,6 +2,7 @@
 #define LEVELVIEW_HPP
 
 #include <QFrame>
+#include <QPainter>
 
 #include "model/elements/level.hpp"
 
@@ -10,9 +11,9 @@ class LevelView : public QFrame
     Q_OBJECT
 
     std::string displayedLevelFilePath;
-    Level * level {nullptr};
+    Level * level;
 
-    //std::vector<?> raysViews;
+    QPointF toQPoint(const Point & point);
 
 public:
 
@@ -31,6 +32,10 @@ signals:
      */
     void displayingStopped();
 
+protected :
+
+    void paintEvent(QPaintEvent*);
+
 public slots:
 
     /*!
@@ -38,19 +43,13 @@ public slots:
      *
      * \param levelFile chemin vers le fichier du nouveau niveau à afficher.
      */
-    void setLevelFilePath(const QString levelFile);
+    void setLevelFilePath(const QString);
 
     /*!
      * \brief Permet d'afficher le fichier niveau dont la vue courante contient
      * le chemin en attribut.
      */
     void loadLevelFromFile();
-
-    /*!
-     * \brief Permet d'afficher les rayon du niveau s'il ne sont pas affichés,
-     * et de les désafficher s'il le sont.
-     */
-    void switchRaysDisplay();
 
     /*!
      * \brief Permet d'afficher une fenêtre de dialogue affichant le message entré en
