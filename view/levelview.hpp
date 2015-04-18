@@ -1,7 +1,6 @@
 #ifndef LEVELVIEW_HPP
 #define LEVELVIEW_HPP
 
-#include <QWidget>
 #include <QFrame>
 
 #include "model/elements/level.hpp"
@@ -14,15 +13,6 @@ class LevelView : public QFrame
     Level * level {nullptr};
 
     //std::vector<?> raysViews;
-
-    /*!
-     * \brief Permet d'afficher une fenêtre de dialogue affichant le message entré en
-     * paramètre et demande à l'utilisateur s'il désire quitter le jeu.
-     *
-     * \param msg Message informant du type de fin du jeu (la destination est
-     * illuminée/une bombe a explosée).
-     */
-    void displayEndOfGame(std::string msg);
 
 public:
 
@@ -61,6 +51,12 @@ public slots:
      * et de les désafficher s'il le sont.
      */
     void switchRaysDisplay();
+
+    /*!
+     * \brief Permet d'afficher une fenêtre de dialogue affichant le message entré en
+     * paramètre et demande à l'utilisateur s'il désire quitter le jeu.
+     */
+    void displayEndOfGame();
 };
 
 #endif // LEVELVIEW_HPP

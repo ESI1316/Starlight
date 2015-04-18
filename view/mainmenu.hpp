@@ -2,8 +2,9 @@
 #define MAINMENU_H
 
 #include <QWidget>
+#include <QFrame>
 
-class MainMenu : public QWidget
+class MainMenu : public QFrame
 {
     Q_OBJECT
 

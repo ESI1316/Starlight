@@ -6,18 +6,12 @@
 #include "view/levelview.hpp"
 #include "view/mainmenu.hpp"
 
-namespace Ui
-{
-    class MainWindow;
-}
-
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
 private:
 
-    Ui::MainWindow *ui;
     MainMenu * mainMenu;
     LevelView * levelView;
 

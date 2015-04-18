@@ -74,7 +74,7 @@ HEADERS  += view/mainwindow.hpp \
     view/levelview.hpp \
     view/mainmenu.hpp
 
-FORMS    += view/mainwindow.ui
+FORMS    +=
 
 DISTFILES += \
     ressources/level.lvl \

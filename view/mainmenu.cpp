@@ -7,7 +7,7 @@
 #include <QFileDialog>
 #include <iostream>
 
-MainMenu::MainMenu(QWidget *parent) : QWidget(parent)
+MainMenu::MainMenu(QWidget *parent) : QFrame(parent)
 {
     QVBoxLayout * lay = new QVBoxLayout;
     QLabel * title = new QLabel("Starlight");
@@ -27,7 +27,7 @@ MainMenu::~MainMenu() {}
 void MainMenu::selectNewLevelFile()
 {
     QString lvlFile = QFileDialog::getOpenFileName
-            (this, "Ouvrir un fichier", QString(), "Niveaux (*.lvl *.mapl)");
+            (this, "Ouvrir un fichier", "./ressources", "Niveaux (*.lvl *.mapl)");
 
     if (!lvlFile.isEmpty())
         emit newLevelFileSelected(lvlFile);
