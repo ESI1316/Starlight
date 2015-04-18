@@ -48,7 +48,8 @@ SOURCES += main.cpp\
     test/elements/desttest.cpp \
     test/elements/leveltest.cpp \
     test/elements/lenstest.cpp \
-    view/levelview.cpp
+    view/levelview.cpp \
+    view/mainmenu.cpp
 
 HEADERS  += view/mainwindow.hpp \
     model/exception/starlightexception.hpp \
@@ -70,7 +71,8 @@ HEADERS  += view/mainwindow.hpp \
     model/geometry/rectangle.hpp \
     model/geometry/line.hpp \
     model/geometry/ellipse.hpp \
-    view/levelview.hpp
+    view/levelview.hpp \
+    view/mainmenu.hpp
 
 FORMS    += view/mainwindow.ui
 

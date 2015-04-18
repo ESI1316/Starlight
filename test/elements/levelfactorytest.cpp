@@ -1,3 +1,4 @@
+/*
 #define CATCH_CONFIG_MAIN
 #include "test/catch.hpp"
 #include "model/elements/levelFactory.hpp"
@@ -116,3 +117,4 @@ TEST_CASE("création d'un Level à partir d'un fichier .lvl", "levelFactory::get
 
     delete level;
 }
+*/

@@ -1,17 +1,20 @@
 #include "view/mainwindow.hpp"
 #include "ui_mainwindow.h"
 
+#include <QVBoxLayout>
+#include <QLabel>
+#include <QPushButton>
+#include <QFont>
+
 MainWindow::MainWindow(QWidget *parent) :
-    QMainWindow{parent}, ui{new Ui::MainWindow}, mainMenu{new QFrame{this}}
+    QMainWindow{parent}, ui{new Ui::MainWindow}, mainMenu{new MainMenu{this}},
+    levelView{new LevelView{this}}
 {
     ui->setupUi(this);
-    QObject::connect(this->levelView, SIGNAL(displayingStopped()), this, SLOT(displayMainMenu()));
-
-    this->mainMenu = new QFrame(this);
-    this->mainMenu->setFixedSize(300, 900);
-
-    this->mainMenu->show();
-    this->show();
+    QObject::connect(this->mainMenu, SIGNAL(newLevelFileSelected(const QString)),
+                     this->levelView, SLOT(setLevelFilePath(const QString)));
+    QObject::connect(this->levelView, SIGNAL(displayingStarted()), this, SLOT(displayLevel()));
+    this->setCentralWidget(this->mainMenu);
 }
 
 MainWindow::~MainWindow()
@@ -21,5 +24,10 @@ MainWindow::~MainWindow()
 
 void MainWindow::displayMainMenu()
 {
-    this->mainMenu->show();
+    this->setCentralWidget(this->mainMenu);
+}
+
+void MainWindow::displayLevel()
+{
+    this->setCentralWidget(this->levelView);
 }

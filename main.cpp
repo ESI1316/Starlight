@@ -1,4 +1,3 @@
-/*
 #include <QApplication>
 
 #include "view/mainwindow.hpp"
@@ -11,4 +10,3 @@ int main(int argc, char *argv[])
 
     return a.exec();
 }
-*/
