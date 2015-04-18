@@ -1,3 +1,4 @@
+/*
 #include "test/catch.hpp"
 #include "model/geometry/ellipse.hpp"
 #include "model/geometry/line.hpp"
@@ -141,3 +142,4 @@ TEST_CASE("Droites tangeantes à l'ellipse")
         REQUIRE(intersections[0] == Point(6., 21.));
     }
 }
+*/

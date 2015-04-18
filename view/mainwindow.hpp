@@ -4,11 +4,7 @@
 #include <QMainWindow>
 
 #include "view/levelview.hpp"
-
-namespace Ui
-{
-    class MainWindow;
-}
+#include "view/mainmenu.hpp"
 
 class MainWindow : public QMainWindow
 {
@@ -16,8 +12,7 @@ class MainWindow : public QMainWindow
 
 private:
 
-    Ui::MainWindow *ui;
-    QFrame * mainMenu;
+    MainMenu * mainMenu;
     LevelView * levelView;
 
 public slots:
@@ -26,6 +21,11 @@ public slots:
      * \brief Permet d'afficher le menu principal du jeu.
      */
     void displayMainMenu();
+
+    /*!
+     * \brief Permet d'afficher le niveau.
+     */
+    void displayLevel();
 
 public:
 

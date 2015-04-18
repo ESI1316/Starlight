@@ -1,3 +1,4 @@
+/*
 #include "test/catch.hpp"
 #include "model/elements/nuke.hpp"
 #include "model/elements/ray.hpp"
@@ -113,4 +114,4 @@ TEST_CASE("includeRay(Ray)")
         delete intersection;
     }
 }
-
+*/

@@ -1,3 +1,4 @@
+/*
 #include "test/catch.hpp"
 #include "model/geometry/utilities.hpp"
 #include "model/geometry/point.hpp"
@@ -208,3 +209,4 @@ TEST_CASE("Setters")
     REQUIRE(utilities::equals(d.getX(), 6.8866666667));
     REQUIRE(utilities::equals(d.getY(), 1.2));
 }
+*/

@@ -1,3 +1,4 @@
+/*
 #include "test/catch.hpp"
 #include "model/elements/level.hpp"
 #include "model/elements/levelFactory.hpp"
@@ -75,11 +76,10 @@ TEST_CASE("computeRay")
 
     SECTION("Rencontre avec un crystal")
     {
-      /*  Level * level = levelFactory::getLevelFromFile("./ressources/CW.lvl");
+        Level * level = levelFactory::getLevelFromFile("./ressources/CW.lvl");
         level->computeRays();
         REQUIRE(level->getRays().size() == 1);
         delete level;
-        */
     }
 }
 
@@ -97,7 +97,7 @@ TEST_CASE("computeRays") // tous les parcours inclusent la rencontre avec des mi
 
         delete level;
     }
-/*
+
     SECTION("parcour menant à la l'illumination de la destination")
     {
         Level * level = levelFactory::getLevelFromFile("");
@@ -147,5 +147,5 @@ TEST_CASE("computeRays") // tous les parcours inclusent la rencontre avec des mi
 
         delete level;
     }
-    */
 }
+*/
