@@ -23,7 +23,7 @@ pdfkeywords={C++, ISO/IEC 14882:2011, Starlight, Projet}]{hyperref}
 
 
 
-\chapter[Les classes]{Présentation succinte des classes}
+\chapter[Les classes]{Présentation succincte des classes}
 \section[Les objets géométriques]{geometry}
 
 \subsection[Ellipse]{ellipse.hpp}
@@ -39,16 +39,16 @@ est perpendiculaire à l'axe du cône, l'ellipse sera alors un cercle.
 Éléments caractéristiques d'une ellipse :
 \begin{itemize}
 	\item une coordonnée cartésienne de son centre,
-	\item une distance séparant le centre de l'intersection avec une paralelle à
-		l'axe des ordonnées tangante à l'ellipse voulue,
-	\item une distance sépérant le centre de l'intersection avec une paralelle à
-		l'axe des abscisse tangante à l'ellipe voulue.
+	\item une distance séparant le centre de l'intersection avec une parallèle à
+		l'axe des ordonnées tangente à l'ellipse voulue,
+	\item une distance séparant le centre de l'intersection avec une parallèle à
+		l'axe des abscisse tangente à l'ellipse voulue.
 \end{itemize}
 Ces éléments nous permettront de tracer une ellipse selon cette équation :
 $$\frac{(x - c_x)^2}{{x_{radius}}^2} + \frac{(y - c_y)^2}{{y_{radius}}^2} = 1$$
 
 Cette classe peut tout à fait être instancié en objet géométrique elliptique
-et possède des méthodes d'interractions avec une droite. 
+et possède des méthodes d'interactions avec une droite. 
 \begin{lstlisting}[frame=single,language=C++]
 Ellipse::getIntersectionsPoints(Line);
 \end{lstlisting}
@@ -67,16 +67,16 @@ phénomène d'héritage mis en place dans le paradigme orienté objet de C++.
 Une droite est une ligne sans épaisseur, rectiligne et infinie dans le plan. 
 Pour exister, une droite aura besoin :
 \begin{itemize}
-	\item d'un coefficiant angulaire $m = \frac{\Delta y}{\Delta x}$
+	\item d'un coefficient angulaire $m = \frac{\Delta y}{\Delta x}$
 		représentant la distance à parcourir sur l'axe des ordonnées pour une unité de
-		distance sur l'axe des abcisses.
+		distance sur l'axe des abscisses.
 	\item d'un terme indépendant $p = \frac{y}{m \cdot x}$ représentant le décalage de chaque point
 		sur l'axe des ordonnées,
 	\item ou de deux points de coordonnées dans le plan,
 	\item ou d'un point de coordonnées dans le plan et d'un coefficiant
 		angulaire.
 \end{itemize}
-Ces éléments nous permettent de tracer une droite selon cette équaiton :
+Ces éléments nous permettent de tracer une droite selon cette équation :
 $$ y = m \cdot x + p $$
 
 \subsection[Rectangle]{rectangle.hpp}
@@ -172,11 +172,11 @@ utilitaire::isHalfPiPlusNPi
 \end{lstlisting}
 \section[Les éléments]{elements}
 \subsection[Element]{element.hpp}
-Cette classe, abstraite et donc non instanciable, représente un element du jeu
+Cette classe, abstraite et donc non instanciable, représente un élément du jeu
 lié à un, et un seul, niveau du jeu. Cette classe permet donc d'établir une
 communication entre les différents éléments du niveau et le niveau lui-même à
 travers un référencement de ce dernier.
-Par le phénomène d'héritage, chaque élément poura établir sa manière propre de
+Par le phénomène d'héritage, chaque élément pourra établir sa manière propre de
 réagir avec le niveau en lui exprimant : 
 \begin{itemize}
 	\item ses points d'intersection avec un rayon si il lui sont demandés,
@@ -188,34 +188,41 @@ réagir avec le niveau en lui exprimant :
 		Element::reactToRay(Ray);
 		\end{lstlisting}
 \end{itemize}
-Il sera donc aisé pour le niveau de gèrer les collisions des elements de manière
+Il sera donc aisé pour le niveau de gérer les collisions des éléments de manière
 anonyme et optimale (cf Niveau).
 \subsection[Cristal]{crystal.hpp}
 \begin{center}
 	\begin{tikzpicture}
-		\draw[blue] (0,0) ellipse (2cm and 1cm);
+		\draw[fill=green] (0,0) ellipse (2cm and 2cm);
 		\draw[yellow] (-4, 0) -- (-2, 0);
 		\draw[red] (2, 0) -- (3, 0);
 	\end{tikzpicture} 
 \end{center}
-Cette classe est, par héritage, un element ainsi qu'une ellipse. Il peut donc
+Cette classe est, par héritage, un élément ainsi qu'une ellipse. Il peut donc
 être modéliser graphiquement, entant que cette dernière, dans le plan et communique avec
 le niveau auquel il est lié. Le cristal modifie la longueur d'onde d'un rayon
 qui le traverse. D'un point de vue technique, il en relève donc d'un choix
 personnel, il ne va pas amplifier le rayon entrant à partir de sa sortie mais 
-arrêtera ce rayon et en crééra un nouveau qui, lui, aura subit l'action du cristal.
+arrêtera ce rayon et en créera un nouveau qui, lui, aura subit l'action du cristal.
 \subsection[Destination]{dest.hpp}
-Cette classe est, par héritage, un element ainsi qu'un rectangle. Il peut donc
+Cette classe est, par héritage, un élément ainsi qu'un rectangle. Il peut donc
 être modéliser graphiquement, entant que cette dernière, dans le plan et
 communique avec le niveau auquel il est lié. La destination est le but du jeu
 et l'atteindre terminera automatiquement la partie sur une victoire.
 \subsection[Lentille]{lens.hpp}
-Cette classe est, par héritage, un element ainsi qu'un rectangle. Il peut donc
+\begin{center}
+	\begin{tikzpicture}
+		\draw[fill=blue,blue] (0,0) ellipse (2cm and 1cm);
+		\draw[red] (-4, 0) -- (-2, 0);
+		\draw[red, dashed] (2, 0) -- (3, 0);
+	\end{tikzpicture} 
+\end{center}
+Cette classe est, par héritage, un élément ainsi qu'un rectangle. Il peut donc
 être modéliser graphiquement, entant que cette dernière, dans le plan et
 communique avec le niveau auquel il est lié. La lentille est un éventuel
 obstacle à un rayon puisqu'il ne le laissera passer que si la longueur d'onde de
 ce dernier respecte le critère
-$$lens_{min} \leq \alpha \leq lens_{max}$$
+$$lens_{min} \leq ray_{\alpha} \leq lens_{max}$$
 
 Deux issues sont alors possible :
 \begin{itemize}
@@ -224,18 +231,37 @@ Deux issues sont alors possible :
 	\item ou elle ne rentre pas dans l'interval défini et le rayon sera terminé par
 		la lentille
 \end{itemize}
-et ce même si le rayon tiré est tangant à la lentille. En effet, si la droite
-représentant le rayon est tangant à l'ellipse représentant la lentille c'est
+et ce même si le rayon tiré est tangent à la lentille. En effet, si la droite
+représentant le rayon est tangent à l'ellipse représentant la lentille c'est
 qu'un point d'intersection existe entre les deux. Il est donc de ce point d'agir
 comme l'aurait fait l'entière lentille à tout autre point même si cette
 réaction particulière peut être discutable. 
-\subsection[Niveau]{level.hpp}
-\subsection[Createur de niveau]{levelfactory.hpp}
-\subsection[Mirroir]{mirror.hpp}
+\subsection[Miroir]{mirror.hpp}
+Cette classe est, par héritage, un élément ainsi qu'une droite. Le miroir peut donc
+être modéliser graphiquement, entant que cette dernière, dans le plan et
+communiquer avec le niveau auquel il est lié. Le miroir est, plus précisément,
+un segment de droite délimité par deux points. Puisque le miroir effectue une
+rotation autour d'un point $p \in mirroir$, il n'est pas directement
+délimité par ses deux extrémités mais bien par sa longueur, son angle, la position
+absolue (cartésienne) et relative (distance par rapport à une extremité)
+de son point de rotation qui définissent, dynamiquement, ses points délimiteurs.
+Pour trouver les deux points il suffit de :
+\begin{enumerate}
+	\item extremité gauche = ($x_{pivot}$ - position absolue, $y_{pivot}$)
+		\begin{center}
+			\begin{tikzpicture}
+				\draw (0,1) node;
+			\end{tikzpicture}
+		\end{center}
+	\item extremité droite = ($x_{gauche}$ + taille du segment, $y_{pivot}$)
+	\item rotation des deux points autour du pivot
+\end{enumerate}
 \subsection[Bombe]{nuke.hpp}
 \subsection[Rayon]{ray.hpp}
 \subsection[Source]{source.hpp}
 \subsection[Mur]{wall.hpp}
+\subsection[Niveau]{level.hpp}
+\subsection[Createur de niveau]{levelfactory.hpp}
 \section[L'exception]{exception}
 \subsection[Exception Starlight]{starlightexception.hpp}
 Il est nécessaire, pour bon nombre des classes créées, de valider les arguments passés en
@@ -249,15 +275,15 @@ Les différentes classes pouvant lever cette exception sont :
 \begin{description}
 	\item[crystal] si la taille de son rayon ne lui permet pas d'exister dans le
 		plan,
-	\item[lens] si son interval de longueur d'onde n'est pas cohérent,
+	\item[lens] si son intervalle de longueur d'onde n'est pas cohérent,
 	\item[level] si ses dimensions ne lui permettent pas d'exister dans le plan,
 	\item[mirror] si ses dimensions ne lui permettent pas d'exister dans le
 		plan, si sa position ou son angle n'entre pas dans les limites imposées,
 	\item[nuke] si la taille de son rayon ne lui permet pas d'exister dans le
 		plan,
-	\item[ray] si sa longueur d'onde n'entre pas dans l'interval cohérent
+	\item[ray] si sa longueur d'onde n'entre pas dans l'intervalle cohérent
 		imposé,
-	\item[source] si sa longueur d'onde n'entre pas dans l'interval cohérent
+	\item[source] si sa longueur d'onde n'entre pas dans l'intervalle cohérent
 		imposé,
 	\item[wall] si ses points déterminants ne lui permettent pas d'exister dans
 		le plan,
@@ -274,7 +300,7 @@ Les différentes classes pouvant lever cette exception sont :
 
 
 \chapter[Algorithmes]{Détail des algorithmes utilisés}
-\section[Réflexion]{Algorithme de réflection}
+\section[Réflexion]{Algorithme de réflexion}
 
 \section[Intersection]{Algorithme d'intersection}
 \subsection[Deux droites]{Intersection de deux droites}
@@ -293,7 +319,7 @@ Les différentes classes pouvant lever cette exception sont :
 \appendix
 
 
-\chapter{Réferences}
+\chapter{Références}
 
 
 \end{document}
