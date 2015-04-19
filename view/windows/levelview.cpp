@@ -1,4 +1,4 @@
-#include "view/levelview.hpp"
+#include "view/windows/levelview.hpp"
 
 #include <QMessageBox>
 #include <QPainter>
@@ -47,21 +47,21 @@ void LevelView::paintEvent(QPaintEvent*)
 
         painter.setRenderHints(QPainter::Antialiasing, true);
 
-        for (const Wall & wall : this->level->getWalls())
+        for (auto & wall : this->level->getWalls())
             viewUtilities::drawLine(wall.getStart(), wall.getEnd(), painter, Qt::black, 4);
 
-        for (const Lens & lens : this->level->getLenses())
+        for (auto & lens : this->level->getLenses())
             viewUtilities::drawEllipse(lens, painter, Qt::blue, 2);
 
-        for (const Crystal & crystal : this->level->getCrystals())
+        for (auto & crystal : this->level->getCrystals())
             viewUtilities::drawEllipse(crystal, painter, Qt::green, 2);
 
-        for (const Nuke & nuke : this->level->getNukes())
+        for (auto & nuke : this->level->getNukes())
             viewUtilities::drawEllipse(nuke, painter, Qt::red, 2);
 
         if (this->level->getSource().isOn())
         {
-            for (const Ray & ray : this->level->getRays())
+            for (auto & ray : this->level->getRays())
                 viewUtilities::drawLine(ray.getStart(), ray.getEnd(), painter, Qt::black, 1);
         }
     }

@@ -1,6 +1,6 @@
 #include <QApplication>
 
-#include "view/mainwindow.hpp"
+#include "view/windows/mainwindow.hpp"
 
 #include <QPushButton>
 

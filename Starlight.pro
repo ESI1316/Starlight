@@ -13,9 +13,13 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = Starlight
 TEMPLATE = app
 
-
 SOURCES += main.cpp\
-    view/mainwindow.cpp \
+    view/windows/mainwindow.cpp \
+    view/windows/levelview.cpp \
+    view/windows/mainmenu.cpp \
+    view/viewutilities.cpp \
+    view/dynamicElements/mirrorview.cpp \
+    view/dynamicElements/clickableColorSquare.cpp \
     model/elements/crystal.cpp \
     model/elements/dest.cpp \
     model/elements/lens.cpp \
@@ -47,14 +51,14 @@ SOURCES += main.cpp\
     test/elements/sourcetest.cpp \
     test/elements/desttest.cpp \
     test/elements/leveltest.cpp \
-    test/elements/lenstest.cpp \
-    view/levelview.cpp \
-    view/mainmenu.cpp \
-    view/dynamicElements/mirrorview.cpp \
-    view/dynamicElements/clickableColorSquare.cpp \
-    view/viewutilities.cpp
+    test/elements/lenstest.cpp
 
-HEADERS  += view/mainwindow.hpp \
+HEADERS  += view/windows/mainwindow.hpp \
+    view/windows/levelview.hpp \
+    view/windows/mainmenu.hpp \
+    view/dynamicElements/clickableColorSquare.hpp \
+    view/dynamicElements/mirrorview.hpp \
+    view/viewutilities.hpp \
     model/exception/starlightexception.hpp \
     model/elements/element.hpp \
     model/elements/crystal.hpp \
@@ -68,19 +72,12 @@ HEADERS  += view/mainwindow.hpp \
     model/elements/source.hpp \
     model/elements/wall.hpp \
     model/elements/utilities.hpp \
-    test/catch.hpp \
     model/geometry/point.hpp \
     model/geometry/utilities.hpp \
     model/geometry/rectangle.hpp \
     model/geometry/line.hpp \
     model/geometry/ellipse.hpp \
-    view/levelview.hpp \
-    view/mainmenu.hpp \
-    view/dynamicElements/clickableColorSquare.hpp \
-    view/dynamicElements/mirrorview.hpp \
-    view/viewutilities.hpp
-
-FORMS    +=
+    test/catch.hpp
 
 DISTFILES += \
     ressources/level.lvl \

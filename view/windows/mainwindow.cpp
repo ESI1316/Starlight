@@ -1,4 +1,4 @@
-#include "view/mainwindow.hpp"
+#include "view/windows/mainwindow.hpp"
 
 #include <QVBoxLayout>
 #include <QLabel>
@@ -7,8 +7,8 @@
 
 #include <iostream>
 
-#include "view/levelview.hpp"
-#include "view/mainmenu.hpp"
+#include "view/windows/levelview.hpp"
+#include "view/windows/mainmenu.hpp"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow{parent}, mainMenu{new MainMenu}, levelView{new LevelView}

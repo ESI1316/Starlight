@@ -1,4 +1,4 @@
-#include "mainmenu.hpp"
+#include "view/windows/mainmenu.hpp"
 
 #include <QVBoxLayout>
 #include <QLabel>
