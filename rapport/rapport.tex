@@ -89,7 +89,7 @@ $$ y = m \cdot x + p $$
 	\end{tikzpicture} 
 \end{center}
 Un rectangle est une forme géométrique à 4 segments de droite\footnote{Un
-segment de droite est une partie de droite délimitée par deux points non
+	segment de droite est une partie de droite délimitée par deux points non
 confondus} 
 parallèle deux à deux.Ceux-ci vont donc former 4 angles droit ($\frac{\pi}{2} rad$)
 Cette forme peut être représentée par :
@@ -172,6 +172,22 @@ utilitaire::isHalfPiPlusNPi
 \end{lstlisting}
 \section[Les éléments]{elements}
 \subsection[Element]{element.hpp}
+Cette classe, abstraite et donc non instanciable, représente un element du jeu
+lié à un, et un seul, niveau du jeu. Cette classe permet donc d'établir une
+communication entre les différents éléments du niveau et le niveau lui-même à
+travers un référencement de ce dernier.
+Par le phénomène d'héritage, chaque élément poura établir sa manière propre de
+réagir avec le niveau en lui exprimant : 
+\begin{itemize}
+	\item ses points d'intersection avec un rayon si il lui sont demandés,
+		\begin{lstlisting}[language=C++]
+		Element::includeRay(Ray);
+		\end{lstlisting}
+	\item les actions à éffectuer si un contact avec le rayon a eu lieu.
+		\begin{lstlisting}[language=C++]
+		Element::reactToRay(Ray);
+		\end{lstlisting}
+\end{itemize}
 \subsection[Cristal]{crystal.hpp}
 \subsection[Destination]{dest.hpp}
 \subsection[Lentille]{lens.hpp}

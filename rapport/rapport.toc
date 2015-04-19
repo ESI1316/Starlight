@@ -9,8 +9,8 @@
 \contentsline {subsection}{\numberline {2.1.5}Utilitaire}{6}{subsection.2.1.5}
 \contentsline {subsubsection}{constantes :}{6}{section*.2}
 \contentsline {subsubsection}{fonctions :}{7}{section*.3}
-\contentsline {section}{\numberline {2.2}Les \IeC {\'e}l\IeC {\'e}ments}{8}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Element}{8}{subsection.2.2.1}
+\contentsline {section}{\numberline {2.2}Les \IeC {\'e}l\IeC {\'e}ments}{7}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Element}{7}{subsection.2.2.1}
 \contentsline {subsection}{\numberline {2.2.2}Cristal}{8}{subsection.2.2.2}
 \contentsline {subsection}{\numberline {2.2.3}Destination}{8}{subsection.2.2.3}
 \contentsline {subsection}{\numberline {2.2.4}Lentille}{8}{subsection.2.2.4}
