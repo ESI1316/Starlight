@@ -1,4 +1,4 @@
-#include "sourceview.h"
+#include "clickableColorSquare.hpp"
 
 SourceView::SourceView(QWidget * parent) : QPushButton(parent)
 {

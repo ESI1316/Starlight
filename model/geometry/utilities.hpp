@@ -9,7 +9,6 @@ class Point;
  */
 namespace utilities
 {
-
     /*!
      * \brief PI Représentation de la constante PI sur 26 décimales.
      */
@@ -66,7 +65,7 @@ namespace utilities
      * \param alpha Un angle en radian.
      * \return L'angle exprimé en degré.
      */
-    double angleAsDegree(const double);
+    double angleAsDegree(double);
 
     /*!
      * \brief Permet de trouver l'angle en degré, entre 0 et 360, d'un angle en radian.
@@ -81,7 +80,7 @@ namespace utilities
      *
      * \return L'angle exprimé en degré dans l'interval \f$[0, 360°[\f$
      */
-    double angleAsDegree0to360(const double);
+    double angleAsDegree0to360(double);
 
     /*!
      * \brief Cette méthode permet de savoir si deux double sont égaux avec une
@@ -96,7 +95,7 @@ namespace utilities
      * \return <code>true</code> Si les deux nombres sont égaux avec la précision
      * souhaitée.
      */
-    bool equals(const double, const double, const double = utilities::EPSILON);
+    bool equals(double, double, double = utilities::EPSILON);
 
     /*!
      * \brief Cette méthode permet de vérifier l'inégalité \f$ nb_1 \geq nb_2 \f$ sur
@@ -108,7 +107,7 @@ namespace utilities
      *
      * \return <code>true</code> Si l'inégalité \f$ nb_1 \geq nb_2 \f$ est vérifiée.
      */
-    bool greaterOrEquals(const double, const double, const double = utilities::EPSILON);
+    bool greaterOrEquals(double, double, double = utilities::EPSILON);
 
     /*!
      * \brief Cette méthode permet de vérifier l'inégalité \f$ nb_1 \leq nb_2 \f$ sur
@@ -120,7 +119,7 @@ namespace utilities
      *
      * \return <code>true</code> Si l'inégalité \f$ nb_1 \geq nb_2 \f$ est vérifiée.
      */
-    bool lessOrEquals(const double, const double, const double = utilities::EPSILON);
+    bool lessOrEquals(double, double, double = utilities::EPSILON);
 
     /*!
      * \brief Permet de trouver la pente d'une droite formée par deux points.
@@ -138,7 +137,7 @@ namespace utilities
      *
      * \return <code>true</code> Si \f$ angle = \frac{\pi}{2} + n \cdot (2 \cdot \pi) \f$
      */
-    bool isHalfPiPlusNPi(const double);
+    bool isHalfPiPlusNPi(double);
 
     /*!
      * \brief Permet d'avoir la valeur trigonométrique tangante d'un angle
@@ -147,7 +146,7 @@ namespace utilities
      * \return La tangante de l'angle ou l'infini.
      *
      */
-    double tan(const double);
+    double tan(double);
 
     /*!
      * \brief Permet d'avoir l'angle "absolu" de celui passé en paramètre,
@@ -155,13 +154,13 @@ namespace utilities
      *
      * \return L'angle absolu de celui passé en paramètre.
      */
-    double absoluteAngle(const double);
+    double absoluteAngle(double);
 
     /*!
      * \brief Permet de recadrer un angle dans un interval [0 ; 2PI[.
      *
      * \return L'angle passé en paramètre dans l'interval [0 ; 2PI[
      */
-    double inZeroTwoPi(const double);
+    double inZeroTwoPi(double);
 }
 #endif // UTILITIES_HPP

@@ -88,6 +88,22 @@ Point Ellipse::getCenter() const
     return this->center;
 }
 
+Point Ellipse::getUpLeftCorner() const
+{
+    return Point{this->center.getX() - (this->getWidth()/2),
+                 this->center.getY() - (this->getHeight()/2)};
+}
+
+double Ellipse::getWidth() const
+{
+    return std::sqrt(this->xRadius);
+}
+
+double Ellipse::getHeight() const
+{
+    return std::sqrt(this->yRadius);
+}
+
 bool Ellipse::operator ==(const Ellipse & ellipse) const
 {
     return utilities::equals(this->xRadius, ellipse.xRadius)
