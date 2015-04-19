@@ -4,53 +4,45 @@
 
 #include <QMessageBox>
 #include <QPainter>
+#include <QPushButton>
+#include <QMainWindow>
 
-LevelView::LevelView(QWidget *parent) : QFrame{parent}, level{nullptr} {}
+#include <iostream>
+
+LevelView::LevelView(QWidget *parent) : QFrame{parent}, level{nullptr}
+{
+    this->setStyleSheet("background-color:white;");
+}
 
 LevelView::~LevelView()
 {
     if (this->level != nullptr)
-        delete this->level, this->level = nullptr;
+        delete this->level;
 }
 
 void LevelView::setLevelFilePath(const QString levelFile)
 {
     this->displayedLevelFilePath = levelFile.toStdString();
     this->loadLevelFromFile();
+    this->displayEndOfGame();
 }
 
 void LevelView::loadLevelFromFile()
 {
     if (this->level != nullptr)
-        delete this->level, this->level = nullptr;
+        delete this->level;
 
     this->level = levelFactory::getLevelFromFile(this->displayedLevelFilePath);
-    this->level->computeRays();
-    this->level->getSource().setOn(true);
+    this->setFixedSize(this->level->getWidth(), this->level->getHeight());
 
     emit displayingStarted();
 }
 
 void LevelView::paintEvent(QPaintEvent*)
 {
-    QPainter * painter = new QPainter(this);
-    painter->setRenderHint(QPainter::Antialiasing);
-
     if (this->level != nullptr)
     {
-        this->setFixedSize(this->level->getWidth(), this->level->getHeight());
-        this->setStyleSheet("background-color:white;"
-                            "border-style: outset;"
-                            "border-width: 2px;"
-                            "border-color: black;");
-
-
-        for (Ray ray : this->level->getRays())
-                painter->drawLine(this->toQPoint(ray.getStart()),
-                                       this->toQPoint(ray.getEnd()));
     }
-
-    delete painter;
 }
 
 QPointF LevelView::toQPoint(const Point & point)
@@ -60,7 +52,7 @@ QPointF LevelView::toQPoint(const Point & point)
 
 void LevelView::displayEndOfGame()
 {
-    QMessageBox msgBox;
+    QMessageBox msgBox(this);
     QPushButton *quitB = msgBox.addButton(tr("Retour au menu principal"), QMessageBox::YesRole);
 
     msgBox.addButton(tr("Recommencer"), QMessageBox::NoRole);

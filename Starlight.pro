@@ -49,7 +49,8 @@ SOURCES += main.cpp\
     test/elements/leveltest.cpp \
     test/elements/lenstest.cpp \
     view/levelview.cpp \
-    view/mainmenu.cpp
+    view/mainmenu.cpp \
+    view/dynamicElements/sourceview.cpp
 
 HEADERS  += view/mainwindow.hpp \
     model/exception/starlightexception.hpp \
@@ -72,7 +73,8 @@ HEADERS  += view/mainwindow.hpp \
     model/geometry/line.hpp \
     model/geometry/ellipse.hpp \
     view/levelview.hpp \
-    view/mainmenu.hpp
+    view/mainmenu.hpp \
+    view/dynamicElements/sourceview.h
 
 FORMS    +=
 
