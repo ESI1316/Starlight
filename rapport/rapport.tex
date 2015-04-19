@@ -4,8 +4,9 @@
 \usepackage[french]{babel}
 \usepackage[T1]{fontenc}
 \usepackage[pdftex]{graphicx} 
+\usepackage{mathtools}
+\usepackage{tikz}
 \usepackage{url} 
-\usepackage{listings}
 \usepackage[bookmarks, colorlinks=false, pdfborder={0 0 0}, pdftitle={Starlight
 : rapport}, pdfauthor={Kriwin Paul, Placentino Simon}, pdfsubject={Starlight},
 pdfkeywords={C++, ISO/IEC 14882:2011, Starlight, Projet}]{hyperref} 
@@ -19,13 +20,116 @@ pdfkeywords={C++, ISO/IEC 14882:2011, Starlight, Projet}]{hyperref}
 \chapter{Introduction}
 
 
+
 \chapter[Les classes]{Présentation succinte des classes}
 \section[Les objets géométriques]{geometry}
+
 \subsection[Ellipse]{ellipse.hpp}
+\begin{center}
+	\begin{tikzpicture}
+		\draw (0,0) ellipse (2cm and 1cm);
+	\end{tikzpicture} 
+\end{center}
+Une ellipse est un objet géométrique à deux dimensions représentée par
+une courbe plane fermée obtenu par découpe d'un cône sur un plan. Si ce dernier
+est perpendiculaire à l'axe du cône, l'ellipse sera alors un cercle.
+Éléments caractéristiques d'une ellipse :
+\begin{itemize}
+	\item une coordonnée cartésienne de son centre,
+	\item une distance séparant le centre de l'intersection avec une paralelle à
+		l'axe des ordonnées tangante à l'ellipse voulue,
+	\item une distance sépérant le centre de l'intersection avec une paralelle à
+		l'axe des abscisse tangante à l'ellipe voulue.
+\end{itemize}
+Ces éléments nous permettront de tracer une ellipse selon cette équation :
+$$\frac{(x - c_x)^2}{{x_{radius}}^2} + \frac{(y - c_y)^2}{{y_{radius}}^2} = 1$$
+
+Cette classe peut tout à fait être instancié en objet géométrique elliptique.
+Celle-ci possède des méthodes d'interractions avec une droite. Dans le contexte
+présent, certains éléments du jeu seront des ellipse par le phénomène d'héritage
+mis en place dans le paradigme orienté objet de C++.
 \subsection[Droite]{line.hpp}
+\begin{center}
+	\begin{tikzpicture}
+		\draw[gray, very thin] (0,0) grid (3,3);
+		\draw[dashed] (-1, -1) -- (0, 0);
+		\draw (0,0) -- (3, 3);
+		\draw[dashed] (3,3) -- (4, 4);
+	\end{tikzpicture} 
+\end{center}
+Une droite est une ligne sans épaisseur, rectiligne et infinie dans le plan. 
+Pour exister, une droite aura besoin :
+\begin{itemize}
+	\item d'un coefficiant angulaire $m = \frac{\Delta y}{\Delta x}$
+		représentant la distance à parcourir sur l'axe des ordonnées pour une unité de
+		distance sur l'axe des abcisses.
+	\item d'un terme indépendant $p = \frac{y}{m \cdot x}$ représentant le décalage de chaque point
+		sur l'axe des ordonnées,
+	\item ou de deux points de coordonnées dans le plan,
+	\item ou d'un point de coordonnées dans le plan et d'un coefficiant
+		angulaire.
+\end{itemize}
+Ces éléments nous permettent de tracer une droite selon cette équaiton :
+$$ y = m \cdot x + p $$
 \subsection[Rectangle]{rectangle.hpp}
+\begin{center}
+	\begin{tikzpicture}
+		\draw (1, 1) -- (4, 1);
+		\draw (4, 1) -- (4, 2.5);
+		\draw (4, 2.5) -- (1, 2.5);
+		\draw (1, 2.5) -- (1, 1);
+	\end{tikzpicture} 
+\end{center}
+Un rectangle est une forme géométrique à 4 segments de droite\footnote{Un
+segment droite est une partie de droite délimitée par deux points non confondus} 
+parallèle deux à deux.Ceux-ci vont donc former 4 angles droit ($\frac{\pi}{2} rad$)
+Cette forme peut être représentée par :
+\begin{itemize}
+	\item la coordonnée du coin supérieur gauche $Sg = (x, y)$
+	\item la grandeur des deux segments formant un angle de $\frac{\pi}{2} rad$
+		en ce point $hauteur$ et $largeur$.
+\end{itemize}
+
+Ainsi, il sera aisé de déterminer la position des autres coins 
+\begin{itemize}
+	\item $Sd = (Sg_x + largeur, Sg_y)$
+	\item $Ig = (Sg_x , Sg_y + hauteur)$
+	\item $Id = (Sg_x + largeur, Sg_y + hauteur)$
+\end{itemize}
 \subsection[Point]{point.hpp}
+Un point est un objet mathématique permettant de situer un element dans un plan
+ou dans l'espace. Dans notre cas, plus spécifiquement dans un plan à deux
+dimensions. Celui-ci peut-être représenté de plusieurs manières dans le plan 
+cartésien\footnote{lien vers plan cartésien} : 
+\begin{itemize}
+	\item sous la forme d'une coordonnées cartésienne à l'aide de 
+		\begin{itemize}
+			\item une origine,
+			\item deux vecteurs partant de cette origine et perpendiculaires,
+		\end{itemize}
+	\item et sous la forme d'une coordonnée polaire à l'aide de
+		\begin{itemize}
+			\item une origine,
+			\item une coordonnée radiale $r$,
+			\item une coordonnée angulaire $\alpha$.
+		\end{itemize}
+\end{itemize}
 \subsection[Utilitaire]{utilities.hpp}
+La classe utilitaires mis en place ici est un ensemble de fonctions et valeurs
+constantes spécifiquement définies pour les calculs intervenant dans le projet.
+
+\subsubsection{constantes :}
+\begin{description}
+	\item[PI] est un approximation de $\pi$ sur 26 décimales,
+	\item[PI\_2] est une approximation de $\frac{\pi}{2}$ sur 26 décimales,
+	\item[PI\_4] est une approximation de $\frac{\pi}{4}$ sur 26 décimales,
+	\item[EPSILON] est une marge d'erreur de $10^{-7}$,
+	\item[INF] représente un nombre dit ``infini'' dans le milieu informatique.
+\end{description}
+\subsubsection{fonctions :}
+\begin{description}
+	\item[fonction] fonction
+\end{description}
 \section[Les éléments]{elements}
 \subsection[Element]{element.hpp}
 \subsection[Cristal]{crystal.hpp}
@@ -40,32 +144,60 @@ pdfkeywords={C++, ISO/IEC 14882:2011, Starlight, Projet}]{hyperref}
 \subsection[Mur]{wall.hpp}
 \section[L'exception]{exception}
 \subsection[Exception Starlight]{starlightexception.hpp}
-Il faut, pour bon nombre des classes créées, valider les arguments passés en
+Il est nécessaire, pour bon nombre des classes créées, de valider les arguments passés en
 paramètre dans le but de ne pas produire d'objets incohérents par rapport à
 l'analyse préalable du travail à fournir. Pour ce faire, des exceptions doivent
 être levées quand une instanciation créera un objet non désiré. 
 Cette classe hérite de std::exception appartenant à la librairie standard. Elle n'a aucune
-capacité supplémentaire mise à part être spécifique à ce projet.
+capacité supplémentaire mise à part être spécifique à ce projet. \\ \\
+
+Les différentes classes pouvant lever cette exception sont :
+\begin{description}
+	\item[crystal] si la taille de son rayon ne lui permet pas d'exister dans le
+		plan,
+	\item[lens] si son interval de longueur d'onde n'est pas cohérent,
+	\item[level] si ses dimensions ne lui permettent pas d'exister dans le plan,
+	\item[mirror] si ses dimensions ne lui permettent pas d'exister dans le
+		plan, si sa position ou son angle n'entre pas dans les limites imposées,
+	\item[nuke] si la taille de son rayon ne lui permet pas d'exister dans le
+		plan,
+	\item[ray] si sa longueur d'onde n'entre pas dans l'interval cohérent
+		imposé,
+	\item[source] si sa longueur d'onde n'entre pas dans l'interval cohérent
+		imposé,
+	\item[wall] si ses points déterminants ne lui permettent pas d'exister dans
+		le plan,
+	\item[ellipse] si ses dimensions ne lui permettent pas d'exister dans le
+		plan,
+	\item[rectangle] si ses dimensions ne lui permettent pas d'exister dans le
+		plan.
+\end{description}
 \section[Les objets visuels]{view}
+
 
 \chapter[Structure du programme]{Structure générale du programme}
 
 
+
 \chapter[Algorithmes]{Détail des algorithmes utilisés}
 \section[Réflexion]{Algorithme de réflection}
+
 \section[Intersection]{Algorithme d'intersection}
 \subsection[Deux droites]{Intersection de deux droites}
 \subsection[Droite et rectangle]{Intersection d'une droite et d'un rectangle}
 \subsection[Droite et ellipse]{Intersection d'une droite et d'une ellipse}
 
 
+
 \chapter{Test effectués}
+
 
 
 \chapter{Conclusion}
 
 
 \appendix
+
 
 \chapter{Réferences}
 
