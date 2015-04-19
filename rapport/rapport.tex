@@ -6,6 +6,7 @@
 \usepackage[pdftex]{graphicx} 
 \usepackage{mathtools}
 \usepackage{listings}
+\usepackage{amsfonts}
 \usepackage{tikz}
 \usepackage{url} 
 \usepackage[bookmarks, colorlinks=false, pdfborder={0 0 0}, pdftitle={Starlight
@@ -28,6 +29,7 @@ pdfkeywords={C++, ISO/IEC 14882:2011, Starlight, Projet}]{hyperref}
 \subsection[Ellipse]{ellipse.hpp}
 \begin{center}
 	\begin{tikzpicture}
+		\draw[gray, very thin] (-2, -1) grid (2, 2);
 		\draw (0,0) ellipse (2cm and 1cm);
 	\end{tikzpicture} 
 \end{center}
@@ -45,14 +47,14 @@ est perpendiculaire à l'axe du cône, l'ellipse sera alors un cercle.
 Ces éléments nous permettront de tracer une ellipse selon cette équation :
 $$\frac{(x - c_x)^2}{{x_{radius}}^2} + \frac{(y - c_y)^2}{{y_{radius}}^2} = 1$$
 
-Cette classe peut tout à fait être instancié en objet géométrique elliptique.
-Celle-ci possède des méthodes d'interractions avec une droite. 
+Cette classe peut tout à fait être instancié en objet géométrique elliptique
+et possède des méthodes d'interractions avec une droite. 
 \begin{lstlisting}[frame=single,language=C++]
 Ellipse::getIntersectionsPoints(Line);
 \end{lstlisting}
-Dans le contexte
-présent, certains éléments du jeu seront des ellipse par le phénomène d'héritage
-mis en place dans le paradigme orienté objet de C++.
+Dans le contexte présent, certains éléments du jeu seront des ellipse par le 
+phénomène d'héritage mis en place dans le paradigme orienté objet de C++.
+
 \subsection[Droite]{line.hpp}
 \begin{center}
 	\begin{tikzpicture}
@@ -76,6 +78,7 @@ Pour exister, une droite aura besoin :
 \end{itemize}
 Ces éléments nous permettent de tracer une droite selon cette équaiton :
 $$ y = m \cdot x + p $$
+
 \subsection[Rectangle]{rectangle.hpp}
 \begin{center}
 	\begin{tikzpicture}
@@ -86,7 +89,8 @@ $$ y = m \cdot x + p $$
 	\end{tikzpicture} 
 \end{center}
 Un rectangle est une forme géométrique à 4 segments de droite\footnote{Un
-segment droite est une partie de droite délimitée par deux points non confondus} 
+segment de droite est une partie de droite délimitée par deux points non
+confondus} 
 parallèle deux à deux.Ceux-ci vont donc former 4 angles droit ($\frac{\pi}{2} rad$)
 Cette forme peut être représentée par :
 \begin{itemize}
@@ -101,16 +105,25 @@ Ainsi, il sera aisé de déterminer la position des autres coins
 	\item $Ig = (Sg_x , Sg_y + hauteur)$
 	\item $Id = (Sg_x + largeur, Sg_y + hauteur)$
 \end{itemize}
+
+Il existe plusieurs cas particuliers de droite :
+\begin{itemize}
+	\item une droite parallèle à l'axe des ordonnées qui aura pour équation
+		$$x = a, a \in \mathbb{R}, $$
+	\item une droite parallèle à l'axe des abscisses qui aura pour équation
+		$$y = b, b \in \mathbb{R}, $$
+\end{itemize}
 \subsection[Point]{point.hpp}
 Un point est un objet mathématique permettant de situer un element dans un plan
 ou dans l'espace. Dans notre cas, plus spécifiquement dans un plan à deux
 dimensions. Celui-ci peut-être représenté de plusieurs manières dans le plan 
-cartésien\footnote{lien vers plan cartésien} : 
+cartésien\footnote{\url{http://www.cslaval.qc.ca/sitsatlll/maths2003/cartesien.html}} : 
 \begin{itemize}
 	\item sous la forme d'une coordonnées cartésienne à l'aide de 
 		\begin{itemize}
 			\item une origine,
 			\item deux vecteurs partant de cette origine et perpendiculaires,
+				$$P = (\vec{x}, \vec{y})$$
 		\end{itemize}
 	\item et sous la forme d'une coordonnée polaire à l'aide de
 		\begin{itemize}
@@ -120,7 +133,7 @@ cartésien\footnote{lien vers plan cartésien} :
 		\end{itemize}
 \end{itemize}
 \subsection[Utilitaire]{utilities.hpp}
-La classe utilitaires mis en place ici est un ensemble de fonctions et valeurs
+Le namespace ``utilities'' mis en place ici est un ensemble de fonctions et valeurs
 constantes spécifiquement définies pour les calculs intervenant dans le projet.
 
 \subsubsection{constantes :}
@@ -132,9 +145,31 @@ constantes spécifiquement définies pour les calculs intervenant dans le projet
 	\item[INF] représente un nombre dit ``infini'' dans le milieu informatique.
 \end{description}
 \subsubsection{fonctions :}
-\begin{description}
-	\item[fonction] fonction
-\end{description}
+\begin{lstlisting}[title=Resolution d'équation du second degre,frame=single,language=C++]
+utilitaire::secondDegreeEquationSolver
+\end{lstlisting}
+\begin{lstlisting}[title=Transforme un angle exprime en radian en un angle
+exprime en degres,frame=single,language=C++]
+utilitaire::angleAsDegree
+\end{lstlisting}
+\begin{lstlisting}[title=Permet de tester l egalite ou l inegalite entre deux 
+nombre reels a un Epsilon d erreur,frame=single,language=C++]
+utilitaire::equals
+utilitaire::greaterOrEquals
+utilitaire::lessOrEquals
+\end{lstlisting}
+\begin{lstlisting}[title=Permet de trouver le coefficiant angulaire a partir de deux points'',frame=single,language=C++]
+utilitaire::slopeFromPoints
+\end{lstlisting}
+\begin{lstlisting}[title=Permet de trouver la valeur tangante d'un angle 
+	en radian mais aussi de retourner une valeur particuliere pour la tangante de
+$\pi/2$,frame=single,language=C++]
+utilitaire::tan
+\end{lstlisting}
+\begin{lstlisting}[title=Permet de savoir si $\alpha$ vaut  $\frac{\pi}{2} + n *
+\pi\ n \in \mathbb{N}$,frame=single,language=C++]
+utilitaire::isHalfPiPlusNPi
+\end{lstlisting}
 \section[Les éléments]{elements}
 \subsection[Element]{element.hpp}
 \subsection[Cristal]{crystal.hpp}

@@ -8,29 +8,29 @@
 \contentsline {subsection}{\numberline {2.1.4}Point}{6}{subsection.2.1.4}
 \contentsline {subsection}{\numberline {2.1.5}Utilitaire}{6}{subsection.2.1.5}
 \contentsline {subsubsection}{constantes :}{6}{section*.2}
-\contentsline {subsubsection}{fonctions :}{6}{section*.3}
-\contentsline {section}{\numberline {2.2}Les \IeC {\'e}l\IeC {\'e}ments}{7}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Element}{7}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}Cristal}{7}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}Destination}{7}{subsection.2.2.3}
-\contentsline {subsection}{\numberline {2.2.4}Lentille}{7}{subsection.2.2.4}
-\contentsline {subsection}{\numberline {2.2.5}Niveau}{7}{subsection.2.2.5}
-\contentsline {subsection}{\numberline {2.2.6}Createur de niveau}{7}{subsection.2.2.6}
-\contentsline {subsection}{\numberline {2.2.7}Mirroir}{7}{subsection.2.2.7}
-\contentsline {subsection}{\numberline {2.2.8}Bombe}{7}{subsection.2.2.8}
-\contentsline {subsection}{\numberline {2.2.9}Rayon}{7}{subsection.2.2.9}
-\contentsline {subsection}{\numberline {2.2.10}Source}{7}{subsection.2.2.10}
-\contentsline {subsection}{\numberline {2.2.11}Mur}{7}{subsection.2.2.11}
-\contentsline {section}{\numberline {2.3}L'exception}{7}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}Exception Starlight}{7}{subsection.2.3.1}
-\contentsline {section}{\numberline {2.4}Les objets visuels}{8}{section.2.4}
-\contentsline {chapter}{\numberline {3}Structure du programme}{9}{chapter.3}
-\contentsline {chapter}{\numberline {4}Algorithmes}{10}{chapter.4}
-\contentsline {section}{\numberline {4.1}R\IeC {\'e}flexion}{10}{section.4.1}
-\contentsline {section}{\numberline {4.2}Intersection}{10}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Deux droites}{10}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Droite et rectangle}{10}{subsection.4.2.2}
-\contentsline {subsection}{\numberline {4.2.3}Droite et ellipse}{10}{subsection.4.2.3}
-\contentsline {chapter}{\numberline {5}Test effectu\IeC {\'e}s}{11}{chapter.5}
-\contentsline {chapter}{\numberline {6}Conclusion}{12}{chapter.6}
-\contentsline {chapter}{\numberline {A}R\IeC {\'e}ferences}{13}{appendix.A}
+\contentsline {subsubsection}{fonctions :}{7}{section*.3}
+\contentsline {section}{\numberline {2.2}Les \IeC {\'e}l\IeC {\'e}ments}{8}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Element}{8}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Cristal}{8}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Destination}{8}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.4}Lentille}{8}{subsection.2.2.4}
+\contentsline {subsection}{\numberline {2.2.5}Niveau}{8}{subsection.2.2.5}
+\contentsline {subsection}{\numberline {2.2.6}Createur de niveau}{8}{subsection.2.2.6}
+\contentsline {subsection}{\numberline {2.2.7}Mirroir}{8}{subsection.2.2.7}
+\contentsline {subsection}{\numberline {2.2.8}Bombe}{8}{subsection.2.2.8}
+\contentsline {subsection}{\numberline {2.2.9}Rayon}{8}{subsection.2.2.9}
+\contentsline {subsection}{\numberline {2.2.10}Source}{8}{subsection.2.2.10}
+\contentsline {subsection}{\numberline {2.2.11}Mur}{8}{subsection.2.2.11}
+\contentsline {section}{\numberline {2.3}L'exception}{8}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Exception Starlight}{8}{subsection.2.3.1}
+\contentsline {section}{\numberline {2.4}Les objets visuels}{9}{section.2.4}
+\contentsline {chapter}{\numberline {3}Structure du programme}{10}{chapter.3}
+\contentsline {chapter}{\numberline {4}Algorithmes}{11}{chapter.4}
+\contentsline {section}{\numberline {4.1}R\IeC {\'e}flexion}{11}{section.4.1}
+\contentsline {section}{\numberline {4.2}Intersection}{11}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Deux droites}{11}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Droite et rectangle}{11}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}Droite et ellipse}{11}{subsection.4.2.3}
+\contentsline {chapter}{\numberline {5}Test effectu\IeC {\'e}s}{12}{chapter.5}
+\contentsline {chapter}{\numberline {6}Conclusion}{13}{chapter.6}
+\contentsline {chapter}{\numberline {A}R\IeC {\'e}ferences}{14}{appendix.A}
