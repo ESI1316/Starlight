@@ -22,7 +22,7 @@ const Point &Nuke::getLocation() const
 
 double Nuke::getRadius() const
 {
-    return std::sqrt(this->xRadius);
+    return this->getHeight() / 2.;
 }
 
 bool Nuke::isLightedUp() const

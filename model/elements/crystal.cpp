@@ -20,7 +20,7 @@ int Crystal::getAmplifier() const
 
 double Crystal::getRadius() const
 {
-    return std::sqrt(this->xRadius);
+    return this->getHeight() / 2.;
 }
 
 void Crystal::reactToRay(Ray ray)
