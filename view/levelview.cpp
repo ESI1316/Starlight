@@ -1,6 +1,7 @@
 #include "view/levelview.hpp"
 
 #include "model/elements/levelFactory.hpp"
+#include "view/viewutilities.hpp"
 
 #include <QMessageBox>
 #include <QPainter>
@@ -42,12 +43,10 @@ void LevelView::paintEvent(QPaintEvent*)
 {
     if (this->level != nullptr)
     {
-    }
-}
+        QPainter painter(this);
 
-QPointF LevelView::toQPoint(const Point & point)
-{
-    return QPointF{point.getX(), point.getY()};
+        painter.setRenderHints(QPainter::Antialiasing, true);
+    }
 }
 
 void LevelView::displayEndOfGame()

@@ -102,6 +102,29 @@ public:
     Point getCenter() const;
 
     /*!
+     * \brief Permet d'obtenir le coin supérieur gauche du rectangle entourant
+     * l'ellipse.
+     *
+     * \return le coin supérieur gauche du rectangle entourant
+     * l'ellipse.
+     */
+    Point getUpLeftCorner() const;
+
+    /*!
+     * \brief Permet d'obtenir la largeur de l'ellipse.
+     *
+     * \return La largeur de l'ellipse.
+     */
+    double getWidth() const;
+
+    /*!
+     * \brief Permet d'obtenir la hauteur de l'ellipse.
+     *
+     * \return La hauteur de l'ellipse.
+     */
+    double getHeight() const;
+
+    /*!
      * \brief Permet de savoir si deux Ellipse sont les mêmes.
      *
      * \return <code>true</code> Si deux Ellipses sont identiques.

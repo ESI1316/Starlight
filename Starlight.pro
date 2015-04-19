@@ -50,7 +50,9 @@ SOURCES += main.cpp\
     test/elements/lenstest.cpp \
     view/levelview.cpp \
     view/mainmenu.cpp \
-    view/dynamicElements/sourceview.cpp
+    view/dynamicElements/mirrorview.cpp \
+    view/dynamicElements/clickableColorSquare.cpp \
+    view/viewutilities.cpp
 
 HEADERS  += view/mainwindow.hpp \
     model/exception/starlightexception.hpp \
@@ -74,7 +76,9 @@ HEADERS  += view/mainwindow.hpp \
     model/geometry/ellipse.hpp \
     view/levelview.hpp \
     view/mainmenu.hpp \
-    view/dynamicElements/sourceview.h
+    view/dynamicElements/clickableColorSquare.hpp \
+    view/dynamicElements/mirrorview.hpp \
+    view/viewutilities.hpp
 
 FORMS    +=
 

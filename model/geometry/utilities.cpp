@@ -23,7 +23,7 @@ bool utilities::secondDegreeEquationSolver(double a, double b, double c,
     return thereIsRadix;
 }
 
-double utilities::absoluteAngle(const double alpha)
+double utilities::absoluteAngle(double alpha)
 {
     double angle{fmod(alpha, 2. * utilities::PI)};
 
@@ -36,33 +36,33 @@ double utilities::absoluteAngle(const double alpha)
     return utilities::equals(angle, 0) ? 0. : angle;
 }
 
-double utilities::inZeroTwoPi(const double alpha)
+double utilities::inZeroTwoPi(double alpha)
 {
    return std::fmod((std::fmod(alpha, (2 * utilities::PI)) + (2 * utilities::PI)),
                     (utilities::PI * 2));
 }
 
-double utilities::angleAsDegree(const double alpha)
+double utilities::angleAsDegree(double alpha)
 {
     return ((alpha * 180.) / utilities::PI);
 }
 
-double utilities::angleAsDegree0to360(const double alpha)
+double utilities::angleAsDegree0to360(double alpha)
 {
     return utilities::angleAsDegree(utilities::inZeroTwoPi(alpha));
 }
 
-bool utilities::equals(const double nb1, const double nb2, const double epsilon)
+bool utilities::equals(double nb1, double nb2, double epsilon)
 {
     return (std::isinf(nb1) && std::isinf(nb2)) || (std::fabs(nb1 - nb2) < epsilon);
 }
 
-bool utilities::greaterOrEquals(const double nb1, const double nb2, const double epsilon)
+bool utilities::greaterOrEquals(double nb1, double nb2, double epsilon)
 {
     return (nb1 > nb2) || utilities::equals(nb1, nb2, epsilon);
 }
 
-bool utilities::lessOrEquals(const double nb1, const double nb2, const double epsilon)
+bool utilities::lessOrEquals(double nb1, double nb2, double epsilon)
 {
     return (nb1 < nb2) || utilities::equals(nb1, nb2, epsilon);
 }
@@ -72,13 +72,13 @@ double utilities::slopeFromPoints(const Point & p1, const Point & p2)
     return ((p2.getY() - p1.getY()) / (p2.getX() - p1.getX()));
 }
 
-bool utilities::isHalfPiPlusNPi(const double alpha)
+bool utilities::isHalfPiPlusNPi(double alpha)
 {
     return utilities::equals(std::fmod(std::fabs(alpha), utilities::PI),
                              utilities::PI_2);
 }
 
-double utilities::tan(const double alpha)
+double utilities::tan(double alpha)
 {
     return utilities::isHalfPiPlusNPi(alpha) ? utilities::INF : -std::tan(alpha);
 }
