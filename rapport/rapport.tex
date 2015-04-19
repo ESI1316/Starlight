@@ -208,8 +208,27 @@ arrêtera ce rayon et en crééra un nouveau qui, lui, aura subit l'action du cr
 Cette classe est, par héritage, un element ainsi qu'un rectangle. Il peut donc
 être modéliser graphiquement, entant que cette dernière, dans le plan et
 communique avec le niveau auquel il est lié. La destination est le but du jeu
-Starlight : l'attendre c'est terminer la partie avec succès.
+et l'atteindre terminera automatiquement la partie sur une victoire.
 \subsection[Lentille]{lens.hpp}
+Cette classe est, par héritage, un element ainsi qu'un rectangle. Il peut donc
+être modéliser graphiquement, entant que cette dernière, dans le plan et
+communique avec le niveau auquel il est lié. La lentille est un éventuel
+obstacle à un rayon puisqu'il ne le laissera passer que si la longueur d'onde de
+ce dernier respecte le critère
+$$lens_{min} \leq \alpha \leq lens_{max}$$
+
+Deux issues sont alors possible :
+\begin{itemize}
+	\item la longueur d'onde entre dans l'interval et le rayon est renouvellé
+		après la lentille
+	\item ou elle ne rentre pas dans l'interval défini et le rayon sera terminé par
+		la lentille
+\end{itemize}
+et ce même si le rayon tiré est tangant à la lentille. En effet, si la droite
+représentant le rayon est tangant à l'ellipse représentant la lentille c'est
+qu'un point d'intersection existe entre les deux. Il est donc de ce point d'agir
+comme l'aurait fait l'entière lentille à tout autre point même si cette
+réaction particulière peut être discutable. 
 \subsection[Niveau]{level.hpp}
 \subsection[Createur de niveau]{levelfactory.hpp}
 \subsection[Mirroir]{mirror.hpp}
