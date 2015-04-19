@@ -36,5 +36,6 @@ namespace viewUtilities
      */
     void drawEllipse(const Ellipse, QPainter &, const QColor &, int);
 }
+
 #endif // VIEWUTILITIES
 

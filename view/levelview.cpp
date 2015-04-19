@@ -25,7 +25,6 @@ void LevelView::setLevelFilePath(const QString levelFile)
 {
     this->displayedLevelFilePath = levelFile.toStdString();
     this->loadLevelFromFile();
-    this->displayEndOfGame();
 }
 
 void LevelView::loadLevelFromFile()
@@ -46,6 +45,24 @@ void LevelView::paintEvent(QPaintEvent*)
         QPainter painter(this);
 
         painter.setRenderHints(QPainter::Antialiasing, true);
+
+        for (const Wall & wall : this->level->getWalls())
+            viewUtilities::drawLine(wall.getStart(), wall.getEnd(), painter, Qt::black, 4);
+
+        for (const Lens & lens : this->level->getLenses())
+            viewUtilities::drawEllipse(lens, painter, Qt::blue, 2);
+
+        for (const Crystal & crystal : this->level->getCrystals())
+            viewUtilities::drawEllipse(crystal, painter, Qt::green, 2);
+
+        for (const Nuke & nuke : this->level->getNukes())
+            viewUtilities::drawEllipse(nuke, painter, Qt::red, 2);
+
+        if (this->level->getSource().isOn())
+        {
+            for (const Ray & ray : this->level->getRays())
+                viewUtilities::drawLine(ray.getStart(), ray.getEnd(), painter, Qt::black, 1);
+        }
     }
 }
 

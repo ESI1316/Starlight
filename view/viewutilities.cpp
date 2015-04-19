@@ -4,19 +4,14 @@
 #include <QLine>
 #include <QPen>
 
-/*!
- * \brief toQPoint
- * \param point
- * \return
- */
 QPoint viewUtilities::toQPoint(const Point & point)
 {
     return QPoint{(int) point.getX(), (int) point.getY()};
 }
 
 
-void drawEllipse(const Ellipse ellipse, QPainter & painter, const QColor & color,
-                 int width)
+void viewUtilities::drawEllipse(const Ellipse ellipse, QPainter & painter,
+                                const QColor & color, int width)
 {
     QPen pen(color);
     Point upLeftCorner = ellipse.getUpLeftCorner();
@@ -29,8 +24,8 @@ void drawEllipse(const Ellipse ellipse, QPainter & painter, const QColor & color
     painter.drawEllipse(rect);
 }
 
-void drawLine(const Point & start, const Point & end, QPainter & painter,
-              const QColor & color, int width)
+void viewUtilities::drawLine(const Point & start, const Point & end,
+                             QPainter & painter, const QColor & color, int width)
 {
     QPen pen(color);
 
