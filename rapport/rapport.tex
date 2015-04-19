@@ -5,6 +5,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[pdftex]{graphicx} 
 \usepackage{mathtools}
+\usepackage{listings}
 \usepackage{tikz}
 \usepackage{url} 
 \usepackage[bookmarks, colorlinks=false, pdfborder={0 0 0}, pdftitle={Starlight
@@ -45,7 +46,11 @@ Ces éléments nous permettront de tracer une ellipse selon cette équation :
 $$\frac{(x - c_x)^2}{{x_{radius}}^2} + \frac{(y - c_y)^2}{{y_{radius}}^2} = 1$$
 
 Cette classe peut tout à fait être instancié en objet géométrique elliptique.
-Celle-ci possède des méthodes d'interractions avec une droite. Dans le contexte
+Celle-ci possède des méthodes d'interractions avec une droite. 
+\begin{lstlisting}[frame=single,language=C++]
+Ellipse::getIntersectionsPoints(Line);
+\end{lstlisting}
+Dans le contexte
 présent, certains éléments du jeu seront des ellipse par le phénomène d'héritage
 mis en place dans le paradigme orienté objet de C++.
 \subsection[Droite]{line.hpp}
