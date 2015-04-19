@@ -3,13 +3,20 @@
 
 #include <QPainter>
 #include <QColor>
-#include <QPointF>
+#include <QPoint>
 
 #include "model/geometry/ellipse.hpp"
 #include "model/geometry/line.hpp"
 
 namespace viewUtilities
 {
+    /*!
+     * \brief viewutilities::toQPoint
+     * \param point
+     * \return
+     */
+    QPoint toQPoint(const Point & point);
+
     /*!
      * \brief drawLine
      * \param start
@@ -28,14 +35,6 @@ namespace viewUtilities
      * \param width
      */
     void drawEllipse(const Ellipse, QPainter &, const QColor &, int);
-
-    /*!
-     * \brief viewutilities::toQPoint
-     * \param point
-     * \return
-     */
-    QPointF toQPoint(const Point & point);
 }
-
 #endif // VIEWUTILITIES
 

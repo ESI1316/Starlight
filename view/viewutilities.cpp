@@ -1,25 +1,36 @@
 #include "view/viewutilities.hpp"
 
-#include <cmath>
 #include <QRect>
 #include <QLine>
 #include <QPen>
 
+/*!
+ * \brief toQPoint
+ * \param point
+ * \return
+ */
+QPoint viewUtilities::toQPoint(const Point & point)
+{
+    return QPoint{(int) point.getX(), (int) point.getY()};
+}
+
+
 void drawEllipse(const Ellipse ellipse, QPainter & painter, const QColor & color,
                  int width)
-{/*
+{
     QPen pen(color);
-    QRect rect(viewUtilities::toQPoint(ellipse.getUpLeftCorner),
-               ellipse.getWidth, ellipse.getHeight());
+    Point upLeftCorner = ellipse.getUpLeftCorner();
+    QRect rect((int) upLeftCorner.getX(), (int) upLeftCorner.getY(),
+               (int) ellipse.getWidth(), (int) ellipse.getHeight());
 
     pen.setWidth(width);
     painter.setPen(pen);
 
-    painter.drawRect(rect); */
+    painter.drawEllipse(rect);
 }
 
-void viewUtilities::drawLine(const Point & start, const Point & end,
-                             QPainter & painter, const QColor & color, int width)
+void drawLine(const Point & start, const Point & end, QPainter & painter,
+              const QColor & color, int width)
 {
     QPen pen(color);
 
@@ -27,9 +38,4 @@ void viewUtilities::drawLine(const Point & start, const Point & end,
     painter.setPen(pen);
 
     painter.drawLine(viewUtilities::toQPoint(start), viewUtilities::toQPoint(end));
-}
-
-QPointF viewUtilities::toQPoint(const Point & point)
-{
-    return QPointF{point.getX(), point.getY()};
 }
