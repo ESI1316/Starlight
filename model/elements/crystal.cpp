@@ -7,7 +7,7 @@
 #include "model/elements/level.hpp"
 
 Crystal::Crystal(const Point & center, const double radius, const int amplifier)
-    : Element(), Ellipse{radius, radius, center}, amplifier{amplifier}
+    : Element(), Ellipse{2. * radius,2. * radius, center}, amplifier{amplifier}
 {
     if(utilities::lessOrEquals(radius, 0.))
         throw StarlightException{"Le rayon doit être strictement positif"};

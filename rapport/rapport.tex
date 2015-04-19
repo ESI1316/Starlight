@@ -188,8 +188,27 @@ réagir avec le niveau en lui exprimant :
 		Element::reactToRay(Ray);
 		\end{lstlisting}
 \end{itemize}
+Il sera donc aisé pour le niveau de gèrer les collisions des elements de manière
+anonyme et optimale (cf Niveau).
 \subsection[Cristal]{crystal.hpp}
+\begin{center}
+	\begin{tikzpicture}
+		\draw[blue] (0,0) ellipse (2cm and 1cm);
+		\draw[yellow] (-4, 0) -- (-2, 0);
+		\draw[red] (2, 0) -- (3, 0);
+	\end{tikzpicture} 
+\end{center}
+Cette classe est, par héritage, un element ainsi qu'une ellipse. Il peut donc
+être modéliser graphiquement, entant que cette dernière, dans le plan et communique avec
+le niveau auquel il est lié. Le cristal modifie la longueur d'onde d'un rayon
+qui le traverse. D'un point de vue technique, il en relève donc d'un choix
+personnel, il ne va pas amplifier le rayon entrant à partir de sa sortie mais 
+arrêtera ce rayon et en crééra un nouveau qui, lui, aura subit l'action du cristal.
 \subsection[Destination]{dest.hpp}
+Cette classe est, par héritage, un element ainsi qu'un rectangle. Il peut donc
+être modéliser graphiquement, entant que cette dernière, dans le plan et
+communique avec le niveau auquel il est lié. La destination est le but du jeu
+Starlight : l'attendre c'est terminer la partie avec succès.
 \subsection[Lentille]{lens.hpp}
 \subsection[Niveau]{level.hpp}
 \subsection[Createur de niveau]{levelfactory.hpp}

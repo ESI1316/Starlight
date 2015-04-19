@@ -4,12 +4,13 @@
 #include "model/geometry/utilities.hpp"
 #include "model/exception/starlightexception.hpp"
 
-Ellipse::Ellipse(double xRadius, double yRadius, const Point & center)
-    : center{center}, xRadius{std::pow(xRadius, 2)}, yRadius{std::pow(yRadius, 2)}
+Ellipse::Ellipse(double width, double height, const Point & center)
+    : center{center}, height{height}, width{width},
+      xRadius{std::pow(width / 2., 2)}, yRadius{std::pow(height / 2., 2)}
 {
-    if (xRadius < 0. || utilities::equals(xRadius, 0.))
+    if (this->width < 0. || utilities::equals(this->width, 0.))
         throw StarlightException{"xRadius négatif"};
-    if (yRadius < 0. || utilities::equals(yRadius, 0.))
+    if (this->height < 0. || utilities::equals(this->height, 0.))
         throw StarlightException{"xRadius négatif"};
 }
 
@@ -96,12 +97,12 @@ Point Ellipse::getUpLeftCorner() const
 
 double Ellipse::getWidth() const
 {
-    return std::sqrt(this->xRadius);
+    return this->width;
 }
 
 double Ellipse::getHeight() const
 {
-    return std::sqrt(this->yRadius);
+    return this->height;
 }
 
 bool Ellipse::operator ==(const Ellipse & ellipse) const

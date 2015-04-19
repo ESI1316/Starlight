@@ -18,6 +18,8 @@ class Ellipse
 protected:
 
     Point center;
+    double height;
+    double width;
     double xRadius;
     double yRadius;
 

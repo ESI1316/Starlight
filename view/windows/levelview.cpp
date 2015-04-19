@@ -36,6 +36,7 @@ void LevelView::loadLevelFromFile()
     this->level = levelFactory::getLevelFromFile(this->displayedLevelFilePath);
     this->setFixedSize(this->level->getWidth(), this->level->getHeight());
 
+    this->level->getSource().setOn(true);
     emit displayingStarted();
 }
 
