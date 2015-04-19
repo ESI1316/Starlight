@@ -4,19 +4,24 @@
 #include <QLine>
 #include <QPen>
 
+#include "model/geometry/ellipse.hpp"
+#include "model/geometry/line.hpp"
+#include "model/geometry/utilities.hpp"
+#include "model/geometry/point.hpp"
+
 QPoint viewUtilities::toQPoint(const Point & point)
 {
-    return QPoint{(int) point.getX(), (int) point.getY()};
+    return QPoint{utilities::round(point.getX()), utilities::round(point.getY())};
 }
 
 
-void viewUtilities::drawEllipse(const Ellipse ellipse, QPainter & painter,
+void viewUtilities::drawEllipse(const Ellipse & ellipse, QPainter & painter,
                                 const QColor & color, int width)
 {
     QPen pen(color);
-    Point upLeftCorner = ellipse.getUpLeftCorner();
-    QRect rect((int) upLeftCorner.getX(), (int) upLeftCorner.getY(),
-               (int) ellipse.getWidth(), (int) ellipse.getHeight());
+    Point upLeftCorner{ellipse.getUpLeftCorner()};
+    QRect rect{utilities::round(upLeftCorner.getX()), utilities::round(upLeftCorner.getY()),
+               utilities::round(ellipse.getWidth()), utilities::round(ellipse.getHeight())};
 
     pen.setWidth(width);
     painter.setPen(pen);

@@ -3,8 +3,8 @@
 
 #include <QMainWindow>
 
-#include "view/levelview.hpp"
-#include "view/mainmenu.hpp"
+class LevelView;
+class MainMenu;
 
 class MainWindow : public QMainWindow
 {

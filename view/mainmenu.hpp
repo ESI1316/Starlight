@@ -1,5 +1,5 @@
-#ifndef MAINMENU_H
-#define MAINMENU_H
+#ifndef MAINMENU_HPP
+#define MAINMENU_HPP
 
 #include <QWidget>
 #include <QFrame>
@@ -32,4 +32,4 @@ public slots:
     void selectNewLevelFile();
 };
 
-#endif // MAINMENU_H
+#endif // MAINMENU_HPP

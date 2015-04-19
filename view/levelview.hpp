@@ -4,7 +4,8 @@
 #include <QFrame>
 #include <QPainter>
 
-#include "model/elements/level.hpp"
+class Level;
+class Point;
 
 class LevelView : public QFrame
 {

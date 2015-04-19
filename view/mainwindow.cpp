@@ -7,6 +7,9 @@
 
 #include <iostream>
 
+#include "view/levelview.hpp"
+#include "view/mainmenu.hpp"
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow{parent}, mainMenu{new MainMenu}, levelView{new LevelView}
 {

@@ -1,14 +1,15 @@
 #include "view/levelview.hpp"
 
-#include "model/elements/levelFactory.hpp"
-#include "view/viewutilities.hpp"
-
 #include <QMessageBox>
 #include <QPainter>
 #include <QPushButton>
 #include <QMainWindow>
 
 #include <iostream>
+
+#include "model/elements/levelFactory.hpp"
+#include "view/viewutilities.hpp"
+#include "model/elements/level.hpp"
 
 LevelView::LevelView(QWidget *parent) : QFrame{parent}, level{nullptr}
 {

@@ -1,12 +1,13 @@
-#ifndef VIEWUTILITIES
-#define VIEWUTILITIES
+#ifndef VIEWUTILITIES_HPP
+#define VIEWUTILITIES_HPP
 
 #include <QPainter>
 #include <QColor>
 #include <QPoint>
 
-#include "model/geometry/ellipse.hpp"
-#include "model/geometry/line.hpp"
+class Ellipse;
+class Line;
+class Point;
 
 namespace viewUtilities
 {
@@ -34,8 +35,8 @@ namespace viewUtilities
      * \param color
      * \param width
      */
-    void drawEllipse(const Ellipse, QPainter &, const QColor &, int);
+    void drawEllipse(const Ellipse &, QPainter &, const QColor &, int);
 }
 
-#endif // VIEWUTILITIES
+#endif // VIEWUTILITIES_HPP
 

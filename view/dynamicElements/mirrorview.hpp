@@ -1,5 +1,5 @@
-#ifndef MIRRORVIEW_H
-#define MIRRORVIEW_H
+#ifndef MIRRORVIEW_HPP
+#define MIRRORVIEW_HPP
 
 
 class mirrorView
@@ -9,4 +9,4 @@ public:
     ~mirrorView();
 };
 
-#endif // MIRRORVIEW_H
+#endif // MIRRORVIEW_HPP

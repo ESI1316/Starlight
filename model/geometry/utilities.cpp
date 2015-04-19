@@ -57,6 +57,11 @@ bool utilities::equals(double nb1, double nb2, double epsilon)
     return (std::isinf(nb1) && std::isinf(nb2)) || (std::fabs(nb1 - nb2) < epsilon);
 }
 
+int utilities::round(double nb)
+{
+    return (int)std::round(nb);
+}
+
 bool utilities::greaterOrEquals(double nb1, double nb2, double epsilon)
 {
     return (nb1 > nb2) || utilities::equals(nb1, nb2, epsilon);

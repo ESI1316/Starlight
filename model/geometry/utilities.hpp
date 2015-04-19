@@ -25,16 +25,6 @@ namespace utilities
     const double PI_4{0.785398163397448309616};
 
     /*!
-     * \brief ONE_PI Représentation de la constante 1/PI sur 26 décimales.
-     */
-    const double ONE_PI{0.318309886183790671538};
-
-    /*!
-     * \brief TWO_PI Représentation de la constante 2/PI sur 26 décimales.
-     */
-    const double TWO_PI{0.636619772367581343076};
-
-    /*!
      * \brief EPSILON Représentation de la marge d'erreur maximale acceptée.
      */
     const double EPSILON{10E-7};
@@ -96,6 +86,14 @@ namespace utilities
      * souhaitée.
      */
     bool equals(double, double, double = utilities::EPSILON);
+
+    /*!
+     * \brief Cette méthode cast un double en int on l'ayant au préalable arrondi
+     * à l'unité la plus proche (0.5).
+     *
+     * \return Le nombre arrondi.
+     */
+    int round(double);
 
     /*!
      * \brief Cette méthode permet de vérifier l'inégalité \f$ nb_1 \geq nb_2 \f$ sur
