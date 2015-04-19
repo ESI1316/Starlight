@@ -6,4 +6,5 @@ Starlight
 Makefile
 html/*
 latex/*
-documentation/*
+documentation/html/
+documentation/latex/
