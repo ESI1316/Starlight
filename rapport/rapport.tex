@@ -20,6 +20,7 @@ pdfkeywords={C++, ISO/IEC 14882:2011, Starlight, Projet}]{hyperref}
 \chapter{Introduction}
 
 
+
 \chapter[Les classes]{Présentation succinte des classes}
 \section[Les objets géométriques]{geometry}
 
@@ -32,7 +33,7 @@ pdfkeywords={C++, ISO/IEC 14882:2011, Starlight, Projet}]{hyperref}
 Une ellipse est un objet géométrique à deux dimensions représentée par
 une courbe plane fermée obtenu par découpe d'un cône sur un plan. Si ce dernier
 est perpendiculaire à l'axe du cône, l'ellipse sera alors un cercle.
-Une ellipse sera défini par trois éléments :
+Éléments caractéristiques d'une ellipse :
 \begin{itemize}
 	\item une coordonnée cartésienne de son centre,
 	\item une distance séparant le centre de l'intersection avec une paralelle à
@@ -43,6 +44,10 @@ Une ellipse sera défini par trois éléments :
 Ces éléments nous permettront de tracer une ellipse selon cette équation :
 $$\frac{(x - c_x)^2}{{x_{radius}}^2} + \frac{(y - c_y)^2}{{y_{radius}}^2} = 1$$
 
+Cette classe peut tout à fait être instancié en objet géométrique elliptique.
+Celle-ci possède des méthodes d'interractions avec une droite. Dans le contexte
+présent, certains éléments du jeu seront des ellipse par le phénomène d'héritage
+mis en place dans le paradigme orienté objet de C++.
 \subsection[Droite]{line.hpp}
 \begin{center}
 	\begin{tikzpicture}
@@ -169,7 +174,9 @@ Les différentes classes pouvant lever cette exception sont :
 \end{description}
 \section[Les objets visuels]{view}
 
+
 \chapter[Structure du programme]{Structure générale du programme}
+
 
 
 \chapter[Algorithmes]{Détail des algorithmes utilisés}
@@ -181,13 +188,16 @@ Les différentes classes pouvant lever cette exception sont :
 \subsection[Droite et ellipse]{Intersection d'une droite et d'une ellipse}
 
 
+
 \chapter{Test effectués}
+
 
 
 \chapter{Conclusion}
 
 
 \appendix
+
 
 \chapter{Réferences}
 

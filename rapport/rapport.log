@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2015.4.17)  18 APR 2015 18:51
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2015.4.17)  19 APR 2015 11:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -827,7 +827,7 @@ ocpdfTeX warning (ext4): destination with the same identifier (name{page.1}) ha
 s been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.33 ...{5}Test effectu\IeC {\'e}s}{11}{chapter.5}
+l.34 ...{5}Test effectu\IeC {\'e}s}{11}{chapter.5}
                                                    [1
 
 ])
@@ -843,12 +843,12 @@ Chapitre 2.
 [4
 
 ] [5]
-Underfull \hbox (badness 10000) in paragraph at lines 142--148
+Underfull \hbox (badness 10000) in paragraph at lines 147--153
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 142--148
+Underfull \hbox (badness 10000) in paragraph at lines 147--153
 
  []
 
@@ -870,17 +870,17 @@ Chapitre 6.
 
 ]
 Annexe A.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 195.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 205.
 [13
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 195.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 205.
  (./rapport.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 195.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 195.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 205.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 205.
 Package rerunfilecheck Info: File `rapport.out' has not changed.
 (rerunfilecheck)             Checksum: C6DE3636E0DC75FB37EA15371D51B3FC;1991.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 195.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 205.
  ) 
 Here is how much of TeX's memory you used:
  15479 strings out of 495030
@@ -907,9 +907,9 @@ nts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pf
 b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on rapport.pdf (14 pages, 174518 bytes).
+Output written on rapport.pdf (14 pages, 175292 bytes).
 PDF statistics:
- 665 PDF objects out of 1000 (max. 8388607)
+ 667 PDF objects out of 1000 (max. 8388607)
  307 compressed objects within 4 object streams
  52 named destinations out of 1000 (max. 500000)
  282 words of extra memory for PDF output out of 10000 (max. 10000000)
