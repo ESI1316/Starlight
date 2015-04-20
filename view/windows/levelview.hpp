@@ -1,7 +1,7 @@
 #ifndef LEVELVIEW_HPP
 #define LEVELVIEW_HPP
 
-#include <QFrame>
+#include <QGraphicsView>
 #include <QPainter>
 
 #include "view/dynamicElements/sourceView.hpp"
@@ -9,7 +9,7 @@
 class Level;
 class Point;
 
-class LevelView : public QFrame
+class LevelView : public QGraphicsView
 {
     Q_OBJECT
 

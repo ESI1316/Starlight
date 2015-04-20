@@ -1,18 +1,23 @@
 #ifndef MIRRORVIEW_HPP
 #define MIRRORVIEW_HPP
 
-#include <QGraphicsView>
+#include <QWidget>
 
 #include "model/elements/mirror.hpp"
 
-class mirrorView : QGraphicsView
+class MirrorView : QWidget
 {
     Mirror * mirror;
 
 public:
 
-    mirrorView(Mirror *mirror, QWidget * parent);
-    ~mirrorView();
+    MirrorView(Mirror *mirror, QWidget * parent);
+    ~MirrorView();
+
+protected:
+
+    void paintEvent(QPaintEvent *);
+
 };
 
 #endif // MIRRORVIEW_HPP

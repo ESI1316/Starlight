@@ -1,13 +1,15 @@
 #include "mirrorview.hpp"
 
-mirrorView::mirrorView(Mirror * mirror, QWidget *parent)
-    : QGraphicsView(parent), mirror{mirror}
+#include "view/viewutilities.hpp"
+
+MirrorView::mirrorView(Mirror * mirror, QWidget *parent)
+    : QWidget(parent), mirror{mirror} {}
+
+MirrorView::~MirrorView() {}
+
+void MirrorView::paintEvent(QPaintEvent*)
 {
+    QPainter painter(this);
 
+    //viewUtilities::drawLine(, , painter, Qt::blue, 2);
 }
-
-mirrorView::~mirrorView()
-{
-
-}
-
