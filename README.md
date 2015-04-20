@@ -44,28 +44,10 @@ Elle est modifiée par un cristal.
 
 ## Build & run
 
-### Build
-```bash
-sudo add-apt-repository ppa:ubuntu:toolchain-r/test
-sudo apt-get update
-sudo apt-get install g++-4.9
-cd /usr/bin
-sudo rm g++
-sudo ln -s g++-4.9 g++
-```
-
-**OR**
-
-```bash
-chmod +x g++4_9.sh
-./g++4_9.sh
-```
-
 ### Run
 ```bash
 cd Starlight
-make
-./Starlight
+make && ./Starlight
 ```
 
 ##Credits

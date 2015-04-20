@@ -170,6 +170,7 @@ public:
 
     bool rotate(double);
 
+    void getTwoPoints(Point *, Point *) const;
     /*!
      * \brief Retoune vrai si le miroir peut être pivoté sur
      * l'angle donné, retourne faux sinon.

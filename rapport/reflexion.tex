@@ -1,0 +1,48 @@
+\definecolor{qqttff}{rgb}{0,0.2,1}
+\definecolor{ffqqtt}{rgb}{1,0,0.2}
+\definecolor{xdxdff}{rgb}{0.49,0.49,1}
+\definecolor{qqwuqq}{rgb}{0,0.39,0}
+\definecolor{uququq}{rgb}{0.25,0.25,0.25}
+\definecolor{ccffww}{rgb}{0.2,0.2,0.2}
+\definecolor{qqqqff}{rgb}{0,0,1}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+	\clip(0.51,5.25) rectangle (7.82,15.86);
+	\draw [shift={(5.69,12.98)},color=ccffww,fill=ccffww,fill opacity=0.1] (0,0)
+	-- (-122.09:0.66) arc (-122.09:-101.22:0.66) -- cycle;
+	\draw [shift={(5.69,12.98)},color=ccffww,fill=ccffww,fill opacity=0.1] (0,0)
+	-- (37.04:0.66) arc (37.04:57.91:0.66) -- cycle;
+	\draw [shift={(1.38,6.1)},color=qqwuqq,fill=qqwuqq,fill opacity=0.1] (0,0)
+	-- (0:0.66) arc (0:57.91:0.66) -- cycle;
+	\draw [shift={(4.33,6.1)},color=ffqqtt,fill=ffqqtt,fill opacity=0.1] (0,0)
+	-- (78.78:0.66) arc (78.78:180:0.66) -- cycle;
+	\draw [shift={(4.33,6.1)},color=qqttff,fill=qqttff,fill opacity=0.1] (0,0)
+	-- (0:0.66) arc (0:78.78:0.66) -- cycle;
+	\draw [shift={(5.69,12.98)},color=qqwuqq,fill=qqwuqq,fill opacity=0.1] (0,0)
+	-- (0:0.66) arc (0:57.91:0.66) -- cycle;
+	\draw [domain=0.51:7.82] plot(\x,{(--6.1-0*\x)/1});
+	\draw (4.63,11.28)-- (6.85,14.82);
+	\draw (4.33,6.1)-- (5.69,12.98);
+	\draw [domain=5.691456118999316:7.8184414917311225]
+	plot(\x,{(--48.6--4.22*\x)/5.6});
+	\draw [dash pattern=on 4pt off
+	4pt,domain=0.50993439068553:6.846666666666659]
+	plot(\x,{(-8.66-3.54*\x)/-2.22});
+	\draw [dotted,domain=0.51:7.82] plot(\x,{(--12.98-0*\x)/1});
+	\draw [dotted,domain=0.51:7.82] plot(\x,{(--13.96-0*\x)/1});
+	\begin{scriptsize}
+		\fill [color=qqqqff] (4.33,6.1) circle (1.5pt);
+		\draw[color=qqqqff] (4.33,5.61) node {$SOURCE$};
+		\fill [color=qqqqff] (6.85,14.82) circle (1.5pt);
+		\draw[color=qqqqff] (7.03,15.11) node {$B$};
+		\draw[color=ccffww] (3.1,12.37) node {$\pi - 1.01 - \pi + 1.37$};
+		\draw[color=ccffww] (3.1,13.62) node {$\pi - 1.01 - \pi + 1.37$};
+		\fill [color=uququq] (1.38,6.1) circle (1.5pt);
+		\draw[color=uququq] (1.19,6.42) node {$D$};
+		\draw[color=qqwuqq] (2.7,6.46) node {$1.01 rad$};
+		\fill [color=xdxdff] (6.31,13.96) circle (1.5pt);
+		\draw[color=xdxdff] (5.8,14.34) node {$PIVOT$};
+		\draw[color=ffqqtt] (3.76,7.1) node {$\pi - 1.37$};
+		\draw[color=qqttff] (5.51,6.77) node {$1.37 rad$};
+		\draw[color=qqwuqq] (6.98,13.2) node {$1.01 rad$};
+	\end{scriptsize}
+\end{tikzpicture}

@@ -36,12 +36,12 @@
 \contentsline {chapter}{\numberline {4}Structure du programme}{14}{chapter.4}
 \contentsline {chapter}{\numberline {5}Algorithmes}{15}{chapter.5}
 \contentsline {section}{\numberline {5.1}R\IeC {\'e}flexion}{15}{section.5.1}
-\contentsline {section}{\numberline {5.2}Intersection}{15}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Deux droites}{15}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Droite et rectangle}{15}{subsection.5.2.2}
-\contentsline {subsection}{\numberline {5.2.3}Droite et ellipse}{15}{subsection.5.2.3}
-\contentsline {chapter}{\numberline {6}Test effectu\IeC {\'e}s}{16}{chapter.6}
-\contentsline {section}{\numberline {6.1}Framework de test}{16}{section.6.1}
-\contentsline {section}{\numberline {6.2}Tests unitaire}{16}{section.6.2}
-\contentsline {chapter}{\numberline {7}Conclusion}{17}{chapter.7}
-\contentsline {chapter}{\numberline {A}R\IeC {\'e}f\IeC {\'e}rences}{18}{appendix.A}
+\contentsline {section}{\numberline {5.2}Intersection}{16}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Deux droites}{16}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Droite et rectangle}{16}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}Droite et ellipse}{16}{subsection.5.2.3}
+\contentsline {chapter}{\numberline {6}Test effectu\IeC {\'e}s}{17}{chapter.6}
+\contentsline {section}{\numberline {6.1}Framework de test}{17}{section.6.1}
+\contentsline {section}{\numberline {6.2}Tests unitaire}{17}{section.6.2}
+\contentsline {chapter}{\numberline {7}Conclusion}{18}{chapter.7}
+\contentsline {chapter}{\numberline {A}R\IeC {\'e}f\IeC {\'e}rences}{19}{appendix.A}

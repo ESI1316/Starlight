@@ -7,11 +7,12 @@
 \usepackage{mathtools}
 \usepackage{listings}
 \usepackage{amsfonts}
-\usepackage{tikz}
+\usepackage{pgf, tikz}
 \usepackage{url} 
 \usepackage[bookmarks, colorlinks=false, pdfborder={0 0 0}, pdftitle={Starlight
 : rapport}, pdfauthor={Kriwin Paul, Placentino Simon}, pdfsubject={Starlight},
 pdfkeywords={C++, ISO/IEC 14882:2011, Starlight, Projet}]{hyperref} 
+\usetikzlibrary{arrows}
 
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 
@@ -128,7 +129,7 @@ Pour exister, une droite aura besoin :
 	\item d'un terme indépendant $p = \frac{y}{m \cdot x}$ représentant le décalage de chaque point
 		sur l'axe des ordonnées,
 	\item ou de deux points de coordonnées dans le plan,
-	\item ou d'un point de coordonnées dans le plan et d'un coefficiant
+	\item ou d'un point de coordonnées dans le plan et d'un coefficient
 		angulaire.
 \end{itemize}
 Ces éléments nous permettent de tracer une droite selon cette équation :
@@ -169,7 +170,7 @@ Il existe plusieurs cas particuliers de droite :
 		$y = b,$ $b \in \mathbb{R}$,
 \end{itemize}
 \subsection[Point]{point.hpp}
-Un point est un objet mathématique permettant de situer un element dans un plan
+Un point est un objet mathématique permettant de situer un élément dans un plan
 ou dans l'espace. Dans notre cas, plus spécifiquement dans un plan à deux
 dimensions. Celui-ci peut-être représenté de plusieurs manières dans le plan 
 cartésien\footnote{\url{http://www.cslaval.qc.ca/sitsatlll/maths2003/cartesien.html}} : 
@@ -225,7 +226,7 @@ utilitaire::tan
 \pi\ n \in \mathbb{N}$,frame=single,language=C++]
 utilitaire::isHalfPiPlusNPi
 \end{lstlisting}
-\section[Les éléments]{elements}
+\section[Les éléments]{éléments}
 \subsection[Element]{element.hpp}
 Cette classe, abstraite et donc non instanciable, représente un élément du jeu
 lié à un, et un seul, niveau du jeu. Cette classe permet donc d'établir une
@@ -238,7 +239,7 @@ réagir avec le niveau en lui exprimant :
 		\begin{lstlisting}[language=C++]
 		Element::includeRay(Ray);
 		\end{lstlisting}
-	\item les actions à éffectuer si un contact avec le rayon a eu lieu.
+	\item les actions à effectuer si un contact avec le rayon a eu lieu.
 		\begin{lstlisting}[language=C++]
 		Element::reactToRay(Ray);
 		\end{lstlisting}
@@ -281,9 +282,9 @@ $$lens_{min} \leq ray_{\alpha} \leq lens_{max}$$
 
 Deux issues sont alors possible :
 \begin{itemize}
-	\item la longueur d'onde entre dans l'interval et le rayon est renouvellé
+	\item la longueur d'onde entre dans l'intervalle et le rayon est renouvelé
 		après la lentille
-	\item ou elle ne rentre pas dans l'interval défini et le rayon sera terminé par
+	\item ou elle ne rentre pas dans l'intervalle défini et le rayon sera terminé par
 		la lentille
 \end{itemize}
 et ce même si le rayon tiré est tangent à la lentille. En effet, si la droite
@@ -299,13 +300,13 @@ communiquer avec le niveau auquel il est lié. Le miroir est, plus précisément
 un segment de droite délimité par deux points. Puisque le miroir effectue une
 rotation autour d'un point $p \in mirroir$, il n'est pas directement
 délimité par ses deux extrémités mais bien par sa longueur, son angle, la position
-absolue (cartésienne) et relative (distance par rapport à une extremité)
+absolue (cartésienne) et relative (distance par rapport à une extrémité)
 de son point de rotation qui définissent, dynamiquement, ses points délimiteurs.
 Pour trouver les deux points il suffit de :
 \begin{enumerate}
-	\item extremité gauche = ($x_{pivot}$ - position absolue, $y_{pivot}$)
-	\item extremité droite = ($x_{gauche}$ + taille du segment, $y_{pivot}$)
-	\item rotation des deux extremité autour du point de pivot.
+	\item extrémité gauche = ($x_{pivot}$ - position absolue, $y_{pivot}$)
+	\item extrémité droite = ($x_{gauche}$ + taille du segment, $y_{pivot}$)
+	\item rotation des deux extrémité autour du point de pivot.
 \end{enumerate}
 \subsection[Bombe]{nuke.hpp}
 Cette classe est, par héritage, un élément ainsi qu'une ellipse. Il peut donc
@@ -320,13 +321,13 @@ Cette classe est, par héritage, une droite. Ce rayon représente l'ensemble des
 points parcouru par un rayon laser et subit les interactions de son
 environnement comme dans la vie réelle :
 \begin{itemize}
-	\item il sera refleté par un miroir selon le principe de reflexion
+	\item il sera reflété par un miroir selon le principe de réflexion
 		$$\alpha_{i} = \alpha_{r}$$,
 	\item il sera arrêté par les objets opaques (murs, source, destination).
 \end{itemize}
 
 Le rayon déclenche les réactions des éléments du jeu via la méthode
-``reactToRay'' des héritants d'Element.
+``reactToRay'' des héritiers d'Element.
 
 \subsection[Source]{source.hpp}
 Cette classe est, par héritage, un élément ainsi qu'un rectangle. Il peut donc
@@ -396,7 +397,14 @@ Les différentes classes pouvant lever cette exception sont :
 
 \chapter[Algorithmes]{Détail des algorithmes utilisés}
 \section[Réflexion]{Algorithme de réflexion}
-
+\input{./reflexion.tex} \\
+$\alpha$ l'angle du nouveau rayon \\
+$\beta$ l'angle du miroir \\
+$\gamma$ l'angle incident \\
+$\epsilon$ l'angle de la source \\ \\
+$\gamma = (\pi - \beta - (\pi - \epsilon))$ par la somme des angles intérieurs d'un
+triangle valant $\pi rad$, \\
+$\alpha = \beta - \gamma$ par les angles correspondants
 \section[Intersection]{Algorithme d'intersection}
 \subsection[Deux droites]{Intersection de deux droites}
 \subsection[Droite et rectangle]{Intersection d'une droite et d'un rectangle}
@@ -412,7 +420,7 @@ sont :
 \begin{itemize}
 	\item un simple header est requis,
 	\item \textbf{TEST\_CASE} créant un bloc de tests,
-	\item \textbf{SECTION} créant un sous-bloc de tests,
+	\item \textbf{SECTION} créant un sous bloc de tests,
 	\item un ensemble de macros d'assertions sont disponibles :
 		\begin{itemize}
 		    \item\textbf{REQUIRE} qui attend une expression vraie,
@@ -427,7 +435,7 @@ chacune de ses méthodes s'est vu confirmé son bon fonctionnement au travers de
 cas dis ``limites'' et de cas dit ``standards''. \\
 
 Les fichiers sources concernés se situe dans dossier ``test/'' du projet et
-peuvent être éffectués sous certaines condition\footnote{en effet, il faudra au
+peuvent être effectués sous certaines condition\footnote{en effet, il faudra au
 	préalable rendre la méthode main de l'application inutilisable pour 
 	permettre aux tests de s'appliquer exclusivement}.
 \chapter{Conclusion}
