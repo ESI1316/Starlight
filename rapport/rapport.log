@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2015.4.17)  20 APR 2015 15:39
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2015.4.17)  20 APR 2015 17:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -849,7 +849,7 @@ LaTeX Info: Redefining \nameref on input line 18.
 \openout4 = `rapport.out'.
 
  (./title.tex
-<./logo.png, id=179, 90.3375pt x 170.6375pt>
+<./logo.png, id=183, 90.3375pt x 170.6375pt>
 File: ./logo.png Graphic file (type png)
  <use ./logo.png>
 Package pdftex.def Info: ./logo.png used on input line 4.
@@ -904,12 +904,12 @@ Chapitre 3.
 [6
 
 ] [7] [8] [9] [10] [11]
-Underfull \hbox (badness 10000) in paragraph at lines 359--365
+Underfull \hbox (badness 10000) in paragraph at lines 362--368
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 359--365
+Underfull \hbox (badness 10000) in paragraph at lines 362--368
 
  []
 
@@ -924,7 +924,7 @@ Chapitre 5.
 ]
 Chapitre 6.
 
-Underfull \hbox (badness 10000) in paragraph at lines 422--425
+Underfull \hbox (badness 10000) in paragraph at lines 425--428
 
  []
 
@@ -936,33 +936,26 @@ Chapitre 7.
 
 ]
 Annexe A.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 438.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 441.
 [18
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 438.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 441.
  (./rapport.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 438.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 438.
-
-
-Package rerunfilecheck Warning: File `rapport.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `rapport.out':
-(rerunfilecheck)             Before: C03EE80894E1A8D1FE5441582C0B640B;2617
-(rerunfilecheck)             After:  9BFE405DB38ED25629092C652C315FEE;2678.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 438.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 441.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 441.
+Package rerunfilecheck Info: File `rapport.out' has not changed.
+(rerunfilecheck)             Checksum: 9BFE405DB38ED25629092C652C315FEE;2678.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 441.
  ) 
 Here is how much of TeX's memory you used:
- 17497 strings out of 495030
- 294669 string characters out of 3180761
- 399309 words of memory out of 3000000
- 20236 multiletter control sequences out of 15000+200000
+ 17499 strings out of 495030
+ 294693 string characters out of 3180761
+ 397304 words of memory out of 3000000
+ 20237 multiletter control sequences out of 15000+200000
  24125 words of font info for 60 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 56i,6n,60p,413b,1845s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 56i,5n,60p,413b,1187s stack positions out of 5000i,500n,10000p,200000b,50000s
  </home/g39631/.texmf-var/fonts/pk/ljfour/jknappen/ec/ectt0900.600pk> </home/
 g39631/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0900.600pk> </home/g39631/.te
 xmf-var/fonts/pk/ljfour/jknappen/ec/ecti1095.600pk> </home/g39631/.texmf-var/fo
@@ -983,10 +976,10 @@ e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on rapport.pdf (19 pages, 217588 bytes).
+Output written on rapport.pdf (19 pages, 220111 bytes).
 PDF statistics:
- 885 PDF objects out of 1000 (max. 8388607)
- 455 compressed objects within 5 object streams
- 120 named destinations out of 1000 (max. 500000)
- 362 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 899 PDF objects out of 1000 (max. 8388607)
+ 463 compressed objects within 5 object streams
+ 121 named destinations out of 1000 (max. 500000)
+ 370 words of extra memory for PDF output out of 10000 (max. 10000000)
 

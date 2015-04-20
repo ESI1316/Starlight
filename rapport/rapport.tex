@@ -38,9 +38,9 @@ nuketest.cpp
 mirrortest.cpp
 \end{lstlisting}
 \subsection{headers}
-Les headers porteront l'extension ``hpp''.
+Les headers porteront l'extension \textbf{hpp}.
 \subsection{sources}
-Les fichiers sources porteront l'extension ``cpp''.
+Les fichiers sources porteront l'extension \textbf{cpp}.
 \section{Nom des namespace}
 Le nom d'un namespace sera exclusivement en minuscule.
 \section{Nom des classes}
@@ -52,17 +52,17 @@ class uneMauvaiseclasse;
 \end{lstlisting}
 \section{Nom des variables}
 Toutes les variables sont écrites en
-``camelCase''\footnote{\url{https://fr.wikipedia.org/wiki/CamelCase}}
+\textbf{camelCase}\footnote{\url{https://fr.wikipedia.org/wiki/CamelCase}}
 \begin{lstlisting}[frame=single,language=C++]
-uneBonneVariable
-UneMauvaiseVariable
-uneautreMauvaisevariable
+T uneBonneVariable;
+T UneMauvaiseVariable;
+T uneautreMauvaisevariable;
 \end{lstlisting}
 et possède des noms le plus explicite possible
 \begin{lstlisting}[frame=single,language=C++]
-nb // OK
-n // NOK
-waveLength // OK
+T nb; // OK
+T n; // NOK
+T waveLength; // OK
 \end{lstlisting}
 Les variables de classes possèdent le même nom que le paramètre de constructeur
 qui l'initialisera. Le langage nous donne la possibilité de désambiguïser
@@ -81,8 +81,10 @@ UneClasse::UneClasse(T param) : param{param} {}
 \subsection[Ellipse]{ellipse.hpp}
 \begin{center}
 	\begin{tikzpicture}
-		\draw[gray, very thin] (-2, -1) grid (2, 2);
-		\draw (0,0) ellipse (2cm and 1cm);
+		\draw[gray, very thin] (-2, 0) grid (2, 2);
+		\draw[red](0, 0) -- (0, 1);
+		\draw[blue](2, 1) -- (0, 1);
+		\draw (0,1) ellipse (2cm and 1cm);
 	\end{tikzpicture} 
 \end{center}
 Une ellipse est un objet géométrique à deux dimensions représentée par
@@ -105,7 +107,8 @@ et possède des méthodes d'interactions avec une droite.
 Ellipse::getIntersectionsPoints(Line);
 \end{lstlisting}
 Dans le contexte présent, certains éléments du jeu seront des ellipse par le 
-phénomène d'héritage mis en place dans le paradigme orienté objet de C++.
+phénomène d'héritage mis en place dans le paradigme orienté objet de
+C++\footnote{\url{http://www.tutorialspoint.com/cplusplus/cpp_object_oriented.htm}}
 
 \subsection[Droite]{line.hpp}
 \begin{center}
@@ -160,10 +163,10 @@ Ainsi, il sera aisé de déterminer la position des autres coins
 
 Il existe plusieurs cas particuliers de droite :
 \begin{itemize}
-	\item une droite parallèle à l'axe des ordonnées qui aura pour équation
-		$$x = a, a \in \mathbb{R}, $$
-	\item une droite parallèle à l'axe des abscisses qui aura pour équation
-		$$y = b, b \in \mathbb{R}, $$
+	\item une droite parallèle à l'axe des ordonnées qui aura pour équation \\
+		$x = a,$ $a \in \mathbb{R}$,
+	\item une droite parallèle à l'axe des abscisses qui aura pour équation \\
+		$y = b,$ $b \in \mathbb{R}$,
 \end{itemize}
 \subsection[Point]{point.hpp}
 Un point est un objet mathématique permettant de situer un element dans un plan
@@ -408,14 +411,14 @@ Le Framework de test utilisé est
 sont :
 \begin{itemize}
 	\item un simple header est requis,
-	\item[TEST\_CASE] créant un bloc de tests,
-	\item[SECTION] créant un sous-bloc de tests,
+	\item \textbf{TEST\_CASE} créant un bloc de tests,
+	\item \textbf{SECTION} créant un sous-bloc de tests,
 	\item un ensemble de macros d'assertions sont disponibles :
 		\begin{itemize}
-			\item[REQUIRE] qui attend une expression vraie,
-			\item[REQUIRE\_FALSE] qui attend un expression fausse,
-			\item[REQUIRE\_THROWS\_AS] qui attend une erreur de type défini,
-			\item[REQUIRE\_NO\_THROW] qui n'attend pas d'erreur.
+		    \item\textbf{REQUIRE} qui attend une expression vraie,
+			\item\textbf{REQUIRE\_FALSE} qui attend un expression fausse,
+			\item\textbf{REQUIRE\_THROWS\_AS} qui attend une erreur de type défini,
+			\item\textbf{REQUIRE\_NO\_THROW} qui n'attend pas d'erreur.
 		\end{itemize}
 \end{itemize} 
 \section{Tests unitaire}

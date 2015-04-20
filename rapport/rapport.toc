@@ -17,7 +17,7 @@
 \contentsline {subsection}{\numberline {3.1.4}Point}{8}{subsection.3.1.4}
 \contentsline {subsection}{\numberline {3.1.5}Utilitaire}{8}{subsection.3.1.5}
 \contentsline {subsubsection}{constantes :}{8}{section*.2}
-\contentsline {subsubsection}{fonctions :}{9}{section*.3}
+\contentsline {subsubsection}{fonctions :}{8}{section*.3}
 \contentsline {section}{\numberline {3.2}Les \IeC {\'e}l\IeC {\'e}ments}{9}{section.3.2}
 \contentsline {subsection}{\numberline {3.2.1}Element}{9}{subsection.3.2.1}
 \contentsline {subsection}{\numberline {3.2.2}Cristal}{10}{subsection.3.2.2}
