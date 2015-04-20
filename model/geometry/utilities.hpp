@@ -119,6 +119,7 @@ namespace utilities
      */
     bool lessOrEquals(double, double, double = utilities::EPSILON);
 
+    double degreeToRadian(double);
     /*!
      * \brief Permet de trouver la pente d'une droite formée par deux points.
      *

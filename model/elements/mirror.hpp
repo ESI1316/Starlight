@@ -168,6 +168,8 @@ public:
      */
     bool setAngle(double);
 
+    bool rotate(double);
+
     /*!
      * \brief Retoune vrai si le miroir peut être pivoté sur
      * l'angle donné, retourne faux sinon.

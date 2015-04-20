@@ -47,6 +47,11 @@ double utilities::angleAsDegree(double alpha)
     return ((alpha * 180.) / utilities::PI);
 }
 
+double utilities::degreeToRadian(double alpha)
+{
+    return ((alpha * utilities::PI) / 180.);
+}
+
 double utilities::angleAsDegree0to360(double alpha)
 {
     return utilities::angleAsDegree(utilities::inZeroTwoPi(alpha));

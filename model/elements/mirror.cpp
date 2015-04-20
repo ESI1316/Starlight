@@ -85,6 +85,14 @@ bool Mirror::setAngle(double alpha)
     return this->checkAngleRange(alpha) ? this->alpha = alpha, true : false;
 }
 
+bool Mirror::rotate(double alpha)
+{
+    double angle = utilities::degreeToRadian(alpha);
+
+    return this->checkAngleRange(this->alpha + angle) ? this->alpha += angle, true
+                                                      : false;
+}
+
 bool Mirror::checkAngleRange(double alpha) const
 {
     return (utilities::equals(this->alphaMin, 0.)
