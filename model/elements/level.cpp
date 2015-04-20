@@ -57,7 +57,7 @@ void Level::addWall(const Wall & wall)
     this->walls.push_back(wall);
 }
 
-const std::vector<Mirror> & Level::getMirrors() const
+std::vector<Mirror> & Level::getMirrors()
 {
     return this->mirrors;
 }

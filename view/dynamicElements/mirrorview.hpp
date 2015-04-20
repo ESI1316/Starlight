@@ -7,16 +7,16 @@
 
 class MirrorView : QWidget
 {
+    Q_OBJECT
+
     Mirror * mirror;
 
 public:
 
-    MirrorView(Mirror *mirror, QWidget * parent);
+    MirrorView(Mirror * mirror, QWidget * parent = 0);
     ~MirrorView();
 
 protected:
-
-    void paintEvent(QPaintEvent *);
 
 };
 

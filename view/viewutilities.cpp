@@ -1,59 +1,56 @@
 #include "view/viewutilities.hpp"
 
-#include <QRect>
-#include <QLine>
+#include <QLineF>
 #include <QPen>
+#include <QRectF>
 
-#include "model/geometry/ellipse.hpp"
-#include "model/geometry/line.hpp"
-#include "model/geometry/rectangle.hpp"
-#include "model/geometry/utilities.hpp"
-#include "model/geometry/point.hpp"
-
-QPoint viewUtilities::toQPoint(const Point & point)
+QPointF viewUtilities::toQPoint(const Point & point)
 {
-    return QPoint{utilities::round(point.getX()), utilities::round(point.getY())};
+    return QPointF{point.getX(), point.getY()};
 }
 
-void viewUtilities::drawRectangle(const Rectangle & rectangle, QPainter & painter,
-                                     const QColor & color, int width, bool filled)
+
+QGraphicsLineItem * viewUtilities::getLine(const Point & start, const Point & end,
+                                          const QColor & color, int width)
 {
-    QPen pen(color);
+    QGraphicsLineItem * line = new QGraphicsLineItem(QLineF{viewUtilities::toQPoint(start),
+                                                     viewUtilities::toQPoint(end)});
+    QPen pen{color};
+
+    pen.setWidth(width);
+    line->setPen(pen);
+
+    return line;
+}
+
+
+QGraphicsRectItem * viewUtilities::getRect(const Rectangle & rectangle,
+                                          const QColor & color, int width)
+{
     Point upLeftCorner{rectangle.getUpLeftCorner()};
-    QRect rect(utilities::round(upLeftCorner.getX()), utilities::round(upLeftCorner.getY()),
-               utilities::round(rectangle.getWidth()), utilities::round(rectangle.getHeight()));
+    QGraphicsRectItem * rect = new QGraphicsRectItem { QRectF{upLeftCorner.getX(),
+            upLeftCorner.getY(), rectangle.getWidth(), rectangle.getHeight()}};
+
+    QPen pen{color};
 
     pen.setWidth(width);
-    painter.setPen(pen);
+    rect->setPen(pen);
 
-    painter.drawRect(rect);
-
-    if (filled)
-        painter.fillRect(rect, Qt::SolidPattern);
+    return rect;
 }
 
-void viewUtilities::drawEllipse(const Ellipse & ellipse, QPainter & painter,
-                                const QColor & color, int width)
+
+QGraphicsEllipseItem * viewUtilities::getEllipse(const Ellipse & ellipse,
+                                                const QColor & color, int width)
 {
-    QPen pen(color);
     Point upLeftCorner{ellipse.getUpLeftCorner()};
+    QGraphicsEllipseItem * ell = new QGraphicsEllipseItem{QRectF{upLeftCorner.getX(),
+            upLeftCorner.getY(), ellipse.getWidth(), ellipse.getHeight()}};
+
+    QPen pen{color};
 
     pen.setWidth(width);
-    painter.setPen(pen);
+    ell->setPen(pen);
 
-    painter.drawEllipse(QRect {utilities::round(upLeftCorner.getX()),
-                               utilities::round(upLeftCorner.getY()),
-                               utilities::round(ellipse.getWidth()),
-                               utilities::round(ellipse.getHeight())});
-}
-
-void viewUtilities::drawLine(const Point & start, const Point & end,
-                             QPainter & painter, const QColor & color, int width)
-{
-    QPen pen(color);
-
-    pen.setWidth(width);
-    painter.setPen(pen);
-
-    painter.drawLine(viewUtilities::toQPoint(start), viewUtilities::toQPoint(end));
+    return ell;
 }

@@ -2,9 +2,10 @@
 #define LEVELVIEW_HPP
 
 #include <QGraphicsView>
-#include <QPainter>
+#include <QGraphicsScene>
 
 #include "view/dynamicElements/sourceView.hpp"
+#include "view/dynamicElements/mirrorview.hpp"
 
 class Level;
 class Point;
@@ -13,9 +14,11 @@ class LevelView : public QGraphicsView
 {
     Q_OBJECT
 
+    QGraphicsScene * scene;
     std::string displayedLevelFilePath;
     Level * level;
     SourceView * source;
+    std::vector<MirrorView *> mirrors;
 
     QPointF toQPoint(const Point & point);
 
@@ -36,10 +39,6 @@ signals:
      */
     void displayingStopped();
 
-protected :
-
-    void paintEvent(QPaintEvent*);
-
 public slots:
 
     /*!
@@ -56,7 +55,7 @@ public slots:
     void loadLevelFromFile();
 
     /*!
-     * \brief Permet de rafraichir l'affichage lorsque le level change d'état.
+     * \brief Permet de rafraichir l'affichage lorsque le niveau change d'état.
      */
     void updateDisplay();
 

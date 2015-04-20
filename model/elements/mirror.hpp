@@ -168,9 +168,17 @@ public:
      */
     bool setAngle(double);
 
+    /*!
+     * \brief rotate
+     * \return
+     */
     bool rotate(double);
 
-    void getTwoPoints(Point *, Point *) const;
+    /*!
+     * \brief getBounds
+     */
+    void getBounds(Point *, Point *) const;
+
     /*!
      * \brief Retoune vrai si le miroir peut être pivoté sur
      * l'angle donné, retourne faux sinon.

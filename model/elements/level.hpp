@@ -142,7 +142,7 @@ public:
      *
      * \return l'ensemble des miroirs de la carte
      */
-    const std::vector<Mirror> & getMirrors() const;
+    std::vector<Mirror> & getMirrors();
 
     /*!
      * \brief Permet d'ajouter un mirroir sur la carte.

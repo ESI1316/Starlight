@@ -1,52 +1,28 @@
 #ifndef VIEWUTILITIES_HPP
 #define VIEWUTILITIES_HPP
 
-#include <QPainter>
+#include <QGraphicsScene>
+#include <QGraphicsRectItem>
+#include <QGraphicsLineItem>
+#include <QGraphicsEllipseItem>
 #include <QColor>
-#include <QPoint>
+#include <QPointF>
 
-class Ellipse;
-class Line;
-class Point;
-class Rectangle;
+#include "model/geometry/ellipse.hpp"
+#include "model/geometry/line.hpp"
+#include "model/geometry/rectangle.hpp"
+#include "model/geometry/utilities.hpp"
+#include "model/geometry/point.hpp"
 
 namespace viewUtilities
 {
-    /*!
-     * \brief viewutilities::toQPoint
-     * \param point
-     * \return
-     */
-    QPoint toQPoint(const Point & point);
+    QPointF toQPoint(const Point & point);
 
-    /*!
-     * \brief drawLine
-     * \param start
-     * \param end
-     * \param painter
-     * \param color
-     * \param width
-     */
-    void drawLine(const Point &, const Point &, QPainter &, const QColor &, int);
+    QGraphicsLineItem * getLine(const Point &, const Point &, const QColor &, int);
 
-    /*!
-     * \brief drawEllipse
-     * \param ellipse
-     * \param painter
-     * \param color
-     * \param width
-     */
-    void drawEllipse(const Ellipse &, QPainter &, const QColor &, int);
+    QGraphicsRectItem * getRect(const Rectangle &, const QColor &, int);
 
-    /*!
-     * \brief viewUtilities::drawRectangle
-     * \param rectangle
-     * \param painter
-     * \param color
-     * \param width
-     * \param filled
-     */
-    void drawRectangle(const Rectangle &, QPainter &, const QColor &, int, bool);
+    QGraphicsEllipseItem * getEllipse(const Ellipse &, const QColor &, int);
 }
 
 #endif // VIEWUTILITIES_HPP

@@ -138,7 +138,7 @@ void Mirror::reactToRay(Ray ray)
                                              ray.getWaveLength()});
 }
 
-void Mirror::getTwoPoints(Point * p1, Point * p2) const
+void Mirror::getBounds(Point * p1, Point * p2) const
 {
     *p1 = Point{this->pivot.getX() - this->xpad, this->pivot.getY()};
     *p2 = Point{p1->getX() + this->length, p1->getY()};
@@ -155,7 +155,7 @@ Point * Mirror::includeRay(const Ray & ray) const
     {
         Point start, end;
 
-        this->getTwoPoints(&start, &end);
+        this->getBounds(&start, &end);
 
         double minX{std::min(start.getX(), end.getX())};
         double minY{std::min(start.getY(), end.getY())};

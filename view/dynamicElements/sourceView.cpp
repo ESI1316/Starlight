@@ -14,6 +14,7 @@ SourceView::SourceView(Source * source, QWidget * parent)
 
     this->setFocusPolicy(Qt::NoFocus);
     this->setCursor(Qt::PointingHandCursor);
+    this->setStyleSheet("background-color:white;");
 
     QObject::connect(this, SIGNAL(clicked()), this, SLOT(switchSource()));
 }

@@ -1,7 +1,6 @@
 #include "view/windows/levelview.hpp"
 
 #include <QMessageBox>
-#include <QPainter>
 #include <QPushButton>
 #include <QMainWindow>
 
@@ -13,9 +12,11 @@
 #include "view/dynamicElements/sourceView.hpp"
 
 LevelView::LevelView(QWidget *parent)
-    : QFrame{parent}, level{nullptr}, source{nullptr}
+    : QGraphicsView {parent}, scene{new QGraphicsScene}, level{nullptr},
+      source{nullptr}
 {
-    this->setStyleSheet("background-color:white;");
+    this->setRenderHint(QPainter::Antialiasing);
+    this->setScene(this->scene);
 }
 
 LevelView::~LevelView()
@@ -24,6 +25,7 @@ LevelView::~LevelView()
     {
         delete this->level;
         delete this->source;
+        this->mirrors.clear();
     }
 }
 
@@ -39,6 +41,7 @@ void LevelView::loadLevelFromFile()
     {
         delete this->level;
         delete this->source;
+        this->mirrors.clear();
     }
 
     this->level = levelFactory::getLevelFromFile(this->displayedLevelFilePath);
@@ -46,52 +49,32 @@ void LevelView::loadLevelFromFile()
     this->source = new SourceView{&this->level->getSource(), this};
     this->source->show();
 
-    this->setFixedSize(this->level->getWidth(), this->level->getHeight());
+    this->setFixedSize(this->level->getWidth() + 10, this->level->getHeight() + 10);
+
+    for (auto & lens : this->level->getLenses())
+        this->scene->addItem(viewUtilities::getEllipse(lens, Qt::blue, 2));
+
+    for (auto & crystal : this->level->getCrystals())
+        this->scene->addItem(viewUtilities::getEllipse(crystal, Qt::green, 2));
+
+    for (auto & nuke : this->level->getNukes())
+        this->scene->addItem(viewUtilities::getEllipse(nuke, Qt::red, 2));
+
+    for (auto & wall : this->level->getWalls())
+        this->scene->addItem(viewUtilities::getLine(wall.getStart(), wall.getEnd(),
+                                                    Qt::black, 4));
+    this->adjustSize();
 
     emit displayingStarted();
 }
 
 void LevelView::updateDisplay()
 {
-    if (!this->isHidden())
-    {
-        this->update();
-
-        if (this->level->getDestination().isLightedUp() || this->level->thereIsAnExplodedNuke())
+     if (!this->isHidden() && (this->level->getDestination().isLightedUp()
+             || this->level->thereIsAnExplodedNuke()))
+     {
             this->displayEndOfGame();
-    }
-}
-
-void LevelView::paintEvent(QPaintEvent*)
-{
-    if (this->level != nullptr)
-    {
-        QPainter painter(this);
-
-        painter.setRenderHints(QPainter::Antialiasing, true);
-
-        viewUtilities::drawRectangle(this->level->getDestination(), painter,
-                                     QColor(255, 105, 180), 2,
-                                     this->level->getDestination().isLightedUp());
-
-        for (auto & lens : this->level->getLenses())
-            viewUtilities::drawEllipse(lens, painter, Qt::blue, 2);
-
-        for (auto & crystal : this->level->getCrystals())
-            viewUtilities::drawEllipse(crystal, painter, Qt::green, 2);
-
-        for (auto & nuke : this->level->getNukes())
-            viewUtilities::drawEllipse(nuke, painter, Qt::red, 2);
-
-        for (auto & wall : this->level->getWalls())
-            viewUtilities::drawLine(wall.getStart(), wall.getEnd(), painter, Qt::black, 4);
-
-        if (this->level->getSource().isOn())
-        {
-            for (auto & ray : this->level->getRays())
-                viewUtilities::drawLine(ray.getStart(), ray.getEnd(), painter, Qt::black, 1);
-        }
-    }
+     }
 }
 
 void LevelView::displayEndOfGame()
