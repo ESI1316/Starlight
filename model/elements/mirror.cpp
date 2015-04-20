@@ -123,6 +123,7 @@ bool Mirror::checkPivotRange(const Point & point) const
 void Mirror::reactToRay(Ray ray)
 {
     Point point{ray.getEnd()};
+
     double mirror{utilities::absoluteAngle(this->getAngle())};
     double source{utilities::absoluteAngle(std::atan(ray.getSlope()))};
     double alpha{(utilities::PI + mirror - source)};
@@ -132,8 +133,18 @@ void Mirror::reactToRay(Ray ray)
 
     if(this->getLevel() != nullptr)
             this->getLevel()->computeRay(Ray{point,
+                                             //(2. * std::atan(ray.getSlope())) - this->getAngle(),
                                              -(source + alpha + alpha),
                                              ray.getWaveLength()});
+}
+
+void Mirror::getTwoPoints(Point * p1, Point * p2) const
+{
+    *p1 = Point{this->pivot.getX() - this->xpad, this->pivot.getY()};
+    *p2 = Point{p1->getX() + this->length, p1->getY()};
+
+    p1->rotateAround(this->pivot, this->alpha);
+    p2->rotateAround(this->pivot, this->alpha);
 }
 
 Point * Mirror::includeRay(const Ray & ray) const
@@ -142,11 +153,9 @@ Point * Mirror::includeRay(const Ray & ray) const
 
     if(intersection != nullptr)
     {
-        Point start{this->pivot.getX() - this->xpad, this->pivot.getY()};
-        Point end{start.getX() + this->length, start.getY()};
+        Point start, end;
 
-        start.rotateAround(this->pivot, this->alpha);
-        end.rotateAround(this->pivot, this->alpha);
+        this->getTwoPoints(&start, &end);
 
         double minX{std::min(start.getX(), end.getX())};
         double minY{std::min(start.getY(), end.getY())};

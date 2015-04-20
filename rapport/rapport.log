@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2015.4.17)  20 APR 2015 19:33
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2015.4.17)  20 APR 2015 20:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -778,36 +778,44 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip50
 )
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryarrow
+s.code.tex
+File: tikzlibraryarrows.code.tex 2008/01/09 v2.10 (rcs-revision 1.1)
+
+(/usr/share/texmf/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
+File: pgflibraryarrows.code.tex 2008/10/27 v2.10 (rcs-revision 1.9)
+\arrowsize=\dimen176
+))
 (./rapport.aux)
 \openout1 = `rapport.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Info: Redefining \degres on input line 18.
-LaTeX Info: Redefining \dots on input line 18.
-LaTeX Info: Redefining \up on input line 18.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Info: Redefining \degres on input line 19.
+LaTeX Info: Redefining \dots on input line 19.
+LaTeX Info: Redefining \up on input line 19.
  (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count145
-\scratchdimen=\dimen176
+\scratchdimen=\dimen177
 \scratchbox=\box39
 \nofMPsegments=\count146
 \nofMParguments=\count147
 \everyMPshowfont=\toks32
 \MPscratchCnt=\count148
-\MPscratchDim=\dimen177
+\MPscratchDim=\dimen178
 \MPnumerator=\count149
 \makeMPintoPDFobject=\count150
 \everyMPtoPDFconversion=\toks33
@@ -830,7 +838,7 @@ e
 
 ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box40
-Package hyperref Info: Link coloring OFF on input line 18.
+Package hyperref Info: Link coloring OFF on input line 19.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
@@ -840,9 +848,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count152
 )
-LaTeX Info: Redefining \ref on input line 18.
-LaTeX Info: Redefining \pageref on input line 18.
-LaTeX Info: Redefining \nameref on input line 18.
+LaTeX Info: Redefining \ref on input line 19.
+LaTeX Info: Redefining \pageref on input line 19.
+LaTeX Info: Redefining \nameref on input line 19.
 
 (./rapport.out) (./rapport.out)
 \@outlinefile=\write4
@@ -895,7 +903,7 @@ File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
 ) [4
 
 ]
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 55.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 56.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
@@ -904,12 +912,12 @@ Chapitre 3.
 [6
 
 ] [7] [8] [9] [10] [11]
-Underfull \hbox (badness 10000) in paragraph at lines 362--368
+Underfull \hbox (badness 10000) in paragraph at lines 363--369
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 362--368
+Underfull \hbox (badness 10000) in paragraph at lines 363--369
 
  []
 
@@ -919,40 +927,8 @@ Chapitre 4.
 
 ]
 Chapitre 5.
-(./reflexion.tex
-(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryarrow
-s.code.tex
-Runaway argument?
-Header: /cvsroot/pgf/pgf/generic/pgf/frontendlayer/tikz/libraries/tik\ETC.
-! Paragraph ended before \pgf@parseid was complete.
-<to be read again> 
-                   \par 
-l.11 
-     
-? 
-(/usr/share/texmf/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
-Runaway argument?
-Header: /cvsroot/pgf/pgf/generic/pgf/libraries/pgflibraryarrows.code.\ETC.
-! Paragraph ended before \pgf@parseid was complete.
-<to be read again> 
-                   \par 
-l.11 
-     
-? 
-\arrowsize=\dimen178
-)))
-
-! Package inputenc Error: Unicode char \u8:° not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.405 triangle valant 180°
-                           , \\
-? 
-
-Underfull \hbox (badness 10000) in paragraph at lines 50--407
+(./reflexion.tex)
+Underfull \hbox (badness 10000) in paragraph at lines 48--408
 
  []
 
@@ -961,7 +937,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 50--407
 ] [16]
 Chapitre 6.
 
-Underfull \hbox (badness 10000) in paragraph at lines 432--435
+Underfull \hbox (badness 10000) in paragraph at lines 433--436
 
  []
 
@@ -973,23 +949,23 @@ Chapitre 7.
 
 ]
 Annexe A.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 449.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 450.
 [19
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 449.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 450.
  (./rapport.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 449.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 449.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 450.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 450.
 Package rerunfilecheck Info: File `rapport.out' has not changed.
 (rerunfilecheck)             Checksum: 9BFE405DB38ED25629092C652C315FEE;2678.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 449.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 450.
  ) 
 Here is how much of TeX's memory you used:
- 18083 strings out of 495030
- 308830 string characters out of 3180761
- 397304 words of memory out of 3000000
- 20810 multiletter control sequences out of 15000+200000
+ 18084 strings out of 495030
+ 308884 string characters out of 3180761
+ 406672 words of memory out of 3000000
+ 20811 multiletter control sequences out of 15000+200000
  24125 words of font info for 60 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  49i,6n,60p,412b,1187s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1013,7 +989,7 @@ e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on rapport.pdf (20 pages, 230022 bytes).
+Output written on rapport.pdf (20 pages, 230038 bytes).
 PDF statistics:
  914 PDF objects out of 1000 (max. 8388607)
  468 compressed objects within 5 object streams
