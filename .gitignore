@@ -8,3 +8,4 @@ html/*
 latex/*
 documentation/html/
 documentation/latex/
+moc*

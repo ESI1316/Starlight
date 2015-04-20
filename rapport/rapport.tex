@@ -23,6 +23,51 @@ pdfkeywords={C++, ISO/IEC 14882:2011, Starlight, Projet}]{hyperref}
 
 
 
+\chapter[Conventions]{Quelques conventions utilisées}
+\section{Contenu des fichiers}
+Chaque fichier contiendra les en-têtes, ou le code source, d'une seule et unique
+classe ou d'un seul et unique namespace.
+\section{Nom des fichiers}
+Le nom des fichiers est entièrement écrit en minuscule et porte le nom de la
+classe, ou du namespace qu'il contient.
+\subsection{headers}
+Les headers porteront l'extension ``hpp''.
+\subsection{sources}
+Les fichiers sources porteront l'extension ``cpp''.
+\section{Nom des namespace}
+Le nom d'un namespace sera exclusivement en minuscule.
+\section{Nom des classes}
+Les classes commencent toutes par une majuscule pour continuer, ensuite, en
+CamelCase
+\begin{lstlisting}[frame=single,language=C++]
+class UneBonneClasse;
+class uneMauvaiseclasse;
+\end{lstlisting}
+\section{Nom des variables}
+Toutes les variables sont écrites en
+``camelCase''\footnote{\url{https://fr.wikipedia.org/wiki/CamelCase}}
+\begin{lstlisting}[frame=single,language=C++]
+uneBonneVariable
+UneMauvaiseVariable
+uneautreMauvaisevariable
+\end{lstlisting}
+et possède des noms le plus explicite possible
+\begin{lstlisting}[frame=single,language=C++]
+nb // OK
+n // NOK
+waveLength // OK
+\end{lstlisting}
+Les variables de classes possèdent le même nom que le paramètre de constructeur
+qui l'initialisera. Le langage nous donne la possibilité de désambiguïser
+l'utilisation de ces variables à l'aide de 
+\begin{lstlisting}[frame=single,language=C++]
+T var;
+this->var;
+\end{lstlisting}
+et de la liste d'initialisation
+\begin{lstlisting}[frame=single,language=C++]
+UneClasse::UneClasse(T param) : param{param} {}
+\end{lstlisting}
 \chapter[Les classes]{Présentation succincte des classes}
 \section[Les objets géométriques]{geometry}
 
@@ -236,6 +281,7 @@ représentant le rayon est tangent à l'ellipse représentant la lentille c'est
 qu'un point d'intersection existe entre les deux. Il est donc de ce point d'agir
 comme l'aurait fait l'entière lentille à tout autre point même si cette
 réaction particulière peut être discutable. 
+
 \subsection[Miroir]{mirror.hpp}
 Cette classe est, par héritage, un élément ainsi qu'une droite. Le miroir peut donc
 être modéliser graphiquement, entant que cette dernière, dans le plan et
@@ -248,20 +294,59 @@ de son point de rotation qui définissent, dynamiquement, ses points délimiteur
 Pour trouver les deux points il suffit de :
 \begin{enumerate}
 	\item extremité gauche = ($x_{pivot}$ - position absolue, $y_{pivot}$)
-		\begin{center}
-			\begin{tikzpicture}
-				\draw (0,1) node;
-			\end{tikzpicture}
-		\end{center}
 	\item extremité droite = ($x_{gauche}$ + taille du segment, $y_{pivot}$)
-	\item rotation des deux points autour du pivot
+	\item rotation des deux extremité autour du point de pivot.
 \end{enumerate}
 \subsection[Bombe]{nuke.hpp}
+Cette classe est, par héritage, un élément ainsi qu'une ellipse. Il peut donc
+être modéliser graphiquement, entant que cette dernière, dans le plan et
+communique avec le niveau auquel il est lié. La bombe est une ellipse
+particulière puisqu'elle possède un $x_{radius} = y_{radius}$ lui donnant comme
+caractéristique d'être un cercle. Cet objet circulaire est l'objet à éviter lors
+d'une partie puisqu'il amène directement à la fin d'une partie.
+
 \subsection[Rayon]{ray.hpp}
+Cette classe est, par héritage, une droite. Ce rayon représente l'ensemble des
+points parcouru par un rayon laser et subit les interactions de son
+environnement comme dans la vie réelle :
+\begin{itemize}
+	\item il sera refleté par un miroir selon le principe de reflexion
+		$$\alpha_{i} = \alpha_{r}$$,
+	\item il sera arrêté par les objets opaques (murs, source, destination).
+\end{itemize}
+
+Le rayon déclenche les réactions des éléments du jeu via la méthode
+``reactToRay'' des héritants d'Element.
+
 \subsection[Source]{source.hpp}
+Cette classe est, par héritage, un élément ainsi qu'un rectangle. Il peut donc
+être modéliser graphiquement, entant que cette dernière, dans le plan et
+communique avec le niveau auquel il est lié. La source est le point d'émission
+du tout premier rayon du jeu selon un sens et une direction définis par l'angle
+d'émission, qui lui est propre, depuis un point donné.
+
 \subsection[Mur]{wall.hpp}
+Cette classe est, par héritage, un élément ainsi qu'une droite. Il peut donc
+être modéliser graphiquement, entant que cette dernière, dans le plan et
+communique avec le niveau auquel il est lié. Le mur est défini par deux points
+qui en font un segment de droite. Il est un objet fixe du jeu qui arrête un
+rayon et lui défini un point qui le transforme en segment de droite.
+
 \subsection[Niveau]{level.hpp}
 \subsection[Createur de niveau]{levelfactory.hpp}
+Le créateur de niveau est un ``namespace'' de méthodes qui va s'occuper de lire
+les données des éléments dans un fichier. 
+Pour ce faire, il s'occupera de lire chaque type d'objet selon des règles
+différentes :
+\begin{lstlisting}[frame=single,language=C++]
+levelFactory::getSource;
+levelFactory::getDestination;
+levelFactory::getCrystal;
+levelFactory::getLens;
+levelFactory::getNuke;
+levelFactory::getWall;
+levelFactory::getMirror;
+\end{lstlisting}
 \section[L'exception]{exception}
 \subsection[Exception Starlight]{starlightexception.hpp}
 Il est nécessaire, pour bon nombre des classes créées, de valider les arguments passés en
