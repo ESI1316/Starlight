@@ -6,6 +6,9 @@
 #include "model/elements/level.hpp"
 #include "model/geometry/utilities.hpp"
 
+Mirror::Mirror(const Point & pivot, int xpad, int length, double alpha)
+    : Mirror{pivot, xpad, length, alpha, Point{}, Point{}, 0., 0.} {}
+
 Mirror::Mirror(const Point & pivot, int xpad, int length, double alpha, Point pointMin,
                Point pointMax, double alphaMin, double alphaMax)
     : Element(),
