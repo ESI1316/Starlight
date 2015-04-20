@@ -30,6 +30,13 @@ classe ou d'un seul et unique namespace.
 \section{Nom des fichiers}
 Le nom des fichiers est entièrement écrit en minuscule et porte le nom de la
 classe, ou du namespace qu'il contient.
+\section{Nom des fichiers de test}
+Le nom des fichiers de test est composé du nom de la classe ou du namespace
+testé suivi de ``test''
+\begin{lstlisting}[frame=single]
+nuketest.cpp
+mirrortest.cpp
+\end{lstlisting}
 \subsection{headers}
 Les headers porteront l'extension ``hpp''.
 \subsection{sources}
@@ -395,6 +402,27 @@ Les différentes classes pouvant lever cette exception sont :
 
 
 \chapter{Test effectués}
+\section{Framework de test}
+Le Framework de test utilisé est
+``Catch''\footnote{\url{https://github.com/philsquared/Catch}}. Ses avantages
+sont :
+\begin{itemize}
+	\item un simple header est requis,
+	\item[TEST\_CASE] créant un bloc de tests,
+	\item[SECTION] créant un sous-bloc de tests,
+	\item un ensemble de macros d'assertions sont disponibles :
+		\begin{itemize}
+			\item[REQUIRE] qui attend une expression vraie,
+			\item[REQUIRE\_FALSE] qui attend un expression fausse,
+			\item[REQUIRE\_THROWS\_AS] qui attend une erreur de type défini,
+			\item[REQUIRE\_NO\_THROW] qui n'attend pas d'erreur.
+		\end{itemize}
+\end{itemize} 
+\section{Tests unitaire}
+Chaque classe a été soumis à une batterie de tests unitaires. Pour se faire,
+chacune de ses méthodes s'est vu confirmé son bon fonctionnement au travers de
+cas dis ``limites'' et de cas dit ``standards''. \\
+
 
 
 
