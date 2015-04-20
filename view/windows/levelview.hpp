@@ -56,8 +56,13 @@ public slots:
     void loadLevelFromFile();
 
     /*!
-     * \brief Permet d'afficher une fenêtre de dialogue affichant le message entré en
-     * paramètre et demande à l'utilisateur s'il désire quitter le jeu.
+     * \brief Permet de rafraichir l'affichage lorsque le level change d'état.
+     */
+    void updateDisplay();
+
+    /*!
+     * \brief Permet d'afficher une boite de dialogue informant l'utilisateur de
+     * la fin du jeu.
      */
     void displayEndOfGame();
 };

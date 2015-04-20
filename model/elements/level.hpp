@@ -14,6 +14,7 @@
 #include "model/elements/source.hpp"
 #include "model/elements/dest.hpp"
 #include "model/elements/ray.hpp"
+#include "view/windows/levelview.hpp"
 
 class Point;
 class Element;
@@ -46,6 +47,8 @@ private :
     std::vector<Lens> lenses;
     std::vector<Ray> rays;
     std::vector<Nuke> nukes;
+
+    std::vector<LevelView *> views;
 
     /*!
      * \brief Permet d'obtenir une map contenant les élément se trouvant sur la
@@ -222,6 +225,19 @@ public:
      * \brief Calcule les rayons lumineux de la carte.
      */
     void computeRays();
+
+    /*!
+     * \brief Permet d'abonner une nouvelle vue au model.
+     *
+     * \param newView Nouvelle vue abonnée au niveau.
+     */
+    void addView(LevelView *);
+
+    /*!
+     * \brief Permet de notifier les vues abonnées au niveau que son état a
+     * changé.
+     */
+    void notifyViews();
 };
 
 #endif // LEVEL_HPP
