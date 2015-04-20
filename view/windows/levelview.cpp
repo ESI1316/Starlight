@@ -53,10 +53,13 @@ void LevelView::loadLevelFromFile()
 
 void LevelView::updateDisplay()
 {
-    this->update();
+    if (!this->isHidden())
+    {
+        this->update();
 
-    if (this->level->getDestination().isLightedUp() || this->level->thereIsAnExplodedNuke())
-        this->displayEndOfGame();
+        if (this->level->getDestination().isLightedUp() || this->level->thereIsAnExplodedNuke())
+            this->displayEndOfGame();
+    }
 }
 
 void LevelView::paintEvent(QPaintEvent*)
