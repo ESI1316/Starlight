@@ -1,6 +1,7 @@
 #include "mirrorview.hpp"
 
-mirrorView::mirrorView()
+mirrorView::mirrorView(Mirror * mirror, QWidget *parent)
+    : QGraphicsView(parent), mirror{mirror}
 {
 
 }
