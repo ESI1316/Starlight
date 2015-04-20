@@ -10,7 +10,7 @@
 #include "model/elements/levelFactory.hpp"
 #include "view/viewutilities.hpp"
 #include "model/elements/level.hpp"
-#include "view/dynamicElements/SourceView.hpp"
+#include "view/dynamicElements/sourceView.hpp"
 
 LevelView::LevelView(QWidget *parent)
     : QFrame{parent}, level{nullptr}, source{nullptr}
@@ -36,14 +36,19 @@ void LevelView::setLevelFilePath(const QString levelFile)
 void LevelView::loadLevelFromFile()
 {
     if (this->level != nullptr)
+    {
         delete this->level;
+        delete this->source;
+    }
 
     this->level = levelFactory::getLevelFromFile(this->displayedLevelFilePath);
     this->source = new SourceView{&this->level->getSource(), this};
+    this->source->show();
 
     this->setFixedSize(this->level->getWidth(), this->level->getHeight());
 
-    QObject::connect(this->source, SIGNAL(clicked()), this, SLOT(repaint()));
+    QObject::connect(this->source, SIGNAL(clicked()), this, SLOT(update()));
+    QObject::connect(this->source, SIGNAL(clicked()), this, SLOT(displayEndOfGame()));
 
     emit displayingStarted();
 }
@@ -77,27 +82,28 @@ void LevelView::paintEvent(QPaintEvent*)
             for (auto & ray : this->level->getRays())
                 viewUtilities::drawLine(ray.getStart(), ray.getEnd(), painter, Qt::black, 1);
         }
-
-        if (this->level->getDestination().isLightedUp() || this->level->thereIsAnExplodedNuke())
-            this->displayEndOfGame();
     }
 }
 
 void LevelView::displayEndOfGame()
 {
-    QMessageBox msgBox(this);
-    QPushButton *quitB = msgBox.addButton(tr("Retour au menu principal"), QMessageBox::YesRole);
+    if (this->level->getDestination().isLightedUp() || this->level->thereIsAnExplodedNuke())
+    {
+        QMessageBox msgBox(this);
+        QPushButton *quitB = msgBox.addButton(tr("Retour au menu principal"),
+                                              QMessageBox::YesRole);
 
-    msgBox.addButton(tr("Recommencer"), QMessageBox::NoRole);
-    msgBox.setText(tr("<strong>Fin de partie :<strong>"));
-    msgBox.setInformativeText(this->level->getDestination().isLightedUp() ?
-                                  tr("<br>Bravo</br> !\nVous avez gagné") :
-                                  tr("<br>Perdu</br> !\nUne bombe a explosée"));
-    msgBox.setWindowFlags(msgBox.windowFlags() ^ Qt::WindowCloseButtonHint);
-    msgBox.exec();
+        msgBox.addButton(tr("Recommencer"), QMessageBox::NoRole);
+        msgBox.setText(tr("<strong>Fin de partie :<strong>"));
+        msgBox.setInformativeText(this->level->getDestination().isLightedUp() ?
+                                      tr("<br>Bravo</br> !\nVous avez gagné") :
+                                      tr("<br>Perdu</br> !\nUne bombe a explosée"));
+        msgBox.setWindowFlags(msgBox.windowFlags() ^ Qt::WindowCloseButtonHint);
+        msgBox.exec();
 
-    if(((QPushButton*) msgBox.clickedButton()) == quitB)
-        emit displayingStopped();
-    else
-        this->loadLevelFromFile();
+        if(((QPushButton*) msgBox.clickedButton()) == quitB)
+            emit displayingStopped();
+        else
+            this->loadLevelFromFile();
+    }
 }

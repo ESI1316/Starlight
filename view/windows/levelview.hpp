@@ -4,7 +4,7 @@
 #include <QFrame>
 #include <QPainter>
 
-#include "view/dynamicElements/SourceView.hpp"
+#include "view/dynamicElements/sourceView.hpp"
 
 class Level;
 class Point;

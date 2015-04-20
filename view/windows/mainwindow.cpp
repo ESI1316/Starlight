@@ -18,19 +18,6 @@ MainWindow::MainWindow(QWidget *parent) :
                      this->levelView, SLOT(setLevelFilePath(const QString)));
     QObject::connect(this->levelView, SIGNAL(displayingStarted()), this, SLOT(displayLevel()));
     QObject::connect(this->levelView, SIGNAL(displayingStopped()), this, SLOT(displayMainMenu()));
-/*
-    this->setCentralWidget(this->mainMenu);
-    std::cout << "----setCentral main ;----------------" << std::endl;
-    std::cout << "c w " << this->centralWidget() << std::endl;
-    std::cout << "menu " << this->mainMenu << std::endl;
-    std::cout << "menu parent " << this->mainMenu->parent() << std::endl;
-    this->setCentralWidget(this->levelView);
-    std::cout << "-----setCentral levelView ;--------------" << std::endl;
-    std::cout << "c w " << this->centralWidget() << std::endl;
-    std::cout << "levelView " << this->levelView << std::endl;
-    std::cout << "levelView parent" << this->levelView->parent() << std::endl;
-    std::cout << "menu" << this->mainMenu << std::endl;
-    std::cout << "menu parent " << this->mainMenu->parent() << std::endl;*/
 
     this->setCentralWidget(new QWidget);
     this->displayMainMenu();

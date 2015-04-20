@@ -1,4 +1,4 @@
-#include "SourceView.hpp"
+#include "sourceView.hpp"
 
 #include "model/geometry/utilities.hpp"
 
@@ -11,6 +11,9 @@ SourceView::SourceView(Source * source, QWidget * parent)
                                     utilities::round(upLeftCorner.getY()),
                                     utilities::round(source->getWidth()),
                                     utilities::round(source->getHeight())});
+
+    this->setFocusPolicy(Qt::NoFocus);
+    this->setCursor(Qt::PointingHandCursor);
 
     QObject::connect(this, SIGNAL(clicked()), this, SLOT(switchSource()));
 }
