@@ -22,10 +22,11 @@ SourceView::~SourceView() {}
 
 void SourceView::switchSource()
 {
-    this->source->setOn(!this->source->isOn());
+    bool newOnVal = !this->source->isOn();
+
     this->setStyleSheet(QString( (std::string("background-color:") +
-                                 (this->source->isOn() ? std::string("yellow;")
-                                                       : std::string("white;")))
-                                .c_str()) );
+                                 (newOnVal ? std::string("yellow;")
+                                           : std::string("white;"))).c_str()) );
+    this->source->setOn(newOnVal);
 }
 

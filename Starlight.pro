@@ -70,7 +70,6 @@ HEADERS  += view/windows/mainwindow.hpp \
     model/elements/ray.hpp \
     model/elements/source.hpp \
     model/elements/wall.hpp \
-    model/elements/utilities.hpp \
     model/geometry/point.hpp \
     model/geometry/utilities.hpp \
     model/geometry/rectangle.hpp \

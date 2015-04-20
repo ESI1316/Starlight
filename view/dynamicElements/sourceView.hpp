@@ -1,5 +1,5 @@
-#ifndef SOURCEVIEW_H
-#define SOURCEVIEW_H
+#ifndef SOURCEVIEW_HPP
+#define SOURCEVIEW_HPP
 
 #include <QWidget>
 #include <QPushButton>
@@ -22,4 +22,4 @@ public slots:
     void switchSource();
 };
 
-#endif // SOURCEVIEW_H
+#endif // SOURCEVIEW_HPP

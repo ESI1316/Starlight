@@ -114,6 +114,18 @@ void Level::computeRays()
 {
     this->computeRay(Ray{this->source.getPosition(), this->source.getAngle(),
                         this->source.getWaveLength()});
+    this->notifyViews();
+}
+
+void Level::addView(LevelView * newView)
+{
+    this->views.push_back(newView);
+}
+
+void Level::notifyViews()
+{
+    for (auto view : this->views)
+        view->updateDisplay();
 }
 
 bool Level::thereIsAnExplodedNuke() const

@@ -42,15 +42,21 @@ void LevelView::loadLevelFromFile()
     }
 
     this->level = levelFactory::getLevelFromFile(this->displayedLevelFilePath);
+    this->level->addView(this);
     this->source = new SourceView{&this->level->getSource(), this};
     this->source->show();
 
     this->setFixedSize(this->level->getWidth(), this->level->getHeight());
 
-    QObject::connect(this->source, SIGNAL(clicked()), this, SLOT(update()));
-    QObject::connect(this->source, SIGNAL(clicked()), this, SLOT(displayEndOfGame()));
-
     emit displayingStarted();
+}
+
+void LevelView::updateDisplay()
+{
+    this->update();
+
+    if (this->level->getDestination().isLightedUp() || this->level->thereIsAnExplodedNuke())
+        this->displayEndOfGame();
 }
 
 void LevelView::paintEvent(QPaintEvent*)
@@ -87,23 +93,20 @@ void LevelView::paintEvent(QPaintEvent*)
 
 void LevelView::displayEndOfGame()
 {
-    if (this->level->getDestination().isLightedUp() || this->level->thereIsAnExplodedNuke())
-    {
-        QMessageBox msgBox(this);
-        QPushButton *quitB = msgBox.addButton(tr("Retour au menu principal"),
-                                              QMessageBox::YesRole);
+    QMessageBox msgBox(this);
+    QPushButton *quitB = msgBox.addButton(tr("Retour au menu principal"),
+                                          QMessageBox::YesRole);
 
-        msgBox.addButton(tr("Recommencer"), QMessageBox::NoRole);
-        msgBox.setText(tr("<strong>Fin de partie :<strong>"));
-        msgBox.setInformativeText(this->level->getDestination().isLightedUp() ?
-                                      tr("<br>Bravo</br> !\nVous avez gagné") :
-                                      tr("<br>Perdu</br> !\nUne bombe a explosée"));
-        msgBox.setWindowFlags(msgBox.windowFlags() ^ Qt::WindowCloseButtonHint);
-        msgBox.exec();
+    msgBox.addButton(tr("Recommencer"), QMessageBox::NoRole);
+    msgBox.setText(tr("<strong>Fin de partie :<strong>"));
+    msgBox.setInformativeText(this->level->getDestination().isLightedUp() ?
+                                  tr("<br>Bravo</br> !\nVous avez gagné") :
+                                  tr("<br>Perdu</br> !\nUne bombe a explosée"));
+    msgBox.setWindowFlags(msgBox.windowFlags() ^ Qt::WindowCloseButtonHint);
+    msgBox.exec();
 
-        if(((QPushButton*) msgBox.clickedButton()) == quitB)
-            emit displayingStopped();
-        else
-            this->loadLevelFromFile();
-    }
+    if(((QPushButton*) msgBox.clickedButton()) == quitB)
+        emit displayingStopped();
+    else
+        this->loadLevelFromFile();
 }

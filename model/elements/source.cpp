@@ -47,7 +47,7 @@ void Source::setOn(const bool on)
     if (this->getLevel() != nullptr)
     {
         this->isOn() ? this->getLevel()->computeRays()
-                     : this->getLevel()->getRays().clear();
+                     : this->getLevel()->getRays().clear(), this->getLevel()->notifyViews();
     }
 }
 
