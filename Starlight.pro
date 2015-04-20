@@ -19,7 +19,6 @@ SOURCES += main.cpp\
     view/windows/mainmenu.cpp \
     view/viewutilities.cpp \
     view/dynamicElements/mirrorview.cpp \
-    view/dynamicElements/clickableColorSquare.cpp \
     model/elements/crystal.cpp \
     model/elements/dest.cpp \
     model/elements/lens.cpp \
@@ -51,12 +50,12 @@ SOURCES += main.cpp\
     test/elements/sourcetest.cpp \
     test/elements/desttest.cpp \
     test/elements/leveltest.cpp \
-    test/elements/lenstest.cpp
+    test/elements/lenstest.cpp \
+    view/dynamicElements/SourceView.cpp
 
 HEADERS  += view/windows/mainwindow.hpp \
     view/windows/levelview.hpp \
     view/windows/mainmenu.hpp \
-    view/dynamicElements/clickableColorSquare.hpp \
     view/dynamicElements/mirrorview.hpp \
     view/viewutilities.hpp \
     model/exception/starlightexception.hpp \
@@ -77,7 +76,8 @@ HEADERS  += view/windows/mainwindow.hpp \
     model/geometry/rectangle.hpp \
     model/geometry/line.hpp \
     model/geometry/ellipse.hpp \
-    test/catch.hpp
+    test/catch.hpp \
+    view/dynamicElements/SourceView.hpp
 
 DISTFILES += \
     ressources/level.lvl \

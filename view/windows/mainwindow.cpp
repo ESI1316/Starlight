@@ -44,6 +44,7 @@ void MainWindow::displayMainMenu()
     this->levelView->hide();
     this->setCentralWidget(this->mainMenu);
     this->mainMenu->show();
+    this->adjustSize();
 }
 
 void MainWindow::displayLevel()

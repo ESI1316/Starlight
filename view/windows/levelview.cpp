@@ -10,8 +10,10 @@
 #include "model/elements/levelFactory.hpp"
 #include "view/viewutilities.hpp"
 #include "model/elements/level.hpp"
+#include "view/dynamicElements/SourceView.hpp"
 
-LevelView::LevelView(QWidget *parent) : QFrame{parent}, level{nullptr}
+LevelView::LevelView(QWidget *parent)
+    : QFrame{parent}, level{nullptr}, source{nullptr}
 {
     this->setStyleSheet("background-color:white;");
 }
@@ -19,7 +21,10 @@ LevelView::LevelView(QWidget *parent) : QFrame{parent}, level{nullptr}
 LevelView::~LevelView()
 {
     if (this->level != nullptr)
+    {
         delete this->level;
+        delete this->source;
+    }
 }
 
 void LevelView::setLevelFilePath(const QString levelFile)
@@ -34,9 +39,12 @@ void LevelView::loadLevelFromFile()
         delete this->level;
 
     this->level = levelFactory::getLevelFromFile(this->displayedLevelFilePath);
+    this->source = new SourceView{&this->level->getSource(), this};
+
     this->setFixedSize(this->level->getWidth(), this->level->getHeight());
 
-    this->level->getSource().setOn(true);
+    QObject::connect(this->source, SIGNAL(clicked()), this, SLOT(repaint()));
+
     emit displayingStarted();
 }
 
@@ -48,8 +56,9 @@ void LevelView::paintEvent(QPaintEvent*)
 
         painter.setRenderHints(QPainter::Antialiasing, true);
 
-        for (auto & wall : this->level->getWalls())
-            viewUtilities::drawLine(wall.getStart(), wall.getEnd(), painter, Qt::black, 4);
+        viewUtilities::drawRectangle(this->level->getDestination(), painter,
+                                     QColor(255, 105, 180), 2,
+                                     this->level->getDestination().isLightedUp());
 
         for (auto & lens : this->level->getLenses())
             viewUtilities::drawEllipse(lens, painter, Qt::blue, 2);
@@ -60,11 +69,17 @@ void LevelView::paintEvent(QPaintEvent*)
         for (auto & nuke : this->level->getNukes())
             viewUtilities::drawEllipse(nuke, painter, Qt::red, 2);
 
+        for (auto & wall : this->level->getWalls())
+            viewUtilities::drawLine(wall.getStart(), wall.getEnd(), painter, Qt::black, 4);
+
         if (this->level->getSource().isOn())
         {
             for (auto & ray : this->level->getRays())
                 viewUtilities::drawLine(ray.getStart(), ray.getEnd(), painter, Qt::black, 1);
         }
+
+        if (this->level->getDestination().isLightedUp() || this->level->thereIsAnExplodedNuke())
+            this->displayEndOfGame();
     }
 }
 

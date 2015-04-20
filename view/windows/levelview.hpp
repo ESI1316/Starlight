@@ -4,6 +4,8 @@
 #include <QFrame>
 #include <QPainter>
 
+#include "view/dynamicElements/SourceView.hpp"
+
 class Level;
 class Point;
 
@@ -13,6 +15,7 @@ class LevelView : public QFrame
 
     std::string displayedLevelFilePath;
     Level * level;
+    SourceView * source;
 
     QPointF toQPoint(const Point & point);
 
