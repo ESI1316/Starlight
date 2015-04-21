@@ -150,4 +150,29 @@ public:
  */
 std::ostream & operator<<(std::ostream &, const Ellipse &);
 
+inline double Ellipse::getWidth() const
+{
+    return this->width;
+}
+
+inline double Ellipse::getHeight() const
+{
+    return this->height;
+}
+
+inline double Ellipse::getXRadius() const
+{
+    return this->xRadius;
+}
+
+inline double Ellipse::getYRadius() const
+{
+    return this->yRadius;
+}
+
+inline Point Ellipse::getCenter() const
+{
+    return this->center;
+}
+
 #endif // ELLIPSE_HPP

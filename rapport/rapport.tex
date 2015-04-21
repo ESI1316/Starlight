@@ -9,9 +9,9 @@
 \usepackage{amsfonts}
 \usepackage{pgf, tikz}
 \usepackage{url} 
-\usepackage[bookmarks, colorlinks=false, pdfborder={0 0 0}, pdftitle={Starlight
-: rapport}, pdfauthor={Kriwin Paul, Placentino Simon}, pdfsubject={Starlight},
-pdfkeywords={C++, ISO/IEC 14882:2011, Starlight, Projet}]{hyperref} 
+\usepackage[bookmarks, colorlinks=false, pdfborder={0 0 0}, pdftitle={Starlight}, 
+pdfauthor={Kriwin Paul, Placentino Simon}, pdfsubject={Starlight},
+pdfkeywords={C++, ISO/IEC 14882:2011, Starlight, Projet, ESI}]{hyperref} 
 \usetikzlibrary{arrows}
 
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
@@ -25,25 +25,88 @@ pdfkeywords={C++, ISO/IEC 14882:2011, Starlight, Projet}]{hyperref}
 
 
 \chapter[Conventions]{Quelques conventions utilisées}
-\section{C++}
+\section{Language et compilation}
 Ce projet a été bati à l'aide de \textbf{Qt Creator
 5.4}\footnote{\url{http://www.qt.io/developers/}}, pour l'accès à la bibliothèque
 graphique, et compilé à l'aide de
 \textbf{g++}\footnote{\url{https://gcc.gnu.org/}} dans sa version 4.8 (et
-compatible 4.9). La norme ISO/IEC 14882:2011, aussi appellée c++11, est celle
-utilisée. A cela s'ajoute certains ``flags'' de compilation
+compatible 4.9). La norme \textbf{ISO/IEC
+14882:2011}\footnote{\url{http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=50372}}
+, aussi appellée c++11, est celle
+utilisée. A cela s'ajoute certains flags\footnote{un flag est un argument de
+compilation optionnel} de compilation
 \begin{center}
-\textbf{g++ -std=c++11 -Wextra -Wall -pedantic-errors}
+	g++
+	\textbf{-std=c++11}\textvisiblespace
+	\textbf{--Wextra}\textvisiblespace
+	\textbf{--Wall}\textvisiblespace
+	\textbf{--pedantic-errors}
 \end{center}
 \begin{itemize}
-	\item -std=c++11 pour travailler en c++11,
-	\item -Wextra qui nous permet d'avoir des messages d'avertissements,
-	\item -Wall qui nous permet d'avoir tous les messages d'avertissements,
-	\item -pedantic-errors qui transforme certains ``warnings'' en erreurs.
+	\item \textbf{-std=c++11} pour travailler en c++11,
+	\item \textbf{-Wextra} qui nous permet d'avoir des messages d'avertissements,
+	\item \textbf{-Wall} qui nous permet d'avoir tous les messages d'avertissements,
+	\item \textbf{-pedantic-errors} qui transforme certains warnings\footnote{un
+			warning n'empêche pas une bonne compilation mais demande au
+		programmeur de vérifier}en erreurs. \\
 \end{itemize}
+Pour des raisons pratiques, le projet est accompagné d'un fichier de type
+\textbf{Makefile}\footnote{\url{https://www.gnu.org/software/make/manual/html_node/Makefiles.html}}
+qui s'occupe de
+\begin{itemize}
+	\item nettoyer le répertoire à l'aide de la commande 
+		\begin{center}
+			make\textvisiblespace clean
+		\end{center}
+	\item compiler l'ensemble du projet à l'aide de la commande
+		\begin{center}
+			make
+		\end{center}
+\end{itemize}
+\newpage
+\section{Documentation}
+L'ensemble du projet est documenté à l'aide des balises Qt 
+\begin{lstlisting}[frame=single,language=C++]
+/*!
+ * \brief Documentation de la methode enTete
+ * \param Description d'un parametre
+ * \return Ce qui est retourne
+ * \see Renvoie vers une autre documentation
+ */
+ T enTete(R param);
+
+/*!
+ * \brief Documentation de la variable
+ */
+ T variable;
+\end{lstlisting}
+et cette documentation est uniquement présente dans les fichiers \textbf{headers}.
+La documentation, au format \LaTeX et html, a été généré à l'aide de l'outil
+Doxygen\footnote{\url{http://doxygen.org/}} dans sa dernière version
+disponible\footnote{1.8.9.1}. Les spécifications de compilations sont disponible
+dans le document ``doxyConfig''. La documentation
+U.M.L.\footnote{\url{http://www.uml.org/}} a été généré par l'intégration de
+l'outil \textbf{graphviz}\footnote{disponible dans les packages GNU/Linux -
+Ubuntu standards}.
+Cette documentation est disponible dans les dossiers
+\begin{center}
+\path{documentation/html/index.html} \\
+\path{documentation/latex/documentation.pdf} \\
+\end{center}
 \section{Contenu des fichiers}
 Chaque fichier contiendra les en-têtes, ou le code source, d'une seule et unique
-classe ou d'un seul et unique namespace.
+classe et d'au maximum un seul namespace. Si la classe ne contiend pas au moins
+une classe publique, le fichier portera le nom du namespace.
+Par exemple, le contenu du fichier hello.hpp peut être ainsi :
+\begin{lstlisting}[frame=single,language=C++]
+namespace unNameSpace {class Hello {};}
+\end{lstlisting}
+\begin{lstlisting}[frame=single,language=C++]
+namespace hello {}
+\end{lstlisting}
+\begin{lstlisting}[frame=single,language=C++]
+class Hello {};
+\end{lstlisting}
 \section{Nom des fichiers}
 Le nom des fichiers est entièrement écrit en minuscule et porte le nom de la
 classe, ou du namespace qu'il contient.
@@ -64,8 +127,8 @@ Le nom d'un namespace sera exclusivement en minuscule.
 Les classes commencent toutes par une majuscule pour continuer, ensuite, en
 CamelCase
 \begin{lstlisting}[frame=single,language=C++]
-class UneBonneClasse;
-class uneMauvaiseclasse;
+class UneBonneClasse{};
+class uneMauvaiseclasse{};
 \end{lstlisting}
 \section{Nom des variables}
 Toutes les variables sont écrites en
@@ -119,7 +182,9 @@ Ces éléments nous permettront de tracer une ellipse selon cette équation :
 $$\frac{(x - c_x)^2}{{x_{radius}}^2} + \frac{(y - c_y)^2}{{y_{radius}}^2} = 1$$
 
 Cette classe peut tout à fait être instancié en objet géométrique elliptique
-et possède des méthodes d'interactions avec une droite. 
+et possède des méthodes d'interactions avec une droite\footnote{L'algorithme
+	est disponible dans la section du même nom ou dans la documentation
+accompagnant le projet}.
 \begin{lstlisting}[frame=single,language=C++]
 Ellipse::getIntersectionsPoints(Line);
 \end{lstlisting}
@@ -439,7 +504,7 @@ sont :
 	\item \textbf{SECTION} créant un sous bloc de tests,
 	\item un ensemble de macros d'assertions sont disponibles :
 		\begin{itemize}
-		    \item\textbf{REQUIRE} qui attend une expression vraie,
+			\item\textbf{REQUIRE} qui attend une expression vraie,
 			\item\textbf{REQUIRE\_FALSE} qui attend un expression fausse,
 			\item\textbf{REQUIRE\_THROWS\_AS} qui attend une erreur de type défini,
 			\item\textbf{REQUIRE\_NO\_THROW} qui n'attend pas d'erreur.
@@ -453,7 +518,7 @@ cas dis ``limites'' et de cas dit ``standards''. \\
 Les fichiers sources concernés se situe dans dossier ``test/'' du projet et
 peuvent être effectués sous certaines condition\footnote{en effet, il faudra au
 	préalable rendre la méthode main de l'application inutilisable pour 
-	permettre aux tests de s'appliquer exclusivement}.
+permettre aux tests de s'appliquer exclusivement}.
 \chapter{Conclusion}
 
 
