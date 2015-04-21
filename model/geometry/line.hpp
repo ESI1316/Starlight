@@ -121,6 +121,7 @@ public:
      */
     double findY(const double) const;
 
+    Line & operator=(const Line &);
     /*!
      * \brief Permet de savoir si deux lignes sont identiques.
      *

@@ -1,6 +1,7 @@
 #include "model/elements/mirror.hpp"
 
 #include <cmath>
+#include <iostream>
 
 #include "model/exception/starlightexception.hpp"
 #include "model/elements/level.hpp"
@@ -50,25 +51,41 @@ bool Mirror::setPivot(const Point & pivot)
     return this->checkPivotRange(pivot) ? this->pivot = pivot, true : false;
     }
 
-bool Mirror::setAngle(double alpha)
-{
+    bool Mirror::setAngle(double alpha)
+    {
     return this->checkAngleRange(alpha) ? this->alpha = alpha, true : false;
 }
 
 bool Mirror::rotate(double alpha)
 {
-    double angle{utilities::degreeToRadian(alpha) + this->alpha};
+    double _alpha{utilities::degreeToRadian(alpha) + this->alpha};
 
-    return (this->checkAngleRange(angle) ?
-                this->alpha = angle, this->getLevel()->computeRays(), true : false);
+    if(this->checkAngleRange(_alpha))
+    {
+        std::cout << (Line) *this << std::endl;
+        this->alpha = _alpha;
+        this->slope = utilities::tan(this->alpha);
+        this->indepTerm = this->pivot.getY() - (utilities::tan(this->alpha) * this->pivot.getX());
+        this->xValue = (utilities::isHalfPiPlusNPi(this->alpha) ? this->pivot.getX() : 0.);
+        std::cout << (Line) *this << std::endl;
+    }
+
+    return (this->checkAngleRange(_alpha));
 }
 
 bool Mirror::translate(const double x, const double y)
 {
     Point pivot{this->getPivot().getX() + x, this->getPivot().getY() + y};
+    if(this->checkPivotRange(pivot))
+    {
+        std::cout << (Line) *this << std::endl;
+        this->pivot = pivot;
+        this->indepTerm = this->pivot.getY() - (utilities::tan(this->alpha) * this->pivot.getX());
+        this->xValue = (utilities::isHalfPiPlusNPi(this->alpha) ? this->pivot.getX() : 0.);
+        std::cout << (Line) *this << std::endl;
+    }
 
-    return (this->checkPivotRange(pivot) ?
-                this->pivot = pivot, this->getLevel()->computeRays(), true : false);
+    return (this->checkPivotRange(pivot));
 }
 
 bool Mirror::checkAngleRange(double alpha) const
@@ -101,18 +118,18 @@ bool Mirror::checkPivotRange(const Point & point) const
 void Mirror::reactToRay(Ray ray)
 {
     Point point{ray.getEnd()};
-    /*
 
     double mirror{utilities::absoluteAngle(this->getAngle())};
     double source{utilities::absoluteAngle(std::atan(ray.getSlope()))};
     double alpha{(utilities::PI + mirror - source)};
+
     if (utilities::equals(alpha, 0.))
         alpha = 0.;
-*/
+
     if(this->getLevel() != nullptr)
         this->getLevel()->computeRay(Ray{point,
-                                         (2. * this->getAngle()) - ray.getAlpha(),
-                                         //-(source + alpha + alpha),
+                                         //(2. * this->getAngle()) - ray.getAlpha(),
+                                         -(source + alpha + alpha),
                                          ray.getWaveLength()});
 }
 

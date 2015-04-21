@@ -11,9 +11,9 @@ Line::Line(double slope, double indepTerm, double xValue)
 }
 
 Line::Line(const Point & start, const Point & end) :
-    Line{utilities::slopeFromPoints(start, end),
+    Line(utilities::slopeFromPoints(start, end),
     start.getY() - (utilities::slopeFromPoints(start, end) * start.getX()),
-    utilities::equals(start.getX(), end.getX()) ? start.getX() : 0} {}
+    utilities::equals(start.getX(), end.getX()) ? start.getX() : 0) {}
 
 Point * Line::getIntersectionPoint(const Line & line) const
 {
@@ -63,6 +63,15 @@ double Line::findY(const double x) const
 bool Line::isVertical() const
 {
     return std::isinf(this->slope);
+}
+
+Line & Line::operator=(const Line & line)
+{
+    this->slope = line.slope;
+    this->indepTerm = line.indepTerm;
+    this->xValue = line.xValue;
+
+    return *this;
 }
 
 bool Line::operator ==(const Line & line) const
