@@ -72,9 +72,9 @@ bool Mirror::translate(const double x, const double y)
 bool Mirror::checkAngleRange(double alpha) const
 {
     return (utilities::equals(this->alphaMin, 0.)
-             && utilities::equals(this->alphaMax, 0.))
+            && utilities::equals(this->alphaMax, 0.))
             || ((utilities::greaterOrEquals(alpha, this->alphaMin))
-             && (utilities::lessOrEquals(alpha, this->alphaMax)));
+                && (utilities::lessOrEquals(alpha, this->alphaMax)));
 }
 
 bool Mirror::checkPivotRange(const Point & point) const
@@ -99,19 +99,18 @@ bool Mirror::checkPivotRange(const Point & point) const
 void Mirror::reactToRay(Ray ray)
 {
     Point point{ray.getEnd()};
-
+    /*
 
     double mirror{utilities::absoluteAngle(this->getAngle())};
     double source{utilities::absoluteAngle(std::atan(ray.getSlope()))};
     double alpha{(utilities::PI + mirror - source)};
     if (utilities::equals(alpha, 0.))
         alpha = 0.;
-
+*/
     if(this->getLevel() != nullptr)
         this->getLevel()->computeRay(Ray{point,
-                                         //std::fmod(2. * std::atan(ray.getSlope())
-                                         //- this->getAngle(), utilities::PI * 2),
-                                         -(source + alpha + alpha),
+                                         (2. * this->getAngle()) - ray.getAlpha(),
+                                         //-(source + alpha + alpha),
                                          ray.getWaveLength()});
 }
 
