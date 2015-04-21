@@ -3,44 +3,45 @@
 \BOOKMARK [1][-]{section.2.1}{Langage et compilation}{chapter.2}% 3
 \BOOKMARK [1][-]{section.2.2}{Documentation}{chapter.2}% 4
 \BOOKMARK [1][-]{section.2.3}{Contenu des fichiers}{chapter.2}% 5
-\BOOKMARK [1][-]{section.2.4}{Nom des fichiers}{chapter.2}% 6
-\BOOKMARK [2][-]{subsection.2.4.1}{headers}{section.2.4}% 7
-\BOOKMARK [2][-]{subsection.2.4.2}{sources}{section.2.4}% 8
-\BOOKMARK [1][-]{section.2.5}{Nom des fichiers de test}{chapter.2}% 9
-\BOOKMARK [1][-]{section.2.6}{Nom des namespace}{chapter.2}% 10
-\BOOKMARK [1][-]{section.2.7}{Nom des classes}{chapter.2}% 11
-\BOOKMARK [1][-]{section.2.8}{Nom des variables}{chapter.2}% 12
-\BOOKMARK [0][-]{chapter.3}{Les classes}{}% 13
-\BOOKMARK [1][-]{section.3.1}{Les objets g\351om\351triques}{chapter.3}% 14
-\BOOKMARK [2][-]{subsection.3.1.1}{Ellipse}{section.3.1}% 15
-\BOOKMARK [2][-]{subsection.3.1.2}{Droite}{section.3.1}% 16
-\BOOKMARK [2][-]{subsection.3.1.3}{Rectangle}{section.3.1}% 17
-\BOOKMARK [2][-]{subsection.3.1.4}{Point}{section.3.1}% 18
-\BOOKMARK [2][-]{subsection.3.1.5}{Utilitaire}{section.3.1}% 19
-\BOOKMARK [1][-]{section.3.2}{Les \351l\351ments}{chapter.3}% 20
-\BOOKMARK [2][-]{subsection.3.2.1}{Element}{section.3.2}% 21
-\BOOKMARK [2][-]{subsection.3.2.2}{Cristal}{section.3.2}% 22
-\BOOKMARK [2][-]{subsection.3.2.3}{Destination}{section.3.2}% 23
-\BOOKMARK [2][-]{subsection.3.2.4}{Lentille}{section.3.2}% 24
-\BOOKMARK [2][-]{subsection.3.2.5}{Miroir}{section.3.2}% 25
-\BOOKMARK [2][-]{subsection.3.2.6}{Bombe}{section.3.2}% 26
-\BOOKMARK [2][-]{subsection.3.2.7}{Rayon}{section.3.2}% 27
-\BOOKMARK [2][-]{subsection.3.2.8}{Source}{section.3.2}% 28
-\BOOKMARK [2][-]{subsection.3.2.9}{Mur}{section.3.2}% 29
-\BOOKMARK [2][-]{subsection.3.2.10}{Niveau}{section.3.2}% 30
-\BOOKMARK [2][-]{subsection.3.2.11}{Createur de niveau}{section.3.2}% 31
-\BOOKMARK [1][-]{section.3.3}{L'exception}{chapter.3}% 32
-\BOOKMARK [2][-]{subsection.3.3.1}{Exception Starlight}{section.3.3}% 33
-\BOOKMARK [1][-]{section.3.4}{Les objets visuels}{chapter.3}% 34
-\BOOKMARK [0][-]{chapter.4}{Structure du programme}{}% 35
-\BOOKMARK [0][-]{chapter.5}{Algorithmes}{}% 36
-\BOOKMARK [1][-]{section.5.1}{R\351flexion}{chapter.5}% 37
-\BOOKMARK [1][-]{section.5.2}{Intersection}{chapter.5}% 38
-\BOOKMARK [2][-]{subsection.5.2.1}{Deux droites}{section.5.2}% 39
-\BOOKMARK [2][-]{subsection.5.2.2}{Droite et rectangle}{section.5.2}% 40
-\BOOKMARK [2][-]{subsection.5.2.3}{Droite et ellipse}{section.5.2}% 41
-\BOOKMARK [0][-]{chapter.6}{Test effectu\351s}{}% 42
-\BOOKMARK [1][-]{section.6.1}{Framework de test}{chapter.6}% 43
-\BOOKMARK [1][-]{section.6.2}{Tests unitaire}{chapter.6}% 44
-\BOOKMARK [0][-]{chapter.7}{Conclusion}{}% 45
-\BOOKMARK [0][-]{appendix.A}{R\351f\351rences}{}% 46
+\BOOKMARK [1][-]{section.2.4}{Fichiers}{chapter.2}% 6
+\BOOKMARK [2][-]{subsection.2.4.1}{noms}{section.2.4}% 7
+\BOOKMARK [2][-]{subsection.2.4.2}{headers}{section.2.4}% 8
+\BOOKMARK [2][-]{subsection.2.4.3}{sources}{section.2.4}% 9
+\BOOKMARK [2][-]{subsection.2.4.4}{test}{section.2.4}% 10
+\BOOKMARK [1][-]{section.2.5}{Nom des namespace}{chapter.2}% 11
+\BOOKMARK [1][-]{section.2.6}{Nom des classes}{chapter.2}% 12
+\BOOKMARK [1][-]{section.2.7}{Nom des variables}{chapter.2}% 13
+\BOOKMARK [0][-]{chapter.3}{Les classes}{}% 14
+\BOOKMARK [1][-]{section.3.1}{Les objets g\351om\351triques}{chapter.3}% 15
+\BOOKMARK [2][-]{subsection.3.1.1}{Ellipse}{section.3.1}% 16
+\BOOKMARK [2][-]{subsection.3.1.2}{Droite}{section.3.1}% 17
+\BOOKMARK [2][-]{subsection.3.1.3}{Rectangle}{section.3.1}% 18
+\BOOKMARK [2][-]{subsection.3.1.4}{Point}{section.3.1}% 19
+\BOOKMARK [2][-]{subsection.3.1.5}{Utilitaire}{section.3.1}% 20
+\BOOKMARK [1][-]{section.3.2}{Les \351l\351ments}{chapter.3}% 21
+\BOOKMARK [2][-]{subsection.3.2.1}{Element}{section.3.2}% 22
+\BOOKMARK [2][-]{subsection.3.2.2}{Cristal}{section.3.2}% 23
+\BOOKMARK [2][-]{subsection.3.2.3}{Destination}{section.3.2}% 24
+\BOOKMARK [2][-]{subsection.3.2.4}{Lentille}{section.3.2}% 25
+\BOOKMARK [2][-]{subsection.3.2.5}{Miroir}{section.3.2}% 26
+\BOOKMARK [2][-]{subsection.3.2.6}{Bombe}{section.3.2}% 27
+\BOOKMARK [2][-]{subsection.3.2.7}{Rayon}{section.3.2}% 28
+\BOOKMARK [2][-]{subsection.3.2.8}{Source}{section.3.2}% 29
+\BOOKMARK [2][-]{subsection.3.2.9}{Mur}{section.3.2}% 30
+\BOOKMARK [2][-]{subsection.3.2.10}{Niveau}{section.3.2}% 31
+\BOOKMARK [2][-]{subsection.3.2.11}{Createur de niveau}{section.3.2}% 32
+\BOOKMARK [1][-]{section.3.3}{L'exception}{chapter.3}% 33
+\BOOKMARK [2][-]{subsection.3.3.1}{Exception Starlight}{section.3.3}% 34
+\BOOKMARK [1][-]{section.3.4}{Les objets visuels}{chapter.3}% 35
+\BOOKMARK [0][-]{chapter.4}{Structure du programme}{}% 36
+\BOOKMARK [0][-]{chapter.5}{Algorithmes}{}% 37
+\BOOKMARK [1][-]{section.5.1}{R\351flexion}{chapter.5}% 38
+\BOOKMARK [1][-]{section.5.2}{Intersection}{chapter.5}% 39
+\BOOKMARK [2][-]{subsection.5.2.1}{Deux droites}{section.5.2}% 40
+\BOOKMARK [2][-]{subsection.5.2.2}{Droite et rectangle}{section.5.2}% 41
+\BOOKMARK [2][-]{subsection.5.2.3}{Droite et ellipse}{section.5.2}% 42
+\BOOKMARK [0][-]{chapter.6}{Test effectu\351s}{}% 43
+\BOOKMARK [1][-]{section.6.1}{Framework de test}{chapter.6}% 44
+\BOOKMARK [1][-]{section.6.2}{Tests unitaire}{chapter.6}% 45
+\BOOKMARK [0][-]{chapter.7}{Conclusion}{}% 46
+\BOOKMARK [0][-]{appendix.A}{R\351f\351rences}{}% 47
