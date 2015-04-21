@@ -112,4 +112,25 @@ public:
  * paramètre.
  */
 std::ostream & operator<<(std::ostream &, const Rectangle &);
+
+inline std::vector<Line> Rectangle::getEdges() const
+{
+    return this->edges;
+}
+
+inline double Rectangle::getWidth() const
+{
+    return this->width;
+}
+
+inline double Rectangle::getHeight() const
+{
+    return this->height;
+}
+
+inline Point Rectangle::getUpLeftCorner() const
+{
+    return this->upLeftCorner;
+}
+
 #endif // RECTANGLE_HPP

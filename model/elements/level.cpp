@@ -16,19 +16,14 @@ Level::Level(const double width, const double height)
         throw StarlightException{"Largeur doit être strict. positive"};
 }
 
-int Level::getWidth() const
+void Level::setDestination(const Dest & dest)
 {
-    return std::round(this->width);
+    this->dest = dest;
 }
 
-int Level::getHeight() const
+void Level::addWall(const Wall & wall)
 {
-    return std::round(this->height);
-}
-
-Source & Level::getSource()
-{
-    return this->source;
+    this->walls.push_back(wall);
 }
 
 void Level::setSource(const Source & source)
@@ -37,40 +32,10 @@ void Level::setSource(const Source & source)
     this->source.setLevel(this);
 }
 
-const Dest & Level::getDestination() const
-{
-    return this->dest;
-}
-
-void Level::setDestination(const Dest & dest)
-{
-    this->dest = dest;
-}
-
-const std::vector<Wall> & Level::getWalls() const
-{
-    return this->walls;
-}
-
-void Level::addWall(const Wall & wall)
-{
-    this->walls.push_back(wall);
-}
-
-std::vector<Mirror> & Level::getMirrors()
-{
-    return this->mirrors;
-}
-
 void Level::addMirror(Mirror mirror)
 {
     mirror.setLevel(this);
     this->mirrors.push_back(mirror);
-}
-
-const std::vector<Crystal> & Level::getCrystals() const
-{
-    return this->crystals;
 }
 
 void Level::addCrystal(Crystal crystal)
@@ -79,30 +44,15 @@ void Level::addCrystal(Crystal crystal)
     this->crystals.push_back(crystal);
 }
 
-const std::vector<Lens> & Level::getLenses() const
-{
-    return this->lenses;
-}
-
 void Level::addLens(Lens lens)
 {
     lens.setLevel(this);
     this->lenses.push_back(lens);
 }
 
-std::vector<Ray> & Level::getRays()
-{
-    return this->rays;
-}
-
 void Level::setRays(const std::vector<Ray> & rays)
 {
     this->rays = rays;
-}
-
-const std::vector<Nuke> & Level::getNukes() const
-{
-    return this->nukes;
 }
 
 void Level::addNuke(const Nuke & nuke)

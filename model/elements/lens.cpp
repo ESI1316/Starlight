@@ -20,21 +20,6 @@ Lens::Lens(const Point & upLeftCorner, const int width, const int height,
         throw StarlightException{"Longueur d'onde minimale > maximale"};
 }
 
-const Point & Lens::getPosition() const
-{
-    return this->upLeftCorner;
-}
-
-int Lens::getMinWaveLength() const
-{
-    return this->wlMin;
-}
-
-int Lens::getMaxWaveLength() const
-{
-    return this->wlMax;
-}
-
 void Lens::reactToRay(Ray ray)
 {
     if(ray.getWaveLength() >= this->getMinWaveLength()

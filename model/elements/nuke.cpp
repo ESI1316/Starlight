@@ -15,16 +15,6 @@ Nuke::Nuke(const Point & position, const double radius)
                                  "strict. positif"};
 }
 
-const Point &Nuke::getLocation() const
-{
-    return this->center;
-}
-
-double Nuke::getRadius() const
-{
-    return this->getHeight() / 2.;
-}
-
 bool Nuke::isLightedUp() const
 {
     return this->light;

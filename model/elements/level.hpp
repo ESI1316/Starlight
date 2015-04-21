@@ -240,4 +240,54 @@ public:
     void notifyViews();
 };
 
+inline int Level::getWidth() const
+{
+    return std::round(this->width);
+}
+
+inline int Level::getHeight() const
+{
+    return std::round(this->height);
+}
+
+inline Source & Level::getSource()
+{
+    return this->source;
+}
+
+inline const Dest & Level::getDestination() const
+{
+    return this->dest;
+}
+
+inline const std::vector<Wall> & Level::getWalls() const
+{
+    return this->walls;
+}
+
+inline std::vector<Mirror> & Level::getMirrors()
+{
+    return this->mirrors;
+}
+
+inline const std::vector<Crystal> & Level::getCrystals() const
+{
+    return this->crystals;
+}
+
+inline const std::vector<Lens> & Level::getLenses() const
+{
+    return this->lenses;
+}
+
+inline std::vector<Ray> & Level::getRays()
+{
+    return this->rays;
+}
+
+inline const std::vector<Nuke> & Level::getNukes() const
+{
+    return this->nukes;
+}
+
 #endif // LEVEL_HPP

@@ -102,4 +102,19 @@ public:
  */
 std::ostream & operator<<(std::ostream &, const Dest &);
 
+inline const Point & Dest::getPosition() const
+{
+    return this->upLeftCorner;
+}
+
+inline int Dest::getEdge() const
+{
+    return this->height;
+}
+
+inline bool Dest::isLightedUp() const
+{
+    return this->light;
+}
+
 #endif // DEST_HPP

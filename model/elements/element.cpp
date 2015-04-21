@@ -8,11 +8,6 @@ void Element::setLevel(Level * level)
     this->level = level;
 }
 
-Level * Element::getLevel()
-{
-    return this->level;
-}
-
 bool Element::operator==(const Element & element) const
 {
     return this->level == element.level;

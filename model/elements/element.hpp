@@ -56,4 +56,9 @@ public :
     bool operator==(const Element &) const;
 };
 
+inline Level * Element::getLevel()
+{
+    return this->level;
+}
+
 #endif // ELEMENT_HPP

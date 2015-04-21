@@ -124,4 +124,24 @@ protected:
  */
 std::ostream & operator<<(std::ostream &, const Ray &);
 
+inline const Point & Ray::getStart() const
+{
+    return this->start;
+}
+
+inline const Point & Ray::getEnd() const
+{
+    return this->end;
+}
+
+inline int Ray::getWaveLength() const
+{
+    return this->waveLength;
+}
+
+inline double Ray::getAlpha() const
+{
+    return this->alpha;
+}
+
 #endif // RAY_HPP

@@ -14,21 +14,6 @@ Ray::Ray(const Point start, double alpha, int waveLength)
         throw StarlightException{"Longueur d'onde doit être comprise entre"};
 }
 
-const Point & Ray::getStart() const
-{
-    return this->start;
-}
-
-const Point & Ray::getEnd() const
-{
-    return this->end;
-}
-
-int Ray::getWaveLength() const
-{
-    return this->waveLength;
-}
-
 void Ray::setStart(const Point & start)
 {
     this->start = start;
@@ -81,10 +66,6 @@ bool Ray::isInTrajectory(const Point & point) const
     return inTrajectory;
 }
 
-double Ray::getAlpha() const
-{
-    return this->alpha;
-}
 bool Ray::operator==(const Ray & ray) const
 {
     return this->start == ray.start

@@ -49,21 +49,6 @@ bool Line::includes(const Point & point) const
               : utilities::equals(point.getY(), ((this->slope * point.getX()) + this->indepTerm));
 }
 
-double Line::getSlope() const
-{
-    return this->slope;
-}
-
-double Line::getIndepTerm() const
-{
-    return this->indepTerm;
-}
-
-double Line::getXValue() const
-{
-    return this->xValue;
-}
-
 double Line::findX(const double y) const
 {
     return this->isVertical() ?

@@ -128,4 +128,19 @@ private :
  */
 std::ostream & operator<<(std::ostream &, const Lens &);
 
+inline const Point & Lens::getPosition() const
+{
+    return this->upLeftCorner;
+}
+
+inline int Lens::getMinWaveLength() const
+{
+    return this->wlMin;
+}
+
+inline int Lens::getMaxWaveLength() const
+{
+    return this->wlMax;
+}
+
 #endif // LENS_HPP

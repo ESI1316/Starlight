@@ -95,4 +95,14 @@ public:
  */
 std::ostream & operator<<(std::ostream &, const Nuke &);
 
+inline const Point &Nuke::getLocation() const
+{
+    return this->center;
+}
+
+inline double Nuke::getRadius() const
+{
+    return (this->getHeight() / 2.);
+}
+
 #endif // NUKE_HPP

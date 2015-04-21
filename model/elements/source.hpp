@@ -128,4 +128,29 @@ public:
  */
 std::ostream & operator<<(std::ostream &, const Source &);
 
+inline const Point & Source::getPosition() const
+{
+    return this->upLeftCorner;
+}
+
+inline double Source::getAngle() const
+{
+    return this->alpha;
+}
+
+inline int Source::getEdge() const
+{
+    return this->width;
+}
+
+inline int Source::getWaveLength() const
+{
+    return this->waveLength;
+}
+
+inline bool Source::isOn() const
+{
+    return this->on;
+}
+
 #endif // SOURCE_HPP

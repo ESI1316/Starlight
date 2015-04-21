@@ -107,4 +107,9 @@ public:
  */
 std::ostream & operator<<(std::ostream &, const Crystal &);
 
+inline int Crystal::getAmplifier() const
+{
+    return this->amplifier;
+}
+
 #endif // CRYSTAL_HPP

@@ -15,31 +15,6 @@ Source::Source(const Point & position, const int edge, const double alpha,
         throw StarlightException{"Mauvaise longueur d'onde"};
 }
 
-const Point & Source::getPosition() const
-{
-    return this->upLeftCorner;
-}
-
-double Source::getAngle() const
-{
-    return this->alpha;
-}
-
-int Source::getEdge() const
-{
-    return this->width;
-}
-
-int Source::getWaveLength() const
-{
-    return this->waveLength;
-}
-
-bool Source::isOn() const
-{
-    return this->on;
-}
-
 void Source::setOn(const bool on)
 {
     this->on = on;

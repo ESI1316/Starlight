@@ -12,9 +12,9 @@ Mirror::Mirror(const Point & pivot, int xpad, int length, double alpha)
 Mirror::Mirror(const Point & pivot, int xpad, int length, double alpha, Point pointMin,
                Point pointMax, double alphaMin, double alphaMax)
     : Element(),
-      Line{utilities::tan(alpha),
+      Line(utilities::tan(alpha),
            pivot.getY() - (utilities::tan(alpha) * pivot.getX()),
-           utilities::isHalfPiPlusNPi(alpha) ? pivot.getX() : 0.},
+           utilities::isHalfPiPlusNPi(alpha) ? pivot.getX() : 0.),
       pivot {pivot}, length(length), xpad(xpad), xMin {pointMin.getX()},
       xMax {pointMax.getX()}, yMin {pointMin.getY()}, yMax {pointMax.getY()},
       alpha {alpha}, alphaMin {alphaMin}, alphaMax {alphaMax}
@@ -35,36 +35,6 @@ Mirror::Mirror(const Point & pivot, int xpad, int length, double alpha, Point po
         throw StarlightException{"L'angle est en dehors des limites"};
 }
 
-const Point & Mirror::getPivot() const
-{
-    return this->pivot;
-}
-
-int Mirror::getLength() const
-{
-    return this->length;
-}
-
-int Mirror::getXPad() const
-{
-    return this->xpad;
-}
-
-double Mirror::getAngle() const
-{
-    return this->alpha;
-}
-
-double Mirror::getMinAngle() const
-{
-    return this->alphaMin;
-}
-
-double Mirror::getMaxAngle() const
-{
-    return this->alphaMax;
-}
-
 Point Mirror::getMinPivot() const
 {
     return Point {xMin, yMin};
@@ -78,10 +48,10 @@ Point Mirror::getMaxPivot() const
 bool Mirror::setPivot(const Point & pivot)
 {
     return this->checkPivotRange(pivot) ? this->pivot = pivot, true : false;
-}
+    }
 
-bool Mirror::setAngle(double alpha)
-{
+    bool Mirror::setAngle(double alpha)
+    {
     return this->checkAngleRange(alpha) ? this->alpha = alpha, true : false;
 }
 
@@ -90,15 +60,15 @@ bool Mirror::rotate(double alpha)
     double angle = utilities::degreeToRadian(alpha);
 
     return this->checkAngleRange(this->alpha + angle) ? this->alpha += angle, true
-                                                      : false;
-}
+            : false;
+    }
 
-bool Mirror::checkAngleRange(double alpha) const
-{
+    bool Mirror::checkAngleRange(double alpha) const
+    {
     return (utilities::equals(this->alphaMin, 0.)
-            && utilities::equals(this->alphaMax, 0.))
-           || ((utilities::greaterOrEquals(alpha, this->alphaMin))
-            && (utilities::lessOrEquals(alpha, this->alphaMax)));
+    && utilities::equals(this->alphaMax, 0.))
+    || ((utilities::greaterOrEquals(alpha, this->alphaMin))
+    && (utilities::lessOrEquals(alpha, this->alphaMax)));
 }
 
 bool Mirror::checkPivotRange(const Point & point) const
@@ -106,36 +76,37 @@ bool Mirror::checkPivotRange(const Point & point) const
     return (utilities::equals(this->xMin, .0) && utilities::equals(this->xMax, 0.)
             && utilities::equals(this->yMin, 0.) && utilities::equals(this->yMax, 0.))
 
-           || (utilities::equals(this->xMin, 0.) && utilities::equals(this->xMax, 0.)
-            && (utilities::greaterOrEquals(point.getY(), this->yMin))
-            && (utilities::lessOrEquals(point.getY(), this->yMax)))
+            || (utilities::equals(this->xMin, 0.) && utilities::equals(this->xMax, 0.)
+                && (utilities::greaterOrEquals(point.getY(), this->yMin))
+                && (utilities::lessOrEquals(point.getY(), this->yMax)))
 
-           || (utilities::equals(this->yMin, 0.) && utilities::equals(this->yMax, 0.)
-            &&(utilities::greaterOrEquals(point.getX(), this->xMin))
-            &&(utilities::lessOrEquals(point.getX(), this->xMax)))
+            || (utilities::equals(this->yMin, 0.) && utilities::equals(this->yMax, 0.)
+                &&(utilities::greaterOrEquals(point.getX(), this->xMin))
+                &&(utilities::lessOrEquals(point.getX(), this->xMax)))
 
-           || ((utilities::greaterOrEquals(point.getX(), this->xMin))
-            && (utilities::lessOrEquals(point.getX(), this->xMax))
-            && (utilities::greaterOrEquals(point.getY(), this->yMin))
-            && (utilities::lessOrEquals(point.getY(), this->yMax)));
+            || ((utilities::greaterOrEquals(point.getX(), this->xMin))
+                && (utilities::lessOrEquals(point.getX(), this->xMax))
+                && (utilities::greaterOrEquals(point.getY(), this->yMin))
+                && (utilities::lessOrEquals(point.getY(), this->yMax)));
 }
 
 void Mirror::reactToRay(Ray ray)
 {
     Point point{ray.getEnd()};
 
+
     double mirror{utilities::absoluteAngle(this->getAngle())};
     double source{utilities::absoluteAngle(std::atan(ray.getSlope()))};
     double alpha{(utilities::PI + mirror - source)};
-
     if (utilities::equals(alpha, 0.))
         alpha = 0.;
 
     if(this->getLevel() != nullptr)
-            this->getLevel()->computeRay(Ray{point,
-                                             //(2. * std::atan(ray.getSlope())) - this->getAngle(),
-                                             -(source + alpha + alpha),
-                                             ray.getWaveLength()});
+        this->getLevel()->computeRay(Ray{point,
+                                         //std::fmod(2. * std::atan(ray.getSlope())
+                                         //- this->getAngle(), utilities::PI * 2),
+                                         -(source + alpha + alpha),
+                                         ray.getWaveLength()});
 }
 
 Point Mirror::getStart() const
@@ -181,8 +152,8 @@ Point * Mirror::includeRay(const Ray & ray) const
         double maxY{std::max(start.getY(), end.getY())};
 
         if((intersection->getX() < minX || intersection->getX() > maxX
-                || intersection->getY() < minY || intersection->getY() > maxY)
-            || !ray.isInTrajectory(*intersection))
+            || intersection->getY() < minY || intersection->getY() > maxY)
+                || !ray.isInTrajectory(*intersection))
         {
             delete intersection, intersection = nullptr;
         }

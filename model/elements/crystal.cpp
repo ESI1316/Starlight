@@ -13,11 +13,6 @@ Crystal::Crystal(const Point & center, const double radius, const int amplifier)
         throw StarlightException{"Le rayon doit être strictement positif"};
 }
 
-int Crystal::getAmplifier() const
-{
-    return this->amplifier;
-}
-
 double Crystal::getRadius() const
 {
     return this->getHeight() / 2.;

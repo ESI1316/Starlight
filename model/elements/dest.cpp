@@ -8,21 +8,6 @@
 Dest::Dest(const Point & position, const int edge)
     : Element(), Rectangle(edge, edge, position), light{false} {}
 
-const Point & Dest::getPosition() const
-{
-    return this->upLeftCorner;
-}
-
-int Dest::getEdge() const
-{
-    return this->height;
-}
-
-bool Dest::isLightedUp() const
-{
-    return this->light;
-}
-
 void Dest::setLightedUp(const bool light)
 {
     this->light = light;

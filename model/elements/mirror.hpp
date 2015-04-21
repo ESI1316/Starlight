@@ -281,4 +281,34 @@ public:
  */
 std::ostream & operator<<(std::ostream &, const Mirror &);
 
+inline const Point & Mirror::getPivot() const
+{
+    return this->pivot;
+}
+
+inline int Mirror::getLength() const
+{
+    return this->length;
+}
+
+inline int Mirror::getXPad() const
+{
+    return this->xpad;
+}
+
+inline double Mirror::getAngle() const
+{
+    return this->alpha;
+}
+
+inline double Mirror::getMinAngle() const
+{
+    return this->alphaMin;
+}
+
+inline double Mirror::getMaxAngle() const
+{
+    return this->alphaMax;
+}
+
 #endif // MIRROR_HPP

@@ -145,4 +145,19 @@ public:
  */
 std::ostream & operator<<(std::ostream &, const Line &);
 
+inline double Line::getSlope() const
+{
+    return this->slope;
+}
+
+inline double Line::getIndepTerm() const
+{
+    return this->indepTerm;
+}
+
+inline double Line::getXValue() const
+{
+    return this->xValue;
+}
+
 #endif // LINE_HPP

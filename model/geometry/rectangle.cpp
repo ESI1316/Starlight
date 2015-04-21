@@ -48,26 +48,6 @@ bool Rectangle::isOnBorder(const Point & point) const
     return (commonX && yInLimits) || (commonY && xInLimits);
 }
 
-std::vector<Line> Rectangle::getEdges() const
-{
-    return this->edges;
-}
-
-double Rectangle::getWidth() const
-{
-    return this->width;
-}
-
-double Rectangle::getHeight() const
-{
-    return this->height;
-}
-
-Point Rectangle::getUpLeftCorner() const
-{
-    return this->upLeftCorner;
-}
-
 bool Rectangle::operator ==(const Rectangle & rectangle) const
 {
     return utilities::equals(this->width, rectangle.width)
