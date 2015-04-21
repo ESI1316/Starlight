@@ -8,7 +8,7 @@ MirrorView::MirrorView(Mirror * mirror)
     : QGraphicsLineItem(QLineF{viewUtilities::toQPoint(mirror->getStart()),
                         viewUtilities::toQPoint(mirror->getEnd())}), mirror{mirror}
 {
-    QPen pen{Qt::blue};
+    QPen pen{QColor{204, 204, 255}};
 
     pen.setWidth(2);
 
