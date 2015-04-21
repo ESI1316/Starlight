@@ -34,7 +34,7 @@ namespace viewUtilities
      * \return
      * \see http://www.physics.sfasu.edu/astro/color/spectra.html
      */
-    QColor waveLengthToColor(const Ray & ray);
+    QColor waveLengthToColor(const Ray & ray, const double gamma = 0.8);
 }
 
 #endif // VIEWUTILITIES_HPP
