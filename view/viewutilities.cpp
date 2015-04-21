@@ -3,6 +3,12 @@
 #include <QLineF>
 #include <QPen>
 
+#include "model/geometry/ellipse.hpp"
+#include "model/geometry/rectangle.hpp"
+#include "model/geometry/point.hpp"
+#include "model/geometry/utilities.hpp"
+
+
 QPointF viewUtilities::toQPoint(const Point & point)
 {
     return QPointF{point.getX(), point.getY()};

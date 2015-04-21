@@ -9,11 +9,9 @@
 #include <QPointF>
 #include <QRectF>
 
-#include "model/geometry/ellipse.hpp"
-#include "model/geometry/line.hpp"
-#include "model/geometry/rectangle.hpp"
-#include "model/geometry/utilities.hpp"
-#include "model/geometry/point.hpp"
+class Ellipse;
+class Rectangle;
+class Point;
 
 namespace viewUtilities
 {
