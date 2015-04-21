@@ -72,11 +72,28 @@ void LevelView::loadLevelFromFile()
 
 void LevelView::updateDisplay()
 {
-     if (!this->isHidden() && (this->level->getDestination().isLightedUp()
-             || this->level->thereIsAnExplodedNuke()))
-     {
-            this->displayEndOfGame();
-     }
+    if (!this->isHidden())
+    {
+        for (auto ray : this->rays)
+            delete ray;
+
+        this->rays.clear();
+
+        for (auto & ray : this->level->getRays())
+        {
+            QGraphicsLineItem * rayView = viewUtilities::getLine(ray.getStart(),
+                                                                 ray.getEnd(),
+                                                                 Qt::black, 1);
+            this->scene->addItem(rayView);
+            this->rays.push_back(rayView);
+        }
+
+        if (this->level->getDestination().isLightedUp()
+                 || this->level->thereIsAnExplodedNuke())
+        {
+                this->displayEndOfGame();
+        }
+    }
 }
 
 void LevelView::displayEndOfGame()

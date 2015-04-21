@@ -17,6 +17,7 @@ class LevelView : public QGraphicsView
     QGraphicsScene * scene;
     std::string displayedLevelFilePath;
     Level * level;
+    std::vector<QGraphicsLineItem *> rays;
     std::vector<MirrorView *> mirrors;
 
     QPointF toQPoint(const Point & point);
