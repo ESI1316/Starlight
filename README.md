@@ -44,6 +44,11 @@ Elle est modifiée par un cristal.
 
 ## Build & run
 
+### Get
+```bash
+git clone https://github.com/splacentino/Starlight.git
+```
+
 ### Run
 ```bash
 cd Starlight
