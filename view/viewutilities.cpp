@@ -70,14 +70,14 @@ QGraphicsEllipseItem * viewUtilities::getEllipse(const Ellipse & ellipse,
 QColor viewUtilities::waveLengthToColor(const Ray & ray)
 {
     int wl = ray.getWaveLength();
-    const double gamma{0.08};
+    double gamma{0.8};
     double red{0.};
     double green{0.};
     double blue{0.};
 
         if (wl >= 380 && wl <= 440)
     {
-            double transparency{(0.3 + 0.7 * (wl - 380) / (440 - 380))};
+            double transparency{0.3 + (0.7 * (wl - 380) / (440 - 380))};
             red = std::pow(((-(wl - 440) / (440 - 380)) * transparency), gamma);
             blue = std::pow((1.0 * transparency), gamma);
     }
@@ -103,7 +103,7 @@ QColor viewUtilities::waveLengthToColor(const Ray & ray)
     }
         else if (wl >= 645 && wl <= 750)
     {
-            double transparency{(0.3 + 0.7 * (750 - wl) / (750 - 645))};
+            double transparency{0.3 + (0.7 * (750 - wl) / (750 - 645))};
             red = std::pow((1.0 * transparency), gamma);
     }
 
