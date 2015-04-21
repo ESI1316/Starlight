@@ -1,50 +1,50 @@
 \select@language {french}
-\contentsline {chapter}{\numberline {1}Introduction}{3}{chapter.1}
-\contentsline {chapter}{\numberline {2}Conventions}{4}{chapter.2}
-\contentsline {section}{\numberline {2.1}Langage et compilation}{4}{section.2.1}
-\contentsline {section}{\numberline {2.2}Documentation}{5}{section.2.2}
-\contentsline {section}{\numberline {2.3}Contenu des fichiers}{5}{section.2.3}
-\contentsline {section}{\numberline {2.4}Fichiers}{6}{section.2.4}
-\contentsline {subsection}{\numberline {2.4.1}noms}{6}{subsection.2.4.1}
-\contentsline {subsection}{\numberline {2.4.2}headers}{6}{subsection.2.4.2}
-\contentsline {subsection}{\numberline {2.4.3}sources}{6}{subsection.2.4.3}
-\contentsline {subsection}{\numberline {2.4.4}test}{6}{subsection.2.4.4}
-\contentsline {section}{\numberline {2.5}Nom des namespace}{6}{section.2.5}
-\contentsline {section}{\numberline {2.6}Nom des classes}{6}{section.2.6}
-\contentsline {section}{\numberline {2.7}Nom des variables}{7}{section.2.7}
-\contentsline {chapter}{\numberline {3}Les classes}{8}{chapter.3}
-\contentsline {section}{\numberline {3.1}Les objets g\IeC {\'e}om\IeC {\'e}triques}{8}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Ellipse}{8}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}Droite}{9}{subsection.3.1.2}
-\contentsline {subsection}{\numberline {3.1.3}Rectangle}{10}{subsection.3.1.3}
-\contentsline {subsection}{\numberline {3.1.4}Point}{10}{subsection.3.1.4}
-\contentsline {subsection}{\numberline {3.1.5}Utilitaire}{11}{subsection.3.1.5}
-\contentsline {subsubsection}{constantes :}{11}{section*.2}
-\contentsline {subsubsection}{fonctions :}{11}{section*.3}
-\contentsline {section}{\numberline {3.2}Les \IeC {\'e}l\IeC {\'e}ments}{12}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Element}{12}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Cristal}{12}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}Destination}{13}{subsection.3.2.3}
-\contentsline {subsection}{\numberline {3.2.4}Lentille}{13}{subsection.3.2.4}
-\contentsline {subsection}{\numberline {3.2.5}Miroir}{13}{subsection.3.2.5}
-\contentsline {subsection}{\numberline {3.2.6}Bombe}{14}{subsection.3.2.6}
-\contentsline {subsection}{\numberline {3.2.7}Rayon}{14}{subsection.3.2.7}
-\contentsline {subsection}{\numberline {3.2.8}Source}{14}{subsection.3.2.8}
-\contentsline {subsection}{\numberline {3.2.9}Mur}{14}{subsection.3.2.9}
-\contentsline {subsection}{\numberline {3.2.10}Niveau}{15}{subsection.3.2.10}
-\contentsline {subsection}{\numberline {3.2.11}Createur de niveau}{15}{subsection.3.2.11}
-\contentsline {section}{\numberline {3.3}L'exception}{15}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Exception Starlight}{15}{subsection.3.3.1}
-\contentsline {section}{\numberline {3.4}Les objets visuels}{16}{section.3.4}
-\contentsline {chapter}{\numberline {4}Structure du programme}{17}{chapter.4}
-\contentsline {chapter}{\numberline {5}Algorithmes}{18}{chapter.5}
-\contentsline {section}{\numberline {5.1}R\IeC {\'e}flexion}{18}{section.5.1}
-\contentsline {section}{\numberline {5.2}Intersection}{19}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Deux droites}{19}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Droite et rectangle}{19}{subsection.5.2.2}
-\contentsline {subsection}{\numberline {5.2.3}Droite et ellipse}{19}{subsection.5.2.3}
-\contentsline {chapter}{\numberline {6}Test effectu\IeC {\'e}s}{20}{chapter.6}
-\contentsline {section}{\numberline {6.1}Framework de test}{20}{section.6.1}
-\contentsline {section}{\numberline {6.2}Tests unitaire}{20}{section.6.2}
-\contentsline {chapter}{\numberline {7}Conclusion}{21}{chapter.7}
-\contentsline {chapter}{\numberline {A}R\IeC {\'e}f\IeC {\'e}rences}{22}{appendix.A}
+\contentsline {chapter}{\numberline {1}Introduction}{2}{chapter.1}
+\contentsline {chapter}{\numberline {2}Conventions}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}Langage et compilation}{3}{section.2.1}
+\contentsline {section}{\numberline {2.2}Documentation}{4}{section.2.2}
+\contentsline {section}{\numberline {2.3}Contenu des fichiers}{4}{section.2.3}
+\contentsline {section}{\numberline {2.4}Fichiers}{5}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}noms}{5}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}headers}{5}{subsection.2.4.2}
+\contentsline {subsection}{\numberline {2.4.3}sources}{5}{subsection.2.4.3}
+\contentsline {subsection}{\numberline {2.4.4}test}{5}{subsection.2.4.4}
+\contentsline {section}{\numberline {2.5}Nom des namespace}{5}{section.2.5}
+\contentsline {section}{\numberline {2.6}Nom des classes}{5}{section.2.6}
+\contentsline {section}{\numberline {2.7}Nom des variables}{6}{section.2.7}
+\contentsline {chapter}{\numberline {3}Les classes}{7}{chapter.3}
+\contentsline {section}{\numberline {3.1}Les objets g\IeC {\'e}om\IeC {\'e}triques}{7}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Ellipse}{7}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Droite}{8}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.3}Rectangle}{9}{subsection.3.1.3}
+\contentsline {subsection}{\numberline {3.1.4}Point}{9}{subsection.3.1.4}
+\contentsline {subsection}{\numberline {3.1.5}Utilitaire}{10}{subsection.3.1.5}
+\contentsline {subsubsection}{constantes :}{10}{section*.2}
+\contentsline {subsubsection}{fonctions :}{10}{section*.3}
+\contentsline {section}{\numberline {3.2}Les \IeC {\'e}l\IeC {\'e}ments}{11}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Element}{11}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Cristal}{11}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Destination}{12}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}Lentille}{12}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {3.2.5}Miroir}{12}{subsection.3.2.5}
+\contentsline {subsection}{\numberline {3.2.6}Bombe}{13}{subsection.3.2.6}
+\contentsline {subsection}{\numberline {3.2.7}Rayon}{13}{subsection.3.2.7}
+\contentsline {subsection}{\numberline {3.2.8}Source}{13}{subsection.3.2.8}
+\contentsline {subsection}{\numberline {3.2.9}Mur}{13}{subsection.3.2.9}
+\contentsline {subsection}{\numberline {3.2.10}Niveau}{14}{subsection.3.2.10}
+\contentsline {subsection}{\numberline {3.2.11}Createur de niveau}{14}{subsection.3.2.11}
+\contentsline {section}{\numberline {3.3}L'exception}{14}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Exception Starlight}{14}{subsection.3.3.1}
+\contentsline {section}{\numberline {3.4}Les objets visuels}{15}{section.3.4}
+\contentsline {chapter}{\numberline {4}Structure du programme}{16}{chapter.4}
+\contentsline {chapter}{\numberline {5}Algorithmes}{17}{chapter.5}
+\contentsline {section}{\numberline {5.1}R\IeC {\'e}flexion}{17}{section.5.1}
+\contentsline {section}{\numberline {5.2}Intersection}{18}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Deux droites}{18}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Droite et rectangle}{18}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}Droite et ellipse}{18}{subsection.5.2.3}
+\contentsline {chapter}{\numberline {6}Test effectu\IeC {\'e}s}{19}{chapter.6}
+\contentsline {section}{\numberline {6.1}Framework de test}{19}{section.6.1}
+\contentsline {section}{\numberline {6.2}Tests unitaire}{19}{section.6.2}
+\contentsline {chapter}{\numberline {7}Conclusion}{20}{chapter.7}
+\contentsline {chapter}{\numberline {A}R\IeC {\'e}f\IeC {\'e}rences}{21}{appendix.A}

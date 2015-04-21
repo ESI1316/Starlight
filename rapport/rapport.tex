@@ -527,10 +527,44 @@ $\gamma = (\pi - \beta - (\pi - \epsilon))$ par la somme des angles intérieurs 
 triangle valant $\pi rad$, \\
 $\alpha = \beta - \gamma$ par les angles correspondants
 \section[Intersection]{Algorithme d'intersection}
-\subsection[Deux droites]{Intersection de deux droites}
-\subsection[Droite et rectangle]{Intersection d'une droite et d'un rectangle}
-\subsection[Droite et ellipse]{Intersection d'une droite et d'une ellipse}
 
+\subsection[Deux droites]{Intersection de deux droites}
+Soient \\
+$$\begin{cases}
+y = m_1 \cdot x + p_1 \\
+y = m_2 \cdot x + p_2
+\end{cases}$$
+deux droites sécantes ($m_1 \ne m_2$), résoudre l'équation \\
+$$m_1 \cdot x + p_1 = m_2 \cdot x + p_2$$
+$$m_1 \cdot x - m_2 \cdot x = p_2 - p_1 $$
+$$x \cdot (m_1 - m_2) = p_2 - p_1$$
+$$x = \frac{(p_2 - p_1)}{(m_1 - m_2)}$$
+
+nous donne l'abcisse du point d'intersection des deux droites.
+Il suffit ensuite de trouver $y$ à l'aide d'une des deux équations.
+
+\subsection[Droite et rectangle]{Intersection d'une droite et d'un rectangle}
+Pour trouvez les intersections entre un rectangle et une droite, il suffit de
+chercher les intersections entre une droite et les quatres droites qui composent
+le rectangle (Cf. ``Intersection de deux droites).
+
+\subsection[Droite et ellipse]{Intersection d'une droite et d'une ellipse}
+Soient \\
+$$\begin{cases}
+y = m \cdot x + p \\
+\frac{(x - c_x)^2}{{x_{radius}}^2} + \frac{(y - c_y)^2}{{y_{radius}}^2} = 1
+\end{cases}$$
+une droite et une ellipse quelconque, substituons la droite à l'équation de
+l'ellipse
+$$\begin{cases}
+y = m \cdot x + p \\
+\frac{(x - c_x)^2}{{x_{radius}}^2} + \frac{((m \cdot x + p) - c_y)^2}{{y_{radius}}^2} = 1
+\end{cases}$$
+$$\begin{cases}
+y = m \cdot x + p \\
+\frac{(x - c_x)^2 * {y_{radius}}^2}{{x_{radius}}^2 * {y_{radius}}^2} +
+\frac{((m \cdot x + p) - c_y)^2 * {x_{radius}}^2}{{y_{radius}}^2 * {x_{radius}}^2} = 1
+\end{cases}$$
 
 
 \chapter{Test effectués}
