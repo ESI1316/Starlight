@@ -13,9 +13,6 @@ public:
 
     MirrorView(Mirror * mirror);
     ~MirrorView();
-
-protected:
-
 };
 
 #endif // MIRRORVIEW_HPP

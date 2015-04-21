@@ -62,6 +62,7 @@ void Level::addNuke(const Nuke & nuke)
 
 void Level::computeRays()
 {
+    this->rays.clear();
     this->computeRay(Ray{this->source.getPosition(), this->source.getAngle(),
                         this->source.getWaveLength()});
     this->notifyViews();

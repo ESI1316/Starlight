@@ -2,6 +2,7 @@
 
 #include "view/viewutilities.hpp"
 #include <QLineF>
+#include <QCursor>
 
 
 MirrorView::MirrorView(Mirror * mirror)
@@ -13,8 +14,7 @@ MirrorView::MirrorView(Mirror * mirror)
     pen.setWidth(2);
 
     this->setPen(pen);
-
-     //this->setCursor(Qt::PointingHandCursor);
+    QGraphicsLineItem::setCursor(QCursor(Qt::PointingHandCursor));
 }
 
 MirrorView::~MirrorView() {}
