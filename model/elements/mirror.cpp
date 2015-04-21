@@ -50,8 +50,8 @@ bool Mirror::setPivot(const Point & pivot)
     return this->checkPivotRange(pivot) ? this->pivot = pivot, true : false;
     }
 
-    bool Mirror::setAngle(double alpha)
-    {
+bool Mirror::setAngle(double alpha)
+{
     return this->checkAngleRange(alpha) ? this->alpha = alpha, true : false;
 }
 
@@ -59,14 +59,16 @@ bool Mirror::rotate(double alpha)
 {
     double angle{utilities::degreeToRadian(alpha) + this->alpha};
 
-    return (this->checkAngleRange(angle) ? this->alpha = angle, true : false);
+    return (this->checkAngleRange(angle) ?
+                this->alpha = angle, this->getLevel()->computeRays(), true : false);
 }
 
 bool Mirror::translate(const double x, const double y)
 {
     Point pivot{this->getPivot().getX() + x, this->getPivot().getY() + y};
 
-    return (this->checkPivotRange(pivot) ? this->pivot = pivot, true : false);
+    return (this->checkPivotRange(pivot) ?
+                this->pivot = pivot, this->getLevel()->computeRays(), true : false);
 }
 
 bool Mirror::checkAngleRange(double alpha) const
