@@ -2,13 +2,27 @@
 
 #include <QLineF>
 #include <QPen>
-#include <QRectF>
 
 QPointF viewUtilities::toQPoint(const Point & point)
 {
     return QPointF{point.getX(), point.getY()};
 }
 
+QRectF viewUtilities::toQRectF(const Rectangle & rectangle)
+{
+    Point upLeftCorner{rectangle.getUpLeftCorner()};
+
+    return QRectF{upLeftCorner.getX(), upLeftCorner.getY(), rectangle.getWidth(),
+                rectangle.getHeight()};
+}
+
+QRectF viewUtilities::toQRectF(const Ellipse & ellipse)
+{
+    Point upLeftCorner{ellipse.getUpLeftCorner()};
+
+    return QRectF{upLeftCorner.getX(),
+                upLeftCorner.getY(), ellipse.getWidth(), ellipse.getHeight()};
+}
 
 QGraphicsLineItem * viewUtilities::getLine(const Point & start, const Point & end,
                                           const QColor & color, int width)
@@ -23,14 +37,10 @@ QGraphicsLineItem * viewUtilities::getLine(const Point & start, const Point & en
     return line;
 }
 
-
 QGraphicsRectItem * viewUtilities::getRect(const Rectangle & rectangle,
                                           const QColor & color, int width)
 {
-    Point upLeftCorner{rectangle.getUpLeftCorner()};
-    QGraphicsRectItem * rect = new QGraphicsRectItem { QRectF{upLeftCorner.getX(),
-            upLeftCorner.getY(), rectangle.getWidth(), rectangle.getHeight()}};
-
+    QGraphicsRectItem * rect = new QGraphicsRectItem{viewUtilities::toQRectF(rectangle)};
     QPen pen{color};
 
     pen.setWidth(width);
@@ -39,14 +49,10 @@ QGraphicsRectItem * viewUtilities::getRect(const Rectangle & rectangle,
     return rect;
 }
 
-
 QGraphicsEllipseItem * viewUtilities::getEllipse(const Ellipse & ellipse,
                                                 const QColor & color, int width)
 {
-    Point upLeftCorner{ellipse.getUpLeftCorner()};
-    QGraphicsEllipseItem * ell = new QGraphicsEllipseItem{QRectF{upLeftCorner.getX(),
-            upLeftCorner.getY(), ellipse.getWidth(), ellipse.getHeight()}};
-
+    QGraphicsEllipseItem * ell = new QGraphicsEllipseItem{viewUtilities::toQRectF(ellipse)};
     QPen pen{color};
 
     pen.setWidth(width);

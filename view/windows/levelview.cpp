@@ -12,8 +12,7 @@
 #include "view/dynamicElements/sourceView.hpp"
 
 LevelView::LevelView(QWidget *parent)
-    : QGraphicsView {parent}, scene{new QGraphicsScene}, level{nullptr},
-      source{nullptr}
+    : QGraphicsView {parent}, scene{new QGraphicsScene}, level{nullptr}
 {
     this->setRenderHint(QPainter::Antialiasing);
     this->setScene(this->scene);
@@ -22,11 +21,7 @@ LevelView::LevelView(QWidget *parent)
 LevelView::~LevelView()
 {
     if (this->level != nullptr)
-    {
         delete this->level;
-        delete this->source;
-        this->mirrors.clear();
-    }
 }
 
 void LevelView::setLevelFilePath(const QString levelFile)
@@ -40,16 +35,15 @@ void LevelView::loadLevelFromFile()
     if (this->level != nullptr)
     {
         delete this->level;
-        delete this->source;
         this->mirrors.clear();
     }
 
     this->level = levelFactory::getLevelFromFile(this->displayedLevelFilePath);
     this->level->addView(this);
-    this->source = new SourceView{&this->level->getSource(), this};
-    this->source->show();
 
     this->setFixedSize(this->level->getWidth() + 10, this->level->getHeight() + 10);
+
+    this->scene->addItem(new SourceView(&this->level->getSource()));
 
     for (auto & lens : this->level->getLenses())
         this->scene->addItem(viewUtilities::getEllipse(lens, Qt::blue, 2));

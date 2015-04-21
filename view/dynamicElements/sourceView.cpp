@@ -1,33 +1,30 @@
 #include "sourceView.hpp"
 
-#include "model/geometry/utilities.hpp"
+#include "view/viewutilities.hpp"
 
-SourceView::SourceView(Source * source, QWidget * parent)
-    : QPushButton(parent), source{source}
+SourceView::SourceView(Source * source)
+    : QGraphicsRectItem(viewUtilities::toQRectF(*source)), source{source}
 {
-    Point upLeftCorner{source->getUpLeftCorner()};
+    QPen pen{Qt::black};
 
-    QPushButton::setGeometry(QRect {utilities::round(upLeftCorner.getX()),
-                                    utilities::round(upLeftCorner.getY()),
-                                    utilities::round(source->getWidth()),
-                                    utilities::round(source->getHeight())});
+    pen.setWidth(4);
 
-    this->setFocusPolicy(Qt::NoFocus);
+    this->setPen(pen);
+    this->setBrush(QBrush{Qt::white});
     this->setCursor(Qt::PointingHandCursor);
-    this->setStyleSheet("background-color:white;");
-
-    QObject::connect(this, SIGNAL(clicked()), this, SLOT(switchSource()));
 }
 
 SourceView::~SourceView() {}
 
 void SourceView::switchSource()
 {
-    bool newOnVal = !this->source->isOn();
+    this->source->setOn(!this->source->isOn());
+    this->setBrush(QBrush{this->source->isOn() ? Qt::yellow : Qt::white});
+}
 
-    this->setStyleSheet(QString( (std::string("background-color:") +
-                                 (newOnVal ? std::string("yellow;")
-                                           : std::string("white;"))).c_str()) );
-    this->source->setOn(newOnVal);
+void SourceView::mousePressEvent(QGraphicsSceneMouseEvent *event)
+{
+    this->switchSource();
+    QGraphicsRectItem::mousePressEvent(event);
 }
 

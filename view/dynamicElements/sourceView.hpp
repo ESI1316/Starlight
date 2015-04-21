@@ -2,24 +2,24 @@
 #define SOURCEVIEW_HPP
 
 #include <QWidget>
-#include <QPushButton>
+#include <QGraphicsRectItem>
 
 #include "model/elements/source.hpp"
 
-class SourceView : public QPushButton
+class SourceView : public QGraphicsRectItem
 {
-    Q_OBJECT
-
     Source * source;
 
 public:
 
-    SourceView(Source *source, QWidget * parent = 0);
+    SourceView(Source *source);
     ~SourceView();
 
-public slots:
-
     void switchSource();
+
+protected:
+
+    void mousePressEvent(QGraphicsSceneMouseEvent *event);
 };
 
 #endif // SOURCEVIEW_HPP

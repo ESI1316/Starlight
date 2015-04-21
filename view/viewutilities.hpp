@@ -7,6 +7,7 @@
 #include <QGraphicsEllipseItem>
 #include <QColor>
 #include <QPointF>
+#include <QRectF>
 
 #include "model/geometry/ellipse.hpp"
 #include "model/geometry/line.hpp"
@@ -17,6 +18,10 @@
 namespace viewUtilities
 {
     QPointF toQPoint(const Point & point);
+
+    QRectF toQRectF(const Rectangle &);
+
+    QRectF toQRectF(const Ellipse &);
 
     QGraphicsLineItem * getLine(const Point &, const Point &, const QColor &, int);
 
