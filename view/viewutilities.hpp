@@ -9,6 +9,8 @@
 #include <QPointF>
 #include <QRectF>
 
+#include "model/elements/ray.hpp"
+
 class Ellipse;
 class Rectangle;
 class Point;
@@ -32,7 +34,7 @@ namespace viewUtilities
      * \return
      * \see http://www.physics.sfasu.edu/astro/color/spectra.html
      */
-    QColor waveLengthToColor(const int, const double = 0.8);
+    QColor waveLengthToColor(const Ray & ray);
 }
 
 #endif // VIEWUTILITIES_HPP

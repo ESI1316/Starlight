@@ -67,8 +67,10 @@ QGraphicsEllipseItem * viewUtilities::getEllipse(const Ellipse & ellipse,
     return ell;
 }
 
-QColor viewUtilities::waveLengthToColor(const int wl, const double gamma)
+QColor viewUtilities::waveLengthToColor(const Ray & ray)
 {
+    int wl = ray.getWaveLength();
+    const double gamma{0.08};
     double red{0.};
     double green{0.};
     double blue{0.};
