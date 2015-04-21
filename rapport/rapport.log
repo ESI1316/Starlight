@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2015.4.17)  20 APR 2015 20:34
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2015.4.17)  21 APR 2015 08:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -857,7 +857,7 @@ LaTeX Info: Redefining \nameref on input line 19.
 \openout4 = `rapport.out'.
 
  (./title.tex
-<./logo.png, id=183, 90.3375pt x 170.6375pt>
+<./logo.png, id=187, 90.3375pt x 170.6375pt>
 File: ./logo.png Graphic file (type png)
  <use ./logo.png>
 Package pdftex.def Info: ./logo.png used on input line 4.
@@ -879,7 +879,7 @@ File: umsb.fd 2009/06/22 v3.00 AMS symbols B
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.36 ... {4}Structure du programme}{14}{chapter.4}
+l.36 ... {3.4}Les objets visuels}{14}{section.3.4}
                                                    [1
 
 ])
@@ -892,6 +892,12 @@ Chapitre 1.
 
 ]
 Chapitre 2.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 30.
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+) [4
+
+]
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2004/09/05 1.3 listings language file
 )
@@ -900,80 +906,73 @@ File: lstlang1.sty 2004/09/05 1.3 listings language file
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
-) [4
-
-]
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 56.
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
-File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-) [5]
+) [5] [6]
 Chapitre 3.
-[6
+[7
 
-] [7] [8] [9] [10] [11]
-Underfull \hbox (badness 10000) in paragraph at lines 363--369
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 363--369
+] [8] [9] [10] [11] [12]
+Underfull \hbox (badness 10000) in paragraph at lines 379--385
 
  []
 
-[12] [13]
+
+Underfull \hbox (badness 10000) in paragraph at lines 379--385
+
+ []
+
+[13] [14]
 Chapitre 4.
-[14
+[15
 
 ]
 Chapitre 5.
 (./reflexion.tex)
-Underfull \hbox (badness 10000) in paragraph at lines 48--408
+Underfull \hbox (badness 10000) in paragraph at lines 48--424
 
  []
 
-[15
+[16
 
-] [16]
+] [17]
 Chapitre 6.
 
-Underfull \hbox (badness 10000) in paragraph at lines 433--436
+Underfull \hbox (badness 10000) in paragraph at lines 449--452
 
  []
 
-[17
-
-]
-Chapitre 7.
 [18
 
 ]
-Annexe A.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 450.
+Chapitre 7.
 [19
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 450.
+Annexe A.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 466.
+[20
+
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 466.
  (./rapport.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 450.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 450.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 466.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 466.
 Package rerunfilecheck Info: File `rapport.out' has not changed.
-(rerunfilecheck)             Checksum: 9BFE405DB38ED25629092C652C315FEE;2678.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 450.
+(rerunfilecheck)             Checksum: 82BB597BB94EA18659FF3CE2549DB9AD;2728.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 466.
  ) 
 Here is how much of TeX's memory you used:
- 18084 strings out of 495030
- 308884 string characters out of 3180761
- 406672 words of memory out of 3000000
- 20811 multiletter control sequences out of 15000+200000
+ 18089 strings out of 495030
+ 308937 string characters out of 3180761
+ 406824 words of memory out of 3000000
+ 20812 multiletter control sequences out of 15000+200000
  24125 words of font info for 60 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 49i,6n,60p,412b,1187s stack positions out of 5000i,500n,10000p,200000b,50000s
- </home/g39631/.texmf-var/fonts/pk/ljfour/jknappen/ec/ectt0900.600pk> </home/
-g39631/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0900.600pk> </home/g39631/.te
-xmf-var/fonts/pk/ljfour/jknappen/ec/ecti1095.600pk> </home/g39631/.texmf-var/fo
-nts/pk/ljfour/jknappen/ec/ecrm0800.600pk> </home/g39631/.texmf-var/fonts/pk/ljf
-our/jknappen/ec/ecbx1200.600pk> </home/g39631/.texmf-var/fonts/pk/ljfour/jknapp
+ 49i,6n,60p,412b,1822s stack positions out of 5000i,500n,10000p,200000b,50000s
+ </home/g39631/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1095.600pk> </home/
+g39631/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/g39631/.te
+xmf-var/fonts/pk/ljfour/jknappen/ec/ectt0900.600pk> </home/g39631/.texmf-var/fo
+nts/pk/ljfour/jknappen/ec/ecrm0900.600pk> </home/g39631/.texmf-var/fonts/pk/ljf
+our/jknappen/ec/ecrm0800.600pk> </home/g39631/.texmf-var/fonts/pk/ljfour/jknapp
 en/ec/ecbx1440.600pk> </home/g39631/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm
 1095.600pk> </home/g39631/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1095.600pk
 > </home/g39631/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2488.600pk> </home/g
@@ -989,10 +988,10 @@ e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on rapport.pdf (20 pages, 230038 bytes).
+Output written on rapport.pdf (21 pages, 233422 bytes).
 PDF statistics:
- 914 PDF objects out of 1000 (max. 8388607)
- 468 compressed objects within 5 object streams
- 123 named destinations out of 1000 (max. 500000)
- 370 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 938 PDF objects out of 1000 (max. 8388607)
+ 483 compressed objects within 5 object streams
+ 127 named destinations out of 1000 (max. 500000)
+ 378 words of extra memory for PDF output out of 10000 (max. 10000000)
 

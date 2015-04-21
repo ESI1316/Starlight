@@ -11,16 +11,6 @@ Wall::Wall(const Point & start, const Point & end)
         throw StarlightException{"Les points ne peuvent être confondus"};
 }
 
-const Point & Wall::getStart() const
-{
-    return this->start;
-}
-
-const Point & Wall::getEnd() const
-{
-    return this->end;
-}
-
 void Wall::reactToRay(Ray) {}
 
 Point * Wall::includeRay(const Ray & ray) const

@@ -84,14 +84,6 @@ public:
     void setY(const double);
 
     /*!
-     * \brief Permet de savoir si le point courant est l'origine du plan cartésien.
-     *
-     * \return <code>true</code> Si le point courant est l'origine du plan
-     * cartésien.
-     */
-    bool isCenter() const;
-
-    /*!
      * \brief Permet d'obtenir la distance séparant le point du centre de rotation.
      *
      * \return Le rayon séparant le point polaire de son centre.
@@ -209,5 +201,25 @@ public:
  * paramètre.
  */
 std::ostream & operator<<(std::ostream &, const Point &);
+
+inline double Point::getX() const
+{
+    return this->x;
+}
+
+inline double Point::getY() const
+{
+    return this->y;
+}
+
+inline double Point::getRadius() const
+{
+    return this->radius;
+}
+
+inline double Point::getAzimut() const
+{
+    return this->azimut;
+}
 
 #endif // POINT_HPP

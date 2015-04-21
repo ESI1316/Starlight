@@ -25,6 +25,22 @@ pdfkeywords={C++, ISO/IEC 14882:2011, Starlight, Projet}]{hyperref}
 
 
 \chapter[Conventions]{Quelques conventions utilisées}
+\section{C++}
+Ce projet a été bati à l'aide de \textbf{Qt Creator
+5.4}\footnote{\url{http://www.qt.io/developers/}}, pour l'accès à la bibliothèque
+graphique, et compilé à l'aide de
+\textbf{g++}\footnote{\url{https://gcc.gnu.org/}} dans sa version 4.8 (et
+compatible 4.9). La norme ISO/IEC 14882:2011, aussi appellée c++11, est celle
+utilisée. A cela s'ajoute certains ``flags'' de compilation
+\begin{center}
+\textbf{g++ -std=c++11 -Wextra -Wall -pedantic-errors}
+\end{center}
+\begin{itemize}
+	\item -std=c++11 pour travailler en c++11,
+	\item -Wextra qui nous permet d'avoir des messages d'avertissements,
+	\item -Wall qui nous permet d'avoir tous les messages d'avertissements,
+	\item -pedantic-errors qui transforme certains ``warnings'' en erreurs.
+\end{itemize}
 \section{Contenu des fichiers}
 Chaque fichier contiendra les en-têtes, ou le code source, d'une seule et unique
 classe ou d'un seul et unique namespace.

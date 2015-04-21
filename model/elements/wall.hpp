@@ -82,4 +82,14 @@ public:
  */
 std::ostream & operator<<(std::ostream &, const Wall &);
 
+inline const Point & Wall::getStart() const
+{
+    return this->start;
+}
+
+inline const Point & Wall::getEnd() const
+{
+    return this->end;
+}
+
 #endif // WALL_HPP

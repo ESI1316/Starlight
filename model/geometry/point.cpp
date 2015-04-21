@@ -10,34 +10,10 @@ Point::Point(const double x, const double y)
 Point::Point(const Point & point)
     : x{point.x}, y{point.y}, radius{point.radius}, azimut{point.azimut} {}
 
-double Point::getX() const
-{
-    return this->x;
-}
-
-double Point::getY() const
-{
-    return this->y;
-}
-
-double Point::getRadius() const
-{
-    return this->radius;
-}
-
-double Point::getAzimut() const
-{
-    return this->azimut;
-}
 
 double Point::getAzimutAsDegrees() const
 {
     return utilities::angleAsDegree0to360(this->getAzimut());
-}
-
-bool Point::isCenter() const
-{
-    return utilities::equals(this->radius, 0.);
 }
 
 void Point::setX(const double x)
