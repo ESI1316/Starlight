@@ -50,8 +50,8 @@ bool Mirror::setPivot(const Point & pivot)
     return this->checkPivotRange(pivot) ? this->pivot = pivot, true : false;
     }
 
-    bool Mirror::setAngle(double alpha)
-    {
+bool Mirror::setAngle(double alpha)
+{
     return this->checkAngleRange(alpha) ? this->alpha = alpha, true : false;
 }
 

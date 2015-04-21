@@ -2,6 +2,7 @@
 #define MIRRORVIEW_HPP
 
 #include <QGraphicsLineItem>
+#include <QKeyEvent>
 #include <QRectF>
 
 #include "model/elements/mirror.hpp"
@@ -9,7 +10,6 @@
 class MirrorView : public QGraphicsLineItem
 {
     Mirror * mirror;
-    QRectF boundRect;
 
 public:
 
@@ -18,8 +18,7 @@ public:
 
 protected:
 
-    QVariant itemChange(GraphicsItemChange, const QVariant &);
-
+    void keyPressEvent(QKeyEvent * event);
 };
 
 #endif // MIRRORVIEW_HPP
