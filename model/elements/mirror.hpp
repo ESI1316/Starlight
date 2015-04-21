@@ -175,6 +175,13 @@ public:
     bool rotate(double);
 
     /*!
+     * \brief translate
+     * \param alpha
+     * \return
+     */
+    bool translate(const double x, const double y);
+
+    /*!
      * \brief getStart
      * \return
      */
