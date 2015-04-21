@@ -1,12 +1,12 @@
 \BOOKMARK [0][-]{chapter.1}{Introduction}{}% 1
 \BOOKMARK [0][-]{chapter.2}{Conventions}{}% 2
-\BOOKMARK [1][-]{section.2.1}{Language et compilation}{chapter.2}% 3
+\BOOKMARK [1][-]{section.2.1}{Langage et compilation}{chapter.2}% 3
 \BOOKMARK [1][-]{section.2.2}{Documentation}{chapter.2}% 4
 \BOOKMARK [1][-]{section.2.3}{Contenu des fichiers}{chapter.2}% 5
 \BOOKMARK [1][-]{section.2.4}{Nom des fichiers}{chapter.2}% 6
-\BOOKMARK [1][-]{section.2.5}{Nom des fichiers de test}{chapter.2}% 7
-\BOOKMARK [2][-]{subsection.2.5.1}{headers}{section.2.5}% 8
-\BOOKMARK [2][-]{subsection.2.5.2}{sources}{section.2.5}% 9
+\BOOKMARK [2][-]{subsection.2.4.1}{headers}{section.2.4}% 7
+\BOOKMARK [2][-]{subsection.2.4.2}{sources}{section.2.4}% 8
+\BOOKMARK [1][-]{section.2.5}{Nom des fichiers de test}{chapter.2}% 9
 \BOOKMARK [1][-]{section.2.6}{Nom des namespace}{chapter.2}% 10
 \BOOKMARK [1][-]{section.2.7}{Nom des classes}{chapter.2}% 11
 \BOOKMARK [1][-]{section.2.8}{Nom des variables}{chapter.2}% 12

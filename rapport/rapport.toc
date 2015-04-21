@@ -1,13 +1,13 @@
 \select@language {french}
 \contentsline {chapter}{\numberline {1}Introduction}{3}{chapter.1}
 \contentsline {chapter}{\numberline {2}Conventions}{4}{chapter.2}
-\contentsline {section}{\numberline {2.1}Language et compilation}{4}{section.2.1}
+\contentsline {section}{\numberline {2.1}Langage et compilation}{4}{section.2.1}
 \contentsline {section}{\numberline {2.2}Documentation}{5}{section.2.2}
 \contentsline {section}{\numberline {2.3}Contenu des fichiers}{5}{section.2.3}
 \contentsline {section}{\numberline {2.4}Nom des fichiers}{6}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}headers}{6}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}sources}{6}{subsection.2.4.2}
 \contentsline {section}{\numberline {2.5}Nom des fichiers de test}{6}{section.2.5}
-\contentsline {subsection}{\numberline {2.5.1}headers}{6}{subsection.2.5.1}
-\contentsline {subsection}{\numberline {2.5.2}sources}{6}{subsection.2.5.2}
 \contentsline {section}{\numberline {2.6}Nom des namespace}{6}{section.2.6}
 \contentsline {section}{\numberline {2.7}Nom des classes}{6}{section.2.7}
 \contentsline {section}{\numberline {2.8}Nom des variables}{6}{section.2.8}

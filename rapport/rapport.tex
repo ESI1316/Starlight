@@ -25,14 +25,14 @@ pdfkeywords={C++, ISO/IEC 14882:2011, Starlight, Projet, ESI}]{hyperref}
 
 
 \chapter[Conventions]{Quelques conventions utilisées}
-\section{Language et compilation}
-Ce projet a été bati à l'aide de \textbf{Qt Creator
+\section{Langage et compilation}
+Ce projet a été bâti à l'aide de \textbf{Qt Creator
 5.4}\footnote{\url{http://www.qt.io/developers/}}, pour l'accès à la bibliothèque
 graphique, et compilé à l'aide de
 \textbf{g++}\footnote{\url{https://gcc.gnu.org/}} dans sa version 4.8 (et
 compatible 4.9). La norme \textbf{ISO/IEC
 14882:2011}\footnote{\url{http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=50372}}
-, aussi appellée c++11, est celle
+, aussi appelée c++11, est celle
 utilisée. A cela s'ajoute certains flags\footnote{un flag est un argument de
 compilation optionnel} de compilation
 \begin{center}
@@ -95,7 +95,7 @@ Cette documentation est disponible dans les dossiers
 \end{center}
 \section{Contenu des fichiers}
 Chaque fichier contiendra les en-têtes, ou le code source, d'une seule et unique
-classe et d'au maximum un seul namespace. Si la classe ne contiend pas au moins
+classe et d'au maximum un seul namespace. Si la classe ne contient pas au moins
 une classe publique, le fichier portera le nom du namespace.
 Par exemple, le contenu du fichier hello.hpp peut être ainsi :
 \begin{lstlisting}[frame=single,language=C++]
@@ -110,6 +110,10 @@ class Hello {};
 \section{Nom des fichiers}
 Le nom des fichiers est entièrement écrit en minuscule et porte le nom de la
 classe, ou du namespace qu'il contient.
+\subsection{headers}
+Les headers porteront l'extension \textbf{hpp}.
+\subsection{sources}
+Les fichiers sources porteront l'extension \textbf{cpp}.
 \section{Nom des fichiers de test}
 Le nom des fichiers de test est composé du nom de la classe ou du namespace
 testé suivi de ``test''
@@ -117,10 +121,6 @@ testé suivi de ``test''
 nuketest.cpp
 mirrortest.cpp
 \end{lstlisting}
-\subsection{headers}
-Les headers porteront l'extension \textbf{hpp}.
-\subsection{sources}
-Les fichiers sources porteront l'extension \textbf{cpp}.
 \section{Nom des namespace}
 Le nom d'un namespace sera exclusivement en minuscule.
 \section{Nom des classes}
