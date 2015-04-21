@@ -94,7 +94,7 @@ Cette documentation est disponible dans les dossiers
 \path{documentation/latex/documentation.pdf} \\
 \end{center}
 \section{Contenu des fichiers}
-Chaque fichier contiendra les en-têtes, ou le code source, d'une seule et unique
+Chaque fichier contiendra les en-têtes, ou le code source, d'au maximum une seule 
 classe et d'au maximum un seul namespace. Si la classe ne contient pas au moins
 une classe publique, le fichier portera le nom du namespace.
 Par exemple, le contenu du fichier hello.hpp peut être ainsi :
@@ -107,22 +107,37 @@ namespace hello {}
 \begin{lstlisting}[frame=single,language=C++]
 class Hello {};
 \end{lstlisting}
-\section{Nom des fichiers}
+Le contenu de l'ensemble des fichiers est disponible dans le dossier
+\begin{center}
+\path{src/} \\
+\end{center}
+\section{Fichiers}
+\subsection{noms}
 Le nom des fichiers est entièrement écrit en minuscule et porte le nom de la
 classe, ou du namespace qu'il contient.
 \subsection{headers}
-Les headers porteront l'extension \textbf{hpp}.
+Les headers porteront l'extension \textbf{hpp}. Ils seront disposés dans le même
+dossier que leur fichier source \textbf{cpp} correspondant.
 \subsection{sources}
-Les fichiers sources porteront l'extension \textbf{cpp}.
-\section{Nom des fichiers de test}
+Les fichiers sources porteront l'extension \textbf{cpp}. Ils seront disposé dans
+le même dossier que leur fichier header \textbf{hpp} correspondant.
+\subsection{test}
 Le nom des fichiers de test est composé du nom de la classe ou du namespace
 testé suivi de ``test''
-\begin{lstlisting}[frame=single]
-nuketest.cpp
-mirrortest.cpp
+\begin{lstlisting}[frame=single, mathescape, escapechar=@]
+nuke.cpp $\rightarrow$ nuke@\textbf{test}@.cpp 
+mirror.cpp $\rightarrow$ mirror@\textbf{test}@.cpp
 \end{lstlisting}
+L'ensemble de ces classes sont disponibles dans le dossier
+\begin{center}
+\path{test/} \\
+\end{center}
+
 \section{Nom des namespace}
 Le nom d'un namespace sera exclusivement en minuscule.
+\begin{lstlisting}[frame=single, language=C++]
+namespace hebesi {}
+\end{lstlisting}
 \section{Nom des classes}
 Les classes commencent toutes par une majuscule pour continuer, ensuite, en
 CamelCase
@@ -141,7 +156,7 @@ T uneautreMauvaisevariable;
 et possède des noms le plus explicite possible
 \begin{lstlisting}[frame=single,language=C++]
 T nb; // OK
-T n; // NOK
+T n{38.}; // NOK
 T waveLength; // OK
 \end{lstlisting}
 Les variables de classes possèdent le même nom que le paramètre de constructeur
@@ -161,7 +176,7 @@ UneClasse::UneClasse(T param) : param{param} {}
 \subsection[Ellipse]{ellipse.hpp}
 \begin{center}
 	\begin{tikzpicture}
-		\draw[gray, very thin] (-2, 0) grid (2, 2);
+		\draw[gray, very thin] (-2.1, -0.1) grid (2.1, 2.1);
 		\draw[red](0, 0) -- (0, 1);
 		\draw[blue](2, 1) -- (0, 1);
 		\draw (0,1) ellipse (2cm and 1cm);
@@ -172,13 +187,13 @@ une courbe plane fermée obtenu par découpe d'un cône sur un plan. Si ce derni
 est perpendiculaire à l'axe du cône, l'ellipse sera alors un cercle.
 Éléments caractéristiques d'une ellipse :
 \begin{itemize}
-	\item une coordonnée cartésienne de son centre,
-	\item une distance séparant le centre de l'intersection avec une parallèle à
-		l'axe des ordonnées tangente à l'ellipse voulue,
-	\item une distance séparant le centre de l'intersection avec une parallèle à
-		l'axe des abscisse tangente à l'ellipse voulue.
+	\item une coordonnée cartésienne, ou polaire, de son \textbf{centre} $c$,
+	\item une distance séparant le centre de l'intersection avec la tangente
+		parallèle à l'axe des ordonnées $x_{radius}$,
+	\item une distance séparant le centre de l'intersection avec la tangente
+		parallèle à l'axe des abscisses $y_{radius}$.
 \end{itemize}
-Ces éléments nous permettront de tracer une ellipse selon cette équation :
+Ces éléments nous permettront de tracer une ellipse selon l'équation :
 $$\frac{(x - c_x)^2}{{x_{radius}}^2} + \frac{(y - c_y)^2}{{y_{radius}}^2} = 1$$
 
 Cette classe peut tout à fait être instancié en objet géométrique elliptique
@@ -186,7 +201,7 @@ et possède des méthodes d'interactions avec une droite\footnote{L'algorithme
 	est disponible dans la section du même nom ou dans la documentation
 accompagnant le projet}.
 \begin{lstlisting}[frame=single,language=C++]
-Ellipse::getIntersectionsPoints(Line);
+Point * Ellipse::getIntersectionsPoints(const Line &);
 \end{lstlisting}
 Dans le contexte présent, certains éléments du jeu seront des ellipse par le 
 phénomène d'héritage mis en place dans le paradigme orienté objet de
@@ -195,7 +210,7 @@ C++\footnote{\url{http://www.tutorialspoint.com/cplusplus/cpp_object_oriented.ht
 \subsection[Droite]{line.hpp}
 \begin{center}
 	\begin{tikzpicture}
-		\draw[gray, very thin] (0,0) grid (3,3);
+		\draw[gray, very thin] (-0.1, -0.1) grid (3.1, 3.1);
 		\draw[dashed] (-1, -1) -- (0, 0);
 		\draw (0,0) -- (3, 3);
 		\draw[dashed] (3,3) -- (4, 4);
@@ -209,13 +224,36 @@ Pour exister, une droite aura besoin :
 		distance sur l'axe des abscisses.
 	\item d'un terme indépendant $p = \frac{y}{m \cdot x}$ représentant le décalage de chaque point
 		sur l'axe des ordonnées,
-	\item ou de deux points de coordonnées dans le plan,
-	\item ou d'un point de coordonnées dans le plan et d'un coefficient
-		angulaire.
+	\item ou de deux points de coordonnées dans le plan $a, b$
+	\item ou d'un point de coordonnées dans le plan $a$ et d'un coefficient
+		angulaire $m = \frac{\Delta y}{\Delta x}$.
 \end{itemize}
-Ces éléments nous permettent de tracer une droite selon cette équation :
-$$ y = m \cdot x + p $$
-
+Ces éléments nous permettent de tracer une droite selon l'équation :
+$$y = m \cdot x + p$$
+Il s'agit donc de cette dernière qui a été modélisé. Pour la gestion des droites
+verticales, un paramètre supplémentaire, et optionnel, a été rajouté au
+constructeur. Ainsi, une méthode de la classe utilities nous permet de savoir si le
+coefficient angulaire est dit ``infini'' et donc nous permettre de contenter la
+demande
+\begin{lstlisting}[frame=single,language=C++]
+bool * Line::isVertical();
+\end{lstlisting}
+Ainsi, il est simple de savoir, en interieur comme en exterieur de la classe, si
+la droite est verticale ou non.
+Il est aussi possible de savoir si un point fait parti de la droite courante.
+\begin{lstlisting}[frame=single,language=C++]
+bool * Line::includes(const Point &) const;
+\end{lstlisting}
+Cette classe peut tout à fait être instancié en objet géométrique linéaire
+et possède des méthodes d'interactions avec d'autres droites\footnote{L'algorithme
+	est disponible dans la section du même nom ou dans la documentation
+accompagnant le projet}.
+\begin{lstlisting}[frame=single,language=C++]
+Point * Line::getIntersectionPoint(const Line &);
+\end{lstlisting}
+Dans le contexte présent, certains éléments du jeu seront des droites par le 
+phénomène d'héritage mis en place dans le paradigme orienté objet de
+C++\footnote{\url{http://www.tutorialspoint.com/cplusplus/cpp_object_oriented.htm}}
 \subsection[Rectangle]{rectangle.hpp}
 \begin{center}
 	\begin{tikzpicture}
@@ -242,14 +280,14 @@ Ainsi, il sera aisé de déterminer la position des autres coins
 	\item $Ig = (Sg_x , Sg_y + hauteur)$
 	\item $Id = (Sg_x + largeur, Sg_y + hauteur)$
 \end{itemize}
-
-Il existe plusieurs cas particuliers de droite :
-\begin{itemize}
-	\item une droite parallèle à l'axe des ordonnées qui aura pour équation \\
-		$x = a,$ $a \in \mathbb{R}$,
-	\item une droite parallèle à l'axe des abscisses qui aura pour équation \\
-		$y = b,$ $b \in \mathbb{R}$,
-\end{itemize}
+et de modéliser le rectangle à l'aide de 4 équations de droite, les objets Line.
+Cette classe peut tout à fait être instancié en objet géométrique rectangulaire
+et possède des méthodes d'interactions avec d'autres droites\footnote{L'algorithme
+	est disponible dans la section du même nom ou dans la documentation
+accompagnant le projet}.
+\begin{lstlisting}[frame=single,language=C++]
+vector<Point> Rectangle::getIntersectionPoints(Line &);
+\end{lstlisting}
 \subsection[Point]{point.hpp}
 Un point est un objet mathématique permettant de situer un élément dans un plan
 ou dans l'espace. Dans notre cas, plus spécifiquement dans un plan à deux
