@@ -54,6 +54,13 @@ void LevelView::loadLevelFromFile()
     for (auto & nuke : this->level->getNukes())
         this->scene->addItem(viewUtilities::getEllipse(nuke, Qt::red, 2));
 
+    for (auto & mirror : this->level->getMirrors())
+    {
+        MirrorView * mir = new MirrorView(&mirror);
+        this->scene->addItem(mir);
+        this->mirrors.push_back(mir);
+    }
+
     for (auto & wall : this->level->getWalls())
         this->scene->addItem(viewUtilities::getLine(wall.getStart(), wall.getEnd(),
                                                     Qt::black, 4));

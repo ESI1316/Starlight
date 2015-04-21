@@ -5,7 +5,7 @@
 
 #include "model/elements/mirror.hpp"
 
-class MirrorView : QWidget
+class MirrorView : public QGraphicsLineItem
 {
     Mirror * mirror;
 

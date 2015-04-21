@@ -138,9 +138,23 @@ void Mirror::reactToRay(Ray ray)
                                              ray.getWaveLength()});
 }
 
-Point getStart() const;
+Point Mirror::getStart() const
+{
+    Point p1, p2;
 
-Point getEnd() const;
+    this->getBounds(&p1, &p2);
+
+    return p1;
+}
+
+Point Mirror::getEnd() const
+{
+    Point p1, p2;
+
+    this->getBounds(&p1, &p2);
+
+    return p2;
+}
 
 void Mirror::getBounds(Point * p1, Point * p2) const
 {
