@@ -3,7 +3,6 @@
 #include <QMessageBox>
 #include <QPushButton>
 #include <QMainWindow>
-#include <QtAlgorithms>
 
 #include <iostream>
 
@@ -28,7 +27,6 @@ LevelView::~LevelView()
 void LevelView::setLevelFilePath(const QString levelFile)
 {
     this->displayedLevelFilePath = levelFile.toStdString();
-    qDeleteAll(this->scene->items());
     this->loadLevelFromFile();
 }
 
