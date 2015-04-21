@@ -3,6 +3,7 @@
 #include <QMessageBox>
 #include <QPushButton>
 #include <QMainWindow>
+#include <QtAlgorithms>
 
 #include <iostream>
 
@@ -27,6 +28,7 @@ LevelView::~LevelView()
 void LevelView::setLevelFilePath(const QString levelFile)
 {
     this->displayedLevelFilePath = levelFile.toStdString();
+    qDeleteAll(this->scene->items());
     this->loadLevelFromFile();
 }
 
@@ -81,9 +83,8 @@ void LevelView::updateDisplay()
 
         for (auto & ray : this->level->getRays())
         {
-            QGraphicsLineItem * rayView = viewUtilities::getLine(ray.getStart(),
-                                                                 ray.getEnd(),
-                                                                 Qt::black, 1);
+            QGraphicsLineItem * rayView = viewUtilities::getLine
+                    (ray.getStart(), ray.getEnd(), viewUtilities::waveLengthToColor(ray), 1);
             this->scene->addItem(rayView);
             this->rays.push_back(rayView);
         }
