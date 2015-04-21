@@ -175,6 +175,18 @@ public:
     bool rotate(double);
 
     /*!
+     * \brief getStart
+     * \return
+     */
+    Point getStart() const;
+
+    /*!
+     * \brief
+     * \return
+     */
+    Point getEnd() const;
+
+    /*!
      * \brief getBounds
      */
     void getBounds(Point *, Point *) const;

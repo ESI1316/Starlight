@@ -138,6 +138,10 @@ void Mirror::reactToRay(Ray ray)
                                              ray.getWaveLength()});
 }
 
+Point getStart() const;
+
+Point getEnd() const;
+
 void Mirror::getBounds(Point * p1, Point * p2) const
 {
     *p1 = Point{this->pivot.getX() - this->xpad, this->pivot.getY()};

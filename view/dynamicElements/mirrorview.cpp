@@ -4,8 +4,8 @@
 
 class Point;
 
-MirrorView::MirrorView(Mirror * mirror, QWidget *parent)
-    : QWidget(parent), mirror{mirror} {}
+MirrorView::MirrorView(Mirror * mirror)
+    : QGraphicsLineItem(), mirror{mirror} {}
 
 MirrorView::~MirrorView() {}
 
