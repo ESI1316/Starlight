@@ -43,7 +43,7 @@ void LevelView::loadLevelFromFile()
     this->level = levelFactory::getLevelFromFile(this->displayedLevelFilePath);
     this->level->addView(this);
 
-    this->setFixedSize(this->level->getWidth() + 10, this->level->getHeight() + 10);
+    this->setFixedSize(this->level->getWidth() + 20, this->level->getHeight() + 20);
 
     this->scene->addItem(new SourceView(&this->level->getSource()));
 
