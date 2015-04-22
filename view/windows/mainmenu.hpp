@@ -30,6 +30,12 @@ public slots:
      * \param newLevelFile Chemin vers le nouveau fichier sélectionné.
      */
     void selectNewLevelFile();
+
+    /*!
+     * \brief Permet d'afficher une fenêtre de dialogue contenant les règles et
+     * les commandes du jeu.
+     */
+    void displayRules();
 };
 
 #endif // MAINMENU_HPP
