@@ -68,6 +68,8 @@ bool Mirror::rotate(double alpha)
         this->indepTerm = this->pivot.getY() - (utilities::tan(this->alpha) * this->pivot.getX());
         this->xValue = (utilities::isHalfPiPlusNPi(this->alpha) ? this->pivot.getX() : 0.);
         std::cout << (Line) *this << std::endl;
+
+        this->getLevel()->computeRays();
     }
 
     return (this->checkAngleRange(_alpha));
@@ -83,6 +85,8 @@ bool Mirror::translate(const double x, const double y)
         this->indepTerm = this->pivot.getY() - (utilities::tan(this->alpha) * this->pivot.getX());
         this->xValue = (utilities::isHalfPiPlusNPi(this->alpha) ? this->pivot.getX() : 0.);
         std::cout << (Line) *this << std::endl;
+
+        this->getLevel()->computeRays();
     }
 
     return (this->checkPivotRange(pivot));
