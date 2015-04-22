@@ -36,10 +36,12 @@ void LevelView::loadLevelFromFile()
 {
     if (this->level != nullptr)
     {
-        delete this->level;
+        delete this->level, this->level = nullptr;
         this->mirrors.clear();
+        this->rays.clear();
     }
 
+    this->scene->clear();
     this->level = levelFactory::getLevelFromFile(this->displayedLevelFilePath);
     this->level->addView(this);
 
@@ -76,7 +78,7 @@ void LevelView::loadLevelFromFile()
 
 void LevelView::updateDisplay()
 {
-    if (!this->isHidden())
+    if (!this->isHidden() && this->level != nullptr)
     {
         for (auto & ray : this->rays)
             delete ray;

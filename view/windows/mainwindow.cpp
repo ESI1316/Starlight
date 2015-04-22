@@ -27,8 +27,9 @@ MainWindow::~MainWindow() {}
 
 void MainWindow::setMenuBar()
 {
-    this->menu->addAction(tr("Retour au menu"), this, SLOT(displayMainMenu()), QKeySequence(tr("CTRL+M")));
-    this->menu->addAction(tr("Quitter le jeu"), this, SLOT(close()), QKeySequence(tr("CTRL+Q")));
+    this->menu->addAction(tr("&Recommencer"), this->levelView, SLOT(loadLevelFromFile()), QKeySequence("CTRL+R"));
+    this->menu->addAction(tr("Retour au &menu"), this, SLOT(displayMainMenu()), QKeySequence("CTRL+M"));
+    this->menu->addAction(tr("&Quitter le jeu"), this, SLOT(close()), QKeySequence("CTRL+Q"));
 
     this->bar->addMenu(this->menu);
     this->bar->addAction("?", this->mainMenu, SLOT(displayRules()));

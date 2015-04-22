@@ -1,7 +1,6 @@
 #include "model/elements/mirror.hpp"
 
 #include <cmath>
-#include <iostream>
 
 #include "model/exception/starlightexception.hpp"
 #include "model/elements/level.hpp"
@@ -60,15 +59,12 @@ bool Mirror::rotate(double alpha)
 {
     double _alpha{utilities::degreeToRadian(alpha) + this->alpha};
 
-    if(this->checkAngleRange(_alpha))
+    if (this->checkAngleRange(_alpha))
     {
-        std::cout << (Line) *this << std::endl;
         this->alpha = _alpha;
         this->slope = utilities::tan(this->alpha);
         this->indepTerm = this->pivot.getY() - (utilities::tan(this->alpha) * this->pivot.getX());
         this->xValue = (utilities::isHalfPiPlusNPi(this->alpha) ? this->pivot.getX() : 0.);
-        std::cout << (Line) *this << std::endl;
-
         this->getLevel()->computeRays();
     }
 
@@ -78,14 +74,12 @@ bool Mirror::rotate(double alpha)
 bool Mirror::translate(const double x, const double y)
 {
     Point pivot{this->getPivot().getX() + x, this->getPivot().getY() + y};
+
     if(this->checkPivotRange(pivot))
     {
-        std::cout << (Line) *this << std::endl;
         this->pivot = pivot;
         this->indepTerm = this->pivot.getY() - (utilities::tan(this->alpha) * this->pivot.getX());
         this->xValue = (utilities::isHalfPiPlusNPi(this->alpha) ? this->pivot.getX() : 0.);
-        std::cout << (Line) *this << std::endl;
-
         this->getLevel()->computeRays();
     }
 
