@@ -36,7 +36,7 @@ public slots:
 
 public:
 
-    explicit MainWindow(QWidget *parent = 0);
+    explicit MainWindow(QWidget * = 0);
     ~MainWindow();
 };
 

@@ -1,4 +1,4 @@
-#include "sourceView.hpp"
+#include "sourceview.hpp"
 
 #include <QCursor>
 #include <QtMultimedia/QSound>

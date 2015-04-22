@@ -10,7 +10,7 @@ class MainMenu : public QFrame
 
 public:
 
-    explicit MainMenu(QWidget *parent = 0);
+    explicit MainMenu(QWidget * = 0);
     ~MainMenu();
 
 signals:
@@ -20,7 +20,7 @@ signals:
      *
      * \param newLevelFile Chemin vers le nouveau fichier selectionné.
      */
-    void newLevelFileSelected(const QString newLevelFile);
+    void newLevelFileSelected(const QString);
 
 public slots:
 

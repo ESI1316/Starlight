@@ -3,7 +3,6 @@
 
 #include <QGraphicsLineItem>
 #include <QKeyEvent>
-#include <QRectF>
 
 class Mirror;
 

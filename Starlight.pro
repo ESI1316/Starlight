@@ -52,7 +52,7 @@ SOURCES += main.cpp\
     test/elements/desttest.cpp \
     test/elements/leveltest.cpp \
     test/elements/lenstest.cpp \
-    view/dynamicElements/sourceView.cpp
+    view/dynamicElements/sourceview.cpp
 
 HEADERS  += view/windows/mainwindow.hpp \
     view/windows/levelview.hpp \
@@ -76,7 +76,7 @@ HEADERS  += view/windows/mainwindow.hpp \
     model/geometry/rectangle.hpp \
     model/geometry/line.hpp \
     model/geometry/ellipse.hpp \
-    view/dynamicElements/sourceView.hpp \
-    test/catch.hpp
+    test/catch.hpp \
+    view/dynamicElements/sourceview.hpp
 
 DISTFILES += ressources/*

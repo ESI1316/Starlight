@@ -17,8 +17,8 @@ class LevelView : public QGraphicsView
     Q_OBJECT
 
     QGraphicsScene * scene;
-    std::string displayedLevelFilePath;
     Level * level;
+    std::string displayedLevelFilePath;
     std::vector<QGraphicsLineItem *> rays;
     std::vector<MirrorView *> mirrors;
 

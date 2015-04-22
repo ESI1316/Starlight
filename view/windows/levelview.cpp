@@ -5,13 +5,11 @@
 #include <QMainWindow>
 #include <QtMultimedia/QSound>
 
-#include <iostream>
-
 #include "model/elements/levelFactory.hpp"
 #include "model/elements/level.hpp"
 #include "view/viewutilities.hpp"
 #include "view/dynamicElements/mirrorview.hpp"
-#include "view/dynamicElements/sourceView.hpp"
+#include "view/dynamicElements/sourceview.hpp"
 
 LevelView::LevelView(QWidget *parent)
     : QGraphicsView {parent}, scene{new QGraphicsScene}, level{nullptr}

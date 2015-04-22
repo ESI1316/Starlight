@@ -5,8 +5,7 @@
 #include <QPushButton>
 #include <QFont>
 #include <QtMultimedia/QSound>
-
-#include <iostream>
+#include <QApplication>
 
 #include "view/windows/levelview.hpp"
 #include "view/windows/mainmenu.hpp"
@@ -29,7 +28,7 @@ void MainWindow::setMenuBar()
 {
     this->menu->addAction(tr("&Recommencer"), this->levelView, SLOT(loadLevelFromFile()), QKeySequence("CTRL+R"));
     this->menu->addAction(tr("Retour au &menu"), this, SLOT(displayMainMenu()), QKeySequence("CTRL+M"));
-    this->menu->addAction(tr("&Quitter le jeu"), this, SLOT(close()), QKeySequence("CTRL+Q"));
+    this->menu->addAction(tr("&Quitter le jeu"), qApp, SLOT(quit()), QKeySequence("CTRL+Q"));
 
     this->bar->addMenu(this->menu);
     this->bar->addAction("?", this->mainMenu, SLOT(displayRules()));
