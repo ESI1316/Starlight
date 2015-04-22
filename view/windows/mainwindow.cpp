@@ -11,19 +11,35 @@
 #include "view/windows/mainmenu.hpp"
 
 MainWindow::MainWindow(QWidget *parent) :
-    QMainWindow{parent}, mainMenu{new MainMenu}, levelView{new LevelView}
+    QMainWindow{parent}, mainMenu{new MainMenu}, levelView{new LevelView},
+    bar{new QMenuBar}, menu{new QMenu("Menu")}
 {
     this->setWindowTitle(tr("Starlight"));
-    QObject::connect(this->mainMenu, SIGNAL(newLevelFileSelected(const QString)),
-                     this->levelView, SLOT(setLevelFilePath(const QString)));
-    QObject::connect(this->levelView, SIGNAL(displayingStarted()), this, SLOT(displayLevel()));
-    QObject::connect(this->levelView, SIGNAL(displayingStopped()), this, SLOT(displayMainMenu()));
+    this->setMenuBar();
+    this->connectAll();
 
     this->setCentralWidget(new QWidget);
     this->displayMainMenu();
 }
 
 MainWindow::~MainWindow() {}
+
+void MainWindow::setMenuBar()
+{
+    this->menu->addAction(tr("Main menu"), this, SLOT(displayMainMenu()), QKeySequence(tr("CTRL+M")));
+    this->menu->addAction(tr("Close level"));
+    this->menu->addAction(tr("Quit"), this, SLOT(close()), QKeySequence(tr("CTRL+Q")));
+    this->bar->addMenu(this->menu);
+    this->setMenuWidget(this->bar);
+}
+
+void MainWindow::connectAll()
+{
+    QObject::connect(this->mainMenu, SIGNAL(newLevelFileSelected(const QString)),
+                     this->levelView, SLOT(setLevelFilePath(const QString)));
+    QObject::connect(this->levelView, SIGNAL(displayingStarted()), this, SLOT(displayLevel()));
+    QObject::connect(this->levelView, SIGNAL(displayingStopped()), this, SLOT(displayMainMenu()));
+}
 
 void MainWindow::displayMainMenu()
 {

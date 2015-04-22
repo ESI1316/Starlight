@@ -1,14 +1,17 @@
 #ifndef SOURCEVIEW_HPP
 #define SOURCEVIEW_HPP
 
-#include <QWidget>
 #include <QGraphicsRectItem>
+#include <QPen>
+#include <QBrush>
 
-#include "model/elements/source.hpp"
+class Source;
 
 class SourceView : public QGraphicsRectItem
 {
     Source * source;
+    QPen pen;
+    QBrush brush;
 
 public:
 

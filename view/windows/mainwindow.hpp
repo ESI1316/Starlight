@@ -1,10 +1,12 @@
 #ifndef MAINWINDOW_HPP
 #define MAINWINDOW_HPP
 
+#include <QMenu>
+#include <QMenuBar>
 #include <QMainWindow>
 
-class LevelView;
 class MainMenu;
+class LevelView;
 
 class MainWindow : public QMainWindow
 {
@@ -14,6 +16,11 @@ private:
 
     MainMenu * mainMenu;
     LevelView * levelView;
+    QMenuBar * bar;
+    QMenu * menu;
+
+    void setMenuBar();
+    void connectAll();
 
 public slots:
 

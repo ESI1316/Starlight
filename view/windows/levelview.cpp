@@ -7,8 +7,9 @@
 #include <iostream>
 
 #include "model/elements/levelFactory.hpp"
-#include "view/viewutilities.hpp"
 #include "model/elements/level.hpp"
+#include "view/viewutilities.hpp"
+#include "view/dynamicElements/mirrorview.hpp"
 #include "view/dynamicElements/sourceView.hpp"
 
 LevelView::LevelView(QWidget *parent)
@@ -52,7 +53,9 @@ void LevelView::loadLevelFromFile()
         this->scene->addItem(viewUtilities::getEllipse(crystal, Qt::green, 2));
 
     for (auto & nuke : this->level->getNukes())
+    {
         this->scene->addItem(viewUtilities::getEllipse(nuke, Qt::red, 2));
+    }
 
     for (auto & wall : this->level->getWalls())
         this->scene->addItem(viewUtilities::getLine(wall.getStart(), wall.getEnd(),

@@ -2,7 +2,9 @@
 
 #include <QLineF>
 #include <QPen>
+#include <QCursor>
 
+#include "model/elements/ray.hpp"
 #include "model/geometry/ellipse.hpp"
 #include "model/geometry/rectangle.hpp"
 #include "model/geometry/point.hpp"
@@ -35,10 +37,7 @@ QGraphicsLineItem * viewUtilities::getLine(const Point & start, const Point & en
 {
     QGraphicsLineItem * line = new QGraphicsLineItem(QLineF{viewUtilities::toQPoint(start),
                                                      viewUtilities::toQPoint(end)});
-    QPen pen{color};
-
-    pen.setWidth(width);
-    line->setPen(pen);
+    line->setPen(QPen(color, width));
 
     return line;
 }
@@ -47,10 +46,8 @@ QGraphicsRectItem * viewUtilities::getRect(const Rectangle & rectangle,
                                           const QColor & color, int width)
 {
     QGraphicsRectItem * rect = new QGraphicsRectItem{viewUtilities::toQRectF(rectangle)};
-    QPen pen{color};
 
-    pen.setWidth(width);
-    rect->setPen(pen);
+    rect->setPen(QPen(color, width));
 
     return rect;
 }
@@ -59,10 +56,10 @@ QGraphicsEllipseItem * viewUtilities::getEllipse(const Ellipse & ellipse,
                                                 const QColor & color, int width)
 {
     QGraphicsEllipseItem * ell = new QGraphicsEllipseItem{viewUtilities::toQRectF(ellipse)};
-    QPen pen{color};
 
-    pen.setWidth(width);
-    ell->setPen(pen);
+    ell->setCursor(QCursor(Qt::ForbiddenCursor));
+    ell->setAcceptedMouseButtons(false);
+    ell->setPen(QPen(color, width));
 
     return ell;
 }

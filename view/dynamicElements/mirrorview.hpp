@@ -5,7 +5,7 @@
 #include <QKeyEvent>
 #include <QRectF>
 
-#include "model/elements/mirror.hpp"
+class Mirror;
 
 class MirrorView : public QGraphicsLineItem
 {

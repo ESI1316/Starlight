@@ -1,10 +1,11 @@
 #include "mirrorview.hpp"
 
-#include "view/viewutilities.hpp"
-#include "model/geometry/point.hpp"
 #include <QLineF>
 #include <QCursor>
 
+#include "view/viewutilities.hpp"
+#include "model/elements/mirror.hpp"
+#include "model/geometry/point.hpp"
 
 MirrorView::MirrorView(Mirror * mirror)
     : QGraphicsLineItem(QLineF{viewUtilities::toQPoint(mirror->getStart()),
@@ -12,13 +13,10 @@ MirrorView::MirrorView(Mirror * mirror)
       mirror{mirror}
 
 {
-    QPen pen{QColor{204, 204, 255}};
-
-    pen.setWidth(2);
-
-    this->setPen(pen);
+    this->setPen(QPen{QColor{204, 204, 255}, 2.});
     QGraphicsLineItem::setCursor(QCursor(Qt::PointingHandCursor));
     this->setFlag(QGraphicsItem::ItemIsMovable);
+    this->setAcceptedMouseButtons(false);
     this->setFlag(GraphicsItemFlag::ItemIsFocusable);
 }
 

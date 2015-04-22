@@ -2,13 +2,15 @@
 #define LEVELVIEW_HPP
 
 #include <QGraphicsView>
+#include <QWidget>
+#include <QGraphicsLineItem>
 #include <QGraphicsScene>
-
-#include "view/dynamicElements/sourceView.hpp"
-#include "view/dynamicElements/mirrorview.hpp"
+#include <QString>
+#include <string>
+#include <vector>
 
 class Level;
-class Point;
+class MirrorView;
 
 class LevelView : public QGraphicsView
 {
@@ -19,8 +21,6 @@ class LevelView : public QGraphicsView
     Level * level;
     std::vector<QGraphicsLineItem *> rays;
     std::vector<MirrorView *> mirrors;
-
-    QPointF toQPoint(const Point & point);
 
 public:
 
