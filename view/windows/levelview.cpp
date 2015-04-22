@@ -3,6 +3,7 @@
 #include <QMessageBox>
 #include <QPushButton>
 #include <QMainWindow>
+#include <QtMultimedia/QSound>
 
 #include <iostream>
 
@@ -91,9 +92,13 @@ void LevelView::updateDisplay()
         }
 
         if (this->level->getDestination().isLightedUp()
-                 || this->level->thereIsAnExplodedNuke())
+                || this->level->thereIsAnExplodedNuke())
         {
-                this->displayEndOfGame();
+            QSound::play(this->level->thereIsAnExplodedNuke()
+                           ? "./ressources/bomb.wav"
+                           : "./ressources/win.wav");
+
+            this->displayEndOfGame();
         }
     }
 }

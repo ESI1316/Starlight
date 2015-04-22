@@ -5,6 +5,7 @@
 #-------------------------------------------------
 
 QT       += core gui
+QT	 += multimedia
 
 QMAKE_CXXFLAGS += -std=c++11 -Wall -Wextra -pedantic-errors
 

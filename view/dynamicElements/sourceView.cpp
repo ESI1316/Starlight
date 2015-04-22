@@ -1,6 +1,7 @@
 #include "sourceView.hpp"
 
 #include <QCursor>
+#include <QtMultimedia/QSound>
 
 #include "model/elements/source.hpp"
 #include "view/viewutilities.hpp"
@@ -20,7 +21,9 @@ SourceView::~SourceView() {}
 void SourceView::switchSource()
 {
     this->source->setOn(!this->source->isOn());
-    this->brush.setColor(this->source->isOn() ? Qt::yellow : Qt::white);
+    this->brush.setColor(this->source->isOn()
+                         ? QSound::play("ressources/fire.wav"), Qt::yellow
+                         : Qt::white);
     this->setBrush(this->brush);
 }
 

@@ -66,6 +66,9 @@ Project has been created, and *is owned*, by
 
 @[H.E.B. École Supérieure d'Informatique](http://www.heb.be/esi/)
 
+##Sounds
+Sounds owned by[Sound bible](http://soundbible.com) 
+and are under [Attribution 3.0 License](http://soundbible.com)
 ##About
 
 + Kriwin Paul @PKriwin
