@@ -36,7 +36,7 @@ MainMenu::~MainMenu() {}
 void MainMenu::selectNewLevelFile()
 {
     QString lvlFile = QFileDialog::getOpenFileName
-            (this, tr("Ouvrir un fichier"), tr("./ressources"), "Niveaux (*.lvl *.mapl)");
+            (this, tr("Ouvrir un fichier"), tr("./ressources/maps"), "Niveaux (*.lvl *.mapl)");
 
     if (!lvlFile.isEmpty())
         emit newLevelFileSelected(lvlFile);

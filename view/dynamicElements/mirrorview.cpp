@@ -24,14 +24,12 @@ MirrorView::~MirrorView() {}
 
 void MirrorView::keyPressEvent(QKeyEvent *event)
 {
-    Point start, end;
-
     switch (event->key())
     {
-    case Qt::Key_Left : this->mirror->rotate(1.);
+    case Qt::Key_Left : this->mirror->rotate(0.8);
         break;
 
-    case Qt::Key_Right : this->mirror->rotate(-1.);
+    case Qt::Key_Right : this->mirror->rotate(-0.8);
         break;
 
     case Qt::Key_Z: this->mirror->translate(0., -2.);
@@ -47,6 +45,6 @@ void MirrorView::keyPressEvent(QKeyEvent *event)
         break;
     }
 
-    start = Point{mirror->getStart()}, end = Point{mirror->getEnd()};
+    Point start = Point{mirror->getStart()}, end = Point{mirror->getEnd()};
     this->setLine(start.getX(), start.getY(), end.getX(), end.getY());
 }

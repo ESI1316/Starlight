@@ -76,14 +76,7 @@ HEADERS  += view/windows/mainwindow.hpp \
     model/geometry/rectangle.hpp \
     model/geometry/line.hpp \
     model/geometry/ellipse.hpp \
-    test/catch.hpp \
-    view/dynamicElements/sourceView.hpp
+    view/dynamicElements/sourceView.hpp \
+    test/catch.hpp
 
-DISTFILES += \
-    ressources/level.lvl \
-    ressources/MW.lvl \
-    ressources/W.lvl \
-    ressources/N.lvl \
-    ressources/ML_STOP.lvl \
-    ressources/LW.lvl \
-    ressources/L_STOP.lvl
+DISTFILES += ressources/*
