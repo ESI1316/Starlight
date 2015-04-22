@@ -11,76 +11,83 @@
 
 MainMenu::MainMenu(QWidget *parent) : QFrame(parent)
 {
-    QVBoxLayout * lay{new QVBoxLayout};
-    QLabel * title{new QLabel{tr("<div><span style=\"color:#ff0000;\">S</span>"
-                            "<span style=\"color:#ff4000;\">t</span>"
-                            "<span style=\"color:#ff7f00;\">a</span>"
-                            "<span style=\"color:#ffff00;\">r</span>"
-                            "<span style=\"color:#80ff00;\">l</span>"
-                            "<span style=\"color:#00ff00;\">i</span>"
-                            "<span style=\"color:#00ffff;\">g</span>"
-                            "<span style=\"color:#0080ff;\">h</span>"
-                            "<span style=\"color:#0000ff;\">t</span></div>")}};
+	QVBoxLayout * lay{new QVBoxLayout};
+	QLabel * title{new QLabel{tr("<div><span style=\"color:#ff0000;\">S</span>"
+			"<span style=\"color:#ff4000;\">t</span>"
+			"<span style=\"color:#ff7f00;\">a</span>"
+			"<span style=\"color:#ffff00;\">r</span>"
+			"<span style=\"color:#80ff00;\">l</span>"
+			"<span style=\"color:#00ff00;\">i</span>"
+			"<span style=\"color:#00ffff;\">g</span>"
+			"<span style=\"color:#0080ff;\">h</span>"
+			"<span style=\"color:#0000ff;\">t</span></div>")}};
 
-    QPushButton * openLvlFile{new QPushButton{tr("Ouvrir un fichier de niveau")}};
-    QPushButton * gameRules{new QPushButton{tr("Règles du jeu")}};
-    QPushButton * quit{new QPushButton{tr("Quitter")}};
+	QPushButton * openLvlFile{new QPushButton{tr("Ouvrir un fichier de niveau")}};
+	QPushButton * gameRules{new QPushButton{tr("Règles du jeu")}};
+	QPushButton * quit{new QPushButton{tr("Quitter")}};
 
-    QObject::connect(openLvlFile, SIGNAL(clicked()), this, SLOT(selectNewLevelFile()));
-    QObject::connect(gameRules, SIGNAL(clicked()), this, SLOT(displayRules()));
-    QObject::connect(quit, SIGNAL(clicked()), qApp, SLOT(quit()));
+	QObject::connect(openLvlFile, SIGNAL(clicked()), this, SLOT(selectNewLevelFile()));
+	QObject::connect(gameRules, SIGNAL(clicked()), this, SLOT(displayRules()));
+	QObject::connect(quit, SIGNAL(clicked()), qApp, SLOT(quit()));
 
-    title->setFont(QFont{"Arial", 100, 75});
-    title->setAlignment(Qt::AlignCenter);
-    lay->addWidget(title);
-    lay->addWidget(openLvlFile);
-    lay->addWidget(gameRules);
-    lay->addWidget(quit);
+	title->setFont(QFont{"Arial", 100, 75});
+	title->setAlignment(Qt::AlignCenter);
+	lay->addWidget(title);
+	lay->addWidget(openLvlFile);
+	lay->addWidget(gameRules);
+	lay->addWidget(quit);
 
-    this->setLayout(lay);
+	this->setLayout(lay);
 }
 
 MainMenu::~MainMenu() {}
 
 void MainMenu::selectNewLevelFile()
 {
-    QString lvlFile = QFileDialog::getOpenFileName
-            (this, tr("Ouvrir un fichier"), tr("./ressources/maps"), "Niveaux (*.lvl *.mapl)");
+	QString lvlFile = QFileDialog::getOpenFileName
+		(this, tr("Ouvrir un fichier"), tr("./ressources/maps"), "Niveaux (*.lvl *.mapl)");
 
-    if (!lvlFile.isEmpty())
-        emit newLevelFileSelected(lvlFile);
+	if (!lvlFile.isEmpty())
+		emit newLevelFileSelected(lvlFile);
 }
 
 void MainMenu::displayRules()
 {
-    QMessageBox msgBox;
-
-    msgBox.setInformativeText(tr("<h1>Règles du jeu :</h1>"
-                                  "<br>Le but du jeu est d'ateindre la cible "
-                                 "(carré rose) avec le rayon lumineux émit par "
-                                 "la source (carré blanc)."
-                                 " Cela en déplaçant et en faisant pivoter les "
-                                 "mirroirs (lignes bleu clair) de sorte à dévier "
-                                 "le rayon pour l'orienter, le tout en évitant "
-                                 "de traverser les bombes (cercles rouges). "
-                                 "<br>Petites subtilitées; les lentilles (ellipses"
-                                 "bleu foncé) ne peuvent être traversé par le "
-                                 "rayon que si ce dernier possède la longueur d'"
-                                 "onde adéquate. Pour modifier la longeur d'onde "
-                                 "du rayon, il faut le faire traverser un crystal (ellipses vertes), "
-                                 "ceci aura ainsi pour effet de réduire ou d'augmenter "
-                                 "sa longueur d'onde (Note: la longueur d'onde d'un rayon "
-                                 "est distinguable par sa <a href= \"http://www.cnrs.fr/cw"
-                                 "/dossiers/doschim/decouv/couleurs/"
-                                 "loupe_spect_lum.html\">couleur</a>).</br>"
-                                 " </br>""<h2>Commandes :</h2>"
-                                 "<br><u>Allumer/éteindre la source :</u> cliquer dessus.</br>"
-                                 "<br><u>Déplacer un miroir :</u> cliquer dessus, ensuite "
-                                 "gérer son déplacement avec les touches; q - vers la gauche, "
-                                 "d - droite, s - bas, z - haut.</br>"
-                                 "<br><u>Faire pivoter un miroir :</u> flèche directionnelle "
-                                 "de droite - pivoter horlogiquement, flèche directionnelle "
-                                 "de gauche - pivoter antihorlogiquement.</br>"));
-
-    msgBox.exec();
+	QMessageBox msgBox;
+	msgBox.setInformativeText(tr("<h1>Règles du jeu :</h1>"
+				"Le but du jeu est d'ateindre la cible "
+				"(carré rose) avec le rayon lumineux émit par "
+				"la source (carré blanc)."
+				" Cela en déplaçant et en faisant pivoter les "
+				"mirroirs (lignes bleu clair) de sorte à dévier "
+				"le rayon pour l'orienter, le tout en évitant "
+				"de traverser les bombes (cercles rouges). "
+				"<br>Petites subtilitées; les lentilles (ellipses"
+				"bleu foncé) ne peuvent être traversé par le "
+				"rayon que si ce dernier possède la longueur d'"
+				"onde adéquate. Pour modifier la longeur d'onde "
+				"du rayon, il faut le faire traverser un crystal (ellipses vertes), "
+				"ceci aura ainsi pour effet de réduire ou d'augmenter "
+				"sa longueur d'onde (Note: la longueur d'onde d'un rayon "
+				"est distinguable par sa <a href= \"http://www.cnrs.fr/cw"
+				"/dossiers/doschim/decouv/couleurs/"
+				"loupe_spect_lum.html\">couleur</a>).</br>"
+				"<h2>Commandes :</h2>"
+				"<ul>"
+				"<li><u>Allumer/éteindre la source :</u> cliquer dessus.</li>"
+				"<li><u>Déplacer un miroir :</u> cliquer dessus, ensuite</li>"
+				"<li>gérer son déplacement à l'aide des touches;<ul>"
+				"<li>q - vers la gauche,</li>"
+				"<li>d - vers la droite,</li>"
+				"<li>s - vers le bas,</li>"
+				"<li>z - vers le haut.</li>"
+				"</ul></li>"
+				"<li>Gérer sa rotation à l'aide des touches;<ul>"
+				"<li>flèche directionnelle de droite - "
+				"pivoter horlogiquement,</li>"
+				"<li>flèche directionnelle de gauche - "
+				"pivoter antihorlogiquement.</li>"
+				"</ul></li>"
+				"</ul>"));
+	msgBox.exec();
 }
