@@ -11,14 +11,14 @@
 #include "view/windows/mainmenu.hpp"
 
 MainWindow::MainWindow(QWidget *parent) :
-    QMainWindow{parent}, mainMenu{new MainMenu}, levelView{new LevelView},
-    bar{new QMenuBar}, menu{new QMenu("Menu")}
+    QMainWindow{parent}, mainMenu{new MainMenu{this}}, levelView{new LevelView{this}},
+    bar{new QMenuBar{this}}, menu{new QMenu("Menu", this)}
 {
     this->setWindowTitle(tr("Starlight"));
     this->setMenuBar();
     this->connectAll();
 
-    this->setCentralWidget(new QWidget);
+    this->setCentralWidget(new QWidget{this});
     this->displayMainMenu();
 }
 
@@ -27,7 +27,7 @@ MainWindow::~MainWindow() {}
 void MainWindow::setMenuBar()
 {
     this->menu->addAction(tr("&Recommencer"), this->levelView, SLOT(loadLevelFromFile()), QKeySequence("CTRL+R"));
-    this->menu->addAction(tr("Retour au &menu"), this, SLOT(displayMainMenu()), QKeySequence("CTRL+M"));
+    this->menu->addAction(tr("Retour au &menu principal"), this, SLOT(displayMainMenu()), QKeySequence("CTRL+M"));
     this->menu->addAction(tr("&Quitter le jeu"), qApp, SLOT(quit()), QKeySequence("CTRL+Q"));
 
     this->bar->addMenu(this->menu);

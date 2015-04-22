@@ -21,7 +21,7 @@ LevelView::LevelView(QWidget *parent)
 LevelView::~LevelView()
 {
     if (this->level != nullptr)
-        delete this->level;
+        delete this->level, this->level = nullptr;
 }
 
 void LevelView::setLevelFilePath(const QString levelFile)
@@ -79,7 +79,7 @@ void LevelView::updateDisplay()
     if (!this->isHidden() && this->level != nullptr)
     {
         for (auto & ray : this->rays)
-            delete ray;
+            delete ray, ray = nullptr;
 
         this->rays.clear();
 

@@ -7,7 +7,7 @@
 QT       += core gui
 QT	 += multimedia
 
-QMAKE_CXXFLAGS += -std=c++11 -Wall -Wextra -pedantic-errors
+QMAKE_CXXFLAGS += -std=c++11 -Wall -Wextra -pedantic-errors -g
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
