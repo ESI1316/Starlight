@@ -86,7 +86,7 @@ void LevelView::updateDisplay()
         for (auto & ray : this->level->getRays())
         {
             QGraphicsLineItem * rayView = viewUtilities::getLine
-                    (ray.getStart(), ray.getEnd(), viewUtilities::waveLengthToColor(ray), 1);
+                    (ray.getStart(), ray.getEnd(), viewUtilities::waveLengthToColor(ray), 2);
             this->scene->addItem(rayView);
             this->rays.push_back(rayView);
         }

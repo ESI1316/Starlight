@@ -13,7 +13,7 @@ MirrorView::MirrorView(Mirror * mirror)
       mirror{mirror}
 
 {
-    this->setPen(QPen{QColor{204, 204, 255}, 2.});
+    this->setPen(QPen{QColor{204, 204, 255}, 4.});
     QGraphicsLineItem::setCursor(QCursor(Qt::PointingHandCursor));
     this->setFlag(QGraphicsItem::ItemIsMovable);
     this->setAcceptedMouseButtons(false);

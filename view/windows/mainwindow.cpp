@@ -4,6 +4,7 @@
 #include <QLabel>
 #include <QPushButton>
 #include <QFont>
+#include <QtMultimedia/QSound>
 
 #include <iostream>
 
@@ -14,6 +15,7 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow{parent}, mainMenu{new MainMenu}, levelView{new LevelView},
     bar{new QMenuBar}, menu{new QMenu("Menu")}
 {
+    QSound::play("./ressources/a.wav");
     this->setWindowTitle(tr("Starlight"));
     this->setMenuBar();
     this->connectAll();
