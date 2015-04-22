@@ -4,9 +4,9 @@
 #include "model/elements/level.hpp"
 
 Ray::Ray(const Point start, double alpha, int waveLength)
-    : Line{utilities::tan(alpha),
+    : Line(utilities::tan(alpha),
            start.getY() - (utilities::tan(alpha) * start.getX()),
-           utilities::isHalfPiPlusNPi(alpha) ? start.getX() : 0.},
+           utilities::isHalfPiPlusNPi(alpha) ? start.getX() : 0.),
       start{start}, end{start}, waveLength{waveLength},
       alpha{utilities::inZeroTwoPi(alpha)}
 {
@@ -36,34 +36,14 @@ void Ray::setWaveLength(const int waveLength)
 
 bool Ray::isInTrajectory(const Point & point) const
 {
-    bool inTrajectory;
+    double alpha = this->getAlpha();
+    double distance = point.distanceFrom(this->start);
+    double x = this->start.getX() + (distance * std::cos(-alpha));
+    double y = this->start.getY() + (distance * std::sin(-alpha));
 
-    if (utilities::equals(this->alpha, 0))
-        inTrajectory =(this->start.getX() < point.getX()
-                       && utilities::equals(this->start.getY(), point.getY()));
-    else if(utilities::equals(this->alpha, utilities::PI_2))
-        inTrajectory =(this->start.getY() > point.getY()
-                       && utilities::equals(this->start.getX(), point.getX()));
-    else if(utilities::equals(this->alpha, utilities::PI))
-        inTrajectory =(this->start.getX() > point.getX()
-                       && utilities::equals(this->start.getY(), point.getY()));
-    else if(utilities::equals(this->alpha, (3 * utilities::PI_2)))
-        inTrajectory =(this->start.getY() < point.getY()
-                       && utilities::equals(this->start.getX(), point.getX()));
-    else if(this->alpha > 0 && this->alpha < utilities::PI_2)
-        inTrajectory =(this->start.getY() > point.getY()
-                       && this->start.getX() < point.getX());
-    else if(this->alpha > utilities::PI_2 && this->alpha < utilities::PI)
-        inTrajectory =(this->start.getY() > point.getY()
-                       && this->start.getX() > point.getX());
-    else if(this->alpha > utilities::PI && this->alpha < (3 * utilities::PI_2))
-        inTrajectory =(this->start.getY() < point.getY()
-                       && this->start.getX() > point.getX());
-    else
-        inTrajectory =(this->start.getY() < point.getY()
-                       && this->start.getX() < point.getX());
-
-    return inTrajectory;
+    return ((point != this->start)
+            && (utilities::equals(x, point.getX())
+                && utilities::equals(y, point.getY())));
 }
 
 bool Ray::operator==(const Ray & ray) const
