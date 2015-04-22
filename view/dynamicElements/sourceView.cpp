@@ -27,9 +27,8 @@ void SourceView::switchSource()
     this->source->setOn(!this->source->isOn());
 }
 
-void SourceView::mousePressEvent(QGraphicsSceneMouseEvent *event)
+void SourceView::mousePressEvent(QGraphicsSceneMouseEvent *)
 {
     this->switchSource();
-    QGraphicsRectItem::mousePressEvent(event);
 }
 

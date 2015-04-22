@@ -55,7 +55,7 @@ void MainMenu::displayRules()
 {
     QMessageBox msgBox;
 
-    msgBox.setInformativeText(tr("<br><strong>Règles du jeu :</strong></br>"
+    msgBox.setInformativeText(tr("<h1>Règles du jeu :</h1>"
                                   "<br>Le but du jeu est d'ateindre la cible "
                                  "(carré rose) avec le rayon lumineux émit par "
                                  "la source (carré blanc)."
@@ -73,7 +73,7 @@ void MainMenu::displayRules()
                                  "est distinguable par sa <a href= \"http://www.cnrs.fr/cw"
                                  "/dossiers/doschim/decouv/couleurs/"
                                  "loupe_spect_lum.html\">couleur</a>).</br>"
-                                 " </br>""<br><strong>Commandes :</strong></br>"
+                                 " </br>""<h2>Commandes :</h2>"
                                  "<br><u>Allumer/éteindre la source :</u> cliquer dessus.</br>"
                                  "<br><u>Déplacer un miroir :</u> cliquer dessus, ensuite "
                                  "gérer son déplacement avec les touches; q - vers la gauche, "
