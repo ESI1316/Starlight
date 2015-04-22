@@ -46,6 +46,7 @@ void MainWindow::connectAll()
 
 void MainWindow::displayMainMenu()
 {
+    this->menuBar()->hide();
     this->levelView->setParent(0);
     this->levelView->hide();
     this->setCentralWidget(this->mainMenu);
@@ -55,6 +56,7 @@ void MainWindow::displayMainMenu()
 
 void MainWindow::displayLevel()
 {
+    this->menuBar()->show();
     this->mainMenu->setParent(0);
     this->mainMenu->hide();
     this->setCentralWidget(this->levelView);
