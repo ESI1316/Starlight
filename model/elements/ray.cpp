@@ -10,8 +10,12 @@ Ray::Ray(const Point start, double alpha, int waveLength)
       start{start}, end{start}, waveLength{waveLength},
       alpha{utilities::inZeroTwoPi(alpha)}
 {
-    if (waveLength < Ray::WL_MIN || waveLength > Ray::WL_MAX)
-        throw StarlightException{"Longueur d'onde doit être comprise entre"};
+    //if (waveLength < Ray::WL_MIN || waveLength > Ray::WL_MAX)
+        //throw StarlightException{"Longueur d'onde doit être comprise entre"};
+    if (waveLength < Ray::WL_MIN)
+        this->waveLength = Ray::WL_MIN;
+    if (waveLength > Ray::WL_MAX)
+        this->waveLength = Ray::WL_MAX;
 }
 
 void Ray::setStart(const Point & start)

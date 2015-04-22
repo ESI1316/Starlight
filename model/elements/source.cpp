@@ -12,7 +12,8 @@ Source::Source(const Point & position, const int edge, const double alpha,
       waveLength{waveLength}
 {
     if (waveLength < Ray::WL_MIN || waveLength > Ray::WL_MAX)
-        throw StarlightException{"Mauvaise longueur d'onde"};
+        this->waveLength = Ray::WL_DFT;
+        //throw StarlightException{"Mauvaise longueur d'onde"};
 }
 
 void Source::setOn(const bool on)
