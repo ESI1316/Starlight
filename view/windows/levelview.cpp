@@ -74,7 +74,7 @@ void LevelView::updateDisplay()
 {
     if (!this->isHidden())
     {
-        for (auto ray : this->rays)
+        for (auto & ray : this->rays)
             delete ray;
 
         this->rays.clear();

@@ -30,11 +30,11 @@ void MirrorView::keyPressEvent(QKeyEvent *event)
 
     switch (event->key())
     {
-    case Qt::Key_Left : this->mirror->rotate(3.);
+    case Qt::Key_Left : this->mirror->rotate(1.);
         this->setLine(start.getX(), start.getY(), end.getX(), end.getY());
         break;
 
-    case Qt::Key_Right : this->mirror->rotate(-3.);
+    case Qt::Key_Right : this->mirror->rotate(-1.);
         this->setLine(start.getX(), start.getY(), end.getX(), end.getY());
         break;
 
