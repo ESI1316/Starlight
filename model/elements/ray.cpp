@@ -36,14 +36,12 @@ void Ray::setWaveLength(const int waveLength)
 
 bool Ray::isInTrajectory(const Point & point) const
 {
-    double alpha = this->getAlpha();
-    double distance = point.distanceFrom(this->start);
-    double x = this->start.getX() + (distance * std::cos(-alpha));
-    double y = this->start.getY() + (distance * std::sin(-alpha));
+    Point p(point);
+    p.setOrigin(this->start);
 
     return ((point != this->start)
-            && (utilities::equals(x, point.getX())
-                && utilities::equals(y, point.getY())));
+            && utilities::equals(this->getAlpha(),
+                                 utilities::inZeroTwoPi(p.getAzimut())));
 }
 
 bool Ray::operator==(const Ray & ray) const
