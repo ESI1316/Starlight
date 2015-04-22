@@ -7,6 +7,7 @@
 #include <QFileDialog>
 #include <iostream>
 #include <QMessageBox>
+#include <QApplication>
 
 MainMenu::MainMenu(QWidget *parent) : QFrame(parent)
 {
@@ -27,7 +28,7 @@ MainMenu::MainMenu(QWidget *parent) : QFrame(parent)
 
     QObject::connect(openLvlFile, SIGNAL(clicked()), this, SLOT(selectNewLevelFile()));
     QObject::connect(gameRules, SIGNAL(clicked()), this, SLOT(displayRules()));
-    QObject::connect(quit, SIGNAL(clicked()), this, SLOT(close()));
+    QObject::connect(quit, SIGNAL(clicked()), qApp, SLOT(quit()));
 
     title->setFont(QFont{"Arial", 100, 75});
     title->setAlignment(Qt::AlignCenter);

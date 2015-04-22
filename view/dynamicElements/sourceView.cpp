@@ -22,7 +22,7 @@ void SourceView::switchSource()
 {
     this->brush.setColor(!this->source->isOn()
                          ? QSound::play("ressources/sounds/fire.wav"), Qt::yellow
-                         : Qt::white);
+                         : (QSound::play("ressources/sounds/off.wav"), Qt::white));
     this->setBrush(this->brush);
     this->source->setOn(!this->source->isOn());
 }

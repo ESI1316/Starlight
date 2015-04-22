@@ -31,7 +31,7 @@ void MainWindow::setMenuBar()
     this->menu->addAction(tr("Quitter le jeu"), this, SLOT(close()), QKeySequence(tr("CTRL+Q")));
 
     this->bar->addMenu(this->menu);
-    this->bar->addAction("?");
+    this->bar->addAction("?", this->mainMenu, SLOT(displayRules()));
 
     this->setMenuWidget(this->bar);
 }
