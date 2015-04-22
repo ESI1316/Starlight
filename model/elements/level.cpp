@@ -1,5 +1,6 @@
 #include "model/elements/level.hpp"
 
+#include <iostream>
 #include "model/elements/element.hpp"
 #include "model/geometry/point.hpp"
 
@@ -67,6 +68,13 @@ void Level::computeRays()
         this->rays.clear();
         this->computeRay(Ray{this->source.getPosition(), this->source.getAngle(),
                             this->source.getWaveLength()});
+
+            std::cout  << " ---- : " << this->rays.size();
+        for(auto & ray : this->rays)
+        {
+            std::cout << ray << std::endl;
+        }
+        std::cout  << " ---- : " << std::endl;
         this->notifyViews();
     }
 }

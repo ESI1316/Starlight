@@ -29,33 +29,24 @@ void MirrorView::keyPressEvent(QKeyEvent *event)
     switch (event->key())
     {
     case Qt::Key_Left : this->mirror->rotate(1.);
-        start = Point{mirror->getStart()}; end = Point{mirror->getEnd()};
-        this->setLine(start.getX(), start.getY(), end.getX(), end.getY());
         break;
 
     case Qt::Key_Right : this->mirror->rotate(-1.);
-        start = Point{mirror->getStart()}, end = Point{mirror->getEnd()};
-        this->setLine(start.getX(), start.getY(), end.getX(), end.getY());
         break;
 
     case Qt::Key_Z: this->mirror->translate(0., -2.);
-        start = Point{mirror->getStart()}, end = Point{mirror->getEnd()};
-        this->setLine(start.getX(), start.getY(), end.getX(), end.getY());
         break;
 
     case Qt::Key_S: this->mirror->translate(0., 2.);
-        start = Point{mirror->getStart()}, end = Point{mirror->getEnd()};
-        this->setLine(start.getX(), start.getY(), end.getX(), end.getY());
         break;
 
     case Qt::Key_D: this->mirror->translate(2., 0.);
-        start = Point{mirror->getStart()}, end = Point{mirror->getEnd()};
-        this->setLine(start.getX(), start.getY(), end.getX(), end.getY());
         break;
 
     case Qt::Key_Q: this->mirror->translate(-2., 0.);
-        start = Point{mirror->getStart()}, end = Point{mirror->getEnd()};
-        this->setLine(start.getX(), start.getY(), end.getX(), end.getY());
         break;
     }
+
+    start = Point{mirror->getStart()}, end = Point{mirror->getEnd()};
+    this->setLine(start.getX(), start.getY(), end.getX(), end.getY());
 }
