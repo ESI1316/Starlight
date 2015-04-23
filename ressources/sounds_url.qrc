@@ -17,4 +17,7 @@
     <qresource prefix="/logo">
         <file alias="logo">other/logo.html</file>
     </qresource>
+    <qresource prefix="/icon">
+        <file alias="icon">other/icon.png</file>
+    </qresource>
 </RCC>

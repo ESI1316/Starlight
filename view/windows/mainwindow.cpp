@@ -6,6 +6,8 @@
 #include <QFont>
 #include <QtMultimedia/QSound>
 #include <QApplication>
+#include <QPixmap>
+#include <QIcon>
 
 #include "view/windows/levelview.hpp"
 #include "view/windows/mainmenu.hpp"
@@ -14,6 +16,7 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow{parent}, mainMenu{new MainMenu{this}}, levelView{new LevelView{this}},
     bar{new QMenuBar{this}}, menu{new QMenu("Menu", this)}
 {
+    this->setWindowIcon(QIcon(QPixmap(":icon/icon")));
     this->setWindowTitle(tr("Starlight"));
     this->setMenuBar();
     this->connectAll();
