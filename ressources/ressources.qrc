@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/icon">
+        <file alias="star">other/icon.png</file>
+    </qresource>
+    <qresource prefix="/sounds">
+        <file alias="win">sounds/win.wav</file>
+        <file alias="off">sounds/off.wav</file>
+        <file alias="fire">sounds/fire.wav</file>
+        <file alias="bomb">sounds/bomb.wav</file>
+    </qresource>
+    <qresource prefix="/html">
+        <file alias="rules">other/rules.html</file>
+        <file alias="logo">other/logo.html</file>
+    </qresource>
+</RCC>

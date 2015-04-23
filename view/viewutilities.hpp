@@ -8,6 +8,7 @@
 #include <QColor>
 #include <QPointF>
 #include <QRectF>
+#include <QString>
 
 class Ellipse;
 class Rectangle;
@@ -92,6 +93,16 @@ QGraphicsEllipseItem * getEllipse(const Ellipse &, const QColor &, const int);
  * \see http://www.physics.sfasu.edu/astro/color/spectra.html
  */
 QColor waveLengthToColor(const Ray &, const double = 0.8);
+
+/*!
+ * \brief Permet de lire un fichier et de retourner son contenu en tant que
+ * QString. En cas de fichier innacessible, un avertissement sera affiché.
+ *
+ * \param url L'url d'un document à lire.
+ *
+ * \return Un QString contenant le fichier passé en paramètre.
+ */
+QString * fileToQString(const QString &);
 }
 
 #endif // VIEWUTILITIES_HPP

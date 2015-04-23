@@ -80,4 +80,4 @@ HEADERS  += view/windows/mainwindow.hpp \
     view/dynamicElements/sourceview.hpp
 
 RESOURCES += \
-    ressources/sounds_url.qrc
+    ressources/ressources.qrc

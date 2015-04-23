@@ -3,6 +3,8 @@
 #include <QLineF>
 #include <QPen>
 #include <QCursor>
+#include <QFile>
+#include <QTextStream>
 
 #include "model/elements/ray.hpp"
 #include "model/geometry/ellipse.hpp"
@@ -104,4 +106,18 @@ QColor viewUtilities::waveLengthToColor(const Ray & ray, const double gamma)
     }
 
     return QColor(red * 255, green * 255, blue * 255);
+}
+
+
+QString * viewUtilities::fileToQString(const QString & url)
+{
+    QFile file(url);
+    QString * content;
+
+    if (!file.open(QFile::ReadOnly | QFile::Text))
+        content = new QString("File not found.");
+    else
+        content = new QString(QTextStream(&file).readAll()), file.close();
+
+    return content;
 }

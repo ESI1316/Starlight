@@ -13,6 +13,8 @@
 #include <QFile>
 #include <QTextStream>
 
+#include "view/viewutilities.hpp"
+
 MainMenu::MainMenu(QWidget *parent) : QFrame(parent)
 {
 
@@ -47,29 +49,17 @@ void MainMenu::selectNewLevelFile()
 
 void MainMenu::displayRules()
 {
-    QFile file(":rules/rules");
-
-    if (!file.open(QFile::ReadOnly | QFile::Text))
-        QMessageBox::information(this, "rules", "Missing rules file.");
-    else
-        QMessageBox::information(this, "rules", QTextStream(&file).readAll());
-
-    file.close();
+    QString * content = viewUtilities::fileToQString(":html/rules");
+    QMessageBox::information(this, "rules", *content);
+    delete content;
 }
 
 QLabel * MainMenu::setLogo()
 {
-    QFile logo(":logo/logo");
-    QLabel * title;
+    QString * content = viewUtilities::fileToQString(":html/logo");
+    QLabel * title = new QLabel(*content);
+    delete content;
 
-    if (!logo.open(QFile::ReadOnly | QFile::Text))
-        title = new QLabel{tr("Logo file not found")};
-    else
-        title = new QLabel{QTextStream(&logo).readAll()};
-
-    logo.close();
-
-    title->setFont(QFont{"Arial", 100, 75});
     title->setAlignment(Qt::AlignCenter);
 
     return title;

@@ -16,7 +16,7 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow{parent}, mainMenu{new MainMenu{this}}, levelView{new LevelView{this}},
     bar{new QMenuBar{this}}, menu{new QMenu("Menu", this)}
 {
-    this->setWindowIcon(QIcon(QPixmap(":icon/icon")));
+    this->setWindowIcon(QIcon(QPixmap(":icon/star")));
     this->setWindowTitle(tr("Starlight"));
     this->setMenuBar();
     this->connectAll();
