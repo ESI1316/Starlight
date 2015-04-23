@@ -1,4 +1,7 @@
-/*
+#include "main.hpp"
+
+#ifdef RUN_TEST
+
 #include "test/catch.hpp"
 #include "model/geometry/utilities.hpp"
 #include "model/geometry/point.hpp"
@@ -131,4 +134,5 @@ TEST_CASE("Entre 0 et 2PI")
     REQUIRE(utilities::inZeroTwoPi(0.) == 0.);
     REQUIRE(utilities::inZeroTwoPi(utilities::PI_2) == utilities::PI_2);
 }
-*/
+
+#endif

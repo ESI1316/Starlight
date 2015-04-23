@@ -77,7 +77,8 @@ HEADERS  += view/windows/mainwindow.hpp \
     model/geometry/line.hpp \
     model/geometry/ellipse.hpp \
     test/catch.hpp \
-    view/dynamicElements/sourceview.hpp
+    view/dynamicElements/sourceview.hpp \
+    main.hpp
 
 RESOURCES += \
     ressources/ressources.qrc

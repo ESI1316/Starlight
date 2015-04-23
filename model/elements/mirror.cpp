@@ -111,7 +111,6 @@ void Mirror::reactToRay(Ray ray)
     if(this->getLevel() != nullptr)
         this->getLevel()->computeRay(Ray{point,
                                          (2. * this->getAngle()) - ray.getAlpha(),
-                                         //-(source + alpha + alpha),
                                          ray.getWaveLength()});
 }
 

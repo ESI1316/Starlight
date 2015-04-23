@@ -1,5 +1,8 @@
-#include <QApplication>
+#include "main.hpp"
 
+#ifndef RUN_TEST
+
+#include <QApplication>
 #include "view/windows/mainwindow.hpp"
 
 int main(int argc, char *argv[])
@@ -11,6 +14,7 @@ int main(int argc, char *argv[])
 
     return a.exec();
 }
+#endif
 
 /*! \mainpage
  * ##Introduction

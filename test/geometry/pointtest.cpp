@@ -1,4 +1,7 @@
-/*
+#include "main.hpp"
+
+#ifdef RUN_TEST
+
 #include "test/catch.hpp"
 #include "model/geometry/utilities.hpp"
 #include "model/geometry/point.hpp"
@@ -66,13 +69,6 @@ TEST_CASE("Autres méthodes de points")
     REQUIRE(utilities::equals(a.distanceFrom(e), std::sqrt(42.8489)));
     REQUIRE(utilities::equals(a.distanceFrom(f), std::sqrt(44297.888399999996)));
     REQUIRE(utilities::equals(f.distanceFrom(d), std::sqrt(51893.41840000001)));
-
-    REQUIRE_FALSE(a.isCenter());
-    REQUIRE_FALSE(b.isCenter());
-    REQUIRE_FALSE(d.isCenter());
-    REQUIRE_FALSE(e.isCenter());
-    REQUIRE_FALSE(f.isCenter());
-    REQUIRE(c.isCenter());
 }
 
 TEST_CASE("Azimut en degré")
@@ -209,4 +205,6 @@ TEST_CASE("Setters")
     REQUIRE(utilities::equals(d.getX(), 6.8866666667));
     REQUIRE(utilities::equals(d.getY(), 1.2));
 }
-*/
+
+#endif
+

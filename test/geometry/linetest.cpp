@@ -1,4 +1,7 @@
-/*
+#include "main.hpp"
+
+#ifdef RUN_TEST
+
 #include "test/catch.hpp"
 
 #include "model/geometry/line.hpp"
@@ -236,4 +239,6 @@ TEST_CASE("operateurs")
         REQUIRE_FALSE(a == c);
         REQUIRE(a != c);
 }
-*/
+
+#endif
+

@@ -1,4 +1,7 @@
-/*
+#include "main.hpp"
+
+#ifdef RUN_TEST
+
 #include "test/catch.hpp"
 #include <iostream>
 #include "model/exception/starlightexception.hpp"
@@ -97,29 +100,6 @@ TEST_CASE("Mirroir : pivotRange")
 
         REQUIRE(mirroir.checkPivotRange(Point(22., -33)));
         REQUIRE(mirroir.checkPivotRange(Point(-22.2223, -33)));
-    }
-
-    SECTION("xmin = xmax = 0")
-    {
-        Mirror mirroir{Point{4., 6.}, 50, 80, 4.1882683952,
-                       Point{0.,-220.}, Point{0., 31.}, 0., 5.};
-
-        REQUIRE(mirroir.checkPivotRange(Point(22., 30)));
-        REQUIRE(mirroir.checkPivotRange(Point(-222., 30)));
-        REQUIRE_FALSE(mirroir.checkPivotRange(Point(-22.2223, 33)));
-        REQUIRE_FALSE(mirroir.checkPivotRange(Point(-22.2223, -221)));
-
-    }
-
-    SECTION("ymin = ymax = 0")
-    {
-        Mirror mirroir{Point{4., 6.}, 50, 80, 4.1882683952,
-                       Point{-220.,0.}, Point{31., 0.}, 0., 5.};
-
-        REQUIRE(mirroir.checkPivotRange(Point(-22., 2.230)));
-        REQUIRE(mirroir.checkPivotRange(Point(-122., -3330)));
-        REQUIRE_FALSE(mirroir.checkPivotRange(Point(32.2223, 33)));
-        REQUIRE_FALSE(mirroir.checkPivotRange(Point(-222.2223, -221)));
     }
 
     SECTION("Quelconque")
@@ -477,4 +457,6 @@ TEST_CASE("Mirroir")
     REQUIRE(newRay.isInTrajectory(Point(-2.8729472097, 532.5239972484)));
     REQUIRE_FALSE(newRay.isInTrajectory(Point(59.6450443514, 518.4259447057)));
 }
-*/
+
+#endif
+

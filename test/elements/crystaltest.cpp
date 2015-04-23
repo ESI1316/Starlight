@@ -1,4 +1,7 @@
-/*
+#include "main.hpp"
+
+#ifdef RUN_TEST
+
 #include <iostream>
 #include "test/catch.hpp"
 #include "model/exception/starlightexception.hpp"
@@ -105,4 +108,5 @@ TEST_CASE("Intersection cristal et rayon ! le point de sortie")
         delete intersection;
     }
 }
-*/
+
+#endif

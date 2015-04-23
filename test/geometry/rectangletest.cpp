@@ -1,4 +1,7 @@
-/*
+#include "main.hpp"
+
+#ifdef RUN_TEST
+
 #include "test/catch.hpp"
 #include "model/geometry/rectangle.hpp"
 #include "model/geometry/line.hpp"
@@ -159,4 +162,6 @@ TEST_CASE("Droites confondues avec les cotés")
     REQUIRE(right.at(0) == Point(6.424, 2));
     REQUIRE(right.at(1) == Point(6.424, 6.424));
 }
-*/
+
+#endif
+

@@ -1,4 +1,7 @@
-/*
+#include "main.hpp"
+
+#ifdef RUN_TEST
+
 #include "test/catch.hpp"
 #include "model/geometry/ellipse.hpp"
 #include "model/geometry/line.hpp"
@@ -15,10 +18,12 @@ TEST_CASE("Constructeur d'ellipse")
 
 TEST_CASE("Accesseurs d'ellipse")
 {
-    Ellipse ellipse{2.8091279786 / 2., 1.92 / 2., Point{2., 2.}};
+    Ellipse ellipse{2.8091279786, 1.92, Point{2., 2.}};
     REQUIRE(ellipse.getCenter() == Point(2., 2.));
-    REQUIRE(utilities::equals(ellipse.getXRadius(), pow(2.8091279786 / 2., 2)));
-    REQUIRE(utilities::equals(ellipse.getYRadius(), pow(1.92 / 2., 2)));
+    REQUIRE(utilities::equals(ellipse.getWidth(), 2.8091279786));
+    REQUIRE(utilities::equals(ellipse.getHeight(), 1.92));
+    REQUIRE(utilities::equals(ellipse.getYRadius(), 1,9728));
+    REQUIRE(utilities::equals(ellipse.getXRadius(), 0,9216));
 }
 
 TEST_CASE("Operateurs d'ellipse")
@@ -33,7 +38,7 @@ TEST_CASE("Operateurs d'ellipse")
     REQUIRE(!(ellipse == ell));
     REQUIRE(e != ell);
 }
-
+/*
 TEST_CASE("Intersection Cercle - droite quelconque")
 {
     Ellipse ellipse{2., 2., Point{2., 2.}};
@@ -66,7 +71,6 @@ TEST_CASE("Get points d'intersection - Droite horizontale")
     REQUIRE(intersections.at(0) == Point(-18.5353339938, 14.6315900304));
     REQUIRE(intersections.at(1) == Point(30.5353339938, 14.6315900304));
 }
-
 TEST_CASE("Get points d'intersection - Droite verticale")
 {
     Ellipse ellipse{30., 15., Point{6., 6.}};
@@ -143,3 +147,6 @@ TEST_CASE("Droites tangeantes à l'ellipse")
     }
 }
 */
+
+#endif
+

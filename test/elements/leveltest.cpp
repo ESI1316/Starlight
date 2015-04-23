@@ -1,4 +1,7 @@
-/*
+#include "main.hpp"
+
+#ifdef RUN_TEST
+
 #include "test/catch.hpp"
 #include "model/elements/level.hpp"
 #include "model/elements/levelFactory.hpp"
@@ -20,7 +23,8 @@ TEST_CASE("computeRay")
 
     SECTION("Rencontre avecc un mur")
     {
-        Level * level = levelFactory::getLevelFromFile("./ressources/W.lvl");
+        Level * level = levelFactory::getLevelFromFile("./ressources/maps_test/W.lvl");
+        level->getSource().setOn(true);
         level->computeRays();
 
         REQUIRE(level->getRays().size() == 1);
@@ -29,14 +33,16 @@ TEST_CASE("computeRay")
 
     SECTION("Rencontre avec un miroir")
     {
-        Level * level = levelFactory::getLevelFromFile("./ressources/MW.lvl");
+        Level * level = levelFactory::getLevelFromFile("./ressources/maps_test/MW.lvl");
+        level->getSource().setOn(true);
         level->computeRays();
         delete level;
     }
 
     SECTION("Rencontre avec une bombe")
     {
-        Level * level = levelFactory::getLevelFromFile("./ressources/N.lvl");
+        Level * level = levelFactory::getLevelFromFile("./ressources/maps_test/N.lvl");
+        level->getSource().setOn(true);
         level->computeRays();
         REQUIRE(level->getRays().size() == 1);
 
@@ -52,34 +58,17 @@ TEST_CASE("computeRay")
 
     SECTION("Rencontre avec une lentille laissant passer le rayon")
     {
-        Level * level = levelFactory::getLevelFromFile("./ressources/LW.lvl");
-        level->computeRays();
-        REQUIRE(level->getRays().size() == 1);
-        delete level;
-
     }
 
     SECTION("Rencontre avec une lentille ne laissant pas passer le rayon")
     {
-        Level * level = levelFactory::getLevelFromFile("./ressources/L_STOP.lvl");
-        level->computeRays();
-        REQUIRE(level->getRays().size() == 1);
-        delete level;
     }
     SECTION("Rencontre avec une lentille ne laissant pas passer le rayon 2")
     {
-        Level * level = levelFactory::getLevelFromFile("./ressources/ML_STOP.lvl");
-        level->computeRays();
-        REQUIRE(level->getRays().size() == 3);
-        delete level;
     }
 
     SECTION("Rencontre avec un crystal")
     {
-        Level * level = levelFactory::getLevelFromFile("./ressources/CW.lvl");
-        level->computeRays();
-        REQUIRE(level->getRays().size() == 1);
-        delete level;
     }
 }
 
@@ -87,65 +76,28 @@ TEST_CASE("computeRays") // tous les parcours inclusent la rencontre avec des mi
 {
     SECTION("parcour menant à la rencontre d'un mur ")
     {
-        Level * level = levelFactory::getLevelFromFile("./ressources/MW.lvl");
-        level->computeRays();
-
-        REQUIRE(level->getRays().size() == 2);
-
-        Ray ray(Point(0, 0), 4.75, 400);
-        REQUIRE((Line) level->getRays().at(0) ==  (Line)ray);
-
-        delete level;
     }
 
     SECTION("parcour menant à la l'illumination de la destination")
     {
-        Level * level = levelFactory::getLevelFromFile("");
-
-        REQUIRE(level.getRays().size() == );
-        REQUIRE(level.getDestination().isLightedUp());
-
-        delete level;
     }
 
     SECTION("parcour menant à la rencontre d'une bombe")
     {
-        Level * level = levelFactory::getLevelFromFile("");
-
-        REQUIRE(level.getRays().size() == );
-        REQUIRE(level->thereIsAnExplodedNuke());
-
-        delete level;
     }
 
     SECTION("parcour menant à la rencontre d'un crystal")
     {
-        Level * level = levelFactory::getLevelFromFile("");
-
-        REQUIRE(level.getRays().size() == );
-        REQUIRE(level.getDestination().isLightedUp());
-
-        delete level;
     }
 
     SECTION("parcour menant à la rencontre d'une lentille laissant passer le rayon")
     {
-        Level * level = levelFactory::getLevelFromFile("");
-
-        REQUIRE(level.getRays().size() == );
-        REQUIRE(level.getDestination().isLightedUp());
-
-        delete level;
     }
 
     SECTION("parcour menant à la rencontre d'une lentille ne laissant pas passer le rayon")
     {
-        Level * level = levelFactory::getLevelFromFile("");
-
-        REQUIRE(level.getRays().size() == );
-        REQUIRE(level.getDestination().isLightedUp());
-
-        delete level;
     }
 }
-*/
+
+#endif
+

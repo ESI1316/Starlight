@@ -1,4 +1,7 @@
-/*
+#include "main.hpp"
+
+#ifdef RUN_TEST
+
 #define CATCH_CONFIG_MAIN
 #include "test/catch.hpp"
 #include "model/elements/levelFactory.hpp"
@@ -7,7 +10,7 @@
 
 TEST_CASE("création d'un Level à partir d'un fichier .lvl", "levelFactory::getLevel(std::string)")
 {
-    Level * level = levelFactory::getLevelFromFile("./ressources/level.lvl");
+    Level * level = levelFactory::getLevelFromFile("./ressources/maps/level.lvl");
 
     SECTION("vérification de la taille des vecteurs")
     {
@@ -117,4 +120,6 @@ TEST_CASE("création d'un Level à partir d'un fichier .lvl", "levelFactory::get
 
     delete level;
 }
-*/
+
+#endif
+
