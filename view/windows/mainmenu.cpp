@@ -67,6 +67,8 @@ QLabel * MainMenu::setLogo()
     else
         title = new QLabel{QTextStream(&logo).readAll()};
 
+    logo.close();
+
     title->setFont(QFont{"Arial", 100, 75});
     title->setAlignment(Qt::AlignCenter);
 
