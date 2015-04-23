@@ -4,29 +4,66 @@
 <head>
     <meta charset="UTF-8">
     <title>Rules of Starlight</title>
+    <style>
+        .bold {
+            font-weight: bold;
+        }
+        
+        #source {
+            color: grey;
+        }
+        
+        #target {
+            color: deeppink;
+        }
+        
+        #nuke {
+            color: red;
+        }
+        
+        #crystal {
+            color: green;
+        }
+        
+        #lens {
+            color: blue;
+        }
+        
+        #ray {
+            color: deepskyblue;
+        }
+        
+        #commands {
+            list-style-type: disc;
+        }
+        
+        .movement {
+            list-style-type: square;
+        }
+    </style>
 </head>
 
 <body>
     <h1>Règles du jeu :</h1>
-    <p>Le but du jeu est d'atteindre la cible <b><span style="color:pink">(carré rose)</span></b> avec le rayon lumineux émit par la source (carré blanc). Cela en déplaçant et en faisant pivoter les miroirs (lignes bleu clair) de sorte à dévier le rayon pour l'orienter, le tout en évitant de traverser les bombes <b><span style="color:red">(cercles rouges)</span>.</p>
-    <p>Petites subtilités; les lentilles <b><span style="color:blue">(ellipses bleues foncé)</span></b> ne peuvent être traversé par le rayon que si ce dernier possède la longueur d'onde adéquate. Pour modifier la longueur d'onde du rayon, il faut le faire traverser un cristal <b><span style="color:green">(ellipses vertes)</span></b>, ceci aura ainsi pour effet de réduire ou d'augmenter sa longueur d'onde (Note: la longueur d'onde d'un rayon est distinguable par sa <a href="http://www.cnrs.fr/cw/dossiers/doschim/decouv/couleurs/loupe_spect_lum.html\">couleur</a>).</p>
+    <p>Le but du jeu est d'atteindre la cible <span id="target" class="bold">(carré rose)</span> avec le rayon lumineux émit par la source <span id="source">(carr&eacute; blanc)</span>. Cela en d&eacute;pla&ccedil;ant et en faisant pivoter les miroirs <span id="ray">(lignes bleu clair)</span> de sorte &agrave; d&eacute;vier le rayon pour l'orienter, le tout en &eacute;vitant de traverser les bombes <span id="nuke" class="bold">(cercles rouges)</span>.</p>
+    <p>Petites subtilit&eacute;s; les lentilles <span id="lens" class="bold">(ellipses bleu fonc&eacute;)</span> ne peuvent &ecirc;tre travers&eacute; par le rayon que si ce dernier poss&egrave;de la longueur d'onde ad&eacute;quate. Pour modifier la longueur d'onde du rayon, il faut le faire traverser un cristal <span id="crystal" class="bold">(ellipses vertes)</span>, ceci aura ainsi pour effet de r&eacute;duire ou d'augmenter sa longueur d'onde (Note: la longueur d'onde d'un rayon est distinguable par sa <a href="http://www.cnrs.fr/cw/dossiers/doschim/decouv/couleurs/loupe_spect_lum.html">couleur</a>).</p>
     <h2>Commandes :</h2>
-    <ul style="list-style-type:disc">
-        <li><u>Allumer/éteindre la source :</u> cliquer dessus.</li>
-        <li><u>Déplacer un miroir :</u> cliquer dessus, ensuite
-            <ul style="list-style-type:none">
-                <li>gérer son déplacement à l'aide des touches;
-                    <ul style="list-style-type:square">
+    <ul id="commands">
+        <li><u>Allumer/&eacute;teindre la source :</u> cliquer dessus.</li>
+        <li><u>D&eacute;placer un miroir :</u> cliquer dessus, ensuite
+            <ul>
+                <li>g&eacute;rer son d&eacute;placement &agrave; l'aide des touches;
+                    <ul class="movements">
                         <li>q - vers la gauche,</li>
                         <li>d - vers la droite,</li>
                         <li>s - vers le bas,</li>
                         <li>z - vers le haut.</li>
                     </ul>
                 </li>
-                <li>Gérer sa rotation à l'aide des touches;
-                    <ul style="list-style-type:square">
-                        <li>flèche directionnelle de droite - pivoter horlogiquement,</li>
-                        <li>flèche directionnelle de gauche - pivoter antihorlogiquement.</li>
+                <li>G&eacute;rer sa rotation &agrave; l'aide des touches;
+                    <ul class="movements">
+                        <li>fl&egrave;che directionnelle de droite - pivoter horlogiquement,</li>
+                        <li>fl&egrave;che directionnelle de gauche - pivoter antihorlogiquement.</li>
                     </ul>
                 </li>
             </ul>
