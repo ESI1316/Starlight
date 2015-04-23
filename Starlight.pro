@@ -79,7 +79,5 @@ HEADERS  += view/windows/mainwindow.hpp \
     test/catch.hpp \
     view/dynamicElements/sourceview.hpp
 
-DISTFILES += ressources/*
-
 RESOURCES += \
     ressources/sounds_url.qrc

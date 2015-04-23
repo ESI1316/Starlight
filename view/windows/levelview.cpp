@@ -95,8 +95,8 @@ void LevelView::updateDisplay()
                 || this->level->thereIsAnExplodedNuke())
         {
             QSound::play(this->level->thereIsAnExplodedNuke()
-                           ? ":bomb/sounds/bomb.wav"
-                           : ":win/sounds/win.wav");
+                           ? ":bomb/bomb"
+                           : ":win/win");
 
             this->displayEndOfGame();
         }

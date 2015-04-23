@@ -47,7 +47,7 @@ void MainMenu::selectNewLevelFile()
 
 void MainMenu::displayRules()
 {
-    QFile file(":rules/other/rules.html");
+    QFile file(":rules/rules");
 
     if (!file.open(QFile::ReadOnly | QFile::Text))
         QMessageBox::information(this, "rules", "Missing rules file.");
@@ -59,7 +59,7 @@ void MainMenu::displayRules()
 
 QLabel * MainMenu::setLogo()
 {
-    QFile logo(":logo/other/logo.html");
+    QFile logo(":logo/logo");
     QLabel * title;
 
     if (!logo.open(QFile::ReadOnly | QFile::Text))
