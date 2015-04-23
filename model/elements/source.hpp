@@ -10,7 +10,7 @@ class Point;
 
 /*!
  * \brief Modélise la source lumineuse utilisée dans le jeu.
- * La source est un objet carré qui, si allumée, emet un rayon
+ * La source est un objet carré qui, si allumée, émet un rayon
  * lumineux de longueur d'onde donnée dont l'angle ne peut pas
  * être changé.
  * Le rayon lumineux est émis depuis la position, i.e., le coin
@@ -19,7 +19,7 @@ class Point;
 class Source : public Element, public Rectangle
 {
     /*!
-     * \brief Etat d'émission de la source.
+     * \brief État d'émission de la source.
      */
     bool on;
 
@@ -38,7 +38,7 @@ public:
     /*!
      * \brief Instancie une nouvelle source de position, côté et longueur d'onde donnée.
      * La position dénote la coordonnée du coin supérieur gauche du carré
-     * modélisant la source. La source est intialement éteinte. Si la longueur
+     * modélisant la source. La source est initialement éteinte. Si la longueur
      * d'onde du rayon lumineux émis n'est pas comprise entre 360 nm et 830 nm,
      * elle est réglée sur 600 nm.
      * \param position La position du coin supérieur gauche de la source.

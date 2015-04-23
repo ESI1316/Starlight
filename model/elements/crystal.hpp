@@ -16,8 +16,8 @@ class Point;
  * Un cristal est un objet circulaire centré en un point, et
  * d'un certain rayon.
  * </p>
- * Un rayon lumineux passant à travers un crystal amplifierifie sa
- * longueur d'onde (en l'augmentant ou en la diminuant d'une
+ * Un rayon lumineux passant à travers un crystal verra sa
+ * longueur d'onde modifiée (en l'augmentant ou en la diminuant d'une
  * certaine valeur) mais pas sa trajectoire.
  */
 class Crystal : public Element, public Ellipse
@@ -33,7 +33,7 @@ private :
 public:
 
     /*!
-     * \brief Instancie un cristal
+     * \brief Instancier un cristal
      * <ul>
      * <li>centré au point donné</li>
      * <li>avec un rayon donné</li>
@@ -41,7 +41,7 @@ public:
      * </ul>,
      *
      * ce crystal modifie la longueur d'onde du rayon le traversant en suivant
-     * la règle suivante : si la longueur d'onde modifié sort de l'interval
+     * la règle suivante : si la longueur d'onde modifié sort de l'intervalle
      * [longueur d'onde minimale, longueur d'onde maximale] alors elle ne sera
      * pas appliquée.
      *
@@ -78,7 +78,7 @@ public:
      *
      * \param ray Un rayon.
      *
-     * \return Un pointeur vers le point d'intersection (le plus eloigné) avec
+     * \return Un pointeur vers le point d'intersection (le plus éloigné) avec
      * le rayon s'il existe un pointeur null sinon.
      */
     Point * includeRay(const Ray &) const;

@@ -37,7 +37,7 @@ protected:
      * \brief Permet de faire réagir le miroir à l'action de certaines touches
      * du clavier et de la souris.
      *
-     * \param event Une évenement "input user".
+     * \param event Une évènement "input user".
      */
     void keyPressEvent(QKeyEvent * event);
 };

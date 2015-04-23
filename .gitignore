@@ -9,3 +9,5 @@ latex/*
 documentation/html/
 documentation/latex/
 moc*
+*~
+*swp

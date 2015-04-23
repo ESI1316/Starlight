@@ -55,7 +55,7 @@ private :
     std::vector<Wall> walls;
 
     /*!
-     * \brief mirrors L'ensemble des mirroirs présents dans le niveau.
+     * \brief mirrors L'ensemble des miroirs présents dans le niveau.
      */
     std::vector<Mirror> mirrors;
 
@@ -92,7 +92,7 @@ private :
      *
      * \param ray Rayon dont on désire obtenir les éléments sur sa trajectoire.
      *
-     * \return Une map ontenant les élément se trouvant sur la
+     * \return Une map contenant les élément se trouvant sur la
      * trajectoire du rayon, ayant pour clé; le point d'intersection avec cet
      * élément.
      */
@@ -112,7 +112,7 @@ public:
      * via les fonctions
      * appropriées.
      * \param w la largeur de la carte
-     * \param h la heuteur de la carte
+     * \param h la hauteur de la carte
      */
     Level(const double, const double);
 
@@ -145,7 +145,7 @@ public:
     void setSource(const Source &);
 
     /*!
-     * \brief Retourne la desination de la carte
+     * \brief Retourne la destination de la carte
      *
      * \return la destination de la carte
      */
@@ -180,9 +180,9 @@ public:
     std::vector<Mirror> & getMirrors();
 
     /*!
-     * \brief Permet d'ajouter un mirroir sur la carte.
+     * \brief Permet d'ajouter un miroir sur la carte.
      *
-     * \param newMirror nouveau mirroir à ajouter.
+     * \param newMirror nouveau miroir à ajouter.
      */
     void addMirror(Mirror);
 
@@ -194,9 +194,9 @@ public:
     const std::vector<Crystal> & getCrystals() const;
 
     /*!
-     * \brief Permet d'ajouter un crystal sur la carte.
+     * \brief Permet d'ajouter un cristal sur la carte.
      *
-     * \param newCrystal nouveau crystal à ajouter.
+     * \param newCrystal nouveau cristal à ajouter.
      */
     void addCrystal(Crystal);
 
@@ -252,7 +252,7 @@ public:
     /*!
      * \brief Permet de calculer un rayon à partir du rayon entré en paramètre.
      *
-     * \param ray Rayon précedent.
+     * \param ray Rayon précèdent.
      */
     void computeRay(Ray);
 
@@ -262,7 +262,7 @@ public:
     void computeRays();
 
     /*!
-     * \brief Permet d'abonner une nouvelle vue au model.
+     * \brief Permet d'abonner une nouvelle vue au modèle.
      *
      * \param newView Nouvelle vue abonnée au niveau.
      */

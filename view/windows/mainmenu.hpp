@@ -26,16 +26,16 @@ public:
 signals:
 
     /*!
-     * \brief Signale qu'un nouveau fichier a été séléctionné par l'utilisateur.
+     * \brief Signale qu'un nouveau fichier a été sélectionné par l'utilisateur.
      *
-     * \param newLevelFile Chemin vers le nouveau fichier selectionné.
+     * \param newLevelFile Chemin vers le nouveau fichier sélectionné.
      */
     void newLevelFileSelected(const QString);
 
 public slots:
 
     /*!
-     * \brief Permet de faire séléctionner un fichier de niveau à l'utilisateur.
+     * \brief Permet de faire sélectionner un fichier de niveau par l'utilisateur.
      *
      * \param newLevelFile Chemin vers le nouveau fichier sélectionné.
      */

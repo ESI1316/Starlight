@@ -16,7 +16,7 @@ class Line
 protected:
 
     /*!
-     * \brief slope Valeur du coefficiant angulaire de la droite.
+     * \brief slope Valeur du coefficient angulaire de la droite.
      */
     double slope;
 
@@ -44,8 +44,8 @@ public:
     /*!
      * \brief Permet de construire une droite à partir de deux points.
      *
-     * \param start Point le plus près de l'origine au niveau de l'abcisse.
-     * \param end Point le plus éloigné de l'origine au niveau de l'abcisse.
+     * \param start Point le plus près de l'origine au niveau de l'abscisse.
+     * \param end Point le plus éloigné de l'origine au niveau de l'abscisse.
      */
     Line(const Point &, const Point &);
 
@@ -103,7 +103,7 @@ public:
      * \brief Permet de résoudre l'équation de la droite à partir d'une valeur de y
      * entrée en paramètre.
      *
-     * \param y Valeur de y pour résoudre l"équation de la droite.
+     * \param y Valeur de y pour résoudre l'équation de la droite.
      *
      * \return le valeur de x après résolution de l'équation de la droite
      * à partir d'une valeur de y entrée en paramètre.
@@ -114,7 +114,7 @@ public:
      * \brief Permet de résoudre l'équation de la droite à partir d'une valeur de x
      * entrée en paramètre.
      *
-     * \param x Valeur de x pour résoudre l"équation de la droite.
+     * \param x Valeur de x pour résoudre l'équation de la droite.
      *
      * \return la valeur de y après résolution de l'équation de la droite
      * à partir d'une valeur de y entrée en paramètre.

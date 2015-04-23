@@ -17,7 +17,7 @@ class Point
 
 private :
     /*!
-     * \brief x La distance, sur l'axe des abcisses, du point par rapport à
+     * \brief x La distance, sur l'axe des abscisses, du point par rapport à
      * l'origine.
      */
     double x {0.};
@@ -36,7 +36,7 @@ private :
 
     /*!
      * \brief azimut le segment de cercle exprimé en radian depuis l'axe
-     * horizontal et dans un sens anti-horlogé.
+     * horizontal et dans un sens anti-horloger.
      */
     double azimut{0.};
 
@@ -154,18 +154,18 @@ public:
 
     /*!
      * \brief Permet de connaitre la distance séparant le point courant d'un autre.
-     * La distance est calculée à l'aide du théorème de pythagore au triangle
+     * La distance est calculée à l'aide du théorème de Pythagore au triangle
      * rectangle :
      * soient les deux points du plan cartésien reliés formant un segment de
-     * droite, en tracant les paralleles aux axes passant par ces points on peut
+     * droite, en traçant les parallèles aux axes passant par ces points on peut
      * délimiter un triangle rectangle par l'intersection des deux droites.
      * De là, il est simple d'appliquer le théorème de Pythagore aux triangles
      * rectangles :
-     * l'hypothénuse au carré = la somme du carré des deux autres cotés
+     * l'hypoténuse au carré = la somme du carré des deux autres cotés
      * \f$ distance(p1, p2)^2 = (p1.x - p2.x)^2 + (p1.y - p2.y)^2 \f$
      * Dans la bibliothèque standard C++, la fonction std::hypot de <cmath>
      * nous permet de faire cette opération en lui passant simplement les cotés
-     * autre que l'hypothénuse.
+     * autre que l'hypoténuse.
      * \param point Un autre point.
      * \return La distance séparant deux point.
      */

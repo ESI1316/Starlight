@@ -5,7 +5,7 @@
 class Point;
 
 /*!
- * \brief Diverse fonctions utilitaires de géometrie.
+ * \brief Diverse fonctions utilitaires de géométrie.
  */
 namespace utilities
 {
@@ -68,7 +68,7 @@ double radianAsDegree(const double);
  *
  * \param alpha Un angle en radian.
  *
- * \return L'angle exprimé en degré dans l'interval \f$[0, 360°[\f$
+ * \return L'angle exprimé en degré dans l'intervalle \f$[0, 360°[\f$
  */
 double radianAsDegree0to360(const double);
 
@@ -80,7 +80,7 @@ double radianAsDegree0to360(const double);
  * \param nb1 Un réel.
  * \param nb2 Un réel.
  * \param epsilon Niveau de précision souhaitée permettant de justifier
- * l'égalité ou \f$ \epsilon = 10^{-7}\f$ par défault.
+ * l'égalité ou \f$ \epsilon = 10^{-7}\f$ par défaut.
  *
  * \return <code>true</code> Si les deux nombres sont égaux avec la précision
  * souhaitée.
@@ -100,8 +100,8 @@ int round(const double);
  * deux nombres réels avec une marge d'erreur Epsilon passée en paramètre
  * ou imposée par défaut à \f$ \epsilon = 10^{-7}\f$.
  *
- * \param nb1 Un nombre rééls.
- * \param nb2 Un nombre rééls.
+ * \param nb1 Un nombre réels.
+ * \param nb2 Un nombre réels.
  *
  * \return <code>true</code> Si l'inégalité \f$ nb_1 \geq nb_2 \f$ est vérifiée.
  */
@@ -112,8 +112,8 @@ bool greaterOrEquals(const double, const double, const double = utilities::EPSIL
  * deux nombres réels avec une marge d'erreur Epsilon passée en paramètre
  * ou imposée par défaut à \f$ \epsilon = 10^{-7}\f$.
  *
- * \param nb1 Un nombre rééls.
- * \param nb2 Un nombre rééls.
+ * \param nb1 Un nombre réels.
+ * \param nb2 Un nombre réels.
  *
  * \return <code>true</code> Si l'inégalité \f$ nb_1 \geq nb_2 \f$ est vérifiée.
  */
@@ -145,10 +145,10 @@ double slopeFromPoints(const Point &, const Point &);
 bool isHalfPiPlusNPi(const double);
 
 /*!
- * \brief Permet d'avoir la valeur trigonométrique tangante d'un angle
+ * \brief Permet d'avoir la valeur trigonométrique tangente d'un angle
  * ou l'infini si \f$ angle = \frac{\pi}{2} + n \cdot 2 \cdot \pi \f$.
  *
- * \return La tangante de l'angle ou l'infini.
+ * \return La tangente de l'angle ou l'infini.
  *
  */
 double tan(const double);
@@ -162,9 +162,9 @@ double tan(const double);
 double absoluteAngle(const double);
 
 /*!
- * \brief Permet de recadrer un angle dans un interval [0 ; 2PI[.
+ * \brief Permet de cadrer un angle dans un intervalle [0 ; 2PI[.
  *
- * \return L'angle passé en paramètre dans l'interval [0 ; 2PI[
+ * \return L'angle passé en paramètre dans l'intervalle [0 ; 2PI[
  */
 double inZeroTwoPi(const double);
 }

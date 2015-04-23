@@ -33,25 +33,25 @@ protected:
     double width;
 
     /*!
-     * \brief La valeur de la demi-hauteur au carré.
+     * \brief La valeur de la demi hauteur au carré.
      */
     double xRadius;
 
     /*!
-     * \brief La valeur de la demi-largeur au carré.
+     * \brief La valeur de la demi largeur au carré.
      */
     double yRadius;
 
     /*!
      * \brief Permet d'obtenir les valeurs des ordonnées des points d'intersection
-     * entre l'éllipse et une droite verticale dont l'abcisse est entrée en
+     * entre l'ellipse et une droite verticale dont l'abscisse est entrée en
      * paramètre.
      *
-     * \param xValue Abcisse de la droite verticale dont on désire les ordonnées
-     * des points d'intersection avec l'éllipse.
+     * \param xValue Abscisse de la droite verticale dont on désire les ordonnées
+     * des points d'intersection avec l'ellipse.
      * \param y1 Conteneur de la valeur de l'ordonnée du premier point
      * d'intersection (non utilisé s'il n'existe pas de point d'intersection).
-     * \param y2 Conteneur de la valeur de l'ordonné du deuxième point
+     * \param y2 Conteneur de la valeur de l'ordonne du deuxième point
      * d'intersection (non utilisé s'il n'existe pas de point d'intersection).
      *
      * \return <code>true</code> Si il existe des points d'intersection entre la droite et
@@ -60,21 +60,21 @@ protected:
     bool getYOfIntersPoints(const double, double *, double *) const;
 
     /*!
-     * \brief Permet d'obtenir les abcisses des points d'intersection entre une droite
-     * non-verticale dont la pente et le terme independant de l'équation sont
+     * \brief Permet d'obtenir les abscisses des points d'intersection entre une droite
+     * non-verticale dont la pente et le terme indépendant de l'équation sont
      * entrés en paramètre.
      *
-     * \param slope Pente de la droite dont on désire les abcisses des
-     * points d'intersection avec l'éllipse.
+     * \param slope Pente de la droite dont on désire les abscisses des
+     * points d'intersection avec l'ellipse.
      * \param lineIT Terme indépendant de l'équation de la droite dont on
-     * désire les abcisses des points d'intersection avec l'éllipse.
-     * \param x1 Conteneur de la valeur de l'abcisse du premier point
+     * désire les abscisses des points d'intersection avec l'ellipse.
+     * \param x1 Conteneur de la valeur de l'abscisse du premier point
      * d'intersection (non utilisé s'il n'existe pas de point d'intersection).
-     * \param x2 Conteneur de la valeur de l'abcisse du deuxième point
+     * \param x2 Conteneur de la valeur de l'abscisse du deuxième point
      * d'intersection (non utilisé s'il n'existe pas de point d'intersection).
      *
      * \return <code>true</code> Si il existe des points d'intersection entre la droite et
-     * l' éllipse.
+     * l'ellipse.
      */
     bool getXOfIntersPoints(const double, const double, double *, double *) const;
 
@@ -116,9 +116,9 @@ public:
     double getYRadius() const;
 
     /*!
-     * \brief Permet d'obtenir le centre de l'éllipse.
+     * \brief Permet d'obtenir le centre de l'ellipse.
      *
-     * \return Le centre de l'éllipse.
+     * \return Le centre de l'ellipse.
      */
     Point getCenter() const;
 
@@ -164,7 +164,7 @@ public:
  * \brief Définition, externe, de l'opérateur permettant de produire un affichage
  * formaté.
  *
- * \return Le ostream rempli de la chaine formatée représentant l'Ellipse en
+ * \return Le ostream rempli de la chaine formatée représentant l'ellipse en
  * paramètre.
  */
 std::ostream & operator<<(std::ostream &, const Ellipse &);

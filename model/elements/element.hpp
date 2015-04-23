@@ -6,7 +6,7 @@ class Ray;
 class Point;
 
 /*!
- * \brief Un element est un composant du jeu se devant de communiquer son état
+ * \brief Un élément est un composant du jeu se devant de communiquer son état
  * au niveau le gérant. Cette pratique permet au niveau d'écouter les actions à
  * éffectuer dicter par l'élément.
  */
@@ -15,7 +15,7 @@ class Element
 private :
 
     /*!
-     * Le niveau lié à un element.
+     * Le niveau lié à un élément.
      */
     Level * level{nullptr};
 
@@ -47,7 +47,7 @@ public :
     virtual Point * includeRay(const Ray &) const = 0;
 
     /*!
-     * \brief Permet de modifier le level auquel appertient l'élément.
+     * \brief Permet de modifier le level auquel appartient l'élément.
      *
      * \param nouveau level auquel appartient l'élément.
      */

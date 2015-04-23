@@ -44,7 +44,7 @@ private :
     /*!
      * \brief Créer une nouvelle lentille pouvant être un obstacle à un rayon :
      * si le rayon souhaite passer au travers, il devra être d'une longueur
-     * d'onde comprise dans l'interval souhaité par cette lentille. Dans le cas
+     * d'onde comprise dans l'intervalle souhaité par cette lentille. Dans le cas
      * contraire, le rayon ne passera pas.
      *
      * \param position La position du coin supérieur gauche du rectangle

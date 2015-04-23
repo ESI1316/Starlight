@@ -21,7 +21,7 @@ namespace levelFactory
 {
 
     /*!
-     * \brief Permet d'obtenir une référence vers une nouvelle carte initiallisé à partir
+     * \brief Permet d'obtenir une référence vers une nouvelle carte initialisée à partir
      * d'un fichier .level.
      *
      * \param mapFilePath chemin vers le fichier .level.
@@ -44,7 +44,7 @@ namespace levelFactory
      *
      * \param mapFile Fichier .lvl déjà ouvert.
      *
-     * \return Une destinatation.
+     * \return Une destination.
      */
     Dest getDestination(std::ifstream &);
 
@@ -53,7 +53,7 @@ namespace levelFactory
      *
      * \param mapFile Fichier .lvl déjà ouvert.
      *
-     * \return Un crystal.
+     * \return Un cristal.
      */
     Crystal getCrystal(std::ifstream &);
 

@@ -87,7 +87,7 @@ QGraphicsEllipseItem * getEllipse(const Ellipse &, const QColor &, const int);
  * en paramètre. Cette méthode se base sur le spectre lumineux visible en représentant
  * les U.V. comme du noir.
  *
- * \return La QColor représentant la longeur d'onde d'un rayon.
+ * \return La QColor représentant la longueur d'onde d'un rayon.
  *
  * \see http://www.physics.sfasu.edu/astro/color/spectra.html
  */

@@ -21,7 +21,7 @@ class Ray;
 class Mirror : public Element, public Line
 {
     /*!
-     * \brief Le point de pivot du miroir autour du quel celui-ci peut éffectuer
+     * \brief Le point de pivot du miroir autour du quel celui-ci peut effectuer
      * une rotation.
      */
     Point pivot;
@@ -37,12 +37,12 @@ class Mirror : public Element, public Line
     int xpad;
 
     /*!
-     * \brief Limite minimale d'abcisse où peut se situer le pivot du miroir.
+     * \brief Limite minimale d'abscisse où peut se situer le pivot du miroir.
      */
     double xMin;
 
     /*!
-     * \brief Limite maximale d'abcisse où peut se situer le pivot du miroir.
+     * \brief Limite maximale d'abscisse où peut se situer le pivot du miroir.
      */
     double xMax;
 
@@ -210,7 +210,7 @@ public:
     bool setAngle(double);
 
     /*!
-     * \brief Permet d'<b>essayer</b> d'éffectuer une rotation du miroir courant.
+     * \brief Permet d'<b>essayer</b> d'effectuer une rotation du miroir courant.
      *
      * \param alpha L'angle de rotation en degrés.
      *
@@ -220,10 +220,10 @@ public:
     bool rotate(double);
 
     /*!
-     * \brief Permet de déplacer le miroir dans le plan en lui donnant un abcisse
+     * \brief Permet de déplacer le miroir dans le plan en lui donnant un abscisse
      * et une ordonnée de translation.
      *
-     * \param x Le déplacement sur l'axe des abcisses.
+     * \param x Le déplacement sur l'axe des abscisses.
      * \param y Le déplacement sur l'axe des ordonnées.
      *
      * \return <code>true</code> Si le miroir ne sort pas des limites après
@@ -250,7 +250,7 @@ public:
     /*!
      * \brief Permet d'obtenir le point de départ et d'arrivé du segment de droite
      * représentant le miroir; pour éviter de retourner un conteneur de points,
-     * ceux-ci sont passés en entrée-sortie des paramètres.
+     * ceux-ci sont passés en entrée sortie des paramètres.
      */
     void getBounds(Point *, Point *) const;
 
@@ -265,7 +265,7 @@ public:
     bool checkAngleRange(double) const;
 
     /*!
-     * \brief Retoune vrai si le miroir peut être éplacé en la
+     * \brief Retoune vrai si le miroir peut être déplacé en la
      * position donnée, retourne faux sinon.
      *
      * \return <code>true</code> si le miroir peut être déplacé en
@@ -275,8 +275,8 @@ public:
     bool checkPivotRange(const Point &) const;
 
     /*!
-     * \brief Réaction à l'exposition d'un rayon; celui-ci est réflechi selon le
-     * principe naturel de la reflexion de la lumière dans l'air.
+     * \brief Réaction à l'exposition d'un rayon; celui-ci est réfléchi selon le
+     * principe naturel de la réflexion de la lumière dans l'air.
      *
      * Cette méthode communiquera au niveau de prendre en compte le nouveau rayon
      * créé.
@@ -286,26 +286,26 @@ public:
     void reactToRay(Ray);
 
     /*!
-     * \brief Renseigne si le mirroir est dans la trajectoire du rayon.
+     * \brief Renseigne si le miroir est dans la trajectoire du rayon.
      *
      * \param ray Le rayon.
      *
-     * \return <code>true</code> Si le mirroir se trouve dans la trajectoire du rayon entré
+     * \return <code>true</code> Si le miroir se trouve dans la trajectoire du rayon entré
      * en paramètre.
      */
     Point * includeRay(const Ray &) const;
 
     /*!
-     * \brief Permet de savoir si deux mirroirs sont les même.
+     * \brief Permet de savoir si deux miroirs sont les même.
      *
-     * \return <code>true</code> Si deux mirroirs sont les même.
+     * \return <code>true</code> Si deux miroirs sont les même.
      */
     bool operator==(const Mirror &) const;
 
     /*!
-     * \brief Permet de savoir si deux mirroirs sont différents.
+     * \brief Permet de savoir si deux miroirs sont différents.
      *
-     * \return <code>true</code> Si deux mirroirs sont différents.
+     * \return <code>true</code> Si deux miroirs sont différents.
      */
     bool operator!=(const Mirror &) const;
 
