@@ -55,13 +55,12 @@ void MainMenu::selectNewLevelFile()
 
 void MainMenu::displayRules()
 {
-    QMessageBox msgBox;
     QFile file("./ressources/other/rules.html");
 
     if (!file.open(QFile::ReadOnly | QFile::Text))
-        msgBox.setInformativeText(tr("Missing rules file."));
+        QMessageBox::information(this, "rules", "Missing rules file.");
     else
-        msgBox.setInformativeText(QTextStream(&file).readAll());
+        QMessageBox::information(this, "rules", QTextStream(&file).readAll());
 
-    msgBox.exec();
+    file.close();
 }
