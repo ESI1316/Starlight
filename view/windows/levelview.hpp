@@ -92,6 +92,10 @@ public slots:
      * la fin du jeu.
      */
     void displayEndOfGame();
+
+private :
+
+    void cleanAll();
 };
 
 #endif // LEVELVIEW_HPP

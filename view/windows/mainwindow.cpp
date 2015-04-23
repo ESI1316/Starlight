@@ -21,7 +21,7 @@ MainWindow::MainWindow(QWidget *parent) :
     this->setMenuBar();
     this->connectAll();
 
-    this->setCentralWidget(new QWidget{this});
+    this->setCentralWidget(new QWidget);
     this->displayMainMenu();
 }
 

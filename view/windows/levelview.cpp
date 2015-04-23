@@ -32,14 +32,8 @@ void LevelView::setLevelFilePath(const QString levelFile)
 
 void LevelView::loadLevelFromFile()
 {
-    if (this->level != nullptr)
-    {
-        delete this->level, this->level = nullptr;
-        this->mirrors.clear();
-        this->rays.clear();
-    }
+    this->cleanAll();
 
-    this->scene->clear();
     this->level = levelFactory::getLevelFromFile(this->displayedLevelFilePath);
     this->level->addView(this);
 
@@ -54,9 +48,7 @@ void LevelView::loadLevelFromFile()
         this->scene->addItem(viewUtilities::getEllipse(crystal, Qt::green, 2));
 
     for (auto & nuke : this->level->getNukes())
-    {
         this->scene->addItem(viewUtilities::getEllipse(nuke, Qt::red, 2));
-    }
 
     for (auto & wall : this->level->getWalls())
         this->scene->addItem(viewUtilities::getLine(wall.getStart(), wall.getEnd(),
@@ -95,8 +87,8 @@ void LevelView::updateDisplay()
                 || this->level->thereIsAnExplodedNuke())
         {
             QSound::play(this->level->thereIsAnExplodedNuke()
-                           ? ":sounds/bomb"
-                           : ":sounds/win");
+                         ? ":sounds/bomb"
+                         : ":sounds/win");
 
             this->displayEndOfGame();
         }
@@ -112,8 +104,8 @@ void LevelView::displayEndOfGame()
     msgBox.addButton(tr("Recommencer"), QMessageBox::NoRole);
     msgBox.setText(tr("<strong>Fin de partie :<strong>"));
     msgBox.setInformativeText(this->level->getDestination().isLightedUp() ?
-                                  tr("<br>Bravo</br> !\nVous avez gagné") :
-                                  tr("<br>Perdu</br> !\nUne bombe a explosée"));
+                                  tr("<b>Bravo</b> !\nVous avez gagné") :
+                                  tr("<b>Perdu</b> !\nUne bombe a explosée"));
     msgBox.setWindowFlags(msgBox.windowFlags() ^ Qt::WindowCloseButtonHint);
     msgBox.exec();
 
@@ -121,4 +113,20 @@ void LevelView::displayEndOfGame()
         emit displayingStopped();
     else
         this->loadLevelFromFile();
+}
+
+void LevelView::cleanAll()
+{
+    if (this->level != nullptr)
+        delete this->level, this->level = nullptr;
+
+    for (auto & item : this->scene->items())
+        delete item, item = nullptr;
+
+    for (auto & ray : this->rays)
+        delete ray, ray = nullptr;
+
+    this->mirrors.clear();
+    this->rays.clear();
+    this->scene->clear();
 }
