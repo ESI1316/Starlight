@@ -29,25 +29,60 @@ class Level
 private :
 
     /*!
-     * \brief width
+     * \brief La largeur du niveau.
      */
     const double width;
 
     /*!
-     * \brief height
+     * \brief La hauteur du niveau.
      */
     const double height;
 
+    /*!
+     * \brief La source du niveau.
+     */
     Source source {Point{0, 0}, 10, 30., 400};
+
+    /*!
+     * \brief La destination du niveau.
+     */
     Dest dest {Point{0, 0}, 5};
 
+    /*!
+     * \brief L'ensemble des murs du niveau, qu'ils soient ceux qui le délimitent
+     * ou des murs supplémentaires ajoutés au niveau même.
+     */
     std::vector<Wall> walls;
+
+    /*!
+     * \brief mirrors L'ensemble des mirroirs présents dans le niveau.
+     */
     std::vector<Mirror> mirrors;
+
+    /*!
+     * \brief crystals L'ensemble des cristaux présents dans le niveau.
+     */
     std::vector<Crystal> crystals;
+
+    /*!
+     * \brief lenses L'ensemble des lentilles présentes dans le niveau.
+     */
     std::vector<Lens> lenses;
+
+    /*!
+     * \brief rays L'ensemble des rayons créés dans le niveau quand la source
+     * est allumée.
+     */
     std::vector<Ray> rays;
+
+    /*!
+     * \brief nukes L'ensemble des bombes créées dans le niveau.
+     */
     std::vector<Nuke> nukes;
 
+    /*!
+     * \brief views L'ensemble des vues qui observent le niveau.
+     */
     std::vector<LevelView *> views;
 
     /*!
@@ -210,7 +245,7 @@ public:
     /*!
      * \brief Renseigne si une bombe a explosé.
      *
-     * \return true Si une bombe a explosé.
+     * \return <code>true</code> Si une bombe a explosé.
      */
     bool thereIsAnExplodedNuke() const;
 

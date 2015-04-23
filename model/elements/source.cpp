@@ -8,12 +8,11 @@
 
 Source::Source(const Point & position, const int edge, const double alpha,
                const int waveLength)
-    : Element(), Rectangle(edge, edge, position), alpha{alpha},
+    : Element(), Rectangle(edge, edge, position),on{false}, alpha{alpha},
       waveLength{waveLength}
 {
     if (waveLength < Ray::WL_MIN || waveLength > Ray::WL_MAX)
         this->waveLength = Ray::WL_DFT;
-        //throw StarlightException{"Mauvaise longueur d'onde"};
 }
 
 void Source::setOn(const bool on)
@@ -26,7 +25,6 @@ void Source::setOn(const bool on)
                      : this->getLevel()->getRays().clear(), this->getLevel()->notifyViews();
     }
 }
-
 
 void Source::reactToRay(Ray) {}
 

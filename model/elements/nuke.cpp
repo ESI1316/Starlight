@@ -8,16 +8,11 @@
 #include "model/geometry/point.hpp"
 
 Nuke::Nuke(const Point & position, const double radius)
-    : Element(), Ellipse{2. * radius,2. * radius, position}
+    : Element(), Ellipse{2. * radius,2. * radius, position}, light{false}
 {
     if (utilities::lessOrEquals(radius, 0.))
         throw StarlightException{"Le rayon de la bombe doit être "
                                  "strict. positif"};
-}
-
-bool Nuke::isLightedUp() const
-{
-    return this->light;
 }
 
 void Nuke::setLightedUp(const bool light)

@@ -17,10 +17,25 @@ class Ray : public Line
 
 protected:
 
+    /*!
+     * \brief Le point de départ du segment de droite représentant le rayon.
+     */
     Point start;
+
+    /*!
+     * \brief Le point d'arrivé du segment de droite représentant le rayon.
+     */
     Point end;
-    int waveLength{Ray::WL_DFT};
+
+    /*!
+     * \brief L'angle de tir du rayon selon le cercle trigonométrique usuel.
+     */
     double alpha;
+
+    /*!
+     * \brief La longueur d'onde du rayon.
+     */
+    int waveLength;
 
   public:
 
@@ -48,27 +63,36 @@ protected:
     /*!
      * \brief Créer un nouveau rayon.
      */
-    Ray(const Point, double, int);
+    Ray(const Point, double, int = Ray::WL_DFT);
 
     /*!
      * \brief Retourne le début du rayon.
+     *
      * \return le début du rayon.
      */
     const Point & getStart() const;
 
     /*!
      * \brief Retourne la fin du rayon.
+     *
      * \return la fin du rayon.
      */
     const Point & getEnd() const;
 
     /*!
      * \brief Retourne la longueur d'onde du rayon.
+     *
      * \return la longueur d'onde du rayon.
      */
     int getWaveLength() const;
 
+    /*!
+     * \brief Permet de connaitre l'angle du rayon.
+     *
+     * \return L'angle du rayon courant.
+     */
     double getAlpha() const;
+
     /*!
      * \brief Change la coordonnée du début du rayon.
      *
@@ -77,26 +101,29 @@ protected:
     void setStart(const Point &);
 
     /*!
-     * C\brief hange la coordonnée de la fin du rayon.
+     * \brief hange la coordonnée de la fin du rayon.
      *
      * \param end La nouvelle coordonnée de la fin du rayon.
      */
     void setEnd(const Point &);
 
     /*!
-     * C\brief hange la longueur d'onde du rayon. Si la longueur d'onde
+     * \brief hange la longueur d'onde du rayon. Si la longueur d'onde
      * spécifiée est en dehors des limites autorisées, la longueur d'onde
      * vaudra la borne la plus proche.
      * La longueur d'onde doit être comprise entre 360 et 830 nm.
      *
      * \param waveLength La nouvelle longueur d'onde du rayon
-     *
      */
     void setWaveLength(const int);
 
     /*!
-     * \brief isInTrajectory
-     * \return
+     * \brief Cette méthode permet de savoir si le point passé en paramètre est
+     * bien dans la trajectoire du rayon courant à l'aide de la représentation
+     * polaire des points.
+     *
+     * \return <code>true</code> si le point passé en paramètre est dans la
+     * trajectoire.
      */
     bool isInTrajectory(const Point &) const;
 

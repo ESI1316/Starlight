@@ -33,7 +33,7 @@ QRectF viewUtilities::toQRectF(const Ellipse & ellipse)
 }
 
 QGraphicsLineItem * viewUtilities::getLine(const Point & start, const Point & end,
-                                          const QColor & color, int width)
+                                          const QColor & color, const int width)
 {
     QGraphicsLineItem * line = new QGraphicsLineItem(QLineF{viewUtilities::toQPoint(start),
                                                      viewUtilities::toQPoint(end)});
@@ -43,7 +43,7 @@ QGraphicsLineItem * viewUtilities::getLine(const Point & start, const Point & en
 }
 
 QGraphicsRectItem * viewUtilities::getRect(const Rectangle & rectangle,
-                                          const QColor & color, int width)
+                                          const QColor & color, const int width)
 {
     QGraphicsRectItem * rect = new QGraphicsRectItem{viewUtilities::toQRectF(rectangle)};
 
@@ -53,7 +53,7 @@ QGraphicsRectItem * viewUtilities::getRect(const Rectangle & rectangle,
 }
 
 QGraphicsEllipseItem * viewUtilities::getEllipse(const Ellipse & ellipse,
-                                                const QColor & color, int width)
+                                                const QColor & color, const int width)
 {
     QGraphicsEllipseItem * ell = new QGraphicsEllipseItem{viewUtilities::toQRectF(ellipse)};
 

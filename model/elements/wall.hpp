@@ -15,7 +15,14 @@ class Ray;
  */
 class Wall : public Element, public Line
 {
+    /*!
+     * \brief Le point de départ du segment de droite représentant le mur.
+     */
     Point start;
+
+    /*!
+     * \brief Le point d'arrivé du segment de droite représentant le mur.
+     */
     Point end;
 
 public:
@@ -53,7 +60,7 @@ public:
      *
      * \param ray Le rayon.
      *
-     * \return true Si la mur se trouve dans la trajectoire du rayon
+     * \return <code>true</code> Si la mur se trouve dans la trajectoire du rayon
      * entré en paramètre.
      */
     Point * includeRay(const Ray &) const;

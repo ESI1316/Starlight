@@ -8,16 +8,32 @@
 #include "model/geometry/line.hpp"
 
 /*!
- * \brief The Rectangle class
+ * \brief Le rectangle est objet géométrique, du plan, à quatre coté parallèles
+ * deux à deux.
  */
 class Rectangle
 {
 
 protected:
 
+    /*!
+     * \brief La largeur du rectangle.
+     */
     double width;
+
+    /*!
+     * \brief La longueur du rectangle.
+     */
     double height;
+
+    /*!
+     * \brief La position du coin supérieur gauche du rectangle.
+     */
     Point upLeftCorner;
+
+    /*!
+     * \brief Les équations des 4 droites composant le rectangle.
+     */
     std::vector<Line> edges;
 
 public:
@@ -49,7 +65,7 @@ public:
      * \param point Point dont on désire savoir s'il est inclus sur la bordure
      * du rectangle.
      *
-     * \return true Si le Point entré en paramètre est inclus sur la bordure du
+     * \return <code>true</code> Si le Point entré en paramètre est inclus sur la bordure du
      * rectangle.
      */
     bool isOnBorder(const Point &) const;

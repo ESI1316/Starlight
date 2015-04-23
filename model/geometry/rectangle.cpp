@@ -36,14 +36,14 @@ std::vector<Point> Rectangle::getIntersectionPoints(const Line & line) const
 bool Rectangle::isOnBorder(const Point & point) const
 {
     bool commonX {(utilities::equals(point.getX(), this->upLeftCorner.getX())) ||
-                    (utilities::equals(point.getX(), this->upLeftCorner.getX() + this->width))};
+                (utilities::equals(point.getX(), this->upLeftCorner.getX() + this->width))};
     bool commonY {(utilities::equals(point.getY(), this->upLeftCorner.getY())) ||
-                    (utilities::equals(point.getY(), this->upLeftCorner.getY() + this->height))};
+                (utilities::equals(point.getY(), this->upLeftCorner.getY() + this->height))};
 
     bool xInLimits {(utilities::greaterOrEquals(point.getX(), this->upLeftCorner.getX()))
-            && (utilities::lessOrEquals(point.getX(), this->upLeftCorner.getX() + this->width))};
+                && (utilities::lessOrEquals(point.getX(), this->upLeftCorner.getX() + this->width))};
     bool yInLimits {(utilities::greaterOrEquals(point.getY(), this->upLeftCorner.getY()))
-            && (utilities::lessOrEquals(point.getY(), this->upLeftCorner.getY() + this->height))};
+                && (utilities::lessOrEquals(point.getY(), this->upLeftCorner.getY() + this->height))};
 
     return (commonX && yInLimits) || (commonY && xInLimits);
 }

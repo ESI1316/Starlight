@@ -8,6 +8,8 @@
 #include <iostream>
 #include <QMessageBox>
 #include <QApplication>
+#include <QFile>
+#include <QTextStream>
 
 MainMenu::MainMenu(QWidget *parent) : QFrame(parent)
 {
@@ -54,46 +56,12 @@ void MainMenu::selectNewLevelFile()
 void MainMenu::displayRules()
 {
     QMessageBox msgBox;
-    msgBox.setInformativeText(tr("<h1>Règles du jeu :</h1>"
-                                 "Le but du jeu est d'ateindre la cible "
-                                 "(carré rose) avec le rayon lumineux émit par "
-                                 "la source (carré blanc)."
-                                 " Cela en déplaçant et en faisant pivoter les "
-                                 "mirroirs (lignes bleu clair) de sorte à dévier "
-                                 "le rayon pour l'orienter, le tout en évitant "
-                                 "de traverser les bombes (cercles rouges). "
-                                 "<br>Petites subtilitées; les lentilles (ellipses"
-                                 "bleu foncé) ne peuvent être traversé par le "
-                                 "rayon que si ce dernier possède la longueur d'"
-                                 "onde adéquate. Pour modifier la longeur d'onde "
-                                 "du rayon, il faut le faire traverser un crystal (ellipses vertes), "
-                                 "ceci aura ainsi pour effet de réduire ou d'augmenter "
-                                 "sa longueur d'onde (Note: la longueur d'onde d'un rayon "
-                                 "est distinguable par sa <a href= \"http://www.cnrs.fr/cw"
-                                 "/dossiers/doschim/decouv/couleurs/"
-                                 "loupe_spect_lum.html\">couleur</a>).</br>"
-                                 "<h2>Commandes :</h2>"
-                                 "<ul>"
-                                 "<li><u>Allumer/éteindre la source :</u> cliquer dessus.</li>"
-                                 "<li><u>Déplacer un miroir :</u> cliquer dessus, ensuite"
-                                 "<ul><li>gérer son déplacement à l'aide des touches;"
-                                 "<ul>"
-                                 "<li>q - vers la gauche,</li>"
-                                 "<li>d - vers la droite,</li>"
-                                 "<li>s - vers le bas,</li>"
-                                 "<li>z - vers le haut.</li>"
-                                 "</ul>"
-                                 "</li>"
-                                 "<li>Gérer sa rotation à l'aide des touches;"
-                                 "<ul>"
-                                 "<li>flèche directionnelle de droite - "
-                                 "pivoter horlogiquement,</li>"
-                                 "<li>flèche directionnelle de gauche - "
-                                 "pivoter antihorlogiquement.</li>"
-                                 "</ul>"
-                                 "</li>"
-                                 "</ul>"
-                                 "</li>"
-                                 "</ul>"));
+    QFile file("./ressources/other/rules.html");
+
+    if (!file.open(QFile::ReadOnly | QFile::Text))
+        msgBox.setInformativeText(tr("Missing rules file."));
+    else
+        msgBox.setInformativeText(QTextStream(&file).readAll());
+
     msgBox.exec();
 }

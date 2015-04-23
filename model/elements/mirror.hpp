@@ -2,6 +2,7 @@
 #define MIRROR_HPP
 
 #include <ostream>
+
 #include "model/elements/element.hpp"
 #include "model/geometry/line.hpp"
 #include "model/geometry/point.hpp"
@@ -19,15 +20,55 @@ class Ray;
  */
 class Mirror : public Element, public Line
 {
+    /*!
+     * \brief Le point de pivot du miroir autour du quel celui-ci peut éffectuer
+     * une rotation.
+     */
     Point pivot;
+
+    /*!
+     * \brief La longueur totale du miroir.
+     */
     int length;
+
+    /*!
+     * \brief La longueur séparant le point de pivot d'un point extrême du miroir.
+     */
     int xpad;
+
+    /*!
+     * \brief Limite minimale d'abcisse où peut se situer le pivot du miroir.
+     */
     double xMin;
+
+    /*!
+     * \brief Limite maximale d'abcisse où peut se situer le pivot du miroir.
+     */
     double xMax;
+
+    /*!
+     * \brief Limite minimale d'ordonnée où peut se situer le pivot du miroir.
+     */
     double yMin;
+
+    /*!
+     * \brief Limite maximale d'ordonnée où peut se situer le pivot du miroir.
+     */
     double yMax;
+
+    /*!
+     * \brief L'angle actuel de rotation du miroir.
+     */
     double alpha;
+
+    /*!
+     * \brief L'angle minimum dans lequel peut se trouver le miroir.
+     */
     double alphaMin;
+
+    /*!
+     * \brief L'angle maximum dans lequel peut se trouver le miroir.
+     */
     double alphaMax;
 
 public:
@@ -169,32 +210,47 @@ public:
     bool setAngle(double);
 
     /*!
-     * \brief rotate
-     * \return
+     * \brief Permet d'<b>essayer</b> d'éffectuer une rotation du miroir courant.
+     *
+     * \param alpha L'angle de rotation en degrés.
+     *
+     * \return <code>true</code> Si le miroir ne sort pas des limites après
+     * rotation.
      */
     bool rotate(double);
 
     /*!
-     * \brief translate
-     * \param alpha
-     * \return
+     * \brief Permet de déplacer le miroir dans le plan en lui donnant un abcisse
+     * et une ordonnée de translation.
+     *
+     * \param x Le déplacement sur l'axe des abcisses.
+     * \param y Le déplacement sur l'axe des ordonnées.
+     *
+     * \return <code>true</code> Si le miroir ne sort pas des limites après
+     * translations.
      */
-    bool translate(const double x, const double y);
+    bool translate(const double, const double);
 
     /*!
-     * \brief getStart
-     * \return
+     * \brief Retourne le point de départ du segment de droite représentant le
+     * miroir.
+     *
+     * \return Le point de départ du segment de droite représentant le miroir.
      */
     Point getStart() const;
 
     /*!
-     * \brief
-     * \return
+     * \brief Retourne le point d' arrivé du segment de droite représentant le
+     * miroir.
+     *
+     * \return Le point d'arrivé du segment de droite représentant le miroir.
      */
     Point getEnd() const;
 
     /*!
-     * \brief getBounds
+     * \brief Permet d'obtenir le point de départ et d'arrivé du segment de droite
+     * représentant le miroir; pour éviter de retourner un conteneur de points,
+     * ceux-ci sont passés en entrée-sortie des paramètres.
      */
     void getBounds(Point *, Point *) const;
 
@@ -202,10 +258,9 @@ public:
      * \brief Retoune vrai si le miroir peut être pivoté sur
      * l'angle donné, retourne faux sinon.
      *
-     * \return vrai si le miroir peut être pivoté sur
+     * \return <code>true</code> si le miroir peut être pivoté sur
      * l'angle donné, retourne faux sinon.
      *
-     * \see Mirror::getAngle()
      */
     bool checkAngleRange(double) const;
 
@@ -213,43 +268,20 @@ public:
      * \brief Retoune vrai si le miroir peut être éplacé en la
      * position donnée, retourne faux sinon.
      *
-     * \return vrai si le miroir peut être déplacé en
+     * \return <code>true</code> si le miroir peut être déplacé en
      * la position donnée, retourne faux sinon.
      *
-     * \see Mirror::getPivot()
      */
     bool checkPivotRange(const Point &) const;
 
     /*!
-     * \brief Réaction à l'exposition d'un rayon.
-     * Le rayon incident du miroir égal au rayon réflechi. Pour ainsi calculer
-     * le coeficiant angulaire de l'angle réflechis, on utilise la démonstration
-     * suivante :
+     * \brief Réaction à l'exposition d'un rayon; celui-ci est réflechi selon le
+     * principe naturel de la reflexion de la lumière dans l'air.
      *
-     * Soient alpha l'angle de pivot du miroir (sens anti-horlogé, augmentation
-     * des degré dans le sens du cercle trigonométrique), slope le coefficiant
-     * angulaire du rayon déjà tiré, et ray.getEnd() le point de colision avec
-     * le miroir,
-     *          \
-     *           \MIROIR
-     * _ _ _ __ _ê\ _ _ _ _ MIROIR AVEC ALPHA 0
-     *             \ê       ê = ê car opposés par le sommet
-     *              \
-     * _ _  _ _ _ _ ê\_ _ _ ê = ê car alterne interne
-     *             ô/ \		ô = â car les angles sont alterne-interne
-     *             /   \
-     *            /     \
-     *           /       \
-     *          /         \
-     *         /â		   \ 	ê = angle de rotation du miroir
-     * --------------------		â = angle (coefficiant ang.) du rayon
+     * Cette méthode communiquera au niveau de prendre en compte le nouveau rayon
+     * créé.
      *
-     * Angle réflechis = M_PI - (â + (2 * M_PI - ê))
-     * 					= M_PI - (â + 2 * M_PI - ê)
-     * 					= M_PI - â - 2 * M_PI + ê
-     * 					= - M_PI + ê - â
-     *
-     * \param ray Le rayon.
+     * \param ray Le rayon incident.
      */
     void reactToRay(Ray);
 
@@ -258,7 +290,7 @@ public:
      *
      * \param ray Le rayon.
      *
-     * \return true Si le mirroir se trouve dans la trajectoire du rayon entré
+     * \return <code>true</code> Si le mirroir se trouve dans la trajectoire du rayon entré
      * en paramètre.
      */
     Point * includeRay(const Ray &) const;

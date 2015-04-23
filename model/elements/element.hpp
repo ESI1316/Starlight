@@ -5,14 +5,26 @@ class Level;
 class Ray;
 class Point;
 
+/*!
+ * \brief Un element est un composant du jeu se devant de communiquer son état
+ * au niveau le gérant. Cette pratique permet au niveau d'écouter les actions à
+ * éffectuer dicter par l'élément.
+ */
 class Element
 {
 private :
 
+    /*!
+     * Le niveau lié à un element.
+     */
     Level * level{nullptr};
 
 protected :
 
+    /*!
+     * Constructeur par défaut, en visibilité protected permettant d'éviter une
+     * tentative d'instanciation de cette classe abstraite.
+     */
     Element() = default;
 
 public :
@@ -29,7 +41,7 @@ public :
      *
      * \param ray Le rayon.
      *
-     * \return true Si l'élément se trouve dans la trajectoire du rayon
+     * \return <code>true</code> Si l'élément se trouve dans la trajectoire du rayon
      * entré en paramètre.
      */
     virtual Point * includeRay(const Ray &) const = 0;

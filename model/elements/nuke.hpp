@@ -16,7 +16,10 @@ class Ray;
  */
 class Nuke : public Element, public Ellipse
 {
-    bool light {false};
+    /*!
+     * \brief L'état d'illumination d'une bombe.
+     */
+    bool light;
 
 public:
 
@@ -26,7 +29,7 @@ public:
      * \param position La position du centre de la bombe.
      * \param radius Le rayon de la bombe.
      */
-    Nuke(const Point &,const double);
+    Nuke(const Point &, const double);
 
     /*!
      * \brief Retourne la position de la bombe.
@@ -69,7 +72,7 @@ public:
      * \return <code>true</code> Si la bombe se trouve dans la trajectoire du
      * rayon entré en paramètre.
      */
-    Point * includeRay(const Ray & ray) const;
+    Point * includeRay(const Ray &) const;
 
     /*!
      * \brief Permet de savoir si deux bombes sont les mêmes.
@@ -95,7 +98,13 @@ public:
  */
 std::ostream & operator<<(std::ostream &, const Nuke &);
 
-inline const Point &Nuke::getLocation() const
+
+inline bool Nuke::isLightedUp() const
+{
+    return this->light;
+}
+
+inline const Point & Nuke::getLocation() const
 {
     return this->center;
 }

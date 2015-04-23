@@ -4,7 +4,7 @@
 
 #include "model/geometry/point.hpp"
 
-bool utilities::secondDegreeEquationSolver(double a, double b, double c,
+bool utilities::secondDegreeEquationSolver(const double a, const double b, const double c,
                                            double * rad1, double * rad2)
 {
     double delta{std::pow(b, 2.) - (4. * a * c)};
@@ -23,7 +23,7 @@ bool utilities::secondDegreeEquationSolver(double a, double b, double c,
     return thereIsRadix;
 }
 
-double utilities::absoluteAngle(double alpha)
+double utilities::absoluteAngle(const double alpha)
 {
     double angle{fmod(alpha, 2. * utilities::PI)};
 
@@ -36,43 +36,43 @@ double utilities::absoluteAngle(double alpha)
     return utilities::equals(angle, 0) ? 0. : angle;
 }
 
-double utilities::inZeroTwoPi(double alpha)
+double utilities::inZeroTwoPi(const double alpha)
 {
    return std::fmod((std::fmod(alpha, (2 * utilities::PI)) + (2 * utilities::PI)),
                     (utilities::PI * 2));
 }
 
-double utilities::angleAsDegree(double alpha)
+double utilities::radianAsDegree(const double alpha)
 {
     return ((alpha * 180.) / utilities::PI);
 }
 
-double utilities::degreeToRadian(double alpha)
+double utilities::degreeToRadian(const double alpha)
 {
     return ((alpha * utilities::PI) / 180.);
 }
 
-double utilities::angleAsDegree0to360(double alpha)
+double utilities::radianAsDegree0to360(const double alpha)
 {
-    return utilities::angleAsDegree(utilities::inZeroTwoPi(alpha));
+    return utilities::radianAsDegree(utilities::inZeroTwoPi(alpha));
 }
 
-bool utilities::equals(double nb1, double nb2, double epsilon)
+bool utilities::equals(const double nb1, const double nb2, const double epsilon)
 {
     return (std::isinf(nb1) && std::isinf(nb2)) || (std::fabs(nb1 - nb2) < epsilon);
 }
 
-int utilities::round(double nb)
+int utilities::round(const double nb)
 {
     return (int)std::round(nb);
 }
 
-bool utilities::greaterOrEquals(double nb1, double nb2, double epsilon)
+bool utilities::greaterOrEquals(const double nb1, const double nb2, const double epsilon)
 {
     return (nb1 > nb2) || utilities::equals(nb1, nb2, epsilon);
 }
 
-bool utilities::lessOrEquals(double nb1, double nb2, double epsilon)
+bool utilities::lessOrEquals(const double nb1, const double nb2, const double epsilon)
 {
     return (nb1 < nb2) || utilities::equals(nb1, nb2, epsilon);
 }
@@ -82,13 +82,13 @@ double utilities::slopeFromPoints(const Point & p1, const Point & p2)
     return ((p2.getY() - p1.getY()) / (p2.getX() - p1.getX()));
 }
 
-bool utilities::isHalfPiPlusNPi(double alpha)
+bool utilities::isHalfPiPlusNPi(const double alpha)
 {
     return utilities::equals(std::fmod(std::fabs(alpha), utilities::PI),
                              utilities::PI_2);
 }
 
-double utilities::tan(double alpha)
+double utilities::tan(const double alpha)
 {
     return utilities::isHalfPiPlusNPi(alpha) ? utilities::INF : -std::tan(alpha);
 }

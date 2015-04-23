@@ -17,10 +17,29 @@ class Ellipse
 
 protected:
 
+    /*!
+     * \brief La position du centre de l'ellipse.
+     */
     Point center;
+
+    /*!
+     * \brief La hauteur du rectangle circonscrit à l'ellipse.
+     */
     double height;
+
+    /*!
+     * \brief La largeur du rectangle circonscrit à l'ellipse.
+     */
     double width;
+
+    /*!
+     * \brief La valeur de la demi-hauteur au carré.
+     */
     double xRadius;
+
+    /*!
+     * \brief La valeur de la demi-largeur au carré.
+     */
     double yRadius;
 
     /*!
@@ -35,7 +54,7 @@ protected:
      * \param y2 Conteneur de la valeur de l'ordonné du deuxième point
      * d'intersection (non utilisé s'il n'existe pas de point d'intersection).
      *
-     * \return true Si il existe des points d'intersection entre la droite et
+     * \return <code>true</code> Si il existe des points d'intersection entre la droite et
      * l'éllipse.
      */
     bool getYOfIntersPoints(const double, double *, double *) const;
@@ -54,7 +73,7 @@ protected:
      * \param x2 Conteneur de la valeur de l'abcisse du deuxième point
      * d'intersection (non utilisé s'il n'existe pas de point d'intersection).
      *
-     * \return true Si il existe des points d'intersection entre la droite et
+     * \return <code>true</code> Si il existe des points d'intersection entre la droite et
      * l' éllipse.
      */
     bool getXOfIntersPoints(const double, const double, double *, double *) const;

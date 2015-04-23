@@ -66,7 +66,7 @@ public:
      *
      * \param point Point dont on désire savoir s'il est inclus dans la droite.
      *
-     * \return true si le point entré en paramètre est inclus dans la droite.
+     * \return <code>true</code> si le point entré en paramètre est inclus dans la droite.
      */
     bool includes(const Point &) const;
 
@@ -95,7 +95,7 @@ public:
     /*!
      * \brief Renseigne si la droite est verticale.
      *
-     * \return true Si la droite est verticale.
+     * \return <code>true</code> Si la droite est verticale.
      */
     bool isVertical() const;
 
@@ -121,7 +121,13 @@ public:
      */
     double findY(const double) const;
 
+    /*!
+     * \brief Permet de copier une ligne.
+     *
+     * \return La ligne courante représentant la ligne passée en paramètre.
+     */
     Line & operator=(const Line &);
+
     /*!
      * \brief Permet de savoir si deux lignes sont identiques.
      *

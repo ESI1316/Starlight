@@ -12,18 +12,46 @@
 class Level;
 class MirrorView;
 
+/*!
+ * \brief Cette classe représente le niveau qui va être joué lors d'une partie.
+ */
 class LevelView : public QGraphicsView
 {
     Q_OBJECT
 
+    /*!
+     * \brief La scène qui comportera l'ensemble des éléments graphiques de la
+     * partie.
+     */
     QGraphicsScene * scene;
+
+    /*!
+     * \brief Le niveau quel la vue observe.
+     */
     Level * level;
+
+    /*!
+     * \brief Le chemin du fichier chargé par l'utilisateur.
+     */
     std::string displayedLevelFilePath;
+
+    /*!
+     * \brief L'ensemble des rayons dessinés.
+     */
     std::vector<QGraphicsLineItem *> rays;
+
+    /*!
+     * \brief L'ensemble des miroirs dessinés.
+     */
     std::vector<MirrorView *> mirrors;
 
 public:
 
+    /*!
+     * \brief Permet de créer une vue du niveau.
+     *
+     * \param parent L'objet graphique parent.
+     */
     explicit LevelView(QWidget *parent = 0);
     ~LevelView();
 

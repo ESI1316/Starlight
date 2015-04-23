@@ -13,7 +13,7 @@ Point::Point(const Point & point)
 
 double Point::getAzimutAsDegrees() const
 {
-    return utilities::angleAsDegree0to360(this->getAzimut());
+    return utilities::radianAsDegree0to360(this->getAzimut());
 }
 
 void Point::setX(const double x)

@@ -1,21 +1,17 @@
 #include "model/elements/ray.hpp"
 
+#include "model/geometry/utilities.hpp"
 #include "model/exception/starlightexception.hpp"
 #include "model/elements/level.hpp"
 
 Ray::Ray(const Point start, double alpha, int waveLength)
-    : Line(utilities::tan(alpha),
-           start.getY() - (utilities::tan(alpha) * start.getX()),
-           utilities::isHalfPiPlusNPi(alpha) ? start.getX() : 0.),
-      start{start}, end{start}, waveLength{waveLength},
-      alpha{utilities::inZeroTwoPi(alpha)}
+    : Line((utilities::tan(alpha)),
+           (start.getY() - (utilities::tan(alpha) * start.getX())),
+           (utilities::isHalfPiPlusNPi(alpha) ? start.getX() : 0.)),
+      start{start}, end{start}, alpha{utilities::inZeroTwoPi(alpha)},
+      waveLength{waveLength}
 {
-    //if (waveLength < Ray::WL_MIN || waveLength > Ray::WL_MAX)
-        //throw StarlightException{"Longueur d'onde doit être comprise entre"};
-    if (waveLength < Ray::WL_MIN)
-        this->waveLength = Ray::WL_MIN;
-    if (waveLength > Ray::WL_MAX)
-        this->waveLength = Ray::WL_MAX;
+    this->setWaveLength(waveLength);
 }
 
 void Ray::setStart(const Point & start)
@@ -40,7 +36,7 @@ void Ray::setWaveLength(const int waveLength)
 
 bool Ray::isInTrajectory(const Point & point) const
 {
-    Point p(point);
+    Point p{point};
     p.setOrigin(this->start);
 
     return ((point != this->start)

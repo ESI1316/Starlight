@@ -1,5 +1,5 @@
-#ifndef DEST_HPPPP
-#define DEST_HPPPP
+#ifndef DEST_HPP
+#define DEST_HPP
 
 #include <ostream>
 

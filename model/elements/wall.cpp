@@ -35,7 +35,6 @@ Point * Wall::includeRay(const Ray & ray) const
     return intersection;
 }
 
-
 bool Wall::operator==(const Wall & wall) const
 {
     return this->start == wall.start

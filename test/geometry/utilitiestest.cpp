@@ -79,36 +79,36 @@ TEST_CASE("Angle absolu")
 
 TEST_CASE("Angle en degrés")
 {
-    REQUIRE(utilities::equals(utilities::angleAsDegree(0.), 0.));
-    REQUIRE(utilities::equals(utilities::angleAsDegree(utilities::PI_2), 90.));
-    REQUIRE(utilities::equals(utilities::angleAsDegree(utilities::PI), 180.));
-    REQUIRE(utilities::equals(utilities::angleAsDegree(3 * utilities::PI_2), 270.));
-    REQUIRE(utilities::equals(utilities::angleAsDegree(2 * utilities::PI), 360.));
-    REQUIRE(utilities::equals(utilities::angleAsDegree(-0.), 0.));
-    REQUIRE(utilities::equals(utilities::angleAsDegree(-utilities::PI_2), -90.));
-    REQUIRE(utilities::equals(utilities::angleAsDegree(-utilities::PI), -180.));
-    REQUIRE(utilities::equals(utilities::angleAsDegree(-(3 * utilities::PI_2)), -270.));
-    REQUIRE(utilities::equals(utilities::angleAsDegree(-(2 * utilities::PI)), -360.));
+    REQUIRE(utilities::equals(utilities::radianAsDegree(0.), 0.));
+    REQUIRE(utilities::equals(utilities::radianAsDegree(utilities::PI_2), 90.));
+    REQUIRE(utilities::equals(utilities::radianAsDegree(utilities::PI), 180.));
+    REQUIRE(utilities::equals(utilities::radianAsDegree(3 * utilities::PI_2), 270.));
+    REQUIRE(utilities::equals(utilities::radianAsDegree(2 * utilities::PI), 360.));
+    REQUIRE(utilities::equals(utilities::radianAsDegree(-0.), 0.));
+    REQUIRE(utilities::equals(utilities::radianAsDegree(-utilities::PI_2), -90.));
+    REQUIRE(utilities::equals(utilities::radianAsDegree(-utilities::PI), -180.));
+    REQUIRE(utilities::equals(utilities::radianAsDegree(-(3 * utilities::PI_2)), -270.));
+    REQUIRE(utilities::equals(utilities::radianAsDegree(-(2 * utilities::PI)), -360.));
 
-    REQUIRE(utilities::equals(utilities::angleAsDegree(5 * utilities::PI_2), 450.));
-    REQUIRE(utilities::equals(utilities::angleAsDegree(-5 * utilities::PI_2), -450.));
+    REQUIRE(utilities::equals(utilities::radianAsDegree(5 * utilities::PI_2), 450.));
+    REQUIRE(utilities::equals(utilities::radianAsDegree(-5 * utilities::PI_2), -450.));
 }
 
 TEST_CASE("Angle en degré [0, 360[")
 {
-    REQUIRE(utilities::equals(utilities::angleAsDegree0to360(0.), 0.));
-    REQUIRE(utilities::equals(utilities::angleAsDegree0to360(utilities::PI_2), 90.));
-    REQUIRE(utilities::equals(utilities::angleAsDegree0to360(utilities::PI), 180.));
-    REQUIRE(utilities::equals(utilities::angleAsDegree0to360(3 * utilities::PI_2), 270.));
-    REQUIRE(utilities::equals(utilities::angleAsDegree0to360(2 * utilities::PI), 0.));
-    REQUIRE(utilities::equals(utilities::angleAsDegree0to360(-0.), 0.));
-    REQUIRE(utilities::equals(utilities::angleAsDegree0to360(-utilities::PI_2), 270.));
-    REQUIRE(utilities::equals(utilities::angleAsDegree0to360(-utilities::PI), 180.));
-    REQUIRE(utilities::equals(utilities::angleAsDegree0to360(-(3 * utilities::PI_2)), 90.));
-    REQUIRE(utilities::equals(utilities::angleAsDegree0to360(-(2 * utilities::PI)), 0.));
+    REQUIRE(utilities::equals(utilities::radianAsDegree0to360(0.), 0.));
+    REQUIRE(utilities::equals(utilities::radianAsDegree0to360(utilities::PI_2), 90.));
+    REQUIRE(utilities::equals(utilities::radianAsDegree0to360(utilities::PI), 180.));
+    REQUIRE(utilities::equals(utilities::radianAsDegree0to360(3 * utilities::PI_2), 270.));
+    REQUIRE(utilities::equals(utilities::radianAsDegree0to360(2 * utilities::PI), 0.));
+    REQUIRE(utilities::equals(utilities::radianAsDegree0to360(-0.), 0.));
+    REQUIRE(utilities::equals(utilities::radianAsDegree0to360(-utilities::PI_2), 270.));
+    REQUIRE(utilities::equals(utilities::radianAsDegree0to360(-utilities::PI), 180.));
+    REQUIRE(utilities::equals(utilities::radianAsDegree0to360(-(3 * utilities::PI_2)), 90.));
+    REQUIRE(utilities::equals(utilities::radianAsDegree0to360(-(2 * utilities::PI)), 0.));
 
-    REQUIRE(utilities::equals(utilities::angleAsDegree0to360(5 * utilities::PI_2), 90.));
-    REQUIRE(utilities::equals(utilities::angleAsDegree0to360(-5 * utilities::PI_2), 270.));
+    REQUIRE(utilities::equals(utilities::radianAsDegree0to360(5 * utilities::PI_2), 90.));
+    REQUIRE(utilities::equals(utilities::radianAsDegree0to360(-5 * utilities::PI_2), 270.));
 }
 
 TEST_CASE("Coefficiant angulaire avec deux points")

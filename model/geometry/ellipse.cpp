@@ -76,8 +76,8 @@ bool Ellipse::getXOfIntersPoints(const double slope, const double lineIT, double
 
 Point Ellipse::getUpLeftCorner() const
 {
-    return Point{this->center.getX() - (this->getWidth()/2),
-                 this->center.getY() - (this->getHeight()/2)};
+    return Point{this->center.getX() - (this->getWidth() / 2.),
+                 this->center.getY() - (this->getHeight() / 2.)};
 }
 
 bool Ellipse::operator ==(const Ellipse & ellipse) const

@@ -4,12 +4,17 @@
 #include <exception>
 #include <string>
 
-
+/*!
+ * \brief Cette classe représente une exception spécifique au jeu Starlight.
+ */
 class StarlightException : public std::exception
 {
 
 private :
 
+    /*!
+     * \brief Le message d'erreur de l'exception lancée.
+     */
     std::string errorMsg;
 
 public:
@@ -35,5 +40,16 @@ public:
      */
     const char * what() const throw();
 };
+
+
+inline std::string StarlightException::getMessage() const
+{
+    return this->errorMsg;
+}
+
+inline const char * StarlightException::what() const throw()
+{
+    return this->errorMsg.c_str();
+}
 
 #endif // STARLIGHTEXCEPTION_HPP

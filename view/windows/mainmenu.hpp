@@ -4,12 +4,22 @@
 #include <QWidget>
 #include <QFrame>
 
+/*!
+ * \brief Cette classe représente le menu principal du jeu permettant de <ul>
+ * <li> sélectionner un niveau à jouer, </li>
+ * <li> lire les règles du jeu, </li>
+ * <li> quitter le jeu. </li>
+ * </ul>
+ */
 class MainMenu : public QFrame
 {
     Q_OBJECT
 
 public:
 
+    /*!
+     * \brief Permet de créer un menu du jeu.
+     */
     explicit MainMenu(QWidget * = 0);
     ~MainMenu();
 

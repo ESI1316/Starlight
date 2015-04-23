@@ -21,7 +21,7 @@ class Source : public Element, public Rectangle
     /*!
      * \brief Etat d'émission de la source.
      */
-    bool on {false};
+    bool on;
 
     /*!
      * \brief L'angle, en radian, d'émission de la source lumineuse.
@@ -114,8 +114,18 @@ public:
      */
     Source & operator=(const Source &);
 
+    /*!
+     * \brief Cette méthode est la réaction de la source face à un rayon. Celui-
+     * ci ne fait rien.
+     */
     void reactToRay(Ray);
 
+    /*!
+     * \brief Cette méthode permet de savoir si la source comprend un point.
+     *
+     * \return <code>nullptr</code> dans tout les cas, la source est un objet
+     * qui ne réagit pas.
+     */
     Point * includeRay(const Ray &) const;
 };
 
