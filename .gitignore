@@ -6,8 +6,10 @@ Starlight
 Makefile
 html/*
 latex/*
+man/*
 documentation/html/
 documentation/latex/
+documentation/man/
 moc*
 *~
 *swp
