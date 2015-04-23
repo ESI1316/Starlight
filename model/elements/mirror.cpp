@@ -98,32 +98,16 @@ bool Mirror::checkPivotRange(const Point & point) const
 {
     return (utilities::equals(this->xMin, .0) && utilities::equals(this->xMax, 0.)
             && utilities::equals(this->yMin, 0.) && utilities::equals(this->yMax, 0.))
-
-            || (utilities::equals(this->xMin, 0.) && utilities::equals(this->xMax, 0.)
-                && (utilities::greaterOrEquals(point.getY(), this->yMin))
-                && (utilities::lessOrEquals(point.getY(), this->yMax)))
-
-            || (utilities::equals(this->yMin, 0.) && utilities::equals(this->yMax, 0.)
-                &&(utilities::greaterOrEquals(point.getX(), this->xMin))
-                &&(utilities::lessOrEquals(point.getX(), this->xMax)))
-
-            || ((utilities::greaterOrEquals(point.getX(), this->xMin))
-                && (utilities::lessOrEquals(point.getX(), this->xMax))
-                && (utilities::greaterOrEquals(point.getY(), this->yMin))
-                && (utilities::lessOrEquals(point.getY(), this->yMax)));
+           || ((utilities::greaterOrEquals(point.getX(), this->xMin))
+            && (utilities::lessOrEquals(point.getX(), this->xMax))
+            && (utilities::greaterOrEquals(point.getY(), this->yMin))
+            && (utilities::lessOrEquals(point.getY(), this->yMax)));
 }
 
 void Mirror::reactToRay(Ray ray)
 {
     Point point{ray.getEnd()};
-/*
-    double mirror{utilities::absoluteAngle(this->getAngle())};
-    double source{utilities::absoluteAngle(std::atan(ray.getSlope()))};
-    double alpha{(utilities::PI + mirror - source)};
 
-    if (utilities::equals(alpha, 0.))
-        alpha = 0.;
-*/
     if(this->getLevel() != nullptr)
         this->getLevel()->computeRay(Ray{point,
                                          (2. * this->getAngle()) - ray.getAlpha(),
