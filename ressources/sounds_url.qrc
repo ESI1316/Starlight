@@ -1,0 +1,20 @@
+<RCC>
+    <qresource prefix="/bomb">
+        <file>sounds/bomb.wav</file>
+    </qresource>
+    <qresource prefix="/win">
+        <file>sounds/win.wav</file>
+    </qresource>
+    <qresource prefix="/fire">
+        <file>sounds/fire.wav</file>
+    </qresource>
+    <qresource prefix="/rules">
+        <file>other/rules.html</file>
+    </qresource>
+    <qresource prefix="/off">
+        <file>sounds/off.wav</file>
+    </qresource>
+    <qresource prefix="/logo">
+        <file>other/logo.html</file>
+    </qresource>
+</RCC>

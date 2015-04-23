@@ -2,6 +2,7 @@
 #define MAINMENU_HPP
 
 #include <QWidget>
+#include <QLabel>
 #include <QFrame>
 
 /*!
@@ -46,6 +47,10 @@ public slots:
      * les commandes du jeu.
      */
     void displayRules();
+
+private :
+
+    QLabel * setLogo();
 };
 
 #endif // MAINMENU_HPP
