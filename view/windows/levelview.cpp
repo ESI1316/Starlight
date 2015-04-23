@@ -123,9 +123,6 @@ void LevelView::cleanAll()
     for (auto & item : this->scene->items())
         delete item, item = nullptr;
 
-    for (auto & ray : this->rays)
-        delete ray, ray = nullptr;
-
     this->mirrors.clear();
     this->rays.clear();
     this->scene->clear();
