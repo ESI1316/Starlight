@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2015.4.17)  24 APR 2015 22:35
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2015.4.17)  24 APR 2015 22:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -956,226 +956,230 @@ s sont construit
  []
 
 
-Overfull \hbox (68.49564pt too wide) in paragraph at lines 575--580
+<./screenshots/elements_statiques/crystal.png, id=537, 75.28125pt x 59.22125pt>
+File: ./screenshots/elements_statiques/crystal.png Graphic file (type png)
+<use ./screenshots/elements_statiques/crystal.png>
+Package pdftex.def Info: ./screenshots/elements_statiques/crystal.png used on i
+nput line 575.
+(pdftex.def)             Requested size: 75.28105pt x 59.22108pt.
+
+<./screenshots/elements_statiques/dest.png, id=539, 39.14626pt x 43.16125pt>
+File: ./screenshots/elements_statiques/dest.png Graphic file (type png)
+
+<use ./screenshots/elements_statiques/dest.png>
+Package pdftex.def Info: ./screenshots/elements_statiques/dest.png used on inpu
+t line 579.
+(pdftex.def)             Requested size: 39.14615pt x 43.16113pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<./screenshots/elements_statiques/lens.png, id=540, 76.285pt x 116.435pt>
+File: ./screenshots/elements_statiques/lens.png Graphic file (type png)
+
+<use ./screenshots/elements_statiques/lens.png>
+Package pdftex.def Info: ./screenshots/elements_statiques/lens.png used on inpu
+t line 583.
+(pdftex.def)             Requested size: 76.2848pt x 116.43471pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<./screenshots/elements_statiques/nuke.png, id=541, 75.28125pt x 68.255pt>
+File: ./screenshots/elements_statiques/nuke.png Graphic file (type png)
+
+<use ./screenshots/elements_statiques/nuke.png>
+Package pdftex.def Info: ./screenshots/elements_statiques/nuke.png used on inpu
+t line 587.
+(pdftex.def)             Requested size: 75.28105pt x 68.25482pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<./screenshots/elements_statiques/wall.png, id=542, 66.2475pt x 83.31125pt>
+File: ./screenshots/elements_statiques/wall.png Graphic file (type png)
+
+<use ./screenshots/elements_statiques/wall.png>
+Package pdftex.def Info: ./screenshots/elements_statiques/wall.png used on inpu
+t line 591.
+(pdftex.def)             Requested size: 66.24733pt x 83.31104pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Overfull \hbox (68.49564pt too wide) in paragraph at lines 594--599
 []\T1/cmtt/m/n/10.95 Semi dynamiques \T1/cmr/m/n/10.95 : Il s'agit de l'af-fi-c
 hage des rayons à par-tir de QGraphicsLineItems$[]$
  []
 
-[16] [17] [18] [19]
+
+<./screenshots/elements_semi_dyn/ray_change_color.png, id=544, 90.3375pt x 79.2
+9625pt>
+File: ./screenshots/elements_semi_dyn/ray_change_color.png Graphic file (type p
+ng)
+ <use ./screenshots/elements_semi_dyn/ray_change_color.png>
+Package pdftex.def Info: ./screenshots/elements_semi_dyn/ray_change_color.png u
+sed on input line 603.
+(pdftex.def)             Requested size: 90.33727pt x 79.29604pt.
+ [16 <./screenshots/elements_statiques/crystal.png>]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<./screenshots/elements_dyn/mirror.png, id=554, 60.225pt x 63.23625pt>
+File: ./screenshots/elements_dyn/mirror.png Graphic file (type png)
+
+<use ./screenshots/elements_dyn/mirror.png>
+Package pdftex.def Info: ./screenshots/elements_dyn/mirror.png used on input li
+ne 613.
+(pdftex.def)             Requested size: 60.22484pt x 63.23608pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<./screenshots/elements_dyn/mirror+ray.png, id=555, 72.27pt x 73.27374pt>
+File: ./screenshots/elements_dyn/mirror+ray.png Graphic file (type png)
+
+<use ./screenshots/elements_dyn/mirror+ray.png>
+Package pdftex.def Info: ./screenshots/elements_dyn/mirror+ray.png used on inpu
+t line 619.
+(pdftex.def)             Requested size: 72.2698pt x 73.27354pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<./screenshots/elements_dyn/source_off.png, id=556, 39.14626pt x 39.14626pt>
+File: ./screenshots/elements_dyn/source_off.png Graphic file (type png)
+
+<use ./screenshots/elements_dyn/source_off.png>
+Package pdftex.def Info: ./screenshots/elements_dyn/source_off.png used on inpu
+t line 625.
+(pdftex.def)             Requested size: 39.14615pt x 39.14615pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<./screenshots/elements_dyn/source_on.png, id=557, 42.1575pt x 41.15375pt>
+File: ./screenshots/elements_dyn/source_on.png Graphic file (type png)
+
+<use ./screenshots/elements_dyn/source_on.png>
+Package pdftex.def Info: ./screenshots/elements_dyn/source_on.png used on input
+ line 630.
+(pdftex.def)             Requested size: 42.15738pt x 41.15364pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[17 <./screenshots/elements_statiques/dest.png> <./screenshots/elements_statiqu
+es/lens.png> <./screenshots/elements_statiques/nuke.png> <./screenshots/element
+s_statiques/wall.png>] [18 <./screenshots/elements_semi_dyn/ray_change_color.pn
+g> <./screenshots/elements_dyn/mirror.png> <./screenshots/elements_dyn/mirror+r
+ay.png> <./screenshots/elements_dyn/source_off.png> <./screenshots/elements_dyn
+/source_on.png>]
+<./screenshots/level_view.png, id=599, 777.90625pt x 652.4375pt>
+File: ./screenshots/level_view.png Graphic file (type png)
+
+<use ./screenshots/level_view.png>
+Package pdftex.def Info: ./screenshots/level_view.png used on input line 677.
+(pdftex.def)             Requested size: 251.9989pt x 211.35275pt.
+ [19 <./screenshots/level_view.png>]
+<./screenshots/main_menu.png, id=608, 544.0325pt x 296.10625pt>
+File: ./screenshots/main_menu.png Graphic file (type png)
+
+<use ./screenshots/main_menu.png>
+Package pdftex.def Info: ./screenshots/main_menu.png used on input line 696.
+(pdftex.def)             Requested size: 251.9989pt x 137.15935pt.
+
+<./screenshots/rules.png, id=609, 499.8675pt x 582.175pt>
+File: ./screenshots/rules.png Graphic file (type png)
+
+<use ./screenshots/rules.png>
+Package pdftex.def Info: ./screenshots/rules.png used on input line 701.
+(pdftex.def)             Requested size: 180.0pt x 209.63614pt.
+ [20 <./screenshots/main_menu.png> <./screenshots/rules.png>] [21]
 Chapitre 4.
-[20
+[22
 
 ]
 Chapitre 5.
 (./reflexion.tex)
-Underfull \hbox (badness 10000) in paragraph at lines 48--702
+Underfull \hbox (badness 10000) in paragraph at lines 48--765
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 48--702
+Underfull \hbox (badness 10000) in paragraph at lines 48--765
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 48--702
+Underfull \hbox (badness 10000) in paragraph at lines 48--765
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 48--702
+Underfull \hbox (badness 10000) in paragraph at lines 48--765
 
  []
 
-[21
+[23
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 708--709
+Underfull \hbox (badness 10000) in paragraph at lines 771--772
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 712--714
+Underfull \hbox (badness 10000) in paragraph at lines 775--777
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 728--729
+Underfull \hbox (badness 10000) in paragraph at lines 791--792
 
  []
 
-[22] [23]
+[24] [25]
 Chapitre 6.
 
-LaTeX Warning: Reference `va' on page 24 undefined on input line 749.
+LaTeX Warning: Reference `va' on page 26 undefined on input line 812.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 764--767
+Underfull \hbox (badness 10000) in paragraph at lines 827--830
 
  []
 
 
-Overfull \hbox (11.91437pt too wide) in paragraph at lines 768--771
+Overfull \hbox (11.91437pt too wide) in paragraph at lines 831--834
 \T1/cmr/m/n/10.95 fec-tuer en dé-com-men-tant la dé-fi-ni-tion de \T1/cmr/bx/n/
 10.95 #RUN_TEST \T1/cmr/m/n/10.95 du fi-chier \T1/cmr/bx/n/10.95 main.hpp
  []
 
-[24
-
-]
-Chapitre 7.
-[25
-
-]
-Chapitre 8.
 [26
 
 ]
-Chapitre 9.
+Chapitre 7.
 [27
+
+]
+Chapitre 8.
+[28
+
+]
+Chapitre 9.
+[29
 
 ]
 Annexe A.
 
-Underfull \hbox (badness 10000) in paragraph at lines 810--811
+Underfull \hbox (badness 10000) in paragraph at lines 873--874
 
  []
 
 
-Overfull \hbox (5.91022pt too wide) in paragraph at lines 817--819
+Overfull \hbox (5.91022pt too wide) in paragraph at lines 880--882
 [][]$\T1/cmtt/m/n/10.95 https : / / creativecommons . org / licenses / by / 3 .
  0/$[] \T1/cmr/m/n/10.95 consulté 24 avril
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 817--819
-
- []
-
-
-Overfull \hbox (19.9294pt too wide) in paragraph at lines 822--824
-[][]$\T1/cmtt/m/n/10.95 http : / / www . physics . sfasu . edu / astro / color 
-/ spectra . html$[] \T1/cmr/m/n/10.95 consulté
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 822--824
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 827--828
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 831--832
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 835--836
-
- []
-
-
-Overfull \hbox (12.68178pt too wide) in paragraph at lines 839--840
-[][]$\T1/cmtt/m/n/10.95 http : / / www . cslaval . qc . ca / sitsatlll / maths2
-003 / cartesien . html$[]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 839--840
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 843--844
-
- []
-
-
-Overfull \hbox (18.34015pt too wide) in paragraph at lines 847--849
-[][]$\T1/cmtt/m/n/10.95 http : / / www . iso . org / iso / iso _ catalogue / ca
-talogue _ tc / catalogue _
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 847--849
-
- []
-
-[28
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 852--853
-
- []
-
-
-Overfull \hbox (23.99852pt too wide) in paragraph at lines 856--857
-[][]$\T1/cmtt/m/n/10.95 https : / / www . gnu . org / software / make / manual 
-/ html _ node / Makefiles .
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 856--857
-
- []
-
-
-Overfull \hbox (31.24614pt too wide) in paragraph at lines 860--861
-[][]$\T1/cmtt/m/n/10.95 https : / / fr . wikipedia . org / wiki / Hypertext _ M
-arkup _ Language$[] \T1/cmr/m/n/10.95 consulté
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 860--861
-
- []
-
-
-Overfull \hbox (7.0234pt too wide) in paragraph at lines 864--865
-[][]$\T1/cmtt/m/n/10.95 https : / / fr . wikipedia . org / wiki / Feuilles _ de
- _ style _ en _ cascade$[]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 864--865
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 868--869
-
- []
-
-
-Overfull \hbox (18.34015pt too wide) in paragraph at lines 872--873
-[][]$\T1/cmtt/m/n/10.95 https : / / fr . wikipedia . org / wiki / Ellipse _ %28
-math % C3 % A9matiques %
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 872--873
-
- []
-
-
-Overfull \hbox (12.68178pt too wide) in paragraph at lines 876--877
-[][]$\T1/cmtt/m/n/10.95 https : / / fr . wikipedia . org / wiki / Droite _ %28m
-ath % C3 % A9matiques %
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--877
-
- []
-
-
-Overfull \hbox (12.68178pt too wide) in paragraph at lines 880--882
-[][]$\T1/cmtt/m/n/10.95 https : / / fr . wikipedia . org / wiki / Point _ %28g 
-% C3 % A9om % C3 % A9trie %
  []
 
 
@@ -1184,52 +1188,183 @@ Underfull \hbox (badness 10000) in paragraph at lines 880--882
  []
 
 
+Overfull \hbox (19.9294pt too wide) in paragraph at lines 885--887
+[][]$\T1/cmtt/m/n/10.95 http : / / www . physics . sfasu . edu / astro / color 
+/ spectra . html$[] \T1/cmr/m/n/10.95 consulté
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 885--887
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 890--892
+Underfull \hbox (badness 10000) in paragraph at lines 890--891
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 895--897
-
- []
-
-[29]
-Underfull \hbox (badness 10000) in paragraph at lines 900--902
+Underfull \hbox (badness 10000) in paragraph at lines 894--895
 
  []
 
 
-Overfull \hbox (134.50757pt too wide) in paragraph at lines 906--908
+Underfull \hbox (badness 10000) in paragraph at lines 898--899
+
+ []
+
+
+Overfull \hbox (12.68178pt too wide) in paragraph at lines 902--903
+[][]$\T1/cmtt/m/n/10.95 http : / / www . cslaval . qc . ca / sitsatlll / maths2
+003 / cartesien . html$[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 902--903
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 906--907
+
+ []
+
+
+Overfull \hbox (18.34015pt too wide) in paragraph at lines 910--912
+[][]$\T1/cmtt/m/n/10.95 http : / / www . iso . org / iso / iso _ catalogue / ca
+talogue _ tc / catalogue _
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 910--912
+
+ []
+
+[30
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 915--916
+
+ []
+
+
+Overfull \hbox (23.99852pt too wide) in paragraph at lines 919--920
+[][]$\T1/cmtt/m/n/10.95 https : / / www . gnu . org / software / make / manual 
+/ html _ node / Makefiles .
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 919--920
+
+ []
+
+
+Overfull \hbox (31.24614pt too wide) in paragraph at lines 923--924
+[][]$\T1/cmtt/m/n/10.95 https : / / fr . wikipedia . org / wiki / Hypertext _ M
+arkup _ Language$[] \T1/cmr/m/n/10.95 consulté
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 923--924
+
+ []
+
+
+Overfull \hbox (7.0234pt too wide) in paragraph at lines 927--928
+[][]$\T1/cmtt/m/n/10.95 https : / / fr . wikipedia . org / wiki / Feuilles _ de
+ _ style _ en _ cascade$[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 927--928
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 931--932
+
+ []
+
+
+Overfull \hbox (18.34015pt too wide) in paragraph at lines 935--936
+[][]$\T1/cmtt/m/n/10.95 https : / / fr . wikipedia . org / wiki / Ellipse _ %28
+math % C3 % A9matiques %
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 935--936
+
+ []
+
+
+Overfull \hbox (12.68178pt too wide) in paragraph at lines 939--940
+[][]$\T1/cmtt/m/n/10.95 https : / / fr . wikipedia . org / wiki / Droite _ %28m
+ath % C3 % A9matiques %
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 939--940
+
+ []
+
+
+Overfull \hbox (12.68178pt too wide) in paragraph at lines 943--945
+[][]$\T1/cmtt/m/n/10.95 https : / / fr . wikipedia . org / wiki / Point _ %28g 
+% C3 % A9om % C3 % A9trie %
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 943--945
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 948--950
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 953--955
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 958--960
+
+ []
+
+[31]
+Underfull \hbox (badness 10000) in paragraph at lines 963--965
+
+ []
+
+
+Overfull \hbox (134.50757pt too wide) in paragraph at lines 969--971
 [][]$\T1/cmtt/m/n/10.95 http : / / doc . qt . io / qt-[]4 . 8 / graphicsview . 
 html # classes-[]in-[]the-[]graphics-[]view-[]framework$[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 906--908
+Underfull \hbox (badness 10000) in paragraph at lines 969--971
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 911--913
+Underfull \hbox (badness 10000) in paragraph at lines 974--976
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 916--917
+Underfull \hbox (badness 10000) in paragraph at lines 979--980
 
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 920.
-[30]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 920.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 983.
+[32]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 983.
  (./rapport.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 920.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 920.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 983.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 983.
 Package rerunfilecheck Info: File `rapport.out' has not changed.
 (rerunfilecheck)             Checksum: DD408B833B676483C2926AE0883A7F39;3199.
 
@@ -1239,48 +1374,49 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 920.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 983.
  ) 
 Here is how much of TeX's memory you used:
- 18300 strings out of 495030
- 311672 string characters out of 3180761
+ 18384 strings out of 495030
+ 314318 string characters out of 3180761
  412330 words of memory out of 3000000
- 20912 multiletter control sequences out of 15000+200000
+ 20965 multiletter control sequences out of 15000+200000
  26602 words of font info for 64 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  49i,9n,60p,412b,1849s stack positions out of 5000i,500n,10000p,200000b,50000s
  </home/g39631/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbi1095.600pk> </home/
 g39631/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx0800.600pk> </home/g39631/.te
 xmf-var/fonts/pk/ljfour/jknappen/ec/ecti0900.600pk> </home/g39631/.texmf-var/fo
-nts/pk/ljfour/jknappen/ec/ectt0900.600pk> </home/g39631/.texmf-var/fonts/pk/ljf
-our/jknappen/ec/ecbx1200.600pk> </home/g39631/.texmf-var/fonts/pk/ljfour/jknapp
-en/ec/ecti1095.600pk> </home/g39631/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm
-0900.600pk> </home/g39631/.texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1095.600pk
-> </home/g39631/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0800.600pk> </home/g
-39631/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/g39631/.tex
-mf-var/fonts/pk/ljfour/jknappen/ec/ecbx1095.600pk> </home/g39631/.texmf-var/fon
-ts/pk/ljfour/jknappen/ec/ecbx2488.600pk> </home/g39631/.texmf-var/fonts/pk/ljfo
-ur/jknappen/ec/ecrm1095.600pk> </home/g39631/.texmf-var/fonts/pk/ljfour/jknappe
-n/ec/eccc1200.600pk> </home/g39631/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1
-200.600pk> </home/g39631/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1200.600pk>
- </home/g39631/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2074.600pk> </home/g3
-9631/.texmf-var/fonts/pk/ljfour/jknappen/ec/eccc1440.600pk> </home/g39631/.texm
-f-var/fonts/pk/ljfour/jknappen/ec/eccc1728.600pk></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on rapport.pdf (32 pages, 359808 bytes).
+nts/pk/ljfour/jknappen/ec/eccc1095.600pk> </home/g39631/.texmf-var/fonts/pk/ljf
+our/jknappen/ec/ectt0900.600pk> </home/g39631/.texmf-var/fonts/pk/ljfour/jknapp
+en/ec/ecbx1200.600pk> </home/g39631/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecti
+1095.600pk> </home/g39631/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0900.600pk
+> </home/g39631/.texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1095.600pk> </home/g
+39631/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0800.600pk> </home/g39631/.tex
+mf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/g39631/.texmf-var/fon
+ts/pk/ljfour/jknappen/ec/ecbx1095.600pk> </home/g39631/.texmf-var/fonts/pk/ljfo
+ur/jknappen/ec/ecbx2488.600pk> </home/g39631/.texmf-var/fonts/pk/ljfour/jknappe
+n/ec/ecrm1095.600pk> </home/g39631/.texmf-var/fonts/pk/ljfour/jknappen/ec/eccc1
+200.600pk> </home/g39631/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk>
+ </home/g39631/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1200.600pk> </home/g3
+9631/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2074.600pk> </home/g39631/.texm
+f-var/fonts/pk/ljfour/jknappen/ec/eccc1440.600pk> </home/g39631/.texmf-var/font
+s/pk/ljfour/jknappen/ec/eccc1728.600pk></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi
+9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/symbols/msbm10.pfb>
+Output written on rapport.pdf (34 pages, 467133 bytes).
 PDF statistics:
- 1456 PDF objects out of 1728 (max. 8388607)
- 789 compressed objects within 8 object streams
- 231 named destinations out of 1000 (max. 500000)
- 442 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1516 PDF objects out of 1728 (max. 8388607)
+ 815 compressed objects within 9 object streams
+ 246 named destinations out of 1000 (max. 500000)
+ 507 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -570,7 +570,26 @@ cette dernière s'occupe d'alterner l'affichage des deux premiers.
 		Ils ne sont jamais mis à jours et sont détruits lorsque un nouveau niveau est
 		chargé. 
 
-		*Screenshot des Éléments statiques,
+		\begin{figure}[h!]
+			\caption{Un cristal.}
+			\includegraphics{./screenshots/elements_statiques/crystal}
+		\end{figure}
+		\begin{figure}[h!]
+			\caption{Une destination.}
+			\includegraphics{./screenshots/elements_statiques/dest}
+		\end{figure}
+		\begin{figure}[h!]
+			\caption{Une lentille.}
+			\includegraphics{./screenshots/elements_statiques/lens}
+		\end{figure}
+		\begin{figure}[h!]
+			\caption{Une bombe.}
+			\includegraphics{./screenshots/elements_statiques/nuke}
+		\end{figure}
+		\begin{figure}[h!]
+			\caption{Un mur.}
+			\includegraphics{./screenshots/elements_statiques/wall}
+		\end{figure}
 
 	\item \texttt{Semi dynamiques} : 
 		Il s'agit de l'affichage des rayons à partir de QGraphicsLineItems\textsuperscript{\ref{qgs}} dont la
@@ -578,11 +597,38 @@ cette dernière s'occupe d'alterner l'affichage des deux premiers.
 		grâce à des méthodes utilitaires contenues dans viewUtilities.hpp et
 		détruits à chaque modification de l'état du niveau. 
 
-		*Screenshot de rayons de couleurs différente*
+		\begin{figure}[h!]
+			\caption{Un rayon changeant de couleur.}
+			\centering
+			\includegraphics{./screenshots/elements_semi_dyn/ray_change_color}
+		\end{figure}
 
 	\item \texttt{dynamiques} :
 		Ce sont les élément permettant de \textbf{recueillir les entrées
 		utilisateur} et dont l'affichage évolue en fonction de l'état du niveau.
+
+		\begin{figure}[h!]
+			\caption{Un miroir.}
+			\centering
+			\includegraphics{./screenshots/elements_dyn/mirror}
+		\end{figure}
+
+		\begin{figure}[h!]
+			\caption{Un miroir et un rayon réfléchi.}
+			\centering
+			\includegraphics{./screenshots/elements_dyn/mirror+ray}
+		\end{figure}
+
+		\begin{figure}[h!]
+			\caption{La source éteinte.}
+			\centering
+			\includegraphics{./screenshots/elements_dyn/source_off}
+		\end{figure}
+		\begin{figure}[h!]
+			\caption{La source allumée.}
+			\centering
+			\includegraphics{./screenshots/elements_dyn/source_on}
+		\end{figure}
 \end{enumerate}
 
 \subsection[La source]{sourceview.hpp}
@@ -625,6 +671,12 @@ Qt QGraphicScene} qui elle-même comporte des éléments graphiques
 (QGraphicItems\textsuperscript{\ref{qgs}}) représentant les différents éléments contenus
 dans le niveaux. 
 
+\begin{figure}[h!]
+	\caption{Un LevelView.}
+	\centering
+	\includegraphics[keepaspectratio=true,width=0.7\linewidth]{./screenshots/level_view}
+\end{figure}
+
 \subsection[Le menu]{mainmenu.hpp}
 Ce widget héritant de \textbf{QFrame} représente le menu principale du jeu. Il s'agit de
 la première fenêtre qui apparait à l'utilisateur lorsque l'on lance le
@@ -637,6 +689,17 @@ telles que;
 	\item consulter les règles du jeu (s'affichant dans une boîte de dialogue) 
 	\item ou quitter le jeu (arrête le programme).
 \end{itemize}
+
+\begin{figure}[h!]
+	\caption{Un menu principal.}
+	\centering
+	\includegraphics[keepaspectratio=true,width=0.7\linewidth]{./screenshots/main_menu}
+\end{figure}
+\begin{figure}[h!]
+	\caption{Affichage des règles.}
+	\centering
+	\includegraphics[keepaspectratio=true,width=0.5\linewidth]{./screenshots/rules}
+\end{figure}
 
 \subsection[La fenêtre principale]{mainwindow.hpp}
 
@@ -675,17 +738,17 @@ la fin d'une partie),
 \begin{enumerate}
 	\item la vue de niveau envoie le signal correspondant
 	\item cette dernière va ensuite \textbf{cacher la vue de niveau} et afficher le menu principal,
-(\texttt{displayingStopped()}) à la MainWindow auquel elle se rapporte, 
+		(\texttt{displayingStopped()}) à la MainWindow auquel elle se rapporte, 
 \end{enumerate}
 
- Il en va de même pour afficher la vue du niveau, 
- \begin{enumerate}
-	 \item le signal newLevelFileSelected de MainMenu étant connecté au slot
-		 \texttt{setLevelFilePath()}),
-	 \item ce dernier émet ensuite le signal \texttt{displayingStarted()}), 
-	 \item lorsque l'utilisateur choisi un fichier de niveau, la vue du
-	      menu principal va ainsi laisser place à la vue du niveau.
- \end{enumerate}
+Il en va de même pour afficher la vue du niveau, 
+\begin{enumerate}
+	\item le signal newLevelFileSelected de MainMenu étant connecté au slot
+		\texttt{setLevelFilePath()}),
+	\item ce dernier émet ensuite le signal \texttt{displayingStarted()}), 
+	\item lorsque l'utilisateur choisi un fichier de niveau, la vue du
+		menu principal va ainsi laisser place à la vue du niveau.
+\end{enumerate}
 
 \chapter[Structure du programme]{Structure générale du programme}
 
