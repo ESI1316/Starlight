@@ -44,7 +44,10 @@ void MirrorView::keyPressEvent(QKeyEvent *event)
     case Qt::Key_Q: this->mirror->translate(-2., 0.);
         break;
     }
+}
 
-    Point start = Point{mirror->getStart()}, end = Point{mirror->getEnd()};
+void MirrorView::updatePosition()
+{
+    Point start = Point{this->mirror->getStart()}, end = Point{this->mirror->getEnd()};
     this->setLine(start.getX(), start.getY(), end.getX(), end.getY());
 }

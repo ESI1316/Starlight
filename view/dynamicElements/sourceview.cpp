@@ -18,7 +18,7 @@ SourceView::SourceView(Source * source)
 
 SourceView::~SourceView() {}
 
-void SourceView::switchSource()
+void SourceView::mousePressEvent(QGraphicsSceneMouseEvent * event)
 {
     this->brush.setColor(!this->source->isOn()
                          ? QSound::play(":/sounds/fire"), Qt::yellow
@@ -26,10 +26,3 @@ void SourceView::switchSource()
     this->setBrush(this->brush);
     this->source->setOn(!this->source->isOn());
 }
-
-void SourceView::mousePressEvent(QGraphicsSceneMouseEvent * event)
-{
-    this->switchSource();
-    QGraphicsRectItem::mousePressEvent(event);
-}
-

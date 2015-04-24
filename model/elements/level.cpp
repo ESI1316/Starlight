@@ -62,13 +62,10 @@ void Level::addNuke(const Nuke & nuke)
 
 void Level::computeRays()
 {
-    if (this->source.isOn())
-    {
-        this->rays.clear();
-        this->computeRay(Ray{this->source.getPosition(), this->source.getAngle(),
-                            this->source.getWaveLength()});
-        this->notifyViews();
-    }
+    this->rays.clear();
+    this->computeRay(Ray{this->source.getPosition(), this->source.getAngle(),
+                         this->source.getWaveLength()});
+    this->notifyViews();
 }
 
 void Level::addView(LevelView * newView)
@@ -140,7 +137,7 @@ std::map<Point *, Element *> Level::getEltsInTrajectory(const Ray & ray)
             candidates[inters] = &elt;
 
     if ((inters = this->dest.includeRay(ray)))
-            candidates[inters] = &this->dest;
+        candidates[inters] = &this->dest;
 
     return candidates;
 }

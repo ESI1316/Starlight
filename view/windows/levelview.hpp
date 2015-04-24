@@ -45,6 +45,11 @@ class LevelView : public QGraphicsView
      */
     std::vector<MirrorView *> mirrors;
 
+    /*!
+     * \brief Permet de mettre à jour l'affichage des rayons.
+     */
+    void updateRays();
+
 public:
 
     /*!
@@ -92,10 +97,6 @@ public slots:
      * la fin du jeu.
      */
     void displayEndOfGame();
-
-private :
-
-    void cleanAll();
 };
 
 #endif // LEVELVIEW_HPP

@@ -39,11 +39,6 @@ public:
 
     ~SourceView();
 
-    /*!
-     * \brief Permet de changer l'état de la source.
-     */
-    void switchSource();
-
 protected:
 
     /*!

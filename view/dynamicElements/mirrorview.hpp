@@ -31,6 +31,11 @@ public:
      */
     ~MirrorView();
 
+    /*!
+     * \brief Permet de mettre à jour la position du mirroir.
+     */
+    void updatePosition();
+
 protected:
 
     /*!

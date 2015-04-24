@@ -32,7 +32,13 @@ void LevelView::setLevelFilePath(const QString levelFile)
 
 void LevelView::loadLevelFromFile()
 {
-    this->cleanAll();
+    if (this->level != nullptr)
+    {
+        delete this->level, this->level = nullptr;
+        this->rays.clear();
+        this->mirrors.clear();
+        this->scene->clear();
+    }
 
     this->level = levelFactory::getLevelFromFile(this->displayedLevelFilePath);
     this->level->addView(this);
@@ -68,30 +74,34 @@ void LevelView::loadLevelFromFile()
 
 void LevelView::updateDisplay()
 {
-    if (!this->isHidden() && this->level != nullptr)
+    for (auto mirror : this->mirrors)
+        mirror->updatePosition();
+
+    this->updateRays();
+
+    if (this->level->getDestination().isLightedUp()
+            || this->level->thereIsAnExplodedNuke())
     {
-        for (auto & ray : this->rays)
-            delete ray, ray = nullptr;
+        QSound::play(this->level->thereIsAnExplodedNuke()
+                     ? ":sounds/bomb"
+                     : ":sounds/win");
+        this->displayEndOfGame();
+    }
+}
 
-        this->rays.clear();
+void LevelView::updateRays()
+{
+    for (auto & ray : this->rays)
+        delete ray, ray = nullptr;
 
-        for (auto & ray : this->level->getRays())
-        {
-            QGraphicsLineItem * rayView = viewUtilities::getLine
-                    (ray.getStart(), ray.getEnd(), viewUtilities::waveLengthToColor(ray), 2);
-            this->scene->addItem(rayView);
-            this->rays.push_back(rayView);
-        }
+    this->rays.clear();
 
-        if (this->level->getDestination().isLightedUp()
-                || this->level->thereIsAnExplodedNuke())
-        {
-            QSound::play(this->level->thereIsAnExplodedNuke()
-                         ? ":sounds/bomb"
-                         : ":sounds/win");
-
-            this->displayEndOfGame();
-        }
+    for (auto & ray : this->level->getRays())
+    {
+        QGraphicsLineItem * rayView = viewUtilities::getLine
+                (ray.getStart(), ray.getEnd(), viewUtilities::waveLengthToColor(ray), 2);
+        this->scene->addItem(rayView);
+        this->rays.push_back(rayView);
     }
 }
 
@@ -113,17 +123,4 @@ void LevelView::displayEndOfGame()
         emit displayingStopped();
     else
         this->loadLevelFromFile();
-}
-
-void LevelView::cleanAll()
-{
-    if (this->level != nullptr)
-        delete this->level, this->level = nullptr;
-
-    for (auto & item : this->scene->items())
-        delete item, item = nullptr;
-
-    this->mirrors.clear();
-    this->rays.clear();
-    this->scene->clear();
 }
