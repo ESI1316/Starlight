@@ -36,10 +36,10 @@
 \contentsline {subsection}{\numberline {2.2.11}Createur de niveau}{15}{subsection.2.2.11}
 \contentsline {section}{\numberline {2.3}L'exception}{16}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1}Exception Starlight}{16}{subsection.2.3.1}
-\contentsline {section}{\numberline {2.4}Les objets visuels}{16}{section.2.4}
-\contentsline {subsection}{\numberline {2.4.1}La source}{18}{subsection.2.4.1}
+\contentsline {section}{\numberline {2.4}Les objets visuels}{17}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}La source}{19}{subsection.2.4.1}
 \contentsline {subsection}{\numberline {2.4.2}Le miroir}{19}{subsection.2.4.2}
-\contentsline {subsection}{\numberline {2.4.3}Le niveau}{19}{subsection.2.4.3}
+\contentsline {subsection}{\numberline {2.4.3}Le niveau}{20}{subsection.2.4.3}
 \contentsline {subsection}{\numberline {2.4.4}Le menu}{20}{subsection.2.4.4}
 \contentsline {subsection}{\numberline {2.4.5}La fen\IeC {\^e}tre principale}{21}{subsection.2.4.5}
 \contentsline {chapter}{\numberline {3}Algorithmes}{23}{chapter.3}

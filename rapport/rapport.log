@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2015.4.17)  24 APR 2015 23:31
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2015.4.17)  24 APR 2015 23:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -880,7 +880,7 @@ File: umsb.fd 2009/06/22 v3.00 AMS symbols B
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.40 ...ne {2.4.1}La source}{18}{subsection.2.4.1}
+l.40 ...ne {2.4.1}La source}{19}{subsection.2.4.1}
                                                    [1
 
 ])
@@ -939,113 +939,100 @@ Underfull \hbox (badness 10000) in paragraph at lines 549--555
 
  []
 
-[15]
-Overfull \hbox (51.38092pt too wide) in paragraph at lines 588--598
+[15] [16]
+Overfull \hbox (51.38092pt too wide) in paragraph at lines 589--599
 \T1/cmr/m/n/10.95 (QGraphicsLineItems$[]$), des len-tilles, bombes, cris-taux (
 QGraphicsEllipseItem$[]$)
  []
 
 
-Overfull \hbox (3.33221pt too wide) in paragraph at lines 588--598
+Overfull \hbox (3.33221pt too wide) in paragraph at lines 589--599
 \T1/cmr/m/n/10.95 et de la des-ti-na-tion (QGraphicsRectItem$[]$). Ces élé-ment
 s sont construit
  []
 
 
-<./screenshots/elements_statiques/crystal.png, id=537, 75.28125pt x 59.22125pt>
+<./screenshots/elements_statiques/crystal.png, id=541, 75.28125pt x 59.22125pt>
 File: ./screenshots/elements_statiques/crystal.png Graphic file (type png)
 <use ./screenshots/elements_statiques/crystal.png>
 Package pdftex.def Info: ./screenshots/elements_statiques/crystal.png used on i
-nput line 601.
+nput line 602.
 (pdftex.def)             Requested size: 75.28105pt x 59.22108pt.
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<./screenshots/elements_statiques/dest.png, id=539, 39.14626pt x 43.16125pt>
+<./screenshots/elements_statiques/dest.png, id=543, 39.14626pt x 43.16125pt>
 File: ./screenshots/elements_statiques/dest.png Graphic file (type png)
 
 <use ./screenshots/elements_statiques/dest.png>
 Package pdftex.def Info: ./screenshots/elements_statiques/dest.png used on inpu
-t line 605.
+t line 606.
 (pdftex.def)             Requested size: 39.14615pt x 43.16113pt.
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<./screenshots/elements_statiques/lens.png, id=540, 76.285pt x 116.435pt>
+<./screenshots/elements_statiques/lens.png, id=544, 76.285pt x 116.435pt>
 File: ./screenshots/elements_statiques/lens.png Graphic file (type png)
 
 <use ./screenshots/elements_statiques/lens.png>
 Package pdftex.def Info: ./screenshots/elements_statiques/lens.png used on inpu
-t line 609.
+t line 610.
 (pdftex.def)             Requested size: 76.2848pt x 116.43471pt.
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<./screenshots/elements_statiques/nuke.png, id=541, 75.28125pt x 68.255pt>
+<./screenshots/elements_statiques/nuke.png, id=545, 75.28125pt x 68.255pt>
 File: ./screenshots/elements_statiques/nuke.png Graphic file (type png)
 
 <use ./screenshots/elements_statiques/nuke.png>
 Package pdftex.def Info: ./screenshots/elements_statiques/nuke.png used on inpu
-t line 613.
+t line 614.
 (pdftex.def)             Requested size: 75.28105pt x 68.25482pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./screenshots/elements_statiques/wall.png, id=542, 66.2475pt x 83.31125pt>
+<./screenshots/elements_statiques/wall.png, id=546, 66.2475pt x 83.31125pt>
 File: ./screenshots/elements_statiques/wall.png Graphic file (type png)
 
 <use ./screenshots/elements_statiques/wall.png>
 Package pdftex.def Info: ./screenshots/elements_statiques/wall.png used on inpu
-t line 617.
+t line 618.
 (pdftex.def)             Requested size: 66.24733pt x 83.31104pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-Overfull \hbox (68.49564pt too wide) in paragraph at lines 620--625
+[17 <./screenshots/elements_statiques/crystal.png> <./screenshots/elements_stat
+iques/dest.png> <./screenshots/elements_statiques/lens.png>]
+Overfull \hbox (68.49564pt too wide) in paragraph at lines 621--626
 []\T1/cmtt/m/n/10.95 Semi dynamiques \T1/cmr/m/n/10.95 : Il s'agit de l'af-fi-c
 hage des rayons à par-tir de QGraphicsLineItems$[]$
  []
 
-[16]
-<./screenshots/elements_semi_dyn/ray_change_color.png, id=550, 90.3375pt x 79.2
+
+<./screenshots/elements_semi_dyn/ray_change_color.png, id=562, 90.3375pt x 79.2
 9625pt>
 File: ./screenshots/elements_semi_dyn/ray_change_color.png Graphic file (type p
 ng)
  <use ./screenshots/elements_semi_dyn/ray_change_color.png>
 Package pdftex.def Info: ./screenshots/elements_semi_dyn/ray_change_color.png u
-sed on input line 629.
+sed on input line 630.
 (pdftex.def)             Requested size: 71.9989pt x 63.1999pt.
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[17 <./screenshots/elements_statiques/crystal.png> <./screenshots/elements_stat
-iques/dest.png> <./screenshots/elements_statiques/lens.png> <./screenshots/elem
-ents_statiques/nuke.png> <./screenshots/elements_statiques/wall.png>]
-<./screenshots/elements_dyn/source_off.png, id=568, 39.14626pt x 39.14626pt>
+<./screenshots/elements_dyn/source_off.png, id=563, 39.14626pt x 39.14626pt>
 File: ./screenshots/elements_dyn/source_off.png Graphic file (type png)
 
 <use ./screenshots/elements_dyn/source_off.png>
 Package pdftex.def Info: ./screenshots/elements_dyn/source_off.png used on inpu
-t line 639.
+t line 640.
 (pdftex.def)             Requested size: 39.14615pt x 39.14615pt.
 
-<./screenshots/elements_dyn/source_on.png, id=569, 42.1575pt x 41.15375pt>
+<./screenshots/elements_dyn/source_on.png, id=564, 42.1575pt x 41.15375pt>
 File: ./screenshots/elements_dyn/source_on.png Graphic file (type png)
 
 <use ./screenshots/elements_dyn/source_on.png>
 Package pdftex.def Info: ./screenshots/elements_dyn/source_on.png used on input
- line 644.
+ line 645.
 (pdftex.def)             Requested size: 42.15738pt x 41.15364pt.
- [18 <./screenshots/elements_semi_dyn/ray_change_color.png> <./screenshots/elem
-ents_dyn/source_off.png> <./screenshots/elements_dyn/source_on.png>]
-<./screenshots/elements_dyn/mirror.png, id=588, 60.225pt x 63.23625pt>
+ [18 <./screenshots/elements_statiques/nuke.png> <./screenshots/elements_statiq
+ues/wall.png> <./screenshots/elements_semi_dyn/ray_change_color.png> <./screens
+hots/elements_dyn/source_off.png> <./screenshots/elements_dyn/source_on.png>]
+<./screenshots/elements_dyn/mirror.png, id=586, 60.225pt x 63.23625pt>
 File: ./screenshots/elements_dyn/mirror.png Graphic file (type png)
 
 <use ./screenshots/elements_dyn/mirror.png>
@@ -1053,94 +1040,104 @@ Package pdftex.def Info: ./screenshots/elements_dyn/mirror.png used on input li
 ne 676.
 (pdftex.def)             Requested size: 71.9989pt x 75.60617pt.
 
-<./screenshots/elements_dyn/mirror+ray.png, id=589, 72.27pt x 73.27374pt>
+<./screenshots/elements_dyn/mirror+ray.png, id=587, 72.27pt x 73.27374pt>
 File: ./screenshots/elements_dyn/mirror+ray.png Graphic file (type png)
 
 <use ./screenshots/elements_dyn/mirror+ray.png>
 Package pdftex.def Info: ./screenshots/elements_dyn/mirror+ray.png used on inpu
 t line 682.
 (pdftex.def)             Requested size: 71.9989pt x 73.00296pt.
-
-<./screenshots/level_view.png, id=595, 777.90625pt x 652.4375pt>
+ [19 <./screenshots/elements_dyn/mirror.png> <./screenshots/elements_dyn/mirror
++ray.png>]
+<./screenshots/level_view.png, id=604, 777.90625pt x 652.4375pt>
 File: ./screenshots/level_view.png Graphic file (type png)
 
 <use ./screenshots/level_view.png>
-Package pdftex.def Info: ./screenshots/level_view.png used on input line 704.
+Package pdftex.def Info: ./screenshots/level_view.png used on input line 705.
 (pdftex.def)             Requested size: 251.9989pt x 211.35275pt.
+
+<./screenshots/main_menu.png, id=605, 544.0325pt x 296.10625pt>
+File: ./screenshots/main_menu.png Graphic file (type png)
+
+<use ./screenshots/main_menu.png>
+Package pdftex.def Info: ./screenshots/main_menu.png used on input line 724.
+(pdftex.def)             Requested size: 251.9989pt x 137.15935pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[19 <./screenshots/elements_dyn/mirror.png> <./screenshots/elements_dyn/mirror+
-ray.png>] <./screenshots/main_menu.png, id=606, 544.0325pt x 296.10625pt>
-File: ./screenshots/main_menu.png Graphic file (type png)
-
-<use ./screenshots/main_menu.png>
-Package pdftex.def Info: ./screenshots/main_menu.png used on input line 723.
-(pdftex.def)             Requested size: 251.9989pt x 137.15935pt.
-
-<./screenshots/rules.png, id=607, 499.8675pt x 582.175pt>
+<./screenshots/rules.png, id=606, 499.8675pt x 582.175pt>
 File: ./screenshots/rules.png Graphic file (type png)
 
 <use ./screenshots/rules.png>
-Package pdftex.def Info: ./screenshots/rules.png used on input line 728.
+Package pdftex.def Info: ./screenshots/rules.png used on input line 729.
 (pdftex.def)             Requested size: 180.0pt x 209.63614pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[20 <./screenshots/level_view.png> <./screenshots/main_menu.png>] [21 <./screen
+[20 <./screenshots/level_view.png>] [21 <./screenshots/main_menu.png> <./screen
 shots/rules.png>] [22]
 Chapitre 3.
 (./reflexion.tex)
-Underfull \hbox (badness 10000) in paragraph at lines 48--788
+Underfull \hbox (badness 10000) in paragraph at lines 48--790
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 48--788
+Underfull \hbox (badness 10000) in paragraph at lines 48--790
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 48--788
+Underfull \hbox (badness 10000) in paragraph at lines 48--790
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 48--788
+Underfull \hbox (badness 10000) in paragraph at lines 48--790
 
  []
 
 [23
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 794--795
+Underfull \hbox (badness 10000) in paragraph at lines 796--797
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 798--800
+Underfull \hbox (badness 10000) in paragraph at lines 800--802
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 814--815
+Underfull \hbox (badness 10000) in paragraph at lines 816--817
 
  []
 
-[24] [25]
+[24]
+Underfull \hbox (badness 10000) in paragraph at lines 835--838
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 839--853
+
+ []
+
+[25]
 Chapitre 4.
 
-LaTeX Warning: Reference `va' on page 26 undefined on input line 836.
+LaTeX Warning: Reference `va' on page 26 undefined on input line 871.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 851--854
+Underfull \hbox (badness 10000) in paragraph at lines 886--889
 
  []
 
 
-Overfull \hbox (11.91437pt too wide) in paragraph at lines 855--858
+Overfull \hbox (11.91437pt too wide) in paragraph at lines 890--893
 \T1/cmr/m/n/10.95 fec-tuer en dé-com-men-tant la dé-fi-ni-tion de \T1/cmr/bx/n/
 10.95 #RUN_TEST \T1/cmr/m/n/10.95 du fi-chier \T1/cmr/bx/n/10.95 main.hpp
  []
@@ -1154,12 +1151,12 @@ Chapitre 5.
 ]
 Chapitre 6.
 
-Underfull \hbox (badness 10000) in paragraph at lines 896--901
+Underfull \hbox (badness 10000) in paragraph at lines 931--936
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 902--907
+Underfull \hbox (badness 10000) in paragraph at lines 937--942
 
  []
 
@@ -1168,204 +1165,204 @@ Underfull \hbox (badness 10000) in paragraph at lines 902--907
 ]
 Annexe A.
 
-Underfull \hbox (badness 10000) in paragraph at lines 919--920
+Underfull \hbox (badness 10000) in paragraph at lines 954--955
 
  []
 
 
-Overfull \hbox (5.91022pt too wide) in paragraph at lines 926--928
+Overfull \hbox (5.91022pt too wide) in paragraph at lines 961--963
 [][]$\T1/cmtt/m/n/10.95 https : / / creativecommons . org / licenses / by / 3 .
  0/$[] \T1/cmr/m/n/10.95 consulté 24 avril
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 926--928
+Underfull \hbox (badness 10000) in paragraph at lines 961--963
 
  []
 
 
-Overfull \hbox (19.9294pt too wide) in paragraph at lines 931--933
+Overfull \hbox (19.9294pt too wide) in paragraph at lines 966--968
 [][]$\T1/cmtt/m/n/10.95 http : / / www . physics . sfasu . edu / astro / color 
 / spectra . html$[] \T1/cmr/m/n/10.95 consulté
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 931--933
+Underfull \hbox (badness 10000) in paragraph at lines 966--968
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 936--937
+Underfull \hbox (badness 10000) in paragraph at lines 971--972
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 940--941
+Underfull \hbox (badness 10000) in paragraph at lines 975--976
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 944--945
+Underfull \hbox (badness 10000) in paragraph at lines 979--980
 
  []
 
 
-Overfull \hbox (12.68178pt too wide) in paragraph at lines 948--949
+Overfull \hbox (12.68178pt too wide) in paragraph at lines 983--984
 [][]$\T1/cmtt/m/n/10.95 http : / / www . cslaval . qc . ca / sitsatlll / maths2
 003 / cartesien . html$[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 948--949
+Underfull \hbox (badness 10000) in paragraph at lines 983--984
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 952--953
+Underfull \hbox (badness 10000) in paragraph at lines 987--988
 
  []
 
 
-Overfull \hbox (18.34015pt too wide) in paragraph at lines 956--958
+Overfull \hbox (18.34015pt too wide) in paragraph at lines 991--993
 [][]$\T1/cmtt/m/n/10.95 http : / / www . iso . org / iso / iso _ catalogue / ca
 talogue _ tc / catalogue _
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 956--958
+Underfull \hbox (badness 10000) in paragraph at lines 991--993
 
  []
 
 [29
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 961--962
+Underfull \hbox (badness 10000) in paragraph at lines 996--997
 
  []
 
 
-Overfull \hbox (23.99852pt too wide) in paragraph at lines 965--966
+Overfull \hbox (23.99852pt too wide) in paragraph at lines 1000--1001
 [][]$\T1/cmtt/m/n/10.95 https : / / www . gnu . org / software / make / manual 
 / html _ node / Makefiles .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 965--966
+Underfull \hbox (badness 10000) in paragraph at lines 1000--1001
 
  []
 
 
-Overfull \hbox (31.24614pt too wide) in paragraph at lines 969--970
+Overfull \hbox (31.24614pt too wide) in paragraph at lines 1004--1005
 [][]$\T1/cmtt/m/n/10.95 https : / / fr . wikipedia . org / wiki / Hypertext _ M
 arkup _ Language$[] \T1/cmr/m/n/10.95 consulté
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 969--970
+Underfull \hbox (badness 10000) in paragraph at lines 1004--1005
 
  []
 
 
-Overfull \hbox (7.0234pt too wide) in paragraph at lines 973--974
+Overfull \hbox (7.0234pt too wide) in paragraph at lines 1008--1009
 [][]$\T1/cmtt/m/n/10.95 https : / / fr . wikipedia . org / wiki / Feuilles _ de
  _ style _ en _ cascade$[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 973--974
+Underfull \hbox (badness 10000) in paragraph at lines 1008--1009
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 977--978
+Underfull \hbox (badness 10000) in paragraph at lines 1012--1013
 
  []
 
 
-Overfull \hbox (18.34015pt too wide) in paragraph at lines 981--982
+Overfull \hbox (18.34015pt too wide) in paragraph at lines 1016--1017
 [][]$\T1/cmtt/m/n/10.95 https : / / fr . wikipedia . org / wiki / Ellipse _ %28
 math % C3 % A9matiques %
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 981--982
+Underfull \hbox (badness 10000) in paragraph at lines 1016--1017
 
  []
 
 
-Overfull \hbox (12.68178pt too wide) in paragraph at lines 985--986
+Overfull \hbox (12.68178pt too wide) in paragraph at lines 1020--1021
 [][]$\T1/cmtt/m/n/10.95 https : / / fr . wikipedia . org / wiki / Droite _ %28m
 ath % C3 % A9matiques %
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 985--986
+Underfull \hbox (badness 10000) in paragraph at lines 1020--1021
 
  []
 
 
-Overfull \hbox (12.68178pt too wide) in paragraph at lines 989--991
+Overfull \hbox (12.68178pt too wide) in paragraph at lines 1024--1026
 [][]$\T1/cmtt/m/n/10.95 https : / / fr . wikipedia . org / wiki / Point _ %28g 
 % C3 % A9om % C3 % A9trie %
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 989--991
+Underfull \hbox (badness 10000) in paragraph at lines 1024--1026
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 994--996
+Underfull \hbox (badness 10000) in paragraph at lines 1029--1031
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 999--1001
+Underfull \hbox (badness 10000) in paragraph at lines 1034--1036
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1004--1006
+Underfull \hbox (badness 10000) in paragraph at lines 1039--1041
 
  []
 
 [30]
-Underfull \hbox (badness 10000) in paragraph at lines 1009--1011
+Underfull \hbox (badness 10000) in paragraph at lines 1044--1046
 
  []
 
 
-Overfull \hbox (134.50757pt too wide) in paragraph at lines 1015--1017
+Overfull \hbox (134.50757pt too wide) in paragraph at lines 1050--1052
 [][]$\T1/cmtt/m/n/10.95 http : / / doc . qt . io / qt-[]4 . 8 / graphicsview . 
 html # classes-[]in-[]the-[]graphics-[]view-[]framework$[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1015--1017
+Underfull \hbox (badness 10000) in paragraph at lines 1050--1052
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1020--1022
+Underfull \hbox (badness 10000) in paragraph at lines 1055--1057
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1025--1026
+Underfull \hbox (badness 10000) in paragraph at lines 1060--1061
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1029--1030
+Underfull \hbox (badness 10000) in paragraph at lines 1064--1065
 
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1034.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1069.
 [31]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1034.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1069.
  (./rapport.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1034.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1034.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1069.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1069.
 
 Package rerunfilecheck Info: File `rapport.out' has not changed.
 (rerunfilecheck)             Checksum: 83F34754058DFE8FAA9FF1BC30DA0FAD;3165.
@@ -1373,7 +1370,7 @@ Package rerunfilecheck Info: File `rapport.out' has not changed.
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1034.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1069.
  ) 
 Here is how much of TeX's memory you used:
  18388 strings out of 495030
@@ -1411,9 +1408,9 @@ hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on rapport.pdf (33 pages, 470079 bytes).
+Output written on rapport.pdf (33 pages, 470338 bytes).
 PDF statistics:
- 1502 PDF objects out of 1728 (max. 8388607)
+ 1503 PDF objects out of 1728 (max. 8388607)
  813 compressed objects within 9 object streams
  249 named destinations out of 1000 (max. 500000)
  499 words of extra memory for PDF output out of 10000 (max. 10000000)
