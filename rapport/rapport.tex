@@ -516,6 +516,20 @@ qui en font un segment de droite. Il est un objet fixe du jeu qui arrête un
 rayon et lui défini un point qui le transforme en segment de droite.
 
 \subsection[Niveau]{level.hpp}
+Le level est une classe qui est composée et qui s'occupe de gérer l'ensemble des
+éléments du jeu au niveau ``business''.
+
+Celui-ci va donc recevoir les communications de ses éléments et agir en
+conséquence à l'aide de fonction récursive croisée 
+\begin{lstlisting}[language=C++]
+void computeRay(Ray);
+void computeRays();
+\end{lstlisting}
+
+En effet, puisque la source créé un rayon dans le niveau, celui-ci va s'occuper
+de demander à chaque élément qui interagit avec le rayon précédent ce qui se
+passera ensuite et à partir de là, une réaction ``boule de neige'' se fera
+jusqu'à l'intersection d'un élément arrêtant le processus.
 \subsection[Createur de niveau]{levelfactory.hpp}
 Le créateur de niveau est un \texttt{namespace} de méthodes qui va s'occuper de lire
 les données des éléments dans un fichier. 
@@ -864,10 +878,10 @@ Ensemble des bonus terminés :
 		\end{itemize}
 		Ils ont été ajouté au projet à l'aide du gestionnaires de ressource
 		Qt\footnote{voir Annexe~\ref{ref}, Qt ressources system} 
-		et activé à l'aide de la méthode statique 
-		\begin{lstlisting}[language=C++]
-		QSound::play(``:/prefix/alias'');
-		\end{lstlisting}\footnote{voir Annexe~\ref{ref}, QtMultimedia/QSound}
+		et activé à l'aide de la méthode statique\footnote{voir Annexe~\ref{ref}, QtMultimedia/QSound}
+		\begin{lstlisting}[frame=single,language=C++]
+	QSound::play(``:/prefix/alias'');
+		\end{lstlisting}
 	\item \textbf{les couleurs}\footnote{voir Annexe~\ref{ref}, calcul de longueur d'onde} 
 		sont disponibles en fonction de la longueur d'onde du rayon
 	\item \textbf{l'icone du logiciel} disponible et a été désigné par
@@ -879,6 +893,23 @@ Ensemble des bonus terminés :
 \appendix
 
 
+Pour conclure, au travers de ce jeu l'algorithmique a pris une grande place. Si
+pour le simple utilisateur il parait simple et accessible, pour le développeur
+la mise en place a été rude. Du coté graphique, une grande facilité fut d'être
+aidé une très bonne documentation de la bibliothèque Qt standard qui se trouve
+être un modèle de rédaction de qualité. \\
+
+Un énorme travail de recherche a du être fait au niveau géométrique ainsi qu'au 
+niveau des spécifications du langage. Ce dernier a su, pour le binôme que nous 
+avons formé durant plus d'un mois, se montrer à la hauteur et à se mettre en 
+valeur par des attributs tout à fait intéressant (l'héritage multiple pour n'en
+citer qu'un). \\
+
+Il en va de même pour la rédaction de ce document dans un format spécifique et
+compliqué (\LaTeX)
+
+Le travail à deux personnes est un enchainement de conflits et d'interactions intellectuelles musclées menant
+souvent à la refonte conjointe d'une idée personnelle.
 \chapter{Références}\label{ref}
 
 \begin{itemize}
