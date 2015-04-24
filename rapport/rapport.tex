@@ -644,28 +644,29 @@ d'allumer/éteindre la source du niveau et ainsi provoquer la présence ou
 l'absence des rayons dans le niveau.\footnote{\textit{il émet un son et change sa couleur selon que l'on allume ou
 éteint la source.}}
 
+
+		\newpage
 \subsection[Le miroir]{mirrorview.hpp}
 Il s'agit d'un objet héritant de QGraphicsLineItem\textsuperscript{\ref{qgs}} représentant un miroir du
 niveau. Il permet une fois sélectionné en ayant cliqué dessus, de \texttt{faire
 dévier} les rayons l'atteignant en fonction des mouvements que l'utilisateur exercera 
-sur lui :
+sur lui :\footnote{voir Annexe~\ref{ref}, commandes du jeu}.
 \begin{itemize}
 	\item touches pour le déplacer 
-	\item et flèches directionnelles pour le faire pivoter.
-\end{itemize}\footnote{voir Annexe~\ref{ref}, commandes du jeu}.
+	\item et flèches directionnelles pour le faire pivoter
+\end{itemize}
 
 		\begin{figure}[h!]
 			\caption{Un miroir.}
 			\centering
-			\includegraphics{./screenshots/elements_dyn/mirror}
+			\includegraphics[keepaspectratio=true,width=0.2\linewidth]{./screenshots/elements_dyn/mirror}
 		\end{figure}
 
 		\begin{figure}[h!]
 			\caption{Un miroir et un rayon réfléchi.}
 			\centering
-			\includegraphics{./screenshots/elements_dyn/mirror+ray}
+			\includegraphics[keepaspectratio=true,width=0.2\linewidth]{./screenshots/elements_dyn/mirror+ray}
 		\end{figure}
-
 \subsection[Le niveau]{levelview.hpp}
 Il s'agit d'un \textbf{widget} hérité de QGraphicsView (utilisant, en son sein,le
 framework du même nom\footnote{\label{qgv}voir Annexe~\ref{ref}, Qt GraphicsView
@@ -762,10 +763,6 @@ Il en va de même pour afficher la vue du niveau,
 		menu principal va ainsi laisser place à la vue du niveau.
 \end{enumerate}
 
-\chapter[Structure du programme]{Structure générale du programme}
-
-
-
 \chapter[Algorithmes]{Détail des algorithmes utilisés}
 \section[Réflexion]{Algorithme de réflexion}
 \input{./reflexion.tex} \\
@@ -818,6 +815,7 @@ $$\begin{cases}
 \end{cases}$$
 
 
+\section[Moteur de jeu]{Fonctionnement du moteur}
 \chapter{Test effectués}
 \section{Framework de test}
 Le Framework de test utilisé est
