@@ -13,3 +13,4 @@ documentation/man/
 moc*
 *~
 *swp
+qrc_ressources.cpp
