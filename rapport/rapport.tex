@@ -121,13 +121,13 @@ Le contenu de l'ensemble des fichiers est disponible dans le dossier
 \subsection{noms}
 Le nom des fichiers est entièrement écrit en minuscule et porte le nom de la
 classe, ou du namespace qu'il contient.
-\subsection{headers}
+\subsubsection{headers}
 Les headers porteront l'extension \textbf{hpp}. Ils seront disposés dans le même
 dossier que leur fichier source \textbf{cpp} correspondant.
-\subsection{sources}
+\subsubsection{sources}
 Les fichiers sources porteront l'extension \textbf{cpp}. Ils seront disposé dans
 le même dossier que leur fichier header \textbf{hpp} correspondant.
-\subsection{test}
+\subsubsection{test}
 Le nom des fichiers de test est composé du nom de la classe ou du namespace
 testé suivi de ``test''
 \begin{lstlisting}[frame=single, mathescape, escapechar=@]
@@ -142,6 +142,24 @@ disponible dans \url{ressources/other} sont des textes
 formatés à l'aide de \texttt{CSS}\footnote{voir Annexe~\ref{ref}, CSS sur Wikipedia}. 
 Ils sont utilisés lors de l'affichage des
 \textbf{règles} et du \textbf{logo}.
+\subsection{niveaux}
+Les fichiers de niveau qui peuvent être lu doivent être au format 
+\begin{itemize}
+	\item \texttt{.lvl}\footnote{Il est préférable d'utiliser celui-ci}
+	\item \texttt{.mapl}
+\end{itemize}
+
+Ceux-ci sont composé de ligne significative\footnote{c'est à dire que chaque
+ligne représente un objet à créer} et structurés ainsi :
+\begin{itemize}
+	\item taille du niveau,
+	\item position de la source,
+	\item position de la destination,
+	\item élément du niveau,
+	\item élément du niveau, \dots
+\end{itemize}
+Les trois premiers sont donc nécessaire au bon fonctionnement d'une partie
+minimale.
 \section{Nom des namespace}
 Le nom d'un namespace sera exclusivement en minuscule.
 \begin{lstlisting}[frame=single, language=C++]
@@ -225,7 +243,7 @@ C++\footnote{\url{http://www.tutorialspoint.com/cplusplus/cpp_object_oriented.ht
 		\draw[dashed] (3,3) -- (4, 4);
 	\end{tikzpicture} 
 \end{center}
-Une droite\footnote{voir Annexe~\ref{ref}, Droite sur Wikipedia} est une ligne 
+Une \texttt{droite}\footnote{voir Annexe~\ref{ref}, Droite sur Wikipedia} est une ligne 
 sans épaisseur, rectiligne et infinie dans le plan. Pour exister, une droite aura besoin :
 \begin{itemize}
 	\item d'un coefficient angulaire $m = \frac{\Delta y}{\Delta x}$
@@ -274,7 +292,7 @@ C++\footnote{\url{http://www.tutorialspoint.com/cplusplus/cpp_object_oriented.ht
 		\draw (1, 2.5) -- (1, 1);
 	\end{tikzpicture} 
 \end{center}
-Un rectangle est une forme géométrique à 4 segments de droite\footnote{Un
+Un rectangle\footnote{voir Annexe~\ref{ref}, Rectangle sur Wikipedia}  est une forme géométrique à 4 segments de droite\footnote{Un
 	segment de droite est une partie de droite délimitée par deux points non
 confondus} 
 parallèle deux à deux.Ceux-ci vont donc former 4 angles droit ($\frac{\pi}{2} rad$)
@@ -300,26 +318,26 @@ accompagnant le projet}.
 vector<Point> Rectangle::getIntersectionPoints(Line &);
 \end{lstlisting}
 \subsection[Point]{point.hpp}
-Un point est un objet mathématique permettant de situer un élément dans un plan
+Un point\footnote{voir Annexe~\ref{ref}, Point sur Wikipedia}  est un objet mathématique permettant de situer un élément dans un plan
 ou dans l'espace. Dans notre cas, plus spécifiquement dans un plan à deux
 dimensions. Celui-ci peut-être représenté de plusieurs manières dans le plan 
-cartésien\textsuperscript{\ref{va}} : 
+cartésien{voir Annexe~\ref{ref}, Plan cartésien} : 
 \begin{itemize}
 	\item sous la forme d'une coordonnées cartésienne à l'aide de 
 		\begin{itemize}
-			\item une origine,
+			\item une origine, $$(0, 0)$$
 			\item deux vecteurs partant de cette origine et perpendiculaires,
 				$$P = (\vec{x}, \vec{y})$$
 		\end{itemize}
 	\item et sous la forme d'une coordonnée polaire à l'aide de
 		\begin{itemize}
-			\item une origine,
-			\item une coordonnée radiale $r$,
-			\item une coordonnée angulaire $\alpha$.
+			\item une origine, $$(0, 0)$$
+			\item une coordonnée radiale, $$r \in \mathbb{R}$$
+			\item une coordonnée angulaire, $$\alpha \in \mathbb{R}$$
 		\end{itemize}
 \end{itemize}
 \subsection[Utilitaire]{utilities.hpp}
-Le namespace ``utilities'' mis en place ici est un ensemble de fonctions et valeurs
+Le namespace \texttt{utilities} mis en place ici est un ensemble de fonctions et valeurs
 constantes spécifiquement définies pour les calculs intervenant dans le projet.
 
 \subsubsection{constantes :}
@@ -377,7 +395,7 @@ réagir avec le niveau en lui exprimant :
 		\end{lstlisting}
 \end{itemize}
 Il sera donc aisé pour le niveau de gérer les collisions des éléments de manière
-anonyme et optimale (cf Niveau).
+anonyme et optimale.
 \subsection[Cristal]{crystal.hpp}
 \begin{center}
 	\begin{tikzpicture}
@@ -388,15 +406,22 @@ anonyme et optimale (cf Niveau).
 \end{center}
 Cette classe est, par héritage, un élément ainsi qu'une ellipse. Il peut donc
 être modéliser graphiquement, entant que cette dernière, dans le plan et communique avec
-le niveau auquel il est lié. Le cristal modifie la longueur d'onde d'un rayon
-qui le traverse. D'un point de vue technique, il en relève donc d'un choix
-personnel, il ne va pas amplifier le rayon entrant à partir de sa sortie mais 
-arrêtera ce rayon et en créera un nouveau qui, lui, aura subit l'action du cristal.
+le niveau auquel il est lié. 
+
+Le cristal modifie la longueur d'onde d'un rayon qui le traverse en lui
+augmentant ou en lui diminuant sa longueur d'onde. Il en devient nécessaire à la
+réussite d'une partie de jeu puisque les éléments \texttt{lens} requiert un
+rayon de longueur d'onde particulière. Puisque le rayon est visible il se doit
+de respecter le spectre lumineux visible $IR < wl < UV$ et donc un dépassement
+par le haut ou par le bas après amplification sera rétabli à la valeur logique 
+la plus proche.
 \subsection[Destination]{dest.hpp}
 Cette classe est, par héritage, un élément ainsi qu'un rectangle. Il peut donc
 être modéliser graphiquement, entant que cette dernière, dans le plan et
-communique avec le niveau auquel il est lié. La destination est le but du jeu
-et l'atteindre terminera automatiquement la partie sur une victoire.
+communique avec le niveau auquel il est lié. 
+
+La destination est le but du jeu et l'atteindre terminera automatiquement la 
+partie sur une victoire. La longueur d'onde du rayon n'a aucun importance.
 \subsection[Lentille]{lens.hpp}
 \begin{center}
 	\begin{tikzpicture}
@@ -415,13 +440,13 @@ $$lens_{min} \leq ray_{\alpha} \leq lens_{max}$$
 Deux issues sont alors possible :
 \begin{itemize}
 	\item la longueur d'onde entre dans l'intervalle et le rayon est renouvelé
-		après la lentille
-	\item ou elle ne rentre pas dans l'intervalle défini et le rayon sera terminé par
+		après la lentille,
+	\item elle ne rentre pas dans l'intervalle défini et le rayon sera terminé par
 		la lentille
 \end{itemize}
 et ce même si le rayon tiré est tangent à la lentille. En effet, si la droite
-représentant le rayon est tangent à l'ellipse représentant la lentille c'est
-qu'un point d'intersection existe entre les deux. Il est donc de ce point d'agir
+représentant le rayon est tangent à l'ellipse représentant la lentille,
+un point d'intersection existe entre les deux. Il est donc de ce point d'agir
 comme l'aurait fait l'entière lentille à tout autre point même si cette
 réaction particulière peut être discutable. 
 
@@ -459,14 +484,17 @@ environnement comme dans la vie réelle :
 \end{itemize}
 
 Le rayon déclenche les réactions des éléments du jeu via la méthode
-``reactToRay'' des héritiers d'Element.
+\texttt{reactToRay} des héritiers d'Element.
 
 \subsection[Source]{source.hpp}
 Cette classe est, par héritage, un élément ainsi qu'un rectangle. Il peut donc
 être modéliser graphiquement, entant que cette dernière, dans le plan et
-communique avec le niveau auquel il est lié. La source est le point d'émission
-du tout premier rayon du jeu selon un sens et une direction définis par l'angle
-d'émission, qui lui est propre, depuis un point donné.
+communique avec le niveau auquel il est lié. 
+
+La source est le point d'émission du tout premier rayon du jeu selon un sens 
+et une direction définis dans le fichier de niveau. Celui-ci ne peut être
+modifié directement en jeu. La source n'existe pas, c'est à dire qu'elle n'a
+aucun effet sur les rayons et les rayons n'ont aucun effet sur elle.
 
 \subsection[Mur]{wall.hpp}
 Cette classe est, par héritage, un élément ainsi qu'une droite. Il peut donc
@@ -477,7 +505,7 @@ rayon et lui défini un point qui le transforme en segment de droite.
 
 \subsection[Niveau]{level.hpp}
 \subsection[Createur de niveau]{levelfactory.hpp}
-Le créateur de niveau est un ``namespace'' de méthodes qui va s'occuper de lire
+Le créateur de niveau est un \texttt{namespace} de méthodes qui va s'occuper de lire
 les données des éléments dans un fichier. 
 Pour ce faire, il s'occupera de lire chaque type d'objet selon des règles
 différentes :
@@ -533,7 +561,6 @@ avec le modèle pour changer l'état de la source.
 \subsection[Le niveau]{levelview.hpp}
 \subsection[Le menu]{mainmenu.hpp}
 \subsection[La fenêtre principale]{mainwindow.hpp}
-
 \chapter[Structure du programme]{Structure générale du programme}
 
 
@@ -621,17 +648,18 @@ Les fichiers sources concernés se situe dans le dossier \path{test/} et peuvent
 
 Ensemble des bonus terminés :
 \begin{enumerate}
-	\item \textbf{les sons} sont disponibles lors 
+	\item \textbf{les sons}\footnote{voir Annexe~\ref{ref}, Sound bible}  sont disponibles lors 
 		\begin{itemize}
 			\item de l'activation de la source,
 			\item de la désactivation de la source,
 			\item de l'activation de la destination,
 			\item ou de l'activation d'une bombe.
 		\end{itemize}
-	\item \textbf{les couleurs} sont disponibles en fonction de la longueur d'onde du
-		rayon\textsuperscript{\ref{va}}
+	\item \textbf{les couleurs}\footnote{voir Annexe~\ref{ref}, Spectre de
+	couleurs}  sont disponibles en fonction de la longueur d'onde du
+		rayon
 	\item \textbf{l'icone du logiciel} disponible et a été désigné par
-		\textbf{Kriwin Paul} sur un support libre d'image d'étoile.
+		\href{mailto:39171@heb.be}{\textbf{Kriwin Paul}} sur un support libre d'image d'étoile.
 \end{enumerate}
 \chapter{Conclusion}
 
@@ -642,71 +670,85 @@ Ensemble des bonus terminés :
 \chapter{Références}\label{ref}
 
 \begin{itemize}
-	\item l'icone a été dessiné par \textbf{Kriwin Paul} sous \href{http://www.gimp.org/}{Gimp},
-	\item L'ensemble des sons disponibles dans \path{ressources/sounds}
+	\item[] l'icone a été dessiné par \href{mailto:39171@heb.be}{\textbf{Kriwin Paul}} sous
+		\texttt{Gimp}
+		\begin{itemize}
+			\item \url{http://www.gimp.org/}, \\
+		\end{itemize}
+	\item[] L'ensemble des sons disponibles dans \path{ressources/sounds}
 		proviennent de \texttt{Sound bible}  sous la license 
 		\texttt{Attribution 3.0 License} :
-		\begin{enumerate}
+		\begin{itemize}
 			\item \url{http://soundbible.com},
-			\item \url{https://creativecommons.org/licenses/by/3.0/},
-		\end{enumerate}
-	\item calcul de la longueur d'onde :
-		\begin{enumerate}
-			\item \url{http://www.physics.sfasu.edu/astro/color/spectra.html},
-		\end{enumerate}
-	\item \texttt{Catch Framework} 
-		\begin{enumerate}
-			\item \url{https://github.com/philsquared/Catch} consulté \today,
-		\end{enumerate}
-	\item \texttt{U.M.L. - Unified Modeling Language} 
-		\begin{enumerate}
-			\item \url{http://www.uml.org/} consulté \today,
-		\end{enumerate}
-	\item \texttt{Doxygen} 
-		\begin{enumerate}
-			\item \url{http://doxygen.org/} consulté \today,
-		\end{enumerate}
-	\item \texttt{Plan cartésien} 
-		\begin{enumerate}
-			\item \url{http://www.cslaval.qc.ca/sitsatlll/maths2003/cartesien.html} consulté \today,
-		\end{enumerate}
-	\item \texttt{Qt Creator} disponible dans sa dernière version sur 
-		\begin{enumerate}
-			\item \url{http://www.qt.io/developers/} consulté le \today,
-		\end{enumerate}
-	\item \texttt{Catalogue des normes ISO} 
-		\begin{enumerate}
+			\item \url{https://creativecommons.org/licenses/by/3.0/},\\
+		\end{itemize}
+	\item[] calcul de la longueur d'onde :
+		\begin{itemize}
+			\item \url{http://www.physics.sfasu.edu/astro/color/spectra.html},\\
+		\end{itemize}
+	\item[] \texttt{Catch Framework} 
+		\begin{itemize}
+			\item \url{https://github.com/philsquared/Catch} consulté \today,\\
+		\end{itemize}
+	\item[] \texttt{U.M.L. - Unified Modeling Language} 
+		\begin{itemize}
+			\item \url{http://www.uml.org/} consulté \today,\\
+		\end{itemize}
+	\item[] \texttt{Doxygen} 
+		\begin{itemize}
+			\item \url{http://doxygen.org/} consulté \today,\\
+		\end{itemize}
+	\item[] \texttt{Plan cartésien} 
+		\begin{itemize}
+			\item \url{http://www.cslaval.qc.ca/sitsatlll/maths2003/cartesien.html} consulté \today,\\
+		\end{itemize}
+	\item[] \texttt{Qt Creator} disponible dans sa dernière version sur 
+		\begin{itemize}
+			\item \url{http://www.qt.io/developers/} consulté le \today,\\
+		\end{itemize}
+	\item[] \texttt{Catalogue des normes ISO} 
+		\begin{itemize}
 			\item \url{http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=50372}
-				consulté le \today,
-		\end{enumerate}
-	\item \texttt{GNU GCC} 
-		\begin{enumerate}
-			\item \url{https://gcc.gnu.org/} consulté le \today,
-		\end{enumerate}
-	\item \texttt{GNU MakeFile} 
-		\begin{enumerate}
-			\item \url{https://www.gnu.org/software/make/manual/html_node/Makefiles.html} consulté le \today, 
-		\end{enumerate}
-	\item \texttt{HTML} 
-		\begin{enumerate}
-			\item \url{https://fr.wikipedia.org/wiki/Hypertext_Markup_Language} consulté le \today,
-		\end{enumerate}
-	\item \texttt{CSS} 
-		\begin{enumerate}
-			\item \url{https://fr.wikipedia.org/wiki/Feuilles_de_style_en_cascade} consulté le \today,
-		\end{enumerate}
-	\item \texttt{CamelCase} 
-		\begin{enumerate}
-			\item \url{https://fr.wikipedia.org/wiki/CamelCase} consulté le \today,
-		\end{enumerate}
-	\item \texttt{Ellipse}
-		\begin{enumerate}
-			\item \url{https://fr.wikipedia.org/wiki/Ellipse_\%28math\%C3\%A9matiques\%29} consulté le \today,
-		\end{enumerate}
-	\item \texttt{Droite}
-		\begin{enumerate}
-			\item \url{https://fr.wikipedia.org/wiki/Droite_\%28math\%C3\%A9matiques\%29} consulté le \today,
-		\end{enumerate}
+				consulté le \today,\\
+		\end{itemize}
+	\item[] \texttt{GNU GCC} 
+		\begin{itemize}
+			\item \url{https://gcc.gnu.org/} consulté le \today,\\
+		\end{itemize}
+	\item[] \texttt{GNU MakeFile} 
+		\begin{itemize}
+			\item \url{https://www.gnu.org/software/make/manual/html_node/Makefiles.html} consulté le \today, \\
+		\end{itemize}
+	\item[] \texttt{HTML} 
+		\begin{itemize}
+			\item \url{https://fr.wikipedia.org/wiki/Hypertext_Markup_Language} consulté le \today,\\
+		\end{itemize}
+	\item[] \texttt{CSS} 
+		\begin{itemize}
+			\item \url{https://fr.wikipedia.org/wiki/Feuilles_de_style_en_cascade} consulté le \today,\\
+		\end{itemize}
+	\item[] \texttt{CamelCase} 
+		\begin{itemize}
+			\item \url{https://fr.wikipedia.org/wiki/CamelCase} consulté le \today,\\
+		\end{itemize}
+	\item[] \texttt{Ellipse}
+		\begin{itemize}
+			\item \url{https://fr.wikipedia.org/wiki/Ellipse_\%28math\%C3\%A9matiques\%29} consulté le \today,\\
+		\end{itemize}
+	\item[] \texttt{Droite}
+		\begin{itemize}
+			\item \url{https://fr.wikipedia.org/wiki/Droite_\%28math\%C3\%A9matiques\%29} consulté le \today,\\
+		\end{itemize}
+	\item[] \texttt{Point}
+		\begin{itemize}
+			\item \url{https://fr.wikipedia.org/wiki/Point_\%28g\%C3\%A9om\%C3\%A9trie\%29}
+				consulté le \today\\
+		\end{itemize}
+	\item[] \texttt{Rectangle}
+		\begin{itemize}
+			\item \url{https://fr.wikipedia.org/wiki/Rectangle} consulté le
+				\today\\
+		\end{itemize}
 \end{itemize}
 
 \end{document}

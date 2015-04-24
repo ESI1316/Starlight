@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2015.4.17)  24 APR 2015 15:50
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2015.4.17)  24 APR 2015 16:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -857,7 +857,7 @@ LaTeX Info: Redefining \nameref on input line 19.
 \openout4 = `rapport.out'.
 
  (./title.tex
-<./logo.png, id=228, 90.3375pt x 170.6375pt>
+<./logo.png, id=220, 90.3375pt x 170.6375pt>
 File: ./logo.png Graphic file (type png)
  <use ./logo.png>
 Package pdftex.def Info: ./logo.png used on input line 4.
@@ -880,7 +880,7 @@ File: umsb.fd 2009/06/22 v3.00 AMS symbols B
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.36 ...Createur de niveau}{15}{subsection.3.2.11}
+l.39 ...Exception Starlight}{15}{subsection.3.3.1}
                                                    [1
 
 ])
@@ -930,20 +930,16 @@ Overfull \hbox (0.24236pt too wide) in paragraph at lines 140--145
 [6] [7]
 Chapitre 3.
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 213.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 231.
 [8
 
-] [9]
-
-LaTeX Warning: Reference `va' on page 10 undefined on input line 306.
-
-[10] [11] [12] [13] [14]
-Underfull \hbox (badness 10000) in paragraph at lines 495--501
+] [9] [10] [11] [12] [13] [14]
+Underfull \hbox (badness 10000) in paragraph at lines 523--529
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 495--501
+Underfull \hbox (badness 10000) in paragraph at lines 523--529
 
  []
 
@@ -954,54 +950,54 @@ Chapitre 4.
 ]
 Chapitre 5.
 (./reflexion.tex)
-Underfull \hbox (badness 10000) in paragraph at lines 48--549
+Underfull \hbox (badness 10000) in paragraph at lines 48--576
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 48--549
+Underfull \hbox (badness 10000) in paragraph at lines 48--576
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 48--549
+Underfull \hbox (badness 10000) in paragraph at lines 48--576
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 48--549
+Underfull \hbox (badness 10000) in paragraph at lines 48--576
 
  []
 
 [18
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 555--556
+Underfull \hbox (badness 10000) in paragraph at lines 582--583
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 559--561
+Underfull \hbox (badness 10000) in paragraph at lines 586--588
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 575--576
+Underfull \hbox (badness 10000) in paragraph at lines 602--603
 
  []
 
 [19] [20]
 Chapitre 6.
 
-LaTeX Warning: Reference `va' on page 21 undefined on input line 596.
+LaTeX Warning: Reference `va' on page 21 undefined on input line 623.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 611--614
+Underfull \hbox (badness 10000) in paragraph at lines 638--641
 
  []
 
 
-Overfull \hbox (11.91437pt too wide) in paragraph at lines 615--618
+Overfull \hbox (11.91437pt too wide) in paragraph at lines 642--645
 \T1/cmr/m/n/10.95 fec-tuer en dé-com-men-tant la dé-fi-ni-tion de \T1/cmr/bx/n/
 10.95 #RUN_TEST \T1/cmr/m/n/10.95 du fi-chier \T1/cmr/bx/n/10.95 main.hpp
  []
@@ -1014,9 +1010,6 @@ Chapitre 7.
 
 ]
 Chapitre 8.
-
-LaTeX Warning: Reference `va' on page 23 undefined on input line 632.
-
 [23
 
 ]
@@ -1026,83 +1019,167 @@ Chapitre 9.
 ]
 Annexe A.
 
-Overfull \hbox (1.0378pt too wide) in paragraph at lines 659--660
-[][]$\T1/cmtt/m/n/10.95 https : / / github . com / philsquared / Catch$[] \T1/c
-mr/m/n/10.95 consulté 24 avril 2015, 
+Underfull \hbox (badness 10000) in paragraph at lines 676--677
+
  []
 
 
-Overfull \hbox (3.21938pt too wide) in paragraph at lines 671--672
+Underfull \hbox (badness 10000) in paragraph at lines 683--684
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 687--688
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 691--692
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 695--696
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 699--700
+
+ []
+
+
+Overfull \hbox (12.68178pt too wide) in paragraph at lines 703--704
 [][]$\T1/cmtt/m/n/10.95 http : / / www . cslaval . qc . ca / sitsatlll / maths2
-003 / cartesien .
+003 / cartesien . html$[]
  []
 
 
-Overfull \hbox (31.51123pt too wide) in paragraph at lines 679--681
+Underfull \hbox (badness 10000) in paragraph at lines 703--704
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 707--708
+
+ []
+
+
+Overfull \hbox (18.34015pt too wide) in paragraph at lines 711--713
 [][]$\T1/cmtt/m/n/10.95 http : / / www . iso . org / iso / iso _ catalogue / ca
 talogue _ tc / catalogue _
  []
 
 
-Overfull \hbox (37.1696pt too wide) in paragraph at lines 688--689
-[][]$\T1/cmtt/m/n/10.95 https : / / www . gnu . org / software / make / manual 
-/ html _ node / Makefiles .
- []
+Underfull \hbox (badness 10000) in paragraph at lines 711--713
 
-
-Overfull \hbox (3.21938pt too wide) in paragraph at lines 692--693
-[][]$\T1/cmtt/m/n/10.95 https : / / fr . wikipedia . org / wiki / Hypertext _ M
-arkup _ Language$[]
  []
 
 [25
 
 ]
-Overfull \hbox (20.19449pt too wide) in paragraph at lines 696--697
+Underfull \hbox (badness 10000) in paragraph at lines 716--717
+
+ []
+
+
+Overfull \hbox (23.99852pt too wide) in paragraph at lines 720--721
+[][]$\T1/cmtt/m/n/10.95 https : / / www . gnu . org / software / make / manual 
+/ html _ node / Makefiles .
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 720--721
+
+ []
+
+
+Overfull \hbox (31.24614pt too wide) in paragraph at lines 724--725
+[][]$\T1/cmtt/m/n/10.95 https : / / fr . wikipedia . org / wiki / Hypertext _ M
+arkup _ Language$[] \T1/cmr/m/n/10.95 consulté
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 724--725
+
+ []
+
+
+Overfull \hbox (7.0234pt too wide) in paragraph at lines 728--729
 [][]$\T1/cmtt/m/n/10.95 https : / / fr . wikipedia . org / wiki / Feuilles _ de
  _ style _ en _ cascade$[]
  []
 
 
-Overfull \hbox (1.07664pt too wide) in paragraph at lines 700--701
-[][]$\T1/cmtt/m/n/10.95 https : / / fr . wikipedia . org / wiki / CamelCase$[] 
-\T1/cmr/m/n/10.95 consulté le 24 avril
+Underfull \hbox (badness 10000) in paragraph at lines 728--729
+
  []
 
 
-Overfull \hbox (31.51123pt too wide) in paragraph at lines 704--705
+Underfull \hbox (badness 10000) in paragraph at lines 732--733
+
+ []
+
+
+Overfull \hbox (18.34015pt too wide) in paragraph at lines 736--737
 [][]$\T1/cmtt/m/n/10.95 https : / / fr . wikipedia . org / wiki / Ellipse _ %28
 math % C3 % A9matiques %
  []
 
 
-Overfull \hbox (25.85286pt too wide) in paragraph at lines 708--709
+Underfull \hbox (badness 10000) in paragraph at lines 736--737
+
+ []
+
+
+Overfull \hbox (12.68178pt too wide) in paragraph at lines 740--741
 [][]$\T1/cmtt/m/n/10.95 https : / / fr . wikipedia . org / wiki / Droite _ %28m
 ath % C3 % A9matiques %
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 712.
+
+Underfull \hbox (badness 10000) in paragraph at lines 740--741
+
+ []
+
+
+Overfull \hbox (12.68178pt too wide) in paragraph at lines 744--746
+[][]$\T1/cmtt/m/n/10.95 https : / / fr . wikipedia . org / wiki / Point _ %28g 
+% C3 % A9om % C3 % A9trie %
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 744--746
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 749--751
+
+ []
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 754.
 [26]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 712.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 754.
  (./rapport.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 712.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 712.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 754.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 754.
 Package rerunfilecheck Info: File `rapport.out' has not changed.
-(rerunfilecheck)             Checksum: A353D7E9A595B9C295EF2D8EB0925D09;3318.
+(rerunfilecheck)             Checksum: DD408B833B676483C2926AE0883A7F39;3199.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 712.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 754.
  ) 
 Here is how much of TeX's memory you used:
- 18247 strings out of 495030
- 310965 string characters out of 3180761
+ 18236 strings out of 495030
+ 310890 string characters out of 3180761
  412272 words of memory out of 3000000
- 20885 multiletter control sequences out of 15000+200000
+ 20883 multiletter control sequences out of 15000+200000
  25916 words of font info for 63 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 49i,9n,60p,412b,1872s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 49i,9n,60p,412b,1849s stack positions out of 5000i,500n,10000p,200000b,50000s
  </home/g39631/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbi1095.600pk> </home/
 g39631/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx0800.600pk> </home/g39631/.te
 xmf-var/fonts/pk/ljfour/jknappen/ec/ectt0900.600pk> </home/g39631/.texmf-var/fo
@@ -1130,10 +1207,10 @@ fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr
 /share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on rapport.pdf (28 pages, 332691 bytes).
+Output written on rapport.pdf (28 pages, 336834 bytes).
 PDF statistics:
  1321 PDF objects out of 1440 (max. 8388607)
- 707 compressed objects within 8 object streams
- 206 named destinations out of 1000 (max. 500000)
- 458 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 703 compressed objects within 8 object streams
+ 197 named destinations out of 1000 (max. 500000)
+ 442 words of extra memory for PDF output out of 10000 (max. 10000000)
 
