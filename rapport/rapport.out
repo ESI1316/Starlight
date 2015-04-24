@@ -34,17 +34,22 @@
 \BOOKMARK [1][-]{section.3.3}{L'exception}{chapter.3}% 34
 \BOOKMARK [2][-]{subsection.3.3.1}{Exception Starlight}{section.3.3}% 35
 \BOOKMARK [1][-]{section.3.4}{Les objets visuels}{chapter.3}% 36
-\BOOKMARK [0][-]{chapter.4}{Structure du programme}{}% 37
-\BOOKMARK [0][-]{chapter.5}{Algorithmes}{}% 38
-\BOOKMARK [1][-]{section.5.1}{R\351flexion}{chapter.5}% 39
-\BOOKMARK [1][-]{section.5.2}{Intersection}{chapter.5}% 40
-\BOOKMARK [2][-]{subsection.5.2.1}{Deux droites}{section.5.2}% 41
-\BOOKMARK [2][-]{subsection.5.2.2}{Droite et rectangle}{section.5.2}% 42
-\BOOKMARK [2][-]{subsection.5.2.3}{Droite et ellipse}{section.5.2}% 43
-\BOOKMARK [0][-]{chapter.6}{Test effectu\351s}{}% 44
-\BOOKMARK [1][-]{section.6.1}{Framework de test}{chapter.6}% 45
-\BOOKMARK [1][-]{section.6.2}{Tests unitaire}{chapter.6}% 46
-\BOOKMARK [0][-]{chapter.7}{Bugs connus}{}% 47
-\BOOKMARK [0][-]{chapter.8}{Bonus}{}% 48
-\BOOKMARK [0][-]{chapter.9}{Conclusion}{}% 49
-\BOOKMARK [0][-]{appendix.A}{R\351f\351rences}{}% 50
+\BOOKMARK [2][-]{subsection.3.4.1}{La source}{section.3.4}% 37
+\BOOKMARK [2][-]{subsection.3.4.2}{Le miroir}{section.3.4}% 38
+\BOOKMARK [2][-]{subsection.3.4.3}{Le niveau}{section.3.4}% 39
+\BOOKMARK [2][-]{subsection.3.4.4}{Le menu}{section.3.4}% 40
+\BOOKMARK [2][-]{subsection.3.4.5}{La fen\352tre principale}{section.3.4}% 41
+\BOOKMARK [0][-]{chapter.4}{Structure du programme}{}% 42
+\BOOKMARK [0][-]{chapter.5}{Algorithmes}{}% 43
+\BOOKMARK [1][-]{section.5.1}{R\351flexion}{chapter.5}% 44
+\BOOKMARK [1][-]{section.5.2}{Intersection}{chapter.5}% 45
+\BOOKMARK [2][-]{subsection.5.2.1}{Deux droites}{section.5.2}% 46
+\BOOKMARK [2][-]{subsection.5.2.2}{Droite et rectangle}{section.5.2}% 47
+\BOOKMARK [2][-]{subsection.5.2.3}{Droite et ellipse}{section.5.2}% 48
+\BOOKMARK [0][-]{chapter.6}{Test effectu\351s}{}% 49
+\BOOKMARK [1][-]{section.6.1}{Framework de test}{chapter.6}% 50
+\BOOKMARK [1][-]{section.6.2}{Tests unitaire}{chapter.6}% 51
+\BOOKMARK [0][-]{chapter.7}{Bugs connus}{}% 52
+\BOOKMARK [0][-]{chapter.8}{Bonus}{}% 53
+\BOOKMARK [0][-]{chapter.9}{Conclusion}{}% 54
+\BOOKMARK [0][-]{appendix.A}{R\351f\351rences}{}% 55
