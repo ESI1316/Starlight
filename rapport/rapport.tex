@@ -443,7 +443,7 @@ points parcouru par un rayon laser et subit les interactions de son
 environnement comme dans la vie réelle :
 \begin{itemize}
 	\item il sera reflété par un miroir selon le principe de réflexion
-		$$\alpha_{i} = \alpha_{r}$$,
+		$\alpha_{i} = \alpha_{r}$,
 	\item il sera arrêté par les objets opaques (murs, source, destination).
 \end{itemize}
 
@@ -522,9 +522,10 @@ Les différentes classes pouvant lever cette exception sont :
 $\alpha$ l'angle du nouveau rayon \\
 $\beta$ l'angle du miroir \\
 $\gamma$ l'angle incident \\
-$\epsilon$ l'angle de la source \\ \\
-$\gamma = (\pi - \beta - (\pi - \epsilon))$ par la somme des angles intérieurs d'un
-triangle valant $\pi rad$, \\
+$\epsilon$ l'angle de la source \\ \\ \\ \\
+Par la somme des angles intérieurs d'un triangle valant $\pi rad$, \\
+$$\gamma = (\pi - \beta - (\pi - \epsilon))$$
+
 $\alpha = \beta - \gamma$ par les angles correspondants
 \section[Intersection]{Algorithme d'intersection}
 
@@ -570,7 +571,7 @@ y = m \cdot x + p \\
 \chapter{Test effectués}
 \section{Framework de test}
 Le Framework de test utilisé est
-``Catch''\footnote{\url{https://github.com/philsquared/Catch}}. Ses avantages
+``Catch''\footnote{Voir annexe~\ref{ref}}. Ses avantages
 sont :
 \begin{itemize}
 	\item un simple header est requis,
@@ -589,18 +590,46 @@ Chaque classe a été soumise à une batterie de tests unitaires. Pour se faire,
 chacune de ses méthodes s'est vu confirmé son bon fonctionnement au travers de
 cas dis ``limites'' et de cas dit ``standards''. \\
 
-Les fichiers sources concernés se situe dans le dossier
-\path{test/}
-et peuvent être effectués sous certaines condition\footnote{en effet, il faudra au
-	préalable rendre la méthode main de l'application inutilisable pour 
-permettre aux tests de s'appliquer exclusivement}.
+Les fichiers sources concernés se situe dans le dossier \path{test/} et peuvent
+éffectuer en décommentant la définition de \textbf{\#RUN\_TEST} du fichier
+\textbf{main.hpp} disponible à la racine du projet.
+\chapter{Bugs connus}
+\textbf{\textit{VOID}}
+\chapter{Bonus}
+
+Ensemble des bonus terminés :
+\begin{enumerate}
+	\item \textbf{les sons} sont disponibles lors 
+		\begin{itemize}
+			\item de l'activation de la source,
+			\item de la désactivation de la source,
+			\item de l'activation de la destination,
+			\item ou de l'activation d'une bombe.
+		\end{itemize}
+	\item \textbf{les couleurs} sont disponibles en fonction de la longueur d'onde du
+		rayon\footnote{voir Annexe~\ref{ref}}
+	\item \textbf{l'icone du logiciel} disponible et a été désigné par
+		\textbf{Kriwin Paul} sur un support libre d'image d'étoile.
+\end{enumerate}
 \chapter{Conclusion}
 
 
 \appendix
 
 
-\chapter{Références}
+\chapter{Références}\label{ref}
 
+\begin{itemize}
+	\item L'ensemble des sons disponibles dans \path{ressources/sounds}
+		proviennent de \href{http://soundbible.com}{Sound
+		bible} sous la license \href{http://soundbible.com}{Attribution 3.0
+		License},
+	\item l'icone a été dessiné par \textbf{Kriwin Paul} sous
+		\href{http://www.gimp.org/}{Gimp}\footnote{Version. 2.8},
+	\item calcul de la longueur d'onde :
+		\url{http://www.physics.sfasu.edu/astro/color/spectra.html},
+	\item Catch Framework \url{https://github.com/philsquared/Catch} consulté
+		\today
+\end{itemize}
 
 \end{document}
