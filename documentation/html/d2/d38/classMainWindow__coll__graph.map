@@ -1,0 +1,10 @@
+<map id="MainWindow" name="MainWindow">
+<area shape="rect" id="node4" href="$d9/d0a/classMainMenu.html" title="Cette classe représente le menu principal du jeu permettant de. " alt="" coords="5,549,171,704"/>
+<area shape="rect" id="node8" href="$d5/da8/classLevelView.html" title="Cette classe représente le niveau qui va être joué lors d&#39;une partie. " alt="" coords="195,506,365,747"/>
+<area shape="rect" id="node12" href="$d2/d9d/classLevel.html" title="Modélise une carte telle qu&#39;utilisée dans le jeu. " alt="" coords="511,6,668,421"/>
+<area shape="rect" id="node16" href="$d5/d3c/classElement.html" title="Un élément est un composant du jeu se devant de communiquer son état au niveau le gérant..." alt="" coords="608,541,731,713"/>
+<area shape="rect" id="node14" href="$de/d97/classDest.html" title="Cette classe modélise la destination utilisée dans le jeu. " alt="" coords="565,876,696,1100"/>
+<area shape="rect" id="node23" href="$d6/d2e/classSource.html" title="Modélise la source lumineuse utilisée dans le jeu. " alt="" coords="720,833,864,1143"/>
+<area shape="rect" id="node19" href="$de/d00/classRectangle.html" title="Le rectangle est objet géométrique, du plan, à quatre coté parallèles deux à deux. " alt="" coords="856,489,1037,765"/>
+<area shape="rect" id="node21" href="$dc/d4f/classPoint.html" title="Cette classe modélise un point de coordonnés dans le plan &#160;sous deux formes : " alt="" coords="856,58,1037,369"/>
+</map>

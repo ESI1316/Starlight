@@ -1,0 +1,202 @@
+\hypertarget{classElement}{}\section{Référence de la classe Element}
+\label{classElement}\index{Element@{Element}}
+
+
+Un élément est un composant du jeu se devant de communiquer son état au niveau le gérant.  
+
+
+
+
+{\ttfamily \#include $<$element.\+hpp$>$}
+
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classElement_aa87116bb9422d64169b2ebf03831df9b}{react\+To\+Ray} (\hyperlink{classRay}{Ray})=0
+\begin{DoxyCompactList}\small\item\em Réaction à l\textquotesingle{}exposition d\textquotesingle{}un rayon. \end{DoxyCompactList}\item 
+virtual \hyperlink{classPoint}{Point} $\ast$ \hyperlink{classElement_a1b88519623a6250155f7182706665448}{include\+Ray} (const \hyperlink{classRay}{Ray} \&) const  =0
+\begin{DoxyCompactList}\small\item\em Renseigne si l\textquotesingle{}élément est dans la trajectoire du rayon. \end{DoxyCompactList}\item 
+void \hyperlink{classElement_a52d67b5af9d0e96092b7cd4c3058d17b}{set\+Level} (\hyperlink{classLevel}{Level} $\ast$)
+\begin{DoxyCompactList}\small\item\em Permet de modifier le level auquel appartient l\textquotesingle{}élément. \end{DoxyCompactList}\item 
+\hyperlink{classLevel}{Level} $\ast$ \hyperlink{classElement_aea3bbf40d27afdf61833f59775e488f3}{get\+Level} ()
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}obtenir un pointeur sur le niveau auquel appartient l\textquotesingle{}élément. \end{DoxyCompactList}\item 
+bool \hyperlink{classElement_aa8ab9ae8d680e81c964f0eaee2dfb44d}{operator==} (const \hyperlink{classElement}{Element} \&) const 
+\begin{DoxyCompactList}\small\item\em Compare deux éléments pour savoir si ils pointent vers le même niveau. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Fonctions membres protégées}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classElement_a084081001b0f14ae12d612c866df861c}{Element} ()=default
+\begin{DoxyCompactList}\small\item\em Constructeur par défaut, en visibilité protected permettant d\textquotesingle{}éviter une tentative d\textquotesingle{}instanciation de cette classe abstraite. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Attributs privés}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classLevel}{Level} $\ast$ \hyperlink{classElement_a28c0ab6e211fb16fc2957024ca2761cb}{level} \{nullptr\}
+\begin{DoxyCompactList}\small\item\em Le niveau lié à un élément. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Un élément est un composant du jeu se devant de communiquer son état au niveau le gérant. 
+
+Cette pratique permet au niveau d\textquotesingle{}écouter les actions à éffectuer dicter par l\textquotesingle{}élément. 
+
+Définition à la ligne 13 du fichier element.\+hpp.
+
+
+
+Graphe d\textquotesingle{}héritage de Element\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/dd6/classElement__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Graphe de collaboration de Element\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d4/dd1/classElement__coll__graph}
+\end{center}
+\end{figure}
+
+
+\subsection{Documentation des constructeurs et destructeur}
+\hypertarget{classElement_a084081001b0f14ae12d612c866df861c}{}\index{Element@{Element}!Element@{Element}}
+\index{Element@{Element}!Element@{Element}}
+\subsubsection[{Element()=default}]{\setlength{\rightskip}{0pt plus 5cm}Element\+::\+Element (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [default]}}\label{classElement_a084081001b0f14ae12d612c866df861c}
+
+
+Constructeur par défaut, en visibilité protected permettant d\textquotesingle{}éviter une tentative d\textquotesingle{}instanciation de cette classe abstraite. 
+
+
+
+\subsection{Documentation des fonctions membres}
+\hypertarget{classElement_aea3bbf40d27afdf61833f59775e488f3}{}\index{Element@{Element}!get\+Level@{get\+Level}}
+\index{get\+Level@{get\+Level}!Element@{Element}}
+\subsubsection[{get\+Level()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Level} $\ast$ Element\+::get\+Level (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classElement_aea3bbf40d27afdf61833f59775e488f3}
+
+
+Permet d\textquotesingle{}obtenir un pointeur sur le niveau auquel appartient l\textquotesingle{}élément. 
+
+\begin{DoxyReturn}{Renvoie}
+un pointeur vers le niveau auquel appartient l\textquotesingle{}élément. 
+\end{DoxyReturn}
+
+
+Définition à la ligne 71 du fichier element.\+hpp.
+
+
+
+Références level.
+
+
+\begin{DoxyCode}
+72 \{
+73     \textcolor{keywordflow}{return} this->\hyperlink{classElement_a28c0ab6e211fb16fc2957024ca2761cb}{level};
+74 \}
+\end{DoxyCode}
+\hypertarget{classElement_a1b88519623a6250155f7182706665448}{}\index{Element@{Element}!include\+Ray@{include\+Ray}}
+\index{include\+Ray@{include\+Ray}!Element@{Element}}
+\subsubsection[{include\+Ray(const Ray \&) const  =0}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Point}$\ast$ Element\+::include\+Ray (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ray} \&}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classElement_a1b88519623a6250155f7182706665448}
+
+
+Renseigne si l\textquotesingle{}élément est dans la trajectoire du rayon. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em ray} & Le rayon.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+{\ttfamily true} Si l\textquotesingle{}élément se trouve dans la trajectoire du rayon entré en paramètre. 
+\end{DoxyReturn}
+
+
+Implémenté dans \hyperlink{classMirror_af9b8d54ae559b388cb04df6f8d391f47}{Mirror}, \hyperlink{classSource_add4e9c5a8829777d5c522622ad31f431}{Source}, \hyperlink{classLens_a458286d40d04792b7a6db47bd9f775fc}{Lens}, \hyperlink{classCrystal_a97212bbcd6c34f243ac8f18b6641e639}{Crystal}, \hyperlink{classDest_aa0ec59799948c6a949907db4a12e2f11}{Dest}, \hyperlink{classNuke_a36dfe7d835bc760a31525898f44ff675}{Nuke}, et \hyperlink{classWall_a11178e8dc8eabc9a56b9bf5525dc4f29}{Wall}.
+
+\hypertarget{classElement_aa8ab9ae8d680e81c964f0eaee2dfb44d}{}\index{Element@{Element}!operator==@{operator==}}
+\index{operator==@{operator==}!Element@{Element}}
+\subsubsection[{operator==(const Element \&) const }]{\setlength{\rightskip}{0pt plus 5cm}bool Element\+::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Element} \&}]{}
+\end{DoxyParamCaption}
+) const}\label{classElement_aa8ab9ae8d680e81c964f0eaee2dfb44d}
+
+
+Compare deux éléments pour savoir si ils pointent vers le même niveau. 
+
+\begin{DoxyReturn}{Renvoie}
+{\ttfamily true} Si les deux éléments sont liés au même niveau. 
+\end{DoxyReturn}
+\hypertarget{classElement_aa87116bb9422d64169b2ebf03831df9b}{}\index{Element@{Element}!react\+To\+Ray@{react\+To\+Ray}}
+\index{react\+To\+Ray@{react\+To\+Ray}!Element@{Element}}
+\subsubsection[{react\+To\+Ray(\+Ray)=0}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Element\+::react\+To\+Ray (
+\begin{DoxyParamCaption}
+\item[{{\bf Ray}}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classElement_aa87116bb9422d64169b2ebf03831df9b}
+
+
+Réaction à l\textquotesingle{}exposition d\textquotesingle{}un rayon. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em ray} & Le rayon. \\
+\hline
+\end{DoxyParams}
+
+
+Implémenté dans \hyperlink{classMirror_a149fb6af1dcdcffd685b21019f189c72}{Mirror}, \hyperlink{classSource_a425f400307f756ca8e39e5cfddb3d528}{Source}, \hyperlink{classLens_a3914a622c70a3c02f5f53fd33fa3340d}{Lens}, \hyperlink{classCrystal_a4f9351f0556cf2e9334d7976bff48830}{Crystal}, \hyperlink{classDest_ad4f6b777efe8d4cd277e635c2c2ee3df}{Dest}, \hyperlink{classNuke_a61433c8cba0b6e73c8c490f26bcbbe6b}{Nuke}, et \hyperlink{classWall_a4167a9d310ff17cf02d232d4f384b77d}{Wall}.
+
+\hypertarget{classElement_a52d67b5af9d0e96092b7cd4c3058d17b}{}\index{Element@{Element}!set\+Level@{set\+Level}}
+\index{set\+Level@{set\+Level}!Element@{Element}}
+\subsubsection[{set\+Level(\+Level $\ast$)}]{\setlength{\rightskip}{0pt plus 5cm}void Element\+::set\+Level (
+\begin{DoxyParamCaption}
+\item[{{\bf Level} $\ast$}]{}
+\end{DoxyParamCaption}
+)}\label{classElement_a52d67b5af9d0e96092b7cd4c3058d17b}
+
+
+Permet de modifier le level auquel appartient l\textquotesingle{}élément. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em nouveau} & level auquel appartient l\textquotesingle{}élément. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentation des données membres}
+\hypertarget{classElement_a28c0ab6e211fb16fc2957024ca2761cb}{}\index{Element@{Element}!level@{level}}
+\index{level@{level}!Element@{Element}}
+\subsubsection[{level}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Level}$\ast$ Element\+::level \{nullptr\}\hspace{0.3cm}{\ttfamily [private]}}\label{classElement_a28c0ab6e211fb16fc2957024ca2761cb}
+
+
+Le niveau lié à un élément. 
+
+
+
+Définition à la ligne 20 du fichier element.\+hpp.
+
+
+
+Référencé par get\+Level().
+
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+model/elements/\hyperlink{element_8hpp}{element.\+hpp}\end{DoxyCompactItemize}

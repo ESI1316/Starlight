@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.9.1"/>
+<title>Starlight: Page principale</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="customdoxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Starlight
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.9.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li class="current"><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="namespaces.html"><span>Espaces&#160;de&#160;nommage</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Starlight Documentation</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><div class="image">
+<img src="../../ressources/other/icon.png"  alt="Starlight"/>
+</div>
+ <h2>Introduction</h2>
+<p><b>Starlight</b> est un petit jeu en deux dimensions se jouant sur une carte rectangulaire, comportant une source de lumière, émettant un rayon rectiligne.</p>
+<p>Le but du jeu est d'atteindre une cible avec ledit rayon, en évitant les obstacles via notamment des miroirs réfléchissant la lumière.;</p>
+<h2>Rules</h2>
+<p>Starlight est un puzzle à deux dimensions se jouant sur une carte rectangulaire. Le but du jeu est de dévier un rayon lumineux d'une source vers une cible en évitant certains obstacles. Plus particulièrement, on trouve les éléments suivants sur une carte :</p><ul>
+<li>une unique source : cet élément émet un rayon lumineux d'une longueur d'onde donnée sous un certain angle,</li>
+<li>une unique cible (ou destination ) : cet élément doit être éclairé par un rayon lumineux pour remporter la partie,</li>
+<li>un ensemble de miroirs : un miroir est un objet réfléchissant la lumière d'un seul côté suivant le schéma naturel de la réflexion de la lumière, Plus particulièrement, un rayon incident à un miroir sous un angle  i sera réfléchi sous le même angle  r,</li>
+<li>un ensemble de murs : les murs ne réfléchissent pas la lumière. Tout rayon incident à un mur ne se propage pas, et " s'arrête " donc là où il y est incident,</li>
+<li>un ensemble de lentilles. Les lentilles sont des objets transparents qui ne laissent passer un rayon lumineux que dans un certain intervalle de longueur d'onde [m ,n]. Si un rayon lumineux possède une longueur d'onde ν telle que m &lt;= ν &lt;= n, il traverse la lentille sans subir aucune modification. Sinon, la lentille stoppe le rayon (elle se comporte comme un mur),</li>
+<li>un ensemble de cristaux : un cristal est un élément transparent qui modifie la longueur d'onde d'un rayon, en l'augmentant ou la dimi- nuant. Tout rayon qui traverse un cristal le traverse donc sans subir de modification de trajectoire, mais voit sa longueur d'onde modifiée,</li>
+<li>un ensemble de bombes. Les bombes sont des objets qui, si éclairés, explosent et font automatiquement perdre la partie au joueur,</li>
+<li>un ensemble de rayons initialement émis par la source du jeu. Ceux-ci sont rectilignes et se réfléchissent sur les miroirs. Un rayon est donc un segment de droite. Un rayon possède également une autre caractéristique : sa longueur d'onde. La longueur d'onde d'un rayon permet de déterminer, comme mentionné ci-dessus, si oui ou non un rayon traverse une lentille. Elle est modifiée par un cristal. </li>
+</ul>
+</div></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Vendredi 24 Avril 2015 14:41:55 pour Starlight par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.9.1
+</small></address>
+</body>
+</html>

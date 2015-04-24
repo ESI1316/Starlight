@@ -1,0 +1,361 @@
+.TH "Ellipse" 3 "Vendredi 24 Avril 2015" "Starlight" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ellipse \- Représente un cercle sous la forme; $ circle \equiv x^2/xRadius + y^2/yRadius = 1 $\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ellipse\&.hpp>\fP
+.SS "Fonctions membres publiques"
+
+.in +1c
+.ti -1c
+.RI "\fBEllipse\fP (double, double, const \fBPoint\fP &)"
+.br
+.RI "\fIPermet de construire une nouvelle ellipse initialisée\&. \fP"
+.ti -1c
+.RI "std::vector< \fBPoint\fP > \fBgetIntersectionPoints\fP (const \fBLine\fP &) const "
+.br
+.RI "\fIPermet d'obtenir les points d'intersection entre le cercle et la droite entrée en paramètre\&. \fP"
+.ti -1c
+.RI "double \fBgetXRadius\fP () const "
+.br
+.RI "\fIPermet d'obtenir la valeur du ratio de largeur de l'ellipse\&. \fP"
+.ti -1c
+.RI "double \fBgetYRadius\fP () const "
+.br
+.RI "\fIPermet d'obtenir la valeur du ratio de hauteur de l'ellipse\&. \fP"
+.ti -1c
+.RI "\fBPoint\fP \fBgetCenter\fP () const "
+.br
+.RI "\fIPermet d'obtenir le centre de l'ellipse\&. \fP"
+.ti -1c
+.RI "\fBPoint\fP \fBgetUpLeftCorner\fP () const "
+.br
+.RI "\fIPermet d'obtenir le coin supérieur gauche du rectangle entourant l'ellipse\&. \fP"
+.ti -1c
+.RI "double \fBgetWidth\fP () const "
+.br
+.RI "\fIPermet d'obtenir la largeur de l'ellipse\&. \fP"
+.ti -1c
+.RI "double \fBgetHeight\fP () const "
+.br
+.RI "\fIPermet d'obtenir la hauteur de l'ellipse\&. \fP"
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBEllipse\fP &) const "
+.br
+.RI "\fIPermet de savoir si deux \fBEllipse\fP sont les mêmes\&. \fP"
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBEllipse\fP &) const "
+.br
+.RI "\fIPermet de savoir si deux \fBEllipse\fP sont différentes\&. \fP"
+.in -1c
+.SS "Fonctions membres protégées"
+
+.in +1c
+.ti -1c
+.RI "bool \fBgetYOfIntersPoints\fP (const double, double *, double *) const "
+.br
+.RI "\fIPermet d'obtenir les valeurs des ordonnées des points d'intersection entre l'ellipse et une droite verticale dont l'abscisse est entrée en paramètre\&. \fP"
+.ti -1c
+.RI "bool \fBgetXOfIntersPoints\fP (const double, const double, double *, double *) const "
+.br
+.RI "\fIPermet d'obtenir les abscisses des points d'intersection entre une droite non-verticale dont la pente et le terme indépendant de l'équation sont entrés en paramètre\&. \fP"
+.in -1c
+.SS "Attributs protégés"
+
+.in +1c
+.ti -1c
+.RI "\fBPoint\fP \fBcenter\fP"
+.br
+.RI "\fILa position du centre de l'ellipse\&. \fP"
+.ti -1c
+.RI "double \fBheight\fP"
+.br
+.RI "\fILa hauteur du rectangle circonscrit à l'ellipse\&. \fP"
+.ti -1c
+.RI "double \fBwidth\fP"
+.br
+.RI "\fILa largeur du rectangle circonscrit à l'ellipse\&. \fP"
+.ti -1c
+.RI "double \fBxRadius\fP"
+.br
+.RI "\fILa valeur de la demi hauteur au carré\&. \fP"
+.ti -1c
+.RI "double \fByRadius\fP"
+.br
+.RI "\fILa valeur de la demi largeur au carré\&. \fP"
+.in -1c
+.SH "Description détaillée"
+.PP 
+Représente un cercle sous la forme; $ circle \equiv x^2/xRadius + y^2/yRadius = 1 $\&. 
+.PP
+Définition à la ligne 15 du fichier ellipse\&.hpp\&.
+.PP
+Dérivée par \fBCrystal\fP, \fBLens\fP, et \fBNuke\fP\&.
+.SH "Documentation des constructeurs et destructeur"
+.PP 
+.SS "Ellipse::Ellipse (double, double, const \fBPoint\fP &)"
+
+.PP
+Permet de construire une nouvelle ellipse initialisée\&. 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIxRadius\fP Valeur du ratio de largeur de l'ellipse\&. 
+.br
+\fIyRadius\fP Valeur du ratio de hauteur de l'ellipse\&. 
+.br
+\fIcenter\fP \fBPoint\fP du centre de l'ellipse\&. 
+.RE
+.PP
+
+.SH "Documentation des fonctions membres"
+.PP 
+.SS "\fBPoint\fP Ellipse::getCenter () const\fC [inline]\fP"
+
+.PP
+Permet d'obtenir le centre de l'ellipse\&. 
+.PP
+\fBRenvoie:\fP
+.RS 4
+Le centre de l'ellipse\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne 192 du fichier ellipse\&.hpp\&.
+.PP
+Références center\&.
+.PP
+.nf
+193 {
+194     return this->center;
+195 }
+.fi
+.SS "double Ellipse::getHeight () const\fC [inline]\fP"
+
+.PP
+Permet d'obtenir la hauteur de l'ellipse\&. 
+.PP
+\fBRenvoie:\fP
+.RS 4
+La hauteur de l'ellipse\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne 177 du fichier ellipse\&.hpp\&.
+.PP
+Références height\&.
+.PP
+Référencé par Nuke::getRadius()\&.
+.PP
+.nf
+178 {
+179     return this->height;
+180 }
+.fi
+.SS "std::vector<\fBPoint\fP> Ellipse::getIntersectionPoints (const \fBLine\fP &) const"
+
+.PP
+Permet d'obtenir les points d'intersection entre le cercle et la droite entrée en paramètre\&. 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIline\fP droite dont on désire obtenir les points d'intersection avec l'éllipse\&.
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+Un vecteur contenant les points d'intersections entre le cercle et la droite entrée en paramètre\&. 
+.RE
+.PP
+
+.SS "\fBPoint\fP Ellipse::getUpLeftCorner () const"
+
+.PP
+Permet d'obtenir le coin supérieur gauche du rectangle entourant l'ellipse\&. 
+.PP
+\fBRenvoie:\fP
+.RS 4
+le coin supérieur gauche du rectangle entourant l'ellipse\&. 
+.RE
+.PP
+
+.SS "double Ellipse::getWidth () const\fC [inline]\fP"
+
+.PP
+Permet d'obtenir la largeur de l'ellipse\&. 
+.PP
+\fBRenvoie:\fP
+.RS 4
+La largeur de l'ellipse\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne 172 du fichier ellipse\&.hpp\&.
+.PP
+Références width\&.
+.PP
+.nf
+173 {
+174     return this->width;
+175 }
+.fi
+.SS "bool Ellipse::getXOfIntersPoints (const double, const double, double *, double *) const\fC [protected]\fP"
+
+.PP
+Permet d'obtenir les abscisses des points d'intersection entre une droite non-verticale dont la pente et le terme indépendant de l'équation sont entrés en paramètre\&. 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIslope\fP Pente de la droite dont on désire les abscisses des points d'intersection avec l'ellipse\&. 
+.br
+\fIlineIT\fP Terme indépendant de l'équation de la droite dont on désire les abscisses des points d'intersection avec l'ellipse\&. 
+.br
+\fIx1\fP Conteneur de la valeur de l'abscisse du premier point d'intersection (non utilisé s'il n'existe pas de point d'intersection)\&. 
+.br
+\fIx2\fP Conteneur de la valeur de l'abscisse du deuxième point d'intersection (non utilisé s'il n'existe pas de point d'intersection)\&.
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+\fCtrue\fP Si il existe des points d'intersection entre la droite et l'ellipse\&. 
+.RE
+.PP
+
+.SS "double Ellipse::getXRadius () const\fC [inline]\fP"
+
+.PP
+Permet d'obtenir la valeur du ratio de largeur de l'ellipse\&. 
+.PP
+\fBRenvoie:\fP
+.RS 4
+La valeur du ratio de largeur de l'ellipse\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne 182 du fichier ellipse\&.hpp\&.
+.PP
+Références xRadius\&.
+.PP
+.nf
+183 {
+184     return this->xRadius;
+185 }
+.fi
+.SS "bool Ellipse::getYOfIntersPoints (const double, double *, double *) const\fC [protected]\fP"
+
+.PP
+Permet d'obtenir les valeurs des ordonnées des points d'intersection entre l'ellipse et une droite verticale dont l'abscisse est entrée en paramètre\&. 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIxValue\fP Abscisse de la droite verticale dont on désire les ordonnées des points d'intersection avec l'ellipse\&. 
+.br
+\fIy1\fP Conteneur de la valeur de l'ordonnée du premier point d'intersection (non utilisé s'il n'existe pas de point d'intersection)\&. 
+.br
+\fIy2\fP Conteneur de la valeur de l'ordonne du deuxième point d'intersection (non utilisé s'il n'existe pas de point d'intersection)\&.
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+\fCtrue\fP Si il existe des points d'intersection entre la droite et l'éllipse\&. 
+.RE
+.PP
+
+.SS "double Ellipse::getYRadius () const\fC [inline]\fP"
+
+.PP
+Permet d'obtenir la valeur du ratio de hauteur de l'ellipse\&. 
+.PP
+\fBRenvoie:\fP
+.RS 4
+La valeur du ratio de hauteur de l'ellipse\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne 187 du fichier ellipse\&.hpp\&.
+.PP
+Références yRadius\&.
+.PP
+.nf
+188 {
+189     return this->yRadius;
+190 }
+.fi
+.SS "bool Ellipse::operator!= (const \fBEllipse\fP &) const"
+
+.PP
+Permet de savoir si deux \fBEllipse\fP sont différentes\&. 
+.PP
+\fBRenvoie:\fP
+.RS 4
+\fCtrue\fP Si deux Ellipses sont différentes\&. 
+.RE
+.PP
+
+.SS "bool Ellipse::operator== (const \fBEllipse\fP &) const"
+
+.PP
+Permet de savoir si deux \fBEllipse\fP sont les mêmes\&. 
+.PP
+\fBRenvoie:\fP
+.RS 4
+\fCtrue\fP Si deux Ellipses sont identiques\&. 
+.RE
+.PP
+
+.SH "Documentation des données membres"
+.PP 
+.SS "\fBPoint\fP Ellipse::center\fC [protected]\fP"
+
+.PP
+La position du centre de l'ellipse\&. 
+.PP
+Définition à la ligne 23 du fichier ellipse\&.hpp\&.
+.PP
+Référencé par getCenter(), et Nuke::getLocation()\&.
+.SS "double Ellipse::height\fC [protected]\fP"
+
+.PP
+La hauteur du rectangle circonscrit à l'ellipse\&. 
+.PP
+Définition à la ligne 28 du fichier ellipse\&.hpp\&.
+.PP
+Référencé par getHeight()\&.
+.SS "double Ellipse::width\fC [protected]\fP"
+
+.PP
+La largeur du rectangle circonscrit à l'ellipse\&. 
+.PP
+Définition à la ligne 33 du fichier ellipse\&.hpp\&.
+.PP
+Référencé par getWidth()\&.
+.SS "double Ellipse::xRadius\fC [protected]\fP"
+
+.PP
+La valeur de la demi hauteur au carré\&. 
+.PP
+Définition à la ligne 38 du fichier ellipse\&.hpp\&.
+.PP
+Référencé par getXRadius()\&.
+.SS "double Ellipse::yRadius\fC [protected]\fP"
+
+.PP
+La valeur de la demi largeur au carré\&. 
+.PP
+Définition à la ligne 43 du fichier ellipse\&.hpp\&.
+.PP
+Référencé par getYRadius()\&.
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Starlight à partir du code source\&.

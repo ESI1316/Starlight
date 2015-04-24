@@ -1,0 +1,313 @@
+\hypertarget{classLens}{}\section{Référence de la classe Lens}
+\label{classLens}\index{Lens@{Lens}}
+
+
+Cette classe modélise les lentilles utilisées dans le jeu.  
+
+
+
+
+{\ttfamily \#include $<$lens.\+hpp$>$}
+
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classLens_a6dbd2d608178b9a15814f18d6dfb71d4}{Lens} (const \hyperlink{classPoint}{Point} \&, const int, const int, const int, const int)
+\begin{DoxyCompactList}\small\item\em Créer une nouvelle lentille pouvant être un obstacle à un rayon \+: si le rayon souhaite passer au travers, il devra être d\textquotesingle{}une longueur d\textquotesingle{}onde comprise dans l\textquotesingle{}intervalle souhaité par cette lentille. \end{DoxyCompactList}\item 
+const \hyperlink{classPoint}{Point} \& \hyperlink{classLens_a1eba530b7fd697dc651b59d6cbb077f1}{get\+Position} () const 
+\begin{DoxyCompactList}\small\item\em Retourne la position du coin supérieur gauche du rectangle circonscrit à la lentille. \end{DoxyCompactList}\item 
+int \hyperlink{classLens_a14b3ba46e7f45c4850bc02b9f134cdbf}{get\+Min\+Wave\+Length} () const 
+\begin{DoxyCompactList}\small\item\em Retourne la longueur d\textquotesingle{}onde minimale des rayons autorisés à franchir la lentille. \end{DoxyCompactList}\item 
+int \hyperlink{classLens_ab042680cd439e4841b5c4358d4fad7a3}{get\+Max\+Wave\+Length} () const 
+\begin{DoxyCompactList}\small\item\em Retourne la longueur d\textquotesingle{}onde maximale des rayons autorisés à franchir la lentille. \end{DoxyCompactList}\item 
+void \hyperlink{classLens_a3914a622c70a3c02f5f53fd33fa3340d}{react\+To\+Ray} (\hyperlink{classRay}{Ray})
+\begin{DoxyCompactList}\small\item\em Cette méthode est lancé lorsque la lentille courante est exposée à un rayon. \end{DoxyCompactList}\item 
+\hyperlink{classPoint}{Point} $\ast$ \hyperlink{classLens_a458286d40d04792b7a6db47bd9f775fc}{include\+Ray} (const \hyperlink{classRay}{Ray} \&) const 
+\begin{DoxyCompactList}\small\item\em Renseigne si la lentille est dans la trajectoire du rayon. \end{DoxyCompactList}\item 
+bool \hyperlink{classLens_ad0f3fdc4b2b4945726994a4503f5252e}{operator==} (const \hyperlink{classLens}{Lens} \&) const 
+\begin{DoxyCompactList}\small\item\em Permet de savoir si deux lentilles sont les mêmes. \end{DoxyCompactList}\item 
+bool \hyperlink{classLens_a78a86a6d5ec110881e9b876e3b13cea9}{operator!=} (const \hyperlink{classLens}{Lens} \&) const 
+\begin{DoxyCompactList}\small\item\em Permet de savoir si deux lentilles sont différentes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Attributs privés}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{classPoint}{Point} \hyperlink{classLens_af123a98958acdfca4cef5629ebfbbf4b}{up\+Left\+Corner}
+\begin{DoxyCompactList}\small\item\em up\+Left\+Corner \end{DoxyCompactList}\item 
+const int \hyperlink{classLens_a14bcb2705ae2c2b120a642f0d44c75e2}{wl\+Min}
+\begin{DoxyCompactList}\small\item\em wl\+Min \end{DoxyCompactList}\item 
+const int \hyperlink{classLens_ab9f83510445552c07c9b4b760ad92dd6}{wl\+Max}
+\begin{DoxyCompactList}\small\item\em wl\+Max \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Membres hérités additionnels}
+
+
+\subsection{Description détaillée}
+Cette classe modélise les lentilles utilisées dans le jeu. 
+
+Une lentille est un objet rectangulaire qui ne laisse passer les rayons lumineux que dans un certain intervalle de longueur d\textquotesingle{}onde. Si un rayon lumineux se trouve dans l\textquotesingle{}intervalle de longueur d\textquotesingle{}onde autorisé, il traverse la lentille sans subir aucune modification. Sinon, la lentille se comporte comme un mur. 
+
+Définition à la ligne 22 du fichier lens.\+hpp.
+
+
+
+Graphe d\textquotesingle{}héritage de Lens\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d4/def/classLens__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Graphe de collaboration de Lens\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d8/df0/classLens__coll__graph}
+\end{center}
+\end{figure}
+
+
+\subsection{Documentation des constructeurs et destructeur}
+\hypertarget{classLens_a6dbd2d608178b9a15814f18d6dfb71d4}{}\index{Lens@{Lens}!Lens@{Lens}}
+\index{Lens@{Lens}!Lens@{Lens}}
+\subsubsection[{Lens(const Point \&, const int, const int, const int, const int)}]{\setlength{\rightskip}{0pt plus 5cm}Lens\+::\+Lens (
+\begin{DoxyParamCaption}
+\item[{const {\bf Point} \&}]{, }
+\item[{const int}]{, }
+\item[{const int}]{, }
+\item[{const int}]{, }
+\item[{const int}]{}
+\end{DoxyParamCaption}
+)}\label{classLens_a6dbd2d608178b9a15814f18d6dfb71d4}
+
+
+Créer une nouvelle lentille pouvant être un obstacle à un rayon \+: si le rayon souhaite passer au travers, il devra être d\textquotesingle{}une longueur d\textquotesingle{}onde comprise dans l\textquotesingle{}intervalle souhaité par cette lentille. 
+
+Dans le cas contraire, le rayon ne passera pas.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em position} & La position du coin supérieur gauche du rectangle circonscrit à l\textquotesingle{}ellipse modélisant la lentille. \\
+\hline
+{\em width} & La largeur du rectangle circonscrit à la lentille. \\
+\hline
+{\em height} & la hauteur du rectangle circonscrit à la lentille. \\
+\hline
+{\em wl\+Min} & La longueur d\textquotesingle{}onde minimale des rayons autorisés à franchir la lentille. \\
+\hline
+{\em wl\+Max} & La longueur d\textquotesingle{}onde maximale des rayons autorisés à franchir la lentille. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentation des fonctions membres}
+\hypertarget{classLens_ab042680cd439e4841b5c4358d4fad7a3}{}\index{Lens@{Lens}!get\+Max\+Wave\+Length@{get\+Max\+Wave\+Length}}
+\index{get\+Max\+Wave\+Length@{get\+Max\+Wave\+Length}!Lens@{Lens}}
+\subsubsection[{get\+Max\+Wave\+Length() const }]{\setlength{\rightskip}{0pt plus 5cm}int Lens\+::get\+Max\+Wave\+Length (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classLens_ab042680cd439e4841b5c4358d4fad7a3}
+
+
+Retourne la longueur d\textquotesingle{}onde maximale des rayons autorisés à franchir la lentille. 
+
+\begin{DoxyReturn}{Renvoie}
+La longueur d\textquotesingle{}onde maximale des rayon autorisés à franchir la lentille. 
+\end{DoxyReturn}
+
+
+Définition à la ligne 141 du fichier lens.\+hpp.
+
+
+
+Références wl\+Max.
+
+
+\begin{DoxyCode}
+142 \{
+143     \textcolor{keywordflow}{return} this->\hyperlink{classLens_ab9f83510445552c07c9b4b760ad92dd6}{wlMax};
+144 \}
+\end{DoxyCode}
+\hypertarget{classLens_a14b3ba46e7f45c4850bc02b9f134cdbf}{}\index{Lens@{Lens}!get\+Min\+Wave\+Length@{get\+Min\+Wave\+Length}}
+\index{get\+Min\+Wave\+Length@{get\+Min\+Wave\+Length}!Lens@{Lens}}
+\subsubsection[{get\+Min\+Wave\+Length() const }]{\setlength{\rightskip}{0pt plus 5cm}int Lens\+::get\+Min\+Wave\+Length (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classLens_a14b3ba46e7f45c4850bc02b9f134cdbf}
+
+
+Retourne la longueur d\textquotesingle{}onde minimale des rayons autorisés à franchir la lentille. 
+
+\begin{DoxyReturn}{Renvoie}
+La longueur d\textquotesingle{}onde minimale des rayons autorisés à franchir la lentille. 
+\end{DoxyReturn}
+
+
+Définition à la ligne 136 du fichier lens.\+hpp.
+
+
+
+Références wl\+Min.
+
+
+\begin{DoxyCode}
+137 \{
+138     \textcolor{keywordflow}{return} this->\hyperlink{classLens_a14bcb2705ae2c2b120a642f0d44c75e2}{wlMin};
+139 \}
+\end{DoxyCode}
+\hypertarget{classLens_a1eba530b7fd697dc651b59d6cbb077f1}{}\index{Lens@{Lens}!get\+Position@{get\+Position}}
+\index{get\+Position@{get\+Position}!Lens@{Lens}}
+\subsubsection[{get\+Position() const }]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Point} \& Lens\+::get\+Position (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classLens_a1eba530b7fd697dc651b59d6cbb077f1}
+
+
+Retourne la position du coin supérieur gauche du rectangle circonscrit à la lentille. 
+
+\begin{DoxyReturn}{Renvoie}
+La coordonnée cartésienne du coin supérieur gauche du rectangle modélisant la lentille. 
+\end{DoxyReturn}
+
+
+Définition à la ligne 131 du fichier lens.\+hpp.
+
+
+
+Références up\+Left\+Corner.
+
+
+\begin{DoxyCode}
+132 \{
+133     \textcolor{keywordflow}{return} this->\hyperlink{classLens_af123a98958acdfca4cef5629ebfbbf4b}{upLeftCorner};
+134 \}
+\end{DoxyCode}
+\hypertarget{classLens_a458286d40d04792b7a6db47bd9f775fc}{}\index{Lens@{Lens}!include\+Ray@{include\+Ray}}
+\index{include\+Ray@{include\+Ray}!Lens@{Lens}}
+\subsubsection[{include\+Ray(const Ray \&) const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Point}$\ast$ Lens\+::include\+Ray (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ray} \&}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classLens_a458286d40d04792b7a6db47bd9f775fc}
+
+
+Renseigne si la lentille est dans la trajectoire du rayon. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em ray} & Le rayon.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+{\ttfamily true} Si la lentille se trouve dans la trajectoire du rayon entré en paramètre. 
+\end{DoxyReturn}
+
+
+Implémente \hyperlink{classElement_a1b88519623a6250155f7182706665448}{Element}.
+
+\hypertarget{classLens_a78a86a6d5ec110881e9b876e3b13cea9}{}\index{Lens@{Lens}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Lens@{Lens}}
+\subsubsection[{operator"!=(const Lens \&) const }]{\setlength{\rightskip}{0pt plus 5cm}bool Lens\+::operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Lens} \&}]{}
+\end{DoxyParamCaption}
+) const}\label{classLens_a78a86a6d5ec110881e9b876e3b13cea9}
+
+
+Permet de savoir si deux lentilles sont différentes. 
+
+\begin{DoxyReturn}{Renvoie}
+{\ttfamily true} Si les deux lentilles sont différentes. 
+\end{DoxyReturn}
+\hypertarget{classLens_ad0f3fdc4b2b4945726994a4503f5252e}{}\index{Lens@{Lens}!operator==@{operator==}}
+\index{operator==@{operator==}!Lens@{Lens}}
+\subsubsection[{operator==(const Lens \&) const }]{\setlength{\rightskip}{0pt plus 5cm}bool Lens\+::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Lens} \&}]{}
+\end{DoxyParamCaption}
+) const}\label{classLens_ad0f3fdc4b2b4945726994a4503f5252e}
+
+
+Permet de savoir si deux lentilles sont les mêmes. 
+
+\begin{DoxyReturn}{Renvoie}
+{\ttfamily true} Si les deux lentilles sont les même. 
+\end{DoxyReturn}
+\hypertarget{classLens_a3914a622c70a3c02f5f53fd33fa3340d}{}\index{Lens@{Lens}!react\+To\+Ray@{react\+To\+Ray}}
+\index{react\+To\+Ray@{react\+To\+Ray}!Lens@{Lens}}
+\subsubsection[{react\+To\+Ray(\+Ray)}]{\setlength{\rightskip}{0pt plus 5cm}void Lens\+::react\+To\+Ray (
+\begin{DoxyParamCaption}
+\item[{{\bf Ray}}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classLens_a3914a622c70a3c02f5f53fd33fa3340d}
+
+
+Cette méthode est lancé lorsque la lentille courante est exposée à un rayon. 
+
+Elle va communiquer au niveau la fin du rayon si il ne peut pas passer ou ne va rien faire si le rayon passe.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em ray} & Un rayon percutant la lentille. \\
+\hline
+\end{DoxyParams}
+
+
+Implémente \hyperlink{classElement_aa87116bb9422d64169b2ebf03831df9b}{Element}.
+
+
+
+\subsection{Documentation des données membres}
+\hypertarget{classLens_af123a98958acdfca4cef5629ebfbbf4b}{}\index{Lens@{Lens}!up\+Left\+Corner@{up\+Left\+Corner}}
+\index{up\+Left\+Corner@{up\+Left\+Corner}!Lens@{Lens}}
+\subsubsection[{up\+Left\+Corner}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Point} Lens\+::up\+Left\+Corner\hspace{0.3cm}{\ttfamily [private]}}\label{classLens_af123a98958acdfca4cef5629ebfbbf4b}
+
+
+up\+Left\+Corner 
+
+
+
+Définition à la ligne 30 du fichier lens.\+hpp.
+
+
+
+Référencé par get\+Position().
+
+\hypertarget{classLens_ab9f83510445552c07c9b4b760ad92dd6}{}\index{Lens@{Lens}!wl\+Max@{wl\+Max}}
+\index{wl\+Max@{wl\+Max}!Lens@{Lens}}
+\subsubsection[{wl\+Max}]{\setlength{\rightskip}{0pt plus 5cm}const int Lens\+::wl\+Max\hspace{0.3cm}{\ttfamily [private]}}\label{classLens_ab9f83510445552c07c9b4b760ad92dd6}
+
+
+wl\+Max 
+
+
+
+Définition à la ligne 40 du fichier lens.\+hpp.
+
+
+
+Référencé par get\+Max\+Wave\+Length().
+
+\hypertarget{classLens_a14bcb2705ae2c2b120a642f0d44c75e2}{}\index{Lens@{Lens}!wl\+Min@{wl\+Min}}
+\index{wl\+Min@{wl\+Min}!Lens@{Lens}}
+\subsubsection[{wl\+Min}]{\setlength{\rightskip}{0pt plus 5cm}const int Lens\+::wl\+Min\hspace{0.3cm}{\ttfamily [private]}}\label{classLens_a14bcb2705ae2c2b120a642f0d44c75e2}
+
+
+wl\+Min 
+
+
+
+Définition à la ligne 35 du fichier lens.\+hpp.
+
+
+
+Référencé par get\+Min\+Wave\+Length().
+
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+model/elements/\hyperlink{lens_8hpp}{lens.\+hpp}\end{DoxyCompactItemize}

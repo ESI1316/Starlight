@@ -1,0 +1,146 @@
+\hypertarget{classMainMenu}{}\section{Référence de la classe Main\+Menu}
+\label{classMainMenu}\index{Main\+Menu@{Main\+Menu}}
+
+
+Cette classe représente le menu principal du jeu permettant de.  
+
+
+
+
+{\ttfamily \#include $<$mainmenu.\+hpp$>$}
+
+\subsection*{Connecteurs publics}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classMainMenu_ab615dd0e5129bf9df28a1f493baad741}{select\+New\+Level\+File} ()
+\begin{DoxyCompactList}\small\item\em Permet de faire sélectionner un fichier de niveau par l\textquotesingle{}utilisateur. \end{DoxyCompactList}\item 
+void \hyperlink{classMainMenu_af449ad4f8eb0d941fb4e8bc2a352fc48}{display\+Rules} ()
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}afficher une fenêtre de dialogue contenant les règles et les commandes du jeu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Signaux}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classMainMenu_acad34fb589f6f168930cbc1b89ccf7cb}{new\+Level\+File\+Selected} (const Q\+String)
+\begin{DoxyCompactList}\small\item\em Signale qu\textquotesingle{}un nouveau fichier a été sélectionné par l\textquotesingle{}utilisateur. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMainMenu_a69707caeb524bd0600a0d05613108af5}{Main\+Menu} (Q\+Widget $\ast$=0)
+\begin{DoxyCompactList}\small\item\em Permet de créer un menu du jeu. \end{DoxyCompactList}\item 
+\hyperlink{classMainMenu_a0a19ddba3ac52bf39c09b579171c98f2}{$\sim$\+Main\+Menu} ()
+\end{DoxyCompactItemize}
+\subsection*{Fonctions membres privées}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Label $\ast$ \hyperlink{classMainMenu_aa3dd35ff0093ab766b10ef6a0d1586a1}{set\+Logo} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Cette classe représente le menu principal du jeu permettant de. 
+
+
+\begin{DoxyItemize}
+\item sélectionner un niveau à jouer,  
+\item lire les règles du jeu,  
+\item quitter le jeu.  
+\end{DoxyItemize}
+
+Définition à la ligne 15 du fichier mainmenu.\+hpp.
+
+
+
+Graphe d\textquotesingle{}héritage de Main\+Menu\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=204pt]{db/d55/classMainMenu__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Graphe de collaboration de Main\+Menu\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=204pt]{d8/d60/classMainMenu__coll__graph}
+\end{center}
+\end{figure}
+
+
+\subsection{Documentation des constructeurs et destructeur}
+\hypertarget{classMainMenu_a69707caeb524bd0600a0d05613108af5}{}\index{Main\+Menu@{Main\+Menu}!Main\+Menu@{Main\+Menu}}
+\index{Main\+Menu@{Main\+Menu}!Main\+Menu@{Main\+Menu}}
+\subsubsection[{Main\+Menu(\+Q\+Widget $\ast$=0)}]{\setlength{\rightskip}{0pt plus 5cm}Main\+Menu\+::\+Main\+Menu (
+\begin{DoxyParamCaption}
+\item[{Q\+Widget $\ast$}]{ = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\label{classMainMenu_a69707caeb524bd0600a0d05613108af5}
+
+
+Permet de créer un menu du jeu. 
+
+\hypertarget{classMainMenu_a0a19ddba3ac52bf39c09b579171c98f2}{}\index{Main\+Menu@{Main\+Menu}!````~Main\+Menu@{$\sim$\+Main\+Menu}}
+\index{````~Main\+Menu@{$\sim$\+Main\+Menu}!Main\+Menu@{Main\+Menu}}
+\subsubsection[{$\sim$\+Main\+Menu()}]{\setlength{\rightskip}{0pt plus 5cm}Main\+Menu\+::$\sim$\+Main\+Menu (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classMainMenu_a0a19ddba3ac52bf39c09b579171c98f2}
+
+
+\subsection{Documentation des fonctions membres}
+\hypertarget{classMainMenu_af449ad4f8eb0d941fb4e8bc2a352fc48}{}\index{Main\+Menu@{Main\+Menu}!display\+Rules@{display\+Rules}}
+\index{display\+Rules@{display\+Rules}!Main\+Menu@{Main\+Menu}}
+\subsubsection[{display\+Rules}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Menu\+::display\+Rules (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{classMainMenu_af449ad4f8eb0d941fb4e8bc2a352fc48}
+
+
+Permet d\textquotesingle{}afficher une fenêtre de dialogue contenant les règles et les commandes du jeu. 
+
+\hypertarget{classMainMenu_acad34fb589f6f168930cbc1b89ccf7cb}{}\index{Main\+Menu@{Main\+Menu}!new\+Level\+File\+Selected@{new\+Level\+File\+Selected}}
+\index{new\+Level\+File\+Selected@{new\+Level\+File\+Selected}!Main\+Menu@{Main\+Menu}}
+\subsubsection[{new\+Level\+File\+Selected}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Menu\+::new\+Level\+File\+Selected (
+\begin{DoxyParamCaption}
+\item[{const Q\+String}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{classMainMenu_acad34fb589f6f168930cbc1b89ccf7cb}
+
+
+Signale qu\textquotesingle{}un nouveau fichier a été sélectionné par l\textquotesingle{}utilisateur. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em new\+Level\+File} & Chemin vers le nouveau fichier sélectionné. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classMainMenu_ab615dd0e5129bf9df28a1f493baad741}{}\index{Main\+Menu@{Main\+Menu}!select\+New\+Level\+File@{select\+New\+Level\+File}}
+\index{select\+New\+Level\+File@{select\+New\+Level\+File}!Main\+Menu@{Main\+Menu}}
+\subsubsection[{select\+New\+Level\+File}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Menu\+::select\+New\+Level\+File (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{classMainMenu_ab615dd0e5129bf9df28a1f493baad741}
+
+
+Permet de faire sélectionner un fichier de niveau par l\textquotesingle{}utilisateur. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em new\+Level\+File} & Chemin vers le nouveau fichier sélectionné. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classMainMenu_aa3dd35ff0093ab766b10ef6a0d1586a1}{}\index{Main\+Menu@{Main\+Menu}!set\+Logo@{set\+Logo}}
+\index{set\+Logo@{set\+Logo}!Main\+Menu@{Main\+Menu}}
+\subsubsection[{set\+Logo()}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Label$\ast$ Main\+Menu\+::set\+Logo (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classMainMenu_aa3dd35ff0093ab766b10ef6a0d1586a1}
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+view/windows/\hyperlink{mainmenu_8hpp}{mainmenu.\+hpp}\end{DoxyCompactItemize}

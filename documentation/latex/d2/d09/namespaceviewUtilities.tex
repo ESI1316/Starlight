@@ -1,0 +1,202 @@
+\hypertarget{namespaceviewUtilities}{}\section{Référence de l\textquotesingle{}espace de nommage view\+Utilities}
+\label{namespaceviewUtilities}\index{view\+Utilities@{view\+Utilities}}
+
+
+Divers fonctions utilitaires nécessaires aux vues.  
+
+
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Point\+F \hyperlink{namespaceviewUtilities_a2a190881156bffa91f8c191871fb607e}{to\+Q\+Point} (const \hyperlink{classPoint}{Point} \&)
+\begin{DoxyCompactList}\small\item\em Permet de transformer un point en Q\+Point\+F. \end{DoxyCompactList}\item 
+Q\+Rect\+F \hyperlink{namespaceviewUtilities_a9024a09c86906c1795499b327df85e4a}{to\+Q\+Rect\+F} (const \hyperlink{classRectangle}{Rectangle} \&)
+\begin{DoxyCompactList}\small\item\em Permet de transformer un rectangle en Q\+Rect\+F. \end{DoxyCompactList}\item 
+Q\+Rect\+F \hyperlink{namespaceviewUtilities_a5b6587cfeb6f69361f0b063e0060043c}{to\+Q\+Rect\+F} (const \hyperlink{classEllipse}{Ellipse} \&)
+\begin{DoxyCompactList}\small\item\em Permet de représenter une ellipse, à partir du rectangle qui lui est circonscrit, en un Q\+Rect\+F. \end{DoxyCompactList}\item 
+Q\+Graphics\+Line\+Item $\ast$ \hyperlink{namespaceviewUtilities_a339d6b317f890dd0a8c55c57c0a3db8b}{get\+Line} (const \hyperlink{classPoint}{Point} \&, const \hyperlink{classPoint}{Point} \&, const Q\+Color \&, const int)
+\begin{DoxyCompactList}\small\item\em Permet de générer une Q\+Graphics\+Line à partir des deux points délimitant un segment de droite. \end{DoxyCompactList}\item 
+Q\+Graphics\+Rect\+Item $\ast$ \hyperlink{namespaceviewUtilities_a90715ebf7ce7fc9fec5e4662479c8001}{get\+Rect} (const \hyperlink{classRectangle}{Rectangle} \&, const Q\+Color \&, const int)
+\begin{DoxyCompactList}\small\item\em Permet de générer un Q\+Graphics\+Rect\+Item représentant le rectangle passé en paramètre. \end{DoxyCompactList}\item 
+Q\+Graphics\+Ellipse\+Item $\ast$ \hyperlink{namespaceviewUtilities_aaac380653defdfe5d8dbe14c2d0b4158}{get\+Ellipse} (const \hyperlink{classEllipse}{Ellipse} \&, const Q\+Color \&, const int)
+\begin{DoxyCompactList}\small\item\em Permet de générer un Q\+Graphics\+Ellipse\+Item représentant l\textquotesingle{}ellipse passée en paramètre. \end{DoxyCompactList}\item 
+Q\+Color \hyperlink{namespaceviewUtilities_a47e2968ae7a9890971943ccd925348b1}{wave\+Length\+To\+Color} (const \hyperlink{classRay}{Ray} \&, const double=0.\+8)
+\begin{DoxyCompactList}\small\item\em Permet de créé une Q\+Color au format R\+G\+B selon la longueur d\textquotesingle{}onde passée en paramètre. \end{DoxyCompactList}\item 
+Q\+String $\ast$ \hyperlink{namespaceviewUtilities_a77016e1644b342340afa333441d3e061}{file\+To\+Q\+String} (const Q\+String \&)
+\begin{DoxyCompactList}\small\item\em Permet de lire un fichier et de retourner son contenu en tant que Q\+String. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Divers fonctions utilitaires nécessaires aux vues. 
+
+\subsection{Documentation des fonctions}
+\hypertarget{namespaceviewUtilities_a77016e1644b342340afa333441d3e061}{}\index{view\+Utilities@{view\+Utilities}!file\+To\+Q\+String@{file\+To\+Q\+String}}
+\index{file\+To\+Q\+String@{file\+To\+Q\+String}!view\+Utilities@{view\+Utilities}}
+\subsubsection[{file\+To\+Q\+String(const Q\+String \&)}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String$\ast$ view\+Utilities\+::file\+To\+Q\+String (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{}
+\end{DoxyParamCaption}
+)}\label{namespaceviewUtilities_a77016e1644b342340afa333441d3e061}
+
+
+Permet de lire un fichier et de retourner son contenu en tant que Q\+String. 
+
+En cas de fichier innacessible, un avertissement sera affiché.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em url} & L\textquotesingle{}url d\textquotesingle{}un document à lire.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Un Q\+String contenant le fichier passé en paramètre. 
+\end{DoxyReturn}
+\hypertarget{namespaceviewUtilities_aaac380653defdfe5d8dbe14c2d0b4158}{}\index{view\+Utilities@{view\+Utilities}!get\+Ellipse@{get\+Ellipse}}
+\index{get\+Ellipse@{get\+Ellipse}!view\+Utilities@{view\+Utilities}}
+\subsubsection[{get\+Ellipse(const Ellipse \&, const Q\+Color \&, const int)}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Graphics\+Ellipse\+Item$\ast$ view\+Utilities\+::get\+Ellipse (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ellipse} \&}]{, }
+\item[{const Q\+Color \&}]{, }
+\item[{const int}]{}
+\end{DoxyParamCaption}
+)}\label{namespaceviewUtilities_aaac380653defdfe5d8dbe14c2d0b4158}
+
+
+Permet de générer un Q\+Graphics\+Ellipse\+Item représentant l\textquotesingle{}ellipse passée en paramètre. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em ellipse} & Une ellipse devant être représentée. \\
+\hline
+{\em color} & La couleur de cette ellipse. \\
+\hline
+{\em width} & L\textquotesingle{}épaisseur du trait représentant cette ellipse.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Le Q\+Graphics\+Ellipse\+Item représentant cette ellipse. 
+\end{DoxyReturn}
+\hypertarget{namespaceviewUtilities_a339d6b317f890dd0a8c55c57c0a3db8b}{}\index{view\+Utilities@{view\+Utilities}!get\+Line@{get\+Line}}
+\index{get\+Line@{get\+Line}!view\+Utilities@{view\+Utilities}}
+\subsubsection[{get\+Line(const Point \&, const Point \&, const Q\+Color \&, const int)}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Graphics\+Line\+Item$\ast$ view\+Utilities\+::get\+Line (
+\begin{DoxyParamCaption}
+\item[{const {\bf Point} \&}]{, }
+\item[{const {\bf Point} \&}]{, }
+\item[{const Q\+Color \&}]{, }
+\item[{const int}]{}
+\end{DoxyParamCaption}
+)}\label{namespaceviewUtilities_a339d6b317f890dd0a8c55c57c0a3db8b}
+
+
+Permet de générer une Q\+Graphics\+Line à partir des deux points délimitant un segment de droite. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em start} & Le point de départ du segment de droite. \\
+\hline
+{\em end} & Le point d\textquotesingle{}arrivé du segment de droite. \\
+\hline
+{\em color} & La couleur que ce segment doit prendre. \\
+\hline
+{\em width} & L\textquotesingle{}épaisseur du trait de ce segment de droite.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Le Q\+Graphics\+Line\+Item représentant ce segment de droite. 
+\end{DoxyReturn}
+\hypertarget{namespaceviewUtilities_a90715ebf7ce7fc9fec5e4662479c8001}{}\index{view\+Utilities@{view\+Utilities}!get\+Rect@{get\+Rect}}
+\index{get\+Rect@{get\+Rect}!view\+Utilities@{view\+Utilities}}
+\subsubsection[{get\+Rect(const Rectangle \&, const Q\+Color \&, const int)}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Graphics\+Rect\+Item$\ast$ view\+Utilities\+::get\+Rect (
+\begin{DoxyParamCaption}
+\item[{const {\bf Rectangle} \&}]{, }
+\item[{const Q\+Color \&}]{, }
+\item[{const int}]{}
+\end{DoxyParamCaption}
+)}\label{namespaceviewUtilities_a90715ebf7ce7fc9fec5e4662479c8001}
+
+
+Permet de générer un Q\+Graphics\+Rect\+Item représentant le rectangle passé en paramètre. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em rectangle} & Le rectangle devant être représenté. \\
+\hline
+{\em color} & La couleur de ce rectangle. \\
+\hline
+{\em width} & L\textquotesingle{}épaisseur du trait représentant ce rectangle.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Le Q\+Graphics\+Rect\+Item représentant ce rectangle. 
+\end{DoxyReturn}
+\hypertarget{namespaceviewUtilities_a2a190881156bffa91f8c191871fb607e}{}\index{view\+Utilities@{view\+Utilities}!to\+Q\+Point@{to\+Q\+Point}}
+\index{to\+Q\+Point@{to\+Q\+Point}!view\+Utilities@{view\+Utilities}}
+\subsubsection[{to\+Q\+Point(const Point \&)}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Point\+F view\+Utilities\+::to\+Q\+Point (
+\begin{DoxyParamCaption}
+\item[{const {\bf Point} \&}]{}
+\end{DoxyParamCaption}
+)}\label{namespaceviewUtilities_a2a190881156bffa91f8c191871fb607e}
+
+
+Permet de transformer un point en Q\+Point\+F. 
+
+\begin{DoxyReturn}{Renvoie}
+La représentation Q\+Point\+F du \hyperlink{classPoint}{Point} passé en paramètre. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{Voir également}
+\hyperlink{classPoint}{Point} 
+\end{DoxySeeAlso}
+\hypertarget{namespaceviewUtilities_a9024a09c86906c1795499b327df85e4a}{}\index{view\+Utilities@{view\+Utilities}!to\+Q\+Rect\+F@{to\+Q\+Rect\+F}}
+\index{to\+Q\+Rect\+F@{to\+Q\+Rect\+F}!view\+Utilities@{view\+Utilities}}
+\subsubsection[{to\+Q\+Rect\+F(const Rectangle \&)}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Rect\+F view\+Utilities\+::to\+Q\+Rect\+F (
+\begin{DoxyParamCaption}
+\item[{const {\bf Rectangle} \&}]{}
+\end{DoxyParamCaption}
+)}\label{namespaceviewUtilities_a9024a09c86906c1795499b327df85e4a}
+
+
+Permet de transformer un rectangle en Q\+Rect\+F. 
+
+\begin{DoxyReturn}{Renvoie}
+La représentation Q\+Rect\+F du rectangle passé en paramètre. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{Voir également}
+\hyperlink{classRectangle}{Rectangle} 
+\end{DoxySeeAlso}
+\hypertarget{namespaceviewUtilities_a5b6587cfeb6f69361f0b063e0060043c}{}\index{view\+Utilities@{view\+Utilities}!to\+Q\+Rect\+F@{to\+Q\+Rect\+F}}
+\index{to\+Q\+Rect\+F@{to\+Q\+Rect\+F}!view\+Utilities@{view\+Utilities}}
+\subsubsection[{to\+Q\+Rect\+F(const Ellipse \&)}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Rect\+F view\+Utilities\+::to\+Q\+Rect\+F (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ellipse} \&}]{}
+\end{DoxyParamCaption}
+)}\label{namespaceviewUtilities_a5b6587cfeb6f69361f0b063e0060043c}
+
+
+Permet de représenter une ellipse, à partir du rectangle qui lui est circonscrit, en un Q\+Rect\+F. 
+
+\begin{DoxyReturn}{Renvoie}
+Le Q\+Rect\+F circonscrit à l\textquotesingle{}ellipse. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{Voir également}
+\hyperlink{classEllipse}{Ellipse} 
+\end{DoxySeeAlso}
+\hypertarget{namespaceviewUtilities_a47e2968ae7a9890971943ccd925348b1}{}\index{view\+Utilities@{view\+Utilities}!wave\+Length\+To\+Color@{wave\+Length\+To\+Color}}
+\index{wave\+Length\+To\+Color@{wave\+Length\+To\+Color}!view\+Utilities@{view\+Utilities}}
+\subsubsection[{wave\+Length\+To\+Color(const Ray \&, const double=0.\+8)}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Color view\+Utilities\+::wave\+Length\+To\+Color (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ray} \&}]{, }
+\item[{const double}]{ = {\ttfamily 0.8}}
+\end{DoxyParamCaption}
+)}\label{namespaceviewUtilities_a47e2968ae7a9890971943ccd925348b1}
+
+
+Permet de créé une Q\+Color au format R\+G\+B selon la longueur d\textquotesingle{}onde passée en paramètre. 
+
+Cette méthode se base sur le spectre lumineux visible en représentant les U.\+V. comme du noir.
+
+\begin{DoxyReturn}{Renvoie}
+La Q\+Color représentant la longueur d\textquotesingle{}onde d\textquotesingle{}un rayon.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{Voir également}
+\href{http://www.physics.sfasu.edu/astro/color/spectra.html}{\tt http\+://www.\+physics.\+sfasu.\+edu/astro/color/spectra.\+html} 
+\end{DoxySeeAlso}

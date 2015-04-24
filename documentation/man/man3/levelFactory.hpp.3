@@ -1,0 +1,60 @@
+.TH "model/elements/levelFactory.hpp" 3 "Vendredi 24 Avril 2015" "Starlight" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+model/elements/levelFactory.hpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <fstream>\fP
+.br
+\fC#include <sstream>\fP
+.br
+
+.SS "Espaces de nommage"
+
+.in +1c
+.ti -1c
+.RI " \fBlevelFactory\fP"
+.br
+.RI "\fIFonctions utilitaires permettant divers éléments du jeu à partir d'un fichier \&.lvl\&. \fP"
+.in -1c
+.SS "Fonctions"
+
+.in +1c
+.ti -1c
+.RI "\fBLevel\fP * \fBlevelFactory::getLevelFromFile\fP (std::string)"
+.br
+.RI "\fIPermet d'obtenir une référence vers une nouvelle carte initialisée à partir d'un fichier \&.level\&. \fP"
+.ti -1c
+.RI "\fBSource\fP \fBlevelFactory::getSource\fP (std::ifstream &)"
+.br
+.RI "\fIPermet d' obtenir une source à partir d'un fichier \&.lvl déjà ouvert\&. \fP"
+.ti -1c
+.RI "\fBDest\fP \fBlevelFactory::getDestination\fP (std::ifstream &)"
+.br
+.RI "\fIPermet d' obtenir une destination à partir d'un fichier \&.lvl déjà ouvert\&. \fP"
+.ti -1c
+.RI "\fBCrystal\fP \fBlevelFactory::getCrystal\fP (std::ifstream &)"
+.br
+.RI "\fIPermet d' obtenir un crystal à partir d'un fichier \&.lvl déjà ouvert\&. \fP"
+.ti -1c
+.RI "\fBLens\fP \fBlevelFactory::getLens\fP (std::ifstream &)"
+.br
+.RI "\fIPermet d' obtenir une lentille à partir d'un fichier \&.lvl déjà ouvert\&. \fP"
+.ti -1c
+.RI "\fBWall\fP \fBlevelFactory::getWall\fP (std::ifstream &)"
+.br
+.RI "\fIPermet d' obtenir un mur à partir d'un fichier \&.lvl déjà ouvert\&. \fP"
+.ti -1c
+.RI "\fBNuke\fP \fBlevelFactory::getNuke\fP (std::ifstream &)"
+.br
+.RI "\fIPermet d' obtenir une bombe à partir d'un fichier \&.lvl déjà ouvert\&. \fP"
+.ti -1c
+.RI "\fBMirror\fP \fBlevelFactory::getMirror\fP (std::ifstream &)"
+.br
+.RI "\fIPermet d' obtenir un mirroir à partir d'un fichier \&.lvl déjà ouvert\&. \fP"
+.in -1c
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Starlight à partir du code source\&.

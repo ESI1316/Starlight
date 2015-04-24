@@ -1,0 +1,253 @@
+\hypertarget{classWall}{}\section{Référence de la classe Wall}
+\label{classWall}\index{Wall@{Wall}}
+
+
+Cette classe modélise les murs utilisés dans le jeu.  
+
+
+
+
+{\ttfamily \#include $<$wall.\+hpp$>$}
+
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classWall_aa9e4665888cfb76c5700fcd9f8672771}{Wall} (const \hyperlink{classPoint}{Point} \&, const \hyperlink{classPoint}{Point} \&)
+\begin{DoxyCompactList}\small\item\em Instancie un mur. \end{DoxyCompactList}\item 
+const \hyperlink{classPoint}{Point} \& \hyperlink{classWall_af21a88dc50de229830bbfe68f088e5f2}{get\+Start} () const 
+\begin{DoxyCompactList}\small\item\em Retourne le début du mur. \end{DoxyCompactList}\item 
+const \hyperlink{classPoint}{Point} \& \hyperlink{classWall_aeae40b7ecf22bd44dc75382bafad24c8}{get\+End} () const 
+\begin{DoxyCompactList}\small\item\em Retourne la fin du mur. \end{DoxyCompactList}\item 
+void \hyperlink{classWall_a4167a9d310ff17cf02d232d4f384b77d}{react\+To\+Ray} (\hyperlink{classRay}{Ray})
+\begin{DoxyCompactList}\small\item\em Réaction à l\textquotesingle{}exposition d\textquotesingle{}un rayon. \end{DoxyCompactList}\item 
+\hyperlink{classPoint}{Point} $\ast$ \hyperlink{classWall_a11178e8dc8eabc9a56b9bf5525dc4f29}{include\+Ray} (const \hyperlink{classRay}{Ray} \&) const 
+\begin{DoxyCompactList}\small\item\em Renseigne si le mur est dans la trajectoire du rayon. \end{DoxyCompactList}\item 
+bool \hyperlink{classWall_a56676feaace7ad556d8c94a195afb5da}{operator==} (const \hyperlink{classWall}{Wall} \&) const 
+\begin{DoxyCompactList}\small\item\em Permet de savoir si deux murs sont identiques. \end{DoxyCompactList}\item 
+bool \hyperlink{classWall_a2a918fa1c882900fe5cf97cf8d9da130}{operator!=} (const \hyperlink{classWall}{Wall} \&) const 
+\begin{DoxyCompactList}\small\item\em Permet de savoir si deux murs sont différents. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Attributs privés}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPoint}{Point} \hyperlink{classWall_a05a052498fc50c585a8e8be95dc5af01}{start}
+\begin{DoxyCompactList}\small\item\em Le point de départ du segment de droite représentant le mur. \end{DoxyCompactList}\item 
+\hyperlink{classPoint}{Point} \hyperlink{classWall_a26e8075259c6cd51630b546f3e37d2a1}{end}
+\begin{DoxyCompactList}\small\item\em Le point d\textquotesingle{}arrivé du segment de droite représentant le mur. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Membres hérités additionnels}
+
+
+\subsection{Description détaillée}
+Cette classe modélise les murs utilisés dans le jeu. 
+
+Les murs sont des segments de droite qui ne réfléchissent pas la lumière. 
+
+Définition à la ligne 16 du fichier wall.\+hpp.
+
+
+
+Graphe d\textquotesingle{}héritage de Wall\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{de/d28/classWall__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Graphe de collaboration de Wall\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d9/d82/classWall__coll__graph}
+\end{center}
+\end{figure}
+
+
+\subsection{Documentation des constructeurs et destructeur}
+\hypertarget{classWall_aa9e4665888cfb76c5700fcd9f8672771}{}\index{Wall@{Wall}!Wall@{Wall}}
+\index{Wall@{Wall}!Wall@{Wall}}
+\subsubsection[{Wall(const Point \&, const Point \&)}]{\setlength{\rightskip}{0pt plus 5cm}Wall\+::\+Wall (
+\begin{DoxyParamCaption}
+\item[{const {\bf Point} \&}]{, }
+\item[{const {\bf Point} \&}]{}
+\end{DoxyParamCaption}
+)}\label{classWall_aa9e4665888cfb76c5700fcd9f8672771}
+
+
+Instancie un mur. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em start} & Le début du mur. \\
+\hline
+{\em end} & La fin du mur. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentation des fonctions membres}
+\hypertarget{classWall_aeae40b7ecf22bd44dc75382bafad24c8}{}\index{Wall@{Wall}!get\+End@{get\+End}}
+\index{get\+End@{get\+End}!Wall@{Wall}}
+\subsubsection[{get\+End() const }]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Point} \& Wall\+::get\+End (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classWall_aeae40b7ecf22bd44dc75382bafad24c8}
+
+
+Retourne la fin du mur. 
+
+\begin{DoxyReturn}{Renvoie}
+La fin du mur. 
+\end{DoxyReturn}
+
+
+Définition à la ligne 97 du fichier wall.\+hpp.
+
+
+
+Références end.
+
+
+\begin{DoxyCode}
+98 \{
+99     \textcolor{keywordflow}{return} this->\hyperlink{classWall_a26e8075259c6cd51630b546f3e37d2a1}{end};
+100 \}
+\end{DoxyCode}
+\hypertarget{classWall_af21a88dc50de229830bbfe68f088e5f2}{}\index{Wall@{Wall}!get\+Start@{get\+Start}}
+\index{get\+Start@{get\+Start}!Wall@{Wall}}
+\subsubsection[{get\+Start() const }]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Point} \& Wall\+::get\+Start (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classWall_af21a88dc50de229830bbfe68f088e5f2}
+
+
+Retourne le début du mur. 
+
+\begin{DoxyReturn}{Renvoie}
+Le début du mur. 
+\end{DoxyReturn}
+
+
+Définition à la ligne 92 du fichier wall.\+hpp.
+
+
+
+Références start.
+
+
+\begin{DoxyCode}
+93 \{
+94     \textcolor{keywordflow}{return} this->\hyperlink{classWall_a05a052498fc50c585a8e8be95dc5af01}{start};
+95 \}
+\end{DoxyCode}
+\hypertarget{classWall_a11178e8dc8eabc9a56b9bf5525dc4f29}{}\index{Wall@{Wall}!include\+Ray@{include\+Ray}}
+\index{include\+Ray@{include\+Ray}!Wall@{Wall}}
+\subsubsection[{include\+Ray(const Ray \&) const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Point}$\ast$ Wall\+::include\+Ray (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ray} \&}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classWall_a11178e8dc8eabc9a56b9bf5525dc4f29}
+
+
+Renseigne si le mur est dans la trajectoire du rayon. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em ray} & Le rayon.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+{\ttfamily true} Si la mur se trouve dans la trajectoire du rayon entré en paramètre. 
+\end{DoxyReturn}
+
+
+Implémente \hyperlink{classElement_a1b88519623a6250155f7182706665448}{Element}.
+
+\hypertarget{classWall_a2a918fa1c882900fe5cf97cf8d9da130}{}\index{Wall@{Wall}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Wall@{Wall}}
+\subsubsection[{operator"!=(const Wall \&) const }]{\setlength{\rightskip}{0pt plus 5cm}bool Wall\+::operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Wall} \&}]{}
+\end{DoxyParamCaption}
+) const}\label{classWall_a2a918fa1c882900fe5cf97cf8d9da130}
+
+
+Permet de savoir si deux murs sont différents. 
+
+\begin{DoxyReturn}{Renvoie}
+{\ttfamily true} Si les murs sont différents. 
+\end{DoxyReturn}
+\hypertarget{classWall_a56676feaace7ad556d8c94a195afb5da}{}\index{Wall@{Wall}!operator==@{operator==}}
+\index{operator==@{operator==}!Wall@{Wall}}
+\subsubsection[{operator==(const Wall \&) const }]{\setlength{\rightskip}{0pt plus 5cm}bool Wall\+::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Wall} \&}]{}
+\end{DoxyParamCaption}
+) const}\label{classWall_a56676feaace7ad556d8c94a195afb5da}
+
+
+Permet de savoir si deux murs sont identiques. 
+
+\begin{DoxyReturn}{Renvoie}
+{\ttfamily true} Si les murs sont les même. 
+\end{DoxyReturn}
+\hypertarget{classWall_a4167a9d310ff17cf02d232d4f384b77d}{}\index{Wall@{Wall}!react\+To\+Ray@{react\+To\+Ray}}
+\index{react\+To\+Ray@{react\+To\+Ray}!Wall@{Wall}}
+\subsubsection[{react\+To\+Ray(\+Ray)}]{\setlength{\rightskip}{0pt plus 5cm}void Wall\+::react\+To\+Ray (
+\begin{DoxyParamCaption}
+\item[{{\bf Ray}}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classWall_a4167a9d310ff17cf02d232d4f384b77d}
+
+
+Réaction à l\textquotesingle{}exposition d\textquotesingle{}un rayon. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em ray} & Le rayon. \\
+\hline
+\end{DoxyParams}
+
+
+Implémente \hyperlink{classElement_aa87116bb9422d64169b2ebf03831df9b}{Element}.
+
+
+
+\subsection{Documentation des données membres}
+\hypertarget{classWall_a26e8075259c6cd51630b546f3e37d2a1}{}\index{Wall@{Wall}!end@{end}}
+\index{end@{end}!Wall@{Wall}}
+\subsubsection[{end}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Point} Wall\+::end\hspace{0.3cm}{\ttfamily [private]}}\label{classWall_a26e8075259c6cd51630b546f3e37d2a1}
+
+
+Le point d\textquotesingle{}arrivé du segment de droite représentant le mur. 
+
+
+
+Définition à la ligne 26 du fichier wall.\+hpp.
+
+
+
+Référencé par get\+End().
+
+\hypertarget{classWall_a05a052498fc50c585a8e8be95dc5af01}{}\index{Wall@{Wall}!start@{start}}
+\index{start@{start}!Wall@{Wall}}
+\subsubsection[{start}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Point} Wall\+::start\hspace{0.3cm}{\ttfamily [private]}}\label{classWall_a05a052498fc50c585a8e8be95dc5af01}
+
+
+Le point de départ du segment de droite représentant le mur. 
+
+
+
+Définition à la ligne 21 du fichier wall.\+hpp.
+
+
+
+Référencé par get\+Start().
+
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+model/elements/\hyperlink{wall_8hpp}{wall.\+hpp}\end{DoxyCompactItemize}

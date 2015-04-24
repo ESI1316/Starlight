@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.9.1"/>
+<title>Starlight:  Fichier source de model/elements/element.hpp</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="../../customdoxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Starlight
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.9.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="../../namespaces.html"><span>Espaces&#160;de&#160;nommage</span></a></li>
+      <li><a href="../../annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="../../files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="../../globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_3f14f6767c31cb4a1d22c13c18cc6fc3.html">model</a></li><li class="navelem"><a class="el" href="../../dir_6cb5f6c5bce0f61f6326f5ca1dc4dc30.html">elements</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">element.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../da/dbc/element_8hpp.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef ELEMENT_HPP</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define ELEMENT_HPP</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">class </span><a class="code" href="../../d2/d9d/classLevel.html">Level</a>;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">class </span><a class="code" href="../../d9/dce/classRay.html">Ray</a>;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">class </span><a class="code" href="../../dc/d4f/classPoint.html">Point</a>;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="../../d5/d3c/classElement.html">   13</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d5/d3c/classElement.html">Element</a></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">private</span> :</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="../../d5/d3c/classElement.html#a28c0ab6e211fb16fc2957024ca2761cb">   20</a></span>&#160;    <a class="code" href="../../d2/d9d/classLevel.html">Level</a> * <a class="code" href="../../d5/d3c/classElement.html#a28c0ab6e211fb16fc2957024ca2761cb">level</a>{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">protected</span> :</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="../../d5/d3c/classElement.html#a084081001b0f14ae12d612c866df861c">Element</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">public</span> :</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d5/d3c/classElement.html#aa87116bb9422d64169b2ebf03831df9b">reactToRay</a>(<a class="code" href="../../d9/dce/classRay.html">Ray</a>) = 0;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="../../dc/d4f/classPoint.html">Point</a> * <a class="code" href="../../d5/d3c/classElement.html#a1b88519623a6250155f7182706665448">includeRay</a>(<span class="keyword">const</span> <a class="code" href="../../d9/dce/classRay.html">Ray</a> &amp;) <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d5/d3c/classElement.html#a52d67b5af9d0e96092b7cd4c3058d17b">setLevel</a>(<a class="code" href="../../d2/d9d/classLevel.html">Level</a> *);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <a class="code" href="../../d2/d9d/classLevel.html">Level</a> * <a class="code" href="../../d5/d3c/classElement.html#aea3bbf40d27afdf61833f59775e488f3">getLevel</a>();</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../d5/d3c/classElement.html#aa8ab9ae8d680e81c964f0eaee2dfb44d">operator==</a>(<span class="keyword">const</span> <a class="code" href="../../d5/d3c/classElement.html">Element</a> &amp;) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;};</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="../../d5/d3c/classElement.html#aea3bbf40d27afdf61833f59775e488f3">   71</a></span>&#160;<span class="keyword">inline</span> <a class="code" href="../../d2/d9d/classLevel.html">Level</a> * <a class="code" href="../../d5/d3c/classElement.html#aea3bbf40d27afdf61833f59775e488f3">Element::getLevel</a>()</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;{</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">return</span> this-&gt;<a class="code" href="../../d5/d3c/classElement.html#a28c0ab6e211fb16fc2957024ca2761cb">level</a>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#endif // ELEMENT_HPP</span></div>
+<div class="ttc" id="classElement_html_a1b88519623a6250155f7182706665448"><div class="ttname"><a href="../../d5/d3c/classElement.html#a1b88519623a6250155f7182706665448">Element::includeRay</a></div><div class="ttdeci">virtual Point * includeRay(const Ray &amp;) const  =0</div><div class="ttdoc">Renseigne si l&#39;élément est dans la trajectoire du rayon. </div></div>
+<div class="ttc" id="classElement_html_a52d67b5af9d0e96092b7cd4c3058d17b"><div class="ttname"><a href="../../d5/d3c/classElement.html#a52d67b5af9d0e96092b7cd4c3058d17b">Element::setLevel</a></div><div class="ttdeci">void setLevel(Level *)</div><div class="ttdoc">Permet de modifier le level auquel appartient l&#39;élément. </div></div>
+<div class="ttc" id="classPoint_html"><div class="ttname"><a href="../../dc/d4f/classPoint.html">Point</a></div><div class="ttdoc">Cette classe modélise un point de coordonnés dans le plan  sous deux formes : </div><div class="ttdef"><b>Definition:</b> <a href="../../d0/de4/point_8hpp_source.html#l00015">point.hpp:15</a></div></div>
+<div class="ttc" id="classElement_html_a084081001b0f14ae12d612c866df861c"><div class="ttname"><a href="../../d5/d3c/classElement.html#a084081001b0f14ae12d612c866df861c">Element::Element</a></div><div class="ttdeci">Element()=default</div><div class="ttdoc">Constructeur par défaut, en visibilité protected permettant d&#39;éviter une tentative d&#39;instanciation de...</div></div>
+<div class="ttc" id="classElement_html_aea3bbf40d27afdf61833f59775e488f3"><div class="ttname"><a href="../../d5/d3c/classElement.html#aea3bbf40d27afdf61833f59775e488f3">Element::getLevel</a></div><div class="ttdeci">Level * getLevel()</div><div class="ttdoc">Permet d&#39;obtenir un pointeur sur le niveau auquel appartient l&#39;élément. </div><div class="ttdef"><b>Definition:</b> <a href="../../da/dbc/element_8hpp_source.html#l00071">element.hpp:71</a></div></div>
+<div class="ttc" id="classRay_html"><div class="ttname"><a href="../../d9/dce/classRay.html">Ray</a></div><div class="ttdoc">Cette classe modélise les rayons lumineux, concept central du jeu. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/d1d/ray_8hpp_source.html#l00015">ray.hpp:15</a></div></div>
+<div class="ttc" id="classElement_html_aa87116bb9422d64169b2ebf03831df9b"><div class="ttname"><a href="../../d5/d3c/classElement.html#aa87116bb9422d64169b2ebf03831df9b">Element::reactToRay</a></div><div class="ttdeci">virtual void reactToRay(Ray)=0</div><div class="ttdoc">Réaction à l&#39;exposition d&#39;un rayon. </div></div>
+<div class="ttc" id="classLevel_html"><div class="ttname"><a href="../../d2/d9d/classLevel.html">Level</a></div><div class="ttdoc">Modélise une carte telle qu&#39;utilisée dans le jeu. </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d37/level_8hpp_source.html#l00027">level.hpp:27</a></div></div>
+<div class="ttc" id="classElement_html"><div class="ttname"><a href="../../d5/d3c/classElement.html">Element</a></div><div class="ttdoc">Un élément est un composant du jeu se devant de communiquer son état au niveau le gérant...</div><div class="ttdef"><b>Definition:</b> <a href="../../da/dbc/element_8hpp_source.html#l00013">element.hpp:13</a></div></div>
+<div class="ttc" id="classElement_html_aa8ab9ae8d680e81c964f0eaee2dfb44d"><div class="ttname"><a href="../../d5/d3c/classElement.html#aa8ab9ae8d680e81c964f0eaee2dfb44d">Element::operator==</a></div><div class="ttdeci">bool operator==(const Element &amp;) const </div><div class="ttdoc">Compare deux éléments pour savoir si ils pointent vers le même niveau. </div></div>
+<div class="ttc" id="classElement_html_a28c0ab6e211fb16fc2957024ca2761cb"><div class="ttname"><a href="../../d5/d3c/classElement.html#a28c0ab6e211fb16fc2957024ca2761cb">Element::level</a></div><div class="ttdeci">Level * level</div><div class="ttdoc">Le niveau lié à un élément. </div><div class="ttdef"><b>Definition:</b> <a href="../../da/dbc/element_8hpp_source.html#l00020">element.hpp:20</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Vendredi 24 Avril 2015 14:41:55 pour Starlight par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.9.1
+</small></address>
+</body>
+</html>

@@ -1,0 +1,282 @@
+\hypertarget{classDest}{}\section{Référence de la classe Dest}
+\label{classDest}\index{Dest@{Dest}}
+
+
+Cette classe modélise la destination utilisée dans le jeu.  
+
+
+
+
+{\ttfamily \#include $<$dest.\+hpp$>$}
+
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDest_a4218312bea6a7f4d12f77c938c4ee7b6}{Dest} (const \hyperlink{classPoint}{Point} \&, const int)
+\begin{DoxyCompactList}\small\item\em Intancie une destination, de position et rayon donné. \end{DoxyCompactList}\item 
+const \hyperlink{classPoint}{Point} \& \hyperlink{classDest_ab2d0734c1d7bb18051f4a9fd9796bbb6}{get\+Position} () const 
+\begin{DoxyCompactList}\small\item\em Retourne la position du coin supérieur gauche du carré modélisant la destination. \end{DoxyCompactList}\item 
+int \hyperlink{classDest_a5fdb7d4528a909d58ca79f680c99dc4a}{get\+Edge} () const 
+\begin{DoxyCompactList}\small\item\em Retourne la longueur du côté du carré. \end{DoxyCompactList}\item 
+bool \hyperlink{classDest_a3fe90c4d766a5a676e0d539d5ba00780}{is\+Lighted\+Up} () const 
+\begin{DoxyCompactList}\small\item\em Permet de savoir si la destination est éclairée et donc si le jeu est terminé. \end{DoxyCompactList}\item 
+void \hyperlink{classDest_a6b781ddf5c4d26b5439d12a928190af3}{set\+Lighted\+Up} (const bool)
+\begin{DoxyCompactList}\small\item\em Permet de changer l\textquotesingle{}état d\textquotesingle{}illumination de la destination. \end{DoxyCompactList}\item 
+void \hyperlink{classDest_ad4f6b777efe8d4cd277e635c2c2ee3df}{react\+To\+Ray} (\hyperlink{classRay}{Ray})
+\begin{DoxyCompactList}\small\item\em Cette méthode est lancé lorsque la destination courant est exposé à un rayon. \end{DoxyCompactList}\item 
+\hyperlink{classPoint}{Point} $\ast$ \hyperlink{classDest_aa0ec59799948c6a949907db4a12e2f11}{include\+Ray} (const \hyperlink{classRay}{Ray} \&) const 
+\begin{DoxyCompactList}\small\item\em Renseigne si la destination est dans la trajectoire du rayon. \end{DoxyCompactList}\item 
+bool \hyperlink{classDest_a0329ceede6eacadc211890bb3397197c}{operator==} (const \hyperlink{classDest}{Dest} \&) const 
+\begin{DoxyCompactList}\small\item\em Permet de savoir si deux destinations sont les même. \end{DoxyCompactList}\item 
+bool \hyperlink{classDest_a5d62d68ec9de0d58920a82a00ed72a53}{operator!=} (const \hyperlink{classDest}{Dest} \&) const 
+\begin{DoxyCompactList}\small\item\em Permet de savoir si deux destinations sont différentes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Attributs privés}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classDest_abde9aa4bba2ce7868d90fa873761753d}{light}
+\end{DoxyCompactItemize}
+\subsection*{Membres hérités additionnels}
+
+
+\subsection{Description détaillée}
+Cette classe modélise la destination utilisée dans le jeu. 
+
+Une destination est un objet carré qui, quand traversé par un rayon lumineux, fait remporter la partie au joueur. 
+
+Définition à la ligne 17 du fichier dest.\+hpp.
+
+
+
+Graphe d\textquotesingle{}héritage de Dest\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{d9/d5c/classDest__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Graphe de collaboration de Dest\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d4/d77/classDest__coll__graph}
+\end{center}
+\end{figure}
+
+
+\subsection{Documentation des constructeurs et destructeur}
+\hypertarget{classDest_a4218312bea6a7f4d12f77c938c4ee7b6}{}\index{Dest@{Dest}!Dest@{Dest}}
+\index{Dest@{Dest}!Dest@{Dest}}
+\subsubsection[{Dest(const Point \&, const int)}]{\setlength{\rightskip}{0pt plus 5cm}Dest\+::\+Dest (
+\begin{DoxyParamCaption}
+\item[{const {\bf Point} \&}]{, }
+\item[{const int}]{}
+\end{DoxyParamCaption}
+)}\label{classDest_a4218312bea6a7f4d12f77c938c4ee7b6}
+
+
+Intancie une destination, de position et rayon donné. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em position} & Le coin supérieur gauche du carré modélisant la destination. \\
+\hline
+{\em edge} & La longueur du côté du carré. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentation des fonctions membres}
+\hypertarget{classDest_a5fdb7d4528a909d58ca79f680c99dc4a}{}\index{Dest@{Dest}!get\+Edge@{get\+Edge}}
+\index{get\+Edge@{get\+Edge}!Dest@{Dest}}
+\subsubsection[{get\+Edge() const }]{\setlength{\rightskip}{0pt plus 5cm}int Dest\+::get\+Edge (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classDest_a5fdb7d4528a909d58ca79f680c99dc4a}
+
+
+Retourne la longueur du côté du carré. 
+
+\begin{DoxyReturn}{Renvoie}
+La longueur du côté du carré. 
+\end{DoxyReturn}
+
+
+Définition à la ligne 110 du fichier dest.\+hpp.
+
+
+
+Références Rectangle\+::height.
+
+
+\begin{DoxyCode}
+111 \{
+112     \textcolor{keywordflow}{return} this->\hyperlink{classRectangle_a58c0573f0d706d238759395e8272c6bf}{height};
+113 \}
+\end{DoxyCode}
+\hypertarget{classDest_ab2d0734c1d7bb18051f4a9fd9796bbb6}{}\index{Dest@{Dest}!get\+Position@{get\+Position}}
+\index{get\+Position@{get\+Position}!Dest@{Dest}}
+\subsubsection[{get\+Position() const }]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Point} \& Dest\+::get\+Position (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classDest_ab2d0734c1d7bb18051f4a9fd9796bbb6}
+
+
+Retourne la position du coin supérieur gauche du carré modélisant la destination. 
+
+\begin{DoxyReturn}{Renvoie}
+La position de la destination. 
+\end{DoxyReturn}
+
+
+Définition à la ligne 105 du fichier dest.\+hpp.
+
+
+
+Références Rectangle\+::up\+Left\+Corner.
+
+
+\begin{DoxyCode}
+106 \{
+107     \textcolor{keywordflow}{return} this->\hyperlink{classRectangle_aeeb6ca62aa27e964265c92d1ea25d511}{upLeftCorner};
+108 \}
+\end{DoxyCode}
+\hypertarget{classDest_aa0ec59799948c6a949907db4a12e2f11}{}\index{Dest@{Dest}!include\+Ray@{include\+Ray}}
+\index{include\+Ray@{include\+Ray}!Dest@{Dest}}
+\subsubsection[{include\+Ray(const Ray \&) const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Point}$\ast$ Dest\+::include\+Ray (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ray} \&}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classDest_aa0ec59799948c6a949907db4a12e2f11}
+
+
+Renseigne si la destination est dans la trajectoire du rayon. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em ray} & Le rayon.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+{\ttfamily true} Si la destination se trouve dans la trajectoire du rayon entré en paramètre. 
+\end{DoxyReturn}
+
+
+Implémente \hyperlink{classElement_a1b88519623a6250155f7182706665448}{Element}.
+
+\hypertarget{classDest_a3fe90c4d766a5a676e0d539d5ba00780}{}\index{Dest@{Dest}!is\+Lighted\+Up@{is\+Lighted\+Up}}
+\index{is\+Lighted\+Up@{is\+Lighted\+Up}!Dest@{Dest}}
+\subsubsection[{is\+Lighted\+Up() const }]{\setlength{\rightskip}{0pt plus 5cm}bool Dest\+::is\+Lighted\+Up (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classDest_a3fe90c4d766a5a676e0d539d5ba00780}
+
+
+Permet de savoir si la destination est éclairée et donc si le jeu est terminé. 
+
+\begin{DoxyReturn}{Renvoie}
+{\ttfamily true} Si la destination est illuminée. 
+\end{DoxyReturn}
+
+
+Définition à la ligne 115 du fichier dest.\+hpp.
+
+
+
+Références light.
+
+
+\begin{DoxyCode}
+116 \{
+117     \textcolor{keywordflow}{return} this->\hyperlink{classDest_abde9aa4bba2ce7868d90fa873761753d}{light};
+118 \}
+\end{DoxyCode}
+\hypertarget{classDest_a5d62d68ec9de0d58920a82a00ed72a53}{}\index{Dest@{Dest}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Dest@{Dest}}
+\subsubsection[{operator"!=(const Dest \&) const }]{\setlength{\rightskip}{0pt plus 5cm}bool Dest\+::operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Dest} \&}]{}
+\end{DoxyParamCaption}
+) const}\label{classDest_a5d62d68ec9de0d58920a82a00ed72a53}
+
+
+Permet de savoir si deux destinations sont différentes. 
+
+\begin{DoxyReturn}{Renvoie}
+{\ttfamily true} Si les destinations sont différentes. 
+\end{DoxyReturn}
+\hypertarget{classDest_a0329ceede6eacadc211890bb3397197c}{}\index{Dest@{Dest}!operator==@{operator==}}
+\index{operator==@{operator==}!Dest@{Dest}}
+\subsubsection[{operator==(const Dest \&) const }]{\setlength{\rightskip}{0pt plus 5cm}bool Dest\+::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Dest} \&}]{}
+\end{DoxyParamCaption}
+) const}\label{classDest_a0329ceede6eacadc211890bb3397197c}
+
+
+Permet de savoir si deux destinations sont les même. 
+
+\begin{DoxyReturn}{Renvoie}
+{\ttfamily true} Si les destinations sont les même. 
+\end{DoxyReturn}
+\hypertarget{classDest_ad4f6b777efe8d4cd277e635c2c2ee3df}{}\index{Dest@{Dest}!react\+To\+Ray@{react\+To\+Ray}}
+\index{react\+To\+Ray@{react\+To\+Ray}!Dest@{Dest}}
+\subsubsection[{react\+To\+Ray(\+Ray)}]{\setlength{\rightskip}{0pt plus 5cm}void Dest\+::react\+To\+Ray (
+\begin{DoxyParamCaption}
+\item[{{\bf Ray}}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classDest_ad4f6b777efe8d4cd277e635c2c2ee3df}
+
+
+Cette méthode est lancé lorsque la destination courant est exposé à un rayon. 
+
+Elle va s\textquotesingle{}exposer comme illuminée.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em ray} & Un rayon percutant la destination. \\
+\hline
+\end{DoxyParams}
+
+
+Implémente \hyperlink{classElement_aa87116bb9422d64169b2ebf03831df9b}{Element}.
+
+\hypertarget{classDest_a6b781ddf5c4d26b5439d12a928190af3}{}\index{Dest@{Dest}!set\+Lighted\+Up@{set\+Lighted\+Up}}
+\index{set\+Lighted\+Up@{set\+Lighted\+Up}!Dest@{Dest}}
+\subsubsection[{set\+Lighted\+Up(const bool)}]{\setlength{\rightskip}{0pt plus 5cm}void Dest\+::set\+Lighted\+Up (
+\begin{DoxyParamCaption}
+\item[{const bool}]{}
+\end{DoxyParamCaption}
+)}\label{classDest_a6b781ddf5c4d26b5439d12a928190af3}
+
+
+Permet de changer l\textquotesingle{}état d\textquotesingle{}illumination de la destination. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em Le} & nouvelle état d\textquotesingle{}illumination de la destination. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentation des données membres}
+\hypertarget{classDest_abde9aa4bba2ce7868d90fa873761753d}{}\index{Dest@{Dest}!light@{light}}
+\index{light@{light}!Dest@{Dest}}
+\subsubsection[{light}]{\setlength{\rightskip}{0pt plus 5cm}bool Dest\+::light\hspace{0.3cm}{\ttfamily [private]}}\label{classDest_abde9aa4bba2ce7868d90fa873761753d}
+
+
+Définition à la ligne 22 du fichier dest.\+hpp.
+
+
+
+Référencé par is\+Lighted\+Up().
+
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+model/elements/\hyperlink{dest_8hpp}{dest.\+hpp}\end{DoxyCompactItemize}

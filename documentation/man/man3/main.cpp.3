@@ -1,0 +1,42 @@
+.TH "main.cpp" 3 "Vendredi 24 Avril 2015" "Starlight" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+main.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'main\&.hpp'\fP
+.br
+\fC#include <QApplication>\fP
+.br
+\fC#include 'view/windows/mainwindow\&.hpp'\fP
+.br
+
+.SS "Fonctions"
+
+.in +1c
+.ti -1c
+.RI "int \fBmain\fP (int argc, char *argv[])"
+.br
+.in -1c
+.SH "Documentation des fonctions"
+.PP 
+.SS "int main (int argc, char * argv[])"
+
+.PP
+Définition à la ligne 8 du fichier main\&.cpp\&.
+.PP
+.nf
+9 {
+10     QApplication a(argc, argv);
+11     MainWindow w;
+12 
+13     w\&.show();
+14 
+15     return a\&.exec();
+16 }
+.fi
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Starlight à partir du code source\&.

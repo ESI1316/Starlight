@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.9.1"/>
+<title>Starlight:  Fichier source de model/elements/dest.hpp</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="../../customdoxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Starlight
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.9.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="../../namespaces.html"><span>Espaces&#160;de&#160;nommage</span></a></li>
+      <li><a href="../../annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="../../files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="../../globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_3f14f6767c31cb4a1d22c13c18cc6fc3.html">model</a></li><li class="navelem"><a class="el" href="../../dir_6cb5f6c5bce0f61f6326f5ca1dc4dc30.html">elements</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">dest.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../db/d20/dest_8hpp.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef DEST_HPP</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define DEST_HPP</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;ostream&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../da/dbc/element_8hpp.html">model/elements/element.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d6/d95/rectangle_8hpp.html">model/geometry/rectangle.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">class </span><a class="code" href="../../dc/d4f/classPoint.html">Point</a>;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">class </span><a class="code" href="../../d9/dce/classRay.html">Ray</a>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="../../de/d97/classDest.html">   17</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../de/d97/classDest.html">Dest</a> : <span class="keyword">public</span> <a class="code" href="../../d5/d3c/classElement.html">Element</a>, <span class="keyword">public</span> <a class="code" href="../../de/d00/classRectangle.html">Rectangle</a></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">private</span> :</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="../../de/d97/classDest.html#abde9aa4bba2ce7868d90fa873761753d">   22</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../de/d97/classDest.html#abde9aa4bba2ce7868d90fa873761753d">light</a>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="../../de/d97/classDest.html#a4218312bea6a7f4d12f77c938c4ee7b6">Dest</a>(<span class="keyword">const</span> <a class="code" href="../../dc/d4f/classPoint.html">Point</a> &amp;, <span class="keyword">const</span> <span class="keywordtype">int</span>);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../dc/d4f/classPoint.html">Point</a> &amp; <a class="code" href="../../de/d97/classDest.html#ab2d0734c1d7bb18051f4a9fd9796bbb6">getPosition</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../de/d97/classDest.html#a5fdb7d4528a909d58ca79f680c99dc4a">getEdge</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../de/d97/classDest.html#a3fe90c4d766a5a676e0d539d5ba00780">isLightedUp</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../de/d97/classDest.html#a6b781ddf5c4d26b5439d12a928190af3">setLightedUp</a>(<span class="keyword">const</span> <span class="keywordtype">bool</span>);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../de/d97/classDest.html#ad4f6b777efe8d4cd277e635c2c2ee3df">reactToRay</a>(<a class="code" href="../../d9/dce/classRay.html">Ray</a>);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <a class="code" href="../../dc/d4f/classPoint.html">Point</a> * <a class="code" href="../../de/d97/classDest.html#aa0ec59799948c6a949907db4a12e2f11">includeRay</a>(<span class="keyword">const</span> <a class="code" href="../../d9/dce/classRay.html">Ray</a> &amp;) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../de/d97/classDest.html#a0329ceede6eacadc211890bb3397197c">operator==</a>(<span class="keyword">const</span> <a class="code" href="../../de/d97/classDest.html">Dest</a> &amp;) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../de/d97/classDest.html#a5d62d68ec9de0d58920a82a00ed72a53">operator!=</a>(<span class="keyword">const</span> <a class="code" href="../../de/d97/classDest.html">Dest</a> &amp;) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;};</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;std::ostream &amp; <a class="code" href="../../db/d20/dest_8hpp.html#ae50140bc92da1c3f8baf098292e086ef">operator&lt;&lt;</a>(std::ostream &amp;, <span class="keyword">const</span> <a class="code" href="../../de/d97/classDest.html">Dest</a> &amp;);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
+<div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="../../de/d97/classDest.html#ab2d0734c1d7bb18051f4a9fd9796bbb6">  105</a></span>&#160;<span class="keyword">inline</span> <span class="keyword">const</span> <a class="code" href="../../dc/d4f/classPoint.html">Point</a> &amp; <a class="code" href="../../de/d97/classDest.html#ab2d0734c1d7bb18051f4a9fd9796bbb6">Dest::getPosition</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordflow">return</span> this-&gt;<a class="code" href="../../de/d00/classRectangle.html#aeeb6ca62aa27e964265c92d1ea25d511">upLeftCorner</a>;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;}</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
+<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="../../de/d97/classDest.html#a5fdb7d4528a909d58ca79f680c99dc4a">  110</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="../../de/d97/classDest.html#a5fdb7d4528a909d58ca79f680c99dc4a">Dest::getEdge</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordflow">return</span> this-&gt;<a class="code" href="../../de/d00/classRectangle.html#a58c0573f0d706d238759395e8272c6bf">height</a>;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;}</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
+<div class="line"><a name="l00115"></a><span class="lineno"><a class="line" href="../../de/d97/classDest.html#a3fe90c4d766a5a676e0d539d5ba00780">  115</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="../../de/d97/classDest.html#a3fe90c4d766a5a676e0d539d5ba00780">Dest::isLightedUp</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordflow">return</span> this-&gt;<a class="code" href="../../de/d97/classDest.html#abde9aa4bba2ce7868d90fa873761753d">light</a>;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;}</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="preprocessor">#endif // DEST_HPP</span></div>
+<div class="ttc" id="classDest_html_ab2d0734c1d7bb18051f4a9fd9796bbb6"><div class="ttname"><a href="../../de/d97/classDest.html#ab2d0734c1d7bb18051f4a9fd9796bbb6">Dest::getPosition</a></div><div class="ttdeci">const Point &amp; getPosition() const </div><div class="ttdoc">Retourne la position du coin supérieur gauche du carré modélisant la destination. ...</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d20/dest_8hpp_source.html#l00105">dest.hpp:105</a></div></div>
+<div class="ttc" id="classDest_html_a6b781ddf5c4d26b5439d12a928190af3"><div class="ttname"><a href="../../de/d97/classDest.html#a6b781ddf5c4d26b5439d12a928190af3">Dest::setLightedUp</a></div><div class="ttdeci">void setLightedUp(const bool)</div><div class="ttdoc">Permet de changer l&#39;état d&#39;illumination de la destination. </div></div>
+<div class="ttc" id="classRectangle_html_aeeb6ca62aa27e964265c92d1ea25d511"><div class="ttname"><a href="../../de/d00/classRectangle.html#aeeb6ca62aa27e964265c92d1ea25d511">Rectangle::upLeftCorner</a></div><div class="ttdeci">Point upLeftCorner</div><div class="ttdoc">La position du coin supérieur gauche du rectangle. </div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d95/rectangle_8hpp_source.html#l00032">rectangle.hpp:32</a></div></div>
+<div class="ttc" id="classDest_html_a4218312bea6a7f4d12f77c938c4ee7b6"><div class="ttname"><a href="../../de/d97/classDest.html#a4218312bea6a7f4d12f77c938c4ee7b6">Dest::Dest</a></div><div class="ttdeci">Dest(const Point &amp;, const int)</div><div class="ttdoc">Intancie une destination, de position et rayon donné. </div></div>
+<div class="ttc" id="classRectangle_html_a58c0573f0d706d238759395e8272c6bf"><div class="ttname"><a href="../../de/d00/classRectangle.html#a58c0573f0d706d238759395e8272c6bf">Rectangle::height</a></div><div class="ttdeci">double height</div><div class="ttdoc">La longueur du rectangle. </div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d95/rectangle_8hpp_source.html#l00027">rectangle.hpp:27</a></div></div>
+<div class="ttc" id="classDest_html_a0329ceede6eacadc211890bb3397197c"><div class="ttname"><a href="../../de/d97/classDest.html#a0329ceede6eacadc211890bb3397197c">Dest::operator==</a></div><div class="ttdeci">bool operator==(const Dest &amp;) const </div><div class="ttdoc">Permet de savoir si deux destinations sont les même. </div></div>
+<div class="ttc" id="rectangle_8hpp_html"><div class="ttname"><a href="../../d6/d95/rectangle_8hpp.html">rectangle.hpp</a></div></div>
+<div class="ttc" id="classDest_html_abde9aa4bba2ce7868d90fa873761753d"><div class="ttname"><a href="../../de/d97/classDest.html#abde9aa4bba2ce7868d90fa873761753d">Dest::light</a></div><div class="ttdeci">bool light</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d20/dest_8hpp_source.html#l00022">dest.hpp:22</a></div></div>
+<div class="ttc" id="classDest_html_a3fe90c4d766a5a676e0d539d5ba00780"><div class="ttname"><a href="../../de/d97/classDest.html#a3fe90c4d766a5a676e0d539d5ba00780">Dest::isLightedUp</a></div><div class="ttdeci">bool isLightedUp() const </div><div class="ttdoc">Permet de savoir si la destination est éclairée et donc si le jeu est terminé. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/d20/dest_8hpp_source.html#l00115">dest.hpp:115</a></div></div>
+<div class="ttc" id="dest_8hpp_html_ae50140bc92da1c3f8baf098292e086ef"><div class="ttname"><a href="../../db/d20/dest_8hpp.html#ae50140bc92da1c3f8baf098292e086ef">operator&lt;&lt;</a></div><div class="ttdeci">std::ostream &amp; operator&lt;&lt;(std::ostream &amp;, const Dest &amp;)</div><div class="ttdoc">Définition, externe, de l&#39;opérateur permettant de produire un affichage formaté. </div></div>
+<div class="ttc" id="classPoint_html"><div class="ttname"><a href="../../dc/d4f/classPoint.html">Point</a></div><div class="ttdoc">Cette classe modélise un point de coordonnés dans le plan  sous deux formes : </div><div class="ttdef"><b>Definition:</b> <a href="../../d0/de4/point_8hpp_source.html#l00015">point.hpp:15</a></div></div>
+<div class="ttc" id="classDest_html_a5d62d68ec9de0d58920a82a00ed72a53"><div class="ttname"><a href="../../de/d97/classDest.html#a5d62d68ec9de0d58920a82a00ed72a53">Dest::operator!=</a></div><div class="ttdeci">bool operator!=(const Dest &amp;) const </div><div class="ttdoc">Permet de savoir si deux destinations sont différentes. </div></div>
+<div class="ttc" id="classRectangle_html"><div class="ttname"><a href="../../de/d00/classRectangle.html">Rectangle</a></div><div class="ttdoc">Le rectangle est objet géométrique, du plan, à quatre coté parallèles deux à deux. </div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d95/rectangle_8hpp_source.html#l00014">rectangle.hpp:14</a></div></div>
+<div class="ttc" id="element_8hpp_html"><div class="ttname"><a href="../../da/dbc/element_8hpp.html">element.hpp</a></div></div>
+<div class="ttc" id="classRay_html"><div class="ttname"><a href="../../d9/dce/classRay.html">Ray</a></div><div class="ttdoc">Cette classe modélise les rayons lumineux, concept central du jeu. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/d1d/ray_8hpp_source.html#l00015">ray.hpp:15</a></div></div>
+<div class="ttc" id="classElement_html"><div class="ttname"><a href="../../d5/d3c/classElement.html">Element</a></div><div class="ttdoc">Un élément est un composant du jeu se devant de communiquer son état au niveau le gérant...</div><div class="ttdef"><b>Definition:</b> <a href="../../da/dbc/element_8hpp_source.html#l00013">element.hpp:13</a></div></div>
+<div class="ttc" id="classDest_html"><div class="ttname"><a href="../../de/d97/classDest.html">Dest</a></div><div class="ttdoc">Cette classe modélise la destination utilisée dans le jeu. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/d20/dest_8hpp_source.html#l00017">dest.hpp:17</a></div></div>
+<div class="ttc" id="classDest_html_ad4f6b777efe8d4cd277e635c2c2ee3df"><div class="ttname"><a href="../../de/d97/classDest.html#ad4f6b777efe8d4cd277e635c2c2ee3df">Dest::reactToRay</a></div><div class="ttdeci">void reactToRay(Ray)</div><div class="ttdoc">Cette méthode est lancé lorsque la destination courant est exposé à un rayon. </div></div>
+<div class="ttc" id="classDest_html_a5fdb7d4528a909d58ca79f680c99dc4a"><div class="ttname"><a href="../../de/d97/classDest.html#a5fdb7d4528a909d58ca79f680c99dc4a">Dest::getEdge</a></div><div class="ttdeci">int getEdge() const </div><div class="ttdoc">Retourne la longueur du côté du carré. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/d20/dest_8hpp_source.html#l00110">dest.hpp:110</a></div></div>
+<div class="ttc" id="classDest_html_aa0ec59799948c6a949907db4a12e2f11"><div class="ttname"><a href="../../de/d97/classDest.html#aa0ec59799948c6a949907db4a12e2f11">Dest::includeRay</a></div><div class="ttdeci">Point * includeRay(const Ray &amp;) const </div><div class="ttdoc">Renseigne si la destination est dans la trajectoire du rayon. </div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Vendredi 24 Avril 2015 14:41:55 pour Starlight par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.9.1
+</small></address>
+</body>
+</html>

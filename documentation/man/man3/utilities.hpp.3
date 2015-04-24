@@ -1,0 +1,99 @@
+.TH "model/geometry/utilities.hpp" 3 "Vendredi 24 Avril 2015" "Starlight" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+model/geometry/utilities.hpp \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Espaces de nommage"
+
+.in +1c
+.ti -1c
+.RI " \fButilities\fP"
+.br
+.RI "\fIDiverse fonctions utilitaires de géométrie\&. \fP"
+.in -1c
+.SS "Fonctions"
+
+.in +1c
+.ti -1c
+.RI "bool \fButilities::secondDegreeEquationSolver\fP (double, double, double, double *, double *)"
+.br
+.RI "\fIPermet de trouver les racines (si elles existe) d'une fonction du deuxième degré de forme $ax² + bx + c$\&. \fP"
+.ti -1c
+.RI "double \fButilities::radianAsDegree\fP (const double)"
+.br
+.RI "\fIPermet de trouver l'angle en degré d'un angle en radian\&. \fP"
+.ti -1c
+.RI "double \fButilities::radianAsDegree0to360\fP (const double)"
+.br
+.RI "\fIPermet de trouver l'angle en degré, entre 0 et 360, d'un angle en radian\&. \fP"
+.ti -1c
+.RI "bool \fButilities::equals\fP (const double, const double, const double=\fButilities::EPSILON\fP)"
+.br
+.RI "\fICette méthode permet de savoir si deux double sont égaux avec une marge d'erreur Epsilon passée en paramètre ou imposée par défaut à $ \epsilon = 10^{-7}$\&. \fP"
+.ti -1c
+.RI "int \fButilities::round\fP (const double)"
+.br
+.RI "\fICette méthode cast un double en int on l'ayant au préalable arrondi à l'unité la plus proche (0\&.5)\&. \fP"
+.ti -1c
+.RI "bool \fButilities::greaterOrEquals\fP (const double, const double, const double=\fButilities::EPSILON\fP)"
+.br
+.RI "\fICette méthode permet de vérifier l'inégalité $ nb_1 \geq nb_2 $ sur deux nombres réels avec une marge d'erreur Epsilon passée en paramètre ou imposée par défaut à $ \epsilon = 10^{-7}$\&. \fP"
+.ti -1c
+.RI "bool \fButilities::lessOrEquals\fP (const double, const double, const double=\fButilities::EPSILON\fP)"
+.br
+.RI "\fICette méthode permet de vérifier l'inégalité $ nb_1 \leq nb_2 $ sur deux nombres réels avec une marge d'erreur Epsilon passée en paramètre ou imposée par défaut à $ \epsilon = 10^{-7}$\&. \fP"
+.ti -1c
+.RI "double \fButilities::degreeToRadian\fP (const double)"
+.br
+.RI "\fICette méthode permet de transformer des degrés en radian\&. \fP"
+.ti -1c
+.RI "double \fButilities::slopeFromPoints\fP (const \fBPoint\fP &, const \fBPoint\fP &)"
+.br
+.RI "\fIPermet de trouver la pente d'une droite formée par deux points\&. \fP"
+.ti -1c
+.RI "bool \fButilities::isHalfPiPlusNPi\fP (const double)"
+.br
+.RI "\fIPermet de savoir si l'angle, en radian, vaut $ \frac{\pi}{2} + n \cdot (2 \cdot \pi)$\&. \fP"
+.ti -1c
+.RI "double \fButilities::tan\fP (const double)"
+.br
+.RI "\fIPermet d'avoir la valeur trigonométrique tangente d'un angle ou l'infini si $ angle = \frac{\pi}{2} + n \cdot 2 \cdot \pi $\&. \fP"
+.ti -1c
+.RI "double \fButilities::absoluteAngle\fP (const double)"
+.br
+.RI "\fIPermet d'avoir l'angle 'absolu' de celui passé en paramètre, [0, PI_2]\&. \fP"
+.ti -1c
+.RI "double \fButilities::inZeroTwoPi\fP (const double)"
+.br
+.RI "\fIPermet de cadrer un angle dans un intervalle [0 ; 2PI[\&. \fP"
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "const double \fButilities::PI\fP {3\&.14159265358979323846}"
+.br
+.RI "\fIPI Représentation de la constante PI sur 26 décimales\&. \fP"
+.ti -1c
+.RI "const double \fButilities::PI_2\fP {1\&.57079632679489661923}"
+.br
+.RI "\fIPI_2 Représentation de la constante PI/2 sur 26 décimales\&. \fP"
+.ti -1c
+.RI "const double \fButilities::PI_4\fP {0\&.785398163397448309616}"
+.br
+.RI "\fIPI_4 Représentation de la constante PI/4 sur 26 décimales\&. \fP"
+.ti -1c
+.RI "const double \fButilities::EPSILON\fP {10E\-7}"
+.br
+.RI "\fIEPSILON Représentation de la marge d'erreur maximale acceptée\&. \fP"
+.ti -1c
+.RI "const double \fButilities::INF\fP {1\&./0\&.}"
+.br
+.RI "\fIINF Représente une division impossible\&. \fP"
+.in -1c
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Starlight à partir du code source\&.

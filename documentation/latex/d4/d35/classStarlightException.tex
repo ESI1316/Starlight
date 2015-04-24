@@ -1,0 +1,147 @@
+\hypertarget{classStarlightException}{}\section{Référence de la classe Starlight\+Exception}
+\label{classStarlightException}\index{Starlight\+Exception@{Starlight\+Exception}}
+
+
+Cette classe représente une exception spécifique au jeu Starlight.  
+
+
+
+
+{\ttfamily \#include $<$starlightexception.\+hpp$>$}
+
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classStarlightException_a36d43a3c21c61b15a8dc4b3e15f12ab0}{Starlight\+Exception} (std\+::string)
+\begin{DoxyCompactList}\small\item\em Construit une nouvelle erreur inhérente au jeu. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classStarlightException_ae4c499f366c74c29dc36c935aa665dda}{get\+Message} () const 
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}obtenir le message d\textquotesingle{}erreur de l\textquotesingle{}exception. \end{DoxyCompactList}\item 
+const char $\ast$ \hyperlink{classStarlightException_a727446aaf06aa9bc92d63ff21a37049b}{what} () const   throw ()
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}afficher l\textquotesingle{}erreur en cas d\textquotesingle{}erreur. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Attributs privés}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \hyperlink{classStarlightException_aa235f0c10c5ad918b0c2911c72a85fcb}{error\+Msg}
+\begin{DoxyCompactList}\small\item\em Le message d\textquotesingle{}erreur de l\textquotesingle{}exception lancée. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Cette classe représente une exception spécifique au jeu Starlight. 
+
+Définition à la ligne 10 du fichier starlightexception.\+hpp.
+
+
+
+Graphe d\textquotesingle{}héritage de Starlight\+Exception\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{da/dcd/classStarlightException__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Graphe de collaboration de Starlight\+Exception\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{dd/d88/classStarlightException__coll__graph}
+\end{center}
+\end{figure}
+
+
+\subsection{Documentation des constructeurs et destructeur}
+\hypertarget{classStarlightException_a36d43a3c21c61b15a8dc4b3e15f12ab0}{}\index{Starlight\+Exception@{Starlight\+Exception}!Starlight\+Exception@{Starlight\+Exception}}
+\index{Starlight\+Exception@{Starlight\+Exception}!Starlight\+Exception@{Starlight\+Exception}}
+\subsubsection[{Starlight\+Exception(std\+::string)}]{\setlength{\rightskip}{0pt plus 5cm}Starlight\+Exception\+::\+Starlight\+Exception (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{}
+\end{DoxyParamCaption}
+)}\label{classStarlightException_a36d43a3c21c61b15a8dc4b3e15f12ab0}
+
+
+Construit une nouvelle erreur inhérente au jeu. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em error\+Msg} & Message expliquant l\textquotesingle{}erreur. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentation des fonctions membres}
+\hypertarget{classStarlightException_ae4c499f366c74c29dc36c935aa665dda}{}\index{Starlight\+Exception@{Starlight\+Exception}!get\+Message@{get\+Message}}
+\index{get\+Message@{get\+Message}!Starlight\+Exception@{Starlight\+Exception}}
+\subsubsection[{get\+Message() const }]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Starlight\+Exception\+::get\+Message (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classStarlightException_ae4c499f366c74c29dc36c935aa665dda}
+
+
+Permet d\textquotesingle{}obtenir le message d\textquotesingle{}erreur de l\textquotesingle{}exception. 
+
+\begin{DoxyReturn}{Renvoie}
+Le message d\textquotesingle{}erreur de l\textquotesingle{}exception. 
+\end{DoxyReturn}
+
+
+Définition à la ligne 45 du fichier starlightexception.\+hpp.
+
+
+
+Références error\+Msg.
+
+
+\begin{DoxyCode}
+46 \{
+47     \textcolor{keywordflow}{return} this->\hyperlink{classStarlightException_aa235f0c10c5ad918b0c2911c72a85fcb}{errorMsg};
+48 \}
+\end{DoxyCode}
+\hypertarget{classStarlightException_a727446aaf06aa9bc92d63ff21a37049b}{}\index{Starlight\+Exception@{Starlight\+Exception}!what@{what}}
+\index{what@{what}!Starlight\+Exception@{Starlight\+Exception}}
+\subsubsection[{what() const }]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ Starlight\+Exception\+::what (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const throw  ) \hspace{0.3cm}{\ttfamily [inline]}}\label{classStarlightException_a727446aaf06aa9bc92d63ff21a37049b}
+
+
+Permet d\textquotesingle{}afficher l\textquotesingle{}erreur en cas d\textquotesingle{}erreur. 
+
+\begin{DoxyReturn}{Renvoie}
+Le message d\textquotesingle{}erreur. 
+\end{DoxyReturn}
+
+
+Définition à la ligne 50 du fichier starlightexception.\+hpp.
+
+
+\begin{DoxyCode}
+51 \{
+52     \textcolor{keywordflow}{return} this->\hyperlink{classStarlightException_aa235f0c10c5ad918b0c2911c72a85fcb}{errorMsg}.c\_str();
+53 \}
+\end{DoxyCode}
+
+
+\subsection{Documentation des données membres}
+\hypertarget{classStarlightException_aa235f0c10c5ad918b0c2911c72a85fcb}{}\index{Starlight\+Exception@{Starlight\+Exception}!error\+Msg@{error\+Msg}}
+\index{error\+Msg@{error\+Msg}!Starlight\+Exception@{Starlight\+Exception}}
+\subsubsection[{error\+Msg}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Starlight\+Exception\+::error\+Msg\hspace{0.3cm}{\ttfamily [private]}}\label{classStarlightException_aa235f0c10c5ad918b0c2911c72a85fcb}
+
+
+Le message d\textquotesingle{}erreur de l\textquotesingle{}exception lancée. 
+
+
+
+Définition à la ligne 18 du fichier starlightexception.\+hpp.
+
+
+
+Référencé par get\+Message().
+
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+model/exception/\hyperlink{starlightexception_8hpp}{starlightexception.\+hpp}\end{DoxyCompactItemize}

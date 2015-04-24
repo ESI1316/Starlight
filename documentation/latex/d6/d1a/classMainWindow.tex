@@ -1,0 +1,190 @@
+\hypertarget{classMainWindow}{}\section{Référence de la classe Main\+Window}
+\label{classMainWindow}\index{Main\+Window@{Main\+Window}}
+
+
+Cette classe est la fenêtre principale du jeu qui englobe toutes les autres vues.  
+
+
+
+
+{\ttfamily \#include $<$mainwindow.\+hpp$>$}
+
+\subsection*{Connecteurs publics}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classMainWindow_a378316f6c8670867a82a7806cfa050d8}{display\+Main\+Menu} ()
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}afficher le menu principal du jeu. \end{DoxyCompactList}\item 
+void \hyperlink{classMainWindow_a0aadedf51803aeb60945aa0f809ddaa0}{display\+Level} ()
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}afficher le niveau. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMainWindow_a2022dfcfcd6eeba03aec9f1e6eb3ece0}{Main\+Window} (Q\+Widget $\ast$=0)
+\begin{DoxyCompactList}\small\item\em Créer une fenêtre principale du jeu. \end{DoxyCompactList}\item 
+\hyperlink{classMainWindow_ae98d00a93bc118200eeef9f9bba1dba7}{$\sim$\+Main\+Window} ()
+\end{DoxyCompactItemize}
+\subsection*{Fonctions membres privées}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classMainWindow_a306206f30c08b874636f48ed79192e86}{set\+Menu\+Bar} ()
+\begin{DoxyCompactList}\small\item\em Configure la bar de menu. \end{DoxyCompactList}\item 
+void \hyperlink{classMainWindow_a870e523fc13b85f707e938bea8e91fd3}{connect\+All} ()
+\begin{DoxyCompactList}\small\item\em Créer toutes les connections S\+L\+O\+T / S\+I\+G\+N\+A\+L. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Attributs privés}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMainMenu}{Main\+Menu} $\ast$ \hyperlink{classMainWindow_acff78d8b40fc6a64c3503e9fcf120df2}{main\+Menu}
+\begin{DoxyCompactList}\small\item\em Le menu de sélection de niveau du jeu. \end{DoxyCompactList}\item 
+\hyperlink{classLevelView}{Level\+View} $\ast$ \hyperlink{classMainWindow_a62681b0c049afcba55ffbd5e5f470ca3}{level\+View}
+\begin{DoxyCompactList}\small\item\em La vue de la partie qui est lancée. \end{DoxyCompactList}\item 
+Q\+Menu\+Bar $\ast$ \hyperlink{classMainWindow_af362dbdd2f874d380a02700ce5dbe42c}{bar}
+\begin{DoxyCompactList}\small\item\em La bar de menu du jeu. \end{DoxyCompactList}\item 
+Q\+Menu $\ast$ \hyperlink{classMainWindow_a42e15f7cdb120e053ef72a06d11d73f6}{menu}
+\begin{DoxyCompactList}\small\item\em Le menu principal du jeu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Cette classe est la fenêtre principale du jeu qui englobe toutes les autres vues. 
+
+Elle permet, notamment, d\textquotesingle{}avoir un menu. 
+
+Définition à la ligne 15 du fichier mainwindow.\+hpp.
+
+
+
+Graphe d\textquotesingle{}héritage de Main\+Window\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{d1/d96/classMainWindow__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Graphe de collaboration de Main\+Window\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d38/classMainWindow__coll__graph}
+\end{center}
+\end{figure}
+
+
+\subsection{Documentation des constructeurs et destructeur}
+\hypertarget{classMainWindow_a2022dfcfcd6eeba03aec9f1e6eb3ece0}{}\index{Main\+Window@{Main\+Window}!Main\+Window@{Main\+Window}}
+\index{Main\+Window@{Main\+Window}!Main\+Window@{Main\+Window}}
+\subsubsection[{Main\+Window(\+Q\+Widget $\ast$=0)}]{\setlength{\rightskip}{0pt plus 5cm}Main\+Window\+::\+Main\+Window (
+\begin{DoxyParamCaption}
+\item[{Q\+Widget $\ast$}]{ = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\label{classMainWindow_a2022dfcfcd6eeba03aec9f1e6eb3ece0}
+
+
+Créer une fenêtre principale du jeu. 
+
+\hypertarget{classMainWindow_ae98d00a93bc118200eeef9f9bba1dba7}{}\index{Main\+Window@{Main\+Window}!````~Main\+Window@{$\sim$\+Main\+Window}}
+\index{````~Main\+Window@{$\sim$\+Main\+Window}!Main\+Window@{Main\+Window}}
+\subsubsection[{$\sim$\+Main\+Window()}]{\setlength{\rightskip}{0pt plus 5cm}Main\+Window\+::$\sim$\+Main\+Window (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classMainWindow_ae98d00a93bc118200eeef9f9bba1dba7}
+
+
+\subsection{Documentation des fonctions membres}
+\hypertarget{classMainWindow_a870e523fc13b85f707e938bea8e91fd3}{}\index{Main\+Window@{Main\+Window}!connect\+All@{connect\+All}}
+\index{connect\+All@{connect\+All}!Main\+Window@{Main\+Window}}
+\subsubsection[{connect\+All()}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::connect\+All (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classMainWindow_a870e523fc13b85f707e938bea8e91fd3}
+
+
+Créer toutes les connections S\+L\+O\+T / S\+I\+G\+N\+A\+L. 
+
+\hypertarget{classMainWindow_a0aadedf51803aeb60945aa0f809ddaa0}{}\index{Main\+Window@{Main\+Window}!display\+Level@{display\+Level}}
+\index{display\+Level@{display\+Level}!Main\+Window@{Main\+Window}}
+\subsubsection[{display\+Level}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::display\+Level (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{classMainWindow_a0aadedf51803aeb60945aa0f809ddaa0}
+
+
+Permet d\textquotesingle{}afficher le niveau. 
+
+\hypertarget{classMainWindow_a378316f6c8670867a82a7806cfa050d8}{}\index{Main\+Window@{Main\+Window}!display\+Main\+Menu@{display\+Main\+Menu}}
+\index{display\+Main\+Menu@{display\+Main\+Menu}!Main\+Window@{Main\+Window}}
+\subsubsection[{display\+Main\+Menu}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::display\+Main\+Menu (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{classMainWindow_a378316f6c8670867a82a7806cfa050d8}
+
+
+Permet d\textquotesingle{}afficher le menu principal du jeu. 
+
+\hypertarget{classMainWindow_a306206f30c08b874636f48ed79192e86}{}\index{Main\+Window@{Main\+Window}!set\+Menu\+Bar@{set\+Menu\+Bar}}
+\index{set\+Menu\+Bar@{set\+Menu\+Bar}!Main\+Window@{Main\+Window}}
+\subsubsection[{set\+Menu\+Bar()}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::set\+Menu\+Bar (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classMainWindow_a306206f30c08b874636f48ed79192e86}
+
+
+Configure la bar de menu. 
+
+
+
+\subsection{Documentation des données membres}
+\hypertarget{classMainWindow_af362dbdd2f874d380a02700ce5dbe42c}{}\index{Main\+Window@{Main\+Window}!bar@{bar}}
+\index{bar@{bar}!Main\+Window@{Main\+Window}}
+\subsubsection[{bar}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Menu\+Bar$\ast$ Main\+Window\+::bar\hspace{0.3cm}{\ttfamily [private]}}\label{classMainWindow_af362dbdd2f874d380a02700ce5dbe42c}
+
+
+La bar de menu du jeu. 
+
+
+
+Définition à la ligne 34 du fichier mainwindow.\+hpp.
+
+\hypertarget{classMainWindow_a62681b0c049afcba55ffbd5e5f470ca3}{}\index{Main\+Window@{Main\+Window}!level\+View@{level\+View}}
+\index{level\+View@{level\+View}!Main\+Window@{Main\+Window}}
+\subsubsection[{level\+View}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Level\+View}$\ast$ Main\+Window\+::level\+View\hspace{0.3cm}{\ttfamily [private]}}\label{classMainWindow_a62681b0c049afcba55ffbd5e5f470ca3}
+
+
+La vue de la partie qui est lancée. 
+
+
+
+Définition à la ligne 29 du fichier mainwindow.\+hpp.
+
+\hypertarget{classMainWindow_acff78d8b40fc6a64c3503e9fcf120df2}{}\index{Main\+Window@{Main\+Window}!main\+Menu@{main\+Menu}}
+\index{main\+Menu@{main\+Menu}!Main\+Window@{Main\+Window}}
+\subsubsection[{main\+Menu}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Main\+Menu}$\ast$ Main\+Window\+::main\+Menu\hspace{0.3cm}{\ttfamily [private]}}\label{classMainWindow_acff78d8b40fc6a64c3503e9fcf120df2}
+
+
+Le menu de sélection de niveau du jeu. 
+
+
+
+Définition à la ligne 24 du fichier mainwindow.\+hpp.
+
+\hypertarget{classMainWindow_a42e15f7cdb120e053ef72a06d11d73f6}{}\index{Main\+Window@{Main\+Window}!menu@{menu}}
+\index{menu@{menu}!Main\+Window@{Main\+Window}}
+\subsubsection[{menu}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Menu$\ast$ Main\+Window\+::menu\hspace{0.3cm}{\ttfamily [private]}}\label{classMainWindow_a42e15f7cdb120e053ef72a06d11d73f6}
+
+
+Le menu principal du jeu. 
+
+
+
+Définition à la ligne 39 du fichier mainwindow.\+hpp.
+
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+view/windows/\hyperlink{mainwindow_8hpp}{mainwindow.\+hpp}\end{DoxyCompactItemize}

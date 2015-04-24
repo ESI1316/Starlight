@@ -1,0 +1,19 @@
+ \subsection*{Introduction}
+
+{\bfseries Starlight} est un petit jeu en deux dimensions se jouant sur une carte rectangulaire, comportant une source de lumière, émettant un rayon rectiligne.
+
+Le but du jeu est d\textquotesingle{}atteindre une cible avec ledit rayon, en évitant les obstacles via notamment des miroirs réfléchissant la lumière.;
+
+\subsection*{Rules}
+
+Starlight est un puzzle à deux dimensions se jouant sur une carte rectangulaire. Le but du jeu est de dévier un rayon lumineux d\textquotesingle{}une source vers une cible en évitant certains obstacles. Plus particulièrement, on trouve les éléments suivants sur une carte \+:
+\begin{DoxyItemize}
+\item une unique source \+: cet élément émet un rayon lumineux d\textquotesingle{}une longueur d\textquotesingle{}onde donnée sous un certain angle,
+\item une unique cible (ou destination ) \+: cet élément doit être éclairé par un rayon lumineux pour remporter la partie,
+\item un ensemble de miroirs \+: un miroir est un objet réfléchissant la lumière d\textquotesingle{}un seul côté suivant le schéma naturel de la réflexion de la lumière, Plus particulièrement, un rayon incident à un miroir sous un angle  i sera réfléchi sous le même angle  r,
+\item un ensemble de murs \+: les murs ne réfléchissent pas la lumière. Tout rayon incident à un mur ne se propage pas, et \char`\"{} s\textquotesingle{}arrête \char`\"{} donc là où il y est incident,
+\item un ensemble de lentilles. Les lentilles sont des objets transparents qui ne laissent passer un rayon lumineux que dans un certain intervalle de longueur d\textquotesingle{}onde \mbox{[}m ,n\mbox{]}. Si un rayon lumineux possède une longueur d\textquotesingle{}onde ν telle que m $<$= ν $<$= n, il traverse la lentille sans subir aucune modification. Sinon, la lentille stoppe le rayon (elle se comporte comme un mur),
+\item un ensemble de cristaux \+: un cristal est un élément transparent qui modifie la longueur d\textquotesingle{}onde d\textquotesingle{}un rayon, en l\textquotesingle{}augmentant ou la dimi-\/ nuant. Tout rayon qui traverse un cristal le traverse donc sans subir de modification de trajectoire, mais voit sa longueur d\textquotesingle{}onde modifiée,
+\item un ensemble de bombes. Les bombes sont des objets qui, si éclairés, explosent et font automatiquement perdre la partie au joueur,
+\item un ensemble de rayons initialement émis par la source du jeu. Ceux-\/ci sont rectilignes et se réfléchissent sur les miroirs. Un rayon est donc un segment de droite. Un rayon possède également une autre caractéristique \+: sa longueur d\textquotesingle{}onde. La longueur d\textquotesingle{}onde d\textquotesingle{}un rayon permet de déterminer, comme mentionné ci-\/dessus, si oui ou non un rayon traverse une lentille. Elle est modifiée par un cristal. 
+\end{DoxyItemize}

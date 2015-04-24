@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.9.1"/>
+<title>Starlight:  Fichier source de model/elements/wall.hpp</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="../../customdoxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Starlight
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.9.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="../../namespaces.html"><span>Espaces&#160;de&#160;nommage</span></a></li>
+      <li><a href="../../annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="../../files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="../../globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_3f14f6767c31cb4a1d22c13c18cc6fc3.html">model</a></li><li class="navelem"><a class="el" href="../../dir_6cb5f6c5bce0f61f6326f5ca1dc4dc30.html">elements</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">wall.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d5/da4/wall_8hpp.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef WALL_HPP</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define WALL_HPP</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;ostream&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d3/d9d/line_8hpp.html">model/geometry/line.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../da/dbc/element_8hpp.html">model/elements/element.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d0/de4/point_8hpp.html">model/geometry/point.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">class </span><a class="code" href="../../d9/dce/classRay.html">Ray</a>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="../../d7/dec/classWall.html">   16</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d7/dec/classWall.html">Wall</a> : <span class="keyword">public</span> <a class="code" href="../../d5/d3c/classElement.html">Element</a>, <span class="keyword">public</span> <a class="code" href="../../db/db6/classLine.html">Line</a></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="../../d7/dec/classWall.html#a05a052498fc50c585a8e8be95dc5af01">   21</a></span>&#160;    <a class="code" href="../../dc/d4f/classPoint.html">Point</a> <a class="code" href="../../d7/dec/classWall.html#a05a052498fc50c585a8e8be95dc5af01">start</a>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="../../d7/dec/classWall.html#a26e8075259c6cd51630b546f3e37d2a1">   26</a></span>&#160;    <a class="code" href="../../dc/d4f/classPoint.html">Point</a> <a class="code" href="../../d7/dec/classWall.html#a26e8075259c6cd51630b546f3e37d2a1">end</a>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="../../d7/dec/classWall.html#aa9e4665888cfb76c5700fcd9f8672771">Wall</a>(<span class="keyword">const</span> <a class="code" href="../../dc/d4f/classPoint.html">Point</a> &amp;, <span class="keyword">const</span> <a class="code" href="../../dc/d4f/classPoint.html">Point</a> &amp;);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../dc/d4f/classPoint.html">Point</a> &amp; <a class="code" href="../../d7/dec/classWall.html#af21a88dc50de229830bbfe68f088e5f2">getStart</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../dc/d4f/classPoint.html">Point</a> &amp; <a class="code" href="../../d7/dec/classWall.html#aeae40b7ecf22bd44dc75382bafad24c8">getEnd</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d7/dec/classWall.html#a4167a9d310ff17cf02d232d4f384b77d">reactToRay</a>(<a class="code" href="../../d9/dce/classRay.html">Ray</a>);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="../../dc/d4f/classPoint.html">Point</a> * <a class="code" href="../../d7/dec/classWall.html#a11178e8dc8eabc9a56b9bf5525dc4f29">includeRay</a>(<span class="keyword">const</span> <a class="code" href="../../d9/dce/classRay.html">Ray</a> &amp;) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../d7/dec/classWall.html#a56676feaace7ad556d8c94a195afb5da">operator==</a>(<span class="keyword">const</span> <a class="code" href="../../d7/dec/classWall.html">Wall</a> &amp;) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../d7/dec/classWall.html#a2a918fa1c882900fe5cf97cf8d9da130">operator!=</a>(<span class="keyword">const</span> <a class="code" href="../../d7/dec/classWall.html">Wall</a> &amp;) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;};</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;std::ostream &amp; <a class="code" href="../../d5/da4/wall_8hpp.html#a762127d24b7c3e98f9da57702f628a78">operator&lt;&lt;</a>(std::ostream &amp;, <span class="keyword">const</span> <a class="code" href="../../d7/dec/classWall.html">Wall</a> &amp;);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="../../d7/dec/classWall.html#af21a88dc50de229830bbfe68f088e5f2">   92</a></span>&#160;<span class="keyword">inline</span> <span class="keyword">const</span> <a class="code" href="../../dc/d4f/classPoint.html">Point</a> &amp; <a class="code" href="../../d7/dec/classWall.html#af21a88dc50de229830bbfe68f088e5f2">Wall::getStart</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordflow">return</span> this-&gt;<a class="code" href="../../d7/dec/classWall.html#a05a052498fc50c585a8e8be95dc5af01">start</a>;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;}</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="../../d7/dec/classWall.html#aeae40b7ecf22bd44dc75382bafad24c8">   97</a></span>&#160;<span class="keyword">inline</span> <span class="keyword">const</span> <a class="code" href="../../dc/d4f/classPoint.html">Point</a> &amp; <a class="code" href="../../d7/dec/classWall.html#aeae40b7ecf22bd44dc75382bafad24c8">Wall::getEnd</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordflow">return</span> this-&gt;<a class="code" href="../../d7/dec/classWall.html#a26e8075259c6cd51630b546f3e37d2a1">end</a>;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="preprocessor">#endif // WALL_HPP</span></div>
+<div class="ttc" id="point_8hpp_html"><div class="ttname"><a href="../../d0/de4/point_8hpp.html">point.hpp</a></div></div>
+<div class="ttc" id="classLine_html"><div class="ttname"><a href="../../db/db6/classLine.html">Line</a></div><div class="ttdoc">Représente une droite sous la forme de son équation complète; . </div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d9d/line_8hpp_source.html#l00013">line.hpp:13</a></div></div>
+<div class="ttc" id="classWall_html_a05a052498fc50c585a8e8be95dc5af01"><div class="ttname"><a href="../../d7/dec/classWall.html#a05a052498fc50c585a8e8be95dc5af01">Wall::start</a></div><div class="ttdeci">Point start</div><div class="ttdoc">Le point de départ du segment de droite représentant le mur. </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/da4/wall_8hpp_source.html#l00021">wall.hpp:21</a></div></div>
+<div class="ttc" id="wall_8hpp_html_a762127d24b7c3e98f9da57702f628a78"><div class="ttname"><a href="../../d5/da4/wall_8hpp.html#a762127d24b7c3e98f9da57702f628a78">operator&lt;&lt;</a></div><div class="ttdeci">std::ostream &amp; operator&lt;&lt;(std::ostream &amp;, const Wall &amp;)</div><div class="ttdoc">Définition, externe, de l&#39;opérateur permettant de produire un affichage formaté. </div></div>
+<div class="ttc" id="classWall_html_a4167a9d310ff17cf02d232d4f384b77d"><div class="ttname"><a href="../../d7/dec/classWall.html#a4167a9d310ff17cf02d232d4f384b77d">Wall::reactToRay</a></div><div class="ttdeci">void reactToRay(Ray)</div><div class="ttdoc">Réaction à l&#39;exposition d&#39;un rayon. </div></div>
+<div class="ttc" id="classPoint_html"><div class="ttname"><a href="../../dc/d4f/classPoint.html">Point</a></div><div class="ttdoc">Cette classe modélise un point de coordonnés dans le plan  sous deux formes : </div><div class="ttdef"><b>Definition:</b> <a href="../../d0/de4/point_8hpp_source.html#l00015">point.hpp:15</a></div></div>
+<div class="ttc" id="classWall_html_a2a918fa1c882900fe5cf97cf8d9da130"><div class="ttname"><a href="../../d7/dec/classWall.html#a2a918fa1c882900fe5cf97cf8d9da130">Wall::operator!=</a></div><div class="ttdeci">bool operator!=(const Wall &amp;) const </div><div class="ttdoc">Permet de savoir si deux murs sont différents. </div></div>
+<div class="ttc" id="classWall_html_a11178e8dc8eabc9a56b9bf5525dc4f29"><div class="ttname"><a href="../../d7/dec/classWall.html#a11178e8dc8eabc9a56b9bf5525dc4f29">Wall::includeRay</a></div><div class="ttdeci">Point * includeRay(const Ray &amp;) const </div><div class="ttdoc">Renseigne si le mur est dans la trajectoire du rayon. </div></div>
+<div class="ttc" id="classWall_html_a26e8075259c6cd51630b546f3e37d2a1"><div class="ttname"><a href="../../d7/dec/classWall.html#a26e8075259c6cd51630b546f3e37d2a1">Wall::end</a></div><div class="ttdeci">Point end</div><div class="ttdoc">Le point d&#39;arrivé du segment de droite représentant le mur. </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/da4/wall_8hpp_source.html#l00026">wall.hpp:26</a></div></div>
+<div class="ttc" id="line_8hpp_html"><div class="ttname"><a href="../../d3/d9d/line_8hpp.html">line.hpp</a></div></div>
+<div class="ttc" id="element_8hpp_html"><div class="ttname"><a href="../../da/dbc/element_8hpp.html">element.hpp</a></div></div>
+<div class="ttc" id="classWall_html"><div class="ttname"><a href="../../d7/dec/classWall.html">Wall</a></div><div class="ttdoc">Cette classe modélise les murs utilisés dans le jeu. </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/da4/wall_8hpp_source.html#l00016">wall.hpp:16</a></div></div>
+<div class="ttc" id="classRay_html"><div class="ttname"><a href="../../d9/dce/classRay.html">Ray</a></div><div class="ttdoc">Cette classe modélise les rayons lumineux, concept central du jeu. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/d1d/ray_8hpp_source.html#l00015">ray.hpp:15</a></div></div>
+<div class="ttc" id="classElement_html"><div class="ttname"><a href="../../d5/d3c/classElement.html">Element</a></div><div class="ttdoc">Un élément est un composant du jeu se devant de communiquer son état au niveau le gérant...</div><div class="ttdef"><b>Definition:</b> <a href="../../da/dbc/element_8hpp_source.html#l00013">element.hpp:13</a></div></div>
+<div class="ttc" id="classWall_html_aeae40b7ecf22bd44dc75382bafad24c8"><div class="ttname"><a href="../../d7/dec/classWall.html#aeae40b7ecf22bd44dc75382bafad24c8">Wall::getEnd</a></div><div class="ttdeci">const Point &amp; getEnd() const </div><div class="ttdoc">Retourne la fin du mur. </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/da4/wall_8hpp_source.html#l00097">wall.hpp:97</a></div></div>
+<div class="ttc" id="classWall_html_a56676feaace7ad556d8c94a195afb5da"><div class="ttname"><a href="../../d7/dec/classWall.html#a56676feaace7ad556d8c94a195afb5da">Wall::operator==</a></div><div class="ttdeci">bool operator==(const Wall &amp;) const </div><div class="ttdoc">Permet de savoir si deux murs sont identiques. </div></div>
+<div class="ttc" id="classWall_html_af21a88dc50de229830bbfe68f088e5f2"><div class="ttname"><a href="../../d7/dec/classWall.html#af21a88dc50de229830bbfe68f088e5f2">Wall::getStart</a></div><div class="ttdeci">const Point &amp; getStart() const </div><div class="ttdoc">Retourne le début du mur. </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/da4/wall_8hpp_source.html#l00092">wall.hpp:92</a></div></div>
+<div class="ttc" id="classWall_html_aa9e4665888cfb76c5700fcd9f8672771"><div class="ttname"><a href="../../d7/dec/classWall.html#aa9e4665888cfb76c5700fcd9f8672771">Wall::Wall</a></div><div class="ttdeci">Wall(const Point &amp;, const Point &amp;)</div><div class="ttdoc">Instancie un mur. </div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Vendredi 24 Avril 2015 14:41:55 pour Starlight par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.9.1
+</small></address>
+</body>
+</html>

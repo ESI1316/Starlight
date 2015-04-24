@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.9.1"/>
+<title>Starlight:  Fichier source de model/geometry/utilities.hpp</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="../../customdoxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Starlight
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.9.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="../../namespaces.html"><span>Espaces&#160;de&#160;nommage</span></a></li>
+      <li><a href="../../annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="../../files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="../../globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_3f14f6767c31cb4a1d22c13c18cc6fc3.html">model</a></li><li class="navelem"><a class="el" href="../../dir_51f1f926f2556510fbc4b8a0f5edb7fa.html">geometry</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">utilities.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../dc/d5f/utilities_8hpp.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef UTILITIES_HPP</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define UTILITIES_HPP</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">class </span><a class="code" href="../../dc/d4f/classPoint.html">Point</a>;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="../../d2/d96/namespaceutilities.html">   10</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="../../d2/d96/namespaceutilities.html">utilities</a></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="../../d2/d96/namespaceutilities.html#ae00ae0a208e66ecba0e8a4626ff8e07c">   15</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="../../d2/d96/namespaceutilities.html#ae00ae0a208e66ecba0e8a4626ff8e07c">PI</a>{3.14159265358979323846};</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="../../d2/d96/namespaceutilities.html#ac617217c4d0e0d488959d1a4ece31570">   20</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="../../d2/d96/namespaceutilities.html#ac617217c4d0e0d488959d1a4ece31570">PI_2</a>{1.57079632679489661923};</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="../../d2/d96/namespaceutilities.html#a80f229b486391f3a0a17af9cba52fe6d">   25</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="../../d2/d96/namespaceutilities.html#a80f229b486391f3a0a17af9cba52fe6d">PI_4</a>{0.785398163397448309616};</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="../../d2/d96/namespaceutilities.html#adf3b0db93e9d9a6057599d3629607c72">   30</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="../../d2/d96/namespaceutilities.html#adf3b0db93e9d9a6057599d3629607c72">EPSILON</a>{10E-7};</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="../../d2/d96/namespaceutilities.html#a529a96864a1cf035034ba593a44e710e">   35</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="../../d2/d96/namespaceutilities.html#a529a96864a1cf035034ba593a44e710e">INF</a>{1./0.};</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="../../d2/d96/namespaceutilities.html#a040360cbd22e36e7d8e399b553217242">secondDegreeEquationSolver</a>(<span class="keywordtype">double</span>, <span class="keywordtype">double</span>, <span class="keywordtype">double</span>, <span class="keywordtype">double</span> *, <span class="keywordtype">double</span> *);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keywordtype">double</span> <a class="code" href="../../d2/d96/namespaceutilities.html#aa2ec82a874dad6aae298db007bc0aef6">radianAsDegree</a>(<span class="keyword">const</span> <span class="keywordtype">double</span>);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="keywordtype">double</span> <a class="code" href="../../d2/d96/namespaceutilities.html#a743a501d731442689287e6306e01c2d4">radianAsDegree0to360</a>(<span class="keyword">const</span> <span class="keywordtype">double</span>);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="../../d2/d96/namespaceutilities.html#a30b551fcbf5672117358b7b660d5dbf1">equals</a>(<span class="keyword">const</span> <span class="keywordtype">double</span>, <span class="keyword">const</span> <span class="keywordtype">double</span>, <span class="keyword">const</span> <span class="keywordtype">double</span> = <a class="code" href="../../d2/d96/namespaceutilities.html#adf3b0db93e9d9a6057599d3629607c72">utilities::EPSILON</a>);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d2/d96/namespaceutilities.html#a00ae09dc5ce4274969a2a28607426eb5">round</a>(<span class="keyword">const</span> <span class="keywordtype">double</span>);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="../../d2/d96/namespaceutilities.html#a4001cf523b54a14a53b11938a2605964">greaterOrEquals</a>(<span class="keyword">const</span> <span class="keywordtype">double</span>, <span class="keyword">const</span> <span class="keywordtype">double</span>, <span class="keyword">const</span> <span class="keywordtype">double</span> = <a class="code" href="../../d2/d96/namespaceutilities.html#adf3b0db93e9d9a6057599d3629607c72">utilities::EPSILON</a>);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="../../d2/d96/namespaceutilities.html#a5b52313a89eff9ec934ab4e1fcf23be7">lessOrEquals</a>(<span class="keyword">const</span> <span class="keywordtype">double</span>, <span class="keyword">const</span> <span class="keywordtype">double</span>, <span class="keyword">const</span> <span class="keywordtype">double</span> = <a class="code" href="../../d2/d96/namespaceutilities.html#adf3b0db93e9d9a6057599d3629607c72">utilities::EPSILON</a>);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="keywordtype">double</span> <a class="code" href="../../d2/d96/namespaceutilities.html#a6502e590807ff5ce206bf28b156c2d9e">degreeToRadian</a>(<span class="keyword">const</span> <span class="keywordtype">double</span>);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<span class="keywordtype">double</span> <a class="code" href="../../d2/d96/namespaceutilities.html#a8ec19db42cc8962662eee53be6c6088d">slopeFromPoints</a>(<span class="keyword">const</span> <a class="code" href="../../dc/d4f/classPoint.html">Point</a> &amp;, <span class="keyword">const</span> <a class="code" href="../../dc/d4f/classPoint.html">Point</a> &amp;);</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="../../d2/d96/namespaceutilities.html#a41bdf53d6ca758ab77ab736b41ae272f">isHalfPiPlusNPi</a>(<span class="keyword">const</span> <span class="keywordtype">double</span>);</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="keywordtype">double</span> <a class="code" href="../../d2/d96/namespaceutilities.html#a376cfb5f6c163526c76d1df2bcfe98d9">tan</a>(<span class="keyword">const</span> <span class="keywordtype">double</span>);</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="keywordtype">double</span> <a class="code" href="../../d2/d96/namespaceutilities.html#abaa7273912e8e804c0558a64b7470bb7">absoluteAngle</a>(<span class="keyword">const</span> <span class="keywordtype">double</span>);</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="keywordtype">double</span> <a class="code" href="../../d2/d96/namespaceutilities.html#a7ab0a2bd18a3227e0d59c6445fe2e9de">inZeroTwoPi</a>(<span class="keyword">const</span> <span class="keywordtype">double</span>);</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;}</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<span class="preprocessor">#endif // UTILITIES_HPP</span></div>
+<div class="ttc" id="namespaceutilities_html_a80f229b486391f3a0a17af9cba52fe6d"><div class="ttname"><a href="../../d2/d96/namespaceutilities.html#a80f229b486391f3a0a17af9cba52fe6d">utilities::PI_4</a></div><div class="ttdeci">const double PI_4</div><div class="ttdoc">PI_4 Représentation de la constante PI/4 sur 26 décimales. </div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d5f/utilities_8hpp_source.html#l00025">utilities.hpp:25</a></div></div>
+<div class="ttc" id="classPoint_html"><div class="ttname"><a href="../../dc/d4f/classPoint.html">Point</a></div><div class="ttdoc">Cette classe modélise un point de coordonnés dans le plan  sous deux formes : </div><div class="ttdef"><b>Definition:</b> <a href="../../d0/de4/point_8hpp_source.html#l00015">point.hpp:15</a></div></div>
+<div class="ttc" id="namespaceutilities_html_ac617217c4d0e0d488959d1a4ece31570"><div class="ttname"><a href="../../d2/d96/namespaceutilities.html#ac617217c4d0e0d488959d1a4ece31570">utilities::PI_2</a></div><div class="ttdeci">const double PI_2</div><div class="ttdoc">PI_2 Représentation de la constante PI/2 sur 26 décimales. </div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d5f/utilities_8hpp_source.html#l00020">utilities.hpp:20</a></div></div>
+<div class="ttc" id="namespaceutilities_html_a00ae09dc5ce4274969a2a28607426eb5"><div class="ttname"><a href="../../d2/d96/namespaceutilities.html#a00ae09dc5ce4274969a2a28607426eb5">utilities::round</a></div><div class="ttdeci">int round(const double)</div><div class="ttdoc">Cette méthode cast un double en int on l&#39;ayant au préalable arrondi à l&#39;unité la plus proche (0...</div></div>
+<div class="ttc" id="namespaceutilities_html_adf3b0db93e9d9a6057599d3629607c72"><div class="ttname"><a href="../../d2/d96/namespaceutilities.html#adf3b0db93e9d9a6057599d3629607c72">utilities::EPSILON</a></div><div class="ttdeci">const double EPSILON</div><div class="ttdoc">EPSILON Représentation de la marge d&#39;erreur maximale acceptée. </div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d5f/utilities_8hpp_source.html#l00030">utilities.hpp:30</a></div></div>
+<div class="ttc" id="namespaceutilities_html_a6502e590807ff5ce206bf28b156c2d9e"><div class="ttname"><a href="../../d2/d96/namespaceutilities.html#a6502e590807ff5ce206bf28b156c2d9e">utilities::degreeToRadian</a></div><div class="ttdeci">double degreeToRadian(const double)</div><div class="ttdoc">Cette méthode permet de transformer des degrés en radian. </div></div>
+<div class="ttc" id="namespaceutilities_html_a30b551fcbf5672117358b7b660d5dbf1"><div class="ttname"><a href="../../d2/d96/namespaceutilities.html#a30b551fcbf5672117358b7b660d5dbf1">utilities::equals</a></div><div class="ttdeci">bool equals(const double, const double, const double=utilities::EPSILON)</div><div class="ttdoc">Cette méthode permet de savoir si deux double sont égaux avec une marge d&#39;erreur Epsilon passée en pa...</div></div>
+<div class="ttc" id="namespaceutilities_html_a8ec19db42cc8962662eee53be6c6088d"><div class="ttname"><a href="../../d2/d96/namespaceutilities.html#a8ec19db42cc8962662eee53be6c6088d">utilities::slopeFromPoints</a></div><div class="ttdeci">double slopeFromPoints(const Point &amp;, const Point &amp;)</div><div class="ttdoc">Permet de trouver la pente d&#39;une droite formée par deux points. </div></div>
+<div class="ttc" id="namespaceutilities_html_a41bdf53d6ca758ab77ab736b41ae272f"><div class="ttname"><a href="../../d2/d96/namespaceutilities.html#a41bdf53d6ca758ab77ab736b41ae272f">utilities::isHalfPiPlusNPi</a></div><div class="ttdeci">bool isHalfPiPlusNPi(const double)</div><div class="ttdoc">Permet de savoir si l&#39;angle, en radian, vaut . </div></div>
+<div class="ttc" id="namespaceutilities_html_a5b52313a89eff9ec934ab4e1fcf23be7"><div class="ttname"><a href="../../d2/d96/namespaceutilities.html#a5b52313a89eff9ec934ab4e1fcf23be7">utilities::lessOrEquals</a></div><div class="ttdeci">bool lessOrEquals(const double, const double, const double=utilities::EPSILON)</div><div class="ttdoc">Cette méthode permet de vérifier l&#39;inégalité  sur deux nombres réels avec une marge d&#39;erreur Epsilon ...</div></div>
+<div class="ttc" id="namespaceutilities_html_ae00ae0a208e66ecba0e8a4626ff8e07c"><div class="ttname"><a href="../../d2/d96/namespaceutilities.html#ae00ae0a208e66ecba0e8a4626ff8e07c">utilities::PI</a></div><div class="ttdeci">const double PI</div><div class="ttdoc">PI Représentation de la constante PI sur 26 décimales. </div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d5f/utilities_8hpp_source.html#l00015">utilities.hpp:15</a></div></div>
+<div class="ttc" id="namespaceutilities_html_a529a96864a1cf035034ba593a44e710e"><div class="ttname"><a href="../../d2/d96/namespaceutilities.html#a529a96864a1cf035034ba593a44e710e">utilities::INF</a></div><div class="ttdeci">const double INF</div><div class="ttdoc">INF Représente une division impossible. </div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d5f/utilities_8hpp_source.html#l00035">utilities.hpp:35</a></div></div>
+<div class="ttc" id="namespaceutilities_html_aa2ec82a874dad6aae298db007bc0aef6"><div class="ttname"><a href="../../d2/d96/namespaceutilities.html#aa2ec82a874dad6aae298db007bc0aef6">utilities::radianAsDegree</a></div><div class="ttdeci">double radianAsDegree(const double)</div><div class="ttdoc">Permet de trouver l&#39;angle en degré d&#39;un angle en radian. </div></div>
+<div class="ttc" id="namespaceutilities_html_abaa7273912e8e804c0558a64b7470bb7"><div class="ttname"><a href="../../d2/d96/namespaceutilities.html#abaa7273912e8e804c0558a64b7470bb7">utilities::absoluteAngle</a></div><div class="ttdeci">double absoluteAngle(const double)</div><div class="ttdoc">Permet d&#39;avoir l&#39;angle "absolu" de celui passé en paramètre, [0, PI_2]. </div></div>
+<div class="ttc" id="namespaceutilities_html"><div class="ttname"><a href="../../d2/d96/namespaceutilities.html">utilities</a></div><div class="ttdoc">Diverse fonctions utilitaires de géométrie. </div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d5f/utilities_8hpp_source.html#l00010">utilities.hpp:10</a></div></div>
+<div class="ttc" id="namespaceutilities_html_a376cfb5f6c163526c76d1df2bcfe98d9"><div class="ttname"><a href="../../d2/d96/namespaceutilities.html#a376cfb5f6c163526c76d1df2bcfe98d9">utilities::tan</a></div><div class="ttdeci">double tan(const double)</div><div class="ttdoc">Permet d&#39;avoir la valeur trigonométrique tangente d&#39;un angle ou l&#39;infini si . </div></div>
+<div class="ttc" id="namespaceutilities_html_a4001cf523b54a14a53b11938a2605964"><div class="ttname"><a href="../../d2/d96/namespaceutilities.html#a4001cf523b54a14a53b11938a2605964">utilities::greaterOrEquals</a></div><div class="ttdeci">bool greaterOrEquals(const double, const double, const double=utilities::EPSILON)</div><div class="ttdoc">Cette méthode permet de vérifier l&#39;inégalité  sur deux nombres réels avec une marge d&#39;erreur Epsilon ...</div></div>
+<div class="ttc" id="namespaceutilities_html_a743a501d731442689287e6306e01c2d4"><div class="ttname"><a href="../../d2/d96/namespaceutilities.html#a743a501d731442689287e6306e01c2d4">utilities::radianAsDegree0to360</a></div><div class="ttdeci">double radianAsDegree0to360(const double)</div><div class="ttdoc">Permet de trouver l&#39;angle en degré, entre 0 et 360, d&#39;un angle en radian. </div></div>
+<div class="ttc" id="namespaceutilities_html_a040360cbd22e36e7d8e399b553217242"><div class="ttname"><a href="../../d2/d96/namespaceutilities.html#a040360cbd22e36e7d8e399b553217242">utilities::secondDegreeEquationSolver</a></div><div class="ttdeci">bool secondDegreeEquationSolver(double, double, double, double *, double *)</div><div class="ttdoc">Permet de trouver les racines (si elles existe) d&#39;une fonction du deuxième degré de forme ...</div></div>
+<div class="ttc" id="namespaceutilities_html_a7ab0a2bd18a3227e0d59c6445fe2e9de"><div class="ttname"><a href="../../d2/d96/namespaceutilities.html#a7ab0a2bd18a3227e0d59c6445fe2e9de">utilities::inZeroTwoPi</a></div><div class="ttdeci">double inZeroTwoPi(const double)</div><div class="ttdoc">Permet de cadrer un angle dans un intervalle [0 ; 2PI[. </div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Vendredi 24 Avril 2015 14:41:55 pour Starlight par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.9.1
+</small></address>
+</body>
+</html>

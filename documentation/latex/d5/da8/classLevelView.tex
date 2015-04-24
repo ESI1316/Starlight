@@ -1,0 +1,253 @@
+\hypertarget{classLevelView}{}\section{Référence de la classe Level\+View}
+\label{classLevelView}\index{Level\+View@{Level\+View}}
+
+
+Cette classe représente le niveau qui va être joué lors d\textquotesingle{}une partie.  
+
+
+
+
+{\ttfamily \#include $<$levelview.\+hpp$>$}
+
+\subsection*{Connecteurs publics}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classLevelView_ae8298aa5d3163d7cc1343adbb2676d8a}{set\+Level\+File\+Path} (const Q\+String)
+\begin{DoxyCompactList}\small\item\em Permet de changer le fichier de niveau et d\textquotesingle{}afficher ce niveau. \end{DoxyCompactList}\item 
+void \hyperlink{classLevelView_a3bded54066b2ce49cf972b16d03817bb}{load\+Level\+From\+File} ()
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}afficher le fichier niveau dont la vue courante contient le chemin en attribut. \end{DoxyCompactList}\item 
+void \hyperlink{classLevelView_a3ada0dd54a12cc91a31113dd83553f3a}{update\+Display} ()
+\begin{DoxyCompactList}\small\item\em Permet de rafraichir l\textquotesingle{}affichage lorsque le niveau change d\textquotesingle{}état. \end{DoxyCompactList}\item 
+void \hyperlink{classLevelView_ad6ea3472fed0f3aa469779b6efac3b41}{display\+End\+Of\+Game} ()
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}afficher une boite de dialogue informant l\textquotesingle{}utilisateur de la fin du jeu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Signaux}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classLevelView_a3953bf386139bae926640e8c9e90b5fe}{displaying\+Started} ()
+\begin{DoxyCompactList}\small\item\em Signale que le niveau doit être affiché. \end{DoxyCompactList}\item 
+void \hyperlink{classLevelView_a4e35d1b0b0fa00a1a4c602da15471359}{displaying\+Stopped} ()
+\begin{DoxyCompactList}\small\item\em Signale que le niveau ne doit plus être affiché. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classLevelView_a1537183269cd26f8341f7e2eb80545d3}{Level\+View} (Q\+Widget $\ast$=0)
+\begin{DoxyCompactList}\small\item\em Permet de créer une vue du niveau. \end{DoxyCompactList}\item 
+\hyperlink{classLevelView_a8a68c0e4a47fc91422c2d1a22c735ea4}{$\sim$\+Level\+View} ()
+\end{DoxyCompactItemize}
+\subsection*{Fonctions membres privées}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classLevelView_a253e8066d8b1cd5c02f6f752b6497462}{update\+Rays} ()
+\begin{DoxyCompactList}\small\item\em Permet de mettre à jour l\textquotesingle{}affichage des rayons. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Attributs privés}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Graphics\+Scene $\ast$ \hyperlink{classLevelView_a81030b9faa8743a629553447bfb982ea}{scene}
+\begin{DoxyCompactList}\small\item\em La scène qui comportera l\textquotesingle{}ensemble des éléments graphiques de la partie. \end{DoxyCompactList}\item 
+\hyperlink{classLevel}{Level} $\ast$ \hyperlink{classLevelView_ab51fb77e921a425c79b9671ebb8718e2}{level}
+\begin{DoxyCompactList}\small\item\em Le niveau quel la vue observe. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classLevelView_a826d9224c5bbbecb5c02b7734d0b8137}{displayed\+Level\+File\+Path}
+\begin{DoxyCompactList}\small\item\em Le chemin du fichier chargé par l\textquotesingle{}utilisateur. \end{DoxyCompactList}\item 
+std\+::vector$<$ Q\+Graphics\+Line\+Item $\ast$ $>$ \hyperlink{classLevelView_a79c31b19d94522a4756bcf0bbae0c1a1}{rays}
+\begin{DoxyCompactList}\small\item\em L\textquotesingle{}ensemble des rayons dessinés. \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{classMirrorView}{Mirror\+View} $\ast$ $>$ \hyperlink{classLevelView_ad530e6ab8704e9201efe04bf98ff44e9}{mirrors}
+\begin{DoxyCompactList}\small\item\em L\textquotesingle{}ensemble des miroirs dessinés. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Cette classe représente le niveau qui va être joué lors d\textquotesingle{}une partie. 
+
+Définition à la ligne 18 du fichier levelview.\+hpp.
+
+
+
+Graphe d\textquotesingle{}héritage de Level\+View\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{df/d61/classLevelView__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Graphe de collaboration de Level\+View\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d3d/classLevelView__coll__graph}
+\end{center}
+\end{figure}
+
+
+\subsection{Documentation des constructeurs et destructeur}
+\hypertarget{classLevelView_a1537183269cd26f8341f7e2eb80545d3}{}\index{Level\+View@{Level\+View}!Level\+View@{Level\+View}}
+\index{Level\+View@{Level\+View}!Level\+View@{Level\+View}}
+\subsubsection[{Level\+View(\+Q\+Widget $\ast$=0)}]{\setlength{\rightskip}{0pt plus 5cm}Level\+View\+::\+Level\+View (
+\begin{DoxyParamCaption}
+\item[{Q\+Widget $\ast$}]{ = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\label{classLevelView_a1537183269cd26f8341f7e2eb80545d3}
+
+
+Permet de créer une vue du niveau. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em parent} & L\textquotesingle{}objet graphique parent. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classLevelView_a8a68c0e4a47fc91422c2d1a22c735ea4}{}\index{Level\+View@{Level\+View}!````~Level\+View@{$\sim$\+Level\+View}}
+\index{````~Level\+View@{$\sim$\+Level\+View}!Level\+View@{Level\+View}}
+\subsubsection[{$\sim$\+Level\+View()}]{\setlength{\rightskip}{0pt plus 5cm}Level\+View\+::$\sim$\+Level\+View (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classLevelView_a8a68c0e4a47fc91422c2d1a22c735ea4}
+
+
+\subsection{Documentation des fonctions membres}
+\hypertarget{classLevelView_ad6ea3472fed0f3aa469779b6efac3b41}{}\index{Level\+View@{Level\+View}!display\+End\+Of\+Game@{display\+End\+Of\+Game}}
+\index{display\+End\+Of\+Game@{display\+End\+Of\+Game}!Level\+View@{Level\+View}}
+\subsubsection[{display\+End\+Of\+Game}]{\setlength{\rightskip}{0pt plus 5cm}void Level\+View\+::display\+End\+Of\+Game (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{classLevelView_ad6ea3472fed0f3aa469779b6efac3b41}
+
+
+Permet d\textquotesingle{}afficher une boite de dialogue informant l\textquotesingle{}utilisateur de la fin du jeu. 
+
+\hypertarget{classLevelView_a3953bf386139bae926640e8c9e90b5fe}{}\index{Level\+View@{Level\+View}!displaying\+Started@{displaying\+Started}}
+\index{displaying\+Started@{displaying\+Started}!Level\+View@{Level\+View}}
+\subsubsection[{displaying\+Started}]{\setlength{\rightskip}{0pt plus 5cm}void Level\+View\+::displaying\+Started (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{classLevelView_a3953bf386139bae926640e8c9e90b5fe}
+
+
+Signale que le niveau doit être affiché. 
+
+\hypertarget{classLevelView_a4e35d1b0b0fa00a1a4c602da15471359}{}\index{Level\+View@{Level\+View}!displaying\+Stopped@{displaying\+Stopped}}
+\index{displaying\+Stopped@{displaying\+Stopped}!Level\+View@{Level\+View}}
+\subsubsection[{displaying\+Stopped}]{\setlength{\rightskip}{0pt plus 5cm}void Level\+View\+::displaying\+Stopped (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{classLevelView_a4e35d1b0b0fa00a1a4c602da15471359}
+
+
+Signale que le niveau ne doit plus être affiché. 
+
+\hypertarget{classLevelView_a3bded54066b2ce49cf972b16d03817bb}{}\index{Level\+View@{Level\+View}!load\+Level\+From\+File@{load\+Level\+From\+File}}
+\index{load\+Level\+From\+File@{load\+Level\+From\+File}!Level\+View@{Level\+View}}
+\subsubsection[{load\+Level\+From\+File}]{\setlength{\rightskip}{0pt plus 5cm}void Level\+View\+::load\+Level\+From\+File (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{classLevelView_a3bded54066b2ce49cf972b16d03817bb}
+
+
+Permet d\textquotesingle{}afficher le fichier niveau dont la vue courante contient le chemin en attribut. 
+
+\hypertarget{classLevelView_ae8298aa5d3163d7cc1343adbb2676d8a}{}\index{Level\+View@{Level\+View}!set\+Level\+File\+Path@{set\+Level\+File\+Path}}
+\index{set\+Level\+File\+Path@{set\+Level\+File\+Path}!Level\+View@{Level\+View}}
+\subsubsection[{set\+Level\+File\+Path}]{\setlength{\rightskip}{0pt plus 5cm}void Level\+View\+::set\+Level\+File\+Path (
+\begin{DoxyParamCaption}
+\item[{const Q\+String}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{classLevelView_ae8298aa5d3163d7cc1343adbb2676d8a}
+
+
+Permet de changer le fichier de niveau et d\textquotesingle{}afficher ce niveau. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em level\+File} & chemin vers le fichier du nouveau niveau à afficher. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classLevelView_a3ada0dd54a12cc91a31113dd83553f3a}{}\index{Level\+View@{Level\+View}!update\+Display@{update\+Display}}
+\index{update\+Display@{update\+Display}!Level\+View@{Level\+View}}
+\subsubsection[{update\+Display}]{\setlength{\rightskip}{0pt plus 5cm}void Level\+View\+::update\+Display (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{classLevelView_a3ada0dd54a12cc91a31113dd83553f3a}
+
+
+Permet de rafraichir l\textquotesingle{}affichage lorsque le niveau change d\textquotesingle{}état. 
+
+\hypertarget{classLevelView_a253e8066d8b1cd5c02f6f752b6497462}{}\index{Level\+View@{Level\+View}!update\+Rays@{update\+Rays}}
+\index{update\+Rays@{update\+Rays}!Level\+View@{Level\+View}}
+\subsubsection[{update\+Rays()}]{\setlength{\rightskip}{0pt plus 5cm}void Level\+View\+::update\+Rays (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classLevelView_a253e8066d8b1cd5c02f6f752b6497462}
+
+
+Permet de mettre à jour l\textquotesingle{}affichage des rayons. 
+
+
+
+\subsection{Documentation des données membres}
+\hypertarget{classLevelView_a826d9224c5bbbecb5c02b7734d0b8137}{}\index{Level\+View@{Level\+View}!displayed\+Level\+File\+Path@{displayed\+Level\+File\+Path}}
+\index{displayed\+Level\+File\+Path@{displayed\+Level\+File\+Path}!Level\+View@{Level\+View}}
+\subsubsection[{displayed\+Level\+File\+Path}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Level\+View\+::displayed\+Level\+File\+Path\hspace{0.3cm}{\ttfamily [private]}}\label{classLevelView_a826d9224c5bbbecb5c02b7734d0b8137}
+
+
+Le chemin du fichier chargé par l\textquotesingle{}utilisateur. 
+
+
+
+Définition à la ligne 36 du fichier levelview.\+hpp.
+
+\hypertarget{classLevelView_ab51fb77e921a425c79b9671ebb8718e2}{}\index{Level\+View@{Level\+View}!level@{level}}
+\index{level@{level}!Level\+View@{Level\+View}}
+\subsubsection[{level}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Level}$\ast$ Level\+View\+::level\hspace{0.3cm}{\ttfamily [private]}}\label{classLevelView_ab51fb77e921a425c79b9671ebb8718e2}
+
+
+Le niveau quel la vue observe. 
+
+
+
+Définition à la ligne 31 du fichier levelview.\+hpp.
+
+\hypertarget{classLevelView_ad530e6ab8704e9201efe04bf98ff44e9}{}\index{Level\+View@{Level\+View}!mirrors@{mirrors}}
+\index{mirrors@{mirrors}!Level\+View@{Level\+View}}
+\subsubsection[{mirrors}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<${\bf Mirror\+View} $\ast$$>$ Level\+View\+::mirrors\hspace{0.3cm}{\ttfamily [private]}}\label{classLevelView_ad530e6ab8704e9201efe04bf98ff44e9}
+
+
+L\textquotesingle{}ensemble des miroirs dessinés. 
+
+
+
+Définition à la ligne 46 du fichier levelview.\+hpp.
+
+\hypertarget{classLevelView_a79c31b19d94522a4756bcf0bbae0c1a1}{}\index{Level\+View@{Level\+View}!rays@{rays}}
+\index{rays@{rays}!Level\+View@{Level\+View}}
+\subsubsection[{rays}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$Q\+Graphics\+Line\+Item $\ast$$>$ Level\+View\+::rays\hspace{0.3cm}{\ttfamily [private]}}\label{classLevelView_a79c31b19d94522a4756bcf0bbae0c1a1}
+
+
+L\textquotesingle{}ensemble des rayons dessinés. 
+
+
+
+Définition à la ligne 41 du fichier levelview.\+hpp.
+
+\hypertarget{classLevelView_a81030b9faa8743a629553447bfb982ea}{}\index{Level\+View@{Level\+View}!scene@{scene}}
+\index{scene@{scene}!Level\+View@{Level\+View}}
+\subsubsection[{scene}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Graphics\+Scene$\ast$ Level\+View\+::scene\hspace{0.3cm}{\ttfamily [private]}}\label{classLevelView_a81030b9faa8743a629553447bfb982ea}
+
+
+La scène qui comportera l\textquotesingle{}ensemble des éléments graphiques de la partie. 
+
+
+
+Définition à la ligne 26 du fichier levelview.\+hpp.
+
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+view/windows/\hyperlink{levelview_8hpp}{levelview.\+hpp}\end{DoxyCompactItemize}

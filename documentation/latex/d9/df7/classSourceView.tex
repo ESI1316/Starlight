@@ -1,0 +1,143 @@
+\hypertarget{classSourceView}{}\section{Référence de la classe Source\+View}
+\label{classSourceView}\index{Source\+View@{Source\+View}}
+
+
+Cette classe permet de représenter graphiquement une source, lui permettant de communiquer les actions utilisateurs.  
+
+
+
+
+{\ttfamily \#include $<$sourceview.\+hpp$>$}
+
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSourceView_a21ea9c4e88fc2cc79b9cd9001f7333f2}{Source\+View} (\hyperlink{classSource}{Source} $\ast$)
+\begin{DoxyCompactList}\small\item\em Permet de créer une vue liée à une source. \end{DoxyCompactList}\item 
+\hyperlink{classSourceView_aee500dba1590df1506a972b245a65f37}{$\sim$\+Source\+View} ()
+\end{DoxyCompactItemize}
+\subsection*{Fonctions membres protégées}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classSourceView_af2fd6dc466853974e482701139ef66c9}{mouse\+Press\+Event} (Q\+Graphics\+Scene\+Mouse\+Event $\ast$)
+\begin{DoxyCompactList}\small\item\em Permet de réagir sur le modèle lors d\textquotesingle{}un \char`\"{}input user\char`\"{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Attributs privés}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSource}{Source} $\ast$ \hyperlink{classSourceView_a79354c401511132bfe754ce5d92b8d23}{source}
+\begin{DoxyCompactList}\small\item\em La source représentée par cette vue. \end{DoxyCompactList}\item 
+Q\+Pen \hyperlink{classSourceView_a3f838e39f9e01a2a547b164c28193170}{pen}
+\begin{DoxyCompactList}\small\item\em Les paramètres visuels du trait de la source. \end{DoxyCompactList}\item 
+Q\+Brush \hyperlink{classSourceView_ab1337e79e435bc3310c34acef403d9d2}{brush}
+\begin{DoxyCompactList}\small\item\em Les paramètres visuels du plein de la source. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Cette classe permet de représenter graphiquement une source, lui permettant de communiquer les actions utilisateurs. 
+
+Définition à la ligne 14 du fichier sourceview.\+hpp.
+
+
+
+Graphe d\textquotesingle{}héritage de Source\+View\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{de/ddc/classSourceView__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Graphe de collaboration de Source\+View\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d2/df3/classSourceView__coll__graph}
+\end{center}
+\end{figure}
+
+
+\subsection{Documentation des constructeurs et destructeur}
+\hypertarget{classSourceView_a21ea9c4e88fc2cc79b9cd9001f7333f2}{}\index{Source\+View@{Source\+View}!Source\+View@{Source\+View}}
+\index{Source\+View@{Source\+View}!Source\+View@{Source\+View}}
+\subsubsection[{Source\+View(\+Source $\ast$)}]{\setlength{\rightskip}{0pt plus 5cm}Source\+View\+::\+Source\+View (
+\begin{DoxyParamCaption}
+\item[{{\bf Source} $\ast$}]{}
+\end{DoxyParamCaption}
+)}\label{classSourceView_a21ea9c4e88fc2cc79b9cd9001f7333f2}
+
+
+Permet de créer une vue liée à une source. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em source} & La source liée à cette vue. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classSourceView_aee500dba1590df1506a972b245a65f37}{}\index{Source\+View@{Source\+View}!````~Source\+View@{$\sim$\+Source\+View}}
+\index{````~Source\+View@{$\sim$\+Source\+View}!Source\+View@{Source\+View}}
+\subsubsection[{$\sim$\+Source\+View()}]{\setlength{\rightskip}{0pt plus 5cm}Source\+View\+::$\sim$\+Source\+View (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classSourceView_aee500dba1590df1506a972b245a65f37}
+
+
+\subsection{Documentation des fonctions membres}
+\hypertarget{classSourceView_af2fd6dc466853974e482701139ef66c9}{}\index{Source\+View@{Source\+View}!mouse\+Press\+Event@{mouse\+Press\+Event}}
+\index{mouse\+Press\+Event@{mouse\+Press\+Event}!Source\+View@{Source\+View}}
+\subsubsection[{mouse\+Press\+Event(\+Q\+Graphics\+Scene\+Mouse\+Event $\ast$)}]{\setlength{\rightskip}{0pt plus 5cm}void Source\+View\+::mouse\+Press\+Event (
+\begin{DoxyParamCaption}
+\item[{Q\+Graphics\+Scene\+Mouse\+Event $\ast$}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classSourceView_af2fd6dc466853974e482701139ef66c9}
+
+
+Permet de réagir sur le modèle lors d\textquotesingle{}un \char`\"{}input user\char`\"{}. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em event} & Un évènement \char`\"{}input user\char`\"{}. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentation des données membres}
+\hypertarget{classSourceView_ab1337e79e435bc3310c34acef403d9d2}{}\index{Source\+View@{Source\+View}!brush@{brush}}
+\index{brush@{brush}!Source\+View@{Source\+View}}
+\subsubsection[{brush}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Brush Source\+View\+::brush\hspace{0.3cm}{\ttfamily [private]}}\label{classSourceView_ab1337e79e435bc3310c34acef403d9d2}
+
+
+Les paramètres visuels du plein de la source. 
+
+
+
+Définition à la ligne 29 du fichier sourceview.\+hpp.
+
+\hypertarget{classSourceView_a3f838e39f9e01a2a547b164c28193170}{}\index{Source\+View@{Source\+View}!pen@{pen}}
+\index{pen@{pen}!Source\+View@{Source\+View}}
+\subsubsection[{pen}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Pen Source\+View\+::pen\hspace{0.3cm}{\ttfamily [private]}}\label{classSourceView_a3f838e39f9e01a2a547b164c28193170}
+
+
+Les paramètres visuels du trait de la source. 
+
+
+
+Définition à la ligne 24 du fichier sourceview.\+hpp.
+
+\hypertarget{classSourceView_a79354c401511132bfe754ce5d92b8d23}{}\index{Source\+View@{Source\+View}!source@{source}}
+\index{source@{source}!Source\+View@{Source\+View}}
+\subsubsection[{source}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Source}$\ast$ Source\+View\+::source\hspace{0.3cm}{\ttfamily [private]}}\label{classSourceView_a79354c401511132bfe754ce5d92b8d23}
+
+
+La source représentée par cette vue. 
+
+
+
+Définition à la ligne 19 du fichier sourceview.\+hpp.
+
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+view/dynamic\+Elements/\hyperlink{sourceview_8hpp}{sourceview.\+hpp}\end{DoxyCompactItemize}

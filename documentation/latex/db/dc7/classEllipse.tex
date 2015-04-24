@@ -1,0 +1,448 @@
+\hypertarget{classEllipse}{}\section{Référence de la classe Ellipse}
+\label{classEllipse}\index{Ellipse@{Ellipse}}
+
+
+Représente un cercle sous la forme; $ circle \equiv x^2/xRadius + y^2/yRadius = 1 $.  
+
+
+
+
+{\ttfamily \#include $<$ellipse.\+hpp$>$}
+
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classEllipse_a2a12c8803bc8da1c04cd92345b7777f2}{Ellipse} (double, double, const \hyperlink{classPoint}{Point} \&)
+\begin{DoxyCompactList}\small\item\em Permet de construire une nouvelle ellipse initialisée. \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{classPoint}{Point} $>$ \hyperlink{classEllipse_ab289196af0dafd510d44c6bb342c0f27}{get\+Intersection\+Points} (const \hyperlink{classLine}{Line} \&) const 
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}obtenir les points d\textquotesingle{}intersection entre le cercle et la droite entrée en paramètre. \end{DoxyCompactList}\item 
+double \hyperlink{classEllipse_abbaadd47aa6c03e34ded7796afe18a26}{get\+X\+Radius} () const 
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}obtenir la valeur du ratio de largeur de l\textquotesingle{}ellipse. \end{DoxyCompactList}\item 
+double \hyperlink{classEllipse_a984b6d3bde72676afca7889f90d5eedd}{get\+Y\+Radius} () const 
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}obtenir la valeur du ratio de hauteur de l\textquotesingle{}ellipse. \end{DoxyCompactList}\item 
+\hyperlink{classPoint}{Point} \hyperlink{classEllipse_ab2c87589547fef01242fc0b8eb8de4f6}{get\+Center} () const 
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}obtenir le centre de l\textquotesingle{}ellipse. \end{DoxyCompactList}\item 
+\hyperlink{classPoint}{Point} \hyperlink{classEllipse_a39cf837aa97029fb3aef3e769586c084}{get\+Up\+Left\+Corner} () const 
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}obtenir le coin supérieur gauche du rectangle entourant l\textquotesingle{}ellipse. \end{DoxyCompactList}\item 
+double \hyperlink{classEllipse_a1aad73090801cc4b60b8c1508095ccf5}{get\+Width} () const 
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}obtenir la largeur de l\textquotesingle{}ellipse. \end{DoxyCompactList}\item 
+double \hyperlink{classEllipse_aafb4efaa85efaf59e553c7423aa47b37}{get\+Height} () const 
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}obtenir la hauteur de l\textquotesingle{}ellipse. \end{DoxyCompactList}\item 
+bool \hyperlink{classEllipse_ac06ebff3c587e85f15ca6f5f754bb35e}{operator==} (const \hyperlink{classEllipse}{Ellipse} \&) const 
+\begin{DoxyCompactList}\small\item\em Permet de savoir si deux \hyperlink{classEllipse}{Ellipse} sont les mêmes. \end{DoxyCompactList}\item 
+bool \hyperlink{classEllipse_a06f16be297b055c46f6ede471ea6ffad}{operator!=} (const \hyperlink{classEllipse}{Ellipse} \&) const 
+\begin{DoxyCompactList}\small\item\em Permet de savoir si deux \hyperlink{classEllipse}{Ellipse} sont différentes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Fonctions membres protégées}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classEllipse_a00f04c68837ae5b89049074821576458}{get\+Y\+Of\+Inters\+Points} (const double, double $\ast$, double $\ast$) const 
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}obtenir les valeurs des ordonnées des points d\textquotesingle{}intersection entre l\textquotesingle{}ellipse et une droite verticale dont l\textquotesingle{}abscisse est entrée en paramètre. \end{DoxyCompactList}\item 
+bool \hyperlink{classEllipse_ab1aac4ab1ea77795131ea2644963910b}{get\+X\+Of\+Inters\+Points} (const double, const double, double $\ast$, double $\ast$) const 
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}obtenir les abscisses des points d\textquotesingle{}intersection entre une droite non-\/verticale dont la pente et le terme indépendant de l\textquotesingle{}équation sont entrés en paramètre. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Attributs protégés}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPoint}{Point} \hyperlink{classEllipse_a88b27657adf698fded3a36fd97f90190}{center}
+\begin{DoxyCompactList}\small\item\em La position du centre de l\textquotesingle{}ellipse. \end{DoxyCompactList}\item 
+double \hyperlink{classEllipse_a549345caaff869f7eef31c800e37dd38}{height}
+\begin{DoxyCompactList}\small\item\em La hauteur du rectangle circonscrit à l\textquotesingle{}ellipse. \end{DoxyCompactList}\item 
+double \hyperlink{classEllipse_a4f2fb4b634a1c37666a0f8419c4f6d39}{width}
+\begin{DoxyCompactList}\small\item\em La largeur du rectangle circonscrit à l\textquotesingle{}ellipse. \end{DoxyCompactList}\item 
+double \hyperlink{classEllipse_a8e0e2fa0f3200a997f4b0567e588c823}{x\+Radius}
+\begin{DoxyCompactList}\small\item\em La valeur de la demi hauteur au carré. \end{DoxyCompactList}\item 
+double \hyperlink{classEllipse_a83614d1aaa446b1f8e404b6bc3cc8c19}{y\+Radius}
+\begin{DoxyCompactList}\small\item\em La valeur de la demi largeur au carré. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Représente un cercle sous la forme; $ circle \equiv x^2/xRadius + y^2/yRadius = 1 $. 
+
+Définition à la ligne 15 du fichier ellipse.\+hpp.
+
+
+
+Graphe d\textquotesingle{}héritage de Ellipse\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d77/classEllipse__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Graphe de collaboration de Ellipse\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{da/d2b/classEllipse__coll__graph}
+\end{center}
+\end{figure}
+
+
+\subsection{Documentation des constructeurs et destructeur}
+\hypertarget{classEllipse_a2a12c8803bc8da1c04cd92345b7777f2}{}\index{Ellipse@{Ellipse}!Ellipse@{Ellipse}}
+\index{Ellipse@{Ellipse}!Ellipse@{Ellipse}}
+\subsubsection[{Ellipse(double, double, const Point \&)}]{\setlength{\rightskip}{0pt plus 5cm}Ellipse\+::\+Ellipse (
+\begin{DoxyParamCaption}
+\item[{double}]{, }
+\item[{double}]{, }
+\item[{const {\bf Point} \&}]{}
+\end{DoxyParamCaption}
+)}\label{classEllipse_a2a12c8803bc8da1c04cd92345b7777f2}
+
+
+Permet de construire une nouvelle ellipse initialisée. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em x\+Radius} & Valeur du ratio de largeur de l\textquotesingle{}ellipse. \\
+\hline
+{\em y\+Radius} & Valeur du ratio de hauteur de l\textquotesingle{}ellipse. \\
+\hline
+{\em center} & \hyperlink{classPoint}{Point} du centre de l\textquotesingle{}ellipse. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentation des fonctions membres}
+\hypertarget{classEllipse_ab2c87589547fef01242fc0b8eb8de4f6}{}\index{Ellipse@{Ellipse}!get\+Center@{get\+Center}}
+\index{get\+Center@{get\+Center}!Ellipse@{Ellipse}}
+\subsubsection[{get\+Center() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Point} Ellipse\+::get\+Center (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classEllipse_ab2c87589547fef01242fc0b8eb8de4f6}
+
+
+Permet d\textquotesingle{}obtenir le centre de l\textquotesingle{}ellipse. 
+
+\begin{DoxyReturn}{Renvoie}
+Le centre de l\textquotesingle{}ellipse. 
+\end{DoxyReturn}
+
+
+Définition à la ligne 192 du fichier ellipse.\+hpp.
+
+
+
+Références center.
+
+
+\begin{DoxyCode}
+193 \{
+194     \textcolor{keywordflow}{return} this->\hyperlink{classEllipse_a88b27657adf698fded3a36fd97f90190}{center};
+195 \}
+\end{DoxyCode}
+\hypertarget{classEllipse_aafb4efaa85efaf59e553c7423aa47b37}{}\index{Ellipse@{Ellipse}!get\+Height@{get\+Height}}
+\index{get\+Height@{get\+Height}!Ellipse@{Ellipse}}
+\subsubsection[{get\+Height() const }]{\setlength{\rightskip}{0pt plus 5cm}double Ellipse\+::get\+Height (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classEllipse_aafb4efaa85efaf59e553c7423aa47b37}
+
+
+Permet d\textquotesingle{}obtenir la hauteur de l\textquotesingle{}ellipse. 
+
+\begin{DoxyReturn}{Renvoie}
+La hauteur de l\textquotesingle{}ellipse. 
+\end{DoxyReturn}
+
+
+Définition à la ligne 177 du fichier ellipse.\+hpp.
+
+
+
+Références height.
+
+
+
+Référencé par Nuke\+::get\+Radius().
+
+
+\begin{DoxyCode}
+178 \{
+179     \textcolor{keywordflow}{return} this->\hyperlink{classEllipse_a549345caaff869f7eef31c800e37dd38}{height};
+180 \}
+\end{DoxyCode}
+\hypertarget{classEllipse_ab289196af0dafd510d44c6bb342c0f27}{}\index{Ellipse@{Ellipse}!get\+Intersection\+Points@{get\+Intersection\+Points}}
+\index{get\+Intersection\+Points@{get\+Intersection\+Points}!Ellipse@{Ellipse}}
+\subsubsection[{get\+Intersection\+Points(const Line \&) const }]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<${\bf Point}$>$ Ellipse\+::get\+Intersection\+Points (
+\begin{DoxyParamCaption}
+\item[{const {\bf Line} \&}]{}
+\end{DoxyParamCaption}
+) const}\label{classEllipse_ab289196af0dafd510d44c6bb342c0f27}
+
+
+Permet d\textquotesingle{}obtenir les points d\textquotesingle{}intersection entre le cercle et la droite entrée en paramètre. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em line} & droite dont on désire obtenir les points d\textquotesingle{}intersection avec l\textquotesingle{}éllipse.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Un vecteur contenant les points d\textquotesingle{}intersections entre le cercle et la droite entrée en paramètre. 
+\end{DoxyReturn}
+\hypertarget{classEllipse_a39cf837aa97029fb3aef3e769586c084}{}\index{Ellipse@{Ellipse}!get\+Up\+Left\+Corner@{get\+Up\+Left\+Corner}}
+\index{get\+Up\+Left\+Corner@{get\+Up\+Left\+Corner}!Ellipse@{Ellipse}}
+\subsubsection[{get\+Up\+Left\+Corner() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Point} Ellipse\+::get\+Up\+Left\+Corner (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classEllipse_a39cf837aa97029fb3aef3e769586c084}
+
+
+Permet d\textquotesingle{}obtenir le coin supérieur gauche du rectangle entourant l\textquotesingle{}ellipse. 
+
+\begin{DoxyReturn}{Renvoie}
+le coin supérieur gauche du rectangle entourant l\textquotesingle{}ellipse. 
+\end{DoxyReturn}
+\hypertarget{classEllipse_a1aad73090801cc4b60b8c1508095ccf5}{}\index{Ellipse@{Ellipse}!get\+Width@{get\+Width}}
+\index{get\+Width@{get\+Width}!Ellipse@{Ellipse}}
+\subsubsection[{get\+Width() const }]{\setlength{\rightskip}{0pt plus 5cm}double Ellipse\+::get\+Width (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classEllipse_a1aad73090801cc4b60b8c1508095ccf5}
+
+
+Permet d\textquotesingle{}obtenir la largeur de l\textquotesingle{}ellipse. 
+
+\begin{DoxyReturn}{Renvoie}
+La largeur de l\textquotesingle{}ellipse. 
+\end{DoxyReturn}
+
+
+Définition à la ligne 172 du fichier ellipse.\+hpp.
+
+
+
+Références width.
+
+
+\begin{DoxyCode}
+173 \{
+174     \textcolor{keywordflow}{return} this->\hyperlink{classEllipse_a4f2fb4b634a1c37666a0f8419c4f6d39}{width};
+175 \}
+\end{DoxyCode}
+\hypertarget{classEllipse_ab1aac4ab1ea77795131ea2644963910b}{}\index{Ellipse@{Ellipse}!get\+X\+Of\+Inters\+Points@{get\+X\+Of\+Inters\+Points}}
+\index{get\+X\+Of\+Inters\+Points@{get\+X\+Of\+Inters\+Points}!Ellipse@{Ellipse}}
+\subsubsection[{get\+X\+Of\+Inters\+Points(const double, const double, double $\ast$, double $\ast$) const }]{\setlength{\rightskip}{0pt plus 5cm}bool Ellipse\+::get\+X\+Of\+Inters\+Points (
+\begin{DoxyParamCaption}
+\item[{const double}]{, }
+\item[{const double}]{, }
+\item[{double $\ast$}]{, }
+\item[{double $\ast$}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}\label{classEllipse_ab1aac4ab1ea77795131ea2644963910b}
+
+
+Permet d\textquotesingle{}obtenir les abscisses des points d\textquotesingle{}intersection entre une droite non-\/verticale dont la pente et le terme indépendant de l\textquotesingle{}équation sont entrés en paramètre. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em slope} & Pente de la droite dont on désire les abscisses des points d\textquotesingle{}intersection avec l\textquotesingle{}ellipse. \\
+\hline
+{\em line\+I\+T} & Terme indépendant de l\textquotesingle{}équation de la droite dont on désire les abscisses des points d\textquotesingle{}intersection avec l\textquotesingle{}ellipse. \\
+\hline
+{\em x1} & Conteneur de la valeur de l\textquotesingle{}abscisse du premier point d\textquotesingle{}intersection (non utilisé s\textquotesingle{}il n\textquotesingle{}existe pas de point d\textquotesingle{}intersection). \\
+\hline
+{\em x2} & Conteneur de la valeur de l\textquotesingle{}abscisse du deuxième point d\textquotesingle{}intersection (non utilisé s\textquotesingle{}il n\textquotesingle{}existe pas de point d\textquotesingle{}intersection).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+{\ttfamily true} Si il existe des points d\textquotesingle{}intersection entre la droite et l\textquotesingle{}ellipse. 
+\end{DoxyReturn}
+\hypertarget{classEllipse_abbaadd47aa6c03e34ded7796afe18a26}{}\index{Ellipse@{Ellipse}!get\+X\+Radius@{get\+X\+Radius}}
+\index{get\+X\+Radius@{get\+X\+Radius}!Ellipse@{Ellipse}}
+\subsubsection[{get\+X\+Radius() const }]{\setlength{\rightskip}{0pt plus 5cm}double Ellipse\+::get\+X\+Radius (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classEllipse_abbaadd47aa6c03e34ded7796afe18a26}
+
+
+Permet d\textquotesingle{}obtenir la valeur du ratio de largeur de l\textquotesingle{}ellipse. 
+
+\begin{DoxyReturn}{Renvoie}
+La valeur du ratio de largeur de l\textquotesingle{}ellipse. 
+\end{DoxyReturn}
+
+
+Définition à la ligne 182 du fichier ellipse.\+hpp.
+
+
+
+Références x\+Radius.
+
+
+\begin{DoxyCode}
+183 \{
+184     \textcolor{keywordflow}{return} this->\hyperlink{classEllipse_a8e0e2fa0f3200a997f4b0567e588c823}{xRadius};
+185 \}
+\end{DoxyCode}
+\hypertarget{classEllipse_a00f04c68837ae5b89049074821576458}{}\index{Ellipse@{Ellipse}!get\+Y\+Of\+Inters\+Points@{get\+Y\+Of\+Inters\+Points}}
+\index{get\+Y\+Of\+Inters\+Points@{get\+Y\+Of\+Inters\+Points}!Ellipse@{Ellipse}}
+\subsubsection[{get\+Y\+Of\+Inters\+Points(const double, double $\ast$, double $\ast$) const }]{\setlength{\rightskip}{0pt plus 5cm}bool Ellipse\+::get\+Y\+Of\+Inters\+Points (
+\begin{DoxyParamCaption}
+\item[{const double}]{, }
+\item[{double $\ast$}]{, }
+\item[{double $\ast$}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}\label{classEllipse_a00f04c68837ae5b89049074821576458}
+
+
+Permet d\textquotesingle{}obtenir les valeurs des ordonnées des points d\textquotesingle{}intersection entre l\textquotesingle{}ellipse et une droite verticale dont l\textquotesingle{}abscisse est entrée en paramètre. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em x\+Value} & Abscisse de la droite verticale dont on désire les ordonnées des points d\textquotesingle{}intersection avec l\textquotesingle{}ellipse. \\
+\hline
+{\em y1} & Conteneur de la valeur de l\textquotesingle{}ordonnée du premier point d\textquotesingle{}intersection (non utilisé s\textquotesingle{}il n\textquotesingle{}existe pas de point d\textquotesingle{}intersection). \\
+\hline
+{\em y2} & Conteneur de la valeur de l\textquotesingle{}ordonne du deuxième point d\textquotesingle{}intersection (non utilisé s\textquotesingle{}il n\textquotesingle{}existe pas de point d\textquotesingle{}intersection).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+{\ttfamily true} Si il existe des points d\textquotesingle{}intersection entre la droite et l\textquotesingle{}éllipse. 
+\end{DoxyReturn}
+\hypertarget{classEllipse_a984b6d3bde72676afca7889f90d5eedd}{}\index{Ellipse@{Ellipse}!get\+Y\+Radius@{get\+Y\+Radius}}
+\index{get\+Y\+Radius@{get\+Y\+Radius}!Ellipse@{Ellipse}}
+\subsubsection[{get\+Y\+Radius() const }]{\setlength{\rightskip}{0pt plus 5cm}double Ellipse\+::get\+Y\+Radius (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classEllipse_a984b6d3bde72676afca7889f90d5eedd}
+
+
+Permet d\textquotesingle{}obtenir la valeur du ratio de hauteur de l\textquotesingle{}ellipse. 
+
+\begin{DoxyReturn}{Renvoie}
+La valeur du ratio de hauteur de l\textquotesingle{}ellipse. 
+\end{DoxyReturn}
+
+
+Définition à la ligne 187 du fichier ellipse.\+hpp.
+
+
+
+Références y\+Radius.
+
+
+\begin{DoxyCode}
+188 \{
+189     \textcolor{keywordflow}{return} this->\hyperlink{classEllipse_a83614d1aaa446b1f8e404b6bc3cc8c19}{yRadius};
+190 \}
+\end{DoxyCode}
+\hypertarget{classEllipse_a06f16be297b055c46f6ede471ea6ffad}{}\index{Ellipse@{Ellipse}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Ellipse@{Ellipse}}
+\subsubsection[{operator"!=(const Ellipse \&) const }]{\setlength{\rightskip}{0pt plus 5cm}bool Ellipse\+::operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ellipse} \&}]{}
+\end{DoxyParamCaption}
+) const}\label{classEllipse_a06f16be297b055c46f6ede471ea6ffad}
+
+
+Permet de savoir si deux \hyperlink{classEllipse}{Ellipse} sont différentes. 
+
+\begin{DoxyReturn}{Renvoie}
+{\ttfamily true} Si deux Ellipses sont différentes. 
+\end{DoxyReturn}
+\hypertarget{classEllipse_ac06ebff3c587e85f15ca6f5f754bb35e}{}\index{Ellipse@{Ellipse}!operator==@{operator==}}
+\index{operator==@{operator==}!Ellipse@{Ellipse}}
+\subsubsection[{operator==(const Ellipse \&) const }]{\setlength{\rightskip}{0pt plus 5cm}bool Ellipse\+::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ellipse} \&}]{}
+\end{DoxyParamCaption}
+) const}\label{classEllipse_ac06ebff3c587e85f15ca6f5f754bb35e}
+
+
+Permet de savoir si deux \hyperlink{classEllipse}{Ellipse} sont les mêmes. 
+
+\begin{DoxyReturn}{Renvoie}
+{\ttfamily true} Si deux Ellipses sont identiques. 
+\end{DoxyReturn}
+
+
+\subsection{Documentation des données membres}
+\hypertarget{classEllipse_a88b27657adf698fded3a36fd97f90190}{}\index{Ellipse@{Ellipse}!center@{center}}
+\index{center@{center}!Ellipse@{Ellipse}}
+\subsubsection[{center}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Point} Ellipse\+::center\hspace{0.3cm}{\ttfamily [protected]}}\label{classEllipse_a88b27657adf698fded3a36fd97f90190}
+
+
+La position du centre de l\textquotesingle{}ellipse. 
+
+
+
+Définition à la ligne 23 du fichier ellipse.\+hpp.
+
+
+
+Référencé par get\+Center(), et Nuke\+::get\+Location().
+
+\hypertarget{classEllipse_a549345caaff869f7eef31c800e37dd38}{}\index{Ellipse@{Ellipse}!height@{height}}
+\index{height@{height}!Ellipse@{Ellipse}}
+\subsubsection[{height}]{\setlength{\rightskip}{0pt plus 5cm}double Ellipse\+::height\hspace{0.3cm}{\ttfamily [protected]}}\label{classEllipse_a549345caaff869f7eef31c800e37dd38}
+
+
+La hauteur du rectangle circonscrit à l\textquotesingle{}ellipse. 
+
+
+
+Définition à la ligne 28 du fichier ellipse.\+hpp.
+
+
+
+Référencé par get\+Height().
+
+\hypertarget{classEllipse_a4f2fb4b634a1c37666a0f8419c4f6d39}{}\index{Ellipse@{Ellipse}!width@{width}}
+\index{width@{width}!Ellipse@{Ellipse}}
+\subsubsection[{width}]{\setlength{\rightskip}{0pt plus 5cm}double Ellipse\+::width\hspace{0.3cm}{\ttfamily [protected]}}\label{classEllipse_a4f2fb4b634a1c37666a0f8419c4f6d39}
+
+
+La largeur du rectangle circonscrit à l\textquotesingle{}ellipse. 
+
+
+
+Définition à la ligne 33 du fichier ellipse.\+hpp.
+
+
+
+Référencé par get\+Width().
+
+\hypertarget{classEllipse_a8e0e2fa0f3200a997f4b0567e588c823}{}\index{Ellipse@{Ellipse}!x\+Radius@{x\+Radius}}
+\index{x\+Radius@{x\+Radius}!Ellipse@{Ellipse}}
+\subsubsection[{x\+Radius}]{\setlength{\rightskip}{0pt plus 5cm}double Ellipse\+::x\+Radius\hspace{0.3cm}{\ttfamily [protected]}}\label{classEllipse_a8e0e2fa0f3200a997f4b0567e588c823}
+
+
+La valeur de la demi hauteur au carré. 
+
+
+
+Définition à la ligne 38 du fichier ellipse.\+hpp.
+
+
+
+Référencé par get\+X\+Radius().
+
+\hypertarget{classEllipse_a83614d1aaa446b1f8e404b6bc3cc8c19}{}\index{Ellipse@{Ellipse}!y\+Radius@{y\+Radius}}
+\index{y\+Radius@{y\+Radius}!Ellipse@{Ellipse}}
+\subsubsection[{y\+Radius}]{\setlength{\rightskip}{0pt plus 5cm}double Ellipse\+::y\+Radius\hspace{0.3cm}{\ttfamily [protected]}}\label{classEllipse_a83614d1aaa446b1f8e404b6bc3cc8c19}
+
+
+La valeur de la demi largeur au carré. 
+
+
+
+Définition à la ligne 43 du fichier ellipse.\+hpp.
+
+
+
+Référencé par get\+Y\+Radius().
+
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+model/geometry/\hyperlink{ellipse_8hpp}{ellipse.\+hpp}\end{DoxyCompactItemize}

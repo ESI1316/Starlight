@@ -1,0 +1,238 @@
+\hypertarget{classCrystal}{}\section{Référence de la classe Crystal}
+\label{classCrystal}\index{Crystal@{Crystal}}
+
+
+Cette classe amplifie les cristaux utilisés dans le jeu.  
+
+
+
+
+{\ttfamily \#include $<$crystal.\+hpp$>$}
+
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCrystal_ace23d553475cfcd48496d8c2dc1ae656}{Crystal} (const \hyperlink{classPoint}{Point} \&, const double, const int)
+\begin{DoxyCompactList}\small\item\em Instancier un cristal. \end{DoxyCompactList}\item 
+int \hyperlink{classCrystal_a231a9965f3c0651a7c0776b12e8acd37}{get\+Amplifier} () const 
+\begin{DoxyCompactList}\small\item\em Retourne le modifieur de longueur d\textquotesingle{}onde du cristal. \end{DoxyCompactList}\item 
+double \hyperlink{classCrystal_a455b55c1fc7c1083a8c4dd437584ccfb}{get\+Radius} () const 
+\begin{DoxyCompactList}\small\item\em Retourne la longueur du rayon du cristal. \end{DoxyCompactList}\item 
+void \hyperlink{classCrystal_a4f9351f0556cf2e9334d7976bff48830}{react\+To\+Ray} (\hyperlink{classRay}{Ray})
+\begin{DoxyCompactList}\small\item\em Cette méthode est lancé lorsque le miroir courant est exposé à un rayon. \end{DoxyCompactList}\item 
+\hyperlink{classPoint}{Point} $\ast$ \hyperlink{classCrystal_a97212bbcd6c34f243ac8f18b6641e639}{include\+Ray} (const \hyperlink{classRay}{Ray} \&) const 
+\begin{DoxyCompactList}\small\item\em Renseigne si le crystal est dans la trajectoire du rayon. \end{DoxyCompactList}\item 
+bool \hyperlink{classCrystal_adeb9d4a8d0d02ff4daccd09650e1b990}{operator==} (const \hyperlink{classCrystal}{Crystal} \&) const 
+\begin{DoxyCompactList}\small\item\em Permet de savoir si deux cristaux sont les même. \end{DoxyCompactList}\item 
+bool \hyperlink{classCrystal_aa6d486aaf4abc84b0795b75c3e3e598f}{operator!=} (const \hyperlink{classCrystal}{Crystal} \&) const 
+\begin{DoxyCompactList}\small\item\em Permet de savoir si deux cristaux sont différents. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Attributs privés}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classCrystal_a6732b62ec55a56f8d29249281e432cc9}{amplifier}
+\begin{DoxyCompactList}\small\item\em Le modificateur de longueur d\textquotesingle{}onde agissant sur un rayon passant dans ce cristal. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Membres hérités additionnels}
+
+
+\subsection{Description détaillée}
+Cette classe amplifie les cristaux utilisés dans le jeu. 
+
+Un cristal est un objet circulaire centré en un point, et d\textquotesingle{}un certain rayon. 
+
+Un rayon lumineux passant à travers un crystal verra sa longueur d\textquotesingle{}onde modifiée (en l\textquotesingle{}augmentant ou en la diminuant d\textquotesingle{}une certaine valeur) mais pas sa trajectoire. 
+
+Définition à la ligne 23 du fichier crystal.\+hpp.
+
+
+
+Graphe d\textquotesingle{}héritage de Crystal\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{de/da2/classCrystal__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Graphe de collaboration de Crystal\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d4/db0/classCrystal__coll__graph}
+\end{center}
+\end{figure}
+
+
+\subsection{Documentation des constructeurs et destructeur}
+\hypertarget{classCrystal_ace23d553475cfcd48496d8c2dc1ae656}{}\index{Crystal@{Crystal}!Crystal@{Crystal}}
+\index{Crystal@{Crystal}!Crystal@{Crystal}}
+\subsubsection[{Crystal(const Point \&, const double, const int)}]{\setlength{\rightskip}{0pt plus 5cm}Crystal\+::\+Crystal (
+\begin{DoxyParamCaption}
+\item[{const {\bf Point} \&}]{, }
+\item[{const double}]{, }
+\item[{const int}]{}
+\end{DoxyParamCaption}
+)}\label{classCrystal_ace23d553475cfcd48496d8c2dc1ae656}
+
+
+Instancier un cristal. 
+
+
+\begin{DoxyItemize}
+\item centré au point donné 
+\item avec un rayon donné 
+\item et un amplifier de longueur d\textquotesingle{}ondes donné 
+\end{DoxyItemize},
+
+ce crystal modifie la longueur d\textquotesingle{}onde du rayon le traversant en suivant la règle suivante \+: si la longueur d\textquotesingle{}onde modifié sort de l\textquotesingle{}intervalle \mbox{[}longueur d\textquotesingle{}onde minimale, longueur d\textquotesingle{}onde maximale\mbox{]} alors elle ne sera pas appliquée.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em point} & Le point du centre du cristal. \\
+\hline
+{\em radius} & Le rayon du cristal. \\
+\hline
+{\em amplifieur} & le modificateur de longueur d\textquotesingle{}onde du cristal. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentation des fonctions membres}
+\hypertarget{classCrystal_a231a9965f3c0651a7c0776b12e8acd37}{}\index{Crystal@{Crystal}!get\+Amplifier@{get\+Amplifier}}
+\index{get\+Amplifier@{get\+Amplifier}!Crystal@{Crystal}}
+\subsubsection[{get\+Amplifier() const }]{\setlength{\rightskip}{0pt plus 5cm}int Crystal\+::get\+Amplifier (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classCrystal_a231a9965f3c0651a7c0776b12e8acd37}
+
+
+Retourne le modifieur de longueur d\textquotesingle{}onde du cristal. 
+
+\begin{DoxyReturn}{Renvoie}
+le modifieur de longueur d\textquotesingle{}onde du cristal 
+\end{DoxyReturn}
+
+
+Définition à la ligne 110 du fichier crystal.\+hpp.
+
+
+
+Références amplifier.
+
+
+\begin{DoxyCode}
+111 \{
+112     \textcolor{keywordflow}{return} this->\hyperlink{classCrystal_a6732b62ec55a56f8d29249281e432cc9}{amplifier};
+113 \}
+\end{DoxyCode}
+\hypertarget{classCrystal_a455b55c1fc7c1083a8c4dd437584ccfb}{}\index{Crystal@{Crystal}!get\+Radius@{get\+Radius}}
+\index{get\+Radius@{get\+Radius}!Crystal@{Crystal}}
+\subsubsection[{get\+Radius() const }]{\setlength{\rightskip}{0pt plus 5cm}double Crystal\+::get\+Radius (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classCrystal_a455b55c1fc7c1083a8c4dd437584ccfb}
+
+
+Retourne la longueur du rayon du cristal. 
+
+\begin{DoxyReturn}{Renvoie}
+la longueur du rayon du cristal 
+\end{DoxyReturn}
+\hypertarget{classCrystal_a97212bbcd6c34f243ac8f18b6641e639}{}\index{Crystal@{Crystal}!include\+Ray@{include\+Ray}}
+\index{include\+Ray@{include\+Ray}!Crystal@{Crystal}}
+\subsubsection[{include\+Ray(const Ray \&) const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Point}$\ast$ Crystal\+::include\+Ray (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ray} \&}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classCrystal_a97212bbcd6c34f243ac8f18b6641e639}
+
+
+Renseigne si le crystal est dans la trajectoire du rayon. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em ray} & Un rayon.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Un pointeur vers le point d\textquotesingle{}intersection (le plus éloigné) avec le rayon s\textquotesingle{}il existe un pointeur null sinon. 
+\end{DoxyReturn}
+
+
+Implémente \hyperlink{classElement_a1b88519623a6250155f7182706665448}{Element}.
+
+\hypertarget{classCrystal_aa6d486aaf4abc84b0795b75c3e3e598f}{}\index{Crystal@{Crystal}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Crystal@{Crystal}}
+\subsubsection[{operator"!=(const Crystal \&) const }]{\setlength{\rightskip}{0pt plus 5cm}bool Crystal\+::operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Crystal} \&}]{}
+\end{DoxyParamCaption}
+) const}\label{classCrystal_aa6d486aaf4abc84b0795b75c3e3e598f}
+
+
+Permet de savoir si deux cristaux sont différents. 
+
+\begin{DoxyReturn}{Renvoie}
+{\ttfamily true} si deux cristaux sont différents. 
+\end{DoxyReturn}
+\hypertarget{classCrystal_adeb9d4a8d0d02ff4daccd09650e1b990}{}\index{Crystal@{Crystal}!operator==@{operator==}}
+\index{operator==@{operator==}!Crystal@{Crystal}}
+\subsubsection[{operator==(const Crystal \&) const }]{\setlength{\rightskip}{0pt plus 5cm}bool Crystal\+::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Crystal} \&}]{}
+\end{DoxyParamCaption}
+) const}\label{classCrystal_adeb9d4a8d0d02ff4daccd09650e1b990}
+
+
+Permet de savoir si deux cristaux sont les même. 
+
+\begin{DoxyReturn}{Renvoie}
+{\ttfamily true} si deux cristaux sont les même. 
+\end{DoxyReturn}
+\hypertarget{classCrystal_a4f9351f0556cf2e9334d7976bff48830}{}\index{Crystal@{Crystal}!react\+To\+Ray@{react\+To\+Ray}}
+\index{react\+To\+Ray@{react\+To\+Ray}!Crystal@{Crystal}}
+\subsubsection[{react\+To\+Ray(\+Ray)}]{\setlength{\rightskip}{0pt plus 5cm}void Crystal\+::react\+To\+Ray (
+\begin{DoxyParamCaption}
+\item[{{\bf Ray}}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classCrystal_a4f9351f0556cf2e9334d7976bff48830}
+
+
+Cette méthode est lancé lorsque le miroir courant est exposé à un rayon. 
+
+Il va communiquer au niveau le nouveau rayon sortant du cristal.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em ray} & Un rayon percutant le miroir. \\
+\hline
+\end{DoxyParams}
+
+
+Implémente \hyperlink{classElement_aa87116bb9422d64169b2ebf03831df9b}{Element}.
+
+
+
+\subsection{Documentation des données membres}
+\hypertarget{classCrystal_a6732b62ec55a56f8d29249281e432cc9}{}\index{Crystal@{Crystal}!amplifier@{amplifier}}
+\index{amplifier@{amplifier}!Crystal@{Crystal}}
+\subsubsection[{amplifier}]{\setlength{\rightskip}{0pt plus 5cm}int Crystal\+::amplifier\hspace{0.3cm}{\ttfamily [private]}}\label{classCrystal_a6732b62ec55a56f8d29249281e432cc9}
+
+
+Le modificateur de longueur d\textquotesingle{}onde agissant sur un rayon passant dans ce cristal. 
+
+
+
+Définition à la ligne 31 du fichier crystal.\+hpp.
+
+
+
+Référencé par get\+Amplifier().
+
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+model/elements/\hyperlink{crystal_8hpp}{crystal.\+hpp}\end{DoxyCompactItemize}

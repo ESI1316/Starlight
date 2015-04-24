@@ -1,0 +1,156 @@
+.TH "Element" 3 "Vendredi 24 Avril 2015" "Starlight" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Element \- Un élément est un composant du jeu se devant de communiquer son état au niveau le gérant\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <element\&.hpp>\fP
+.SS "Fonctions membres publiques"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBreactToRay\fP (\fBRay\fP)=0"
+.br
+.RI "\fIRéaction à l'exposition d'un rayon\&. \fP"
+.ti -1c
+.RI "virtual \fBPoint\fP * \fBincludeRay\fP (const \fBRay\fP &) const  =0"
+.br
+.RI "\fIRenseigne si l'élément est dans la trajectoire du rayon\&. \fP"
+.ti -1c
+.RI "void \fBsetLevel\fP (\fBLevel\fP *)"
+.br
+.RI "\fIPermet de modifier le level auquel appartient l'élément\&. \fP"
+.ti -1c
+.RI "\fBLevel\fP * \fBgetLevel\fP ()"
+.br
+.RI "\fIPermet d'obtenir un pointeur sur le niveau auquel appartient l'élément\&. \fP"
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBElement\fP &) const "
+.br
+.RI "\fICompare deux éléments pour savoir si ils pointent vers le même niveau\&. \fP"
+.in -1c
+.SS "Fonctions membres protégées"
+
+.in +1c
+.ti -1c
+.RI "\fBElement\fP ()=default"
+.br
+.RI "\fIConstructeur par défaut, en visibilité protected permettant d'éviter une tentative d'instanciation de cette classe abstraite\&. \fP"
+.in -1c
+.SS "Attributs privés"
+
+.in +1c
+.ti -1c
+.RI "\fBLevel\fP * \fBlevel\fP {nullptr}"
+.br
+.RI "\fILe niveau lié à un élément\&. \fP"
+.in -1c
+.SH "Description détaillée"
+.PP 
+Un élément est un composant du jeu se devant de communiquer son état au niveau le gérant\&. 
+
+Cette pratique permet au niveau d'écouter les actions à éffectuer dicter par l'élément\&. 
+.PP
+Définition à la ligne 13 du fichier element\&.hpp\&.
+.PP
+Dérivée par \fBCrystal\fP, \fBDest\fP, \fBLens\fP, \fBMirror\fP, \fBNuke\fP, \fBSource\fP, et \fBWall\fP\&.
+.SH "Documentation des constructeurs et destructeur"
+.PP 
+.SS "Element::Element ()\fC [protected]\fP, \fC [default]\fP"
+
+.PP
+Constructeur par défaut, en visibilité protected permettant d'éviter une tentative d'instanciation de cette classe abstraite\&. 
+.SH "Documentation des fonctions membres"
+.PP 
+.SS "\fBLevel\fP * Element::getLevel ()\fC [inline]\fP"
+
+.PP
+Permet d'obtenir un pointeur sur le niveau auquel appartient l'élément\&. 
+.PP
+\fBRenvoie:\fP
+.RS 4
+un pointeur vers le niveau auquel appartient l'élément\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne 71 du fichier element\&.hpp\&.
+.PP
+Références level\&.
+.PP
+.nf
+72 {
+73     return this->level;
+74 }
+.fi
+.SS "virtual \fBPoint\fP* Element::includeRay (const \fBRay\fP &) const\fC [pure virtual]\fP"
+
+.PP
+Renseigne si l'élément est dans la trajectoire du rayon\&. 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIray\fP Le rayon\&.
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+\fCtrue\fP Si l'élément se trouve dans la trajectoire du rayon entré en paramètre\&. 
+.RE
+.PP
+
+.PP
+Implémenté dans \fBMirror\fP, \fBSource\fP, \fBLens\fP, \fBCrystal\fP, \fBDest\fP, \fBNuke\fP, et \fBWall\fP\&.
+.SS "bool Element::operator== (const \fBElement\fP &) const"
+
+.PP
+Compare deux éléments pour savoir si ils pointent vers le même niveau\&. 
+.PP
+\fBRenvoie:\fP
+.RS 4
+\fCtrue\fP Si les deux éléments sont liés au même niveau\&. 
+.RE
+.PP
+
+.SS "virtual void Element::reactToRay (\fBRay\fP)\fC [pure virtual]\fP"
+
+.PP
+Réaction à l'exposition d'un rayon\&. 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIray\fP Le rayon\&. 
+.RE
+.PP
+
+.PP
+Implémenté dans \fBMirror\fP, \fBSource\fP, \fBLens\fP, \fBCrystal\fP, \fBDest\fP, \fBNuke\fP, et \fBWall\fP\&.
+.SS "void Element::setLevel (\fBLevel\fP *)"
+
+.PP
+Permet de modifier le level auquel appartient l'élément\&. 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fInouveau\fP level auquel appartient l'élément\&. 
+.RE
+.PP
+
+.SH "Documentation des données membres"
+.PP 
+.SS "\fBLevel\fP* Element::level {nullptr}\fC [private]\fP"
+
+.PP
+Le niveau lié à un élément\&. 
+.PP
+Définition à la ligne 20 du fichier element\&.hpp\&.
+.PP
+Référencé par getLevel()\&.
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Starlight à partir du code source\&.

@@ -1,0 +1,214 @@
+\documentclass[twoside]{book}
+
+% Packages required by doxygen
+\usepackage{fixltx2e}
+\usepackage{calc}
+\usepackage{doxygen}
+\usepackage[export]{adjustbox} % also loads graphicx
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage{makeidx}
+\usepackage{multicol}
+\usepackage{multirow}
+\PassOptionsToPackage{warn}{textcomp}
+\usepackage{textcomp}
+\usepackage[nointegrals]{wasysym}
+\usepackage[table]{xcolor}
+
+% NLS support packages
+\usepackage[french]{babel}
+
+% Font selection
+\usepackage[T1]{fontenc}
+\usepackage[scaled=.90]{helvet}
+\usepackage{courier}
+\usepackage{amssymb}
+\usepackage{sectsty}
+\renewcommand{\familydefault}{\sfdefault}
+\allsectionsfont{%
+  \fontseries{bc}\selectfont%
+  \color{darkgray}%
+}
+\renewcommand{\DoxyLabelFont}{%
+  \fontseries{bc}\selectfont%
+  \color{darkgray}%
+}
+\newcommand{\+}{\discretionary{\mbox{\scriptsize$\hookleftarrow$}}{}{}}
+
+% Page & text layout
+\usepackage{geometry}
+\geometry{%
+  a4paper,%
+  top=2.5cm,%
+  bottom=2.5cm,%
+  left=2.5cm,%
+  right=2.5cm%
+}
+\tolerance=750
+\hfuzz=15pt
+\hbadness=750
+\setlength{\emergencystretch}{15pt}
+\setlength{\parindent}{0cm}
+\setlength{\parskip}{0.2cm}
+\makeatletter
+\renewcommand{\paragraph}{%
+  \@startsection{paragraph}{4}{0ex}{-1.0ex}{1.0ex}{%
+    \normalfont\normalsize\bfseries\SS@parafont%
+  }%
+}
+\renewcommand{\subparagraph}{%
+  \@startsection{subparagraph}{5}{0ex}{-1.0ex}{1.0ex}{%
+    \normalfont\normalsize\bfseries\SS@subparafont%
+  }%
+}
+\makeatother
+
+% Headers & footers
+\usepackage{fancyhdr}
+\pagestyle{fancyplain}
+\fancyhead[LE]{\fancyplain{}{\bfseries\thepage}}
+\fancyhead[CE]{\fancyplain{}{}}
+\fancyhead[RE]{\fancyplain{}{\bfseries\leftmark}}
+\fancyhead[LO]{\fancyplain{}{\bfseries\rightmark}}
+\fancyhead[CO]{\fancyplain{}{}}
+\fancyhead[RO]{\fancyplain{}{\bfseries\thepage}}
+\fancyfoot[LE]{\fancyplain{}{}}
+\fancyfoot[CE]{\fancyplain{}{}}
+\fancyfoot[RE]{\fancyplain{}{\bfseries\scriptsize Généré le Vendredi 24 Avril 2015 14\+:41\+:55 pour Starlight par Doxygen }}
+\fancyfoot[LO]{\fancyplain{}{\bfseries\scriptsize Généré le Vendredi 24 Avril 2015 14\+:41\+:55 pour Starlight par Doxygen }}
+\fancyfoot[CO]{\fancyplain{}{}}
+\fancyfoot[RO]{\fancyplain{}{}}
+\renewcommand{\footrulewidth}{0.4pt}
+\renewcommand{\chaptermark}[1]{%
+  \markboth{#1}{}%
+}
+\renewcommand{\sectionmark}[1]{%
+  \markright{\thesection\ #1}%
+}
+
+% Indices & bibliography
+\usepackage{natbib}
+\usepackage[titles]{tocloft}
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{5}
+\makeindex
+
+% Hyperlinks (required, but should be loaded last)
+\usepackage{ifpdf}
+\ifpdf
+  \usepackage[pdftex,pagebackref=true]{hyperref}
+\else
+  \usepackage[ps2pdf,pagebackref=true]{hyperref}
+\fi
+\hypersetup{%
+  colorlinks=true,%
+  linkcolor=blue,%
+  citecolor=blue,%
+  unicode%
+}
+
+% Custom commands
+\newcommand{\clearemptydoublepage}{%
+  \newpage{\pagestyle{empty}\cleardoublepage}%
+}
+
+
+%===== C O N T E N T S =====
+
+\begin{document}
+
+% Titlepage & ToC
+\hypersetup{pageanchor=false,
+             bookmarks=true,
+             bookmarksnumbered=true,
+             pdfencoding=unicode
+            }
+\pagenumbering{roman}
+\begin{titlepage}
+\vspace*{7cm}
+\begin{center}%
+{\Large Starlight }\\
+\vspace*{1cm}
+{\large Généré par Doxygen 1.8.9.1}\\
+\vspace*{0.5cm}
+{\small Vendredi 24 Avril 2015 14:41:55}\\
+\end{center}
+\end{titlepage}
+\clearemptydoublepage
+\tableofcontents
+\clearemptydoublepage
+\pagenumbering{arabic}
+\hypersetup{pageanchor=true}
+
+%--- Begin generated contents ---
+\chapter{Page principale}
+\label{index}\hypertarget{index}{}\input{index}
+\chapter{Index des espaces de nommage}
+\input{namespaces}
+\chapter{Index hiérarchique}
+\input{hierarchy}
+\chapter{Index des classes}
+\input{annotated}
+\chapter{Index des fichiers}
+\input{files}
+\chapter{Documentation des espaces de nommage}
+\input{d7/d52/namespacelevelFactory}
+\input{d2/d96/namespaceutilities}
+\input{d2/d09/namespaceviewUtilities}
+\chapter{Documentation des classes}
+\input{d6/d4f/classCrystal}
+\input{de/d97/classDest}
+\input{d5/d3c/classElement}
+\input{db/dc7/classEllipse}
+\input{d6/d4b/classLens}
+\input{d2/d9d/classLevel}
+\input{d5/da8/classLevelView}
+\input{db/db6/classLine}
+\input{d9/d0a/classMainMenu}
+\input{d6/d1a/classMainWindow}
+\input{de/dfd/classMirror}
+\input{d6/d74/classMirrorView}
+\input{d0/ddf/classNuke}
+\input{dc/d4f/classPoint}
+\input{d9/dce/classRay}
+\input{de/d00/classRectangle}
+\input{d6/d2e/classSource}
+\input{d9/df7/classSourceView}
+\input{d4/d35/classStarlightException}
+\input{d7/dec/classWall}
+\chapter{Documentation des fichiers}
+\input{df/d0a/main_8cpp}
+\input{d2/de8/crystal_8hpp}
+\input{db/d20/dest_8hpp}
+\input{da/dbc/element_8hpp}
+\input{db/dd9/lens_8hpp}
+\input{d5/d37/level_8hpp}
+\input{d6/dae/levelFactory_8hpp}
+\input{d5/d5c/mirror_8hpp}
+\input{dd/d5b/nuke_8hpp}
+\input{db/d1d/ray_8hpp}
+\input{d2/d2e/source_8hpp}
+\input{d5/da4/wall_8hpp}
+\input{de/d90/starlightexception_8hpp}
+\input{d3/d28/ellipse_8hpp}
+\input{d3/d9d/line_8hpp}
+\input{d0/de4/point_8hpp}
+\input{d6/d95/rectangle_8hpp}
+\input{dc/d5f/utilities_8hpp}
+\input{de/da4/mirrorview_8hpp}
+\input{d0/d52/sourceview_8hpp}
+\input{d0/d50/viewutilities_8hpp}
+\input{de/d98/levelview_8hpp}
+\input{d9/d1d/mainmenu_8hpp}
+\input{df/d50/mainwindow_8hpp}
+%--- End generated contents ---
+
+% Index
+\backmatter
+\newpage
+\phantomsection
+\clearemptydoublepage
+\addcontentsline{toc}{chapter}{Index}
+\printindex
+
+\end{document}

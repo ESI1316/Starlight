@@ -1,0 +1,10 @@
+<map id="MirrorView" name="MirrorView">
+<area shape="rect" id="node4" href="$de/dfd/classMirror.html" title="Cette classe modélise les miroirs utilisés dans le jeu. " alt="" coords="5,763,136,1160"/>
+<area shape="rect" id="node6" href="$d5/d3c/classElement.html" title="Un élément est un composant du jeu se devant de communiquer son état au niveau le gérant..." alt="" coords="315,462,437,634"/>
+<area shape="rect" id="node10" href="$de/d97/classDest.html" title="Cette classe modélise la destination utilisée dans le jeu. " alt="" coords="412,849,543,1073"/>
+<area shape="rect" id="node17" href="$d6/d2e/classSource.html" title="Modélise la source lumineuse utilisée dans le jeu. " alt="" coords="567,806,711,1117"/>
+<area shape="rect" id="node8" href="$d2/d9d/classLevel.html" title="Modélise une carte telle qu&#39;utilisée dans le jeu. " alt="" coords="399,1227,556,1642"/>
+<area shape="rect" id="node13" href="$de/d00/classRectangle.html" title="Le rectangle est objet géométrique, du plan, à quatre coté parallèles deux à deux. " alt="" coords="461,410,643,686"/>
+<area shape="rect" id="node15" href="$dc/d4f/classPoint.html" title="Cette classe modélise un point de coordonnés dans le plan &#160;sous deux formes : " alt="" coords="97,6,279,317"/>
+<area shape="rect" id="node21" href="$db/db6/classLine.html" title="Représente une droite sous la forme de son équation complète; . " alt="" coords="117,384,291,712"/>
+</map>

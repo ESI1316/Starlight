@@ -1,0 +1,184 @@
+\hypertarget{namespacelevelFactory}{}\section{Référence de l\textquotesingle{}espace de nommage level\+Factory}
+\label{namespacelevelFactory}\index{level\+Factory@{level\+Factory}}
+
+
+Fonctions utilitaires permettant divers éléments du jeu à partir d\textquotesingle{}un fichier .lvl.  
+
+
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classLevel}{Level} $\ast$ \hyperlink{namespacelevelFactory_a6f72186d33354f4f19b83f510e4bdb10}{get\+Level\+From\+File} (std\+::string)
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}obtenir une référence vers une nouvelle carte initialisée à partir d\textquotesingle{}un fichier .level. \end{DoxyCompactList}\item 
+\hyperlink{classSource}{Source} \hyperlink{namespacelevelFactory_ac9bd1e2b73944b567d2b454ad861efc0}{get\+Source} (std\+::ifstream \&)
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{} obtenir une source à partir d\textquotesingle{}un fichier .lvl déjà ouvert. \end{DoxyCompactList}\item 
+\hyperlink{classDest}{Dest} \hyperlink{namespacelevelFactory_ab725f4fefde6c96197b6baf7c0eadfc7}{get\+Destination} (std\+::ifstream \&)
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{} obtenir une destination à partir d\textquotesingle{}un fichier .lvl déjà ouvert. \end{DoxyCompactList}\item 
+\hyperlink{classCrystal}{Crystal} \hyperlink{namespacelevelFactory_a4a9434297ea3998d9466a0f11407c041}{get\+Crystal} (std\+::ifstream \&)
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{} obtenir un crystal à partir d\textquotesingle{}un fichier .lvl déjà ouvert. \end{DoxyCompactList}\item 
+\hyperlink{classLens}{Lens} \hyperlink{namespacelevelFactory_a697af6e8eba86734063c0678c1b5b926}{get\+Lens} (std\+::ifstream \&)
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{} obtenir une lentille à partir d\textquotesingle{}un fichier .lvl déjà ouvert. \end{DoxyCompactList}\item 
+\hyperlink{classWall}{Wall} \hyperlink{namespacelevelFactory_a94f4b8816d9893571a0cbd2fe55f3adf}{get\+Wall} (std\+::ifstream \&)
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{} obtenir un mur à partir d\textquotesingle{}un fichier .lvl déjà ouvert. \end{DoxyCompactList}\item 
+\hyperlink{classNuke}{Nuke} \hyperlink{namespacelevelFactory_aa187b99195fd9d9106eaf8b6ac3b6809}{get\+Nuke} (std\+::ifstream \&)
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{} obtenir une bombe à partir d\textquotesingle{}un fichier .lvl déjà ouvert. \end{DoxyCompactList}\item 
+\hyperlink{classMirror}{Mirror} \hyperlink{namespacelevelFactory_a9e17b53fc85131232092e428a2f0c803}{get\+Mirror} (std\+::ifstream \&)
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{} obtenir un mirroir à partir d\textquotesingle{}un fichier .lvl déjà ouvert. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Fonctions utilitaires permettant divers éléments du jeu à partir d\textquotesingle{}un fichier .lvl. 
+
+\subsection{Documentation des fonctions}
+\hypertarget{namespacelevelFactory_a4a9434297ea3998d9466a0f11407c041}{}\index{level\+Factory@{level\+Factory}!get\+Crystal@{get\+Crystal}}
+\index{get\+Crystal@{get\+Crystal}!level\+Factory@{level\+Factory}}
+\subsubsection[{get\+Crystal(std\+::ifstream \&)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Crystal} level\+Factory\+::get\+Crystal (
+\begin{DoxyParamCaption}
+\item[{std\+::ifstream \&}]{}
+\end{DoxyParamCaption}
+)}\label{namespacelevelFactory_a4a9434297ea3998d9466a0f11407c041}
+
+
+Permet d\textquotesingle{} obtenir un crystal à partir d\textquotesingle{}un fichier .lvl déjà ouvert. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em map\+File} & Fichier .lvl déjà ouvert.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Un cristal. 
+\end{DoxyReturn}
+\hypertarget{namespacelevelFactory_ab725f4fefde6c96197b6baf7c0eadfc7}{}\index{level\+Factory@{level\+Factory}!get\+Destination@{get\+Destination}}
+\index{get\+Destination@{get\+Destination}!level\+Factory@{level\+Factory}}
+\subsubsection[{get\+Destination(std\+::ifstream \&)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Dest} level\+Factory\+::get\+Destination (
+\begin{DoxyParamCaption}
+\item[{std\+::ifstream \&}]{}
+\end{DoxyParamCaption}
+)}\label{namespacelevelFactory_ab725f4fefde6c96197b6baf7c0eadfc7}
+
+
+Permet d\textquotesingle{} obtenir une destination à partir d\textquotesingle{}un fichier .lvl déjà ouvert. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em map\+File} & Fichier .lvl déjà ouvert.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Une destination. 
+\end{DoxyReturn}
+\hypertarget{namespacelevelFactory_a697af6e8eba86734063c0678c1b5b926}{}\index{level\+Factory@{level\+Factory}!get\+Lens@{get\+Lens}}
+\index{get\+Lens@{get\+Lens}!level\+Factory@{level\+Factory}}
+\subsubsection[{get\+Lens(std\+::ifstream \&)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Lens} level\+Factory\+::get\+Lens (
+\begin{DoxyParamCaption}
+\item[{std\+::ifstream \&}]{}
+\end{DoxyParamCaption}
+)}\label{namespacelevelFactory_a697af6e8eba86734063c0678c1b5b926}
+
+
+Permet d\textquotesingle{} obtenir une lentille à partir d\textquotesingle{}un fichier .lvl déjà ouvert. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em map\+File} & Fichier .lvl déjà ouvert.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Une lentille. 
+\end{DoxyReturn}
+\hypertarget{namespacelevelFactory_a6f72186d33354f4f19b83f510e4bdb10}{}\index{level\+Factory@{level\+Factory}!get\+Level\+From\+File@{get\+Level\+From\+File}}
+\index{get\+Level\+From\+File@{get\+Level\+From\+File}!level\+Factory@{level\+Factory}}
+\subsubsection[{get\+Level\+From\+File(std\+::string)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Level}$\ast$ level\+Factory\+::get\+Level\+From\+File (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{}
+\end{DoxyParamCaption}
+)}\label{namespacelevelFactory_a6f72186d33354f4f19b83f510e4bdb10}
+
+
+Permet d\textquotesingle{}obtenir une référence vers une nouvelle carte initialisée à partir d\textquotesingle{}un fichier .level. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em map\+File\+Path} & chemin vers le fichier .level.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+une référence vers une nouvelle carte initialisée. 
+\end{DoxyReturn}
+\hypertarget{namespacelevelFactory_a9e17b53fc85131232092e428a2f0c803}{}\index{level\+Factory@{level\+Factory}!get\+Mirror@{get\+Mirror}}
+\index{get\+Mirror@{get\+Mirror}!level\+Factory@{level\+Factory}}
+\subsubsection[{get\+Mirror(std\+::ifstream \&)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Mirror} level\+Factory\+::get\+Mirror (
+\begin{DoxyParamCaption}
+\item[{std\+::ifstream \&}]{}
+\end{DoxyParamCaption}
+)}\label{namespacelevelFactory_a9e17b53fc85131232092e428a2f0c803}
+
+
+Permet d\textquotesingle{} obtenir un mirroir à partir d\textquotesingle{}un fichier .lvl déjà ouvert. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em map\+File} & Fichier .lvl déjà ouvert.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Un mirroir. 
+\end{DoxyReturn}
+\hypertarget{namespacelevelFactory_aa187b99195fd9d9106eaf8b6ac3b6809}{}\index{level\+Factory@{level\+Factory}!get\+Nuke@{get\+Nuke}}
+\index{get\+Nuke@{get\+Nuke}!level\+Factory@{level\+Factory}}
+\subsubsection[{get\+Nuke(std\+::ifstream \&)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Nuke} level\+Factory\+::get\+Nuke (
+\begin{DoxyParamCaption}
+\item[{std\+::ifstream \&}]{}
+\end{DoxyParamCaption}
+)}\label{namespacelevelFactory_aa187b99195fd9d9106eaf8b6ac3b6809}
+
+
+Permet d\textquotesingle{} obtenir une bombe à partir d\textquotesingle{}un fichier .lvl déjà ouvert. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em map\+File} & Fichier .lvl déjà ouvert.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Une bombe. 
+\end{DoxyReturn}
+\hypertarget{namespacelevelFactory_ac9bd1e2b73944b567d2b454ad861efc0}{}\index{level\+Factory@{level\+Factory}!get\+Source@{get\+Source}}
+\index{get\+Source@{get\+Source}!level\+Factory@{level\+Factory}}
+\subsubsection[{get\+Source(std\+::ifstream \&)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Source} level\+Factory\+::get\+Source (
+\begin{DoxyParamCaption}
+\item[{std\+::ifstream \&}]{}
+\end{DoxyParamCaption}
+)}\label{namespacelevelFactory_ac9bd1e2b73944b567d2b454ad861efc0}
+
+
+Permet d\textquotesingle{} obtenir une source à partir d\textquotesingle{}un fichier .lvl déjà ouvert. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em map\+File} & Fichier .lvl déjà ouvert.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Une source. 
+\end{DoxyReturn}
+\hypertarget{namespacelevelFactory_a94f4b8816d9893571a0cbd2fe55f3adf}{}\index{level\+Factory@{level\+Factory}!get\+Wall@{get\+Wall}}
+\index{get\+Wall@{get\+Wall}!level\+Factory@{level\+Factory}}
+\subsubsection[{get\+Wall(std\+::ifstream \&)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Wall} level\+Factory\+::get\+Wall (
+\begin{DoxyParamCaption}
+\item[{std\+::ifstream \&}]{}
+\end{DoxyParamCaption}
+)}\label{namespacelevelFactory_a94f4b8816d9893571a0cbd2fe55f3adf}
+
+
+Permet d\textquotesingle{} obtenir un mur à partir d\textquotesingle{}un fichier .lvl déjà ouvert. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em map\+File} & Fichier .lvl déjà ouvert.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Un mur. 
+\end{DoxyReturn}

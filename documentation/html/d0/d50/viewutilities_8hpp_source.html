@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.9.1"/>
+<title>Starlight:  Fichier source de view/viewutilities.hpp</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="../../customdoxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Starlight
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.9.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="../../namespaces.html"><span>Espaces&#160;de&#160;nommage</span></a></li>
+      <li><a href="../../annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="../../files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="../../globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_b2f003339c516cc00c8cadcafbe82f13.html">view</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">viewutilities.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d0/d50/viewutilities_8hpp.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef VIEWUTILITIES_HPP</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define VIEWUTILITIES_HPP</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QGraphicsScene&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;QGraphicsRectItem&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;QGraphicsLineItem&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;QGraphicsEllipseItem&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;QColor&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;QPointF&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;QRectF&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;QString&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">class </span><a class="code" href="../../db/dc7/classEllipse.html">Ellipse</a>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">class </span><a class="code" href="../../de/d00/classRectangle.html">Rectangle</a>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">class </span><a class="code" href="../../dc/d4f/classPoint.html">Point</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">class </span><a class="code" href="../../d9/dce/classRay.html">Ray</a>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="../../d2/d09/namespaceviewUtilities.html">   21</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="../../d2/d09/namespaceviewUtilities.html">viewUtilities</a></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;QPointF <a class="code" href="../../d2/d09/namespaceviewUtilities.html#a2a190881156bffa91f8c191871fb607e">toQPoint</a>(<span class="keyword">const</span> <a class="code" href="../../dc/d4f/classPoint.html">Point</a> &amp;);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;QRectF <a class="code" href="../../d2/d09/namespaceviewUtilities.html#a9024a09c86906c1795499b327df85e4a">toQRectF</a>(<span class="keyword">const</span> <a class="code" href="../../de/d00/classRectangle.html">Rectangle</a> &amp;);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;QRectF <a class="code" href="../../d2/d09/namespaceviewUtilities.html#a9024a09c86906c1795499b327df85e4a">toQRectF</a>(<span class="keyword">const</span> <a class="code" href="../../db/dc7/classEllipse.html">Ellipse</a> &amp;);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;QGraphicsLineItem * <a class="code" href="../../d2/d09/namespaceviewUtilities.html#a339d6b317f890dd0a8c55c57c0a3db8b">getLine</a>(<span class="keyword">const</span> <a class="code" href="../../dc/d4f/classPoint.html">Point</a> &amp;, <span class="keyword">const</span> <a class="code" href="../../dc/d4f/classPoint.html">Point</a> &amp;, <span class="keyword">const</span> QColor &amp;, <span class="keyword">const</span> <span class="keywordtype">int</span>);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;QGraphicsRectItem * <a class="code" href="../../d2/d09/namespaceviewUtilities.html#a90715ebf7ce7fc9fec5e4662479c8001">getRect</a>(<span class="keyword">const</span> <a class="code" href="../../de/d00/classRectangle.html">Rectangle</a> &amp;, <span class="keyword">const</span> QColor &amp;, <span class="keyword">const</span> <span class="keywordtype">int</span>);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;QGraphicsEllipseItem * <a class="code" href="../../d2/d09/namespaceviewUtilities.html#aaac380653defdfe5d8dbe14c2d0b4158">getEllipse</a>(<span class="keyword">const</span> <a class="code" href="../../db/dc7/classEllipse.html">Ellipse</a> &amp;, <span class="keyword">const</span> QColor &amp;, <span class="keyword">const</span> <span class="keywordtype">int</span>);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;QColor <a class="code" href="../../d2/d09/namespaceviewUtilities.html#a47e2968ae7a9890971943ccd925348b1">waveLengthToColor</a>(<span class="keyword">const</span> <a class="code" href="../../d9/dce/classRay.html">Ray</a> &amp;, <span class="keyword">const</span> <span class="keywordtype">double</span> = 0.8);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;QString * <a class="code" href="../../d2/d09/namespaceviewUtilities.html#a77016e1644b342340afa333441d3e061">fileToQString</a>(<span class="keyword">const</span> QString &amp;);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;}</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="preprocessor">#endif // VIEWUTILITIES_HPP</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
+<div class="ttc" id="classEllipse_html"><div class="ttname"><a href="../../db/dc7/classEllipse.html">Ellipse</a></div><div class="ttdoc">Représente un cercle sous la forme; . </div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d28/ellipse_8hpp_source.html#l00015">ellipse.hpp:15</a></div></div>
+<div class="ttc" id="namespaceviewUtilities_html_a47e2968ae7a9890971943ccd925348b1"><div class="ttname"><a href="../../d2/d09/namespaceviewUtilities.html#a47e2968ae7a9890971943ccd925348b1">viewUtilities::waveLengthToColor</a></div><div class="ttdeci">QColor waveLengthToColor(const Ray &amp;, const double=0.8)</div><div class="ttdoc">Permet de créé une QColor au format RGB selon la longueur d&#39;onde passée en paramètre. </div></div>
+<div class="ttc" id="namespaceviewUtilities_html_a339d6b317f890dd0a8c55c57c0a3db8b"><div class="ttname"><a href="../../d2/d09/namespaceviewUtilities.html#a339d6b317f890dd0a8c55c57c0a3db8b">viewUtilities::getLine</a></div><div class="ttdeci">QGraphicsLineItem * getLine(const Point &amp;, const Point &amp;, const QColor &amp;, const int)</div><div class="ttdoc">Permet de générer une QGraphicsLine à partir des deux points délimitant un segment de droite...</div></div>
+<div class="ttc" id="namespaceviewUtilities_html_a9024a09c86906c1795499b327df85e4a"><div class="ttname"><a href="../../d2/d09/namespaceviewUtilities.html#a9024a09c86906c1795499b327df85e4a">viewUtilities::toQRectF</a></div><div class="ttdeci">QRectF toQRectF(const Rectangle &amp;)</div><div class="ttdoc">Permet de transformer un rectangle en QRectF. </div></div>
+<div class="ttc" id="namespaceviewUtilities_html_a90715ebf7ce7fc9fec5e4662479c8001"><div class="ttname"><a href="../../d2/d09/namespaceviewUtilities.html#a90715ebf7ce7fc9fec5e4662479c8001">viewUtilities::getRect</a></div><div class="ttdeci">QGraphicsRectItem * getRect(const Rectangle &amp;, const QColor &amp;, const int)</div><div class="ttdoc">Permet de générer un QGraphicsRectItem représentant le rectangle passé en paramètre. </div></div>
+<div class="ttc" id="namespaceviewUtilities_html_a2a190881156bffa91f8c191871fb607e"><div class="ttname"><a href="../../d2/d09/namespaceviewUtilities.html#a2a190881156bffa91f8c191871fb607e">viewUtilities::toQPoint</a></div><div class="ttdeci">QPointF toQPoint(const Point &amp;)</div><div class="ttdoc">Permet de transformer un point en QPointF. </div></div>
+<div class="ttc" id="classPoint_html"><div class="ttname"><a href="../../dc/d4f/classPoint.html">Point</a></div><div class="ttdoc">Cette classe modélise un point de coordonnés dans le plan  sous deux formes : </div><div class="ttdef"><b>Definition:</b> <a href="../../d0/de4/point_8hpp_source.html#l00015">point.hpp:15</a></div></div>
+<div class="ttc" id="namespaceviewUtilities_html_aaac380653defdfe5d8dbe14c2d0b4158"><div class="ttname"><a href="../../d2/d09/namespaceviewUtilities.html#aaac380653defdfe5d8dbe14c2d0b4158">viewUtilities::getEllipse</a></div><div class="ttdeci">QGraphicsEllipseItem * getEllipse(const Ellipse &amp;, const QColor &amp;, const int)</div><div class="ttdoc">Permet de générer un QGraphicsEllipseItem représentant l&#39;ellipse passée en paramètre. </div></div>
+<div class="ttc" id="classRectangle_html"><div class="ttname"><a href="../../de/d00/classRectangle.html">Rectangle</a></div><div class="ttdoc">Le rectangle est objet géométrique, du plan, à quatre coté parallèles deux à deux. </div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d95/rectangle_8hpp_source.html#l00014">rectangle.hpp:14</a></div></div>
+<div class="ttc" id="namespaceviewUtilities_html_a77016e1644b342340afa333441d3e061"><div class="ttname"><a href="../../d2/d09/namespaceviewUtilities.html#a77016e1644b342340afa333441d3e061">viewUtilities::fileToQString</a></div><div class="ttdeci">QString * fileToQString(const QString &amp;)</div><div class="ttdoc">Permet de lire un fichier et de retourner son contenu en tant que QString. </div></div>
+<div class="ttc" id="classRay_html"><div class="ttname"><a href="../../d9/dce/classRay.html">Ray</a></div><div class="ttdoc">Cette classe modélise les rayons lumineux, concept central du jeu. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/d1d/ray_8hpp_source.html#l00015">ray.hpp:15</a></div></div>
+<div class="ttc" id="namespaceviewUtilities_html"><div class="ttname"><a href="../../d2/d09/namespaceviewUtilities.html">viewUtilities</a></div><div class="ttdoc">Divers fonctions utilitaires nécessaires aux vues. </div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d50/viewutilities_8hpp_source.html#l00021">viewutilities.hpp:21</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Vendredi 24 Avril 2015 14:41:55 pour Starlight par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.9.1
+</small></address>
+</body>
+</html>

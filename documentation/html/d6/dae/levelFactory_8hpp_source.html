@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.9.1"/>
+<title>Starlight:  Fichier source de model/elements/levelFactory.hpp</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="../../customdoxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Starlight
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.9.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="../../namespaces.html"><span>Espaces&#160;de&#160;nommage</span></a></li>
+      <li><a href="../../annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="../../files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="../../globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_3f14f6767c31cb4a1d22c13c18cc6fc3.html">model</a></li><li class="navelem"><a class="el" href="../../dir_6cb5f6c5bce0f61f6326f5ca1dc4dc30.html">elements</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">levelFactory.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d6/dae/levelFactory_8hpp.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef LEVELFACTORY</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define LEVELFACTORY</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;fstream&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;sstream&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">class </span><a class="code" href="../../d6/d2e/classSource.html">Source</a>;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">class </span><a class="code" href="../../d0/ddf/classNuke.html">Nuke</a>;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">class </span><a class="code" href="../../d7/dec/classWall.html">Wall</a>;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">class </span><a class="code" href="../../d6/d4b/classLens.html">Lens</a>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">class </span><a class="code" href="../../de/dfd/classMirror.html">Mirror</a>;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">class </span><a class="code" href="../../d6/d4f/classCrystal.html">Crystal</a>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">class </span><a class="code" href="../../de/d97/classDest.html">Dest</a>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">class </span><a class="code" href="../../d2/d9d/classLevel.html">Level</a>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="../../d7/d52/namespacelevelFactory.html">   20</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="../../d7/d52/namespacelevelFactory.html">levelFactory</a></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="../../d2/d9d/classLevel.html">Level</a> * <a class="code" href="../../d7/d52/namespacelevelFactory.html#a6f72186d33354f4f19b83f510e4bdb10">getLevelFromFile</a>(std::string);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="../../d6/d2e/classSource.html">Source</a> <a class="code" href="../../d7/d52/namespacelevelFactory.html#ac9bd1e2b73944b567d2b454ad861efc0">getSource</a>(std::ifstream &amp;);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="../../de/d97/classDest.html">Dest</a> <a class="code" href="../../d7/d52/namespacelevelFactory.html#ab725f4fefde6c96197b6baf7c0eadfc7">getDestination</a>(std::ifstream &amp;);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="../../d6/d4f/classCrystal.html">Crystal</a> <a class="code" href="../../d7/d52/namespacelevelFactory.html#a4a9434297ea3998d9466a0f11407c041">getCrystal</a>(std::ifstream &amp;);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <a class="code" href="../../d6/d4b/classLens.html">Lens</a> <a class="code" href="../../d7/d52/namespacelevelFactory.html#a697af6e8eba86734063c0678c1b5b926">getLens</a>(std::ifstream &amp;);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <a class="code" href="../../d7/dec/classWall.html">Wall</a> <a class="code" href="../../d7/d52/namespacelevelFactory.html#a94f4b8816d9893571a0cbd2fe55f3adf">getWall</a>(std::ifstream &amp;);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <a class="code" href="../../d0/ddf/classNuke.html">Nuke</a> <a class="code" href="../../d7/d52/namespacelevelFactory.html#aa187b99195fd9d9106eaf8b6ac3b6809">getNuke</a>(std::ifstream &amp;);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <a class="code" href="../../de/dfd/classMirror.html">Mirror</a> <a class="code" href="../../d7/d52/namespacelevelFactory.html#a9e17b53fc85131232092e428a2f0c803">getMirror</a>(std::ifstream &amp;);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;}</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="preprocessor">#endif // LEVELFACTORY</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
+<div class="ttc" id="classLens_html"><div class="ttname"><a href="../../d6/d4b/classLens.html">Lens</a></div><div class="ttdoc">Cette classe modélise les lentilles utilisées dans le jeu. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/dd9/lens_8hpp_source.html#l00022">lens.hpp:22</a></div></div>
+<div class="ttc" id="namespacelevelFactory_html_a6f72186d33354f4f19b83f510e4bdb10"><div class="ttname"><a href="../../d7/d52/namespacelevelFactory.html#a6f72186d33354f4f19b83f510e4bdb10">levelFactory::getLevelFromFile</a></div><div class="ttdeci">Level * getLevelFromFile(std::string)</div><div class="ttdoc">Permet d&#39;obtenir une référence vers une nouvelle carte initialisée à partir d&#39;un fichier ...</div></div>
+<div class="ttc" id="namespacelevelFactory_html_a94f4b8816d9893571a0cbd2fe55f3adf"><div class="ttname"><a href="../../d7/d52/namespacelevelFactory.html#a94f4b8816d9893571a0cbd2fe55f3adf">levelFactory::getWall</a></div><div class="ttdeci">Wall getWall(std::ifstream &amp;)</div><div class="ttdoc">Permet d&#39; obtenir un mur à partir d&#39;un fichier .lvl déjà ouvert. </div></div>
+<div class="ttc" id="namespacelevelFactory_html_a9e17b53fc85131232092e428a2f0c803"><div class="ttname"><a href="../../d7/d52/namespacelevelFactory.html#a9e17b53fc85131232092e428a2f0c803">levelFactory::getMirror</a></div><div class="ttdeci">Mirror getMirror(std::ifstream &amp;)</div><div class="ttdoc">Permet d&#39; obtenir un mirroir à partir d&#39;un fichier .lvl déjà ouvert. </div></div>
+<div class="ttc" id="namespacelevelFactory_html_ac9bd1e2b73944b567d2b454ad861efc0"><div class="ttname"><a href="../../d7/d52/namespacelevelFactory.html#ac9bd1e2b73944b567d2b454ad861efc0">levelFactory::getSource</a></div><div class="ttdeci">Source getSource(std::ifstream &amp;)</div><div class="ttdoc">Permet d&#39; obtenir une source à partir d&#39;un fichier .lvl déjà ouvert. </div></div>
+<div class="ttc" id="namespacelevelFactory_html_ab725f4fefde6c96197b6baf7c0eadfc7"><div class="ttname"><a href="../../d7/d52/namespacelevelFactory.html#ab725f4fefde6c96197b6baf7c0eadfc7">levelFactory::getDestination</a></div><div class="ttdeci">Dest getDestination(std::ifstream &amp;)</div><div class="ttdoc">Permet d&#39; obtenir une destination à partir d&#39;un fichier .lvl déjà ouvert. </div></div>
+<div class="ttc" id="classNuke_html"><div class="ttname"><a href="../../d0/ddf/classNuke.html">Nuke</a></div><div class="ttdoc">Cette classe modélise les bombes utilisées dans le jeu. </div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d5b/nuke_8hpp_source.html#l00017">nuke.hpp:17</a></div></div>
+<div class="ttc" id="namespacelevelFactory_html_a697af6e8eba86734063c0678c1b5b926"><div class="ttname"><a href="../../d7/d52/namespacelevelFactory.html#a697af6e8eba86734063c0678c1b5b926">levelFactory::getLens</a></div><div class="ttdeci">Lens getLens(std::ifstream &amp;)</div><div class="ttdoc">Permet d&#39; obtenir une lentille à partir d&#39;un fichier .lvl déjà ouvert. </div></div>
+<div class="ttc" id="namespacelevelFactory_html_a4a9434297ea3998d9466a0f11407c041"><div class="ttname"><a href="../../d7/d52/namespacelevelFactory.html#a4a9434297ea3998d9466a0f11407c041">levelFactory::getCrystal</a></div><div class="ttdeci">Crystal getCrystal(std::ifstream &amp;)</div><div class="ttdoc">Permet d&#39; obtenir un crystal à partir d&#39;un fichier .lvl déjà ouvert. </div></div>
+<div class="ttc" id="namespacelevelFactory_html_aa187b99195fd9d9106eaf8b6ac3b6809"><div class="ttname"><a href="../../d7/d52/namespacelevelFactory.html#aa187b99195fd9d9106eaf8b6ac3b6809">levelFactory::getNuke</a></div><div class="ttdeci">Nuke getNuke(std::ifstream &amp;)</div><div class="ttdoc">Permet d&#39; obtenir une bombe à partir d&#39;un fichier .lvl déjà ouvert. </div></div>
+<div class="ttc" id="classWall_html"><div class="ttname"><a href="../../d7/dec/classWall.html">Wall</a></div><div class="ttdoc">Cette classe modélise les murs utilisés dans le jeu. </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/da4/wall_8hpp_source.html#l00016">wall.hpp:16</a></div></div>
+<div class="ttc" id="classLevel_html"><div class="ttname"><a href="../../d2/d9d/classLevel.html">Level</a></div><div class="ttdoc">Modélise une carte telle qu&#39;utilisée dans le jeu. </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d37/level_8hpp_source.html#l00027">level.hpp:27</a></div></div>
+<div class="ttc" id="classCrystal_html"><div class="ttname"><a href="../../d6/d4f/classCrystal.html">Crystal</a></div><div class="ttdoc">Cette classe amplifie les cristaux utilisés dans le jeu. </div><div class="ttdef"><b>Definition:</b> <a href="../../d2/de8/crystal_8hpp_source.html#l00023">crystal.hpp:23</a></div></div>
+<div class="ttc" id="classDest_html"><div class="ttname"><a href="../../de/d97/classDest.html">Dest</a></div><div class="ttdoc">Cette classe modélise la destination utilisée dans le jeu. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/d20/dest_8hpp_source.html#l00017">dest.hpp:17</a></div></div>
+<div class="ttc" id="namespacelevelFactory_html"><div class="ttname"><a href="../../d7/d52/namespacelevelFactory.html">levelFactory</a></div><div class="ttdoc">Fonctions utilitaires permettant divers éléments du jeu à partir d&#39;un fichier .lvl. </div><div class="ttdef"><b>Definition:</b> <a href="../../d6/dae/levelFactory_8hpp_source.html#l00020">levelFactory.hpp:20</a></div></div>
+<div class="ttc" id="classMirror_html"><div class="ttname"><a href="../../de/dfd/classMirror.html">Mirror</a></div><div class="ttdoc">Cette classe modélise les miroirs utilisés dans le jeu. </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d5c/mirror_8hpp_source.html#l00021">mirror.hpp:21</a></div></div>
+<div class="ttc" id="classSource_html"><div class="ttname"><a href="../../d6/d2e/classSource.html">Source</a></div><div class="ttdoc">Modélise la source lumineuse utilisée dans le jeu. </div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d2e/source_8hpp_source.html#l00019">source.hpp:19</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Vendredi 24 Avril 2015 14:41:55 pour Starlight par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.9.1
+</small></address>
+</body>
+</html>

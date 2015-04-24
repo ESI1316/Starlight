@@ -1,0 +1,284 @@
+\hypertarget{classNuke}{}\section{Référence de la classe Nuke}
+\label{classNuke}\index{Nuke@{Nuke}}
+
+
+Cette classe modélise les bombes utilisées dans le jeu.  
+
+
+
+
+{\ttfamily \#include $<$nuke.\+hpp$>$}
+
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classNuke_ab1b0d5faca4c5399b48e39774965fe62}{Nuke} (const \hyperlink{classPoint}{Point} \&, const double)
+\begin{DoxyCompactList}\small\item\em Instancie une bombe en une position donnée avec un rayon déterminé. \end{DoxyCompactList}\item 
+const \hyperlink{classPoint}{Point} \& \hyperlink{classNuke_a4cd753f8284d74613e91b46f94c6b678}{get\+Location} () const 
+\begin{DoxyCompactList}\small\item\em Retourne la position de la bombe. \end{DoxyCompactList}\item 
+double \hyperlink{classNuke_a4668365cff840c31886f35e9579bb1ac}{get\+Radius} () const 
+\begin{DoxyCompactList}\small\item\em Retourne le rayon de la bombe. \end{DoxyCompactList}\item 
+bool \hyperlink{classNuke_a85380caea565414da1ab78f4290fe1c8}{is\+Lighted\+Up} () const 
+\begin{DoxyCompactList}\small\item\em Cette méthode permet de savoir si la bombe est illuminée. \end{DoxyCompactList}\item 
+void \hyperlink{classNuke_a9abff8ef15814700c6a3a5f9f3962d25}{set\+Lighted\+Up} (const bool)
+\begin{DoxyCompactList}\small\item\em Cette méthode permet d\textquotesingle{}établir un nouvel état d\textquotesingle{}illumination de la bombe. \end{DoxyCompactList}\item 
+void \hyperlink{classNuke_a61433c8cba0b6e73c8c490f26bcbbe6b}{react\+To\+Ray} (\hyperlink{classRay}{Ray})
+\begin{DoxyCompactList}\small\item\em Réaction à l\textquotesingle{}exposition d\textquotesingle{}un rayon. \end{DoxyCompactList}\item 
+\hyperlink{classPoint}{Point} $\ast$ \hyperlink{classNuke_a36dfe7d835bc760a31525898f44ff675}{include\+Ray} (const \hyperlink{classRay}{Ray} \&) const 
+\begin{DoxyCompactList}\small\item\em Renseigne si la bombe est dans la trajectoire du rayon. \end{DoxyCompactList}\item 
+bool \hyperlink{classNuke_ae47302f18544028d0344da8cd31ccd6e}{operator==} (const \hyperlink{classNuke}{Nuke} \&) const 
+\begin{DoxyCompactList}\small\item\em Permet de savoir si deux bombes sont les mêmes. \end{DoxyCompactList}\item 
+bool \hyperlink{classNuke_a8970b5250d86dccd68e8d404aa22c53a}{operator!=} (const \hyperlink{classNuke}{Nuke} \&) const 
+\begin{DoxyCompactList}\small\item\em Permet de savoir si deux bombes sont différentes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Attributs privés}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classNuke_a397479ffd9a1d1786a46c2a284b8234a}{light}
+\begin{DoxyCompactList}\small\item\em L\textquotesingle{}état d\textquotesingle{}illumination d\textquotesingle{}une bombe. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Membres hérités additionnels}
+
+
+\subsection{Description détaillée}
+Cette classe modélise les bombes utilisées dans le jeu. 
+
+Une bombe est un objet circulaire qui, si illuminé par un rayon, fait perdre la partie au joueur. 
+
+Définition à la ligne 17 du fichier nuke.\+hpp.
+
+
+
+Graphe d\textquotesingle{}héritage de Nuke\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{d7/d17/classNuke__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Graphe de collaboration de Nuke\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{dc/d8c/classNuke__coll__graph}
+\end{center}
+\end{figure}
+
+
+\subsection{Documentation des constructeurs et destructeur}
+\hypertarget{classNuke_ab1b0d5faca4c5399b48e39774965fe62}{}\index{Nuke@{Nuke}!Nuke@{Nuke}}
+\index{Nuke@{Nuke}!Nuke@{Nuke}}
+\subsubsection[{Nuke(const Point \&, const double)}]{\setlength{\rightskip}{0pt plus 5cm}Nuke\+::\+Nuke (
+\begin{DoxyParamCaption}
+\item[{const {\bf Point} \&}]{, }
+\item[{const double}]{}
+\end{DoxyParamCaption}
+)}\label{classNuke_ab1b0d5faca4c5399b48e39774965fe62}
+
+
+Instancie une bombe en une position donnée avec un rayon déterminé. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em position} & La position du centre de la bombe. \\
+\hline
+{\em radius} & Le rayon de la bombe. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentation des fonctions membres}
+\hypertarget{classNuke_a4cd753f8284d74613e91b46f94c6b678}{}\index{Nuke@{Nuke}!get\+Location@{get\+Location}}
+\index{get\+Location@{get\+Location}!Nuke@{Nuke}}
+\subsubsection[{get\+Location() const }]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Point} \& Nuke\+::get\+Location (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classNuke_a4cd753f8284d74613e91b46f94c6b678}
+
+
+Retourne la position de la bombe. 
+
+\begin{DoxyReturn}{Renvoie}
+la position de la bombe. 
+\end{DoxyReturn}
+
+
+Définition à la ligne 107 du fichier nuke.\+hpp.
+
+
+
+Références Ellipse\+::center.
+
+
+\begin{DoxyCode}
+108 \{
+109     \textcolor{keywordflow}{return} this->\hyperlink{classEllipse_a88b27657adf698fded3a36fd97f90190}{center};
+110 \}
+\end{DoxyCode}
+\hypertarget{classNuke_a4668365cff840c31886f35e9579bb1ac}{}\index{Nuke@{Nuke}!get\+Radius@{get\+Radius}}
+\index{get\+Radius@{get\+Radius}!Nuke@{Nuke}}
+\subsubsection[{get\+Radius() const }]{\setlength{\rightskip}{0pt plus 5cm}double Nuke\+::get\+Radius (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classNuke_a4668365cff840c31886f35e9579bb1ac}
+
+
+Retourne le rayon de la bombe. 
+
+\begin{DoxyReturn}{Renvoie}
+le rayon de la bombe. 
+\end{DoxyReturn}
+
+
+Définition à la ligne 112 du fichier nuke.\+hpp.
+
+
+
+Références Ellipse\+::get\+Height().
+
+
+\begin{DoxyCode}
+113 \{
+114     \textcolor{keywordflow}{return} (this->\hyperlink{classEllipse_aafb4efaa85efaf59e553c7423aa47b37}{getHeight}() / 2.);
+115 \}
+\end{DoxyCode}
+\hypertarget{classNuke_a36dfe7d835bc760a31525898f44ff675}{}\index{Nuke@{Nuke}!include\+Ray@{include\+Ray}}
+\index{include\+Ray@{include\+Ray}!Nuke@{Nuke}}
+\subsubsection[{include\+Ray(const Ray \&) const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Point}$\ast$ Nuke\+::include\+Ray (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ray} \&}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classNuke_a36dfe7d835bc760a31525898f44ff675}
+
+
+Renseigne si la bombe est dans la trajectoire du rayon. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em ray} & Le rayon.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+{\ttfamily true} Si la bombe se trouve dans la trajectoire du rayon entré en paramètre. 
+\end{DoxyReturn}
+
+
+Implémente \hyperlink{classElement_a1b88519623a6250155f7182706665448}{Element}.
+
+\hypertarget{classNuke_a85380caea565414da1ab78f4290fe1c8}{}\index{Nuke@{Nuke}!is\+Lighted\+Up@{is\+Lighted\+Up}}
+\index{is\+Lighted\+Up@{is\+Lighted\+Up}!Nuke@{Nuke}}
+\subsubsection[{is\+Lighted\+Up() const }]{\setlength{\rightskip}{0pt plus 5cm}bool Nuke\+::is\+Lighted\+Up (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classNuke_a85380caea565414da1ab78f4290fe1c8}
+
+
+Cette méthode permet de savoir si la bombe est illuminée. 
+
+\begin{DoxyReturn}{Renvoie}
+{\ttfamily true} Si la bombe est illuminée, faux sinon. 
+\end{DoxyReturn}
+
+
+Définition à la ligne 102 du fichier nuke.\+hpp.
+
+
+
+Références light.
+
+
+\begin{DoxyCode}
+103 \{
+104     \textcolor{keywordflow}{return} this->\hyperlink{classNuke_a397479ffd9a1d1786a46c2a284b8234a}{light};
+105 \}
+\end{DoxyCode}
+\hypertarget{classNuke_a8970b5250d86dccd68e8d404aa22c53a}{}\index{Nuke@{Nuke}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Nuke@{Nuke}}
+\subsubsection[{operator"!=(const Nuke \&) const }]{\setlength{\rightskip}{0pt plus 5cm}bool Nuke\+::operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Nuke} \&}]{}
+\end{DoxyParamCaption}
+) const}\label{classNuke_a8970b5250d86dccd68e8d404aa22c53a}
+
+
+Permet de savoir si deux bombes sont différentes. 
+
+\begin{DoxyReturn}{Renvoie}
+{\ttfamily true} Si les deux bombes sont différentes. 
+\end{DoxyReturn}
+\hypertarget{classNuke_ae47302f18544028d0344da8cd31ccd6e}{}\index{Nuke@{Nuke}!operator==@{operator==}}
+\index{operator==@{operator==}!Nuke@{Nuke}}
+\subsubsection[{operator==(const Nuke \&) const }]{\setlength{\rightskip}{0pt plus 5cm}bool Nuke\+::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Nuke} \&}]{}
+\end{DoxyParamCaption}
+) const}\label{classNuke_ae47302f18544028d0344da8cd31ccd6e}
+
+
+Permet de savoir si deux bombes sont les mêmes. 
+
+\begin{DoxyReturn}{Renvoie}
+{\ttfamily true} Si les deux bombes sont les mêmes. 
+\end{DoxyReturn}
+\hypertarget{classNuke_a61433c8cba0b6e73c8c490f26bcbbe6b}{}\index{Nuke@{Nuke}!react\+To\+Ray@{react\+To\+Ray}}
+\index{react\+To\+Ray@{react\+To\+Ray}!Nuke@{Nuke}}
+\subsubsection[{react\+To\+Ray(\+Ray)}]{\setlength{\rightskip}{0pt plus 5cm}void Nuke\+::react\+To\+Ray (
+\begin{DoxyParamCaption}
+\item[{{\bf Ray}}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classNuke_a61433c8cba0b6e73c8c490f26bcbbe6b}
+
+
+Réaction à l\textquotesingle{}exposition d\textquotesingle{}un rayon. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em ray} & Le rayon. \\
+\hline
+\end{DoxyParams}
+
+
+Implémente \hyperlink{classElement_aa87116bb9422d64169b2ebf03831df9b}{Element}.
+
+\hypertarget{classNuke_a9abff8ef15814700c6a3a5f9f3962d25}{}\index{Nuke@{Nuke}!set\+Lighted\+Up@{set\+Lighted\+Up}}
+\index{set\+Lighted\+Up@{set\+Lighted\+Up}!Nuke@{Nuke}}
+\subsubsection[{set\+Lighted\+Up(const bool)}]{\setlength{\rightskip}{0pt plus 5cm}void Nuke\+::set\+Lighted\+Up (
+\begin{DoxyParamCaption}
+\item[{const bool}]{}
+\end{DoxyParamCaption}
+)}\label{classNuke_a9abff8ef15814700c6a3a5f9f3962d25}
+
+
+Cette méthode permet d\textquotesingle{}établir un nouvel état d\textquotesingle{}illumination de la bombe. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em light} & Le nouvel état d\textquotesingle{}illumination de la bombe. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentation des données membres}
+\hypertarget{classNuke_a397479ffd9a1d1786a46c2a284b8234a}{}\index{Nuke@{Nuke}!light@{light}}
+\index{light@{light}!Nuke@{Nuke}}
+\subsubsection[{light}]{\setlength{\rightskip}{0pt plus 5cm}bool Nuke\+::light\hspace{0.3cm}{\ttfamily [private]}}\label{classNuke_a397479ffd9a1d1786a46c2a284b8234a}
+
+
+L\textquotesingle{}état d\textquotesingle{}illumination d\textquotesingle{}une bombe. 
+
+
+
+Définition à la ligne 22 du fichier nuke.\+hpp.
+
+
+
+Référencé par is\+Lighted\+Up().
+
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+model/elements/\hyperlink{nuke_8hpp}{nuke.\+hpp}\end{DoxyCompactItemize}

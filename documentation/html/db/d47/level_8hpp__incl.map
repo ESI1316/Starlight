@@ -1,0 +1,18 @@
+<map id="model/elements/level.hpp" name="model/elements/level.hpp">
+<area shape="rect" id="node9" href="$de/d90/starlightexception_8hpp.html" title="model/exception/starlightexception.hpp" alt="" coords="1735,83,2009,112"/>
+<area shape="rect" id="node14" href="$d5/da4/wall_8hpp.html" title="model/elements/wall.hpp" alt="" coords="399,83,580,112"/>
+<area shape="rect" id="node28" href="$d5/d5c/mirror_8hpp.html" title="model/elements/mirror.hpp" alt="" coords="180,83,375,112"/>
+<area shape="rect" id="node34" href="$d2/de8/crystal_8hpp.html" title="model/elements/crystal.hpp" alt="" coords="1025,83,1225,112"/>
+<area shape="rect" id="node45" href="$db/dd9/lens_8hpp.html" title="model/elements/lens.hpp" alt="" coords="604,83,788,112"/>
+<area shape="rect" id="node51" href="$dd/d5b/nuke_8hpp.html" title="model/elements/nuke.hpp" alt="" coords="812,83,1001,112"/>
+<area shape="rect" id="node56" href="$d2/d2e/source_8hpp.html" title="model/elements/source.hpp" alt="" coords="1249,83,1449,112"/>
+<area shape="rect" id="node66" href="$db/d20/dest_8hpp.html" title="model/elements/dest.hpp" alt="" coords="1473,83,1660,112"/>
+<area shape="rect" id="node71" href="$db/d1d/ray_8hpp.html" title="model/elements/ray.hpp" alt="" coords="68,160,244,189"/>
+<area shape="rect" id="node76" href="$de/d98/levelview_8hpp.html" title="view/windows/levelview.hpp" alt="" coords="2084,83,2276,112"/>
+<area shape="rect" id="node18" href="$d3/d9d/line_8hpp.html" title="model/geometry/line.hpp" alt="" coords="12,237,193,267"/>
+<area shape="rect" id="node23" href="$da/dbc/element_8hpp.html" title="model/elements/element.hpp" alt="" coords="572,160,783,189"/>
+<area shape="rect" id="node25" href="$d0/de4/point_8hpp.html" title="model/geometry/point.hpp" alt="" coords="420,237,612,267"/>
+<area shape="rect" id="node38" href="$d3/d28/ellipse_8hpp.html" title="model/geometry/ellipse.hpp" alt="" coords="807,160,1007,189"/>
+<area shape="rect" id="node43" href="$dc/d5f/utilities_8hpp.html" title="model/geometry/utilities.hpp" alt="" coords="1132,160,1337,189"/>
+<area shape="rect" id="node59" href="$d6/d95/rectangle_8hpp.html" title="model/geometry/rectangle.hpp" alt="" coords="1412,160,1631,189"/>
+</map>

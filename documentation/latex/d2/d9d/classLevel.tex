@@ -1,0 +1,801 @@
+\hypertarget{classLevel}{}\section{Référence de la classe Level}
+\label{classLevel}\index{Level@{Level}}
+
+
+Modélise une carte telle qu\textquotesingle{}utilisée dans le jeu.  
+
+
+
+
+{\ttfamily \#include $<$level.\+hpp$>$}
+
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classLevel_a97d9e4768c6b180d053a061fc99e66d1}{Level} (const double, const double)
+\begin{DoxyCompactList}\small\item\em Instancie une carte de largeur et hauteur donnée. \end{DoxyCompactList}\item 
+int \hyperlink{classLevel_a11ca1be00c88ed5c14774cf938509e61}{get\+Width} () const 
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}obtenir la longueur du niveau. \end{DoxyCompactList}\item 
+int \hyperlink{classLevel_a0f867d54960aac1ceaa3b42fc7522924}{get\+Height} () const 
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}obtenir la hauteur du niveau. \end{DoxyCompactList}\item 
+\hyperlink{classSource}{Source} \& \hyperlink{classLevel_a540f5c42d181bb948cf5f2c701ca3c7c}{get\+Source} ()
+\begin{DoxyCompactList}\small\item\em Retourne la source de la carte. \end{DoxyCompactList}\item 
+void \hyperlink{classLevel_ac867c06f1d2d3a7e5cf8ec59dd507c11}{set\+Source} (const \hyperlink{classSource}{Source} \&)
+\begin{DoxyCompactList}\small\item\em Change la source de la carte. \end{DoxyCompactList}\item 
+const \hyperlink{classDest}{Dest} \& \hyperlink{classLevel_aa545dc3931402ed464c7845386c45cbd}{get\+Destination} () const 
+\begin{DoxyCompactList}\small\item\em Retourne la destination de la carte. \end{DoxyCompactList}\item 
+void \hyperlink{classLevel_a6055c006cb8953d320cfb8974f066755}{set\+Destination} (const \hyperlink{classDest}{Dest} \&)
+\begin{DoxyCompactList}\small\item\em Change la destination de la carte. \end{DoxyCompactList}\item 
+const std\+::vector$<$ \hyperlink{classWall}{Wall} $>$ \& \hyperlink{classLevel_a5e80b38b27dba47b8f4f2b52accb76bc}{get\+Walls} () const 
+\begin{DoxyCompactList}\small\item\em Retourne l\textquotesingle{}ensemble des murs de la carte. \end{DoxyCompactList}\item 
+void \hyperlink{classLevel_ab72f4a67155fd0c16894a016a7bb767d}{add\+Wall} (const \hyperlink{classWall}{Wall} \&)
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}ajouter un mur sur la carte. \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{classMirror}{Mirror} $>$ \& \hyperlink{classLevel_a1c834cc0f3d69893d79f60de64d0d79a}{get\+Mirrors} ()
+\begin{DoxyCompactList}\small\item\em Retourne l\textquotesingle{}ensemble des miroirs de la carte. \end{DoxyCompactList}\item 
+void \hyperlink{classLevel_a9cc738973370d106ac629aacc4acea12}{add\+Mirror} (\hyperlink{classMirror}{Mirror})
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}ajouter un miroir sur la carte. \end{DoxyCompactList}\item 
+const std\+::vector$<$ \hyperlink{classCrystal}{Crystal} $>$ \& \hyperlink{classLevel_aa36d324f88e7754b998499bafd5be068}{get\+Crystals} () const 
+\begin{DoxyCompactList}\small\item\em Retourne l\textquotesingle{}ensemble des cristaux de la carte. \end{DoxyCompactList}\item 
+void \hyperlink{classLevel_a2effcce70c0492609a9ecc403abcff70}{add\+Crystal} (\hyperlink{classCrystal}{Crystal})
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}ajouter un cristal sur la carte. \end{DoxyCompactList}\item 
+const std\+::vector$<$ \hyperlink{classLens}{Lens} $>$ \& \hyperlink{classLevel_a9e8fa9a3da391138768af00f00e6c77b}{get\+Lenses} () const 
+\begin{DoxyCompactList}\small\item\em Retourne l\textquotesingle{}ensemble des lentilles de la carte. \end{DoxyCompactList}\item 
+void \hyperlink{classLevel_ae09f20a51cd8cb01244101f7ea7a1cef}{add\+Lens} (\hyperlink{classLens}{Lens})
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}ajouter une lentille sur la carte. \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{classRay}{Ray} $>$ \& \hyperlink{classLevel_ad2fa2a31db061681a3f237c80c348b46}{get\+Rays} ()
+\begin{DoxyCompactList}\small\item\em Retourne l\textquotesingle{}ensemble des rayons de la carte. \end{DoxyCompactList}\item 
+void \hyperlink{classLevel_a6528bd0b23a291644f7cb4278101af70}{set\+Rays} (const std\+::vector$<$ \hyperlink{classRay}{Ray} $>$ \&)
+\begin{DoxyCompactList}\small\item\em Change l\textquotesingle{}ensemble des rayons de la carte. \end{DoxyCompactList}\item 
+const std\+::vector$<$ \hyperlink{classNuke}{Nuke} $>$ \& \hyperlink{classLevel_ac1a78a1e0071ab24698705257cf82260}{get\+Nukes} () const 
+\begin{DoxyCompactList}\small\item\em Retourne l\textquotesingle{}ensemble des bombes de la carte. \end{DoxyCompactList}\item 
+void \hyperlink{classLevel_ac35e7ed887e6f823a08c987f17535e32}{add\+Nuke} (const \hyperlink{classNuke}{Nuke} \&)
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}ajouter une bombe sur la carte. \end{DoxyCompactList}\item 
+bool \hyperlink{classLevel_ab52b9848381f3426728cfae132ae3120}{there\+Is\+An\+Exploded\+Nuke} () const 
+\begin{DoxyCompactList}\small\item\em Renseigne si une bombe a explosé. \end{DoxyCompactList}\item 
+void \hyperlink{classLevel_a9a04d35fd8f72d786707596c2e0efa66}{compute\+Ray} (\hyperlink{classRay}{Ray})
+\begin{DoxyCompactList}\small\item\em Permet de calculer un rayon à partir du rayon entré en paramètre. \end{DoxyCompactList}\item 
+void \hyperlink{classLevel_ad28d918ed43c60e845b8805cf9b6b139}{compute\+Rays} ()
+\begin{DoxyCompactList}\small\item\em Calcule les rayons lumineux de la carte. \end{DoxyCompactList}\item 
+void \hyperlink{classLevel_ae257142a2bb23b42a747ed7e6df520a4}{add\+View} (\hyperlink{classLevelView}{Level\+View} $\ast$)
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}abonner une nouvelle vue au modèle. \end{DoxyCompactList}\item 
+void \hyperlink{classLevel_a9a4438ddbb8132978c4973618b366048}{notify\+Views} ()
+\begin{DoxyCompactList}\small\item\em Permet de notifier les vues abonnées au niveau que son état a changé. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Fonctions membres privées}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ \hyperlink{classPoint}{Point} $\ast$, \hyperlink{classElement}{Element} $\ast$ $>$ \hyperlink{classLevel_a04fdb57c83687ebb4f89c5c5e925e712}{get\+Elts\+In\+Trajectory} (const \hyperlink{classRay}{Ray} \&ray)
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}obtenir une map contenant les élément se trouvant sur la trajectoire du rayon, ayant pour clé; le point d\textquotesingle{}intersection avec cet élément. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Attributs privés}
+\begin{DoxyCompactItemize}
+\item 
+const double \hyperlink{classLevel_ae8e8f0fd1ed923ab9faf37bebb961cdf}{width}
+\begin{DoxyCompactList}\small\item\em La largeur du niveau. \end{DoxyCompactList}\item 
+const double \hyperlink{classLevel_a65034a4fcaebb97c0a640600d1681ae9}{height}
+\begin{DoxyCompactList}\small\item\em La hauteur du niveau. \end{DoxyCompactList}\item 
+\hyperlink{classSource}{Source} \hyperlink{classLevel_ad0687b252a6b49e840a34ca5288ead55}{source} \{\hyperlink{classPoint}{Point}\{0, 0\}, 10, 30., 400\}
+\begin{DoxyCompactList}\small\item\em La source du niveau. \end{DoxyCompactList}\item 
+\hyperlink{classDest}{Dest} \hyperlink{classLevel_adf6fd04f684283f895ad23a4d730b680}{dest} \{\hyperlink{classPoint}{Point}\{0, 0\}, 5\}
+\begin{DoxyCompactList}\small\item\em La destination du niveau. \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{classWall}{Wall} $>$ \hyperlink{classLevel_a6f8ce53f3e8c3a2aadbfe1385c136d5a}{walls}
+\begin{DoxyCompactList}\small\item\em L\textquotesingle{}ensemble des murs du niveau, qu\textquotesingle{}ils soient ceux qui le délimitent ou des murs supplémentaires ajoutés au niveau même. \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{classMirror}{Mirror} $>$ \hyperlink{classLevel_acdc507d55f78548739af4988d2af3647}{mirrors}
+\begin{DoxyCompactList}\small\item\em mirrors L\textquotesingle{}ensemble des miroirs présents dans le niveau. \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{classCrystal}{Crystal} $>$ \hyperlink{classLevel_a68f233822a00e4ed880ddb180230ff3b}{crystals}
+\begin{DoxyCompactList}\small\item\em crystals L\textquotesingle{}ensemble des cristaux présents dans le niveau. \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{classLens}{Lens} $>$ \hyperlink{classLevel_aaeb7900ce3b81586203e8746a47ab3e2}{lenses}
+\begin{DoxyCompactList}\small\item\em lenses L\textquotesingle{}ensemble des lentilles présentes dans le niveau. \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{classRay}{Ray} $>$ \hyperlink{classLevel_a316fd189c069c2645f07be3862dc2caf}{rays}
+\begin{DoxyCompactList}\small\item\em rays L\textquotesingle{}ensemble des rayons créés dans le niveau quand la source est allumée. \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{classNuke}{Nuke} $>$ \hyperlink{classLevel_a5fece1ffe87935a190ed156456ce410b}{nukes}
+\begin{DoxyCompactList}\small\item\em nukes L\textquotesingle{}ensemble des bombes créées dans le niveau. \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{classLevelView}{Level\+View} $\ast$ $>$ \hyperlink{classLevel_a8a01947614ab3998f4c152882c113feb}{views}
+\begin{DoxyCompactList}\small\item\em views L\textquotesingle{}ensemble des vues qui observent le niveau. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Modélise une carte telle qu\textquotesingle{}utilisée dans le jeu. 
+
+Une carte est un ensemble de composant tels que des murs, des miroirs, etc. 
+
+Définition à la ligne 27 du fichier level.\+hpp.
+
+
+
+Graphe de collaboration de Level\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{df/dee/classLevel__coll__graph}
+\end{center}
+\end{figure}
+
+
+\subsection{Documentation des constructeurs et destructeur}
+\hypertarget{classLevel_a97d9e4768c6b180d053a061fc99e66d1}{}\index{Level@{Level}!Level@{Level}}
+\index{Level@{Level}!Level@{Level}}
+\subsubsection[{Level(const double, const double)}]{\setlength{\rightskip}{0pt plus 5cm}Level\+::\+Level (
+\begin{DoxyParamCaption}
+\item[{const double}]{, }
+\item[{const double}]{}
+\end{DoxyParamCaption}
+)}\label{classLevel_a97d9e4768c6b180d053a061fc99e66d1}
+
+
+Instancie une carte de largeur et hauteur donnée. 
+
+Quand une carte est crée, quatre murs dénotant ses bords sont automatiquement ajoutés à la carte. 
+
+La source et la destination sont initialisées à des valeurs par défaut inutilisables. Vous devez manuellement initialiser la source et la destination via les fonctions appropriées. 
+\begin{DoxyParams}{Paramètres}
+{\em w} & la largeur de la carte \\
+\hline
+{\em h} & la hauteur de la carte \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentation des fonctions membres}
+\hypertarget{classLevel_a2effcce70c0492609a9ecc403abcff70}{}\index{Level@{Level}!add\+Crystal@{add\+Crystal}}
+\index{add\+Crystal@{add\+Crystal}!Level@{Level}}
+\subsubsection[{add\+Crystal(\+Crystal)}]{\setlength{\rightskip}{0pt plus 5cm}void Level\+::add\+Crystal (
+\begin{DoxyParamCaption}
+\item[{{\bf Crystal}}]{}
+\end{DoxyParamCaption}
+)}\label{classLevel_a2effcce70c0492609a9ecc403abcff70}
+
+
+Permet d\textquotesingle{}ajouter un cristal sur la carte. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em new\+Crystal} & nouveau cristal à ajouter. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classLevel_ae09f20a51cd8cb01244101f7ea7a1cef}{}\index{Level@{Level}!add\+Lens@{add\+Lens}}
+\index{add\+Lens@{add\+Lens}!Level@{Level}}
+\subsubsection[{add\+Lens(\+Lens)}]{\setlength{\rightskip}{0pt plus 5cm}void Level\+::add\+Lens (
+\begin{DoxyParamCaption}
+\item[{{\bf Lens}}]{}
+\end{DoxyParamCaption}
+)}\label{classLevel_ae09f20a51cd8cb01244101f7ea7a1cef}
+
+
+Permet d\textquotesingle{}ajouter une lentille sur la carte. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em new\+Lens} & nouvelle lentille à ajouter. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classLevel_a9cc738973370d106ac629aacc4acea12}{}\index{Level@{Level}!add\+Mirror@{add\+Mirror}}
+\index{add\+Mirror@{add\+Mirror}!Level@{Level}}
+\subsubsection[{add\+Mirror(\+Mirror)}]{\setlength{\rightskip}{0pt plus 5cm}void Level\+::add\+Mirror (
+\begin{DoxyParamCaption}
+\item[{{\bf Mirror}}]{}
+\end{DoxyParamCaption}
+)}\label{classLevel_a9cc738973370d106ac629aacc4acea12}
+
+
+Permet d\textquotesingle{}ajouter un miroir sur la carte. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em new\+Mirror} & nouveau miroir à ajouter. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classLevel_ac35e7ed887e6f823a08c987f17535e32}{}\index{Level@{Level}!add\+Nuke@{add\+Nuke}}
+\index{add\+Nuke@{add\+Nuke}!Level@{Level}}
+\subsubsection[{add\+Nuke(const Nuke \&)}]{\setlength{\rightskip}{0pt plus 5cm}void Level\+::add\+Nuke (
+\begin{DoxyParamCaption}
+\item[{const {\bf Nuke} \&}]{}
+\end{DoxyParamCaption}
+)}\label{classLevel_ac35e7ed887e6f823a08c987f17535e32}
+
+
+Permet d\textquotesingle{}ajouter une bombe sur la carte. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em new\+Nuke} & nouvelle bombe à ajouter. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classLevel_ae257142a2bb23b42a747ed7e6df520a4}{}\index{Level@{Level}!add\+View@{add\+View}}
+\index{add\+View@{add\+View}!Level@{Level}}
+\subsubsection[{add\+View(\+Level\+View $\ast$)}]{\setlength{\rightskip}{0pt plus 5cm}void Level\+::add\+View (
+\begin{DoxyParamCaption}
+\item[{{\bf Level\+View} $\ast$}]{}
+\end{DoxyParamCaption}
+)}\label{classLevel_ae257142a2bb23b42a747ed7e6df520a4}
+
+
+Permet d\textquotesingle{}abonner une nouvelle vue au modèle. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em new\+View} & Nouvelle vue abonnée au niveau. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classLevel_ab72f4a67155fd0c16894a016a7bb767d}{}\index{Level@{Level}!add\+Wall@{add\+Wall}}
+\index{add\+Wall@{add\+Wall}!Level@{Level}}
+\subsubsection[{add\+Wall(const Wall \&)}]{\setlength{\rightskip}{0pt plus 5cm}void Level\+::add\+Wall (
+\begin{DoxyParamCaption}
+\item[{const {\bf Wall} \&}]{}
+\end{DoxyParamCaption}
+)}\label{classLevel_ab72f4a67155fd0c16894a016a7bb767d}
+
+
+Permet d\textquotesingle{}ajouter un mur sur la carte. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em new\+Wall} & nouveau mur à ajouter. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classLevel_a9a04d35fd8f72d786707596c2e0efa66}{}\index{Level@{Level}!compute\+Ray@{compute\+Ray}}
+\index{compute\+Ray@{compute\+Ray}!Level@{Level}}
+\subsubsection[{compute\+Ray(\+Ray)}]{\setlength{\rightskip}{0pt plus 5cm}void Level\+::compute\+Ray (
+\begin{DoxyParamCaption}
+\item[{{\bf Ray}}]{}
+\end{DoxyParamCaption}
+)}\label{classLevel_a9a04d35fd8f72d786707596c2e0efa66}
+
+
+Permet de calculer un rayon à partir du rayon entré en paramètre. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em ray} & Rayon précèdent. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classLevel_ad28d918ed43c60e845b8805cf9b6b139}{}\index{Level@{Level}!compute\+Rays@{compute\+Rays}}
+\index{compute\+Rays@{compute\+Rays}!Level@{Level}}
+\subsubsection[{compute\+Rays()}]{\setlength{\rightskip}{0pt plus 5cm}void Level\+::compute\+Rays (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classLevel_ad28d918ed43c60e845b8805cf9b6b139}
+
+
+Calcule les rayons lumineux de la carte. 
+
+\hypertarget{classLevel_aa36d324f88e7754b998499bafd5be068}{}\index{Level@{Level}!get\+Crystals@{get\+Crystals}}
+\index{get\+Crystals@{get\+Crystals}!Level@{Level}}
+\subsubsection[{get\+Crystals() const }]{\setlength{\rightskip}{0pt plus 5cm}const std\+::vector$<$ {\bf Crystal} $>$ \& Level\+::get\+Crystals (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classLevel_aa36d324f88e7754b998499bafd5be068}
+
+
+Retourne l\textquotesingle{}ensemble des cristaux de la carte. 
+
+\begin{DoxyReturn}{Renvoie}
+l\textquotesingle{}ensemble des cristaux de la carte 
+\end{DoxyReturn}
+
+
+Définition à la ligne 308 du fichier level.\+hpp.
+
+
+
+Références crystals.
+
+
+\begin{DoxyCode}
+309 \{
+310     \textcolor{keywordflow}{return} this->\hyperlink{classLevel_a68f233822a00e4ed880ddb180230ff3b}{crystals};
+311 \}
+\end{DoxyCode}
+\hypertarget{classLevel_aa545dc3931402ed464c7845386c45cbd}{}\index{Level@{Level}!get\+Destination@{get\+Destination}}
+\index{get\+Destination@{get\+Destination}!Level@{Level}}
+\subsubsection[{get\+Destination() const }]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Dest} \& Level\+::get\+Destination (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classLevel_aa545dc3931402ed464c7845386c45cbd}
+
+
+Retourne la destination de la carte. 
+
+\begin{DoxyReturn}{Renvoie}
+la destination de la carte 
+\end{DoxyReturn}
+
+
+Définition à la ligne 293 du fichier level.\+hpp.
+
+
+
+Références dest.
+
+
+\begin{DoxyCode}
+294 \{
+295     \textcolor{keywordflow}{return} this->\hyperlink{classLevel_adf6fd04f684283f895ad23a4d730b680}{dest};
+296 \}
+\end{DoxyCode}
+\hypertarget{classLevel_a04fdb57c83687ebb4f89c5c5e925e712}{}\index{Level@{Level}!get\+Elts\+In\+Trajectory@{get\+Elts\+In\+Trajectory}}
+\index{get\+Elts\+In\+Trajectory@{get\+Elts\+In\+Trajectory}!Level@{Level}}
+\subsubsection[{get\+Elts\+In\+Trajectory(const Ray \&ray)}]{\setlength{\rightskip}{0pt plus 5cm}std\+::map$<${\bf Point} $\ast$, {\bf Element} $\ast$$>$ Level\+::get\+Elts\+In\+Trajectory (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ray} \&}]{ray}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classLevel_a04fdb57c83687ebb4f89c5c5e925e712}
+
+
+Permet d\textquotesingle{}obtenir une map contenant les élément se trouvant sur la trajectoire du rayon, ayant pour clé; le point d\textquotesingle{}intersection avec cet élément. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em ray} & Rayon dont on désire obtenir les éléments sur sa trajectoire.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Une map contenant les élément se trouvant sur la trajectoire du rayon, ayant pour clé; le point d\textquotesingle{}intersection avec cet élément. 
+\end{DoxyReturn}
+\hypertarget{classLevel_a0f867d54960aac1ceaa3b42fc7522924}{}\index{Level@{Level}!get\+Height@{get\+Height}}
+\index{get\+Height@{get\+Height}!Level@{Level}}
+\subsubsection[{get\+Height() const }]{\setlength{\rightskip}{0pt plus 5cm}int Level\+::get\+Height (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classLevel_a0f867d54960aac1ceaa3b42fc7522924}
+
+
+Permet d\textquotesingle{}obtenir la hauteur du niveau. 
+
+\begin{DoxyReturn}{Renvoie}
+la hauteur du niveau. 
+\end{DoxyReturn}
+
+
+Définition à la ligne 283 du fichier level.\+hpp.
+
+
+
+Références height, et utilities\+::round().
+
+
+\begin{DoxyCode}
+284 \{
+285     \textcolor{keywordflow}{return} \hyperlink{namespaceutilities_a00ae09dc5ce4274969a2a28607426eb5}{std::round}(this->\hyperlink{classLevel_a65034a4fcaebb97c0a640600d1681ae9}{height});
+286 \}
+\end{DoxyCode}
+\hypertarget{classLevel_a9e8fa9a3da391138768af00f00e6c77b}{}\index{Level@{Level}!get\+Lenses@{get\+Lenses}}
+\index{get\+Lenses@{get\+Lenses}!Level@{Level}}
+\subsubsection[{get\+Lenses() const }]{\setlength{\rightskip}{0pt plus 5cm}const std\+::vector$<$ {\bf Lens} $>$ \& Level\+::get\+Lenses (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classLevel_a9e8fa9a3da391138768af00f00e6c77b}
+
+
+Retourne l\textquotesingle{}ensemble des lentilles de la carte. 
+
+\begin{DoxyReturn}{Renvoie}
+l\textquotesingle{}ensemble des lentilles de la carte 
+\end{DoxyReturn}
+
+
+Définition à la ligne 313 du fichier level.\+hpp.
+
+
+
+Références lenses.
+
+
+\begin{DoxyCode}
+314 \{
+315     \textcolor{keywordflow}{return} this->\hyperlink{classLevel_aaeb7900ce3b81586203e8746a47ab3e2}{lenses};
+316 \}
+\end{DoxyCode}
+\hypertarget{classLevel_a1c834cc0f3d69893d79f60de64d0d79a}{}\index{Level@{Level}!get\+Mirrors@{get\+Mirrors}}
+\index{get\+Mirrors@{get\+Mirrors}!Level@{Level}}
+\subsubsection[{get\+Mirrors()}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ {\bf Mirror} $>$ \& Level\+::get\+Mirrors (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classLevel_a1c834cc0f3d69893d79f60de64d0d79a}
+
+
+Retourne l\textquotesingle{}ensemble des miroirs de la carte. 
+
+\begin{DoxyReturn}{Renvoie}
+l\textquotesingle{}ensemble des miroirs de la carte 
+\end{DoxyReturn}
+
+
+Définition à la ligne 303 du fichier level.\+hpp.
+
+
+
+Références mirrors.
+
+
+\begin{DoxyCode}
+304 \{
+305     \textcolor{keywordflow}{return} this->\hyperlink{classLevel_acdc507d55f78548739af4988d2af3647}{mirrors};
+306 \}
+\end{DoxyCode}
+\hypertarget{classLevel_ac1a78a1e0071ab24698705257cf82260}{}\index{Level@{Level}!get\+Nukes@{get\+Nukes}}
+\index{get\+Nukes@{get\+Nukes}!Level@{Level}}
+\subsubsection[{get\+Nukes() const }]{\setlength{\rightskip}{0pt plus 5cm}const std\+::vector$<$ {\bf Nuke} $>$ \& Level\+::get\+Nukes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classLevel_ac1a78a1e0071ab24698705257cf82260}
+
+
+Retourne l\textquotesingle{}ensemble des bombes de la carte. 
+
+\begin{DoxyReturn}{Renvoie}
+l\textquotesingle{}ensemble des bombes de la carte 
+\end{DoxyReturn}
+
+
+Définition à la ligne 323 du fichier level.\+hpp.
+
+
+
+Références nukes.
+
+
+\begin{DoxyCode}
+324 \{
+325     \textcolor{keywordflow}{return} this->\hyperlink{classLevel_a5fece1ffe87935a190ed156456ce410b}{nukes};
+326 \}
+\end{DoxyCode}
+\hypertarget{classLevel_ad2fa2a31db061681a3f237c80c348b46}{}\index{Level@{Level}!get\+Rays@{get\+Rays}}
+\index{get\+Rays@{get\+Rays}!Level@{Level}}
+\subsubsection[{get\+Rays()}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ {\bf Ray} $>$ \& Level\+::get\+Rays (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classLevel_ad2fa2a31db061681a3f237c80c348b46}
+
+
+Retourne l\textquotesingle{}ensemble des rayons de la carte. 
+
+\begin{DoxyReturn}{Renvoie}
+l\textquotesingle{}ensemble des rayons de la carte 
+\end{DoxyReturn}
+
+
+Définition à la ligne 318 du fichier level.\+hpp.
+
+
+
+Références rays.
+
+
+\begin{DoxyCode}
+319 \{
+320     \textcolor{keywordflow}{return} this->\hyperlink{classLevel_a316fd189c069c2645f07be3862dc2caf}{rays};
+321 \}
+\end{DoxyCode}
+\hypertarget{classLevel_a540f5c42d181bb948cf5f2c701ca3c7c}{}\index{Level@{Level}!get\+Source@{get\+Source}}
+\index{get\+Source@{get\+Source}!Level@{Level}}
+\subsubsection[{get\+Source()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Source} \& Level\+::get\+Source (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classLevel_a540f5c42d181bb948cf5f2c701ca3c7c}
+
+
+Retourne la source de la carte. 
+
+\begin{DoxyReturn}{Renvoie}
+la source de la carte. 
+\end{DoxyReturn}
+
+
+Définition à la ligne 288 du fichier level.\+hpp.
+
+
+
+Références source.
+
+
+\begin{DoxyCode}
+289 \{
+290     \textcolor{keywordflow}{return} this->\hyperlink{classLevel_ad0687b252a6b49e840a34ca5288ead55}{source};
+291 \}
+\end{DoxyCode}
+\hypertarget{classLevel_a5e80b38b27dba47b8f4f2b52accb76bc}{}\index{Level@{Level}!get\+Walls@{get\+Walls}}
+\index{get\+Walls@{get\+Walls}!Level@{Level}}
+\subsubsection[{get\+Walls() const }]{\setlength{\rightskip}{0pt plus 5cm}const std\+::vector$<$ {\bf Wall} $>$ \& Level\+::get\+Walls (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classLevel_a5e80b38b27dba47b8f4f2b52accb76bc}
+
+
+Retourne l\textquotesingle{}ensemble des murs de la carte. 
+
+\begin{DoxyReturn}{Renvoie}
+l\textquotesingle{}ensemble des murs de la carte 
+\end{DoxyReturn}
+
+
+Définition à la ligne 298 du fichier level.\+hpp.
+
+
+
+Références walls.
+
+
+\begin{DoxyCode}
+299 \{
+300     \textcolor{keywordflow}{return} this->\hyperlink{classLevel_a6f8ce53f3e8c3a2aadbfe1385c136d5a}{walls};
+301 \}
+\end{DoxyCode}
+\hypertarget{classLevel_a11ca1be00c88ed5c14774cf938509e61}{}\index{Level@{Level}!get\+Width@{get\+Width}}
+\index{get\+Width@{get\+Width}!Level@{Level}}
+\subsubsection[{get\+Width() const }]{\setlength{\rightskip}{0pt plus 5cm}int Level\+::get\+Width (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classLevel_a11ca1be00c88ed5c14774cf938509e61}
+
+
+Permet d\textquotesingle{}obtenir la longueur du niveau. 
+
+\begin{DoxyReturn}{Renvoie}
+La longueur du niveau. 
+\end{DoxyReturn}
+
+
+Définition à la ligne 278 du fichier level.\+hpp.
+
+
+
+Références utilities\+::round(), et width.
+
+
+\begin{DoxyCode}
+279 \{
+280     \textcolor{keywordflow}{return} \hyperlink{namespaceutilities_a00ae09dc5ce4274969a2a28607426eb5}{std::round}(this->\hyperlink{classLevel_ae8e8f0fd1ed923ab9faf37bebb961cdf}{width});
+281 \}
+\end{DoxyCode}
+\hypertarget{classLevel_a9a4438ddbb8132978c4973618b366048}{}\index{Level@{Level}!notify\+Views@{notify\+Views}}
+\index{notify\+Views@{notify\+Views}!Level@{Level}}
+\subsubsection[{notify\+Views()}]{\setlength{\rightskip}{0pt plus 5cm}void Level\+::notify\+Views (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classLevel_a9a4438ddbb8132978c4973618b366048}
+
+
+Permet de notifier les vues abonnées au niveau que son état a changé. 
+
+\hypertarget{classLevel_a6055c006cb8953d320cfb8974f066755}{}\index{Level@{Level}!set\+Destination@{set\+Destination}}
+\index{set\+Destination@{set\+Destination}!Level@{Level}}
+\subsubsection[{set\+Destination(const Dest \&)}]{\setlength{\rightskip}{0pt plus 5cm}void Level\+::set\+Destination (
+\begin{DoxyParamCaption}
+\item[{const {\bf Dest} \&}]{}
+\end{DoxyParamCaption}
+)}\label{classLevel_a6055c006cb8953d320cfb8974f066755}
+
+
+Change la destination de la carte. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em value} & la destination de la carte \\
+\hline
+\end{DoxyParams}
+\hypertarget{classLevel_a6528bd0b23a291644f7cb4278101af70}{}\index{Level@{Level}!set\+Rays@{set\+Rays}}
+\index{set\+Rays@{set\+Rays}!Level@{Level}}
+\subsubsection[{set\+Rays(const std\+::vector$<$ Ray $>$ \&)}]{\setlength{\rightskip}{0pt plus 5cm}void Level\+::set\+Rays (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ {\bf Ray} $>$ \&}]{}
+\end{DoxyParamCaption}
+)}\label{classLevel_a6528bd0b23a291644f7cb4278101af70}
+
+
+Change l\textquotesingle{}ensemble des rayons de la carte. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em le} & nouvel ensemble de rayons de la carte \\
+\hline
+\end{DoxyParams}
+\hypertarget{classLevel_ac867c06f1d2d3a7e5cf8ec59dd507c11}{}\index{Level@{Level}!set\+Source@{set\+Source}}
+\index{set\+Source@{set\+Source}!Level@{Level}}
+\subsubsection[{set\+Source(const Source \&)}]{\setlength{\rightskip}{0pt plus 5cm}void Level\+::set\+Source (
+\begin{DoxyParamCaption}
+\item[{const {\bf Source} \&}]{}
+\end{DoxyParamCaption}
+)}\label{classLevel_ac867c06f1d2d3a7e5cf8ec59dd507c11}
+
+
+Change la source de la carte. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em value} & la nouvelle source \\
+\hline
+\end{DoxyParams}
+\hypertarget{classLevel_ab52b9848381f3426728cfae132ae3120}{}\index{Level@{Level}!there\+Is\+An\+Exploded\+Nuke@{there\+Is\+An\+Exploded\+Nuke}}
+\index{there\+Is\+An\+Exploded\+Nuke@{there\+Is\+An\+Exploded\+Nuke}!Level@{Level}}
+\subsubsection[{there\+Is\+An\+Exploded\+Nuke() const }]{\setlength{\rightskip}{0pt plus 5cm}bool Level\+::there\+Is\+An\+Exploded\+Nuke (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classLevel_ab52b9848381f3426728cfae132ae3120}
+
+
+Renseigne si une bombe a explosé. 
+
+\begin{DoxyReturn}{Renvoie}
+{\ttfamily true} Si une bombe a explosé. 
+\end{DoxyReturn}
+
+
+\subsection{Documentation des données membres}
+\hypertarget{classLevel_a68f233822a00e4ed880ddb180230ff3b}{}\index{Level@{Level}!crystals@{crystals}}
+\index{crystals@{crystals}!Level@{Level}}
+\subsubsection[{crystals}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<${\bf Crystal}$>$ Level\+::crystals\hspace{0.3cm}{\ttfamily [private]}}\label{classLevel_a68f233822a00e4ed880ddb180230ff3b}
+
+
+crystals L\textquotesingle{}ensemble des cristaux présents dans le niveau. 
+
+
+
+Définition à la ligne 65 du fichier level.\+hpp.
+
+
+
+Référencé par get\+Crystals().
+
+\hypertarget{classLevel_adf6fd04f684283f895ad23a4d730b680}{}\index{Level@{Level}!dest@{dest}}
+\index{dest@{dest}!Level@{Level}}
+\subsubsection[{dest}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Dest} Level\+::dest \{{\bf Point}\{0, 0\}, 5\}\hspace{0.3cm}{\ttfamily [private]}}\label{classLevel_adf6fd04f684283f895ad23a4d730b680}
+
+
+La destination du niveau. 
+
+
+
+Définition à la ligne 49 du fichier level.\+hpp.
+
+
+
+Référencé par get\+Destination().
+
+\hypertarget{classLevel_a65034a4fcaebb97c0a640600d1681ae9}{}\index{Level@{Level}!height@{height}}
+\index{height@{height}!Level@{Level}}
+\subsubsection[{height}]{\setlength{\rightskip}{0pt plus 5cm}const double Level\+::height\hspace{0.3cm}{\ttfamily [private]}}\label{classLevel_a65034a4fcaebb97c0a640600d1681ae9}
+
+
+La hauteur du niveau. 
+
+
+
+Définition à la ligne 39 du fichier level.\+hpp.
+
+
+
+Référencé par get\+Height().
+
+\hypertarget{classLevel_aaeb7900ce3b81586203e8746a47ab3e2}{}\index{Level@{Level}!lenses@{lenses}}
+\index{lenses@{lenses}!Level@{Level}}
+\subsubsection[{lenses}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<${\bf Lens}$>$ Level\+::lenses\hspace{0.3cm}{\ttfamily [private]}}\label{classLevel_aaeb7900ce3b81586203e8746a47ab3e2}
+
+
+lenses L\textquotesingle{}ensemble des lentilles présentes dans le niveau. 
+
+
+
+Définition à la ligne 70 du fichier level.\+hpp.
+
+
+
+Référencé par get\+Lenses().
+
+\hypertarget{classLevel_acdc507d55f78548739af4988d2af3647}{}\index{Level@{Level}!mirrors@{mirrors}}
+\index{mirrors@{mirrors}!Level@{Level}}
+\subsubsection[{mirrors}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<${\bf Mirror}$>$ Level\+::mirrors\hspace{0.3cm}{\ttfamily [private]}}\label{classLevel_acdc507d55f78548739af4988d2af3647}
+
+
+mirrors L\textquotesingle{}ensemble des miroirs présents dans le niveau. 
+
+
+
+Définition à la ligne 60 du fichier level.\+hpp.
+
+
+
+Référencé par get\+Mirrors().
+
+\hypertarget{classLevel_a5fece1ffe87935a190ed156456ce410b}{}\index{Level@{Level}!nukes@{nukes}}
+\index{nukes@{nukes}!Level@{Level}}
+\subsubsection[{nukes}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<${\bf Nuke}$>$ Level\+::nukes\hspace{0.3cm}{\ttfamily [private]}}\label{classLevel_a5fece1ffe87935a190ed156456ce410b}
+
+
+nukes L\textquotesingle{}ensemble des bombes créées dans le niveau. 
+
+
+
+Définition à la ligne 81 du fichier level.\+hpp.
+
+
+
+Référencé par get\+Nukes().
+
+\hypertarget{classLevel_a316fd189c069c2645f07be3862dc2caf}{}\index{Level@{Level}!rays@{rays}}
+\index{rays@{rays}!Level@{Level}}
+\subsubsection[{rays}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<${\bf Ray}$>$ Level\+::rays\hspace{0.3cm}{\ttfamily [private]}}\label{classLevel_a316fd189c069c2645f07be3862dc2caf}
+
+
+rays L\textquotesingle{}ensemble des rayons créés dans le niveau quand la source est allumée. 
+
+
+
+Définition à la ligne 76 du fichier level.\+hpp.
+
+
+
+Référencé par get\+Rays().
+
+\hypertarget{classLevel_ad0687b252a6b49e840a34ca5288ead55}{}\index{Level@{Level}!source@{source}}
+\index{source@{source}!Level@{Level}}
+\subsubsection[{source}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Source} Level\+::source \{{\bf Point}\{0, 0\}, 10, 30., 400\}\hspace{0.3cm}{\ttfamily [private]}}\label{classLevel_ad0687b252a6b49e840a34ca5288ead55}
+
+
+La source du niveau. 
+
+
+
+Définition à la ligne 44 du fichier level.\+hpp.
+
+
+
+Référencé par get\+Source().
+
+\hypertarget{classLevel_a8a01947614ab3998f4c152882c113feb}{}\index{Level@{Level}!views@{views}}
+\index{views@{views}!Level@{Level}}
+\subsubsection[{views}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<${\bf Level\+View} $\ast$$>$ Level\+::views\hspace{0.3cm}{\ttfamily [private]}}\label{classLevel_a8a01947614ab3998f4c152882c113feb}
+
+
+views L\textquotesingle{}ensemble des vues qui observent le niveau. 
+
+
+
+Définition à la ligne 86 du fichier level.\+hpp.
+
+\hypertarget{classLevel_a6f8ce53f3e8c3a2aadbfe1385c136d5a}{}\index{Level@{Level}!walls@{walls}}
+\index{walls@{walls}!Level@{Level}}
+\subsubsection[{walls}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<${\bf Wall}$>$ Level\+::walls\hspace{0.3cm}{\ttfamily [private]}}\label{classLevel_a6f8ce53f3e8c3a2aadbfe1385c136d5a}
+
+
+L\textquotesingle{}ensemble des murs du niveau, qu\textquotesingle{}ils soient ceux qui le délimitent ou des murs supplémentaires ajoutés au niveau même. 
+
+
+
+Définition à la ligne 55 du fichier level.\+hpp.
+
+
+
+Référencé par get\+Walls().
+
+\hypertarget{classLevel_ae8e8f0fd1ed923ab9faf37bebb961cdf}{}\index{Level@{Level}!width@{width}}
+\index{width@{width}!Level@{Level}}
+\subsubsection[{width}]{\setlength{\rightskip}{0pt plus 5cm}const double Level\+::width\hspace{0.3cm}{\ttfamily [private]}}\label{classLevel_ae8e8f0fd1ed923ab9faf37bebb961cdf}
+
+
+La largeur du niveau. 
+
+
+
+Définition à la ligne 34 du fichier level.\+hpp.
+
+
+
+Référencé par get\+Width().
+
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+model/elements/\hyperlink{level_8hpp}{level.\+hpp}\end{DoxyCompactItemize}

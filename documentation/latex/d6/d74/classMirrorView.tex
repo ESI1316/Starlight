@@ -1,0 +1,134 @@
+\hypertarget{classMirrorView}{}\section{Référence de la classe Mirror\+View}
+\label{classMirrorView}\index{Mirror\+View@{Mirror\+View}}
+
+
+Cette classe représente graphiquement un miroir du jeu permettant d\textquotesingle{}interagir avec lui à l\textquotesingle{}aide de la souris et du clavier.  
+
+
+
+
+{\ttfamily \#include $<$mirrorview.\+hpp$>$}
+
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMirrorView_adda194c3d1ae6827ba8490eb840c633a}{Mirror\+View} (\hyperlink{classMirror}{Mirror} $\ast$)
+\begin{DoxyCompactList}\small\item\em Construit une vue de miroir lié à un miroir. \end{DoxyCompactList}\item 
+\hyperlink{classMirrorView_addbf31b1ac8687b9587b0b24a3d89fb0}{$\sim$\+Mirror\+View} ()
+\begin{DoxyCompactList}\small\item\em Détruit le miroir. \end{DoxyCompactList}\item 
+void \hyperlink{classMirrorView_aa4a70f2a5c83b547631486660692ddf5}{update\+Position} ()
+\begin{DoxyCompactList}\small\item\em Permet de mettre à jour la position du mirroir. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Fonctions membres protégées}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classMirrorView_a1a9563cd71dd5a8e9a94d2245121e54c}{key\+Press\+Event} (Q\+Key\+Event $\ast$)
+\begin{DoxyCompactList}\small\item\em Permet de faire réagir le miroir à l\textquotesingle{}action de certaines touches du clavier et de la souris. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Attributs privés}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMirror}{Mirror} $\ast$ \hyperlink{classMirrorView_aa470a75e02117480ff188e6a12583ffe}{mirror}
+\begin{DoxyCompactList}\small\item\em Le miroir que cette vue représente. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Cette classe représente graphiquement un miroir du jeu permettant d\textquotesingle{}interagir avec lui à l\textquotesingle{}aide de la souris et du clavier. 
+
+Définition à la ligne 13 du fichier mirrorview.\+hpp.
+
+
+
+Graphe d\textquotesingle{}héritage de Mirror\+View\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{d2/d7b/classMirrorView__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Graphe de collaboration de Mirror\+View\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d1/de7/classMirrorView__coll__graph}
+\end{center}
+\end{figure}
+
+
+\subsection{Documentation des constructeurs et destructeur}
+\hypertarget{classMirrorView_adda194c3d1ae6827ba8490eb840c633a}{}\index{Mirror\+View@{Mirror\+View}!Mirror\+View@{Mirror\+View}}
+\index{Mirror\+View@{Mirror\+View}!Mirror\+View@{Mirror\+View}}
+\subsubsection[{Mirror\+View(\+Mirror $\ast$)}]{\setlength{\rightskip}{0pt plus 5cm}Mirror\+View\+::\+Mirror\+View (
+\begin{DoxyParamCaption}
+\item[{{\bf Mirror} $\ast$}]{}
+\end{DoxyParamCaption}
+)}\label{classMirrorView_adda194c3d1ae6827ba8490eb840c633a}
+
+
+Construit une vue de miroir lié à un miroir. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em mirror} & Le miroir lié à cette vue. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classMirrorView_addbf31b1ac8687b9587b0b24a3d89fb0}{}\index{Mirror\+View@{Mirror\+View}!````~Mirror\+View@{$\sim$\+Mirror\+View}}
+\index{````~Mirror\+View@{$\sim$\+Mirror\+View}!Mirror\+View@{Mirror\+View}}
+\subsubsection[{$\sim$\+Mirror\+View()}]{\setlength{\rightskip}{0pt plus 5cm}Mirror\+View\+::$\sim$\+Mirror\+View (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classMirrorView_addbf31b1ac8687b9587b0b24a3d89fb0}
+
+
+Détruit le miroir. 
+
+
+
+\subsection{Documentation des fonctions membres}
+\hypertarget{classMirrorView_a1a9563cd71dd5a8e9a94d2245121e54c}{}\index{Mirror\+View@{Mirror\+View}!key\+Press\+Event@{key\+Press\+Event}}
+\index{key\+Press\+Event@{key\+Press\+Event}!Mirror\+View@{Mirror\+View}}
+\subsubsection[{key\+Press\+Event(\+Q\+Key\+Event $\ast$)}]{\setlength{\rightskip}{0pt plus 5cm}void Mirror\+View\+::key\+Press\+Event (
+\begin{DoxyParamCaption}
+\item[{Q\+Key\+Event $\ast$}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classMirrorView_a1a9563cd71dd5a8e9a94d2245121e54c}
+
+
+Permet de faire réagir le miroir à l\textquotesingle{}action de certaines touches du clavier et de la souris. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em event} & Une évènement \char`\"{}input user\char`\"{}. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classMirrorView_aa4a70f2a5c83b547631486660692ddf5}{}\index{Mirror\+View@{Mirror\+View}!update\+Position@{update\+Position}}
+\index{update\+Position@{update\+Position}!Mirror\+View@{Mirror\+View}}
+\subsubsection[{update\+Position()}]{\setlength{\rightskip}{0pt plus 5cm}void Mirror\+View\+::update\+Position (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classMirrorView_aa4a70f2a5c83b547631486660692ddf5}
+
+
+Permet de mettre à jour la position du mirroir. 
+
+
+
+\subsection{Documentation des données membres}
+\hypertarget{classMirrorView_aa470a75e02117480ff188e6a12583ffe}{}\index{Mirror\+View@{Mirror\+View}!mirror@{mirror}}
+\index{mirror@{mirror}!Mirror\+View@{Mirror\+View}}
+\subsubsection[{mirror}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Mirror}$\ast$ Mirror\+View\+::mirror\hspace{0.3cm}{\ttfamily [private]}}\label{classMirrorView_aa470a75e02117480ff188e6a12583ffe}
+
+
+Le miroir que cette vue représente. 
+
+
+
+Définition à la ligne 18 du fichier mirrorview.\+hpp.
+
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+view/dynamic\+Elements/\hyperlink{mirrorview_8hpp}{mirrorview.\+hpp}\end{DoxyCompactItemize}

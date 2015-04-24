@@ -1,0 +1,18 @@
+\form#0:$ circle \equiv x^2/xRadius + y^2/yRadius = 1 $
+\form#1:$ eq \equiv y = slope \cdot x + indepTerm $
+\form#2:$ R^2 $
+\form#3:$ c(x, y) $
+\form#4:$ p(r, \alpha) $
+\form#5:$c(0, 0) p(0, 0)$
+\form#6:$ distance(p1, p2)^2 = (p1.x - p2.x)^2 + (p1.y - p2.y)^2 $
+\form#7:$ax² + bx + c$
+\form#8:$\alpha < 0$
+\form#9:$\alpha \geq 2\pi$
+\form#10:$0 \leq \alpha < 2\pi$
+\form#11:$[0, 360°[$
+\form#12:$ \epsilon = 10^{-7}$
+\form#13:$ nb_1 \geq nb_2 $
+\form#14:$ nb_1 \leq nb_2 $
+\form#15:$ \frac{\pi}{2} + n \cdot (2 \cdot \pi)$
+\form#16:$ angle = \frac{\pi}{2} + n \cdot (2 \cdot \pi) $
+\form#17:$ angle = \frac{\pi}{2} + n \cdot 2 \cdot \pi $

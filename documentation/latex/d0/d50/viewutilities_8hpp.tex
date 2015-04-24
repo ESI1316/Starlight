@@ -1,0 +1,41 @@
+\hypertarget{viewutilities_8hpp}{}\section{Référence du fichier view/viewutilities.hpp}
+\label{viewutilities_8hpp}\index{view/viewutilities.\+hpp@{view/viewutilities.\+hpp}}
+{\ttfamily \#include $<$Q\+Graphics\+Scene$>$}\\*
+{\ttfamily \#include $<$Q\+Graphics\+Rect\+Item$>$}\\*
+{\ttfamily \#include $<$Q\+Graphics\+Line\+Item$>$}\\*
+{\ttfamily \#include $<$Q\+Graphics\+Ellipse\+Item$>$}\\*
+{\ttfamily \#include $<$Q\+Color$>$}\\*
+{\ttfamily \#include $<$Q\+Point\+F$>$}\\*
+{\ttfamily \#include $<$Q\+Rect\+F$>$}\\*
+{\ttfamily \#include $<$Q\+String$>$}\\*
+Graphe des dépendances par inclusion de viewutilities.\+hpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d24/viewutilities_8hpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Espaces de nommage}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespaceviewUtilities}{view\+Utilities}
+\begin{DoxyCompactList}\small\item\em Divers fonctions utilitaires nécessaires aux vues. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Point\+F \hyperlink{namespaceviewUtilities_a2a190881156bffa91f8c191871fb607e}{view\+Utilities\+::to\+Q\+Point} (const \hyperlink{classPoint}{Point} \&)
+\begin{DoxyCompactList}\small\item\em Permet de transformer un point en Q\+Point\+F. \end{DoxyCompactList}\item 
+Q\+Rect\+F \hyperlink{namespaceviewUtilities_a9024a09c86906c1795499b327df85e4a}{view\+Utilities\+::to\+Q\+Rect\+F} (const \hyperlink{classRectangle}{Rectangle} \&)
+\begin{DoxyCompactList}\small\item\em Permet de transformer un rectangle en Q\+Rect\+F. \end{DoxyCompactList}\item 
+Q\+Rect\+F \hyperlink{namespaceviewUtilities_a5b6587cfeb6f69361f0b063e0060043c}{view\+Utilities\+::to\+Q\+Rect\+F} (const \hyperlink{classEllipse}{Ellipse} \&)
+\begin{DoxyCompactList}\small\item\em Permet de représenter une ellipse, à partir du rectangle qui lui est circonscrit, en un Q\+Rect\+F. \end{DoxyCompactList}\item 
+Q\+Graphics\+Line\+Item $\ast$ \hyperlink{namespaceviewUtilities_a339d6b317f890dd0a8c55c57c0a3db8b}{view\+Utilities\+::get\+Line} (const \hyperlink{classPoint}{Point} \&, const \hyperlink{classPoint}{Point} \&, const Q\+Color \&, const int)
+\begin{DoxyCompactList}\small\item\em Permet de générer une Q\+Graphics\+Line à partir des deux points délimitant un segment de droite. \end{DoxyCompactList}\item 
+Q\+Graphics\+Rect\+Item $\ast$ \hyperlink{namespaceviewUtilities_a90715ebf7ce7fc9fec5e4662479c8001}{view\+Utilities\+::get\+Rect} (const \hyperlink{classRectangle}{Rectangle} \&, const Q\+Color \&, const int)
+\begin{DoxyCompactList}\small\item\em Permet de générer un Q\+Graphics\+Rect\+Item représentant le rectangle passé en paramètre. \end{DoxyCompactList}\item 
+Q\+Graphics\+Ellipse\+Item $\ast$ \hyperlink{namespaceviewUtilities_aaac380653defdfe5d8dbe14c2d0b4158}{view\+Utilities\+::get\+Ellipse} (const \hyperlink{classEllipse}{Ellipse} \&, const Q\+Color \&, const int)
+\begin{DoxyCompactList}\small\item\em Permet de générer un Q\+Graphics\+Ellipse\+Item représentant l\textquotesingle{}ellipse passée en paramètre. \end{DoxyCompactList}\item 
+Q\+Color \hyperlink{namespaceviewUtilities_a47e2968ae7a9890971943ccd925348b1}{view\+Utilities\+::wave\+Length\+To\+Color} (const \hyperlink{classRay}{Ray} \&, const double=0.\+8)
+\begin{DoxyCompactList}\small\item\em Permet de créé une Q\+Color au format R\+G\+B selon la longueur d\textquotesingle{}onde passée en paramètre. \end{DoxyCompactList}\item 
+Q\+String $\ast$ \hyperlink{namespaceviewUtilities_a77016e1644b342340afa333441d3e061}{view\+Utilities\+::file\+To\+Q\+String} (const Q\+String \&)
+\begin{DoxyCompactList}\small\item\em Permet de lire un fichier et de retourner son contenu en tant que Q\+String. \end{DoxyCompactList}\end{DoxyCompactItemize}

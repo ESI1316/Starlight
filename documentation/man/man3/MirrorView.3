@@ -1,0 +1,96 @@
+.TH "MirrorView" 3 "Vendredi 24 Avril 2015" "Starlight" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MirrorView \- Cette classe représente graphiquement un miroir du jeu permettant d'interagir avec lui à l'aide de la souris et du clavier\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <mirrorview\&.hpp>\fP
+.SS "Fonctions membres publiques"
+
+.in +1c
+.ti -1c
+.RI "\fBMirrorView\fP (\fBMirror\fP *)"
+.br
+.RI "\fIConstruit une vue de miroir lié à un miroir\&. \fP"
+.ti -1c
+.RI "\fB~MirrorView\fP ()"
+.br
+.RI "\fIDétruit le miroir\&. \fP"
+.ti -1c
+.RI "void \fBupdatePosition\fP ()"
+.br
+.RI "\fIPermet de mettre à jour la position du mirroir\&. \fP"
+.in -1c
+.SS "Fonctions membres protégées"
+
+.in +1c
+.ti -1c
+.RI "void \fBkeyPressEvent\fP (QKeyEvent *)"
+.br
+.RI "\fIPermet de faire réagir le miroir à l'action de certaines touches du clavier et de la souris\&. \fP"
+.in -1c
+.SS "Attributs privés"
+
+.in +1c
+.ti -1c
+.RI "\fBMirror\fP * \fBmirror\fP"
+.br
+.RI "\fILe miroir que cette vue représente\&. \fP"
+.in -1c
+.SH "Description détaillée"
+.PP 
+Cette classe représente graphiquement un miroir du jeu permettant d'interagir avec lui à l'aide de la souris et du clavier\&. 
+.PP
+Définition à la ligne 13 du fichier mirrorview\&.hpp\&.
+.PP
+Est dérivée de QGraphicsLineItem\&.
+.SH "Documentation des constructeurs et destructeur"
+.PP 
+.SS "MirrorView::MirrorView (\fBMirror\fP *)"
+
+.PP
+Construit une vue de miroir lié à un miroir\&. 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fImirror\fP Le miroir lié à cette vue\&. 
+.RE
+.PP
+
+.SS "MirrorView::~MirrorView ()"
+
+.PP
+Détruit le miroir\&. 
+.SH "Documentation des fonctions membres"
+.PP 
+.SS "void MirrorView::keyPressEvent (QKeyEvent *)\fC [protected]\fP"
+
+.PP
+Permet de faire réagir le miroir à l'action de certaines touches du clavier et de la souris\&. 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIevent\fP Une évènement 'input user'\&. 
+.RE
+.PP
+
+.SS "void MirrorView::updatePosition ()"
+
+.PP
+Permet de mettre à jour la position du mirroir\&. 
+.SH "Documentation des données membres"
+.PP 
+.SS "\fBMirror\fP* MirrorView::mirror\fC [private]\fP"
+
+.PP
+Le miroir que cette vue représente\&. 
+.PP
+Définition à la ligne 18 du fichier mirrorview\&.hpp\&.
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Starlight à partir du code source\&.

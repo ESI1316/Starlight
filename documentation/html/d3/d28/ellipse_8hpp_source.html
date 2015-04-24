@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.9.1"/>
+<title>Starlight:  Fichier source de model/geometry/ellipse.hpp</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="../../customdoxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Starlight
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.9.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="../../namespaces.html"><span>Espaces&#160;de&#160;nommage</span></a></li>
+      <li><a href="../../annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="../../files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="../../globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_3f14f6767c31cb4a1d22c13c18cc6fc3.html">model</a></li><li class="navelem"><a class="el" href="../../dir_51f1f926f2556510fbc4b8a0f5edb7fa.html">geometry</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">ellipse.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d3/d28/ellipse_8hpp.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef ELLIPSE_HPP</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define ELLIPSE_HPP</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;ostream&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d0/de4/point_8hpp.html">model/geometry/point.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">class </span><a class="code" href="../../db/db6/classLine.html">Line</a>;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="../../db/dc7/classEllipse.html">   15</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../db/dc7/classEllipse.html">Ellipse</a></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="../../db/dc7/classEllipse.html#a88b27657adf698fded3a36fd97f90190">   23</a></span>&#160;    <a class="code" href="../../dc/d4f/classPoint.html">Point</a> <a class="code" href="../../db/dc7/classEllipse.html#a88b27657adf698fded3a36fd97f90190">center</a>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="../../db/dc7/classEllipse.html#a549345caaff869f7eef31c800e37dd38">   28</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="../../db/dc7/classEllipse.html#a549345caaff869f7eef31c800e37dd38">height</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="../../db/dc7/classEllipse.html#a4f2fb4b634a1c37666a0f8419c4f6d39">   33</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="../../db/dc7/classEllipse.html#a4f2fb4b634a1c37666a0f8419c4f6d39">width</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="../../db/dc7/classEllipse.html#a8e0e2fa0f3200a997f4b0567e588c823">   38</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="../../db/dc7/classEllipse.html#a8e0e2fa0f3200a997f4b0567e588c823">xRadius</a>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="../../db/dc7/classEllipse.html#a83614d1aaa446b1f8e404b6bc3cc8c19">   43</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="../../db/dc7/classEllipse.html#a83614d1aaa446b1f8e404b6bc3cc8c19">yRadius</a>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../db/dc7/classEllipse.html#a00f04c68837ae5b89049074821576458">getYOfIntersPoints</a>(<span class="keyword">const</span> <span class="keywordtype">double</span>, <span class="keywordtype">double</span> *, <span class="keywordtype">double</span> *) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../db/dc7/classEllipse.html#ab1aac4ab1ea77795131ea2644963910b">getXOfIntersPoints</a>(<span class="keyword">const</span> <span class="keywordtype">double</span>, <span class="keyword">const</span> <span class="keywordtype">double</span>, <span class="keywordtype">double</span> *, <span class="keywordtype">double</span> *) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <a class="code" href="../../db/dc7/classEllipse.html#a2a12c8803bc8da1c04cd92345b7777f2">Ellipse</a>(<span class="keywordtype">double</span>, <span class="keywordtype">double</span>, <span class="keyword">const</span> <a class="code" href="../../dc/d4f/classPoint.html">Point</a> &amp;);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    std::vector&lt;Point&gt; <a class="code" href="../../db/dc7/classEllipse.html#ab289196af0dafd510d44c6bb342c0f27">getIntersectionPoints</a>(<span class="keyword">const</span> <a class="code" href="../../db/db6/classLine.html">Line</a> &amp;) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordtype">double</span> <a class="code" href="../../db/dc7/classEllipse.html#abbaadd47aa6c03e34ded7796afe18a26">getXRadius</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordtype">double</span> <a class="code" href="../../db/dc7/classEllipse.html#a984b6d3bde72676afca7889f90d5eedd">getYRadius</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <a class="code" href="../../dc/d4f/classPoint.html">Point</a> <a class="code" href="../../db/dc7/classEllipse.html#ab2c87589547fef01242fc0b8eb8de4f6">getCenter</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <a class="code" href="../../dc/d4f/classPoint.html">Point</a> <a class="code" href="../../db/dc7/classEllipse.html#a39cf837aa97029fb3aef3e769586c084">getUpLeftCorner</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="keywordtype">double</span> <a class="code" href="../../db/dc7/classEllipse.html#a1aad73090801cc4b60b8c1508095ccf5">getWidth</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keywordtype">double</span> <a class="code" href="../../db/dc7/classEllipse.html#aafb4efaa85efaf59e553c7423aa47b37">getHeight</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../db/dc7/classEllipse.html#ac06ebff3c587e85f15ca6f5f754bb35e">operator==</a>(<span class="keyword">const</span> <a class="code" href="../../db/dc7/classEllipse.html">Ellipse</a> &amp;) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../db/dc7/classEllipse.html#a06f16be297b055c46f6ede471ea6ffad">operator!=</a>(<span class="keyword">const</span> <a class="code" href="../../db/dc7/classEllipse.html">Ellipse</a> &amp;) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;};</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;std::ostream &amp; <a class="code" href="../../d3/d28/ellipse_8hpp.html#af6dc987f9c8dc6d36ddf435fd16971fe">operator&lt;&lt;</a>(std::ostream &amp;, <span class="keyword">const</span> <a class="code" href="../../db/dc7/classEllipse.html">Ellipse</a> &amp;);</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;</div>
+<div class="line"><a name="l00172"></a><span class="lineno"><a class="line" href="../../db/dc7/classEllipse.html#a1aad73090801cc4b60b8c1508095ccf5">  172</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">double</span> <a class="code" href="../../db/dc7/classEllipse.html#a1aad73090801cc4b60b8c1508095ccf5">Ellipse::getWidth</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <span class="keywordflow">return</span> this-&gt;<a class="code" href="../../db/dc7/classEllipse.html#a4f2fb4b634a1c37666a0f8419c4f6d39">width</a>;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;}</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;</div>
+<div class="line"><a name="l00177"></a><span class="lineno"><a class="line" href="../../db/dc7/classEllipse.html#aafb4efaa85efaf59e553c7423aa47b37">  177</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">double</span> <a class="code" href="../../db/dc7/classEllipse.html#aafb4efaa85efaf59e553c7423aa47b37">Ellipse::getHeight</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <span class="keywordflow">return</span> this-&gt;<a class="code" href="../../db/dc7/classEllipse.html#a549345caaff869f7eef31c800e37dd38">height</a>;</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;}</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;</div>
+<div class="line"><a name="l00182"></a><span class="lineno"><a class="line" href="../../db/dc7/classEllipse.html#abbaadd47aa6c03e34ded7796afe18a26">  182</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">double</span> <a class="code" href="../../db/dc7/classEllipse.html#abbaadd47aa6c03e34ded7796afe18a26">Ellipse::getXRadius</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="keywordflow">return</span> this-&gt;<a class="code" href="../../db/dc7/classEllipse.html#a8e0e2fa0f3200a997f4b0567e588c823">xRadius</a>;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;}</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;</div>
+<div class="line"><a name="l00187"></a><span class="lineno"><a class="line" href="../../db/dc7/classEllipse.html#a984b6d3bde72676afca7889f90d5eedd">  187</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">double</span> <a class="code" href="../../db/dc7/classEllipse.html#a984b6d3bde72676afca7889f90d5eedd">Ellipse::getYRadius</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keywordflow">return</span> this-&gt;<a class="code" href="../../db/dc7/classEllipse.html#a83614d1aaa446b1f8e404b6bc3cc8c19">yRadius</a>;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;}</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;</div>
+<div class="line"><a name="l00192"></a><span class="lineno"><a class="line" href="../../db/dc7/classEllipse.html#ab2c87589547fef01242fc0b8eb8de4f6">  192</a></span>&#160;<span class="keyword">inline</span> <a class="code" href="../../dc/d4f/classPoint.html">Point</a> <a class="code" href="../../db/dc7/classEllipse.html#ab2c87589547fef01242fc0b8eb8de4f6">Ellipse::getCenter</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="keywordflow">return</span> this-&gt;<a class="code" href="../../db/dc7/classEllipse.html#a88b27657adf698fded3a36fd97f90190">center</a>;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;}</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;<span class="preprocessor">#endif // ELLIPSE_HPP</span></div>
+<div class="ttc" id="classEllipse_html"><div class="ttname"><a href="../../db/dc7/classEllipse.html">Ellipse</a></div><div class="ttdoc">Représente un cercle sous la forme; . </div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d28/ellipse_8hpp_source.html#l00015">ellipse.hpp:15</a></div></div>
+<div class="ttc" id="classEllipse_html_a06f16be297b055c46f6ede471ea6ffad"><div class="ttname"><a href="../../db/dc7/classEllipse.html#a06f16be297b055c46f6ede471ea6ffad">Ellipse::operator!=</a></div><div class="ttdeci">bool operator!=(const Ellipse &amp;) const </div><div class="ttdoc">Permet de savoir si deux Ellipse sont différentes. </div></div>
+<div class="ttc" id="point_8hpp_html"><div class="ttname"><a href="../../d0/de4/point_8hpp.html">point.hpp</a></div></div>
+<div class="ttc" id="classLine_html"><div class="ttname"><a href="../../db/db6/classLine.html">Line</a></div><div class="ttdoc">Représente une droite sous la forme de son équation complète; . </div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d9d/line_8hpp_source.html#l00013">line.hpp:13</a></div></div>
+<div class="ttc" id="classEllipse_html_a1aad73090801cc4b60b8c1508095ccf5"><div class="ttname"><a href="../../db/dc7/classEllipse.html#a1aad73090801cc4b60b8c1508095ccf5">Ellipse::getWidth</a></div><div class="ttdeci">double getWidth() const </div><div class="ttdoc">Permet d&#39;obtenir la largeur de l&#39;ellipse. </div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d28/ellipse_8hpp_source.html#l00172">ellipse.hpp:172</a></div></div>
+<div class="ttc" id="classEllipse_html_a4f2fb4b634a1c37666a0f8419c4f6d39"><div class="ttname"><a href="../../db/dc7/classEllipse.html#a4f2fb4b634a1c37666a0f8419c4f6d39">Ellipse::width</a></div><div class="ttdeci">double width</div><div class="ttdoc">La largeur du rectangle circonscrit à l&#39;ellipse. </div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d28/ellipse_8hpp_source.html#l00033">ellipse.hpp:33</a></div></div>
+<div class="ttc" id="classEllipse_html_ab1aac4ab1ea77795131ea2644963910b"><div class="ttname"><a href="../../db/dc7/classEllipse.html#ab1aac4ab1ea77795131ea2644963910b">Ellipse::getXOfIntersPoints</a></div><div class="ttdeci">bool getXOfIntersPoints(const double, const double, double *, double *) const </div><div class="ttdoc">Permet d&#39;obtenir les abscisses des points d&#39;intersection entre une droite non-verticale dont la pente...</div></div>
+<div class="ttc" id="classEllipse_html_a39cf837aa97029fb3aef3e769586c084"><div class="ttname"><a href="../../db/dc7/classEllipse.html#a39cf837aa97029fb3aef3e769586c084">Ellipse::getUpLeftCorner</a></div><div class="ttdeci">Point getUpLeftCorner() const </div><div class="ttdoc">Permet d&#39;obtenir le coin supérieur gauche du rectangle entourant l&#39;ellipse. </div></div>
+<div class="ttc" id="classPoint_html"><div class="ttname"><a href="../../dc/d4f/classPoint.html">Point</a></div><div class="ttdoc">Cette classe modélise un point de coordonnés dans le plan  sous deux formes : </div><div class="ttdef"><b>Definition:</b> <a href="../../d0/de4/point_8hpp_source.html#l00015">point.hpp:15</a></div></div>
+<div class="ttc" id="classEllipse_html_abbaadd47aa6c03e34ded7796afe18a26"><div class="ttname"><a href="../../db/dc7/classEllipse.html#abbaadd47aa6c03e34ded7796afe18a26">Ellipse::getXRadius</a></div><div class="ttdeci">double getXRadius() const </div><div class="ttdoc">Permet d&#39;obtenir la valeur du ratio de largeur de l&#39;ellipse. </div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d28/ellipse_8hpp_source.html#l00182">ellipse.hpp:182</a></div></div>
+<div class="ttc" id="classEllipse_html_ac06ebff3c587e85f15ca6f5f754bb35e"><div class="ttname"><a href="../../db/dc7/classEllipse.html#ac06ebff3c587e85f15ca6f5f754bb35e">Ellipse::operator==</a></div><div class="ttdeci">bool operator==(const Ellipse &amp;) const </div><div class="ttdoc">Permet de savoir si deux Ellipse sont les mêmes. </div></div>
+<div class="ttc" id="classEllipse_html_a549345caaff869f7eef31c800e37dd38"><div class="ttname"><a href="../../db/dc7/classEllipse.html#a549345caaff869f7eef31c800e37dd38">Ellipse::height</a></div><div class="ttdeci">double height</div><div class="ttdoc">La hauteur du rectangle circonscrit à l&#39;ellipse. </div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d28/ellipse_8hpp_source.html#l00028">ellipse.hpp:28</a></div></div>
+<div class="ttc" id="classEllipse_html_ab2c87589547fef01242fc0b8eb8de4f6"><div class="ttname"><a href="../../db/dc7/classEllipse.html#ab2c87589547fef01242fc0b8eb8de4f6">Ellipse::getCenter</a></div><div class="ttdeci">Point getCenter() const </div><div class="ttdoc">Permet d&#39;obtenir le centre de l&#39;ellipse. </div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d28/ellipse_8hpp_source.html#l00192">ellipse.hpp:192</a></div></div>
+<div class="ttc" id="classEllipse_html_a2a12c8803bc8da1c04cd92345b7777f2"><div class="ttname"><a href="../../db/dc7/classEllipse.html#a2a12c8803bc8da1c04cd92345b7777f2">Ellipse::Ellipse</a></div><div class="ttdeci">Ellipse(double, double, const Point &amp;)</div><div class="ttdoc">Permet de construire une nouvelle ellipse initialisée. </div></div>
+<div class="ttc" id="classEllipse_html_a83614d1aaa446b1f8e404b6bc3cc8c19"><div class="ttname"><a href="../../db/dc7/classEllipse.html#a83614d1aaa446b1f8e404b6bc3cc8c19">Ellipse::yRadius</a></div><div class="ttdeci">double yRadius</div><div class="ttdoc">La valeur de la demi largeur au carré. </div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d28/ellipse_8hpp_source.html#l00043">ellipse.hpp:43</a></div></div>
+<div class="ttc" id="ellipse_8hpp_html_af6dc987f9c8dc6d36ddf435fd16971fe"><div class="ttname"><a href="../../d3/d28/ellipse_8hpp.html#af6dc987f9c8dc6d36ddf435fd16971fe">operator&lt;&lt;</a></div><div class="ttdeci">std::ostream &amp; operator&lt;&lt;(std::ostream &amp;, const Ellipse &amp;)</div><div class="ttdoc">Définition, externe, de l&#39;opérateur permettant de produire un affichage formaté. </div></div>
+<div class="ttc" id="classEllipse_html_ab289196af0dafd510d44c6bb342c0f27"><div class="ttname"><a href="../../db/dc7/classEllipse.html#ab289196af0dafd510d44c6bb342c0f27">Ellipse::getIntersectionPoints</a></div><div class="ttdeci">std::vector&lt; Point &gt; getIntersectionPoints(const Line &amp;) const </div><div class="ttdoc">Permet d&#39;obtenir les points d&#39;intersection entre le cercle et la droite entrée en paramètre...</div></div>
+<div class="ttc" id="classEllipse_html_a88b27657adf698fded3a36fd97f90190"><div class="ttname"><a href="../../db/dc7/classEllipse.html#a88b27657adf698fded3a36fd97f90190">Ellipse::center</a></div><div class="ttdeci">Point center</div><div class="ttdoc">La position du centre de l&#39;ellipse. </div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d28/ellipse_8hpp_source.html#l00023">ellipse.hpp:23</a></div></div>
+<div class="ttc" id="classEllipse_html_aafb4efaa85efaf59e553c7423aa47b37"><div class="ttname"><a href="../../db/dc7/classEllipse.html#aafb4efaa85efaf59e553c7423aa47b37">Ellipse::getHeight</a></div><div class="ttdeci">double getHeight() const </div><div class="ttdoc">Permet d&#39;obtenir la hauteur de l&#39;ellipse. </div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d28/ellipse_8hpp_source.html#l00177">ellipse.hpp:177</a></div></div>
+<div class="ttc" id="classEllipse_html_a00f04c68837ae5b89049074821576458"><div class="ttname"><a href="../../db/dc7/classEllipse.html#a00f04c68837ae5b89049074821576458">Ellipse::getYOfIntersPoints</a></div><div class="ttdeci">bool getYOfIntersPoints(const double, double *, double *) const </div><div class="ttdoc">Permet d&#39;obtenir les valeurs des ordonnées des points d&#39;intersection entre l&#39;ellipse et une droite ve...</div></div>
+<div class="ttc" id="classEllipse_html_a984b6d3bde72676afca7889f90d5eedd"><div class="ttname"><a href="../../db/dc7/classEllipse.html#a984b6d3bde72676afca7889f90d5eedd">Ellipse::getYRadius</a></div><div class="ttdeci">double getYRadius() const </div><div class="ttdoc">Permet d&#39;obtenir la valeur du ratio de hauteur de l&#39;ellipse. </div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d28/ellipse_8hpp_source.html#l00187">ellipse.hpp:187</a></div></div>
+<div class="ttc" id="classEllipse_html_a8e0e2fa0f3200a997f4b0567e588c823"><div class="ttname"><a href="../../db/dc7/classEllipse.html#a8e0e2fa0f3200a997f4b0567e588c823">Ellipse::xRadius</a></div><div class="ttdeci">double xRadius</div><div class="ttdoc">La valeur de la demi hauteur au carré. </div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d28/ellipse_8hpp_source.html#l00038">ellipse.hpp:38</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Vendredi 24 Avril 2015 14:41:55 pour Starlight par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.9.1
+</small></address>
+</body>
+</html>

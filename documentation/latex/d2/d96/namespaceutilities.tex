@@ -1,0 +1,370 @@
+\hypertarget{namespaceutilities}{}\section{Référence de l\textquotesingle{}espace de nommage utilities}
+\label{namespaceutilities}\index{utilities@{utilities}}
+
+
+Diverse fonctions utilitaires de géométrie.  
+
+
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{namespaceutilities_a040360cbd22e36e7d8e399b553217242}{second\+Degree\+Equation\+Solver} (double, double, double, double $\ast$, double $\ast$)
+\begin{DoxyCompactList}\small\item\em Permet de trouver les racines (si elles existe) d\textquotesingle{}une fonction du deuxième degré de forme $ax² + bx + c$. \end{DoxyCompactList}\item 
+double \hyperlink{namespaceutilities_aa2ec82a874dad6aae298db007bc0aef6}{radian\+As\+Degree} (const double)
+\begin{DoxyCompactList}\small\item\em Permet de trouver l\textquotesingle{}angle en degré d\textquotesingle{}un angle en radian. \end{DoxyCompactList}\item 
+double \hyperlink{namespaceutilities_a743a501d731442689287e6306e01c2d4}{radian\+As\+Degree0to360} (const double)
+\begin{DoxyCompactList}\small\item\em Permet de trouver l\textquotesingle{}angle en degré, entre 0 et 360, d\textquotesingle{}un angle en radian. \end{DoxyCompactList}\item 
+bool \hyperlink{namespaceutilities_a30b551fcbf5672117358b7b660d5dbf1}{equals} (const double, const double, const double=\hyperlink{namespaceutilities_adf3b0db93e9d9a6057599d3629607c72}{utilities\+::\+E\+P\+S\+I\+L\+O\+N})
+\begin{DoxyCompactList}\small\item\em Cette méthode permet de savoir si deux double sont égaux avec une marge d\textquotesingle{}erreur Epsilon passée en paramètre ou imposée par défaut à $ \epsilon = 10^{-7}$. \end{DoxyCompactList}\item 
+int \hyperlink{namespaceutilities_a00ae09dc5ce4274969a2a28607426eb5}{round} (const double)
+\begin{DoxyCompactList}\small\item\em Cette méthode cast un double en int on l\textquotesingle{}ayant au préalable arrondi à l\textquotesingle{}unité la plus proche (0.\+5). \end{DoxyCompactList}\item 
+bool \hyperlink{namespaceutilities_a4001cf523b54a14a53b11938a2605964}{greater\+Or\+Equals} (const double, const double, const double=\hyperlink{namespaceutilities_adf3b0db93e9d9a6057599d3629607c72}{utilities\+::\+E\+P\+S\+I\+L\+O\+N})
+\begin{DoxyCompactList}\small\item\em Cette méthode permet de vérifier l\textquotesingle{}inégalité $ nb_1 \geq nb_2 $ sur deux nombres réels avec une marge d\textquotesingle{}erreur Epsilon passée en paramètre ou imposée par défaut à $ \epsilon = 10^{-7}$. \end{DoxyCompactList}\item 
+bool \hyperlink{namespaceutilities_a5b52313a89eff9ec934ab4e1fcf23be7}{less\+Or\+Equals} (const double, const double, const double=\hyperlink{namespaceutilities_adf3b0db93e9d9a6057599d3629607c72}{utilities\+::\+E\+P\+S\+I\+L\+O\+N})
+\begin{DoxyCompactList}\small\item\em Cette méthode permet de vérifier l\textquotesingle{}inégalité $ nb_1 \leq nb_2 $ sur deux nombres réels avec une marge d\textquotesingle{}erreur Epsilon passée en paramètre ou imposée par défaut à $ \epsilon = 10^{-7}$. \end{DoxyCompactList}\item 
+double \hyperlink{namespaceutilities_a6502e590807ff5ce206bf28b156c2d9e}{degree\+To\+Radian} (const double)
+\begin{DoxyCompactList}\small\item\em Cette méthode permet de transformer des degrés en radian. \end{DoxyCompactList}\item 
+double \hyperlink{namespaceutilities_a8ec19db42cc8962662eee53be6c6088d}{slope\+From\+Points} (const \hyperlink{classPoint}{Point} \&, const \hyperlink{classPoint}{Point} \&)
+\begin{DoxyCompactList}\small\item\em Permet de trouver la pente d\textquotesingle{}une droite formée par deux points. \end{DoxyCompactList}\item 
+bool \hyperlink{namespaceutilities_a41bdf53d6ca758ab77ab736b41ae272f}{is\+Half\+Pi\+Plus\+N\+Pi} (const double)
+\begin{DoxyCompactList}\small\item\em Permet de savoir si l\textquotesingle{}angle, en radian, vaut $ \frac{\pi}{2} + n \cdot (2 \cdot \pi)$. \end{DoxyCompactList}\item 
+double \hyperlink{namespaceutilities_a376cfb5f6c163526c76d1df2bcfe98d9}{tan} (const double)
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}avoir la valeur trigonométrique tangente d\textquotesingle{}un angle ou l\textquotesingle{}infini si $ angle = \frac{\pi}{2} + n \cdot 2 \cdot \pi $. \end{DoxyCompactList}\item 
+double \hyperlink{namespaceutilities_abaa7273912e8e804c0558a64b7470bb7}{absolute\+Angle} (const double)
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}avoir l\textquotesingle{}angle \char`\"{}absolu\char`\"{} de celui passé en paramètre, \mbox{[}0, P\+I\+\_\+2\mbox{]}. \end{DoxyCompactList}\item 
+double \hyperlink{namespaceutilities_a7ab0a2bd18a3227e0d59c6445fe2e9de}{in\+Zero\+Two\+Pi} (const double)
+\begin{DoxyCompactList}\small\item\em Permet de cadrer un angle dans un intervalle \mbox{[}0 ; 2\+P\+I\mbox{[}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const double \hyperlink{namespaceutilities_ae00ae0a208e66ecba0e8a4626ff8e07c}{P\+I} \{3.\+14159265358979323846\}
+\begin{DoxyCompactList}\small\item\em P\+I Représentation de la constante P\+I sur 26 décimales. \end{DoxyCompactList}\item 
+const double \hyperlink{namespaceutilities_ac617217c4d0e0d488959d1a4ece31570}{P\+I\+\_\+2} \{1.\+57079632679489661923\}
+\begin{DoxyCompactList}\small\item\em P\+I\+\_\+2 Représentation de la constante P\+I/2 sur 26 décimales. \end{DoxyCompactList}\item 
+const double \hyperlink{namespaceutilities_a80f229b486391f3a0a17af9cba52fe6d}{P\+I\+\_\+4} \{0.\+785398163397448309616\}
+\begin{DoxyCompactList}\small\item\em P\+I\+\_\+4 Représentation de la constante P\+I/4 sur 26 décimales. \end{DoxyCompactList}\item 
+const double \hyperlink{namespaceutilities_adf3b0db93e9d9a6057599d3629607c72}{E\+P\+S\+I\+L\+O\+N} \{10\+E-\/7\}
+\begin{DoxyCompactList}\small\item\em E\+P\+S\+I\+L\+O\+N Représentation de la marge d\textquotesingle{}erreur maximale acceptée. \end{DoxyCompactList}\item 
+const double \hyperlink{namespaceutilities_a529a96864a1cf035034ba593a44e710e}{I\+N\+F} \{1./0.\}
+\begin{DoxyCompactList}\small\item\em I\+N\+F Représente une division impossible. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Diverse fonctions utilitaires de géométrie. 
+
+\subsection{Documentation des fonctions}
+\hypertarget{namespaceutilities_abaa7273912e8e804c0558a64b7470bb7}{}\index{utilities@{utilities}!absolute\+Angle@{absolute\+Angle}}
+\index{absolute\+Angle@{absolute\+Angle}!utilities@{utilities}}
+\subsubsection[{absolute\+Angle(const double)}]{\setlength{\rightskip}{0pt plus 5cm}double utilities\+::absolute\+Angle (
+\begin{DoxyParamCaption}
+\item[{const double}]{}
+\end{DoxyParamCaption}
+)}\label{namespaceutilities_abaa7273912e8e804c0558a64b7470bb7}
+
+
+Permet d\textquotesingle{}avoir l\textquotesingle{}angle \char`\"{}absolu\char`\"{} de celui passé en paramètre, \mbox{[}0, P\+I\+\_\+2\mbox{]}. 
+
+\begin{DoxyReturn}{Renvoie}
+L\textquotesingle{}angle absolu de celui passé en paramètre. 
+\end{DoxyReturn}
+\hypertarget{namespaceutilities_a6502e590807ff5ce206bf28b156c2d9e}{}\index{utilities@{utilities}!degree\+To\+Radian@{degree\+To\+Radian}}
+\index{degree\+To\+Radian@{degree\+To\+Radian}!utilities@{utilities}}
+\subsubsection[{degree\+To\+Radian(const double)}]{\setlength{\rightskip}{0pt plus 5cm}double utilities\+::degree\+To\+Radian (
+\begin{DoxyParamCaption}
+\item[{const double}]{}
+\end{DoxyParamCaption}
+)}\label{namespaceutilities_a6502e590807ff5ce206bf28b156c2d9e}
+
+
+Cette méthode permet de transformer des degrés en radian. 
+
+\begin{DoxyReturn}{Renvoie}
+La valeur en radian de l\textquotesingle{}angle en degré passé en paramètre. 
+\end{DoxyReturn}
+\hypertarget{namespaceutilities_a30b551fcbf5672117358b7b660d5dbf1}{}\index{utilities@{utilities}!equals@{equals}}
+\index{equals@{equals}!utilities@{utilities}}
+\subsubsection[{equals(const double, const double, const double=utilities\+::\+E\+P\+S\+I\+L\+O\+N)}]{\setlength{\rightskip}{0pt plus 5cm}bool utilities\+::equals (
+\begin{DoxyParamCaption}
+\item[{const double}]{, }
+\item[{const double}]{, }
+\item[{const double}]{ = {\ttfamily {\bf utilities\+::\+E\+P\+S\+I\+L\+O\+N}}}
+\end{DoxyParamCaption}
+)}\label{namespaceutilities_a30b551fcbf5672117358b7b660d5dbf1}
+
+
+Cette méthode permet de savoir si deux double sont égaux avec une marge d\textquotesingle{}erreur Epsilon passée en paramètre ou imposée par défaut à $ \epsilon = 10^{-7}$. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em nb1} & Un réel. \\
+\hline
+{\em nb2} & Un réel. \\
+\hline
+{\em epsilon} & Niveau de précision souhaitée permettant de justifier l\textquotesingle{}égalité ou $ \epsilon = 10^{-7}$ par défaut.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+{\ttfamily true} Si les deux nombres sont égaux avec la précision souhaitée. 
+\end{DoxyReturn}
+\hypertarget{namespaceutilities_a4001cf523b54a14a53b11938a2605964}{}\index{utilities@{utilities}!greater\+Or\+Equals@{greater\+Or\+Equals}}
+\index{greater\+Or\+Equals@{greater\+Or\+Equals}!utilities@{utilities}}
+\subsubsection[{greater\+Or\+Equals(const double, const double, const double=utilities\+::\+E\+P\+S\+I\+L\+O\+N)}]{\setlength{\rightskip}{0pt plus 5cm}bool utilities\+::greater\+Or\+Equals (
+\begin{DoxyParamCaption}
+\item[{const double}]{, }
+\item[{const double}]{, }
+\item[{const double}]{ = {\ttfamily {\bf utilities\+::\+E\+P\+S\+I\+L\+O\+N}}}
+\end{DoxyParamCaption}
+)}\label{namespaceutilities_a4001cf523b54a14a53b11938a2605964}
+
+
+Cette méthode permet de vérifier l\textquotesingle{}inégalité $ nb_1 \geq nb_2 $ sur deux nombres réels avec une marge d\textquotesingle{}erreur Epsilon passée en paramètre ou imposée par défaut à $ \epsilon = 10^{-7}$. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em nb1} & Un nombre réels. \\
+\hline
+{\em nb2} & Un nombre réels.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+{\ttfamily true} Si l\textquotesingle{}inégalité $ nb_1 \geq nb_2 $ est vérifiée. 
+\end{DoxyReturn}
+\hypertarget{namespaceutilities_a7ab0a2bd18a3227e0d59c6445fe2e9de}{}\index{utilities@{utilities}!in\+Zero\+Two\+Pi@{in\+Zero\+Two\+Pi}}
+\index{in\+Zero\+Two\+Pi@{in\+Zero\+Two\+Pi}!utilities@{utilities}}
+\subsubsection[{in\+Zero\+Two\+Pi(const double)}]{\setlength{\rightskip}{0pt plus 5cm}double utilities\+::in\+Zero\+Two\+Pi (
+\begin{DoxyParamCaption}
+\item[{const double}]{}
+\end{DoxyParamCaption}
+)}\label{namespaceutilities_a7ab0a2bd18a3227e0d59c6445fe2e9de}
+
+
+Permet de cadrer un angle dans un intervalle \mbox{[}0 ; 2\+P\+I\mbox{[}. 
+
+\begin{DoxyReturn}{Renvoie}
+L\textquotesingle{}angle passé en paramètre dans l\textquotesingle{}intervalle \mbox{[}0 ; 2\+P\+I\mbox{[} 
+\end{DoxyReturn}
+\hypertarget{namespaceutilities_a41bdf53d6ca758ab77ab736b41ae272f}{}\index{utilities@{utilities}!is\+Half\+Pi\+Plus\+N\+Pi@{is\+Half\+Pi\+Plus\+N\+Pi}}
+\index{is\+Half\+Pi\+Plus\+N\+Pi@{is\+Half\+Pi\+Plus\+N\+Pi}!utilities@{utilities}}
+\subsubsection[{is\+Half\+Pi\+Plus\+N\+Pi(const double)}]{\setlength{\rightskip}{0pt plus 5cm}bool utilities\+::is\+Half\+Pi\+Plus\+N\+Pi (
+\begin{DoxyParamCaption}
+\item[{const double}]{}
+\end{DoxyParamCaption}
+)}\label{namespaceutilities_a41bdf53d6ca758ab77ab736b41ae272f}
+
+
+Permet de savoir si l\textquotesingle{}angle, en radian, vaut $ \frac{\pi}{2} + n \cdot (2 \cdot \pi)$. 
+
+\begin{DoxyReturn}{Renvoie}
+{\ttfamily true} Si $ angle = \frac{\pi}{2} + n \cdot (2 \cdot \pi) $ 
+\end{DoxyReturn}
+\hypertarget{namespaceutilities_a5b52313a89eff9ec934ab4e1fcf23be7}{}\index{utilities@{utilities}!less\+Or\+Equals@{less\+Or\+Equals}}
+\index{less\+Or\+Equals@{less\+Or\+Equals}!utilities@{utilities}}
+\subsubsection[{less\+Or\+Equals(const double, const double, const double=utilities\+::\+E\+P\+S\+I\+L\+O\+N)}]{\setlength{\rightskip}{0pt plus 5cm}bool utilities\+::less\+Or\+Equals (
+\begin{DoxyParamCaption}
+\item[{const double}]{, }
+\item[{const double}]{, }
+\item[{const double}]{ = {\ttfamily {\bf utilities\+::\+E\+P\+S\+I\+L\+O\+N}}}
+\end{DoxyParamCaption}
+)}\label{namespaceutilities_a5b52313a89eff9ec934ab4e1fcf23be7}
+
+
+Cette méthode permet de vérifier l\textquotesingle{}inégalité $ nb_1 \leq nb_2 $ sur deux nombres réels avec une marge d\textquotesingle{}erreur Epsilon passée en paramètre ou imposée par défaut à $ \epsilon = 10^{-7}$. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em nb1} & Un nombre réels. \\
+\hline
+{\em nb2} & Un nombre réels.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+{\ttfamily true} Si l\textquotesingle{}inégalité $ nb_1 \geq nb_2 $ est vérifiée. 
+\end{DoxyReturn}
+\hypertarget{namespaceutilities_aa2ec82a874dad6aae298db007bc0aef6}{}\index{utilities@{utilities}!radian\+As\+Degree@{radian\+As\+Degree}}
+\index{radian\+As\+Degree@{radian\+As\+Degree}!utilities@{utilities}}
+\subsubsection[{radian\+As\+Degree(const double)}]{\setlength{\rightskip}{0pt plus 5cm}double utilities\+::radian\+As\+Degree (
+\begin{DoxyParamCaption}
+\item[{const double}]{}
+\end{DoxyParamCaption}
+)}\label{namespaceutilities_aa2ec82a874dad6aae298db007bc0aef6}
+
+
+Permet de trouver l\textquotesingle{}angle en degré d\textquotesingle{}un angle en radian. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em alpha} & Un angle en radian. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+L\textquotesingle{}angle exprimé en degré. 
+\end{DoxyReturn}
+\hypertarget{namespaceutilities_a743a501d731442689287e6306e01c2d4}{}\index{utilities@{utilities}!radian\+As\+Degree0to360@{radian\+As\+Degree0to360}}
+\index{radian\+As\+Degree0to360@{radian\+As\+Degree0to360}!utilities@{utilities}}
+\subsubsection[{radian\+As\+Degree0to360(const double)}]{\setlength{\rightskip}{0pt plus 5cm}double utilities\+::radian\+As\+Degree0to360 (
+\begin{DoxyParamCaption}
+\item[{const double}]{}
+\end{DoxyParamCaption}
+)}\label{namespaceutilities_a743a501d731442689287e6306e01c2d4}
+
+
+Permet de trouver l\textquotesingle{}angle en degré, entre 0 et 360, d\textquotesingle{}un angle en radian. 
+
+Le calcul permet d\textquotesingle{}encadrer les cas où 
+\begin{DoxyItemize}
+\item $\alpha < 0$ 
+\item $\alpha \geq 2\pi$ 
+\item $0 \leq \alpha < 2\pi$ 
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Paramètres}
+{\em alpha} & Un angle en radian.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+L\textquotesingle{}angle exprimé en degré dans l\textquotesingle{}intervalle $[0, 360°[$ 
+\end{DoxyReturn}
+\hypertarget{namespaceutilities_a00ae09dc5ce4274969a2a28607426eb5}{}\index{utilities@{utilities}!round@{round}}
+\index{round@{round}!utilities@{utilities}}
+\subsubsection[{round(const double)}]{\setlength{\rightskip}{0pt plus 5cm}int utilities\+::round (
+\begin{DoxyParamCaption}
+\item[{const double}]{}
+\end{DoxyParamCaption}
+)}\label{namespaceutilities_a00ae09dc5ce4274969a2a28607426eb5}
+
+
+Cette méthode cast un double en int on l\textquotesingle{}ayant au préalable arrondi à l\textquotesingle{}unité la plus proche (0.\+5). 
+
+\begin{DoxyReturn}{Renvoie}
+Le nombre arrondi. 
+\end{DoxyReturn}
+
+
+Référencé par Level\+::get\+Height(), et Level\+::get\+Width().
+
+\hypertarget{namespaceutilities_a040360cbd22e36e7d8e399b553217242}{}\index{utilities@{utilities}!second\+Degree\+Equation\+Solver@{second\+Degree\+Equation\+Solver}}
+\index{second\+Degree\+Equation\+Solver@{second\+Degree\+Equation\+Solver}!utilities@{utilities}}
+\subsubsection[{second\+Degree\+Equation\+Solver(double, double, double, double $\ast$, double $\ast$)}]{\setlength{\rightskip}{0pt plus 5cm}bool utilities\+::second\+Degree\+Equation\+Solver (
+\begin{DoxyParamCaption}
+\item[{double}]{, }
+\item[{double}]{, }
+\item[{double}]{, }
+\item[{double $\ast$}]{, }
+\item[{double $\ast$}]{}
+\end{DoxyParamCaption}
+)}\label{namespaceutilities_a040360cbd22e36e7d8e399b553217242}
+
+
+Permet de trouver les racines (si elles existe) d\textquotesingle{}une fonction du deuxième degré de forme $ax² + bx + c$. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em a} & Paramètre de x². \\
+\hline
+{\em b} & Paramètre de x. \\
+\hline
+{\em c} & Terme indépendant. \\
+\hline
+{\em rad1} & Pointeur vers le conteneur de la valeur de la racine obtenue avec delta positif (non utilisé s\textquotesingle{}il n\textquotesingle{}existe pas de racines). \\
+\hline
+{\em rad2} & Pointeur vers le conteneur de la valeur de la racine obtenue avec delta négatif (non utilisé s\textquotesingle{}il n\textquotesingle{}existe pas de racines).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+{\ttfamily true} S\textquotesingle{}il existe des racines. 
+\end{DoxyReturn}
+\hypertarget{namespaceutilities_a8ec19db42cc8962662eee53be6c6088d}{}\index{utilities@{utilities}!slope\+From\+Points@{slope\+From\+Points}}
+\index{slope\+From\+Points@{slope\+From\+Points}!utilities@{utilities}}
+\subsubsection[{slope\+From\+Points(const Point \&, const Point \&)}]{\setlength{\rightskip}{0pt plus 5cm}double utilities\+::slope\+From\+Points (
+\begin{DoxyParamCaption}
+\item[{const {\bf Point} \&}]{, }
+\item[{const {\bf Point} \&}]{}
+\end{DoxyParamCaption}
+)}\label{namespaceutilities_a8ec19db42cc8962662eee53be6c6088d}
+
+
+Permet de trouver la pente d\textquotesingle{}une droite formée par deux points. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p1} & Un point. \\
+\hline
+{\em p2} & Un point.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+La pente de l\textquotesingle{}équation de droite passant par ces deux points. 
+\end{DoxyReturn}
+\hypertarget{namespaceutilities_a376cfb5f6c163526c76d1df2bcfe98d9}{}\index{utilities@{utilities}!tan@{tan}}
+\index{tan@{tan}!utilities@{utilities}}
+\subsubsection[{tan(const double)}]{\setlength{\rightskip}{0pt plus 5cm}double utilities\+::tan (
+\begin{DoxyParamCaption}
+\item[{const double}]{}
+\end{DoxyParamCaption}
+)}\label{namespaceutilities_a376cfb5f6c163526c76d1df2bcfe98d9}
+
+
+Permet d\textquotesingle{}avoir la valeur trigonométrique tangente d\textquotesingle{}un angle ou l\textquotesingle{}infini si $ angle = \frac{\pi}{2} + n \cdot 2 \cdot \pi $. 
+
+\begin{DoxyReturn}{Renvoie}
+La tangente de l\textquotesingle{}angle ou l\textquotesingle{}infini. 
+\end{DoxyReturn}
+
+
+\subsection{Documentation des variables}
+\hypertarget{namespaceutilities_adf3b0db93e9d9a6057599d3629607c72}{}\index{utilities@{utilities}!E\+P\+S\+I\+L\+O\+N@{E\+P\+S\+I\+L\+O\+N}}
+\index{E\+P\+S\+I\+L\+O\+N@{E\+P\+S\+I\+L\+O\+N}!utilities@{utilities}}
+\subsubsection[{E\+P\+S\+I\+L\+O\+N}]{\setlength{\rightskip}{0pt plus 5cm}const double utilities\+::\+E\+P\+S\+I\+L\+O\+N \{10\+E-\/7\}}\label{namespaceutilities_adf3b0db93e9d9a6057599d3629607c72}
+
+
+E\+P\+S\+I\+L\+O\+N Représentation de la marge d\textquotesingle{}erreur maximale acceptée. 
+
+
+
+Définition à la ligne 30 du fichier utilities.\+hpp.
+
+\hypertarget{namespaceutilities_a529a96864a1cf035034ba593a44e710e}{}\index{utilities@{utilities}!I\+N\+F@{I\+N\+F}}
+\index{I\+N\+F@{I\+N\+F}!utilities@{utilities}}
+\subsubsection[{I\+N\+F}]{\setlength{\rightskip}{0pt plus 5cm}const double utilities\+::\+I\+N\+F \{1./0.\}}\label{namespaceutilities_a529a96864a1cf035034ba593a44e710e}
+
+
+I\+N\+F Représente une division impossible. 
+
+
+
+Définition à la ligne 35 du fichier utilities.\+hpp.
+
+\hypertarget{namespaceutilities_ae00ae0a208e66ecba0e8a4626ff8e07c}{}\index{utilities@{utilities}!P\+I@{P\+I}}
+\index{P\+I@{P\+I}!utilities@{utilities}}
+\subsubsection[{P\+I}]{\setlength{\rightskip}{0pt plus 5cm}const double utilities\+::\+P\+I \{3.\+14159265358979323846\}}\label{namespaceutilities_ae00ae0a208e66ecba0e8a4626ff8e07c}
+
+
+P\+I Représentation de la constante P\+I sur 26 décimales. 
+
+
+
+Définition à la ligne 15 du fichier utilities.\+hpp.
+
+\hypertarget{namespaceutilities_ac617217c4d0e0d488959d1a4ece31570}{}\index{utilities@{utilities}!P\+I\+\_\+2@{P\+I\+\_\+2}}
+\index{P\+I\+\_\+2@{P\+I\+\_\+2}!utilities@{utilities}}
+\subsubsection[{P\+I\+\_\+2}]{\setlength{\rightskip}{0pt plus 5cm}const double utilities\+::\+P\+I\+\_\+2 \{1.\+57079632679489661923\}}\label{namespaceutilities_ac617217c4d0e0d488959d1a4ece31570}
+
+
+P\+I\+\_\+2 Représentation de la constante P\+I/2 sur 26 décimales. 
+
+
+
+Définition à la ligne 20 du fichier utilities.\+hpp.
+
+\hypertarget{namespaceutilities_a80f229b486391f3a0a17af9cba52fe6d}{}\index{utilities@{utilities}!P\+I\+\_\+4@{P\+I\+\_\+4}}
+\index{P\+I\+\_\+4@{P\+I\+\_\+4}!utilities@{utilities}}
+\subsubsection[{P\+I\+\_\+4}]{\setlength{\rightskip}{0pt plus 5cm}const double utilities\+::\+P\+I\+\_\+4 \{0.\+785398163397448309616\}}\label{namespaceutilities_a80f229b486391f3a0a17af9cba52fe6d}
+
+
+P\+I\+\_\+4 Représentation de la constante P\+I/4 sur 26 décimales. 
+
+
+
+Définition à la ligne 25 du fichier utilities.\+hpp.
+

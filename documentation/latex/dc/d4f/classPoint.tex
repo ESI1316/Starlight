@@ -1,0 +1,529 @@
+\hypertarget{classPoint}{}\section{Référence de la classe Point}
+\label{classPoint}\index{Point@{Point}}
+
+
+Cette classe modélise un point de coordonnés dans le plan $ R^2 $ sous deux formes \+:  
+
+
+
+
+{\ttfamily \#include $<$point.\+hpp$>$}
+
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPoint_a257415ad611a16bb73628efcdb87d0fd}{Point} ()=default
+\begin{DoxyCompactList}\small\item\em Instancie le point $c(0, 0) p(0, 0)$. \end{DoxyCompactList}\item 
+\hyperlink{classPoint_a370ac864b989b581ce00c674d722d77d}{Point} (const double, const double)
+\begin{DoxyCompactList}\small\item\em Instancie le point de coordonnées spécifiées. \end{DoxyCompactList}\item 
+\hyperlink{classPoint_a5b7ec0fb127734c1cd5c6f350a3990fc}{Point} (const \hyperlink{classPoint}{Point} \&)
+\begin{DoxyCompactList}\small\item\em Instancie un point par copie d\textquotesingle{}un autre point \+: constructeur de recopie. \end{DoxyCompactList}\item 
+double \hyperlink{classPoint_af52a20a376f8f31e87658837565d3812}{get\+X} () const 
+\begin{DoxyCompactList}\small\item\em Retourne l\textquotesingle{}abscisse du point. \end{DoxyCompactList}\item 
+double \hyperlink{classPoint_aac5008459bf0e0053ce744a69187bae7}{get\+Y} () const 
+\begin{DoxyCompactList}\small\item\em Retourne l\textquotesingle{}ordonnée du point. \end{DoxyCompactList}\item 
+void \hyperlink{classPoint_a59ad664629f66d7faa5a97c222b11e53}{set\+X} (const double)
+\begin{DoxyCompactList}\small\item\em Déplace le point en l\textquotesingle{}abscisse donnée. \end{DoxyCompactList}\item 
+void \hyperlink{classPoint_a62d94bacca48640df1beb272527e0c75}{set\+Y} (const double)
+\begin{DoxyCompactList}\small\item\em Déplace le point en l\textquotesingle{}ordonnée donnée. \end{DoxyCompactList}\item 
+double \hyperlink{classPoint_a9109d60b782e753cc08bbdf4c5e6e4c7}{get\+Radius} () const 
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}obtenir la distance séparant le point du centre de rotation. \end{DoxyCompactList}\item 
+double \hyperlink{classPoint_a29aedc573ec7cb54b2988cb5d5663e57}{get\+Azimut} () const 
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}obtenir l\textquotesingle{}angle de la coordonnée polaire courante. \end{DoxyCompactList}\item 
+double \hyperlink{classPoint_a5208a853813f8a17c038f90f7434c458}{get\+Azimut\+As\+Degrees} () const 
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}obtenir l\textquotesingle{}angle de la coordonnée polaire courante exprimée en degrés. \end{DoxyCompactList}\item 
+\hyperlink{classPoint}{Point} \& \hyperlink{classPoint_a681473d41e1569769f9fcfe1f49a1855}{rotate\+Around} (const \hyperlink{classPoint}{Point} \&, const double)
+\begin{DoxyCompactList}\small\item\em Cette méthode change la position du point courant dans le plan par rotation autour du point cartésien passé en paramètre. \end{DoxyCompactList}\item 
+void \hyperlink{classPoint_a7fb8d07f5e6b6e49c0f2322356c0fe8d}{rotate} (const double)
+\begin{DoxyCompactList}\small\item\em Effectue une rotation autour de l\textquotesingle{}origine du plan cartésien. \end{DoxyCompactList}\item 
+void \hyperlink{classPoint_aab46bd6d93ccf0e90d3c4676d5cd40d1}{set\+Origin} (const \hyperlink{classPoint}{Point} \&=\hyperlink{classPoint}{Point}\{0., 0.\})
+\begin{DoxyCompactList}\small\item\em Considère la position d\textquotesingle{}un point par rapport à un point quelconque. \end{DoxyCompactList}\item 
+void \hyperlink{classPoint_a8e18fe044163b18acaefcda0a36b8fa3}{extend} (const double)
+\begin{DoxyCompactList}\small\item\em Modifie le point pour lui donner un position de même angle en lui ajoutant un radius. \end{DoxyCompactList}\item 
+void \hyperlink{classPoint_a292f3e944f1e11d1147480868ac01e99}{set\+Cartesian\+Location} (const double, const double)
+\begin{DoxyCompactList}\small\item\em Déplace le point en la coordonnée cartésienne donnée. \end{DoxyCompactList}\item 
+void \hyperlink{classPoint_a17a63e4dcb905423c0630ee127fffcae}{set\+Polar\+Location} (const double, const double)
+\begin{DoxyCompactList}\small\item\em Déplace le point en la coordonnée polaire donnée. \end{DoxyCompactList}\item 
+double \hyperlink{classPoint_ad3f543f2b8cd6a61399a3992e48769e0}{distance\+From} (const \hyperlink{classPoint}{Point} \&) const 
+\begin{DoxyCompactList}\small\item\em Permet de connaitre la distance séparant le point courant d\textquotesingle{}un autre. \end{DoxyCompactList}\item 
+\hyperlink{classPoint}{Point} \& \hyperlink{classPoint_aecfc6968998d806384e24cd93072b024}{operator=} (const \hyperlink{classPoint}{Point} \&)
+\begin{DoxyCompactList}\small\item\em Permet de copier le contenu d\textquotesingle{}un point dans un autre point. \end{DoxyCompactList}\item 
+bool \hyperlink{classPoint_aacbb5ae0d9898c4648e9d49441c029ce}{operator==} (const \hyperlink{classPoint}{Point} \&) const 
+\begin{DoxyCompactList}\small\item\em Permet de savoir si deux points sont aux même endroit. \end{DoxyCompactList}\item 
+bool \hyperlink{classPoint_a627f69d792993405c27b64387c77432b}{operator!=} (const \hyperlink{classPoint}{Point} \&) const 
+\begin{DoxyCompactList}\small\item\em Permet de savoir si deux points ne sont pas au même endroit. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Attributs privés}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{classPoint_ab99c56589bc8ad5fa5071387110a5bc7}{x} \{0.\}
+\begin{DoxyCompactList}\small\item\em x La distance, sur l\textquotesingle{}axe des abscisses, du point par rapport à l\textquotesingle{}origine. \end{DoxyCompactList}\item 
+double \hyperlink{classPoint_afa38be143ae800e6ad69ce8ed4df62d8}{y} \{0.\}
+\begin{DoxyCompactList}\small\item\em y La distance, sur l\textquotesingle{}axe des ordonnées, du point par rapport à l\textquotesingle{}origine. \end{DoxyCompactList}\item 
+double \hyperlink{classPoint_af4f987f16754db370e5d1b3d1bf1fd52}{radius} \{0.\}
+\begin{DoxyCompactList}\small\item\em radius la distance du point par rapport à l\textquotesingle{}origine du plan cartésien. \end{DoxyCompactList}\item 
+double \hyperlink{classPoint_a873c221d6bc33e2108574d6f1c911f78}{azimut} \{0.\}
+\begin{DoxyCompactList}\small\item\em azimut le segment de cercle exprimé en radian depuis l\textquotesingle{}axe horizontal et dans un sens anti-\/horloger. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Cette classe modélise un point de coordonnés dans le plan $ R^2 $ sous deux formes \+: 
+
+
+\begin{DoxyItemize}
+\item coordonnées cartésiennes sous la forme $ c(x, y) $, 
+\item coordonnées polaires sous la forme $ p(r, \alpha) $. 
+\end{DoxyItemize}Elle sert à définir la position d\textquotesingle{}un objet dans l\textquotesingle{}espace à deux dimensions. 
+
+Définition à la ligne 15 du fichier point.\+hpp.
+
+
+
+Graphe de collaboration de Point\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{d5/d3b/classPoint__coll__graph}
+\end{center}
+\end{figure}
+
+
+\subsection{Documentation des constructeurs et destructeur}
+\hypertarget{classPoint_a257415ad611a16bb73628efcdb87d0fd}{}\index{Point@{Point}!Point@{Point}}
+\index{Point@{Point}!Point@{Point}}
+\subsubsection[{Point()=default}]{\setlength{\rightskip}{0pt plus 5cm}Point\+::\+Point (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [default]}}\label{classPoint_a257415ad611a16bb73628efcdb87d0fd}
+
+
+Instancie le point $c(0, 0) p(0, 0)$. 
+
+\hypertarget{classPoint_a370ac864b989b581ce00c674d722d77d}{}\index{Point@{Point}!Point@{Point}}
+\index{Point@{Point}!Point@{Point}}
+\subsubsection[{Point(const double, const double)}]{\setlength{\rightskip}{0pt plus 5cm}Point\+::\+Point (
+\begin{DoxyParamCaption}
+\item[{const double}]{, }
+\item[{const double}]{}
+\end{DoxyParamCaption}
+)}\label{classPoint_a370ac864b989b581ce00c674d722d77d}
+
+
+Instancie le point de coordonnées spécifiées. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em x} & l\textquotesingle{}abscisse du point \\
+\hline
+{\em y} & l\textquotesingle{}ordonnée du point \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPoint_a5b7ec0fb127734c1cd5c6f350a3990fc}{}\index{Point@{Point}!Point@{Point}}
+\index{Point@{Point}!Point@{Point}}
+\subsubsection[{Point(const Point \&)}]{\setlength{\rightskip}{0pt plus 5cm}Point\+::\+Point (
+\begin{DoxyParamCaption}
+\item[{const {\bf Point} \&}]{}
+\end{DoxyParamCaption}
+)}\label{classPoint_a5b7ec0fb127734c1cd5c6f350a3990fc}
+
+
+Instancie un point par copie d\textquotesingle{}un autre point \+: constructeur de recopie. 
+
+
+
+\subsection{Documentation des fonctions membres}
+\hypertarget{classPoint_ad3f543f2b8cd6a61399a3992e48769e0}{}\index{Point@{Point}!distance\+From@{distance\+From}}
+\index{distance\+From@{distance\+From}!Point@{Point}}
+\subsubsection[{distance\+From(const Point \&) const }]{\setlength{\rightskip}{0pt plus 5cm}double Point\+::distance\+From (
+\begin{DoxyParamCaption}
+\item[{const {\bf Point} \&}]{}
+\end{DoxyParamCaption}
+) const}\label{classPoint_ad3f543f2b8cd6a61399a3992e48769e0}
+
+
+Permet de connaitre la distance séparant le point courant d\textquotesingle{}un autre. 
+
+La distance est calculée à l\textquotesingle{}aide du théorème de Pythagore au triangle rectangle \+: soient les deux points du plan cartésien reliés formant un segment de droite, en traçant les parallèles aux axes passant par ces points on peut délimiter un triangle rectangle par l\textquotesingle{}intersection des deux droites. De là, il est simple d\textquotesingle{}appliquer le théorème de Pythagore aux triangles rectangles \+: l\textquotesingle{}hypoténuse au carré = la somme du carré des deux autres cotés $ distance(p1, p2)^2 = (p1.x - p2.x)^2 + (p1.y - p2.y)^2 $ Dans la bibliothèque standard C++, la fonction std\+::hypot de $<$cmath$>$ nous permet de faire cette opération en lui passant simplement les cotés autre que l\textquotesingle{}hypoténuse. 
+\begin{DoxyParams}{Paramètres}
+{\em point} & Un autre point. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+La distance séparant deux point. 
+\end{DoxyReturn}
+\hypertarget{classPoint_a8e18fe044163b18acaefcda0a36b8fa3}{}\index{Point@{Point}!extend@{extend}}
+\index{extend@{extend}!Point@{Point}}
+\subsubsection[{extend(const double)}]{\setlength{\rightskip}{0pt plus 5cm}void Point\+::extend (
+\begin{DoxyParamCaption}
+\item[{const double}]{}
+\end{DoxyParamCaption}
+)}\label{classPoint_a8e18fe044163b18acaefcda0a36b8fa3}
+
+
+Modifie le point pour lui donner un position de même angle en lui ajoutant un radius. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em radius} & Un nouveau radius. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPoint_a29aedc573ec7cb54b2988cb5d5663e57}{}\index{Point@{Point}!get\+Azimut@{get\+Azimut}}
+\index{get\+Azimut@{get\+Azimut}!Point@{Point}}
+\subsubsection[{get\+Azimut() const }]{\setlength{\rightskip}{0pt plus 5cm}double Point\+::get\+Azimut (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classPoint_a29aedc573ec7cb54b2988cb5d5663e57}
+
+
+Permet d\textquotesingle{}obtenir l\textquotesingle{}angle de la coordonnée polaire courante. 
+
+\begin{DoxyReturn}{Renvoie}
+L\textquotesingle{}amplitude du point polaire courant en radian. 
+\end{DoxyReturn}
+
+
+Définition à la ligne 220 du fichier point.\+hpp.
+
+
+
+Références azimut.
+
+
+\begin{DoxyCode}
+221 \{
+222     \textcolor{keywordflow}{return} this->\hyperlink{classPoint_a873c221d6bc33e2108574d6f1c911f78}{azimut};
+223 \}
+\end{DoxyCode}
+\hypertarget{classPoint_a5208a853813f8a17c038f90f7434c458}{}\index{Point@{Point}!get\+Azimut\+As\+Degrees@{get\+Azimut\+As\+Degrees}}
+\index{get\+Azimut\+As\+Degrees@{get\+Azimut\+As\+Degrees}!Point@{Point}}
+\subsubsection[{get\+Azimut\+As\+Degrees() const }]{\setlength{\rightskip}{0pt plus 5cm}double Point\+::get\+Azimut\+As\+Degrees (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classPoint_a5208a853813f8a17c038f90f7434c458}
+
+
+Permet d\textquotesingle{}obtenir l\textquotesingle{}angle de la coordonnée polaire courante exprimée en degrés. 
+
+\begin{DoxyReturn}{Renvoie}
+L\textquotesingle{}amplitude du point polaire courant en degré. 
+\end{DoxyReturn}
+\hypertarget{classPoint_a9109d60b782e753cc08bbdf4c5e6e4c7}{}\index{Point@{Point}!get\+Radius@{get\+Radius}}
+\index{get\+Radius@{get\+Radius}!Point@{Point}}
+\subsubsection[{get\+Radius() const }]{\setlength{\rightskip}{0pt plus 5cm}double Point\+::get\+Radius (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classPoint_a9109d60b782e753cc08bbdf4c5e6e4c7}
+
+
+Permet d\textquotesingle{}obtenir la distance séparant le point du centre de rotation. 
+
+\begin{DoxyReturn}{Renvoie}
+Le rayon séparant le point polaire de son centre. 
+\end{DoxyReturn}
+
+
+Définition à la ligne 215 du fichier point.\+hpp.
+
+
+
+Références radius.
+
+
+\begin{DoxyCode}
+216 \{
+217     \textcolor{keywordflow}{return} this->\hyperlink{classPoint_af4f987f16754db370e5d1b3d1bf1fd52}{radius};
+218 \}
+\end{DoxyCode}
+\hypertarget{classPoint_af52a20a376f8f31e87658837565d3812}{}\index{Point@{Point}!get\+X@{get\+X}}
+\index{get\+X@{get\+X}!Point@{Point}}
+\subsubsection[{get\+X() const }]{\setlength{\rightskip}{0pt plus 5cm}double Point\+::get\+X (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classPoint_af52a20a376f8f31e87658837565d3812}
+
+
+Retourne l\textquotesingle{}abscisse du point. 
+
+\begin{DoxyReturn}{Renvoie}
+l\textquotesingle{}abscisse du point. 
+\end{DoxyReturn}
+
+
+Définition à la ligne 205 du fichier point.\+hpp.
+
+
+
+Références x.
+
+
+\begin{DoxyCode}
+206 \{
+207     \textcolor{keywordflow}{return} this->\hyperlink{classPoint_ab99c56589bc8ad5fa5071387110a5bc7}{x};
+208 \}
+\end{DoxyCode}
+\hypertarget{classPoint_aac5008459bf0e0053ce744a69187bae7}{}\index{Point@{Point}!get\+Y@{get\+Y}}
+\index{get\+Y@{get\+Y}!Point@{Point}}
+\subsubsection[{get\+Y() const }]{\setlength{\rightskip}{0pt plus 5cm}double Point\+::get\+Y (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classPoint_aac5008459bf0e0053ce744a69187bae7}
+
+
+Retourne l\textquotesingle{}ordonnée du point. 
+
+\begin{DoxyReturn}{Renvoie}
+l\textquotesingle{}ordonnée du point. 
+\end{DoxyReturn}
+
+
+Définition à la ligne 210 du fichier point.\+hpp.
+
+
+
+Références y.
+
+
+\begin{DoxyCode}
+211 \{
+212     \textcolor{keywordflow}{return} this->\hyperlink{classPoint_afa38be143ae800e6ad69ce8ed4df62d8}{y};
+213 \}
+\end{DoxyCode}
+\hypertarget{classPoint_a627f69d792993405c27b64387c77432b}{}\index{Point@{Point}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Point@{Point}}
+\subsubsection[{operator"!=(const Point \&) const }]{\setlength{\rightskip}{0pt plus 5cm}bool Point\+::operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Point} \&}]{}
+\end{DoxyParamCaption}
+) const}\label{classPoint_a627f69d792993405c27b64387c77432b}
+
+
+Permet de savoir si deux points ne sont pas au même endroit. 
+
+\begin{DoxyReturn}{Renvoie}
+{\ttfamily true} Si les deux points ne sont pas les mêmes. 
+\end{DoxyReturn}
+\hypertarget{classPoint_aecfc6968998d806384e24cd93072b024}{}\index{Point@{Point}!operator=@{operator=}}
+\index{operator=@{operator=}!Point@{Point}}
+\subsubsection[{operator=(const Point \&)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Point}\& Point\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Point} \&}]{}
+\end{DoxyParamCaption}
+)}\label{classPoint_aecfc6968998d806384e24cd93072b024}
+
+
+Permet de copier le contenu d\textquotesingle{}un point dans un autre point. 
+
+\begin{DoxyReturn}{Renvoie}
+Le point courant modifié. 
+\end{DoxyReturn}
+\hypertarget{classPoint_aacbb5ae0d9898c4648e9d49441c029ce}{}\index{Point@{Point}!operator==@{operator==}}
+\index{operator==@{operator==}!Point@{Point}}
+\subsubsection[{operator==(const Point \&) const }]{\setlength{\rightskip}{0pt plus 5cm}bool Point\+::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Point} \&}]{}
+\end{DoxyParamCaption}
+) const}\label{classPoint_aacbb5ae0d9898c4648e9d49441c029ce}
+
+
+Permet de savoir si deux points sont aux même endroit. 
+
+\begin{DoxyReturn}{Renvoie}
+{\ttfamily true} Si les deux points ont les même coordonnées. 
+\end{DoxyReturn}
+\hypertarget{classPoint_a7fb8d07f5e6b6e49c0f2322356c0fe8d}{}\index{Point@{Point}!rotate@{rotate}}
+\index{rotate@{rotate}!Point@{Point}}
+\subsubsection[{rotate(const double)}]{\setlength{\rightskip}{0pt plus 5cm}void Point\+::rotate (
+\begin{DoxyParamCaption}
+\item[{const double}]{}
+\end{DoxyParamCaption}
+)}\label{classPoint_a7fb8d07f5e6b6e49c0f2322356c0fe8d}
+
+
+Effectue une rotation autour de l\textquotesingle{}origine du plan cartésien. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em alpha} & L\textquotesingle{}amplitude de la rotation à effectuer (en radian). \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPoint_a681473d41e1569769f9fcfe1f49a1855}{}\index{Point@{Point}!rotate\+Around@{rotate\+Around}}
+\index{rotate\+Around@{rotate\+Around}!Point@{Point}}
+\subsubsection[{rotate\+Around(const Point \&, const double)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Point}\& Point\+::rotate\+Around (
+\begin{DoxyParamCaption}
+\item[{const {\bf Point} \&}]{, }
+\item[{const double}]{}
+\end{DoxyParamCaption}
+)}\label{classPoint_a681473d41e1569769f9fcfe1f49a1855}
+
+
+Cette méthode change la position du point courant dans le plan par rotation autour du point cartésien passé en paramètre. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em pivot} & Le centre autour duquel le point courant doit tourner. \\
+\hline
+{\em alpha} & L\textquotesingle{}amplitude de la rotation à effectuer (en radian).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Le point courant après rotation. 
+\end{DoxyReturn}
+\hypertarget{classPoint_a292f3e944f1e11d1147480868ac01e99}{}\index{Point@{Point}!set\+Cartesian\+Location@{set\+Cartesian\+Location}}
+\index{set\+Cartesian\+Location@{set\+Cartesian\+Location}!Point@{Point}}
+\subsubsection[{set\+Cartesian\+Location(const double, const double)}]{\setlength{\rightskip}{0pt plus 5cm}void Point\+::set\+Cartesian\+Location (
+\begin{DoxyParamCaption}
+\item[{const double}]{, }
+\item[{const double}]{}
+\end{DoxyParamCaption}
+)}\label{classPoint_a292f3e944f1e11d1147480868ac01e99}
+
+
+Déplace le point en la coordonnée cartésienne donnée. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em x} & l\textquotesingle{}abscisse où déplacer le point. \\
+\hline
+{\em y} & l\textquotesingle{}ordonnée où déplacer le point. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPoint_aab46bd6d93ccf0e90d3c4676d5cd40d1}{}\index{Point@{Point}!set\+Origin@{set\+Origin}}
+\index{set\+Origin@{set\+Origin}!Point@{Point}}
+\subsubsection[{set\+Origin(const Point \&=\+Point\lcurly{}0., 0.\rcurly{})}]{\setlength{\rightskip}{0pt plus 5cm}void Point\+::set\+Origin (
+\begin{DoxyParamCaption}
+\item[{const {\bf Point} \&}]{ = {\ttfamily {\bf Point}\{0.,~0.\}}}
+\end{DoxyParamCaption}
+)}\label{classPoint_aab46bd6d93ccf0e90d3c4676d5cd40d1}
+
+
+Considère la position d\textquotesingle{}un point par rapport à un point quelconque. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em origin} & La nouvelle origine du plan. Si ce paramètre est omis, l\textquotesingle{}origine du plan est rétabli. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPoint_a17a63e4dcb905423c0630ee127fffcae}{}\index{Point@{Point}!set\+Polar\+Location@{set\+Polar\+Location}}
+\index{set\+Polar\+Location@{set\+Polar\+Location}!Point@{Point}}
+\subsubsection[{set\+Polar\+Location(const double, const double)}]{\setlength{\rightskip}{0pt plus 5cm}void Point\+::set\+Polar\+Location (
+\begin{DoxyParamCaption}
+\item[{const double}]{, }
+\item[{const double}]{}
+\end{DoxyParamCaption}
+)}\label{classPoint_a17a63e4dcb905423c0630ee127fffcae}
+
+
+Déplace le point en la coordonnée polaire donnée. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em radius} & La distance séparant le point de l\textquotesingle{}origine. \\
+\hline
+{\em azimut} & L\textquotesingle{}angle, en radian, selon le cercle trigonométrique. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPoint_a59ad664629f66d7faa5a97c222b11e53}{}\index{Point@{Point}!set\+X@{set\+X}}
+\index{set\+X@{set\+X}!Point@{Point}}
+\subsubsection[{set\+X(const double)}]{\setlength{\rightskip}{0pt plus 5cm}void Point\+::set\+X (
+\begin{DoxyParamCaption}
+\item[{const double}]{}
+\end{DoxyParamCaption}
+)}\label{classPoint_a59ad664629f66d7faa5a97c222b11e53}
+
+
+Déplace le point en l\textquotesingle{}abscisse donnée. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em x} & l\textquotesingle{}abscisse où déplacer le point. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPoint_a62d94bacca48640df1beb272527e0c75}{}\index{Point@{Point}!set\+Y@{set\+Y}}
+\index{set\+Y@{set\+Y}!Point@{Point}}
+\subsubsection[{set\+Y(const double)}]{\setlength{\rightskip}{0pt plus 5cm}void Point\+::set\+Y (
+\begin{DoxyParamCaption}
+\item[{const double}]{}
+\end{DoxyParamCaption}
+)}\label{classPoint_a62d94bacca48640df1beb272527e0c75}
+
+
+Déplace le point en l\textquotesingle{}ordonnée donnée. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em y} & l\textquotesingle{}ordonnée où déplacer le point. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentation des données membres}
+\hypertarget{classPoint_a873c221d6bc33e2108574d6f1c911f78}{}\index{Point@{Point}!azimut@{azimut}}
+\index{azimut@{azimut}!Point@{Point}}
+\subsubsection[{azimut}]{\setlength{\rightskip}{0pt plus 5cm}double Point\+::azimut \{0.\}\hspace{0.3cm}{\ttfamily [private]}}\label{classPoint_a873c221d6bc33e2108574d6f1c911f78}
+
+
+azimut le segment de cercle exprimé en radian depuis l\textquotesingle{}axe horizontal et dans un sens anti-\/horloger. 
+
+
+
+Définition à la ligne 41 du fichier point.\+hpp.
+
+
+
+Référencé par get\+Azimut().
+
+\hypertarget{classPoint_af4f987f16754db370e5d1b3d1bf1fd52}{}\index{Point@{Point}!radius@{radius}}
+\index{radius@{radius}!Point@{Point}}
+\subsubsection[{radius}]{\setlength{\rightskip}{0pt plus 5cm}double Point\+::radius \{0.\}\hspace{0.3cm}{\ttfamily [private]}}\label{classPoint_af4f987f16754db370e5d1b3d1bf1fd52}
+
+
+radius la distance du point par rapport à l\textquotesingle{}origine du plan cartésien. 
+
+
+
+Définition à la ligne 35 du fichier point.\+hpp.
+
+
+
+Référencé par get\+Radius().
+
+\hypertarget{classPoint_ab99c56589bc8ad5fa5071387110a5bc7}{}\index{Point@{Point}!x@{x}}
+\index{x@{x}!Point@{Point}}
+\subsubsection[{x}]{\setlength{\rightskip}{0pt plus 5cm}double Point\+::x \{0.\}\hspace{0.3cm}{\ttfamily [private]}}\label{classPoint_ab99c56589bc8ad5fa5071387110a5bc7}
+
+
+x La distance, sur l\textquotesingle{}axe des abscisses, du point par rapport à l\textquotesingle{}origine. 
+
+
+
+Définition à la ligne 23 du fichier point.\+hpp.
+
+
+
+Référencé par get\+X().
+
+\hypertarget{classPoint_afa38be143ae800e6ad69ce8ed4df62d8}{}\index{Point@{Point}!y@{y}}
+\index{y@{y}!Point@{Point}}
+\subsubsection[{y}]{\setlength{\rightskip}{0pt plus 5cm}double Point\+::y \{0.\}\hspace{0.3cm}{\ttfamily [private]}}\label{classPoint_afa38be143ae800e6ad69ce8ed4df62d8}
+
+
+y La distance, sur l\textquotesingle{}axe des ordonnées, du point par rapport à l\textquotesingle{}origine. 
+
+
+
+Définition à la ligne 29 du fichier point.\+hpp.
+
+
+
+Référencé par get\+Y().
+
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+model/geometry/\hyperlink{point_8hpp}{point.\+hpp}\end{DoxyCompactItemize}

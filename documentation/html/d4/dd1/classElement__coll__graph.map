@@ -1,0 +1,7 @@
+<map id="Element" name="Element">
+<area shape="rect" id="node4" href="$de/d97/classDest.html" title="Cette classe modélise la destination utilisée dans le jeu. " alt="" coords="249,756,379,980"/>
+<area shape="rect" id="node11" href="$d6/d2e/classSource.html" title="Modélise la source lumineuse utilisée dans le jeu. " alt="" coords="81,713,225,1023"/>
+<area shape="rect" id="node2" href="$d2/d9d/classLevel.html" title="Modélise une carte telle qu&#39;utilisée dans le jeu. " alt="" coords="74,1091,231,1506"/>
+<area shape="rect" id="node7" href="$de/d00/classRectangle.html" title="Le rectangle est objet géométrique, du plan, à quatre coté parallèles deux à deux. " alt="" coords="223,385,405,661"/>
+<area shape="rect" id="node9" href="$dc/d4f/classPoint.html" title="Cette classe modélise un point de coordonnés dans le plan &#160;sous deux formes : " alt="" coords="223,6,405,317"/>
+</map>

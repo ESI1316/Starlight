@@ -1,0 +1,10 @@
+<map id="model/elements/element.hpp" name="model/elements/element.hpp">
+<area shape="rect" id="node3" href="$d2/de8/crystal_8hpp.html" title="model/elements/crystal.hpp" alt="" coords="5,83,205,112"/>
+<area shape="rect" id="node7" href="$db/d20/dest_8hpp.html" title="model/elements/dest.hpp" alt="" coords="229,83,416,112"/>
+<area shape="rect" id="node10" href="$db/dd9/lens_8hpp.html" title="model/elements/lens.hpp" alt="" coords="440,83,624,112"/>
+<area shape="rect" id="node13" href="$d5/da4/wall_8hpp.html" title="model/elements/wall.hpp" alt="" coords="648,83,829,112"/>
+<area shape="rect" id="node16" href="$d5/d5c/mirror_8hpp.html" title="model/elements/mirror.hpp" alt="" coords="853,83,1048,112"/>
+<area shape="rect" id="node19" href="$dd/d5b/nuke_8hpp.html" title="model/elements/nuke.hpp" alt="" coords="1072,83,1261,112"/>
+<area shape="rect" id="node22" href="$d2/d2e/source_8hpp.html" title="model/elements/source.hpp" alt="" coords="1285,83,1485,112"/>
+<area shape="rect" id="node5" href="$d5/d37/level_8hpp.html" title="model/elements/level.hpp" alt="" coords="645,160,832,189"/>
+</map>

@@ -1,0 +1,195 @@
+.TH "viewUtilities" 3 "Vendredi 24 Avril 2015" "Starlight" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+viewUtilities \- Divers fonctions utilitaires nécessaires aux vues\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Fonctions"
+
+.in +1c
+.ti -1c
+.RI "QPointF \fBtoQPoint\fP (const \fBPoint\fP &)"
+.br
+.RI "\fIPermet de transformer un point en QPointF\&. \fP"
+.ti -1c
+.RI "QRectF \fBtoQRectF\fP (const \fBRectangle\fP &)"
+.br
+.RI "\fIPermet de transformer un rectangle en QRectF\&. \fP"
+.ti -1c
+.RI "QRectF \fBtoQRectF\fP (const \fBEllipse\fP &)"
+.br
+.RI "\fIPermet de représenter une ellipse, à partir du rectangle qui lui est circonscrit, en un QRectF\&. \fP"
+.ti -1c
+.RI "QGraphicsLineItem * \fBgetLine\fP (const \fBPoint\fP &, const \fBPoint\fP &, const QColor &, const int)"
+.br
+.RI "\fIPermet de générer une QGraphicsLine à partir des deux points délimitant un segment de droite\&. \fP"
+.ti -1c
+.RI "QGraphicsRectItem * \fBgetRect\fP (const \fBRectangle\fP &, const QColor &, const int)"
+.br
+.RI "\fIPermet de générer un QGraphicsRectItem représentant le rectangle passé en paramètre\&. \fP"
+.ti -1c
+.RI "QGraphicsEllipseItem * \fBgetEllipse\fP (const \fBEllipse\fP &, const QColor &, const int)"
+.br
+.RI "\fIPermet de générer un QGraphicsEllipseItem représentant l'ellipse passée en paramètre\&. \fP"
+.ti -1c
+.RI "QColor \fBwaveLengthToColor\fP (const \fBRay\fP &, const double=0\&.8)"
+.br
+.RI "\fIPermet de créé une QColor au format RGB selon la longueur d'onde passée en paramètre\&. \fP"
+.ti -1c
+.RI "QString * \fBfileToQString\fP (const QString &)"
+.br
+.RI "\fIPermet de lire un fichier et de retourner son contenu en tant que QString\&. \fP"
+.in -1c
+.SH "Description détaillée"
+.PP 
+Divers fonctions utilitaires nécessaires aux vues\&. 
+.SH "Documentation des fonctions"
+.PP 
+.SS "QString* viewUtilities::fileToQString (const QString &)"
+
+.PP
+Permet de lire un fichier et de retourner son contenu en tant que QString\&. En cas de fichier innacessible, un avertissement sera affiché\&.
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIurl\fP L'url d'un document à lire\&.
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+Un QString contenant le fichier passé en paramètre\&. 
+.RE
+.PP
+
+.SS "QGraphicsEllipseItem* viewUtilities::getEllipse (const \fBEllipse\fP &, const QColor &, const int)"
+
+.PP
+Permet de générer un QGraphicsEllipseItem représentant l'ellipse passée en paramètre\&. 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIellipse\fP Une ellipse devant être représentée\&. 
+.br
+\fIcolor\fP La couleur de cette ellipse\&. 
+.br
+\fIwidth\fP L'épaisseur du trait représentant cette ellipse\&.
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+Le QGraphicsEllipseItem représentant cette ellipse\&. 
+.RE
+.PP
+
+.SS "QGraphicsLineItem* viewUtilities::getLine (const \fBPoint\fP &, const \fBPoint\fP &, const QColor &, const int)"
+
+.PP
+Permet de générer une QGraphicsLine à partir des deux points délimitant un segment de droite\&. 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIstart\fP Le point de départ du segment de droite\&. 
+.br
+\fIend\fP Le point d'arrivé du segment de droite\&. 
+.br
+\fIcolor\fP La couleur que ce segment doit prendre\&. 
+.br
+\fIwidth\fP L'épaisseur du trait de ce segment de droite\&.
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+Le QGraphicsLineItem représentant ce segment de droite\&. 
+.RE
+.PP
+
+.SS "QGraphicsRectItem* viewUtilities::getRect (const \fBRectangle\fP &, const QColor &, const int)"
+
+.PP
+Permet de générer un QGraphicsRectItem représentant le rectangle passé en paramètre\&. 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIrectangle\fP Le rectangle devant être représenté\&. 
+.br
+\fIcolor\fP La couleur de ce rectangle\&. 
+.br
+\fIwidth\fP L'épaisseur du trait représentant ce rectangle\&.
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+Le QGraphicsRectItem représentant ce rectangle\&. 
+.RE
+.PP
+
+.SS "QPointF viewUtilities::toQPoint (const \fBPoint\fP &)"
+
+.PP
+Permet de transformer un point en QPointF\&. 
+.PP
+\fBRenvoie:\fP
+.RS 4
+La représentation QPointF du \fBPoint\fP passé en paramètre\&. 
+.RE
+.PP
+\fBVoir également:\fP
+.RS 4
+\fBPoint\fP 
+.RE
+.PP
+
+.SS "QRectF viewUtilities::toQRectF (const \fBRectangle\fP &)"
+
+.PP
+Permet de transformer un rectangle en QRectF\&. 
+.PP
+\fBRenvoie:\fP
+.RS 4
+La représentation QRectF du rectangle passé en paramètre\&. 
+.RE
+.PP
+\fBVoir également:\fP
+.RS 4
+\fBRectangle\fP 
+.RE
+.PP
+
+.SS "QRectF viewUtilities::toQRectF (const \fBEllipse\fP &)"
+
+.PP
+Permet de représenter une ellipse, à partir du rectangle qui lui est circonscrit, en un QRectF\&. 
+.PP
+\fBRenvoie:\fP
+.RS 4
+Le QRectF circonscrit à l'ellipse\&. 
+.RE
+.PP
+\fBVoir également:\fP
+.RS 4
+\fBEllipse\fP 
+.RE
+.PP
+
+.SS "QColor viewUtilities::waveLengthToColor (const \fBRay\fP &, const double = \fC0\&.8\fP)"
+
+.PP
+Permet de créé une QColor au format RGB selon la longueur d'onde passée en paramètre\&. Cette méthode se base sur le spectre lumineux visible en représentant les U\&.V\&. comme du noir\&.
+.PP
+\fBRenvoie:\fP
+.RS 4
+La QColor représentant la longueur d'onde d'un rayon\&.
+.RE
+.PP
+\fBVoir également:\fP
+.RS 4
+http://www.physics.sfasu.edu/astro/color/spectra.html 
+.RE
+.PP
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Starlight à partir du code source\&.

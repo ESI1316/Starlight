@@ -1,0 +1,242 @@
+.TH "Lens" 3 "Vendredi 24 Avril 2015" "Starlight" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Lens \- Cette classe modélise les lentilles utilisées dans le jeu\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <lens\&.hpp>\fP
+.SS "Fonctions membres publiques"
+
+.in +1c
+.ti -1c
+.RI "\fBLens\fP (const \fBPoint\fP &, const int, const int, const int, const int)"
+.br
+.RI "\fICréer une nouvelle lentille pouvant être un obstacle à un rayon : si le rayon souhaite passer au travers, il devra être d'une longueur d'onde comprise dans l'intervalle souhaité par cette lentille\&. \fP"
+.ti -1c
+.RI "const \fBPoint\fP & \fBgetPosition\fP () const "
+.br
+.RI "\fIRetourne la position du coin supérieur gauche du rectangle circonscrit à la lentille\&. \fP"
+.ti -1c
+.RI "int \fBgetMinWaveLength\fP () const "
+.br
+.RI "\fIRetourne la longueur d'onde minimale des rayons autorisés à franchir la lentille\&. \fP"
+.ti -1c
+.RI "int \fBgetMaxWaveLength\fP () const "
+.br
+.RI "\fIRetourne la longueur d'onde maximale des rayons autorisés à franchir la lentille\&. \fP"
+.ti -1c
+.RI "void \fBreactToRay\fP (\fBRay\fP)"
+.br
+.RI "\fICette méthode est lancé lorsque la lentille courante est exposée à un rayon\&. \fP"
+.ti -1c
+.RI "\fBPoint\fP * \fBincludeRay\fP (const \fBRay\fP &) const "
+.br
+.RI "\fIRenseigne si la lentille est dans la trajectoire du rayon\&. \fP"
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBLens\fP &) const "
+.br
+.RI "\fIPermet de savoir si deux lentilles sont les mêmes\&. \fP"
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBLens\fP &) const "
+.br
+.RI "\fIPermet de savoir si deux lentilles sont différentes\&. \fP"
+.in -1c
+.SS "Attributs privés"
+
+.in +1c
+.ti -1c
+.RI "const \fBPoint\fP \fBupLeftCorner\fP"
+.br
+.RI "\fIupLeftCorner \fP"
+.ti -1c
+.RI "const int \fBwlMin\fP"
+.br
+.RI "\fIwlMin \fP"
+.ti -1c
+.RI "const int \fBwlMax\fP"
+.br
+.RI "\fIwlMax \fP"
+.in -1c
+.SS "Membres hérités additionnels"
+.SH "Description détaillée"
+.PP 
+Cette classe modélise les lentilles utilisées dans le jeu\&. 
+
+Une lentille est un objet rectangulaire qui ne laisse passer les rayons lumineux que dans un certain intervalle de longueur d'onde\&. Si un rayon lumineux se trouve dans l'intervalle de longueur d'onde autorisé, il traverse la lentille sans subir aucune modification\&. Sinon, la lentille se comporte comme un mur\&. 
+.PP
+Définition à la ligne 22 du fichier lens\&.hpp\&.
+.PP
+Est dérivée de \fBElement\fP, et \fBEllipse\fP\&.
+.SH "Documentation des constructeurs et destructeur"
+.PP 
+.SS "Lens::Lens (const \fBPoint\fP &, const int, const int, const int, const int)"
+
+.PP
+Créer une nouvelle lentille pouvant être un obstacle à un rayon : si le rayon souhaite passer au travers, il devra être d'une longueur d'onde comprise dans l'intervalle souhaité par cette lentille\&. Dans le cas contraire, le rayon ne passera pas\&.
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIposition\fP La position du coin supérieur gauche du rectangle circonscrit à l'ellipse modélisant la lentille\&. 
+.br
+\fIwidth\fP La largeur du rectangle circonscrit à la lentille\&. 
+.br
+\fIheight\fP la hauteur du rectangle circonscrit à la lentille\&. 
+.br
+\fIwlMin\fP La longueur d'onde minimale des rayons autorisés à franchir la lentille\&. 
+.br
+\fIwlMax\fP La longueur d'onde maximale des rayons autorisés à franchir la lentille\&. 
+.RE
+.PP
+
+.SH "Documentation des fonctions membres"
+.PP 
+.SS "int Lens::getMaxWaveLength () const\fC [inline]\fP"
+
+.PP
+Retourne la longueur d'onde maximale des rayons autorisés à franchir la lentille\&. 
+.PP
+\fBRenvoie:\fP
+.RS 4
+La longueur d'onde maximale des rayon autorisés à franchir la lentille\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne 141 du fichier lens\&.hpp\&.
+.PP
+Références wlMax\&.
+.PP
+.nf
+142 {
+143     return this->wlMax;
+144 }
+.fi
+.SS "int Lens::getMinWaveLength () const\fC [inline]\fP"
+
+.PP
+Retourne la longueur d'onde minimale des rayons autorisés à franchir la lentille\&. 
+.PP
+\fBRenvoie:\fP
+.RS 4
+La longueur d'onde minimale des rayons autorisés à franchir la lentille\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne 136 du fichier lens\&.hpp\&.
+.PP
+Références wlMin\&.
+.PP
+.nf
+137 {
+138     return this->wlMin;
+139 }
+.fi
+.SS "const \fBPoint\fP & Lens::getPosition () const\fC [inline]\fP"
+
+.PP
+Retourne la position du coin supérieur gauche du rectangle circonscrit à la lentille\&. 
+.PP
+\fBRenvoie:\fP
+.RS 4
+La coordonnée cartésienne du coin supérieur gauche du rectangle modélisant la lentille\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne 131 du fichier lens\&.hpp\&.
+.PP
+Références upLeftCorner\&.
+.PP
+.nf
+132 {
+133     return this->upLeftCorner;
+134 }
+.fi
+.SS "\fBPoint\fP* Lens::includeRay (const \fBRay\fP &) const\fC [virtual]\fP"
+
+.PP
+Renseigne si la lentille est dans la trajectoire du rayon\&. 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIray\fP Le rayon\&.
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+\fCtrue\fP Si la lentille se trouve dans la trajectoire du rayon entré en paramètre\&. 
+.RE
+.PP
+
+.PP
+Implémente \fBElement\fP\&.
+.SS "bool Lens::operator!= (const \fBLens\fP &) const"
+
+.PP
+Permet de savoir si deux lentilles sont différentes\&. 
+.PP
+\fBRenvoie:\fP
+.RS 4
+\fCtrue\fP Si les deux lentilles sont différentes\&. 
+.RE
+.PP
+
+.SS "bool Lens::operator== (const \fBLens\fP &) const"
+
+.PP
+Permet de savoir si deux lentilles sont les mêmes\&. 
+.PP
+\fBRenvoie:\fP
+.RS 4
+\fCtrue\fP Si les deux lentilles sont les même\&. 
+.RE
+.PP
+
+.SS "void Lens::reactToRay (\fBRay\fP)\fC [virtual]\fP"
+
+.PP
+Cette méthode est lancé lorsque la lentille courante est exposée à un rayon\&. Elle va communiquer au niveau la fin du rayon si il ne peut pas passer ou ne va rien faire si le rayon passe\&.
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIray\fP Un rayon percutant la lentille\&. 
+.RE
+.PP
+
+.PP
+Implémente \fBElement\fP\&.
+.SH "Documentation des données membres"
+.PP 
+.SS "const \fBPoint\fP Lens::upLeftCorner\fC [private]\fP"
+
+.PP
+upLeftCorner 
+.PP
+Définition à la ligne 30 du fichier lens\&.hpp\&.
+.PP
+Référencé par getPosition()\&.
+.SS "const int Lens::wlMax\fC [private]\fP"
+
+.PP
+wlMax 
+.PP
+Définition à la ligne 40 du fichier lens\&.hpp\&.
+.PP
+Référencé par getMaxWaveLength()\&.
+.SS "const int Lens::wlMin\fC [private]\fP"
+
+.PP
+wlMin 
+.PP
+Définition à la ligne 35 du fichier lens\&.hpp\&.
+.PP
+Référencé par getMinWaveLength()\&.
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Starlight à partir du code source\&.

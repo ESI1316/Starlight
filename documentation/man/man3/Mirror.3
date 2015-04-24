@@ -1,0 +1,640 @@
+.TH "Mirror" 3 "Vendredi 24 Avril 2015" "Starlight" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Mirror \- Cette classe modélise les miroirs utilisés dans le jeu\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <mirror\&.hpp>\fP
+.SS "Fonctions membres publiques"
+
+.in +1c
+.ti -1c
+.RI "\fBMirror\fP (const \fBPoint\fP &, int, int, double)"
+.br
+.RI "\fIInstancie un miroir en une position donnée, d'une certaine longueur et orienté d'un certain angle\&. \fP"
+.ti -1c
+.RI "\fBMirror\fP (const \fBPoint\fP &, int, int, double, \fBPoint\fP, \fBPoint\fP, double, double)"
+.br
+.RI "\fIInstancie un miroir en une position donnée, d'une certaine longueur et orienté d'un certain angle\&. \fP"
+.ti -1c
+.RI "const \fBPoint\fP & \fBgetPivot\fP () const "
+.br
+.RI "\fIRetourne la position du pivot du miroir\&. \fP"
+.ti -1c
+.RI "int \fBgetLength\fP () const "
+.br
+.RI "\fIRetourne la longueur du miroir\&. \fP"
+.ti -1c
+.RI "int \fBgetXPad\fP () const "
+.br
+.RI "\fIRetourne le décalage du pivot par rapport au bord gauche du miroir\&. \fP"
+.ti -1c
+.RI "double \fBgetAngle\fP () const "
+.br
+.RI "\fIRetourne l'inclinaison du miroir\&. \fP"
+.ti -1c
+.RI "double \fBgetMinAngle\fP () const "
+.br
+.RI "\fIRetourne l'inclinaison minimum du miroir\&. \fP"
+.ti -1c
+.RI "double \fBgetMaxAngle\fP () const "
+.br
+.RI "\fIRetourne l'inclinaison minimum du miroir\&. \fP"
+.ti -1c
+.RI "\fBPoint\fP \fBgetMinPivot\fP () const "
+.br
+.RI "\fIRetourne la position minimum du miroir\&. \fP"
+.ti -1c
+.RI "\fBPoint\fP \fBgetMaxPivot\fP () const "
+.br
+.RI "\fIRetourne la position maximum du miroir\&. \fP"
+.ti -1c
+.RI "bool \fBsetPivot\fP (const \fBPoint\fP &)"
+.br
+.RI "\fIDéplace le miroir en la position donnée, si celle-ci est autorisée\&. \fP"
+.ti -1c
+.RI "bool \fBsetAngle\fP (double)"
+.br
+.RI "\fIPivote le miroir sur un angle donné, si celui-ci est autorisé\&. \fP"
+.ti -1c
+.RI "bool \fBrotate\fP (double)"
+.br
+.RI "\fIPermet d'\fBessayer\fP d'effectuer une rotation du miroir courant\&. \fP"
+.ti -1c
+.RI "bool \fBtranslate\fP (const double, const double)"
+.br
+.RI "\fIPermet de déplacer le miroir dans le plan en lui donnant un abscisse et une ordonnée de translation\&. \fP"
+.ti -1c
+.RI "\fBPoint\fP \fBgetStart\fP () const "
+.br
+.RI "\fIRetourne le point de départ du segment de droite représentant le miroir\&. \fP"
+.ti -1c
+.RI "\fBPoint\fP \fBgetEnd\fP () const "
+.br
+.RI "\fIRetourne le point d' arrivé du segment de droite représentant le miroir\&. \fP"
+.ti -1c
+.RI "void \fBgetBounds\fP (\fBPoint\fP *, \fBPoint\fP *) const "
+.br
+.RI "\fIPermet d'obtenir le point de départ et d'arrivé du segment de droite représentant le miroir; pour éviter de retourner un conteneur de points, ceux-ci sont passés en entrée sortie des paramètres\&. \fP"
+.ti -1c
+.RI "bool \fBcheckAngleRange\fP (double) const "
+.br
+.RI "\fIRetoune vrai si le miroir peut être pivoté sur l'angle donné, retourne faux sinon\&. \fP"
+.ti -1c
+.RI "bool \fBcheckPivotRange\fP (const \fBPoint\fP &) const "
+.br
+.RI "\fIRetoune vrai si le miroir peut être déplacé en la position donnée, retourne faux sinon\&. \fP"
+.ti -1c
+.RI "void \fBreactToRay\fP (\fBRay\fP)"
+.br
+.RI "\fIRéaction à l'exposition d'un rayon; celui-ci est réfléchi selon le principe naturel de la réflexion de la lumière dans l'air\&. \fP"
+.ti -1c
+.RI "\fBPoint\fP * \fBincludeRay\fP (const \fBRay\fP &) const "
+.br
+.RI "\fIRenseigne si le miroir est dans la trajectoire du rayon\&. \fP"
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBMirror\fP &) const "
+.br
+.RI "\fIPermet de savoir si deux miroirs sont les même\&. \fP"
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBMirror\fP &) const "
+.br
+.RI "\fIPermet de savoir si deux miroirs sont différents\&. \fP"
+.in -1c
+.SS "Attributs privés"
+
+.in +1c
+.ti -1c
+.RI "\fBPoint\fP \fBpivot\fP"
+.br
+.RI "\fILe point de pivot du miroir autour du quel celui-ci peut effectuer une rotation\&. \fP"
+.ti -1c
+.RI "int \fBlength\fP"
+.br
+.RI "\fILa longueur totale du miroir\&. \fP"
+.ti -1c
+.RI "int \fBxpad\fP"
+.br
+.RI "\fILa longueur séparant le point de pivot d'un point extrême du miroir\&. \fP"
+.ti -1c
+.RI "double \fBxMin\fP"
+.br
+.RI "\fILimite minimale d'abscisse où peut se situer le pivot du miroir\&. \fP"
+.ti -1c
+.RI "double \fBxMax\fP"
+.br
+.RI "\fILimite maximale d'abscisse où peut se situer le pivot du miroir\&. \fP"
+.ti -1c
+.RI "double \fByMin\fP"
+.br
+.RI "\fILimite minimale d'ordonnée où peut se situer le pivot du miroir\&. \fP"
+.ti -1c
+.RI "double \fByMax\fP"
+.br
+.RI "\fILimite maximale d'ordonnée où peut se situer le pivot du miroir\&. \fP"
+.ti -1c
+.RI "double \fBalpha\fP"
+.br
+.RI "\fIL'angle actuel de rotation du miroir\&. \fP"
+.ti -1c
+.RI "double \fBalphaMin\fP"
+.br
+.RI "\fIL'angle minimum dans lequel peut se trouver le miroir\&. \fP"
+.ti -1c
+.RI "double \fBalphaMax\fP"
+.br
+.RI "\fIL'angle maximum dans lequel peut se trouver le miroir\&. \fP"
+.in -1c
+.SS "Membres hérités additionnels"
+.SH "Description détaillée"
+.PP 
+Cette classe modélise les miroirs utilisés dans le jeu\&. 
+
+Un miroir est un segment de droite dont la propriété est de réfléchir la lumière d'un seul côté uniquement\&. Si un rayon lumineux touche un miroir du côté non réfléchissant, le miroir se comporte comme un mur\&. Les miroirs sont capables d'être déplacés et pivotés dans une certaine limite\&. 
+.PP
+Définition à la ligne 21 du fichier mirror\&.hpp\&.
+.PP
+Est dérivée de \fBElement\fP, et \fBLine\fP\&.
+.SH "Documentation des constructeurs et destructeur"
+.PP 
+.SS "Mirror::Mirror (const \fBPoint\fP &, int, int, double)"
+
+.PP
+Instancie un miroir en une position donnée, d'une certaine longueur et orienté d'un certain angle\&. Comme dans ce constructeur les limites de déplacement et de rotation du miroir ne sont pas définies, ce miroir peut se déplacer et pivoter librement\&.
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIpivot\fP La position du pivot du miroir\&. 
+.br
+\fIxpad\fP Le décalage du pivot par rapport au bord gauche du miroir\&. 
+.br
+\fIlength\fP La longueur du miroir\&. 
+.br
+\fIalpha\fP L'angle d'inclinaison du miroir\&. 
+.RE
+.PP
+
+.SS "Mirror::Mirror (const \fBPoint\fP &, int, int, double, \fBPoint\fP, \fBPoint\fP, double, double)"
+
+.PP
+Instancie un miroir en une position donnée, d'une certaine longueur et orienté d'un certain angle\&. Ce constructeur permet également aux miroirs de pivoter dans une certaine limite\&. Si l'intervalle de limite de déplacement (e\&.g\&., sur les abscisses) [a,b] est tel que si : 
+.PD 0
+
+.IP "\(bu" 2
+a = b, le miroir ne peut être déplacé sur l'axe considéré 
+.IP "\(bu" 2
+a < b, le miroir pivote dans le sens horloger 
+.IP "\(bu" 2
+a = b le miroir ne peut pas pivoter 
+.IP "\(bu" 2
+a > b, le miroir pivote dans le sens anti-horloger 
+.PP
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIpivot\fP La position du pivot du miroir\&. 
+.br
+\fIxpad\fP Le décalage du pivot par rapport au bord gauche du miroir\&. 
+.br
+\fIlength\fP La longueur du miroir\&. 
+.br
+\fIalpha\fP L'angle d'inclinaison du miroir\&. 
+.br
+\fIpointMin\fP Le point de coordonnées minimum\&. 
+.br
+\fIpointMax\fP Le point de coordonnées maximum\&. 
+.br
+\fIalphaMin\fP L'angle d'inclinaison minimum du miroir (en radian)\&. 
+.br
+\fIalphaMax\fP L'angle d'inclinaison maximum du miroir (en radian)\&. 
+.RE
+.PP
+
+.SH "Documentation des fonctions membres"
+.PP 
+.SS "bool Mirror::checkAngleRange (double) const"
+
+.PP
+Retoune vrai si le miroir peut être pivoté sur l'angle donné, retourne faux sinon\&. 
+.PP
+\fBRenvoie:\fP
+.RS 4
+\fCtrue\fP si le miroir peut être pivoté sur l'angle donné, retourne faux sinon\&. 
+.RE
+.PP
+
+.SS "bool Mirror::checkPivotRange (const \fBPoint\fP &) const"
+
+.PP
+Retoune vrai si le miroir peut être déplacé en la position donnée, retourne faux sinon\&. 
+.PP
+\fBRenvoie:\fP
+.RS 4
+\fCtrue\fP si le miroir peut être déplacé en la position donnée, retourne faux sinon\&. 
+.RE
+.PP
+
+.SS "double Mirror::getAngle () const\fC [inline]\fP"
+
+.PP
+Retourne l'inclinaison du miroir\&. 
+.PP
+\fBRenvoie:\fP
+.RS 4
+l'inclinaison du miroir\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne 338 du fichier mirror\&.hpp\&.
+.PP
+Références alpha\&.
+.PP
+.nf
+339 {
+340     return this->alpha;
+341 }
+.fi
+.SS "void Mirror::getBounds (\fBPoint\fP *, \fBPoint\fP *) const"
+
+.PP
+Permet d'obtenir le point de départ et d'arrivé du segment de droite représentant le miroir; pour éviter de retourner un conteneur de points, ceux-ci sont passés en entrée sortie des paramètres\&. 
+.SS "\fBPoint\fP Mirror::getEnd () const"
+
+.PP
+Retourne le point d' arrivé du segment de droite représentant le miroir\&. 
+.PP
+\fBRenvoie:\fP
+.RS 4
+Le point d'arrivé du segment de droite représentant le miroir\&. 
+.RE
+.PP
+
+.SS "int Mirror::getLength () const\fC [inline]\fP"
+
+.PP
+Retourne la longueur du miroir\&. 
+.PP
+\fBRenvoie:\fP
+.RS 4
+La longueur du miroir\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne 328 du fichier mirror\&.hpp\&.
+.PP
+Références length\&.
+.PP
+.nf
+329 {
+330     return this->length;
+331 }
+.fi
+.SS "double Mirror::getMaxAngle () const\fC [inline]\fP"
+
+.PP
+Retourne l'inclinaison minimum du miroir\&. Si l'intervalle de limite d'inclinaison [a,b] est tel que : 
+.PD 0
+
+.IP "\(bu" 2
+a < b, le miroir pivote dans le sens horloger 
+.IP "\(bu" 2
+a = b, le miroir ne peut pas pivoter 
+.IP "\(bu" 2
+a > b, le miroir pivote dans le sens anti-horloger 
+.IP "\(bu" 2
+Si a = b = 0, le miroir peut être pivoté librement 
+.PP
+.PP
+\fBRenvoie:\fP
+.RS 4
+l'inclinaison maximum du miroir en radian\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne 348 du fichier mirror\&.hpp\&.
+.PP
+Références alphaMax\&.
+.PP
+.nf
+349 {
+350     return this->alphaMax;
+351 }
+.fi
+.SS "\fBPoint\fP Mirror::getMaxPivot () const"
+
+.PP
+Retourne la position maximum du miroir\&. Si l'intervalle de limite de déplacement (e\&.g\&., sur les abscisses) [a,b] est tel que a = b, le miroir ne peut être déplacé sur l'axe considéré\&. Si a = b = 0, le miroir peut être déplacé librement\&. 
+.PP
+\fBRenvoie:\fP
+.RS 4
+la position minimum du miroir\&. 
+.RE
+.PP
+
+.SS "double Mirror::getMinAngle () const\fC [inline]\fP"
+
+.PP
+Retourne l'inclinaison minimum du miroir\&. Si l'intervalle de limite d'inclinaison [a,b] est tel que : 
+.PD 0
+
+.IP "\(bu" 2
+a < b, le miroir pivote dans le sens horloger 
+.IP "\(bu" 2
+a = b, le miroir ne peut pas pivoter 
+.IP "\(bu" 2
+a > b, le miroir pivote dans le sens anti-horloger 
+.IP "\(bu" 2
+Si a = b = 0, le miroir peut être pivoté librement 
+.PP
+.PP
+\fBRenvoie:\fP
+.RS 4
+l'inclinaison minimum du miroir en radian\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne 343 du fichier mirror\&.hpp\&.
+.PP
+Références alphaMin\&.
+.PP
+.nf
+344 {
+345     return this->alphaMin;
+346 }
+.fi
+.SS "\fBPoint\fP Mirror::getMinPivot () const"
+
+.PP
+Retourne la position minimum du miroir\&. Si l'intervalle de limite de déplacement (e\&.g\&., sur les abscisses) [a,b] est tel que : 
+.PD 0
+
+.IP "\(bu" 2
+a = b, le miroir ne peut être déplacé sur l'axe considéré 
+.IP "\(bu" 2
+a = b = 0, le miroir peut être déplacé librement 
+.PP
+.PP
+\fBRenvoie:\fP
+.RS 4
+la position minimum du miroir\&. 
+.RE
+.PP
+
+.SS "const \fBPoint\fP & Mirror::getPivot () const\fC [inline]\fP"
+
+.PP
+Retourne la position du pivot du miroir\&. 
+.PP
+\fBRenvoie:\fP
+.RS 4
+La position du pivot du miroir\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne 323 du fichier mirror\&.hpp\&.
+.PP
+Références pivot\&.
+.PP
+.nf
+324 {
+325     return this->pivot;
+326 }
+.fi
+.SS "\fBPoint\fP Mirror::getStart () const"
+
+.PP
+Retourne le point de départ du segment de droite représentant le miroir\&. 
+.PP
+\fBRenvoie:\fP
+.RS 4
+Le point de départ du segment de droite représentant le miroir\&. 
+.RE
+.PP
+
+.SS "int Mirror::getXPad () const\fC [inline]\fP"
+
+.PP
+Retourne le décalage du pivot par rapport au bord gauche du miroir\&. 
+.PP
+\fBRenvoie:\fP
+.RS 4
+Le décalage du pivot par rapport au bord gauche du miroir\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne 333 du fichier mirror\&.hpp\&.
+.PP
+Références xpad\&.
+.PP
+.nf
+334 {
+335     return this->xpad;
+336 }
+.fi
+.SS "\fBPoint\fP* Mirror::includeRay (const \fBRay\fP &) const\fC [virtual]\fP"
+
+.PP
+Renseigne si le miroir est dans la trajectoire du rayon\&. 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIray\fP Le rayon\&.
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+\fCtrue\fP Si le miroir se trouve dans la trajectoire du rayon entré en paramètre\&. 
+.RE
+.PP
+
+.PP
+Implémente \fBElement\fP\&.
+.SS "bool Mirror::operator!= (const \fBMirror\fP &) const"
+
+.PP
+Permet de savoir si deux miroirs sont différents\&. 
+.PP
+\fBRenvoie:\fP
+.RS 4
+\fCtrue\fP Si deux miroirs sont différents\&. 
+.RE
+.PP
+
+.SS "bool Mirror::operator== (const \fBMirror\fP &) const"
+
+.PP
+Permet de savoir si deux miroirs sont les même\&. 
+.PP
+\fBRenvoie:\fP
+.RS 4
+\fCtrue\fP Si deux miroirs sont les même\&. 
+.RE
+.PP
+
+.SS "void Mirror::reactToRay (\fBRay\fP)\fC [virtual]\fP"
+
+.PP
+Réaction à l'exposition d'un rayon; celui-ci est réfléchi selon le principe naturel de la réflexion de la lumière dans l'air\&. Cette méthode communiquera au niveau de prendre en compte le nouveau rayon créé\&.
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIray\fP Le rayon incident\&. 
+.RE
+.PP
+
+.PP
+Implémente \fBElement\fP\&.
+.SS "bool Mirror::rotate (double)"
+
+.PP
+Permet d'\fBessayer\fP d'effectuer une rotation du miroir courant\&. 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIalpha\fP L'angle de rotation en degrés\&.
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+\fCtrue\fP Si le miroir ne sort pas des limites après rotation\&. 
+.RE
+.PP
+
+.SS "bool Mirror::setAngle (double)"
+
+.PP
+Pivote le miroir sur un angle donné, si celui-ci est autorisé\&. 
+.PP
+\fBVoir également:\fP
+.RS 4
+\fBMirror::getAngle()\fP
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+\fCtrue\fP Si la rotation a été effectuée\&. 
+.RE
+.PP
+
+.SS "bool Mirror::setPivot (const \fBPoint\fP &)"
+
+.PP
+Déplace le miroir en la position donnée, si celle-ci est autorisée\&. 
+.PP
+\fBVoir également:\fP
+.RS 4
+\fBMirror::getPivot()\fP
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+\fCtrue\fP Si le déplacement a été effectué\&. 
+.RE
+.PP
+
+.SS "bool Mirror::translate (const double, const double)"
+
+.PP
+Permet de déplacer le miroir dans le plan en lui donnant un abscisse et une ordonnée de translation\&. 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIx\fP Le déplacement sur l'axe des abscisses\&. 
+.br
+\fIy\fP Le déplacement sur l'axe des ordonnées\&.
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+\fCtrue\fP Si le miroir ne sort pas des limites après translations\&. 
+.RE
+.PP
+
+.SH "Documentation des données membres"
+.PP 
+.SS "double Mirror::alpha\fC [private]\fP"
+
+.PP
+L'angle actuel de rotation du miroir\&. 
+.PP
+Définition à la ligne 62 du fichier mirror\&.hpp\&.
+.PP
+Référencé par getAngle()\&.
+.SS "double Mirror::alphaMax\fC [private]\fP"
+
+.PP
+L'angle maximum dans lequel peut se trouver le miroir\&. 
+.PP
+Définition à la ligne 72 du fichier mirror\&.hpp\&.
+.PP
+Référencé par getMaxAngle()\&.
+.SS "double Mirror::alphaMin\fC [private]\fP"
+
+.PP
+L'angle minimum dans lequel peut se trouver le miroir\&. 
+.PP
+Définition à la ligne 67 du fichier mirror\&.hpp\&.
+.PP
+Référencé par getMinAngle()\&.
+.SS "int Mirror::length\fC [private]\fP"
+
+.PP
+La longueur totale du miroir\&. 
+.PP
+Définition à la ligne 32 du fichier mirror\&.hpp\&.
+.PP
+Référencé par getLength()\&.
+.SS "\fBPoint\fP Mirror::pivot\fC [private]\fP"
+
+.PP
+Le point de pivot du miroir autour du quel celui-ci peut effectuer une rotation\&. 
+.PP
+Définition à la ligne 27 du fichier mirror\&.hpp\&.
+.PP
+Référencé par getPivot()\&.
+.SS "double Mirror::xMax\fC [private]\fP"
+
+.PP
+Limite maximale d'abscisse où peut se situer le pivot du miroir\&. 
+.PP
+Définition à la ligne 47 du fichier mirror\&.hpp\&.
+.SS "double Mirror::xMin\fC [private]\fP"
+
+.PP
+Limite minimale d'abscisse où peut se situer le pivot du miroir\&. 
+.PP
+Définition à la ligne 42 du fichier mirror\&.hpp\&.
+.SS "int Mirror::xpad\fC [private]\fP"
+
+.PP
+La longueur séparant le point de pivot d'un point extrême du miroir\&. 
+.PP
+Définition à la ligne 37 du fichier mirror\&.hpp\&.
+.PP
+Référencé par getXPad()\&.
+.SS "double Mirror::yMax\fC [private]\fP"
+
+.PP
+Limite maximale d'ordonnée où peut se situer le pivot du miroir\&. 
+.PP
+Définition à la ligne 57 du fichier mirror\&.hpp\&.
+.SS "double Mirror::yMin\fC [private]\fP"
+
+.PP
+Limite minimale d'ordonnée où peut se situer le pivot du miroir\&. 
+.PP
+Définition à la ligne 52 du fichier mirror\&.hpp\&.
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Starlight à partir du code source\&.

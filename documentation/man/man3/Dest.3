@@ -1,0 +1,224 @@
+.TH "Dest" 3 "Vendredi 24 Avril 2015" "Starlight" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Dest \- Cette classe modélise la destination utilisée dans le jeu\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <dest\&.hpp>\fP
+.SS "Fonctions membres publiques"
+
+.in +1c
+.ti -1c
+.RI "\fBDest\fP (const \fBPoint\fP &, const int)"
+.br
+.RI "\fIIntancie une destination, de position et rayon donné\&. \fP"
+.ti -1c
+.RI "const \fBPoint\fP & \fBgetPosition\fP () const "
+.br
+.RI "\fIRetourne la position du coin supérieur gauche du carré modélisant la destination\&. \fP"
+.ti -1c
+.RI "int \fBgetEdge\fP () const "
+.br
+.RI "\fIRetourne la longueur du côté du carré\&. \fP"
+.ti -1c
+.RI "bool \fBisLightedUp\fP () const "
+.br
+.RI "\fIPermet de savoir si la destination est éclairée et donc si le jeu est terminé\&. \fP"
+.ti -1c
+.RI "void \fBsetLightedUp\fP (const bool)"
+.br
+.RI "\fIPermet de changer l'état d'illumination de la destination\&. \fP"
+.ti -1c
+.RI "void \fBreactToRay\fP (\fBRay\fP)"
+.br
+.RI "\fICette méthode est lancé lorsque la destination courant est exposé à un rayon\&. \fP"
+.ti -1c
+.RI "\fBPoint\fP * \fBincludeRay\fP (const \fBRay\fP &) const "
+.br
+.RI "\fIRenseigne si la destination est dans la trajectoire du rayon\&. \fP"
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBDest\fP &) const "
+.br
+.RI "\fIPermet de savoir si deux destinations sont les même\&. \fP"
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBDest\fP &) const "
+.br
+.RI "\fIPermet de savoir si deux destinations sont différentes\&. \fP"
+.in -1c
+.SS "Attributs privés"
+
+.in +1c
+.ti -1c
+.RI "bool \fBlight\fP"
+.br
+.in -1c
+.SS "Membres hérités additionnels"
+.SH "Description détaillée"
+.PP 
+Cette classe modélise la destination utilisée dans le jeu\&. 
+
+Une destination est un objet carré qui, quand traversé par un rayon lumineux, fait remporter la partie au joueur\&. 
+.PP
+Définition à la ligne 17 du fichier dest\&.hpp\&.
+.PP
+Est dérivée de \fBElement\fP, et \fBRectangle\fP\&.
+.SH "Documentation des constructeurs et destructeur"
+.PP 
+.SS "Dest::Dest (const \fBPoint\fP &, const int)"
+
+.PP
+Intancie une destination, de position et rayon donné\&. 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIposition\fP Le coin supérieur gauche du carré modélisant la destination\&. 
+.br
+\fIedge\fP La longueur du côté du carré\&. 
+.RE
+.PP
+
+.SH "Documentation des fonctions membres"
+.PP 
+.SS "int Dest::getEdge () const\fC [inline]\fP"
+
+.PP
+Retourne la longueur du côté du carré\&. 
+.PP
+\fBRenvoie:\fP
+.RS 4
+La longueur du côté du carré\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne 110 du fichier dest\&.hpp\&.
+.PP
+Références Rectangle::height\&.
+.PP
+.nf
+111 {
+112     return this->height;
+113 }
+.fi
+.SS "const \fBPoint\fP & Dest::getPosition () const\fC [inline]\fP"
+
+.PP
+Retourne la position du coin supérieur gauche du carré modélisant la destination\&. 
+.PP
+\fBRenvoie:\fP
+.RS 4
+La position de la destination\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne 105 du fichier dest\&.hpp\&.
+.PP
+Références Rectangle::upLeftCorner\&.
+.PP
+.nf
+106 {
+107     return this->upLeftCorner;
+108 }
+.fi
+.SS "\fBPoint\fP* Dest::includeRay (const \fBRay\fP &) const\fC [virtual]\fP"
+
+.PP
+Renseigne si la destination est dans la trajectoire du rayon\&. 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIray\fP Le rayon\&.
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+\fCtrue\fP Si la destination se trouve dans la trajectoire du rayon entré en paramètre\&. 
+.RE
+.PP
+
+.PP
+Implémente \fBElement\fP\&.
+.SS "bool Dest::isLightedUp () const\fC [inline]\fP"
+
+.PP
+Permet de savoir si la destination est éclairée et donc si le jeu est terminé\&. 
+.PP
+\fBRenvoie:\fP
+.RS 4
+\fCtrue\fP Si la destination est illuminée\&. 
+.RE
+.PP
+
+.PP
+Définition à la ligne 115 du fichier dest\&.hpp\&.
+.PP
+Références light\&.
+.PP
+.nf
+116 {
+117     return this->light;
+118 }
+.fi
+.SS "bool Dest::operator!= (const \fBDest\fP &) const"
+
+.PP
+Permet de savoir si deux destinations sont différentes\&. 
+.PP
+\fBRenvoie:\fP
+.RS 4
+\fCtrue\fP Si les destinations sont différentes\&. 
+.RE
+.PP
+
+.SS "bool Dest::operator== (const \fBDest\fP &) const"
+
+.PP
+Permet de savoir si deux destinations sont les même\&. 
+.PP
+\fBRenvoie:\fP
+.RS 4
+\fCtrue\fP Si les destinations sont les même\&. 
+.RE
+.PP
+
+.SS "void Dest::reactToRay (\fBRay\fP)\fC [virtual]\fP"
+
+.PP
+Cette méthode est lancé lorsque la destination courant est exposé à un rayon\&. Elle va s'exposer comme illuminée\&.
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIray\fP Un rayon percutant la destination\&. 
+.RE
+.PP
+
+.PP
+Implémente \fBElement\fP\&.
+.SS "void Dest::setLightedUp (const bool)"
+
+.PP
+Permet de changer l'état d'illumination de la destination\&. 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fILe\fP nouvelle état d'illumination de la destination\&. 
+.RE
+.PP
+
+.SH "Documentation des données membres"
+.PP 
+.SS "bool Dest::light\fC [private]\fP"
+
+.PP
+Définition à la ligne 22 du fichier dest\&.hpp\&.
+.PP
+Référencé par isLightedUp()\&.
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Starlight à partir du code source\&.

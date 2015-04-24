@@ -1,0 +1,9 @@
+<map id="Crystal" name="Crystal">
+<area shape="rect" id="node2" href="$d5/d3c/classElement.html" title="Un élément est un composant du jeu se devant de communiquer son état au niveau le gérant..." alt="" coords="211,462,333,634"/>
+<area shape="rect" id="node6" href="$de/d97/classDest.html" title="Cette classe modélise la destination utilisée dans le jeu. " alt="" coords="268,807,399,1031"/>
+<area shape="rect" id="node13" href="$d6/d2e/classSource.html" title="Modélise la source lumineuse utilisée dans le jeu. " alt="" coords="423,763,567,1074"/>
+<area shape="rect" id="node4" href="$d2/d9d/classLevel.html" title="Modélise une carte telle qu&#39;utilisée dans le jeu. " alt="" coords="255,1142,412,1557"/>
+<area shape="rect" id="node9" href="$de/d00/classRectangle.html" title="Le rectangle est objet géométrique, du plan, à quatre coté parallèles deux à deux. " alt="" coords="357,410,539,686"/>
+<area shape="rect" id="node11" href="$dc/d4f/classPoint.html" title="Cette classe modélise un point de coordonnés dans le plan &#160;sous deux formes : " alt="" coords="213,6,395,317"/>
+<area shape="rect" id="node17" href="$db/dc7/classEllipse.html" title="Représente un cercle sous la forme; . " alt="" coords="5,384,187,712"/>
+</map>

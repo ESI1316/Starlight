@@ -1,0 +1,390 @@
+\hypertarget{classLine}{}\section{Référence de la classe Line}
+\label{classLine}\index{Line@{Line}}
+
+
+Représente une droite sous la forme de son équation complète; $ eq \equiv y = slope \cdot x + indepTerm $.  
+
+
+
+
+{\ttfamily \#include $<$line.\+hpp$>$}
+
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classLine_a51acfb27d7778c0f96624edc27dab5c7}{Line} (double, double, double=0)
+\begin{DoxyCompactList}\small\item\em Permet de construire une nouvelle droite initialisée. \end{DoxyCompactList}\item 
+\hyperlink{classLine_a13562b07c6a09b1bc7720a6c4f77fb3e}{Line} (const \hyperlink{classPoint}{Point} \&, const \hyperlink{classPoint}{Point} \&)
+\begin{DoxyCompactList}\small\item\em Permet de construire une droite à partir de deux points. \end{DoxyCompactList}\item 
+\hyperlink{classPoint}{Point} $\ast$ \hyperlink{classLine_a9449a6777c0d4783b2210c057ae1c811}{get\+Intersection\+Point} (const \hyperlink{classLine}{Line} \&) const 
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}obtenir le point d\textquotesingle{}intersection entre la droite et celle entrée en paramètre. \end{DoxyCompactList}\item 
+bool \hyperlink{classLine_a36eaf7c0fcc008e1e72a1a82137f42a4}{includes} (const \hyperlink{classPoint}{Point} \&) const 
+\begin{DoxyCompactList}\small\item\em Renseigne si le point entré en paramètre est inclus dans la droite. \end{DoxyCompactList}\item 
+double \hyperlink{classLine_a9eab2739a90a731de04b385f483f68b3}{get\+Slope} () const 
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}obtenir la pente de la droite. \end{DoxyCompactList}\item 
+double \hyperlink{classLine_a7a543f2f53ad54555a56c845375f2a7d}{get\+Indep\+Term} () const 
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}obtenir le terme indépendant. \end{DoxyCompactList}\item 
+double \hyperlink{classLine_aa50bf9b9bc8fa001e6f33a3914e749af}{get\+X\+Value} () const 
+\begin{DoxyCompactList}\small\item\em Permet de connaitre la valeur de x, cette valeur est incohérence si la droite n\textquotesingle{}est pas verticale. \end{DoxyCompactList}\item 
+bool \hyperlink{classLine_adb1e4c411e63f9ac31f70648fa3149d7}{is\+Vertical} () const 
+\begin{DoxyCompactList}\small\item\em Renseigne si la droite est verticale. \end{DoxyCompactList}\item 
+double \hyperlink{classLine_a013de9d97b5c80dd2e52888022e58a5d}{find\+X} (const double) const 
+\begin{DoxyCompactList}\small\item\em Permet de résoudre l\textquotesingle{}équation de la droite à partir d\textquotesingle{}une valeur de y entrée en paramètre. \end{DoxyCompactList}\item 
+double \hyperlink{classLine_a6573ef5cdd6324971770d4a556fed4ae}{find\+Y} (const double) const 
+\begin{DoxyCompactList}\small\item\em Permet de résoudre l\textquotesingle{}équation de la droite à partir d\textquotesingle{}une valeur de x entrée en paramètre. \end{DoxyCompactList}\item 
+\hyperlink{classLine}{Line} \& \hyperlink{classLine_aff9faa550dc184fac56e3ef22439fdf9}{operator=} (const \hyperlink{classLine}{Line} \&)
+\begin{DoxyCompactList}\small\item\em Permet de copier une ligne. \end{DoxyCompactList}\item 
+bool \hyperlink{classLine_a5f1b6226cd499d6d209cda4b8517c9b7}{operator==} (const \hyperlink{classLine}{Line} \&) const 
+\begin{DoxyCompactList}\small\item\em Permet de savoir si deux lignes sont identiques. \end{DoxyCompactList}\item 
+bool \hyperlink{classLine_ae2cb0479252a7f5a2c163d1197fc990f}{operator!=} (const \hyperlink{classLine}{Line} \&) const 
+\begin{DoxyCompactList}\small\item\em Permet de savoir si deux lignes sont différentes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Attributs protégés}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{classLine_a0aa35363f8285600b12ce54258338b8c}{slope}
+\begin{DoxyCompactList}\small\item\em slope Valeur du coefficient angulaire de la droite. \end{DoxyCompactList}\item 
+double \hyperlink{classLine_a6ea839b47ccf670770ebc7dff9f0dbba}{indep\+Term}
+\begin{DoxyCompactList}\small\item\em indep\+Term Contient la valeur du terme indépendant de la droite. \end{DoxyCompactList}\item 
+double \hyperlink{classLine_af8b70928b9624988c1c42f33af93391a}{x\+Value}
+\begin{DoxyCompactList}\small\item\em x\+Value Contient la valeur de x lorsque la droite est verticale. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Représente une droite sous la forme de son équation complète; $ eq \equiv y = slope \cdot x + indepTerm $. 
+
+Définition à la ligne 13 du fichier line.\+hpp.
+
+
+
+Graphe d\textquotesingle{}héritage de Line\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d4/d12/classLine__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Graphe de collaboration de Line\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{de/d2f/classLine__coll__graph}
+\end{center}
+\end{figure}
+
+
+\subsection{Documentation des constructeurs et destructeur}
+\hypertarget{classLine_a51acfb27d7778c0f96624edc27dab5c7}{}\index{Line@{Line}!Line@{Line}}
+\index{Line@{Line}!Line@{Line}}
+\subsubsection[{Line(double, double, double=0)}]{\setlength{\rightskip}{0pt plus 5cm}Line\+::\+Line (
+\begin{DoxyParamCaption}
+\item[{double}]{, }
+\item[{double}]{, }
+\item[{double}]{ = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}\label{classLine_a51acfb27d7778c0f96624edc27dab5c7}
+
+
+Permet de construire une nouvelle droite initialisée. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em slope} & Pente de la droite. \\
+\hline
+{\em indep\+Term} & Terme indépendant de la droite. \\
+\hline
+{\em x\+Value} & Valeur de x si la droite est verticale. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classLine_a13562b07c6a09b1bc7720a6c4f77fb3e}{}\index{Line@{Line}!Line@{Line}}
+\index{Line@{Line}!Line@{Line}}
+\subsubsection[{Line(const Point \&, const Point \&)}]{\setlength{\rightskip}{0pt plus 5cm}Line\+::\+Line (
+\begin{DoxyParamCaption}
+\item[{const {\bf Point} \&}]{, }
+\item[{const {\bf Point} \&}]{}
+\end{DoxyParamCaption}
+)}\label{classLine_a13562b07c6a09b1bc7720a6c4f77fb3e}
+
+
+Permet de construire une droite à partir de deux points. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em start} & \hyperlink{classPoint}{Point} le plus près de l\textquotesingle{}origine au niveau de l\textquotesingle{}abscisse. \\
+\hline
+{\em end} & \hyperlink{classPoint}{Point} le plus éloigné de l\textquotesingle{}origine au niveau de l\textquotesingle{}abscisse. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentation des fonctions membres}
+\hypertarget{classLine_a013de9d97b5c80dd2e52888022e58a5d}{}\index{Line@{Line}!find\+X@{find\+X}}
+\index{find\+X@{find\+X}!Line@{Line}}
+\subsubsection[{find\+X(const double) const }]{\setlength{\rightskip}{0pt plus 5cm}double Line\+::find\+X (
+\begin{DoxyParamCaption}
+\item[{const double}]{}
+\end{DoxyParamCaption}
+) const}\label{classLine_a013de9d97b5c80dd2e52888022e58a5d}
+
+
+Permet de résoudre l\textquotesingle{}équation de la droite à partir d\textquotesingle{}une valeur de y entrée en paramètre. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em y} & Valeur de y pour résoudre l\textquotesingle{}équation de la droite.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+le valeur de x après résolution de l\textquotesingle{}équation de la droite à partir d\textquotesingle{}une valeur de y entrée en paramètre. 
+\end{DoxyReturn}
+\hypertarget{classLine_a6573ef5cdd6324971770d4a556fed4ae}{}\index{Line@{Line}!find\+Y@{find\+Y}}
+\index{find\+Y@{find\+Y}!Line@{Line}}
+\subsubsection[{find\+Y(const double) const }]{\setlength{\rightskip}{0pt plus 5cm}double Line\+::find\+Y (
+\begin{DoxyParamCaption}
+\item[{const double}]{}
+\end{DoxyParamCaption}
+) const}\label{classLine_a6573ef5cdd6324971770d4a556fed4ae}
+
+
+Permet de résoudre l\textquotesingle{}équation de la droite à partir d\textquotesingle{}une valeur de x entrée en paramètre. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em x} & Valeur de x pour résoudre l\textquotesingle{}équation de la droite.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+la valeur de y après résolution de l\textquotesingle{}équation de la droite à partir d\textquotesingle{}une valeur de y entrée en paramètre. 
+\end{DoxyReturn}
+\hypertarget{classLine_a7a543f2f53ad54555a56c845375f2a7d}{}\index{Line@{Line}!get\+Indep\+Term@{get\+Indep\+Term}}
+\index{get\+Indep\+Term@{get\+Indep\+Term}!Line@{Line}}
+\subsubsection[{get\+Indep\+Term() const }]{\setlength{\rightskip}{0pt plus 5cm}double Line\+::get\+Indep\+Term (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classLine_a7a543f2f53ad54555a56c845375f2a7d}
+
+
+Permet d\textquotesingle{}obtenir le terme indépendant. 
+
+\begin{DoxyReturn}{Renvoie}
+Le terme indépendant. 
+\end{DoxyReturn}
+
+
+Définition à la ligne 160 du fichier line.\+hpp.
+
+
+
+Références indep\+Term.
+
+
+\begin{DoxyCode}
+161 \{
+162     \textcolor{keywordflow}{return} this->\hyperlink{classLine_a6ea839b47ccf670770ebc7dff9f0dbba}{indepTerm};
+163 \}
+\end{DoxyCode}
+\hypertarget{classLine_a9449a6777c0d4783b2210c057ae1c811}{}\index{Line@{Line}!get\+Intersection\+Point@{get\+Intersection\+Point}}
+\index{get\+Intersection\+Point@{get\+Intersection\+Point}!Line@{Line}}
+\subsubsection[{get\+Intersection\+Point(const Line \&) const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Point}$\ast$ Line\+::get\+Intersection\+Point (
+\begin{DoxyParamCaption}
+\item[{const {\bf Line} \&}]{}
+\end{DoxyParamCaption}
+) const}\label{classLine_a9449a6777c0d4783b2210c057ae1c811}
+
+
+Permet d\textquotesingle{}obtenir le point d\textquotesingle{}intersection entre la droite et celle entrée en paramètre. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em line} & Droite dont on désire obtenir le point d\textquotesingle{}intersection avec la droite courante.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Un pointeur vers un le point d\textquotesingle{}intersection entre la droite et celle entrée en paramètre si il existe, un pointeur nul sinon. 
+\end{DoxyReturn}
+\hypertarget{classLine_a9eab2739a90a731de04b385f483f68b3}{}\index{Line@{Line}!get\+Slope@{get\+Slope}}
+\index{get\+Slope@{get\+Slope}!Line@{Line}}
+\subsubsection[{get\+Slope() const }]{\setlength{\rightskip}{0pt plus 5cm}double Line\+::get\+Slope (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classLine_a9eab2739a90a731de04b385f483f68b3}
+
+
+Permet d\textquotesingle{}obtenir la pente de la droite. 
+
+\begin{DoxyReturn}{Renvoie}
+La pente de la droite. 
+\end{DoxyReturn}
+
+
+Définition à la ligne 155 du fichier line.\+hpp.
+
+
+
+Références slope.
+
+
+\begin{DoxyCode}
+156 \{
+157     \textcolor{keywordflow}{return} this->\hyperlink{classLine_a0aa35363f8285600b12ce54258338b8c}{slope};
+158 \}
+\end{DoxyCode}
+\hypertarget{classLine_aa50bf9b9bc8fa001e6f33a3914e749af}{}\index{Line@{Line}!get\+X\+Value@{get\+X\+Value}}
+\index{get\+X\+Value@{get\+X\+Value}!Line@{Line}}
+\subsubsection[{get\+X\+Value() const }]{\setlength{\rightskip}{0pt plus 5cm}double Line\+::get\+X\+Value (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classLine_aa50bf9b9bc8fa001e6f33a3914e749af}
+
+
+Permet de connaitre la valeur de x, cette valeur est incohérence si la droite n\textquotesingle{}est pas verticale. 
+
+\begin{DoxyReturn}{Renvoie}
+La valeur de x si la droite est verticale. 
+\end{DoxyReturn}
+
+
+Définition à la ligne 165 du fichier line.\+hpp.
+
+
+
+Références x\+Value.
+
+
+\begin{DoxyCode}
+166 \{
+167     \textcolor{keywordflow}{return} this->\hyperlink{classLine_af8b70928b9624988c1c42f33af93391a}{xValue};
+168 \}
+\end{DoxyCode}
+\hypertarget{classLine_a36eaf7c0fcc008e1e72a1a82137f42a4}{}\index{Line@{Line}!includes@{includes}}
+\index{includes@{includes}!Line@{Line}}
+\subsubsection[{includes(const Point \&) const }]{\setlength{\rightskip}{0pt plus 5cm}bool Line\+::includes (
+\begin{DoxyParamCaption}
+\item[{const {\bf Point} \&}]{}
+\end{DoxyParamCaption}
+) const}\label{classLine_a36eaf7c0fcc008e1e72a1a82137f42a4}
+
+
+Renseigne si le point entré en paramètre est inclus dans la droite. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em point} & \hyperlink{classPoint}{Point} dont on désire savoir s\textquotesingle{}il est inclus dans la droite.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+{\ttfamily true} si le point entré en paramètre est inclus dans la droite. 
+\end{DoxyReturn}
+\hypertarget{classLine_adb1e4c411e63f9ac31f70648fa3149d7}{}\index{Line@{Line}!is\+Vertical@{is\+Vertical}}
+\index{is\+Vertical@{is\+Vertical}!Line@{Line}}
+\subsubsection[{is\+Vertical() const }]{\setlength{\rightskip}{0pt plus 5cm}bool Line\+::is\+Vertical (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classLine_adb1e4c411e63f9ac31f70648fa3149d7}
+
+
+Renseigne si la droite est verticale. 
+
+\begin{DoxyReturn}{Renvoie}
+{\ttfamily true} Si la droite est verticale. 
+\end{DoxyReturn}
+\hypertarget{classLine_ae2cb0479252a7f5a2c163d1197fc990f}{}\index{Line@{Line}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Line@{Line}}
+\subsubsection[{operator"!=(const Line \&) const }]{\setlength{\rightskip}{0pt plus 5cm}bool Line\+::operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Line} \&}]{}
+\end{DoxyParamCaption}
+) const}\label{classLine_ae2cb0479252a7f5a2c163d1197fc990f}
+
+
+Permet de savoir si deux lignes sont différentes. 
+
+\begin{DoxyReturn}{Renvoie}
+{\ttfamily true} Si deux lignes sont différentes. 
+\end{DoxyReturn}
+\hypertarget{classLine_aff9faa550dc184fac56e3ef22439fdf9}{}\index{Line@{Line}!operator=@{operator=}}
+\index{operator=@{operator=}!Line@{Line}}
+\subsubsection[{operator=(const Line \&)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Line}\& Line\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Line} \&}]{}
+\end{DoxyParamCaption}
+)}\label{classLine_aff9faa550dc184fac56e3ef22439fdf9}
+
+
+Permet de copier une ligne. 
+
+\begin{DoxyReturn}{Renvoie}
+La ligne courante représentant la ligne passée en paramètre. 
+\end{DoxyReturn}
+\hypertarget{classLine_a5f1b6226cd499d6d209cda4b8517c9b7}{}\index{Line@{Line}!operator==@{operator==}}
+\index{operator==@{operator==}!Line@{Line}}
+\subsubsection[{operator==(const Line \&) const }]{\setlength{\rightskip}{0pt plus 5cm}bool Line\+::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Line} \&}]{}
+\end{DoxyParamCaption}
+) const}\label{classLine_a5f1b6226cd499d6d209cda4b8517c9b7}
+
+
+Permet de savoir si deux lignes sont identiques. 
+
+\begin{DoxyReturn}{Renvoie}
+{\ttfamily true} Si deux lignes sont identiques. 
+\end{DoxyReturn}
+
+
+\subsection{Documentation des données membres}
+\hypertarget{classLine_a6ea839b47ccf670770ebc7dff9f0dbba}{}\index{Line@{Line}!indep\+Term@{indep\+Term}}
+\index{indep\+Term@{indep\+Term}!Line@{Line}}
+\subsubsection[{indep\+Term}]{\setlength{\rightskip}{0pt plus 5cm}double Line\+::indep\+Term\hspace{0.3cm}{\ttfamily [protected]}}\label{classLine_a6ea839b47ccf670770ebc7dff9f0dbba}
+
+
+indep\+Term Contient la valeur du terme indépendant de la droite. 
+
+
+
+Définition à la ligne 26 du fichier line.\+hpp.
+
+
+
+Référencé par get\+Indep\+Term().
+
+\hypertarget{classLine_a0aa35363f8285600b12ce54258338b8c}{}\index{Line@{Line}!slope@{slope}}
+\index{slope@{slope}!Line@{Line}}
+\subsubsection[{slope}]{\setlength{\rightskip}{0pt plus 5cm}double Line\+::slope\hspace{0.3cm}{\ttfamily [protected]}}\label{classLine_a0aa35363f8285600b12ce54258338b8c}
+
+
+slope Valeur du coefficient angulaire de la droite. 
+
+
+
+Définition à la ligne 21 du fichier line.\+hpp.
+
+
+
+Référencé par get\+Slope().
+
+\hypertarget{classLine_af8b70928b9624988c1c42f33af93391a}{}\index{Line@{Line}!x\+Value@{x\+Value}}
+\index{x\+Value@{x\+Value}!Line@{Line}}
+\subsubsection[{x\+Value}]{\setlength{\rightskip}{0pt plus 5cm}double Line\+::x\+Value\hspace{0.3cm}{\ttfamily [protected]}}\label{classLine_af8b70928b9624988c1c42f33af93391a}
+
+
+x\+Value Contient la valeur de x lorsque la droite est verticale. 
+
+
+
+Définition à la ligne 31 du fichier line.\+hpp.
+
+
+
+Référencé par get\+X\+Value().
+
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+model/geometry/\hyperlink{line_8hpp}{line.\+hpp}\end{DoxyCompactItemize}

@@ -1,0 +1,358 @@
+\hypertarget{classRectangle}{}\section{Référence de la classe Rectangle}
+\label{classRectangle}\index{Rectangle@{Rectangle}}
+
+
+Le rectangle est objet géométrique, du plan, à quatre coté parallèles deux à deux.  
+
+
+
+
+{\ttfamily \#include $<$rectangle.\+hpp$>$}
+
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classRectangle_ad5508555707c9e4d7334292a08037079}{Rectangle} (double, double, const \hyperlink{classPoint}{Point} \&)
+\begin{DoxyCompactList}\small\item\em Permet de construire un nouveau rectangle initialisé. \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{classPoint}{Point} $>$ \hyperlink{classRectangle_a062fb917aa2d811e17ed59caa43c662a}{get\+Intersection\+Points} (const \hyperlink{classLine}{Line} \&) const 
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}obtenir les points d\textquotesingle{}intersection entre le rectangle et la droite entrée en paramètre. \end{DoxyCompactList}\item 
+bool \hyperlink{classRectangle_a74f9fcc2cd8e170fd13137b95903dcb5}{is\+On\+Border} (const \hyperlink{classPoint}{Point} \&) const 
+\begin{DoxyCompactList}\small\item\em Renseigne si un point se trouve sur la bordure du rectangle. \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{classLine}{Line} $>$ \hyperlink{classRectangle_aaed6939da22aef8b1028b3310c4b0ff0}{get\+Edges} () const 
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}obtenir les côtés du rectangle sous forme de droites. \end{DoxyCompactList}\item 
+virtual double \hyperlink{classRectangle_a1b97d538cc1acefa6b09aae2160e7921}{get\+Width} () const 
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}obtenir la longueur du rectangle. \end{DoxyCompactList}\item 
+virtual double \hyperlink{classRectangle_aaad99f5dd2be859eef0eb3482cb55c13}{get\+Height} () const 
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}obtenir la hauteur du rectangle. \end{DoxyCompactList}\item 
+\hyperlink{classPoint}{Point} \hyperlink{classRectangle_af54d3160a6d8d6c432b547207d997052}{get\+Up\+Left\+Corner} () const 
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}obtenir les coordonnées du coté supérieur du rectangle. \end{DoxyCompactList}\item 
+bool \hyperlink{classRectangle_a140aa8d43ff12d36f3891dea9f439638}{operator==} (const \hyperlink{classRectangle}{Rectangle} \&) const 
+\begin{DoxyCompactList}\small\item\em Permet de savoir si deux rectangles sont identiques. \end{DoxyCompactList}\item 
+bool \hyperlink{classRectangle_ac29d68cce7f438771cf2b0e72888457a}{operator!=} (const \hyperlink{classRectangle}{Rectangle} \&) const 
+\begin{DoxyCompactList}\small\item\em Permet de savoir si deux rectangles sont différents. \end{DoxyCompactList}\item 
+\hyperlink{classRectangle}{Rectangle} \& \hyperlink{classRectangle_a64aa28fe918b233e6241a7841465b093}{operator=} (const \hyperlink{classRectangle}{Rectangle} \&)
+\begin{DoxyCompactList}\small\item\em Permet de copier un rectangle dans un autre. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Attributs protégés}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{classRectangle_ac2c47512ca05c56cec73c32bb693d479}{width}
+\begin{DoxyCompactList}\small\item\em La largeur du rectangle. \end{DoxyCompactList}\item 
+double \hyperlink{classRectangle_a58c0573f0d706d238759395e8272c6bf}{height}
+\begin{DoxyCompactList}\small\item\em La longueur du rectangle. \end{DoxyCompactList}\item 
+\hyperlink{classPoint}{Point} \hyperlink{classRectangle_aeeb6ca62aa27e964265c92d1ea25d511}{up\+Left\+Corner}
+\begin{DoxyCompactList}\small\item\em La position du coin supérieur gauche du rectangle. \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{classLine}{Line} $>$ \hyperlink{classRectangle_a2c04232970a644df46826a411714966f}{edges}
+\begin{DoxyCompactList}\small\item\em Les équations des 4 droites composant le rectangle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Le rectangle est objet géométrique, du plan, à quatre coté parallèles deux à deux. 
+
+Définition à la ligne 14 du fichier rectangle.\+hpp.
+
+
+
+Graphe d\textquotesingle{}héritage de Rectangle\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{dd/d23/classRectangle__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Graphe de collaboration de Rectangle\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{db/dea/classRectangle__coll__graph}
+\end{center}
+\end{figure}
+
+
+\subsection{Documentation des constructeurs et destructeur}
+\hypertarget{classRectangle_ad5508555707c9e4d7334292a08037079}{}\index{Rectangle@{Rectangle}!Rectangle@{Rectangle}}
+\index{Rectangle@{Rectangle}!Rectangle@{Rectangle}}
+\subsubsection[{Rectangle(double, double, const Point \&)}]{\setlength{\rightskip}{0pt plus 5cm}Rectangle\+::\+Rectangle (
+\begin{DoxyParamCaption}
+\item[{double}]{, }
+\item[{double}]{, }
+\item[{const {\bf Point} \&}]{}
+\end{DoxyParamCaption}
+)}\label{classRectangle_ad5508555707c9e4d7334292a08037079}
+
+
+Permet de construire un nouveau rectangle initialisé. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em width} & Largeur du rectangle. \\
+\hline
+{\em height} & Hauteur du rectangle. \\
+\hline
+{\em up\+Left\+Corner} & Côté supérieur gauche du rectangle. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentation des fonctions membres}
+\hypertarget{classRectangle_aaed6939da22aef8b1028b3310c4b0ff0}{}\index{Rectangle@{Rectangle}!get\+Edges@{get\+Edges}}
+\index{get\+Edges@{get\+Edges}!Rectangle@{Rectangle}}
+\subsubsection[{get\+Edges() const }]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ {\bf Line} $>$ Rectangle\+::get\+Edges (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classRectangle_aaed6939da22aef8b1028b3310c4b0ff0}
+
+
+Permet d\textquotesingle{}obtenir les côtés du rectangle sous forme de droites. 
+
+\begin{DoxyReturn}{Renvoie}
+Les côtés du rectangle sous forme de droites. 
+\end{DoxyReturn}
+
+
+Définition à la ligne 132 du fichier rectangle.\+hpp.
+
+
+
+Références edges.
+
+
+\begin{DoxyCode}
+133 \{
+134     \textcolor{keywordflow}{return} this->\hyperlink{classRectangle_a2c04232970a644df46826a411714966f}{edges};
+135 \}
+\end{DoxyCode}
+\hypertarget{classRectangle_aaad99f5dd2be859eef0eb3482cb55c13}{}\index{Rectangle@{Rectangle}!get\+Height@{get\+Height}}
+\index{get\+Height@{get\+Height}!Rectangle@{Rectangle}}
+\subsubsection[{get\+Height() const }]{\setlength{\rightskip}{0pt plus 5cm}double Rectangle\+::get\+Height (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classRectangle_aaad99f5dd2be859eef0eb3482cb55c13}
+
+
+Permet d\textquotesingle{}obtenir la hauteur du rectangle. 
+
+\begin{DoxyReturn}{Renvoie}
+La hauteur du rectangle. 
+\end{DoxyReturn}
+
+
+Définition à la ligne 142 du fichier rectangle.\+hpp.
+
+
+
+Références height.
+
+
+\begin{DoxyCode}
+143 \{
+144     \textcolor{keywordflow}{return} this->\hyperlink{classRectangle_a58c0573f0d706d238759395e8272c6bf}{height};
+145 \}
+\end{DoxyCode}
+\hypertarget{classRectangle_a062fb917aa2d811e17ed59caa43c662a}{}\index{Rectangle@{Rectangle}!get\+Intersection\+Points@{get\+Intersection\+Points}}
+\index{get\+Intersection\+Points@{get\+Intersection\+Points}!Rectangle@{Rectangle}}
+\subsubsection[{get\+Intersection\+Points(const Line \&) const }]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<${\bf Point}$>$ Rectangle\+::get\+Intersection\+Points (
+\begin{DoxyParamCaption}
+\item[{const {\bf Line} \&}]{}
+\end{DoxyParamCaption}
+) const}\label{classRectangle_a062fb917aa2d811e17ed59caa43c662a}
+
+
+Permet d\textquotesingle{}obtenir les points d\textquotesingle{}intersection entre le rectangle et la droite entrée en paramètre. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em line} & Droite dont on désire obtenir le point d\textquotesingle{}intersection avec la droite courante.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Un vecteur contenant les points d\textquotesingle{}intersection entre la droite entrée en paramètre et le rectangle. 
+\end{DoxyReturn}
+\hypertarget{classRectangle_af54d3160a6d8d6c432b547207d997052}{}\index{Rectangle@{Rectangle}!get\+Up\+Left\+Corner@{get\+Up\+Left\+Corner}}
+\index{get\+Up\+Left\+Corner@{get\+Up\+Left\+Corner}!Rectangle@{Rectangle}}
+\subsubsection[{get\+Up\+Left\+Corner() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Point} Rectangle\+::get\+Up\+Left\+Corner (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classRectangle_af54d3160a6d8d6c432b547207d997052}
+
+
+Permet d\textquotesingle{}obtenir les coordonnées du coté supérieur du rectangle. 
+
+\begin{DoxyReturn}{Renvoie}
+Les coordonnées du coté supérieur du rectangle. 
+\end{DoxyReturn}
+
+
+Définition à la ligne 147 du fichier rectangle.\+hpp.
+
+
+
+Références up\+Left\+Corner.
+
+
+\begin{DoxyCode}
+148 \{
+149     \textcolor{keywordflow}{return} this->\hyperlink{classRectangle_aeeb6ca62aa27e964265c92d1ea25d511}{upLeftCorner};
+150 \}
+\end{DoxyCode}
+\hypertarget{classRectangle_a1b97d538cc1acefa6b09aae2160e7921}{}\index{Rectangle@{Rectangle}!get\+Width@{get\+Width}}
+\index{get\+Width@{get\+Width}!Rectangle@{Rectangle}}
+\subsubsection[{get\+Width() const }]{\setlength{\rightskip}{0pt plus 5cm}double Rectangle\+::get\+Width (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classRectangle_a1b97d538cc1acefa6b09aae2160e7921}
+
+
+Permet d\textquotesingle{}obtenir la longueur du rectangle. 
+
+\begin{DoxyReturn}{Renvoie}
+La longueur du rectangle. 
+\end{DoxyReturn}
+
+
+Définition à la ligne 137 du fichier rectangle.\+hpp.
+
+
+
+Références width.
+
+
+\begin{DoxyCode}
+138 \{
+139     \textcolor{keywordflow}{return} this->\hyperlink{classRectangle_ac2c47512ca05c56cec73c32bb693d479}{width};
+140 \}
+\end{DoxyCode}
+\hypertarget{classRectangle_a74f9fcc2cd8e170fd13137b95903dcb5}{}\index{Rectangle@{Rectangle}!is\+On\+Border@{is\+On\+Border}}
+\index{is\+On\+Border@{is\+On\+Border}!Rectangle@{Rectangle}}
+\subsubsection[{is\+On\+Border(const Point \&) const }]{\setlength{\rightskip}{0pt plus 5cm}bool Rectangle\+::is\+On\+Border (
+\begin{DoxyParamCaption}
+\item[{const {\bf Point} \&}]{}
+\end{DoxyParamCaption}
+) const}\label{classRectangle_a74f9fcc2cd8e170fd13137b95903dcb5}
+
+
+Renseigne si un point se trouve sur la bordure du rectangle. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em point} & \hyperlink{classPoint}{Point} dont on désire savoir s\textquotesingle{}il est inclus sur la bordure du rectangle.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+{\ttfamily true} Si le \hyperlink{classPoint}{Point} entré en paramètre est inclus sur la bordure du rectangle. 
+\end{DoxyReturn}
+\hypertarget{classRectangle_ac29d68cce7f438771cf2b0e72888457a}{}\index{Rectangle@{Rectangle}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Rectangle@{Rectangle}}
+\subsubsection[{operator"!=(const Rectangle \&) const }]{\setlength{\rightskip}{0pt plus 5cm}bool Rectangle\+::operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Rectangle} \&}]{}
+\end{DoxyParamCaption}
+) const}\label{classRectangle_ac29d68cce7f438771cf2b0e72888457a}
+
+
+Permet de savoir si deux rectangles sont différents. 
+
+\begin{DoxyReturn}{Renvoie}
+{\ttfamily true} Si les deux rectangles sont différents. 
+\end{DoxyReturn}
+\hypertarget{classRectangle_a64aa28fe918b233e6241a7841465b093}{}\index{Rectangle@{Rectangle}!operator=@{operator=}}
+\index{operator=@{operator=}!Rectangle@{Rectangle}}
+\subsubsection[{operator=(const Rectangle \&)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Rectangle}\& Rectangle\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Rectangle} \&}]{}
+\end{DoxyParamCaption}
+)}\label{classRectangle_a64aa28fe918b233e6241a7841465b093}
+
+
+Permet de copier un rectangle dans un autre. 
+
+\begin{DoxyReturn}{Renvoie}
+Le rectangle courant modifié. 
+\end{DoxyReturn}
+\hypertarget{classRectangle_a140aa8d43ff12d36f3891dea9f439638}{}\index{Rectangle@{Rectangle}!operator==@{operator==}}
+\index{operator==@{operator==}!Rectangle@{Rectangle}}
+\subsubsection[{operator==(const Rectangle \&) const }]{\setlength{\rightskip}{0pt plus 5cm}bool Rectangle\+::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Rectangle} \&}]{}
+\end{DoxyParamCaption}
+) const}\label{classRectangle_a140aa8d43ff12d36f3891dea9f439638}
+
+
+Permet de savoir si deux rectangles sont identiques. 
+
+\begin{DoxyReturn}{Renvoie}
+{\ttfamily true} Si les deux rectangles sont identiques. 
+\end{DoxyReturn}
+
+
+\subsection{Documentation des données membres}
+\hypertarget{classRectangle_a2c04232970a644df46826a411714966f}{}\index{Rectangle@{Rectangle}!edges@{edges}}
+\index{edges@{edges}!Rectangle@{Rectangle}}
+\subsubsection[{edges}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<${\bf Line}$>$ Rectangle\+::edges\hspace{0.3cm}{\ttfamily [protected]}}\label{classRectangle_a2c04232970a644df46826a411714966f}
+
+
+Les équations des 4 droites composant le rectangle. 
+
+
+
+Définition à la ligne 37 du fichier rectangle.\+hpp.
+
+
+
+Référencé par get\+Edges().
+
+\hypertarget{classRectangle_a58c0573f0d706d238759395e8272c6bf}{}\index{Rectangle@{Rectangle}!height@{height}}
+\index{height@{height}!Rectangle@{Rectangle}}
+\subsubsection[{height}]{\setlength{\rightskip}{0pt plus 5cm}double Rectangle\+::height\hspace{0.3cm}{\ttfamily [protected]}}\label{classRectangle_a58c0573f0d706d238759395e8272c6bf}
+
+
+La longueur du rectangle. 
+
+
+
+Définition à la ligne 27 du fichier rectangle.\+hpp.
+
+
+
+Référencé par Dest\+::get\+Edge(), et get\+Height().
+
+\hypertarget{classRectangle_aeeb6ca62aa27e964265c92d1ea25d511}{}\index{Rectangle@{Rectangle}!up\+Left\+Corner@{up\+Left\+Corner}}
+\index{up\+Left\+Corner@{up\+Left\+Corner}!Rectangle@{Rectangle}}
+\subsubsection[{up\+Left\+Corner}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Point} Rectangle\+::up\+Left\+Corner\hspace{0.3cm}{\ttfamily [protected]}}\label{classRectangle_aeeb6ca62aa27e964265c92d1ea25d511}
+
+
+La position du coin supérieur gauche du rectangle. 
+
+
+
+Définition à la ligne 32 du fichier rectangle.\+hpp.
+
+
+
+Référencé par Dest\+::get\+Position(), Source\+::get\+Position(), et get\+Up\+Left\+Corner().
+
+\hypertarget{classRectangle_ac2c47512ca05c56cec73c32bb693d479}{}\index{Rectangle@{Rectangle}!width@{width}}
+\index{width@{width}!Rectangle@{Rectangle}}
+\subsubsection[{width}]{\setlength{\rightskip}{0pt plus 5cm}double Rectangle\+::width\hspace{0.3cm}{\ttfamily [protected]}}\label{classRectangle_ac2c47512ca05c56cec73c32bb693d479}
+
+
+La largeur du rectangle. 
+
+
+
+Définition à la ligne 22 du fichier rectangle.\+hpp.
+
+
+
+Référencé par Source\+::get\+Edge(), et get\+Width().
+
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+model/geometry/\hyperlink{rectangle_8hpp}{rectangle.\+hpp}\end{DoxyCompactItemize}

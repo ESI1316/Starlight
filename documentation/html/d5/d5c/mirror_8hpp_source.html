@@ -1,0 +1,257 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.9.1"/>
+<title>Starlight:  Fichier source de model/elements/mirror.hpp</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="../../customdoxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Starlight
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.9.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="../../namespaces.html"><span>Espaces&#160;de&#160;nommage</span></a></li>
+      <li><a href="../../annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="../../files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="../../globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_3f14f6767c31cb4a1d22c13c18cc6fc3.html">model</a></li><li class="navelem"><a class="el" href="../../dir_6cb5f6c5bce0f61f6326f5ca1dc4dc30.html">elements</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">mirror.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d5/d5c/mirror_8hpp.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef MIRROR_HPP</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define MIRROR_HPP</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;ostream&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../da/dbc/element_8hpp.html">model/elements/element.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d3/d9d/line_8hpp.html">model/geometry/line.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d0/de4/point_8hpp.html">model/geometry/point.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">class </span><a class="code" href="../../d9/dce/classRay.html">Ray</a>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="../../de/dfd/classMirror.html">   21</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../de/dfd/classMirror.html">Mirror</a> : <span class="keyword">public</span> <a class="code" href="../../d5/d3c/classElement.html">Element</a>, <span class="keyword">public</span> <a class="code" href="../../db/db6/classLine.html">Line</a></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="../../de/dfd/classMirror.html#aeec9a930fcc8f87373a5ca5c403edc53">   27</a></span>&#160;    <a class="code" href="../../dc/d4f/classPoint.html">Point</a> <a class="code" href="../../de/dfd/classMirror.html#aeec9a930fcc8f87373a5ca5c403edc53">pivot</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="../../de/dfd/classMirror.html#a03f7e5469eaa52fa2090542182f99fbd">   32</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../de/dfd/classMirror.html#a03f7e5469eaa52fa2090542182f99fbd">length</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="../../de/dfd/classMirror.html#aef41f122c76a825af7d12eaddf6ff1ea">   37</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../de/dfd/classMirror.html#aef41f122c76a825af7d12eaddf6ff1ea">xpad</a>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="../../de/dfd/classMirror.html#a797115030b6a7bded6bab18a080e30c6">   42</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="../../de/dfd/classMirror.html#a797115030b6a7bded6bab18a080e30c6">xMin</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="../../de/dfd/classMirror.html#ab0e8322594aeb39432b4696d67e3ba6d">   47</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="../../de/dfd/classMirror.html#ab0e8322594aeb39432b4696d67e3ba6d">xMax</a>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="../../de/dfd/classMirror.html#a4b18a9326165e36b1ae05604b34ce758">   52</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="../../de/dfd/classMirror.html#a4b18a9326165e36b1ae05604b34ce758">yMin</a>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="../../de/dfd/classMirror.html#a2e76c506f910e388db245355ab17ce3a">   57</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="../../de/dfd/classMirror.html#a2e76c506f910e388db245355ab17ce3a">yMax</a>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="../../de/dfd/classMirror.html#a28ecd988b42db315b57fc8d9b23ebd86">   62</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="../../de/dfd/classMirror.html#a28ecd988b42db315b57fc8d9b23ebd86">alpha</a>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="../../de/dfd/classMirror.html#ac42fb9a193abfb984ca27bbad2564ff9">   67</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="../../de/dfd/classMirror.html#ac42fb9a193abfb984ca27bbad2564ff9">alphaMin</a>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="../../de/dfd/classMirror.html#acc41ebc589e76d723bff02eea9ddfee3">   72</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="../../de/dfd/classMirror.html#acc41ebc589e76d723bff02eea9ddfee3">alphaMax</a>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <a class="code" href="../../de/dfd/classMirror.html#aad395af8bb0ef4c68259cc3c694fe663">Mirror</a>(<span class="keyword">const</span> <a class="code" href="../../dc/d4f/classPoint.html">Point</a> &amp;, <span class="keywordtype">int</span>, <span class="keywordtype">int</span>, <span class="keywordtype">double</span>);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <a class="code" href="../../de/dfd/classMirror.html#aad395af8bb0ef4c68259cc3c694fe663">Mirror</a>(<span class="keyword">const</span> <a class="code" href="../../dc/d4f/classPoint.html">Point</a> &amp;, <span class="keywordtype">int</span>, <span class="keywordtype">int</span>, <span class="keywordtype">double</span>, <a class="code" href="../../dc/d4f/classPoint.html">Point</a>, <a class="code" href="../../dc/d4f/classPoint.html">Point</a>, <span class="keywordtype">double</span>, <span class="keywordtype">double</span>);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../dc/d4f/classPoint.html">Point</a> &amp; <a class="code" href="../../de/dfd/classMirror.html#a2019420aed1cd71cc5b70ea7f9e0029e">getPivot</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../de/dfd/classMirror.html#a10044b17327d12c0fb05b086e98ae4f4">getLength</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../de/dfd/classMirror.html#a5f539d8343f70ec68eaee6fd472049ae">getXPad</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="keywordtype">double</span> <a class="code" href="../../de/dfd/classMirror.html#a6bdf519d0a2135536c78d38582d277ea">getAngle</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keywordtype">double</span> <a class="code" href="../../de/dfd/classMirror.html#a1aecd262fdf636697e6027da60685bb9">getMinAngle</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="keywordtype">double</span> <a class="code" href="../../de/dfd/classMirror.html#aedb5e8c9ddad54164921fdf75f4270d9">getMaxAngle</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <a class="code" href="../../dc/d4f/classPoint.html">Point</a> <a class="code" href="../../de/dfd/classMirror.html#a589b4be142b61fcc247ce61bd8ec5d47">getMinPivot</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <a class="code" href="../../dc/d4f/classPoint.html">Point</a> <a class="code" href="../../de/dfd/classMirror.html#a2b1383e76cc709b4b51f10492d9ed1ad">getMaxPivot</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../de/dfd/classMirror.html#a83f8934245fe330510b031a19fa77fbe">setPivot</a>(<span class="keyword">const</span> <a class="code" href="../../dc/d4f/classPoint.html">Point</a> &amp;);</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../de/dfd/classMirror.html#aa5c28cf6d8a88d11f06b4140389c2a06">setAngle</a>(<span class="keywordtype">double</span>);</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../de/dfd/classMirror.html#a35dd50199a1bb8f2a0dea49259df6e95">rotate</a>(<span class="keywordtype">double</span>);</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../de/dfd/classMirror.html#ac9c58d670d8c84b41135c07fedd0b502">translate</a>(<span class="keyword">const</span> <span class="keywordtype">double</span>, <span class="keyword">const</span> <span class="keywordtype">double</span>);</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    <a class="code" href="../../dc/d4f/classPoint.html">Point</a> <a class="code" href="../../de/dfd/classMirror.html#aad24b622e2f9c18691ec70a1bbdadbcf">getStart</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <a class="code" href="../../dc/d4f/classPoint.html">Point</a> <a class="code" href="../../de/dfd/classMirror.html#ae9ba03e1a3d35a85f8b55ec6ea2a7462">getEnd</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../de/dfd/classMirror.html#a4d3fe38f3bbe5b546384ef0fb81f16c4">getBounds</a>(<a class="code" href="../../dc/d4f/classPoint.html">Point</a> *, <a class="code" href="../../dc/d4f/classPoint.html">Point</a> *) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../de/dfd/classMirror.html#aa4fc01092dae3dab55dd2e74af41f429">checkAngleRange</a>(<span class="keywordtype">double</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../de/dfd/classMirror.html#a52f096a72ba715cba18d5d3d79d507f4">checkPivotRange</a>(<span class="keyword">const</span> <a class="code" href="../../dc/d4f/classPoint.html">Point</a> &amp;) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../de/dfd/classMirror.html#a149fb6af1dcdcffd685b21019f189c72">reactToRay</a>(<a class="code" href="../../d9/dce/classRay.html">Ray</a>);</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    <a class="code" href="../../dc/d4f/classPoint.html">Point</a> * <a class="code" href="../../de/dfd/classMirror.html#af9b8d54ae559b388cb04df6f8d391f47">includeRay</a>(<span class="keyword">const</span> <a class="code" href="../../d9/dce/classRay.html">Ray</a> &amp;) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../de/dfd/classMirror.html#aca852b6cf22bec88a402d3b7e7c78ca9">operator==</a>(<span class="keyword">const</span> <a class="code" href="../../de/dfd/classMirror.html">Mirror</a> &amp;) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../de/dfd/classMirror.html#a0538deb5f7234df6cf635e3836d6dfae">operator!=</a>(<span class="keyword">const</span> <a class="code" href="../../de/dfd/classMirror.html">Mirror</a> &amp;) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;};</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;std::ostream &amp; <a class="code" href="../../d5/d5c/mirror_8hpp.html#a740b4bd02874d74283d81e1f4fd9c055">operator&lt;&lt;</a>(std::ostream &amp;, <span class="keyword">const</span> <a class="code" href="../../de/dfd/classMirror.html">Mirror</a> &amp;);</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;</div>
+<div class="line"><a name="l00323"></a><span class="lineno"><a class="line" href="../../de/dfd/classMirror.html#a2019420aed1cd71cc5b70ea7f9e0029e">  323</a></span>&#160;<span class="keyword">inline</span> <span class="keyword">const</span> <a class="code" href="../../dc/d4f/classPoint.html">Point</a> &amp; <a class="code" href="../../de/dfd/classMirror.html#a2019420aed1cd71cc5b70ea7f9e0029e">Mirror::getPivot</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    <span class="keywordflow">return</span> this-&gt;<a class="code" href="../../de/dfd/classMirror.html#aeec9a930fcc8f87373a5ca5c403edc53">pivot</a>;</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;}</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;</div>
+<div class="line"><a name="l00328"></a><span class="lineno"><a class="line" href="../../de/dfd/classMirror.html#a10044b17327d12c0fb05b086e98ae4f4">  328</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="../../de/dfd/classMirror.html#a10044b17327d12c0fb05b086e98ae4f4">Mirror::getLength</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    <span class="keywordflow">return</span> this-&gt;<a class="code" href="../../de/dfd/classMirror.html#a03f7e5469eaa52fa2090542182f99fbd">length</a>;</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;}</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;</div>
+<div class="line"><a name="l00333"></a><span class="lineno"><a class="line" href="../../de/dfd/classMirror.html#a5f539d8343f70ec68eaee6fd472049ae">  333</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="../../de/dfd/classMirror.html#a5f539d8343f70ec68eaee6fd472049ae">Mirror::getXPad</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    <span class="keywordflow">return</span> this-&gt;<a class="code" href="../../de/dfd/classMirror.html#aef41f122c76a825af7d12eaddf6ff1ea">xpad</a>;</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;}</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;</div>
+<div class="line"><a name="l00338"></a><span class="lineno"><a class="line" href="../../de/dfd/classMirror.html#a6bdf519d0a2135536c78d38582d277ea">  338</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">double</span> <a class="code" href="../../de/dfd/classMirror.html#a6bdf519d0a2135536c78d38582d277ea">Mirror::getAngle</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    <span class="keywordflow">return</span> this-&gt;<a class="code" href="../../de/dfd/classMirror.html#a28ecd988b42db315b57fc8d9b23ebd86">alpha</a>;</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;}</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;</div>
+<div class="line"><a name="l00343"></a><span class="lineno"><a class="line" href="../../de/dfd/classMirror.html#a1aecd262fdf636697e6027da60685bb9">  343</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">double</span> <a class="code" href="../../de/dfd/classMirror.html#a1aecd262fdf636697e6027da60685bb9">Mirror::getMinAngle</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    <span class="keywordflow">return</span> this-&gt;<a class="code" href="../../de/dfd/classMirror.html#ac42fb9a193abfb984ca27bbad2564ff9">alphaMin</a>;</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;}</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;</div>
+<div class="line"><a name="l00348"></a><span class="lineno"><a class="line" href="../../de/dfd/classMirror.html#aedb5e8c9ddad54164921fdf75f4270d9">  348</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">double</span> <a class="code" href="../../de/dfd/classMirror.html#aedb5e8c9ddad54164921fdf75f4270d9">Mirror::getMaxAngle</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    <span class="keywordflow">return</span> this-&gt;<a class="code" href="../../de/dfd/classMirror.html#acc41ebc589e76d723bff02eea9ddfee3">alphaMax</a>;</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;}</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;<span class="preprocessor">#endif // MIRROR_HPP</span></div>
+<div class="ttc" id="classMirror_html_ab0e8322594aeb39432b4696d67e3ba6d"><div class="ttname"><a href="../../de/dfd/classMirror.html#ab0e8322594aeb39432b4696d67e3ba6d">Mirror::xMax</a></div><div class="ttdeci">double xMax</div><div class="ttdoc">Limite maximale d&#39;abscisse où peut se situer le pivot du miroir. </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d5c/mirror_8hpp_source.html#l00047">mirror.hpp:47</a></div></div>
+<div class="ttc" id="classMirror_html_a28ecd988b42db315b57fc8d9b23ebd86"><div class="ttname"><a href="../../de/dfd/classMirror.html#a28ecd988b42db315b57fc8d9b23ebd86">Mirror::alpha</a></div><div class="ttdeci">double alpha</div><div class="ttdoc">L&#39;angle actuel de rotation du miroir. </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d5c/mirror_8hpp_source.html#l00062">mirror.hpp:62</a></div></div>
+<div class="ttc" id="classMirror_html_a2b1383e76cc709b4b51f10492d9ed1ad"><div class="ttname"><a href="../../de/dfd/classMirror.html#a2b1383e76cc709b4b51f10492d9ed1ad">Mirror::getMaxPivot</a></div><div class="ttdeci">Point getMaxPivot() const </div><div class="ttdoc">Retourne la position maximum du miroir. </div></div>
+<div class="ttc" id="classMirror_html_a6bdf519d0a2135536c78d38582d277ea"><div class="ttname"><a href="../../de/dfd/classMirror.html#a6bdf519d0a2135536c78d38582d277ea">Mirror::getAngle</a></div><div class="ttdeci">double getAngle() const </div><div class="ttdoc">Retourne l&#39;inclinaison du miroir. </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d5c/mirror_8hpp_source.html#l00338">mirror.hpp:338</a></div></div>
+<div class="ttc" id="classMirror_html_a149fb6af1dcdcffd685b21019f189c72"><div class="ttname"><a href="../../de/dfd/classMirror.html#a149fb6af1dcdcffd685b21019f189c72">Mirror::reactToRay</a></div><div class="ttdeci">void reactToRay(Ray)</div><div class="ttdoc">Réaction à l&#39;exposition d&#39;un rayon; celui-ci est réfléchi selon le principe naturel de la réflexion d...</div></div>
+<div class="ttc" id="classMirror_html_af9b8d54ae559b388cb04df6f8d391f47"><div class="ttname"><a href="../../de/dfd/classMirror.html#af9b8d54ae559b388cb04df6f8d391f47">Mirror::includeRay</a></div><div class="ttdeci">Point * includeRay(const Ray &amp;) const </div><div class="ttdoc">Renseigne si le miroir est dans la trajectoire du rayon. </div></div>
+<div class="ttc" id="mirror_8hpp_html_a740b4bd02874d74283d81e1f4fd9c055"><div class="ttname"><a href="../../d5/d5c/mirror_8hpp.html#a740b4bd02874d74283d81e1f4fd9c055">operator&lt;&lt;</a></div><div class="ttdeci">std::ostream &amp; operator&lt;&lt;(std::ostream &amp;, const Mirror &amp;)</div><div class="ttdoc">Définition, externe, de l&#39;opérateur permettant de produire un affichage formaté. </div></div>
+<div class="ttc" id="point_8hpp_html"><div class="ttname"><a href="../../d0/de4/point_8hpp.html">point.hpp</a></div></div>
+<div class="ttc" id="classMirror_html_a03f7e5469eaa52fa2090542182f99fbd"><div class="ttname"><a href="../../de/dfd/classMirror.html#a03f7e5469eaa52fa2090542182f99fbd">Mirror::length</a></div><div class="ttdeci">int length</div><div class="ttdoc">La longueur totale du miroir. </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d5c/mirror_8hpp_source.html#l00032">mirror.hpp:32</a></div></div>
+<div class="ttc" id="classMirror_html_aad395af8bb0ef4c68259cc3c694fe663"><div class="ttname"><a href="../../de/dfd/classMirror.html#aad395af8bb0ef4c68259cc3c694fe663">Mirror::Mirror</a></div><div class="ttdeci">Mirror(const Point &amp;, int, int, double)</div><div class="ttdoc">Instancie un miroir en une position donnée, d&#39;une certaine longueur et orienté d&#39;un certain angle...</div></div>
+<div class="ttc" id="classMirror_html_a83f8934245fe330510b031a19fa77fbe"><div class="ttname"><a href="../../de/dfd/classMirror.html#a83f8934245fe330510b031a19fa77fbe">Mirror::setPivot</a></div><div class="ttdeci">bool setPivot(const Point &amp;)</div><div class="ttdoc">Déplace le miroir en la position donnée, si celle-ci est autorisée. </div></div>
+<div class="ttc" id="classLine_html"><div class="ttname"><a href="../../db/db6/classLine.html">Line</a></div><div class="ttdoc">Représente une droite sous la forme de son équation complète; . </div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d9d/line_8hpp_source.html#l00013">line.hpp:13</a></div></div>
+<div class="ttc" id="classMirror_html_aef41f122c76a825af7d12eaddf6ff1ea"><div class="ttname"><a href="../../de/dfd/classMirror.html#aef41f122c76a825af7d12eaddf6ff1ea">Mirror::xpad</a></div><div class="ttdeci">int xpad</div><div class="ttdoc">La longueur séparant le point de pivot d&#39;un point extrême du miroir. </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d5c/mirror_8hpp_source.html#l00037">mirror.hpp:37</a></div></div>
+<div class="ttc" id="classMirror_html_a5f539d8343f70ec68eaee6fd472049ae"><div class="ttname"><a href="../../de/dfd/classMirror.html#a5f539d8343f70ec68eaee6fd472049ae">Mirror::getXPad</a></div><div class="ttdeci">int getXPad() const </div><div class="ttdoc">Retourne le décalage du pivot par rapport au bord gauche du miroir. </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d5c/mirror_8hpp_source.html#l00333">mirror.hpp:333</a></div></div>
+<div class="ttc" id="classMirror_html_aa4fc01092dae3dab55dd2e74af41f429"><div class="ttname"><a href="../../de/dfd/classMirror.html#aa4fc01092dae3dab55dd2e74af41f429">Mirror::checkAngleRange</a></div><div class="ttdeci">bool checkAngleRange(double) const </div><div class="ttdoc">Retoune vrai si le miroir peut être pivoté sur l&#39;angle donné, retourne faux sinon. </div></div>
+<div class="ttc" id="classMirror_html_acc41ebc589e76d723bff02eea9ddfee3"><div class="ttname"><a href="../../de/dfd/classMirror.html#acc41ebc589e76d723bff02eea9ddfee3">Mirror::alphaMax</a></div><div class="ttdeci">double alphaMax</div><div class="ttdoc">L&#39;angle maximum dans lequel peut se trouver le miroir. </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d5c/mirror_8hpp_source.html#l00072">mirror.hpp:72</a></div></div>
+<div class="ttc" id="classMirror_html_a797115030b6a7bded6bab18a080e30c6"><div class="ttname"><a href="../../de/dfd/classMirror.html#a797115030b6a7bded6bab18a080e30c6">Mirror::xMin</a></div><div class="ttdeci">double xMin</div><div class="ttdoc">Limite minimale d&#39;abscisse où peut se situer le pivot du miroir. </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d5c/mirror_8hpp_source.html#l00042">mirror.hpp:42</a></div></div>
+<div class="ttc" id="classMirror_html_a2e76c506f910e388db245355ab17ce3a"><div class="ttname"><a href="../../de/dfd/classMirror.html#a2e76c506f910e388db245355ab17ce3a">Mirror::yMax</a></div><div class="ttdeci">double yMax</div><div class="ttdoc">Limite maximale d&#39;ordonnée où peut se situer le pivot du miroir. </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d5c/mirror_8hpp_source.html#l00057">mirror.hpp:57</a></div></div>
+<div class="ttc" id="classMirror_html_a52f096a72ba715cba18d5d3d79d507f4"><div class="ttname"><a href="../../de/dfd/classMirror.html#a52f096a72ba715cba18d5d3d79d507f4">Mirror::checkPivotRange</a></div><div class="ttdeci">bool checkPivotRange(const Point &amp;) const </div><div class="ttdoc">Retoune vrai si le miroir peut être déplacé en la position donnée, retourne faux sinon. </div></div>
+<div class="ttc" id="classPoint_html"><div class="ttname"><a href="../../dc/d4f/classPoint.html">Point</a></div><div class="ttdoc">Cette classe modélise un point de coordonnés dans le plan  sous deux formes : </div><div class="ttdef"><b>Definition:</b> <a href="../../d0/de4/point_8hpp_source.html#l00015">point.hpp:15</a></div></div>
+<div class="ttc" id="classMirror_html_a35dd50199a1bb8f2a0dea49259df6e95"><div class="ttname"><a href="../../de/dfd/classMirror.html#a35dd50199a1bb8f2a0dea49259df6e95">Mirror::rotate</a></div><div class="ttdeci">bool rotate(double)</div><div class="ttdoc">Permet d&#39;essayer d&#39;effectuer une rotation du miroir courant. </div></div>
+<div class="ttc" id="classMirror_html_aeec9a930fcc8f87373a5ca5c403edc53"><div class="ttname"><a href="../../de/dfd/classMirror.html#aeec9a930fcc8f87373a5ca5c403edc53">Mirror::pivot</a></div><div class="ttdeci">Point pivot</div><div class="ttdoc">Le point de pivot du miroir autour du quel celui-ci peut effectuer une rotation. </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d5c/mirror_8hpp_source.html#l00027">mirror.hpp:27</a></div></div>
+<div class="ttc" id="classMirror_html_aad24b622e2f9c18691ec70a1bbdadbcf"><div class="ttname"><a href="../../de/dfd/classMirror.html#aad24b622e2f9c18691ec70a1bbdadbcf">Mirror::getStart</a></div><div class="ttdeci">Point getStart() const </div><div class="ttdoc">Retourne le point de départ du segment de droite représentant le miroir. </div></div>
+<div class="ttc" id="classMirror_html_a0538deb5f7234df6cf635e3836d6dfae"><div class="ttname"><a href="../../de/dfd/classMirror.html#a0538deb5f7234df6cf635e3836d6dfae">Mirror::operator!=</a></div><div class="ttdeci">bool operator!=(const Mirror &amp;) const </div><div class="ttdoc">Permet de savoir si deux miroirs sont différents. </div></div>
+<div class="ttc" id="classMirror_html_a1aecd262fdf636697e6027da60685bb9"><div class="ttname"><a href="../../de/dfd/classMirror.html#a1aecd262fdf636697e6027da60685bb9">Mirror::getMinAngle</a></div><div class="ttdeci">double getMinAngle() const </div><div class="ttdoc">Retourne l&#39;inclinaison minimum du miroir. </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d5c/mirror_8hpp_source.html#l00343">mirror.hpp:343</a></div></div>
+<div class="ttc" id="classMirror_html_a10044b17327d12c0fb05b086e98ae4f4"><div class="ttname"><a href="../../de/dfd/classMirror.html#a10044b17327d12c0fb05b086e98ae4f4">Mirror::getLength</a></div><div class="ttdeci">int getLength() const </div><div class="ttdoc">Retourne la longueur du miroir. </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d5c/mirror_8hpp_source.html#l00328">mirror.hpp:328</a></div></div>
+<div class="ttc" id="classMirror_html_ac42fb9a193abfb984ca27bbad2564ff9"><div class="ttname"><a href="../../de/dfd/classMirror.html#ac42fb9a193abfb984ca27bbad2564ff9">Mirror::alphaMin</a></div><div class="ttdeci">double alphaMin</div><div class="ttdoc">L&#39;angle minimum dans lequel peut se trouver le miroir. </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d5c/mirror_8hpp_source.html#l00067">mirror.hpp:67</a></div></div>
+<div class="ttc" id="classMirror_html_a4b18a9326165e36b1ae05604b34ce758"><div class="ttname"><a href="../../de/dfd/classMirror.html#a4b18a9326165e36b1ae05604b34ce758">Mirror::yMin</a></div><div class="ttdeci">double yMin</div><div class="ttdoc">Limite minimale d&#39;ordonnée où peut se situer le pivot du miroir. </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d5c/mirror_8hpp_source.html#l00052">mirror.hpp:52</a></div></div>
+<div class="ttc" id="line_8hpp_html"><div class="ttname"><a href="../../d3/d9d/line_8hpp.html">line.hpp</a></div></div>
+<div class="ttc" id="classMirror_html_a2019420aed1cd71cc5b70ea7f9e0029e"><div class="ttname"><a href="../../de/dfd/classMirror.html#a2019420aed1cd71cc5b70ea7f9e0029e">Mirror::getPivot</a></div><div class="ttdeci">const Point &amp; getPivot() const </div><div class="ttdoc">Retourne la position du pivot du miroir. </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d5c/mirror_8hpp_source.html#l00323">mirror.hpp:323</a></div></div>
+<div class="ttc" id="element_8hpp_html"><div class="ttname"><a href="../../da/dbc/element_8hpp.html">element.hpp</a></div></div>
+<div class="ttc" id="classRay_html"><div class="ttname"><a href="../../d9/dce/classRay.html">Ray</a></div><div class="ttdoc">Cette classe modélise les rayons lumineux, concept central du jeu. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/d1d/ray_8hpp_source.html#l00015">ray.hpp:15</a></div></div>
+<div class="ttc" id="classMirror_html_aedb5e8c9ddad54164921fdf75f4270d9"><div class="ttname"><a href="../../de/dfd/classMirror.html#aedb5e8c9ddad54164921fdf75f4270d9">Mirror::getMaxAngle</a></div><div class="ttdeci">double getMaxAngle() const </div><div class="ttdoc">Retourne l&#39;inclinaison minimum du miroir. </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d5c/mirror_8hpp_source.html#l00348">mirror.hpp:348</a></div></div>
+<div class="ttc" id="classElement_html"><div class="ttname"><a href="../../d5/d3c/classElement.html">Element</a></div><div class="ttdoc">Un élément est un composant du jeu se devant de communiquer son état au niveau le gérant...</div><div class="ttdef"><b>Definition:</b> <a href="../../da/dbc/element_8hpp_source.html#l00013">element.hpp:13</a></div></div>
+<div class="ttc" id="classMirror_html_a589b4be142b61fcc247ce61bd8ec5d47"><div class="ttname"><a href="../../de/dfd/classMirror.html#a589b4be142b61fcc247ce61bd8ec5d47">Mirror::getMinPivot</a></div><div class="ttdeci">Point getMinPivot() const </div><div class="ttdoc">Retourne la position minimum du miroir. </div></div>
+<div class="ttc" id="classMirror_html_a4d3fe38f3bbe5b546384ef0fb81f16c4"><div class="ttname"><a href="../../de/dfd/classMirror.html#a4d3fe38f3bbe5b546384ef0fb81f16c4">Mirror::getBounds</a></div><div class="ttdeci">void getBounds(Point *, Point *) const </div><div class="ttdoc">Permet d&#39;obtenir le point de départ et d&#39;arrivé du segment de droite représentant le miroir; pour évi...</div></div>
+<div class="ttc" id="classMirror_html_aca852b6cf22bec88a402d3b7e7c78ca9"><div class="ttname"><a href="../../de/dfd/classMirror.html#aca852b6cf22bec88a402d3b7e7c78ca9">Mirror::operator==</a></div><div class="ttdeci">bool operator==(const Mirror &amp;) const </div><div class="ttdoc">Permet de savoir si deux miroirs sont les même. </div></div>
+<div class="ttc" id="classMirror_html_ae9ba03e1a3d35a85f8b55ec6ea2a7462"><div class="ttname"><a href="../../de/dfd/classMirror.html#ae9ba03e1a3d35a85f8b55ec6ea2a7462">Mirror::getEnd</a></div><div class="ttdeci">Point getEnd() const </div><div class="ttdoc">Retourne le point d&#39; arrivé du segment de droite représentant le miroir. </div></div>
+<div class="ttc" id="classMirror_html"><div class="ttname"><a href="../../de/dfd/classMirror.html">Mirror</a></div><div class="ttdoc">Cette classe modélise les miroirs utilisés dans le jeu. </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d5c/mirror_8hpp_source.html#l00021">mirror.hpp:21</a></div></div>
+<div class="ttc" id="classMirror_html_ac9c58d670d8c84b41135c07fedd0b502"><div class="ttname"><a href="../../de/dfd/classMirror.html#ac9c58d670d8c84b41135c07fedd0b502">Mirror::translate</a></div><div class="ttdeci">bool translate(const double, const double)</div><div class="ttdoc">Permet de déplacer le miroir dans le plan en lui donnant un abscisse et une ordonnée de translation...</div></div>
+<div class="ttc" id="classMirror_html_aa5c28cf6d8a88d11f06b4140389c2a06"><div class="ttname"><a href="../../de/dfd/classMirror.html#aa5c28cf6d8a88d11f06b4140389c2a06">Mirror::setAngle</a></div><div class="ttdeci">bool setAngle(double)</div><div class="ttdoc">Pivote le miroir sur un angle donné, si celui-ci est autorisé. </div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Vendredi 24 Avril 2015 14:41:55 pour Starlight par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.9.1
+</small></address>
+</body>
+</html>
