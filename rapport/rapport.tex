@@ -10,7 +10,7 @@
 \usepackage{pgf, tikz}
 \usepackage{url} 
 \usepackage[bookmarks, colorlinks=false, pdfborder={0 0 0}, pdftitle={Starlight}, 
-pdfauthor={Kriwin Paul, Placentino Simon}, pdfsubject={Starlight},
+	pdfauthor={Kriwin Paul, Placentino Simon}, pdfsubject={Starlight},
 pdfkeywords={C++, ISO/IEC 14882:2011, Starlight, Projet, ESI}]{hyperref} 
 \usetikzlibrary{arrows}
 
@@ -27,11 +27,11 @@ pdfkeywords={C++, ISO/IEC 14882:2011, Starlight, Projet, ESI}]{hyperref}
 \chapter[Conventions]{Quelques conventions utilisées}
 \section{Langage et compilation}
 Ce projet a été bâti à l'aide de \textbf{Qt Creator
-5.4}\footnote{\label{va}voir Annexe~\ref{ref}}, pour l'accès à la bibliothèque
+5.4}\footnote{voir Annexe~\ref{ref}, QT Creator}, pour l'accès à la bibliothèque
 graphique, et compilé à l'aide de
-\textbf{g++}\textsuperscript{\ref{va}} dans sa version 4.8 (et
+\textbf{g++}\footnote{voir Annexe~\ref{ref}, GNU GCC} dans sa version 4.8 (et
 compatible 4.9). La norme \textbf{ISO/IEC
-14882:2011}\textsuperscript{\ref{va}}
+14882:2011}\footnote{voir Annexe~\ref{ref}, Catalogue des normes ISO}
 , aussi appelée c++11, est celle
 utilisée. A cela s'ajoute certains flags\footnote{un flag est un argument de
 compilation optionnel} de compilation
@@ -44,14 +44,20 @@ compilation optionnel} de compilation
 \end{center}
 \begin{itemize}
 	\item \textbf{-std=c++11} pour travailler en c++11,
-	\item \textbf{-Wextra} qui nous permet d'avoir des messages d'avertissements,
-	\item \textbf{-Wall} qui nous permet d'avoir tous les messages d'avertissements,
+	\item \textbf{-Wextra} qui nous permet d'avoir des messages d'avertissements
+		supplémentaires (une classe non initialisée dans une classe dérivée,
+		\dots),
+	\item \textbf{-Wall} qui nous permet d'ajouter de nouveaux messages
+		d'avertissements (ordre de la liste d'initialisation, \dots),
 	\item \textbf{-pedantic-errors} qui transforme certains warnings\footnote{un
 			warning n'empêche pas une bonne compilation mais demande au
-		programmeur de vérifier} en erreurs. \\
+		programmeur de vérifier} en erreurs.
 \end{itemize}
+\begin{center}
+	\texttt{Ce projet est donc certifié ``Warning Free''}
+\end{center}
 Pour des raisons pratiques, le projet est accompagné d'un fichier de type
-\textbf{Makefile}\textsuperscript{\ref{va}} qui s'occupe de
+\textbf{Makefile}\footnote{voir Annexe~\ref{ref}, GNU MakeFile} qui s'occupe de
 \begin{itemize}
 	\item nettoyer le répertoire à l'aide de la commande 
 		\begin{center}
@@ -64,33 +70,34 @@ Pour des raisons pratiques, le projet est accompagné d'un fichier de type
 \end{itemize}
 \newpage
 \section{Documentation}
-L'ensemble du projet est documenté à l'aide des balises Qt 
+L'ensemble du projet est documenté à l'aide des balises Qt\footnote{\label{doc}voir
+Annexe~\ref{ref}, Doxygen}
 \begin{lstlisting}[frame=single,language=C++]
 /*!
- * \brief Documentation de la methode enTete
- * \param Description d'un parametre
- * \return Ce qui est retourne
- * \see Renvoie vers une autre documentation
- */
- T enTete(R param);
+* \brief Documentation de la methode enTete
+* \param Description d'un parametre
+* \return Ce qui est retourne
+* \see Renvoie vers une autre documentation
+*/
+T enTete(R param);
 
 /*!
- * \brief Documentation de la variable
- */
- T variable;
+* \brief Documentation de la variable
+*/
+T variable;
 \end{lstlisting}
-et cette documention\textsuperscript{\ref{va}} a est uniquement présente dans les fichiers \textbf{headers}.
+et cette documention\textsuperscript{\ref{doc}} a est uniquement présente dans les fichiers \textbf{headers}.
 La documentation, au format \LaTeX et html, a été généré à l'aide de l'outil
-Doxygen\textsuperscript{\ref{va}} dans sa dernière version
+Doxygen\textsuperscript{\ref{doc}} dans sa dernière version
 disponible\footnote{1.8.9.1}. Les spécifications de compilations sont disponible
 dans le document ``doxyConfig''. La documentation
-U.M.L.\textsuperscript{\ref{va}} a été généré 
+U.M.L.\footnote{voir Annexe~\ref{ref}, Unified Modeling Language} a été généré 
 par l'intégration de l'outil \textbf{graphviz}\footnote{disponible dans les packages GNU/Linux -
 Ubuntu standards}.
 Cette documentation est disponible dans les dossiers
 \begin{center}
-\path{documentation/html/index.html} \\
-\path{documentation/latex/documentation.pdf} \\
+	\path{documentation/html/index.html} \\
+	\path{documentation/latex/documentation.pdf} \\
 \end{center}
 \section{Contenu des fichiers}
 Chaque fichier contiendra les en-têtes, ou le code source, d'au maximum une seule 
@@ -108,7 +115,7 @@ class Hello {};
 \end{lstlisting}
 Le contenu de l'ensemble des fichiers est disponible dans le dossier
 \begin{center}
-\path{src/} \\
+	\path{src/} \\
 \end{center}
 \section{Fichiers}
 \subsection{noms}
@@ -127,14 +134,13 @@ testé suivi de ``test''
 nuke.cpp $\rightarrow$ nuke@\textbf{test}@.cpp 
 mirror.cpp $\rightarrow$ mirror@\textbf{test}@.cpp
 \end{lstlisting}
-L'ensemble de ces classes sont disponibles dans le dossier
-\begin{center}
-\path{test/} \\
-\end{center}
+L'ensemble de ces classes sont disponibles dans le dossier \path{test/}
 
 \subsection{html}
-Les documents ``HTML'' disponible dans \url{ressources/other} sont des textes
-formatées à l'aide de ``CSS''. Ils sont utilisés lors de l'affichage des
+Les documents \texttt{HTML}\footnote{voir Annexe~\ref{ref}, HTML sur Wikipedia} 
+disponible dans \url{ressources/other} sont des textes
+formatés à l'aide de \texttt{CSS}\footnote{voir Annexe~\ref{ref}, CSS sur Wikipedia}. 
+Ils sont utilisés lors de l'affichage des
 \textbf{règles} et du \textbf{logo}.
 \section{Nom des namespace}
 Le nom d'un namespace sera exclusivement en minuscule.
@@ -143,14 +149,14 @@ namespace hebesi {}
 \end{lstlisting}
 \section{Nom des classes}
 Les classes commencent toutes par une majuscule pour continuer, ensuite, en
-CamelCase
+CamelCase\footnote{\label{cc}voir Annexe~\ref{ref}, CamelCase sur Wikipedia}
 \begin{lstlisting}[frame=single,language=C++]
 class UneBonneClasse{};
 class uneMauvaiseclasse{};
 \end{lstlisting}
 \section{Nom des variables}
 Toutes les variables sont écrites en
-\textbf{camelCase}\textsuperscript{\ref{va}}
+\textbf{camelCase}\footnote{\ref{cc}}
 \begin{lstlisting}[frame=single,language=C++]
 T uneBonneVariable;
 T UneMauvaiseVariable;
@@ -185,10 +191,10 @@ UneClasse::UneClasse(T param) : param{param} {}
 		\draw (0,1) ellipse (2cm and 1cm);
 	\end{tikzpicture} 
 \end{center}
-Une ellipse est un objet géométrique à deux dimensions représentée par
-une courbe plane fermée obtenu par découpe d'un cône sur un plan. Si ce dernier
-est perpendiculaire à l'axe du cône, l'ellipse sera alors un cercle.
-Éléments caractéristiques d'une ellipse :
+Une ellipse\footnote{voir Annexe~\ref{ref}, Ellipse sur Wikipedia} est un objet 
+géométrique à deux dimensions représentée par une courbe plane fermée obtenu par 
+découpe d'un cône sur un plan. Si ce dernier est perpendiculaire à l'axe du 
+cône, l'ellipse sera alors un cercle. Éléments caractéristiques d'une ellipse :
 \begin{itemize}
 	\item une coordonnée cartésienne, ou polaire, de son \textbf{centre} $c$,
 	\item une distance séparant le centre de l'intersection avec la tangente
@@ -219,8 +225,8 @@ C++\footnote{\url{http://www.tutorialspoint.com/cplusplus/cpp_object_oriented.ht
 		\draw[dashed] (3,3) -- (4, 4);
 	\end{tikzpicture} 
 \end{center}
-Une droite est une ligne sans épaisseur, rectiligne et infinie dans le plan. 
-Pour exister, une droite aura besoin :
+Une droite\footnote{voir Annexe~\ref{ref}, Droite sur Wikipedia} est une ligne 
+sans épaisseur, rectiligne et infinie dans le plan. Pour exister, une droite aura besoin :
 \begin{itemize}
 	\item d'un coefficient angulaire $m = \frac{\Delta y}{\Delta x}$
 		représentant la distance à parcourir sur l'axe des ordonnées pour une unité de
@@ -242,7 +248,9 @@ demande
 bool * Line::isVertical();
 \end{lstlisting}
 Ainsi, il est simple de savoir, en interieur comme en exterieur de la classe, si
-la droite est verticale ou non.
+la droite est verticale ou non.\footnote{cette méthode sera utile pour trouver
+	l'intersection de deux droites puisque nous n'utilisons pas la forme $ax +
+bx + c = 0$} 
 Il est aussi possible de savoir si un point fait parti de la droite courante.
 \begin{lstlisting}[frame=single,language=C++]
 bool * Line::includes(const Point &) const;
@@ -546,8 +554,8 @@ $\alpha = \beta - \gamma$ par les angles correspondants
 \subsection[Deux droites]{Intersection de deux droites}
 Soient \\
 $$\begin{cases}
-y = m_1 \cdot x + p_1 \\
-y = m_2 \cdot x + p_2
+	y = m_1 \cdot x + p_1 \\
+	y = m_2 \cdot x + p_2
 \end{cases}$$
 deux droites sécantes ($m_1 \ne m_2$), résoudre l'équation \\
 $$m_1 \cdot x + p_1 = m_2 \cdot x + p_2$$
@@ -566,19 +574,19 @@ le rectangle (Cf. ``Intersection de deux droites).
 \subsection[Droite et ellipse]{Intersection d'une droite et d'une ellipse}
 Soient \\
 $$\begin{cases}
-y = m \cdot x + p \\
-\frac{(x - c_x)^2}{{x_{radius}}^2} + \frac{(y - c_y)^2}{{y_{radius}}^2} = 1
+	y = m \cdot x + p \\
+	\frac{(x - c_x)^2}{{x_{radius}}^2} + \frac{(y - c_y)^2}{{y_{radius}}^2} = 1
 \end{cases}$$
 une droite et une ellipse quelconque, substituons la droite à l'équation de
 l'ellipse
 $$\begin{cases}
-y = m \cdot x + p \\
-\frac{(x - c_x)^2}{{x_{radius}}^2} + \frac{((m \cdot x + p) - c_y)^2}{{y_{radius}}^2} = 1
+	y = m \cdot x + p \\
+	\frac{(x - c_x)^2}{{x_{radius}}^2} + \frac{((m \cdot x + p) - c_y)^2}{{y_{radius}}^2} = 1
 \end{cases}$$
 $$\begin{cases}
-y = m \cdot x + p \\
-\frac{(x - c_x)^2 * {y_{radius}}^2}{{x_{radius}}^2 * {y_{radius}}^2} +
-\frac{((m \cdot x + p) - c_y)^2 * {x_{radius}}^2}{{y_{radius}}^2 * {x_{radius}}^2} = 1
+	y = m \cdot x + p \\
+	\frac{(x - c_x)^2 * {y_{radius}}^2}{{x_{radius}}^2 * {y_{radius}}^2} +
+	\frac{((m \cdot x + p) - c_y)^2 * {x_{radius}}^2}{{y_{radius}}^2 * {x_{radius}}^2} = 1
 \end{cases}$$
 
 
@@ -634,29 +642,71 @@ Ensemble des bonus terminés :
 \chapter{Références}\label{ref}
 
 \begin{itemize}
+	\item l'icone a été dessiné par \textbf{Kriwin Paul} sous \href{http://www.gimp.org/}{Gimp},
 	\item L'ensemble des sons disponibles dans \path{ressources/sounds}
-		proviennent de {Sound bible} \url{http://soundbible.com} sous la license 
-	    {Attribution 3.0 License} \url{co://creativecommons.org/licenses/by/3.0/},
-	\item l'icone a été dessiné par \textbf{Kriwin Paul} sous
-		\href{http://www.gimp.org/}{Gimp},
+		proviennent de \texttt{Sound bible}  sous la license 
+		\texttt{Attribution 3.0 License} :
+		\begin{enumerate}
+			\item \url{http://soundbible.com},
+			\item \url{https://creativecommons.org/licenses/by/3.0/},
+		\end{enumerate}
 	\item calcul de la longueur d'onde :
-		\url{http://www.physics.sfasu.edu/astro/color/spectra.html},
-	\item Catch Framework \url{https://github.com/philsquared/Catch} consulté
-		\today,
-	\item {U.M.L. - Unified Modeling Language } \url{http://www.uml.org/} consulté
-		\today,
-	\item {Doxygen} \url{http://doxygen.org/} consulté \today,
-	\item Plan cartésien \url{http://www.cslaval.qc.ca/sitsatlll/maths2003/cartesien.html}
-		consulté \today,
-	\item Principe du CamelCase \url{https://fr.wikipedia.org/wiki/CamelCase}
-		consulté \today,
-	\item Qt Creator disponible dans sa dernière version sur \url{http://www.qt.io/developers/}
-		consulté le \today,
-	\item Catalogue des normes ISO \url{http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=50372}
-		consulté le \today,
-	\item GNU GCC \url{https://gcc.gnu.org/} consulté le \today,
-	\item GNU MakeFile \url{https://www.gnu.org/software/make/manual/html_node/Makefiles.html}
-		consulté le \today, 
+		\begin{enumerate}
+			\item \url{http://www.physics.sfasu.edu/astro/color/spectra.html},
+		\end{enumerate}
+	\item \texttt{Catch Framework} 
+		\begin{enumerate}
+			\item \url{https://github.com/philsquared/Catch} consulté \today,
+		\end{enumerate}
+	\item \texttt{U.M.L. - Unified Modeling Language} 
+		\begin{enumerate}
+			\item \url{http://www.uml.org/} consulté \today,
+		\end{enumerate}
+	\item \texttt{Doxygen} 
+		\begin{enumerate}
+			\item \url{http://doxygen.org/} consulté \today,
+		\end{enumerate}
+	\item \texttt{Plan cartésien} 
+		\begin{enumerate}
+			\item \url{http://www.cslaval.qc.ca/sitsatlll/maths2003/cartesien.html} consulté \today,
+		\end{enumerate}
+	\item \texttt{Qt Creator} disponible dans sa dernière version sur 
+		\begin{enumerate}
+			\item \url{http://www.qt.io/developers/} consulté le \today,
+		\end{enumerate}
+	\item \texttt{Catalogue des normes ISO} 
+		\begin{enumerate}
+			\item \url{http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=50372}
+				consulté le \today,
+		\end{enumerate}
+	\item \texttt{GNU GCC} 
+		\begin{enumerate}
+			\item \url{https://gcc.gnu.org/} consulté le \today,
+		\end{enumerate}
+	\item \texttt{GNU MakeFile} 
+		\begin{enumerate}
+			\item \url{https://www.gnu.org/software/make/manual/html_node/Makefiles.html} consulté le \today, 
+		\end{enumerate}
+	\item \texttt{HTML} 
+		\begin{enumerate}
+			\item \url{https://fr.wikipedia.org/wiki/Hypertext_Markup_Language} consulté le \today,
+		\end{enumerate}
+	\item \texttt{CSS} 
+		\begin{enumerate}
+			\item \url{https://fr.wikipedia.org/wiki/Feuilles_de_style_en_cascade} consulté le \today,
+		\end{enumerate}
+	\item \texttt{CamelCase} 
+		\begin{enumerate}
+			\item \url{https://fr.wikipedia.org/wiki/CamelCase} consulté le \today,
+		\end{enumerate}
+	\item \texttt{Ellipse}
+		\begin{enumerate}
+			\item \url{https://fr.wikipedia.org/wiki/Ellipse_\%28math\%C3\%A9matiques\%29} consulté le \today,
+		\end{enumerate}
+	\item \texttt{Droite}
+		\begin{enumerate}
+			\item \url{https://fr.wikipedia.org/wiki/Droite_\%28math\%C3\%A9matiques\%29} consulté le \today,
+		\end{enumerate}
 \end{itemize}
 
 \end{document}
