@@ -848,8 +848,6 @@ getEltsIntrajectory(Ray) (de level également), trouver le premier élément se
 trouvant sur la trajectoire du rayon et ainsi lui assigner sa position de fin
 avec le point d'intersection trouvé avec cet élément, le rayon sera ensuite
 stocké dans le vector prévu à cet effet en attribut de Level. Ensuite va être
-appelée sur cet élément sa méthode reactToRay(Ray) surchargée avec le rayon
-complété en paramètre. \\
 
 \begin{itemize}
 	\item[] Cette méthode pourra avoir plusieurs effet:
@@ -857,14 +855,14 @@ complété en paramètre. \\
 nouveau rayon modifié créé à partir du paramètre de reactToray(Ray) créant ainsi
 de nouveaux rayons. C'est le cas de 
 \begin{itemize}
-	\item mirror, qui modifie la direction du rayon,
-	\item crystal, qui modifie sa longueur d'onde 
-	\item ou possiblement Lens si la longueur d'onde du rayon correspond à ces bornes. 
+	\item \texttt{mirror}, qui modifie la direction du rayon,
+    \item \texttt{crystal}, qui modifie sa longueur d'onde 
+	\item ou possiblement \texttt{lens} si la longueur d'onde du rayon correspond à ces bornes. 
 \end{itemize}
     \item Stopper net la progression du rayon, c'est le cas de wall, nuke, dest et lens
     si la longueur d'onde du rayon ne correspond pas à ces bornes.
 \end{itemize}
-)
+
 \chapter{Test effectués}
 \section{Framework de test}
 Le Framework de test utilisé est
