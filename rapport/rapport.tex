@@ -20,11 +20,23 @@ pdfkeywords={C++, ISO/IEC 14882:2011, Starlight, Projet, ESI}]{hyperref}
 \input{./title.tex}
 \tableofcontents
 \chapter{Introduction}
+\texttt{Starlight} est un petit jeu en deux dimensions se jouant sur une carte
+rectangulaire, comportant une source de lumière, émettant un rayon rectiligne. 
+Le but du jeu est d’atteindre une cible avec ledit rayon, en évitant les
+obstacles via notamment des miroirs réfléchissant la lumière\footnote{tiré des
+consignes du projet}.
 
+Ce document présente les différents détails de la réalisation du projet; 
+La section 2, décrit l'aspect formel du code (conventions de nommage, structure
+des fichier etc..).
 
+Ensuite, la section 3 présente les classes utilisées et détaille leur contenu. 
+La section 4 décrit la structure générale du programme qui est ensuite complétée
+par la section 5 décrivant les principaux algorithmes utilisés à travers le
+programme. Les sections suivantes décrivent respectivement les tests effectués
+et les points bonus réalisés. Enfin la section 9 conclut le document et est
+suivit par l'annexe A contenant les références.
 
-
-\chapter[Conventions]{Quelques conventions utilisées}
 \section{Langage et compilation}
 Ce projet a été bâti à l'aide de \textbf{Qt Creator
 5.4}\footnote{voir Annexe~\ref{ref}, QT Creator}, pour l'accès à la bibliothèque
@@ -600,24 +612,12 @@ cette dernière s'occupe d'alterner l'affichage des deux premiers.
 		\begin{figure}[h!]
 			\caption{Un rayon changeant de couleur.}
 			\centering
-			\includegraphics{./screenshots/elements_semi_dyn/ray_change_color}
+			\includegraphics[keepaspectratio=true,width=0.2\linewidth]{./screenshots/elements_semi_dyn/ray_change_color}
 		\end{figure}
 
 	\item \texttt{dynamiques} :
 		Ce sont les élément permettant de \textbf{recueillir les entrées
 		utilisateur} et dont l'affichage évolue en fonction de l'état du niveau.
-
-		\begin{figure}[h!]
-			\caption{Un miroir.}
-			\centering
-			\includegraphics{./screenshots/elements_dyn/mirror}
-		\end{figure}
-
-		\begin{figure}[h!]
-			\caption{Un miroir et un rayon réfléchi.}
-			\centering
-			\includegraphics{./screenshots/elements_dyn/mirror+ray}
-		\end{figure}
 
 		\begin{figure}[h!]
 			\caption{La source éteinte.}
@@ -653,6 +653,18 @@ sur lui :
 	\item touches pour le déplacer 
 	\item et flèches directionnelles pour le faire pivoter.
 \end{itemize}\footnote{voir Annexe~\ref{ref}, commandes du jeu}.
+
+		\begin{figure}[h!]
+			\caption{Un miroir.}
+			\centering
+			\includegraphics{./screenshots/elements_dyn/mirror}
+		\end{figure}
+
+		\begin{figure}[h!]
+			\caption{Un miroir et un rayon réfléchi.}
+			\centering
+			\includegraphics{./screenshots/elements_dyn/mirror+ray}
+		\end{figure}
 
 \subsection[Le niveau]{levelview.hpp}
 Il s'agit d'un \textbf{widget} hérité de QGraphicsView (utilisant, en son sein,le
@@ -831,9 +843,14 @@ cas dis ``limites'' et de cas dit ``standards''. \\
 Les fichiers sources concernés se situe dans le dossier \path{test/} et peuvent
 éffectuer en décommentant la définition de \textbf{\#RUN\_TEST} du fichier
 \textbf{main.hpp} disponible à la racine du projet.
-\chapter{Bugs connus}
+\section{Bugs connus}
 \begin{center}
-	\textbf{\textit{VOID}}
+	Le programme ne contient aucuns bugs connus et ne présente aucune fuite
+	mémoire en dehors de celles induite inévitablement par le framework
+	d'interface graphique Qt.
+
+Le modèle a été testé à l'aide de l'outil Valgrind\footnote{voir Annexe~\ref{ref},
+Valgrind memory checker}.
 \end{center}
 \newpage
 \chapter{Bonus}
@@ -978,6 +995,11 @@ Ensemble des bonus terminés :
 		\begin{itemize}
 			\item \path{ressources/other/rules.html},\\
 		\end{itemize}
+	\item[] texttt{Valgrind memory checker}
+		\begin{itemize}
+		\item \url{http://valgrind.org/}, consulté le \today, \\
+		\end{itemize}
 \end{itemize}
+
 
 \end{document}

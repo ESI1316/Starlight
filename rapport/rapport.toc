@@ -38,9 +38,9 @@
 \contentsline {section}{\numberline {3.3}L'exception}{15}{section.3.3}
 \contentsline {subsection}{\numberline {3.3.1}Exception Starlight}{15}{subsection.3.3.1}
 \contentsline {section}{\numberline {3.4}Les objets visuels}{16}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}La source}{17}{subsection.3.4.1}
-\contentsline {subsection}{\numberline {3.4.2}Le miroir}{19}{subsection.3.4.2}
-\contentsline {subsection}{\numberline {3.4.3}Le niveau}{19}{subsection.3.4.3}
+\contentsline {subsection}{\numberline {3.4.1}La source}{18}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}Le miroir}{18}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.3}Le niveau}{18}{subsection.3.4.3}
 \contentsline {subsection}{\numberline {3.4.4}Le menu}{20}{subsection.3.4.4}
 \contentsline {subsection}{\numberline {3.4.5}La fen\IeC {\^e}tre principale}{21}{subsection.3.4.5}
 \contentsline {chapter}{\numberline {4}Structure du programme}{22}{chapter.4}
@@ -53,7 +53,7 @@
 \contentsline {chapter}{\numberline {6}Test effectu\IeC {\'e}s}{26}{chapter.6}
 \contentsline {section}{\numberline {6.1}Framework de test}{26}{section.6.1}
 \contentsline {section}{\numberline {6.2}Tests unitaire}{26}{section.6.2}
-\contentsline {chapter}{\numberline {7}Bugs connus}{27}{chapter.7}
-\contentsline {chapter}{\numberline {8}Bonus}{28}{chapter.8}
-\contentsline {chapter}{\numberline {9}Conclusion}{29}{chapter.9}
-\contentsline {chapter}{\numberline {A}R\IeC {\'e}f\IeC {\'e}rences}{30}{appendix.A}
+\contentsline {section}{\numberline {6.3}Bugs connus}{26}{section.6.3}
+\contentsline {chapter}{\numberline {7}Bonus}{27}{chapter.7}
+\contentsline {chapter}{\numberline {8}Conclusion}{28}{chapter.8}
+\contentsline {chapter}{\numberline {A}R\IeC {\'e}f\IeC {\'e}rences}{29}{appendix.A}
