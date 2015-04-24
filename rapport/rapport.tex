@@ -643,7 +643,10 @@ Les fichiers sources concernés se situe dans le dossier \path{test/} et peuvent
 éffectuer en décommentant la définition de \textbf{\#RUN\_TEST} du fichier
 \textbf{main.hpp} disponible à la racine du projet.
 \chapter{Bugs connus}
-\textbf{\textit{VOID}}
+\begin{center}
+	\textbf{\textit{VOID}}
+\end{center}
+\newpage
 \chapter{Bonus}
 
 Ensemble des bonus terminés :
@@ -655,9 +658,14 @@ Ensemble des bonus terminés :
 			\item de l'activation de la destination,
 			\item ou de l'activation d'une bombe.
 		\end{itemize}
-	\item \textbf{les couleurs}\footnote{voir Annexe~\ref{ref}, Spectre de
-	couleurs}  sont disponibles en fonction de la longueur d'onde du
-		rayon
+		Ils ont été ajouté au projet à l'aide du gestionnaires de ressource
+		Qt\footnote{voir Annexe~\ref{ref}, Qt ressources system} 
+		et activé à l'aide de la méthode statique 
+		\begin{lstlisting}[language=C++]
+QSound::play(``:/prefix/alias'');
+		\end{lstlisting}\footnote{voir Annexe~\ref{ref}, QtMultimedia/QSound}
+	\item \textbf{les couleurs}\footnote{voir Annexe~\ref{ref}, calcul de longueur d'onde} 
+		sont disponibles en fonction de la longueur d'onde du rayon
 	\item \textbf{l'icone du logiciel} disponible et a été désigné par
 		\href{mailto:39171@heb.be}{\textbf{Kriwin Paul}} sur un support libre d'image d'étoile.
 \end{enumerate}
@@ -744,12 +752,22 @@ Ensemble des bonus terminés :
 	\item[] \texttt{Point}
 		\begin{itemize}
 			\item \url{https://fr.wikipedia.org/wiki/Point_\%28g\%C3\%A9om\%C3\%A9trie\%29}
-				consulté le \today\\
+				consulté le \today,\\
 		\end{itemize}
 	\item[] \texttt{Rectangle}
 		\begin{itemize}
 			\item \url{https://fr.wikipedia.org/wiki/Rectangle} consulté le
-				\today\\
+				\today, \\
+		\end{itemize}
+	\item[]  \texttt{Qt Ressource System}
+		\begin{itemize}
+			\item \url{http://doc.qt.io/qt-5/resources.html} consulté le
+				\today,\\
+		\end{itemize}
+	\item[] \texttt{QSound}
+		\begin{itemize}
+			\item \url{http://doc.qt.digia.com/qt-maemo/qsound.html} consulté le
+				\today,\\
 		\end{itemize}
 \end{itemize}
 
