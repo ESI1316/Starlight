@@ -74,7 +74,7 @@ void LevelView::loadLevelFromFile()
 
 void LevelView::updateDisplay()
 {
-    for (auto mirror : this->mirrors)
+    for (auto & mirror : this->mirrors)
         mirror->updatePosition();
 
     this->updateRays();
