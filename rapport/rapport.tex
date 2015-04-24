@@ -549,18 +549,144 @@ Les différentes classes pouvant lever cette exception sont :
 		plan.
 \end{description}
 \section[Les objets visuels]{view}
+La vue du jeu est constituée de trois éléments;
+\begin{itemize}
+	\item \texttt{MainMenu} (widget),
+	\item \texttt{LevelView} (widget),
+	\item \texttt{la fenêtre principale} (MainWindow),
+\end{itemize}
+cette dernière s'occupe d'alterner l'affichage des deux premiers.
+
+\begin{enumerate}
+	\item[] Ces éléments graphiques peuvent être classés en 3 catégories :
+	\item \texttt{éléments statiques} : 
+		N'étant pas directement manipulés par l'utilisateur, ces derniers représentent
+		les éléments du niveau dont \textbf{l'affichage ne varie pas} au cours de la partie. Il
+		s'agit des murs du niveaux (QGraphicsLineItems\textsuperscript{\ref{qgs}}), des lentilles, bombes,
+		cristaux (QGraphicsEllipseItem\textsuperscript{\ref{qgs}}) et de la destination
+		(QGraphicsRectItem\textsuperscript{\ref{qgs}}).
+		Ces éléments sont construit au chargement du fichier de niveau grâce à
+		des méthodes utilitaires contenues dans viewUtilities.hpp. 
+		Ils ne sont jamais mis à jours et sont détruits lorsque un nouveau niveau est
+		chargé. 
+
+		*Screenshot des Éléments statiques,
+
+	\item \texttt{Semi dynamiques} : 
+		Il s'agit de l'affichage des rayons à partir de QGraphicsLineItems\textsuperscript{\ref{qgs}} dont la
+		couleur varie selon la longueur d'onde du rayon représenté. Ils sont construits
+		grâce à des méthodes utilitaires contenues dans viewUtilities.hpp et
+		détruits à chaque modification de l'état du niveau. 
+
+		*Screenshot de rayons de couleurs différente*
+
+	\item \texttt{dynamiques} :
+		Ce sont les élément permettant de \textbf{recueillir les entrées
+		utilisateur} et dont l'affichage évolue en fonction de l'état du niveau.
+\end{enumerate}
 
 \subsection[La source]{sourceview.hpp}
-Cette classe représente la source sous l'état d'un QGraphicsRectItem, contenant
+Cette classe représente la source sous l'état d'un \texttt{QGraphicsRectItem}, contenant
 un QRectF aux dimensions de la source. Il peut donc être utilisé dans un 
-QGraphicsScene. Il est , donc, lié à la source et se met uniquement à jour 
-lors d'une interaction de l'utilisateur (clic de souris). De plus, il interragit
+QGraphicsScene. Il est, donc, \texttt{lié à la source} et se met uniquement à jour 
+lors d'une interaction de l'utilisateur (clic de souris). De plus, il interagit
 avec le modèle pour changer l'état de la source.
 
+Il s'agit d'un objet héritant de QGraphicsRectItem\textsuperscript{\ref{qgs}} représentant la source
+lumineuse du niveau. Il permet lorsque l'utilisateur clique dessus, 
+d'allumer/éteindre la source du niveau et ainsi provoquer la présence ou 
+l'absence des rayons dans le niveau.\footnote{\textit{il émet un son et change sa couleur selon que l'on allume ou
+éteint la source.}}
+
 \subsection[Le miroir]{mirrorview.hpp}
+Il s'agit d'un objet héritant de QGraphicsLineItem\textsuperscript{\ref{qgs}} représentant un miroir du
+niveau. Il permet une fois sélectionné en ayant cliqué dessus, de \texttt{faire
+dévier} les rayons l'atteignant en fonction des mouvements que l'utilisateur exercera 
+sur lui :
+\begin{itemize}
+	\item touches pour le déplacer 
+	\item et flèches directionnelles pour le faire pivoter.
+\end{itemize}\footnote{voir Annexe~\ref{ref}, commandes du jeu}.
+
 \subsection[Le niveau]{levelview.hpp}
+Il s'agit d'un \textbf{widget} hérité de QGraphicsView (utilisant, en son sein,le
+framework du même nom\footnote{\label{qgv}voir Annexe~\ref{ref}, Qt GraphicsView
+Framework}), s'occupant de l'affichage du niveau, de la réception
+des entrées utilisateur et de l'interaction entre celles-ci et la partie
+métier. 
+
+Cette vue met en œuvre le patron de conception \texttt{Observateur Observé} initié par
+la partie métier (classe Level), de sorte qu'elle se contente seulement de
+mettre à jour l'affichage de l'état du niveau lorsqu'elle est notifiée de le
+faire par celui-ci. 
+
+Cette vue comporte une QGraphicScene\footnote{\label{qgs}voir Annexe~\ref{ref},
+Qt QGraphicScene} qui elle-même comporte des éléments graphiques 
+(QGraphicItems\textsuperscript{\ref{qgs}}) représentant les différents éléments contenus
+dans le niveaux. 
+
 \subsection[Le menu]{mainmenu.hpp}
+Ce widget héritant de \textbf{QFrame} représente le menu principale du jeu. Il s'agit de
+la première fenêtre qui apparait à l'utilisateur lorsque l'on lance le
+programme. 
+
+Cette fenêtre propose à travers de \textbf{QPushButtons}, diverses option
+telles que; 
+\begin{itemize}
+	\item choisir un fichier de niveau (et ainsi démarrer une partie),
+	\item consulter les règles du jeu (s'affichant dans une boîte de dialogue) 
+	\item ou quitter le jeu (arrête le programme).
+\end{itemize}
+
 \subsection[La fenêtre principale]{mainwindow.hpp}
+
+Il s'agit de la \textbf{fenêtre principale} du programme qui s'occupe d'alterner
+l'affichage du menu principal du jeu et l'affichage d'une partie. Elle permet
+également de proposer une barre d'outils durant l'affichage d'une partie
+permettant de
+\begin{itemize}
+	\item recommencer le niveau en cours, revenir au menu principal,
+	\item quitter le jeu ou connaitre les règles du jeu.
+\end{itemize}
+
+L'alternance de l'affichage est mis en œuvre grâce au mécanisme des
+signaux et \texttt{slots}\footnote{voir Annexe~\ref{ref}, Signals and Slots}
+En effet MainWindow propose deux slots 
+\begin{lstlisting}[title=MainWindow,frame=single,language=C++]
+public slots :
+
+/* Permet d'afficher la vue du niveau. */
+void MainWindow::displayLevel 
+
+/* Permet d'afficher le menu principal. */
+void MainWindow::displayMainMenu 
+\end{lstlisting}
+Ces slots sont par défaut connectés\footnote{voir Annexe~\ref{ref},
+QObject::connect dans Signals and slots} aux signaux 
+\begin{lstlisting}[title=LevelView,frame=single,language=C++]
+public signals : 
+void displayingStarted();
+void displayingStopped();
+\end{lstlisting}
+Ainsi lorsque que l'utilisateur a sélectionné l'action de revenir au menu
+principal (à partir de la barre d'outils ou à partir de la boite de dialogue à
+la fin d'une partie), 
+
+\begin{enumerate}
+	\item la vue de niveau envoie le signal correspondant
+	\item cette dernière va ensuite \textbf{cacher la vue de niveau} et afficher le menu principal,
+(\texttt{displayingStopped()}) à la MainWindow auquel elle se rapporte, 
+\end{enumerate}
+
+ Il en va de même pour afficher la vue du niveau, 
+ \begin{enumerate}
+	 \item le signal newLevelFileSelected de MainMenu étant connecté au slot
+		 \texttt{setLevelFilePath()}),
+	 \item ce dernier émet ensuite le signal \texttt{displayingStarted()}), 
+	 \item lorsque l'utilisateur choisi un fichier de niveau, la vue du
+	      menu principal va ainsi laisser place à la vue du niveau.
+ \end{enumerate}
+
 \chapter[Structure du programme]{Structure générale du programme}
 
 
@@ -662,7 +788,7 @@ Ensemble des bonus terminés :
 		Qt\footnote{voir Annexe~\ref{ref}, Qt ressources system} 
 		et activé à l'aide de la méthode statique 
 		\begin{lstlisting}[language=C++]
-QSound::play(``:/prefix/alias'');
+		QSound::play(``:/prefix/alias'');
 		\end{lstlisting}\footnote{voir Annexe~\ref{ref}, QtMultimedia/QSound}
 	\item \textbf{les couleurs}\footnote{voir Annexe~\ref{ref}, calcul de longueur d'onde} 
 		sont disponibles en fonction de la longueur d'onde du rayon
@@ -768,6 +894,26 @@ QSound::play(``:/prefix/alias'');
 		\begin{itemize}
 			\item \url{http://doc.qt.digia.com/qt-maemo/qsound.html} consulté le
 				\today,\\
+		\end{itemize}
+	\item[] \texttt{GraphicsView}
+		\begin{itemize}
+			\item \url{http://doc.qt.io/qt-4.8/graphicsview.html} consulté le
+				\today, \\
+		\end{itemize}
+	\item[] \texttt{GraphicsView Framework}
+		\begin{itemize}
+			\item
+				\url{http://doc.qt.io/qt-4.8/graphicsview.html#classes-in-the-graphics-view-framework}
+				consulté le \today, \\
+		\end{itemize}
+	\item[] \texttt{Signals and slots}
+		\begin{itemize}
+			\item \url{http://doc.qt.io/qt-4.8/signalsandslots.html} consulté le
+				\today, \\
+		\end{itemize}
+	\item[] texttt{Commandes et règles}
+		\begin{itemize}
+			\item \path{ressources/other/rules.html},\\
 		\end{itemize}
 \end{itemize}
 
