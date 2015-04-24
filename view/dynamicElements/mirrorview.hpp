@@ -24,7 +24,7 @@ public:
      *
      * \param mirror Le miroir lié à cette vue.
      */
-    MirrorView(Mirror * mirror);
+    MirrorView(Mirror *);
 
     /*!
      * \brief Détruit le miroir.
@@ -44,7 +44,7 @@ protected:
      *
      * \param event Une évènement "input user".
      */
-    void keyPressEvent(QKeyEvent * event);
+    void keyPressEvent(QKeyEvent *);
 };
 
 #endif // MIRRORVIEW_HPP

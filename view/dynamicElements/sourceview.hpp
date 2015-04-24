@@ -35,7 +35,7 @@ public:
      *
      * \param source La source liée à cette vue.
      */
-    SourceView(Source *source);
+    SourceView(Source *);
 
     ~SourceView();
 
@@ -46,7 +46,7 @@ protected:
      *
      * \param event Un évènement "input user".
      */
-    void mousePressEvent(QGraphicsSceneMouseEvent *event);
+    void mousePressEvent(QGraphicsSceneMouseEvent *);
 };
 
 #endif // SOURCEVIEW_HPP

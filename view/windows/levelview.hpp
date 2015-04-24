@@ -57,7 +57,7 @@ public:
      *
      * \param parent L'objet graphique parent.
      */
-    explicit LevelView(QWidget *parent = 0);
+    explicit LevelView(QWidget * = 0);
     ~LevelView();
 
 signals:
