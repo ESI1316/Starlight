@@ -5,6 +5,8 @@
 Starlight
 Makefile
 moc*
+documentation/man/
+documentation/man/*
 *~
 *swp
 qrc_ressources.cpp
