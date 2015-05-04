@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2015.4.17)  24 APR 2015 23:42
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2015.4.17)  4 MAY 2015 07:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -897,10 +897,15 @@ Chapitre 1.
 LaTeX Font Info:    Try loading font information for T1+cmtt on input line 23.
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-) [3
+)
+Overfull \hbox (1.07785pt too wide) in paragraph at lines 33--39
+[]\T1/cmr/m/n/10.95 Ensuite, la \T1/cmtt/m/n/10.95 section 3 \T1/cmr/m/n/10.95 
+pré-sente les classes uti-li-sées et dé-taille leur contenu.
+ []
 
-] [4]
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+[3
+
+] [4] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2004/09/05 1.3 listings language file
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
@@ -1112,29 +1117,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 800--802
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 816--817
+Underfull \hbox (badness 10000) in paragraph at lines 815--816
 
  []
 
 [24]
-Underfull \hbox (badness 10000) in paragraph at lines 835--838
+Underfull \hbox (badness 10000) in paragraph at lines 834--837
 
  []
 
 [25]
 Chapitre 4.
 
-LaTeX Warning: Reference `va' on page 26 undefined on input line 869.
+LaTeX Warning: Reference `va' on page 26 undefined on input line 868.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 884--887
+Underfull \hbox (badness 10000) in paragraph at lines 883--886
 
- []
-
-
-Overfull \hbox (11.91437pt too wide) in paragraph at lines 888--891
-\T1/cmr/m/n/10.95 fec-tuer en dé-com-men-tant la dé-fi-ni-tion de \T1/cmr/bx/n/
-10.95 #RUN_TEST \T1/cmr/m/n/10.95 du fi-chier \T1/cmr/bx/n/10.95 main.hpp
  []
 
 [26
@@ -1146,12 +1145,12 @@ Chapitre 5.
 ]
 Chapitre 6.
 
-Underfull \hbox (badness 10000) in paragraph at lines 929--934
+Underfull \hbox (badness 10000) in paragraph at lines 928--933
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 935--940
+Underfull \hbox (badness 10000) in paragraph at lines 934--939
 
  []
 
@@ -1160,204 +1159,222 @@ Underfull \hbox (badness 10000) in paragraph at lines 935--940
 ]
 Annexe A.
 
-Underfull \hbox (badness 10000) in paragraph at lines 952--953
+Underfull \hbox (badness 10000) in paragraph at lines 951--952
 
  []
 
 
-Overfull \hbox (5.91022pt too wide) in paragraph at lines 959--961
-[][]$\T1/cmtt/m/n/10.95 https : / / creativecommons . org / licenses / by / 3 .
- 0/$[] \T1/cmr/m/n/10.95 consulté 24 avril
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 959--961
+Underfull \hbox (badness 10000) in paragraph at lines 958--960
 
  []
 
 
-Overfull \hbox (19.9294pt too wide) in paragraph at lines 964--966
+Overfull \hbox (19.9294pt too wide) in paragraph at lines 963--965
 [][]$\T1/cmtt/m/n/10.95 http : / / www . physics . sfasu . edu / astro / color 
 / spectra . html$[] \T1/cmr/m/n/10.95 consulté
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 964--966
+Underfull \hbox (badness 10000) in paragraph at lines 963--965
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 969--970
+Underfull \hbox (badness 10000) in paragraph at lines 968--969
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 973--974
+Underfull \hbox (badness 10000) in paragraph at lines 972--973
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 977--978
+Underfull \hbox (badness 10000) in paragraph at lines 976--977
 
  []
 
 
-Overfull \hbox (12.68178pt too wide) in paragraph at lines 981--982
+Overfull \hbox (12.68178pt too wide) in paragraph at lines 980--981
 [][]$\T1/cmtt/m/n/10.95 http : / / www . cslaval . qc . ca / sitsatlll / maths2
 003 / cartesien . html$[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 981--982
+Underfull \hbox (badness 10000) in paragraph at lines 980--981
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 985--986
+Underfull \hbox (badness 10000) in paragraph at lines 984--985
 
  []
 
 
-Overfull \hbox (18.34015pt too wide) in paragraph at lines 989--991
+Overfull \hbox (18.34015pt too wide) in paragraph at lines 988--990
 [][]$\T1/cmtt/m/n/10.95 http : / / www . iso . org / iso / iso _ catalogue / ca
 talogue _ tc / catalogue _
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 989--991
+Underfull \hbox (badness 10000) in paragraph at lines 988--990
 
  []
 
 [29
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 994--995
+Underfull \hbox (badness 10000) in paragraph at lines 993--994
 
  []
 
 
-Overfull \hbox (23.99852pt too wide) in paragraph at lines 998--999
+Overfull \hbox (23.99852pt too wide) in paragraph at lines 997--998
 [][]$\T1/cmtt/m/n/10.95 https : / / www . gnu . org / software / make / manual 
 / html _ node / Makefiles .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 998--999
+Underfull \hbox (badness 10000) in paragraph at lines 997--998
 
  []
 
 
-Overfull \hbox (31.24614pt too wide) in paragraph at lines 1002--1003
+Overfull \hbox (31.24614pt too wide) in paragraph at lines 1001--1002
 [][]$\T1/cmtt/m/n/10.95 https : / / fr . wikipedia . org / wiki / Hypertext _ M
 arkup _ Language$[] \T1/cmr/m/n/10.95 consulté
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1002--1003
+Underfull \hbox (badness 10000) in paragraph at lines 1001--1002
 
  []
 
 
-Overfull \hbox (7.0234pt too wide) in paragraph at lines 1006--1007
+Overfull \hbox (7.0234pt too wide) in paragraph at lines 1005--1006
 [][]$\T1/cmtt/m/n/10.95 https : / / fr . wikipedia . org / wiki / Feuilles _ de
  _ style _ en _ cascade$[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1006--1007
+Underfull \hbox (badness 10000) in paragraph at lines 1005--1006
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1010--1011
+Overfull \hbox (6.05078pt too wide) in paragraph at lines 1009--1010
+[][]$\T1/cmtt/m/n/10.95 https : / / fr . wikipedia . org / wiki / CamelCase$[] 
+\T1/cmr/m/n/10.95 consulté le 4 mai 2015, 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1009--1010
 
  []
 
 
-Overfull \hbox (18.34015pt too wide) in paragraph at lines 1014--1015
+Overfull \hbox (18.34015pt too wide) in paragraph at lines 1013--1014
 [][]$\T1/cmtt/m/n/10.95 https : / / fr . wikipedia . org / wiki / Ellipse _ %28
 math % C3 % A9matiques %
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1014--1015
+Underfull \hbox (badness 10000) in paragraph at lines 1013--1014
 
  []
 
 
-Overfull \hbox (12.68178pt too wide) in paragraph at lines 1018--1019
+Overfull \hbox (12.68178pt too wide) in paragraph at lines 1017--1018
 [][]$\T1/cmtt/m/n/10.95 https : / / fr . wikipedia . org / wiki / Droite _ %28m
 ath % C3 % A9matiques %
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1018--1019
+Underfull \hbox (badness 10000) in paragraph at lines 1017--1018
 
  []
 
 
-Overfull \hbox (12.68178pt too wide) in paragraph at lines 1022--1024
+Overfull \hbox (12.68178pt too wide) in paragraph at lines 1021--1023
 [][]$\T1/cmtt/m/n/10.95 https : / / fr . wikipedia . org / wiki / Point _ %28g 
 % C3 % A9om % C3 % A9trie %
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1022--1024
+Underfull \hbox (badness 10000) in paragraph at lines 1021--1023
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1027--1029
+Overfull \hbox (6.05078pt too wide) in paragraph at lines 1026--1028
+[][]$\T1/cmtt/m/n/10.95 https : / / fr . wikipedia . org / wiki / Rectangle$[] 
+\T1/cmr/m/n/10.95 consulté le 4 mai 2015, 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1026--1028
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1032--1034
+Underfull \hbox (badness 10000) in paragraph at lines 1031--1033
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1037--1039
+Overfull \hbox (7.61917pt too wide) in paragraph at lines 1036--1038
+[][]$\T1/cmtt/m/n/10.95 http : / / doc . qt . digia . com / qt-[]maemo / qsound
+ . html$[] \T1/cmr/m/n/10.95 consulté le 4 mai
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1036--1038
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1041--1043
 
  []
 
 [30]
-Underfull \hbox (badness 10000) in paragraph at lines 1042--1044
-
- []
-
-
-Overfull \hbox (134.50757pt too wide) in paragraph at lines 1048--1050
+Overfull \hbox (134.50757pt too wide) in paragraph at lines 1047--1049
 [][]$\T1/cmtt/m/n/10.95 http : / / doc . qt . io / qt-[]4 . 8 / graphicsview . 
 html # classes-[]in-[]the-[]graphics-[]view-[]framework$[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1048--1050
+Underfull \hbox (badness 10000) in paragraph at lines 1047--1049
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1053--1055
+Overfull \hbox (7.61917pt too wide) in paragraph at lines 1052--1054
+[][]$\T1/cmtt/m/n/10.95 http : / / doc . qt . io / qt-[]4 . 8 / signalsandslots
+ . html$[] \T1/cmr/m/n/10.95 consulté le 4 mai
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1052--1054
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1058--1059
+Underfull \hbox (badness 10000) in paragraph at lines 1057--1058
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1062--1063
+Underfull \hbox (badness 10000) in paragraph at lines 1061--1062
 
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1067.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1066.
 [31]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1067.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1066.
  (./rapport.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1067.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1067.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1066.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1066.
 
 Package rerunfilecheck Info: File `rapport.out' has not changed.
 (rerunfilecheck)             Checksum: 83F34754058DFE8FAA9FF1BC30DA0FAD;3165.
@@ -1365,12 +1382,12 @@ Package rerunfilecheck Info: File `rapport.out' has not changed.
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1067.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1066.
  ) 
 Here is how much of TeX's memory you used:
  18388 strings out of 495030
  314405 string characters out of 3180761
- 412329 words of memory out of 3000000
+ 412328 words of memory out of 3000000
  20967 multiletter control sequences out of 15000+200000
  25901 words of font info for 63 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -1403,7 +1420,7 @@ hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on rapport.pdf (33 pages, 470296 bytes).
+Output written on rapport.pdf (33 pages, 470282 bytes).
 PDF statistics:
  1503 PDF objects out of 1728 (max. 8388607)
  813 compressed objects within 9 object streams

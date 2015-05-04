@@ -27,14 +27,14 @@ obstacles via notamment des miroirs réfléchissant la lumière\footnote{tiré d
 consignes du projet}.
 
 Ce document présente les différents détails de la réalisation du projet; 
-La section 2, décrit l'aspect formel du code (conventions de nommage, structure
+La \texttt{section 2}, décrit l'aspect formel du code (conventions de nommage, structure
 des fichier etc..).
 
-Ensuite, la section 3 présente les classes utilisées et détaille leur contenu. 
-La section 4 décrit la structure générale du programme qui est ensuite complétée
-par la section 5 décrivant les principaux algorithmes utilisés à travers le
+Ensuite, la \texttt{section 3} présente les classes utilisées et détaille leur contenu. 
+La \texttt{section 4} décrit la structure générale du programme qui est ensuite complétée
+par la \texttt{section 5} décrivant les principaux algorithmes utilisés à travers le
 programme. Les sections suivantes décrivent respectivement les tests effectués
-et les points bonus réalisés. Enfin la section 9 conclut le document et est
+et les points bonus réalisés. Enfin la \texttt{section 9} conclut le document et est
 suivit par l'annexe A contenant les références.
 
 \section{Langage et compilation}
@@ -277,7 +277,7 @@ demande
 \begin{lstlisting}[frame=single,language=C++]
 bool * Line::isVertical();
 \end{lstlisting}
-Ainsi, il est simple de savoir, en interieur comme en exterieur de la classe, si
+Ainsi, il est simple de savoir, en intérieur comme en extérieur de la classe, si
 la droite est verticale ou non.\footnote{cette méthode sera utile pour trouver
 	l'intersection de deux droites puisque nous n'utilisons pas la forme $ax +
 bx + c = 0$} 
@@ -803,13 +803,12 @@ $$m_1 \cdot x + p_1 = m_2 \cdot x + p_2$$
 $$m_1 \cdot x - m_2 \cdot x = p_2 - p_1 $$
 $$x \cdot (m_1 - m_2) = p_2 - p_1$$
 $$x = \frac{(p_2 - p_1)}{(m_1 - m_2)}$$
-
-nous donne l'abcisse du point d'intersection des deux droites.
+nous donne l'abscisse du point d'intersection des deux droites.
 Il suffit ensuite de trouver $y$ à l'aide d'une des deux équations.
 
 \subsection[Droite et rectangle]{Intersection d'une droite et d'un rectangle}
 Pour trouvez les intersections entre un rectangle et une droite, il suffit de
-chercher les intersections entre une droite et les quatres droites qui composent
+chercher les intersections entre une droite et les quatre droites qui composent
 le rectangle (Cf. ``Intersection de deux droites).
 
 \subsection[Droite et ellipse]{Intersection d'une droite et d'une ellipse}
@@ -886,7 +885,7 @@ chacune de ses méthodes s'est vu confirmé son bon fonctionnement au travers de
 cas dis ``limites'' et de cas dit ``standards''. \\
 
 Les fichiers sources concernés se situe dans le dossier \path{test/} et peuvent
-éffectuer en décommentant la définition de \textbf{\#RUN\_TEST} du fichier
+effectuer en dé commentant la définition de \textbf{\#RUN\_TEST} du fichier
 \textbf{main.hpp} disponible à la racine du projet.
 \section{Bugs connus}
 \begin{center}
@@ -952,7 +951,7 @@ souvent à la refonte conjointe d'une idée personnelle.
 			\item \url{http://www.gimp.org/} consulté \today, \\
 		\end{itemize}
 	\item[] L'ensemble des sons disponibles dans \path{ressources/sounds}
-		proviennent de \texttt{Sound bible}  sous la license 
+		proviennent de \texttt{Sound bible}  sous la licence 
 		\texttt{Attribution 3.0 License} :
 		\begin{itemize}
 			\item \url{http://soundbible.com}, consulté \today
@@ -1053,11 +1052,11 @@ souvent à la refonte conjointe d'une idée personnelle.
 			\item \url{http://doc.qt.io/qt-4.8/signalsandslots.html} consulté le
 				\today, \\
 		\end{itemize}
-	\item[] texttt{Commandes et règles}
+	\item[] \texttt{Commandes et règles}
 		\begin{itemize}
 			\item \path{ressources/other/rules.html},\\
 		\end{itemize}
-	\item[] texttt{Valgrind memory checker}
+	\item[] \texttt{Valgrind memory checker}
 		\begin{itemize}
 		\item \url{http://valgrind.org/}, consulté le \today, \\
 		\end{itemize}
